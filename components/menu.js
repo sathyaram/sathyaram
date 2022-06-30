@@ -14,7 +14,55 @@ c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.
         </svg>
         <span>Toggle Night Mode</span>
       </button>
-      {/* <nav className="social-media" role="navigation">
+      <nav
+        className="main-menu menu"
+        name="main-menu"
+        title="main-menu"
+        aria-label="main-menu"
+      >
+        <ul>
+          <li>
+            <a direction="right" href="/about">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="/#websites">Projects</a>
+          </li>
+
+          {/* <li>
+            <a title="Our team" href="/#designs">
+              <span>Designs</span>
+            </a>
+          </li> */}
+          <li>
+            <a title="Our team" href="/#photography">
+              <span>Photography</span>
+            </a>
+          </li>
+          {/* <li>
+            <a href="/#websites">Resume</a>
+          </li>
+          <li>
+            <a href="/#websites">Contact</a>
+          </li> */}
+        </ul>
+      </nav>
+      <a className="logo" aria-label="Logo Home Link" name="logo" href="/">
+        <svg version="1.1" viewBox="0 0 62.5 28.7">
+          <g>
+            <polygon
+              className="s-line"
+              points="27.9,14.4 13,8.1 23.4,19.8 4.5,28.4 15.7,18.4 0.4,0.3 27.9,7.1"
+            ></polygon>
+            <polyline
+              className="r-line"
+              points="30.1,6.8 30.1,28.4 35.8,13.9 49.6,8.1 39.2,19.8 58,28.5 46.9,18.4 62.3,0.4 30.1,6.8"
+            ></polyline>
+          </g>
+        </svg>
+      </a>
+      <nav className="social-media" role="navigation">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -49,28 +97,8 @@ c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.
           </svg>
           <span>Dribbble</span>
         </a>
-      </nav> */}
-      <a
-        aria-current="page"
-        className="logo"
-        aria-label="Logo Home Link"
-        name="logo"
-        direction="right"
-        href="/"
-      >
-        <svg version="1.1" viewBox="0 0 62.5 28.7">
-          <g>
-            <polygon
-              className="s-line"
-              points="27.9,14.4 13,8.1 23.4,19.8 4.5,28.4 15.7,18.4 0.4,0.3 27.9,7.1"
-            ></polygon>
-            <polyline
-              className="r-line"
-              points="30.1,6.8 30.1,28.4 35.8,13.9 49.6,8.1 39.2,19.8 58,28.5 46.9,18.4 62.3,0.4 30.1,6.8"
-            ></polyline>
-          </g>
-        </svg>
-      </a>
+      </nav>
+
       {/* <button
         className="menu-toggle"
         name="menu-toggle"
@@ -84,33 +112,6 @@ c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.
           <span></span>
         </div>
       </button> */}
-      <nav
-        className="main-menu menu"
-        name="main-menu"
-        title="main-menu"
-        aria-label="main-menu"
-      >
-        <ul>
-          <li>
-            <a direction="right" href="/about">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/#websites">Projects</a>
-          </li>
-          {/* <li>
-            <a title="Our team" href="/#designs">
-              <span>Designs</span>
-            </a>
-          </li> */}
-          <li>
-            <a title="Our team" href="/#photography">
-              <span>Photography</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </aside>
   );
 };

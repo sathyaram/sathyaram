@@ -8,7 +8,7 @@ const main = () => {
     <main role="main">
       <section id="websites" title="websites">
         <div className="heading">
-          <h3>Websites</h3>
+          <h3>Projects</h3>
         </div>
         <div className="content">
           {Data.map(function (project, i) {
@@ -45,7 +45,7 @@ const main = () => {
           })}
         </div>
       </section>
-      <section id="designs" title="designs">
+      {/* <section id="designs" title="designs">
         <div className="heading">
           <h3>Designs</h3>
         </div>
@@ -65,7 +65,7 @@ const main = () => {
             }
           })}
         </div>
-      </section>
+      </section> */}
       <section id="photography" title="photography">
         <div className="heading">
           <h3>Photography</h3>

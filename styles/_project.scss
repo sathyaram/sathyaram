@@ -6,6 +6,9 @@ section {
     h3 {
       font-size: 2.75rem;
       margin-left: -1rem;
+      margin-bottom: -3.25rem;
+      z-index: 1;
+      position: relative;
       font-weight: 400;
       font-family: "Californication";
     }
@@ -16,11 +19,12 @@ section {
 }
 
 .project {
-  border: 1px solid rgb(76, 76, 76);
+  //   border: 1px solid rgb(76, 76, 76);
   cursor: pointer;
   display: flex;
+  width: 25%;
   flex-direction: column;
-  padding: 2.5vw 3.25rem;
+  padding: 2.5vw 2rem;
   margin-bottom: 5vh;
 }
 
@@ -50,7 +54,7 @@ section {
   font-size: 0.75rem;
 }
 
-// Projects
+// Web
 #sontag {
   background-color: rgba(3, 31, 58, 0.975);
 }
@@ -67,13 +71,12 @@ section {
   background-color: #c2b59b;
 }
 
-//
-
-#lehigh {
-  background-color: saddlebrown;
+// Design
+#lehigh2018 {
+  background-color: rgb(90, 38, 0);
 }
 
-#exhaust {
+#exhaustnotes {
   background-color: brown;
 }
 
@@ -82,5 +85,15 @@ section {
 }
 
 #logos {
-  background-color: cyan;
+  background-color: rgb(206, 61, 150);
+}
+
+// Photography
+#portraits {
+}
+
+#cosplay {
+}
+
+#nature {
 }

@@ -180,7 +180,7 @@ nav.main-menu {
   }
 }
 
-.social-media {
+nav.social-media {
   display: flex;
   margin-left: -5px;
 
@@ -189,6 +189,7 @@ nav.main-menu {
     align-items: center;
     flex-direction: column;
     font-size: 0.75rem;
+    padding: 0 0.5rem;
   }
   span {
     display: none;

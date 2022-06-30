@@ -8,7 +8,7 @@ export const Data = [
   {
     type: "web",
     id: "sontag",
-    title: "Sontag",
+    title: "The Sontag Foundation",
     subtitle: "Brain Cancer",
   },
   {
@@ -22,8 +22,15 @@ export const Data = [
   {
     type: "web",
     id: "vilcek",
-    title: "Vilcek",
+    title: "Vilcek Foundation",
     subtitle: "Arts + Immigrants",
+  },
+  {
+    type: "web",
+    id: "lehigh2018",
+    title: "Lehigh 2018",
+    subtitle: "Brain Cancer",
+    content: "",
   },
   {
     type: "web",
@@ -31,13 +38,7 @@ export const Data = [
     title: "The Amanda Foundation",
     subtitle: "Pets for all",
   },
-  {
-    type: "design",
-    id: "lehigh",
-    title: "Lehigh 2012",
-    subtitle: "Brain Cancer",
-    content: "",
-  },
+
   {
     type: "design",
     id: "logos",
@@ -46,15 +47,15 @@ export const Data = [
     content: "",
   },
   {
-    type: "design",
+    type: "web",
     id: "fudtruk",
     title: "Fudtruk",
     subtitle: "Brain Cancer",
     content: "",
   },
   {
-    type: "design",
-    id: "exhaust",
+    type: "web",
+    id: "exhaustnotes",
     title: "Exhaust Notes",
     subtitle: "Brain Cancer",
     content: "",
@@ -74,11 +75,17 @@ export const Data = [
     subtitle: "Brain Cancer",
     content: "",
   },
-
   {
     type: "photography",
     id: "nature",
     title: "Nature",
+    subtitle: "Brain Cancer",
+    content: "",
+  },
+  {
+    type: "photography",
+    id: "lifestyle",
+    title: "Lifestyle",
     subtitle: "Brain Cancer",
     content: "",
   },
