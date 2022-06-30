@@ -8,21 +8,48 @@ header {
   justify-content: center;
   flex-direction: column;
 
-  .pronounce {
-    font-size: 0.65rem;
-    margin-bottom: -1rem;
-  }
-
   h1 {
     font-weight: 400;
     font-size: 9rem;
     font-family: "Californication";
     margin-bottom: 2rem;
+
+    span {
+      @include glow-text;
+    }
   }
 
   h2 {
     font-size: 1.25rem;
+    font-weight: 300;
     letter-spacing: 0.5px;
+  }
+
+  h3 {
+    @include glow-text;
+  }
+}
+
+.hero {
+  &:hover {
+    .pronounce {
+      opacity: 0.85;
+    }
+  }
+}
+
+.pronounce {
+  font-size: 0.5rem;
+  margin-bottom: -3.25rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 300ms ease;
+
+  &::before,
+  &::after {
+    content: "/";
+    color: $blue;
+    padding: 0 0.5rem;
   }
 }
 

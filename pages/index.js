@@ -19,9 +19,21 @@ export default function Home() {
       <header role="header">
         <div className="circle"></div>
         <div className="circle2"></div>
-        <div className="pronounce">Sa-thee-uh · Ram</div>
-        <h1>SathyaRam</h1>
-        <h2>Web Developer · Digital Designer · Photographer</h2>
+        <div className="hero">
+          <div className="pronounce">Sa-thee-uh · Ram</div>
+          <h1>
+            <span>S</span>
+            <span>a</span>
+            <span>t</span>
+            <span>h</span>
+            <span>y</span>
+            <span>a</span>
+            <span>R</span>
+            <span>a</span>
+            <span>m</span>
+          </h1>
+          <h2>Web Developer · Digital Designer · Photographer</h2>
+        </div>
       </header>
       <Main />
       <Footer />

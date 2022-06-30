@@ -6,7 +6,7 @@ const main = () => {
   };
   return (
     <main role="main">
-      <section id="websites">
+      <section id="websites" title="websites">
         <div className="heading">
           <h3>Websites</h3>
         </div>
@@ -39,7 +39,7 @@ const main = () => {
           })}
         </div>
       </section>
-      <section id="designs">
+      <section id="designs" title="designs">
         <div className="heading">
           <h3>Designs</h3>
         </div>
@@ -55,7 +55,7 @@ const main = () => {
           })}
         </div>
       </section>
-      <section id="photography">
+      <section id="photography" title="photography">
         <div className="heading">
           <h3>Photography</h3>
         </div>

@@ -1,7 +1,7 @@
 aside {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10vh;
   position: fixed;
   z-index: 5;
@@ -20,6 +20,17 @@ aside {
     position: relative;
     margin-left: auto;
     transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      span {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          background-color: #fff;
+          box-shadow: 0 0 15px 0 #fff;
+        }
+      }
+    }
 
     span {
       width: 100%;
@@ -41,39 +52,87 @@ aside {
       }
 
       &:first-child {
-        transition: opacity 0.3s ease, transform 0.3s ease,
-          background-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
+        transition: opacity 300ms ease, transform 300ms ease,
+          background-color 300ms ease 0s, box-shadow 300ms ease 0s;
         transform-origin: center center;
       }
 
       &:nth-child(2) {
         top: 50%;
         transform: translateX(0) translateY(-50%);
-        transition: opacity 0.6s ease, transform 1s ease,
-          background-color 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s;
+        transition: opacity 600ms ease, transform 1s ease,
+          background-color 300ms ease 0.2s, box-shadow 300ms ease 0.2s;
       }
 
       &:nth-child(3) {
         top: auto;
         bottom: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease,
-          background-color 0.3s ease 0.4s, box-shadow 0.3s ease 0.4s;
+        transition: opacity 300ms ease, transform 300ms ease,
+          background-color 300ms ease 0.4s, box-shadow 300ms ease 0.4s;
       }
     }
   }
 }
 
-.logo svg {
-  width: 80px;
-  height: auto;
+.logo {
   position: relative;
   z-index: 3;
+  transition: transform 300ms ease;
 
-  .s-line {
-    fill: white;
+  &::after {
+    content: "Sathya Ram";
+    position: absolute;
+    width: 110px;
+    left: 70px;
+    top: 5px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 300ms ease, opacity 300ms ease;
   }
-  .r-line {
-    fill: rgb(71, 194, 255);
+  &:hover {
+    svg {
+      transform: scale(1.75);
+    }
+    .s-line {
+      transition: fill 300ms ease;
+      animation: stroke-offset 1.4s ease forwards;
+      fill: transparent;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    }
+
+    .r-line {
+      transition: fill 300ms ease;
+      animation: stroke-offset 0.8s ease forwards 0.2s;
+      filter: drop-shadow(0 0 2px $blue);
+      fill: transparent;
+    }
+  }
+  svg {
+    width: 80px;
+    height: auto;
+    position: relative;
+    z-index: 3;
+    transition: transform 300ms ease;
+
+    .s-line {
+      fill: white;
+      stroke: white;
+      stroke-width: 1px;
+      stroke-dasharray: 126.93897247314453;
+      stroke-dashoffset: 126.93897247314453;
+    }
+    .r-line {
+      fill: $blue;
+      stroke: $blue;
+      stroke-width: 1px;
+      stroke-dasharray: 160.04493713378906;
+      stroke-dashoffset: 160.04493713378906;
+    }
   }
 }
 
@@ -114,11 +173,11 @@ aside {
     left: 50%;
     transform: translateX(-50%);
     z-index: -3;
-    border-color: #fff transparent transparent;
+    border-color: white transparent transparent;
     border-style: solid;
     border-width: 15px 50vw 0;
     transition: all 0.3s ease;
-    border-color: #275074 transparent transparent;
+    border-color: $blue transparent transparent;
   }
 }
 
@@ -132,7 +191,7 @@ aside {
   z-index: 9;
   width: 30px;
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: all 300s ease;
 }
 
 // This applies from 600px onwards

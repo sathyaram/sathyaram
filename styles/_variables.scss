@@ -1,0 +1,26 @@
+$blue: #2baae2;
+$gradient: linear-gradient(
+  135deg,
+  rgba(112, 213, 255, 0.92),
+  rgba(0, 89, 188, 0.92)
+);
+
+@keyframes stroke-offset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@mixin gradient-text {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin glow-text {
+  transition: text-shadow 2s ease-in-out;
+  &:hover {
+    text-shadow: 0 0 5px white, 0 0 15px white, 0 0 35px white, 0 0 5px white;
+    transition: none;
+  }
+}
