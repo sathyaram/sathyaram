@@ -13,6 +13,8 @@ export const Data = [
   {
     type: "web",
     title: "Howard Hughes Medical Institute",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
     subtitle: "Biointeractive Site",
   },
   {
@@ -32,11 +34,39 @@ export const Data = [
     content: "",
   },
   {
+    type: "design",
+    title: "Fudtruk",
+    subtitle: "Brain Cancer",
+    content: "",
+  },
+  {
+    type: "design",
+    title: "Exhaust Notes",
+    subtitle: "Brain Cancer",
+    content: "",
+  },
+  {
+    type: "design",
+    title: "Lehigh 2012 Theme",
+    subtitle: "Brain Cancer",
+    content: "",
+  },
+  {
+    type: "photography",
+    title: "Nature",
+    subtitle: "Brain Cancer",
+    content: "",
+  },
+  {
     type: "photography",
     title: "Cosplay",
     subtitle: "Brain Cancer",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
+    content: "",
+  },
+  {
+    type: "photography",
+    title: "Portraits",
+    subtitle: "Brain Cancer",
     content: "",
   },
 ];

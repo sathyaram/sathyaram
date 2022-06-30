@@ -3,6 +3,17 @@ import React from "react";
 const menu = () => {
   return (
     <aside role="region">
+      <button className="nightmode" name="toggle">
+        <svg className="moon" viewBox="0 0 11.6 11.7">
+          <path
+            className="st0"
+            fill="white"
+            d="M4.1,7.2c-1.5-2-1.1-4.8,0.8-6.3c0.4-0.3,0.8-0.5,1.3-0.7C4.9,0.1,3.6,0.5,2.4,1.4C0,3.3-0.5,6.8,1.4,9.3
+c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.2,4.1,7.2z"
+          ></path>
+        </svg>
+        <span>Toggle Night Mode</span>
+      </button>
       <nav className="social-media" role="navigation">
         <a
           target="_blank"
@@ -38,20 +49,10 @@ const menu = () => {
           </svg>
           <span>Dribbble</span>
         </a>
-        {/* <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/sathyaram"
-          >
-            <svg viewBox="0 0 512 512">
-              <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
-            </svg>
-            <span>Github</span>
-          </a> */}
       </nav>
       <a
         aria-current="page"
-        class="logo"
+        className="logo"
         aria-label="Logo Home Link"
         name="logo"
         direction="right"
@@ -60,19 +61,19 @@ const menu = () => {
         <svg version="1.1" viewBox="0 0 62.5 28.7">
           <g>
             <polygon
-              class="s-line"
+              className="s-line"
               points="27.9,14.4 13,8.1 23.4,19.8 4.5,28.4 15.7,18.4 0.4,0.3 27.9,7.1"
             ></polygon>
             <polyline
-              class="r-line"
+              className="r-line"
               points="30.1,6.8 30.1,28.4 35.8,13.9 49.6,8.1 39.2,19.8 58,28.5 46.9,18.4 62.3,0.4 30.1,6.8"
             ></polyline>
           </g>
         </svg>
       </a>
-      <button class="menu-toggle">
-        <div class="menu-title">Menu</div>
-        <div class="burger">
+      <button className="menu-toggle">
+        {/* <div className="menu-title">Menu</div> */}
+        <div className="burger">
           <span></span>
           <span></span>
           <span></span>

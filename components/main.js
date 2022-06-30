@@ -5,7 +5,7 @@ const main = () => {
     document.body.classList.toggle("midnight");
   };
   return (
-    <main>
+    <main role="main">
       <section id="websites">
         <div className="heading">
           <h3>Websites</h3>
@@ -14,7 +14,7 @@ const main = () => {
           {Data.map(function (project, i) {
             if (project.type === "web") {
               return (
-                <div className="project" onClick={eclipse}>
+                <div className="project" onClick={eclipse} key={i}>
                   <div className="project-heading">
                     <div className="project-link"></div>
                     <div className="project-title">{project.title}</div>
@@ -46,7 +46,11 @@ const main = () => {
         <div className="content">
           {Data.map(function (project, i) {
             if (project.type === "design") {
-              return <div className="project">{project.title}</div>;
+              return (
+                <div className="project" key={i}>
+                  <div className="project-title">{project.title}</div>
+                </div>
+              );
             }
           })}
         </div>
@@ -58,7 +62,11 @@ const main = () => {
         <div className="content">
           {Data.map(function (project, i) {
             if (project.type === "photography") {
-              return <div className="project">{project.title}</div>;
+              return (
+                <div className="project" key={i}>
+                  <div className="project-title">{project.title}</div>
+                </div>
+              );
             }
           })}
         </div>
