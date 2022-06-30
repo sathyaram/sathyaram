@@ -14,7 +14,13 @@ const main = () => {
           {Data.map(function (project, i) {
             if (project.type === "web") {
               return (
-                <div className="project" onClick={eclipse} key={i}>
+                <article
+                  className="project"
+                  id={project.id}
+                  name={project.id}
+                  onClick={eclipse}
+                  key={i}
+                >
                   <div className="project-heading">
                     <div className="project-link"></div>
                     <div className="project-title">{project.title}</div>
@@ -33,7 +39,7 @@ const main = () => {
                       <div className="project-text">{project.description}</div>
                     </div>
                   </div>
-                </div>
+                </article>
               );
             }
           })}

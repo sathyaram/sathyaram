@@ -1,7 +1,7 @@
 aside {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 10vh;
   position: fixed;
   z-index: 5;
@@ -74,6 +74,49 @@ aside {
   }
 }
 
+nav.menu {
+  a {
+    color: white;
+    margin: 0.25rem;
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 14px;
+    position: relative;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $blue;
+      &:not(.music)::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+    }
+
+    &:not(.music)::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: #63b5f8;
+      background: linear-gradient(
+        135deg,
+        rgba(112, 213, 255, 0.8),
+        rgba(0, 89, 188, 0.9)
+      );
+      right: 0;
+      transition: width 0.3s cubic-bezier(0.37, 0, 0.21, 1.02);
+    }
+  }
+}
+
+nav.main-menu {
+  ul {
+    display: flex;
+  }
+}
+
 .logo {
   position: relative;
   z-index: 3;
@@ -118,11 +161,11 @@ aside {
     position: relative;
     z-index: 3;
     transition: transform 300ms ease;
-
     .s-line {
       fill: white;
       stroke: white;
       stroke-width: 1px;
+      transition: fill 0ms ease;
       stroke-dasharray: 126.93897247314453;
       stroke-dashoffset: 126.93897247314453;
     }
@@ -130,6 +173,7 @@ aside {
       fill: $blue;
       stroke: $blue;
       stroke-width: 1px;
+      transition: fill 0ms ease;
       stroke-dasharray: 160.04493713378906;
       stroke-dashoffset: 160.04493713378906;
     }

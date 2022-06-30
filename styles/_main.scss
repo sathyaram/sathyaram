@@ -10,9 +10,9 @@ header {
 
   h1 {
     font-weight: 400;
-    font-size: 9rem;
+    font-size: 8rem;
     font-family: "Californication";
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     span {
       @include glow-text;
@@ -20,9 +20,11 @@ header {
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 0.75rem;
     font-weight: 300;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgb(142, 163, 172);
   }
 
   h3 {
@@ -62,6 +64,16 @@ footer {
   font-size: 0.75rem;
   margin: 10vh 0;
   text-align: center;
+
+  .contact-menu {
+    margin-bottom: 2rem;
+  }
+
+  a.music {
+    padding: 0.25rem;
+    color: #2baae2;
+    text-shadow: none;
+  }
 }
 
 .villain {
@@ -70,84 +82,33 @@ footer {
   font-family: "Californication";
 }
 
-section {
-  margin-bottom: 5vh;
-  .heading {
-    margin-bottom: 2rem;
+// .circle {
+//   background-color: #00b381;
+//   width: 500px;
+//   height: 500px;
+//   border-radius: 50%;
+//   opacity: 0.4;
+//   -webkit-filter: blur(120px);
+//   filter: blur(120px);
+//   position: absolute;
+//   z-index: 3;
+//   top: 0;
+//   left: -100px;
+// }
 
-    h3 {
-      font-size: 2.75rem;
-      margin-left: -2.5rem;
-      font-weight: 400;
-      font-family: "Californication";
-    }
-  }
-  .content {
-  }
-}
-
-.project {
-  border: 1px solid rgb(76, 76, 76);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  padding: 2.5vw 3.25rem;
-  margin-bottom: 5vh;
-}
-
-.project-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-.project-description {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 300ms ease;
-
-  .midnight & {
-    max-height: 700px;
-    overflow: auto;
-    padding: 1rem 0;
-  }
-}
-
-.project-tagline {
-  margin-bottom: 0.5rem;
-}
-
-.project-expand {
-  color: lightblue;
-  font-size: 0.75rem;
-}
-
-.circle {
-  background-color: #00b381;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  opacity: 0.4;
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: -100px;
-}
-
-.circle2 {
-  background-color: #002398;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  opacity: 0.4;
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
-  position: absolute;
-  z-index: 3;
-  top: 300px;
-  right: -100px;
-}
+// .circle2 {
+//   background-color: #002398;
+//   width: 500px;
+//   height: 500px;
+//   border-radius: 50%;
+//   opacity: 0.4;
+//   -webkit-filter: blur(120px);
+//   filter: blur(120px);
+//   position: absolute;
+//   z-index: 3;
+//   top: 300px;
+//   right: -100px;
+// }
 
 // This applies from 600px onwards
 @media (min-width: 600px) {

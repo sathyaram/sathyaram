@@ -1,0 +1,68 @@
+section {
+  margin-bottom: 5vh;
+  .heading {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 2.75rem;
+      margin-left: -2.5rem;
+      font-weight: 400;
+      font-family: "Californication";
+    }
+  }
+  .content {
+    display: flex;
+  }
+}
+
+.project {
+  border: 1px solid rgb(76, 76, 76);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5vw 3.25rem;
+  margin-bottom: 5vh;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.project-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 300ms ease;
+
+  .midnight & {
+    max-height: 700px;
+    overflow: auto;
+    padding: 1rem 0;
+  }
+}
+
+.project-tagline {
+  margin-bottom: 0.5rem;
+}
+
+.project-expand {
+  color: lightblue;
+  font-size: 0.75rem;
+}
+
+// Projects
+#sontag {
+  background-color: rgba(3, 31, 58, 0.975);
+}
+
+#hhmi {
+  background-color: #009444;
+}
+
+#amanda {
+  background-color: #531a54;
+}
+
+#vilcek {
+  background-color: #c2b59b;
+}
