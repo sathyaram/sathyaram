@@ -53,7 +53,12 @@ const main = () => {
           {Data.map(function (project, i) {
             if (project.type === "design") {
               return (
-                <div className="project" key={i}>
+                <div
+                  className="project"
+                  id={project.id}
+                  name={project.id}
+                  key={i}
+                >
                   <div className="project-title">{project.title}</div>
                 </div>
               );
@@ -69,7 +74,12 @@ const main = () => {
           {Data.map(function (project, i) {
             if (project.type === "photography") {
               return (
-                <div className="project" key={i}>
+                <div
+                  className="project"
+                  id={project.id}
+                  name={project.id}
+                  key={i}
+                >
                   <div className="project-title">{project.title}</div>
                 </div>
               );
