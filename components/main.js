@@ -24,7 +24,7 @@ const main = () => {
                   <div className="project-heading">
                     <div className="project-link"></div>
                     <div className="project-title">{project.title}</div>
-                    <div className="project-tagline">{project.tagline}</div>
+                    <div className="project-subtitle">{project.subtitle}</div>
                     <div className="project-tags">
                       <span></span>
                       <span></span>

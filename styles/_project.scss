@@ -14,7 +14,7 @@ section {
     }
   }
   .content {
-    display: flex;
+    // display: flex;
   }
 }
 
@@ -22,15 +22,39 @@ section {
   //   border: 1px solid rgb(76, 76, 76);
   cursor: pointer;
   display: flex;
-  width: 25%;
+  //   width: 25%;
+  width: 100%;
   flex-direction: column;
-  padding: 2.5vw 2rem;
+  padding: 2.5vw 5rem;
   margin-bottom: 5vh;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 15px 15px 15px 1px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 300ms ease;
+
+  &:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+
+    .project-expand {
+      //   display: block;
+    }
+  }
+
+  &:nth-child(even) {
+    // align-items: flex-end;
+    // text-align: right;
+  }
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.project-subtitle {
+  color: grey;
   font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .project-description {
@@ -51,33 +75,57 @@ section {
 
 .project-expand {
   color: lightblue;
+  display: none;
   font-size: 0.75rem;
 }
 
 // Web
 #sontag {
-  background-color: rgba(3, 31, 58, 0.975);
+  border: 5px solid rgba(3, 31, 58, 0.975);
+  //   background-image: url(https://149689989.v2.pressablecdn.com/wp-content/uploads/2021/09/the-sontag-foundation-distinguished-scientist-award@2x.jpg);
+  //   background-size: cover;
+  //   background-position: center center;
+
+  &:hover {
+    background-color: rgba(3, 31, 58, 0.975);
+  }
 }
 
 #hhmi {
-  background-color: #009444;
+  //   background-color: #009444;
+  border: 5px solid #009444;
+  &:hover {
+    background-color: #009444;
+  }
 }
 
 #amanda {
-  background-color: #531a54;
+  //   background-color: #531a54;
+  border: 5px solid #531a54;
+  &:hover {
+    background-color: #531a54;
+  }
 }
 
 #vilcek {
-  background-color: #c2b59b;
+  //   background-color: #c2b59b;
+  border: 5px solid #b8a276;
+  &:hover {
+    background-color: #b8a276;
+  }
+}
+
+#exhaustnotes {
+  // background-color: brown;
+  border: 5px solid brown;
+  &:hover {
+    background-color: brown;
+  }
 }
 
 // Design
 #lehigh2018 {
   background-color: rgb(90, 38, 0);
-}
-
-#exhaustnotes {
-  background-color: brown;
 }
 
 #fudtruk {

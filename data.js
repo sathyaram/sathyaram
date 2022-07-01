@@ -9,34 +9,41 @@ export const Data = [
     type: "web",
     id: "sontag",
     title: "The Sontag Foundation",
-    subtitle: "Brain Cancer",
+    subtitle: "The definitive enterprise for brain cancer research.",
   },
   {
     type: "web",
     id: "hhmi",
-    title: "Howard Hughes Medical Institute",
+    title: "Howard Hughes' Biointeractive",
+    subtitle: "Netflixing science, for kids.",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
-    subtitle: "Biointeractive Site",
   },
   {
     type: "web",
     id: "vilcek",
     title: "Vilcek Foundation",
-    subtitle: "Arts + Immigrants",
+    subtitle: "A celebration of immigrants & art.",
   },
+  // {
+  //   type: "web",
+  //   id: "lehigh2018",
+  //   title: "Lehigh 2018",
+  //   subtitle: "Brain Cancer",
+  //   content: "",
+  // },
   {
     type: "web",
-    id: "lehigh2018",
-    title: "Lehigh 2018",
-    subtitle: "Brain Cancer",
+    id: "exhaustnotes",
+    title: "Exhaust Notes",
+    subtitle: "Car revs on demand.",
     content: "",
   },
   {
     type: "web",
     id: "amanda",
     title: "The Amanda Foundation",
-    subtitle: "Pets for all",
+    subtitle: "A mission-driven adoption center.",
   },
 
   {
@@ -46,20 +53,13 @@ export const Data = [
     subtitle: "Brain Cancer",
     content: "",
   },
-  {
-    type: "web",
-    id: "fudtruk",
-    title: "Fudtruk",
-    subtitle: "Brain Cancer",
-    content: "",
-  },
-  {
-    type: "web",
-    id: "exhaustnotes",
-    title: "Exhaust Notes",
-    subtitle: "Brain Cancer",
-    content: "",
-  },
+  // {
+  //   type: "web",
+  //   id: "fudtruk",
+  //   title: "Fudtruk",
+  //   subtitle: "Brain Cancer",
+  //   content: "",
+  // },
 
   {
     type: "photography",
