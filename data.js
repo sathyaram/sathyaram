@@ -29,7 +29,7 @@ export const Data = [
     type: "web",
     id: "vilcek",
     title: "Vilcek Foundation",
-    subtitle: "A celebration of immigrants & art.",
+    subtitle: "A celebration of immigrants & the art.",
     year: "2020",
     tags: ["WordPress", "JavaScript", "Styled Components"],
     agency: "ForumOne",
@@ -45,6 +45,7 @@ export const Data = [
     subtitle: "Car revs on demand.",
     year: "2019",
     tags: ["React", "Custom SASS/CSS"],
+    agency: "Passion Project",
     url: "exhaustnotes.co",
     link: "https://exhaustnotes.co",
     description:

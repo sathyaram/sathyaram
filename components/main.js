@@ -30,20 +30,13 @@ const main = () => {
                     <div className="project-subtitle">{project.subtitle}</div>
 
                     <button className="project-expand">
-                      Click to Expand ↓
+                      Click to Expand +
                     </button>
                   </div>
                   <div className="project-content">
                     <div className="project-year">{project.year}</div>
                     <div className="project-agency">{project.agency}</div>
-                    <a
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={project.link}
-                    >
-                      {project.url}
-                    </a>
+
                     <ul className="project-tags">
                       {project.tags.map(function (tag, i) {
                         return <li>{tag}</li>;
@@ -52,7 +45,16 @@ const main = () => {
                     <div className="project-description">
                       <div className="project-text">{project.description}</div>
                     </div>
+                    <a
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={project.link}
+                    >
+                      {project.url}
+                    </a>
                   </div>
+                  <div className="project-background"></div>
                 </article>
               );
             }
@@ -66,7 +68,7 @@ const main = () => {
             <div>Portraits</div>
             <div>Cosplay</div>
             <div>Nature</div>
-            <div>Lifestyle </div>
+            <div>Lifestyle</div>
           </div>
         </div>
         <div className="content">
