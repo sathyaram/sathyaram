@@ -11,6 +11,14 @@ $gradient: linear-gradient(
   }
 }
 
+@keyframes ram-glow {
+  to {
+    fill: transparent;
+    // stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+  }
+}
+
 @mixin gradient-text {
   background: $gradient;
   -webkit-background-clip: text;

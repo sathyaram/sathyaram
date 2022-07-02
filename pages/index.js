@@ -32,7 +32,51 @@ export default function Home() {
             <span>a</span>
             <span>m</span>
           </h1>
-          <h2>Web Developer · Digital Designer · Photographer</h2>
+          <h2>
+            <span>W</span>
+            <span>e</span>
+            <span>b</span>
+            &nbsp;
+            <span>D</span>
+            <span>e</span>
+            <span>v</span>
+            <span>e</span>
+            <span>l</span>
+            <span>o</span>
+            <span>p</span>
+            <span>e</span>
+            <span>r</span>
+            <span className="x">&nbsp;×&nbsp;</span>
+            <span>D</span>
+            <span>i</span>
+            <span>g</span>
+            <span>i</span>
+            <span>t</span>
+            <span>a</span>
+            <span>l</span>
+            &nbsp;
+            <span>D</span>
+            <span>e</span>
+            <span>s</span>
+            <span>i</span>
+            <span>g</span>
+            <span>n</span>
+            <span>e</span>
+            <span>r</span>
+            <span className="x">&nbsp;×&nbsp;</span>
+            <span>P</span>
+            <span>h</span>
+            <span>o</span>
+            <span>t</span>
+            <span>o</span>
+            <span>g</span>
+            <span>r</span>
+            <span>a</span>
+            <span>p</span>
+            <span>h</span>
+            <span>e</span>
+            <span>r</span>
+          </h2>
         </div>
       </header>
       <Main />

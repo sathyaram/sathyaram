@@ -4,6 +4,10 @@ const main = () => {
   const eclipse = (e) => {
     document.body.classList.toggle("midnight");
   };
+
+  const projectOpen = (e) => {
+    e.target.classList.toggle("open");
+  };
   return (
     <main role="main">
       <section id="websites" title="websites">
@@ -18,23 +22,33 @@ const main = () => {
                   className="project"
                   id={project.id}
                   name={project.id}
-                  onClick={eclipse}
+                  onClick={projectOpen}
                   key={i}
                 >
                   <div className="project-heading">
-                    <div className="project-link"></div>
                     <div className="project-title">{project.title}</div>
                     <div className="project-subtitle">{project.subtitle}</div>
-                    <div className="project-tags">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
+
                     <button className="project-expand">
-                      Click to Expand →
+                      Click to Expand ↓
                     </button>
                   </div>
                   <div className="project-content">
+                    <div className="project-year">{project.year}</div>
+                    <div className="project-agency">{project.agency}</div>
+                    <a
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={project.link}
+                    >
+                      {project.url}
+                    </a>
+                    <ul className="project-tags">
+                      {project.tags.map(function (tag, i) {
+                        return <li>{tag}</li>;
+                      })}
+                    </ul>
                     <div className="project-description">
                       <div className="project-text">{project.description}</div>
                     </div>
@@ -45,27 +59,6 @@ const main = () => {
           })}
         </div>
       </section>
-      {/* <section id="designs" title="designs">
-        <div className="heading">
-          <h3>Designs</h3>
-        </div>
-        <div className="content">
-          {Data.map(function (project, i) {
-            if (project.type === "design") {
-              return (
-                <div
-                  className="project"
-                  id={project.id}
-                  name={project.id}
-                  key={i}
-                >
-                  <div className="project-title">{project.title}</div>
-                </div>
-              );
-            }
-          })}
-        </div>
-      </section> */}
       <section id="photography" title="photography">
         <div className="heading">
           <h3>Photography</h3>
