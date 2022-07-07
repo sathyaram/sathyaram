@@ -116,7 +116,7 @@ section#photography {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 2rem;
+  padding: 4rem 2rem;
   position: relative;
   height: 150px;
   justify-content: center;
@@ -193,13 +193,21 @@ section#photography {
 }
 
 .project-expand {
-  color: lightblue;
+  color: rgb(195, 222, 231);
   font-size: 0.75rem;
   font-family: "Maison";
   opacity: 0;
   perspective: 100px;
   transform: rotateX(45deg);
   transition: opacity 300ms ease, transform 300ms ease;
+
+  span {
+    text-shadow: 0 0 15px white, 0 0 5px white;
+    color: white;
+    font-size: 0.85rem;
+    position: relative;
+    top: 0.5px;
+  }
 }
 
 .project-link {
@@ -258,6 +266,9 @@ section#photography {
   .project-subtitle {
     color: rgb(201, 219, 204);
   }
+
+  .project-link {
+  }
   &::after {
     background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
   }
@@ -267,6 +278,9 @@ section#photography {
   // border: 5px solid #b8a276;
   .project-subtitle {
     color: rgb(177, 169, 143);
+  }
+
+  .project-link {
   }
   &::after {
     background-image: linear-gradient(
@@ -285,6 +299,9 @@ section#photography {
   .project-subtitle {
     color: rgb(184, 164, 162);
   }
+
+  .project-link {
+  }
   &::after {
     background-image: linear-gradient(
       to right top,
@@ -300,6 +317,9 @@ section#photography {
   // border: 5px solid #531a54;
   .project-subtitle {
     color: rgb(167, 125, 164);
+  }
+
+  .project-link {
   }
   &::after {
     background-image: linear-gradient(

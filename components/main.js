@@ -30,7 +30,7 @@ const main = () => {
                     <div className="project-subtitle">{project.subtitle}</div>
 
                     <button className="project-expand">
-                      Click to Expand +
+                      Click to Expand <span>+</span>
                     </button>
                   </div>
                   <div className="project-content">
