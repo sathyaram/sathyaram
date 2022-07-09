@@ -22,6 +22,7 @@ export const Data = [
     agency: "ForumOne",
     url: "biointeractive.org",
     link: "https://biointeractive.org",
+    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -35,6 +36,8 @@ export const Data = [
     agency: "ForumOne",
     url: "vilcek.org",
     link: "https://vilcek.org",
+    image:
+      "https://sathyaram.com/static/9d7d6fcce455f6f273ded431d852710f/630fb/vilcek.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -44,7 +47,7 @@ export const Data = [
     title: "Exhaust Notes",
     subtitle: "Car revs on demand.",
     year: "2019",
-    tags: ["React", "Custom SASS/CSS"],
+    tags: ["React", "Custom (S)CSS"],
     agency: "Passion Project",
     url: "exhaustnotes.co",
     link: "https://exhaustnotes.co",
@@ -61,6 +64,8 @@ export const Data = [
     agency: "ForumOne",
     url: "amandafoundation.org",
     link: "https://amandafoundation.org",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },

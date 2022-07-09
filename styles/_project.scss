@@ -15,7 +15,7 @@
 
   &.open {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-    max-height: 750px;
+    max-height: 100%;
     height: 100%;
     border-radius: 0px;
 
@@ -24,7 +24,7 @@
     }
 
     .project-content {
-      max-height: 700px;
+      max-height: 100%;
       overflow: auto;
       padding: 1rem 0;
     }
@@ -59,7 +59,7 @@
 
   @media screen and (max-width: 600px) {
     height: 240px;
-
+    padding: 6rem 2rem 4rem;
     .project-image {
       opacity: 0.35;
     }
@@ -67,27 +67,55 @@
 
   &:nth-child(even) {
     align-items: flex-start;
-
-    .project-heading {
-      text-align: left;
-    }
+    text-align: left;
 
     .project-image {
       right: 20px;
+    }
+    .project-tags {
+      align-items: flex-start;
+      margin-right: 1.5rem;
+    }
+
+    .wrapper {
+      margin-right: auto;
+      justify-content: flex-start;
     }
   }
 
   &:nth-child(odd) {
     align-items: flex-end;
+    text-align: right;
 
-    .project-heading {
-      text-align: right;
+    .project-link {
+      box-shadow: -3px -3px 0 0 white, -7px -7px 0 0 rgb(96 197 255);
+      &:hover {
+        box-shadow: none;
+      }
     }
 
     .project-image {
       left: 20px;
     }
+
+    .project-tags {
+      align-items: flex-end;
+      order: 1;
+      margin-left: 1.5rem;
+    }
+
+    .wrapper {
+      margin-left: auto;
+      justify-content: flex-end;
+    }
   }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 370px;
+  margin: 2rem 0;
 }
 
 section {
@@ -149,6 +177,9 @@ section {
       position: relative;
       font-weight: 400;
       font-family: "Californication";
+      text-shadow: 3px 3px 4px rgba(198, 168, 207, 0.61);
+      &:hover {
+      }
 
       @media screen and (max-width: 600px) {
         font-size: 4rem;
@@ -169,8 +200,8 @@ section {
 
   &::after {
     content: "";
-    width: 1000px;
-    height: 1000px;
+    width: 1100px;
+    height: 1100px;
     transform-origin: center;
     position: absolute;
     top: 50%;
@@ -197,7 +228,6 @@ section {
 .project-heading {
   padding-top: 15px;
   transition: padding 300ms ease;
-  text-align: center;
 }
 
 .project-title {
@@ -212,11 +242,32 @@ section {
   font-size: 0.9rem;
 }
 
+.project-agency {
+  color: white;
+  font-weight: 300;
+  font-size: 1.25rem;
+  position: relative;
+
+  span {
+    font-size: 0.75rem;
+  }
+
+  &::before {
+    content: "While Working At";
+    color: white;
+    text-shadow: 0 0 5px white;
+    display: block;
+    font-weight: 400;
+    font-size: 0.75rem;
+  }
+}
+
 .project-background {
   pointer-events: none;
 }
 
 .project-year {
+  font-size: 0.75rem;
 }
 
 .project-content {
@@ -224,18 +275,30 @@ section {
   overflow: hidden;
   transition: all 300ms ease;
   max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .project-tags {
-  padding-top: 1rem;
-  li {
-    padding: 0.25rem 0.75rem;
-    display: inline-block;
-    background-color: rgb(96, 197, 255, 0.35);
-    border-radius: 5px;
-    margin-right: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &::before {
+    content: "Technologies Used";
+    color: white;
+    display: block;
+    font-weight: 400;
     font-size: 0.75rem;
+    text-shadow: 0 0 5px white;
+  }
+
+  li {
+    padding: 0.25rem 0.5rem;
+    background-color: rgb(96, 197, 255, 0.25);
+    border-radius: 5px;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
   }
 }
 
@@ -246,8 +309,20 @@ section {
   z-index: -1;
 }
 
+.project-slides {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-between;
+  .project-slide {
+    height: 100px;
+    background-color: grey;
+    width: 150px;
+  }
+}
+
 .project-description {
-  padding: 2rem 0;
+  margin: 3rem 0;
+  color: white;
 }
 .project-tagline {
   margin-bottom: 0.5rem;

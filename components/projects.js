@@ -24,28 +24,38 @@ const projects = () => {
                   <div className="project-background"></div>
                   <div className="project-heading">
                     <div className="project-image">
-                      <img
-                        src="https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w"
-                        alt=""
-                      />
+                      <img src={project.image} alt={project.title} />
                     </div>
                     <div className="project-title">{project.title}</div>
                     <div className="project-subtitle">{project.subtitle}</div>
-
                     <button className="project-expand">
                       Click to Expand <span>+</span>
                     </button>
                   </div>
                   <div className="project-content">
-                    <div className="project-year">{project.year}</div>
-                    <div className="project-agency">{project.agency}</div>
-
-                    <ul className="project-tags">
-                      {project.tags.map(function (tag, i) {
-                        return <li>{tag}</li>;
-                      })}
-                    </ul>
+                    <div className="wrapper">
+                      <ul className="project-tags">
+                        {project.tags.map(function (tag, i) {
+                          return <li>{tag}</li>;
+                        })}
+                      </ul>
+                      <div className="project-agency">
+                        {project.agency}, <span>{project.year}</span>
+                      </div>
+                    </div>
                     <div className="project-description">
+                      <div className="project-text">{project.description}</div>
+                      <div className="project-slides">
+                        <div className="project-slide">
+                          <img src="" alt="" />
+                        </div>
+                        <div className="project-slide">
+                          <img src="" alt="" />
+                        </div>
+                        <div className="project-slide">
+                          <img src="" alt="" />
+                        </div>
+                      </div>
                       <div className="project-text">{project.description}</div>
                     </div>
                     <a
