@@ -24,20 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
-      <div className="figure-slider">
-        <button className="night" onClick={midnight}>
-          ✧ <span>Midnight</span>
-        </button>
-        <button className="sea" onClick={ocean}>
-          ✧ <span>Ocean</span>
-        </button>
-        <button>
-          ✧ <span>Forest</span>
-        </button>
-        <button>
-          ✧ <span>Sunset</span>
-        </button>
-      </div>
+
       <figure role="banner">
         <div className="ocean"></div>
         <div className="planets">
@@ -49,9 +36,22 @@ export default function Home() {
         </div>
       </figure>
       <header role="header">
+        <div className="figure-slider">
+          <button className="night" onClick={midnight}>
+            ✧ <span>Midnight</span>
+          </button>
+          <button className="sea" onClick={ocean}>
+            ✧ <span>Ocean</span>
+          </button>
+          <button>
+            ✧ <span>Forest</span>
+          </button>
+          <button>
+            ✧ <span>Sunset</span>
+          </button>
+        </div>
         <div className="circle"></div>
         <div className="circle2"></div>
-
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>

@@ -1,17 +1,21 @@
 section {
-  padding-top: 75px;
+  padding-top: 140px;
   .heading {
     margin-bottom: 2rem;
 
     h3 {
-      font-size: 8.75rem;
+      font-size: 7rem;
       text-align: center;
       z-index: 1;
       opacity: 0.2;
-      margin-bottom: -2rem;
+      margin-bottom: -1rem;
       position: relative;
       font-weight: 400;
       font-family: "Californication";
+
+      @media screen and (max-width: 600px) {
+        font-size: 4rem;
+      }
     }
   }
 }
@@ -119,6 +123,28 @@ section#photography {
       margin-right: 1rem;
     }
   }
+
+  .tabs {
+    display: flex;
+    margin: 2rem auto 3rem;
+    font-size: 12px;
+    justify-content: center;
+
+    div {
+      margin-right: 1rem;
+      padding: 0.5rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 25px;
+
+      &.active {
+        background: linear-gradient(
+          135deg,
+          rgba(112, 213, 255, 0.4),
+          rgba(0, 89, 188, 0.4)
+        );
+      }
+    }
+  }
 }
 
 .project {
@@ -128,13 +154,21 @@ section#photography {
   flex-direction: column;
   padding: 6rem 2rem 4rem;
   position: relative;
-  height: 180px;
+  height: 190px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border-radius: 3px;
   transition: all 300ms ease;
   overflow: hidden;
+
+  @media screen and (max-width: 600px) {
+    height: 240px;
+
+    .project-image {
+      opacity: 0.35;
+    }
+  }
 
   &:nth-child(even) {
     align-items: flex-start;
@@ -155,24 +189,6 @@ section#photography {
 
     .project-image {
       left: 20px;
-    }
-  }
-}
-
-.tabs {
-  display: flex;
-  margin: 2rem auto 3rem;
-  font-size: 12px;
-  justify-content: center;
-
-  div {
-    margin-right: 1rem;
-    padding: 0.5rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 25px;
-
-    &:first-child {
-      background-color: rgba($blue, 0.5);
     }
   }
 }

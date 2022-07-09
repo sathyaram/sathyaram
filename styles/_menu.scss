@@ -2,16 +2,26 @@ aside {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 7vh 10vw 0;
+  padding-top: 4rem;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 1.5rem;
+  }
 }
 
 .menu-toggle {
   width: 90px;
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
 
   .burger {
     width: 33px;
@@ -111,9 +121,17 @@ nav.menu {
 }
 
 nav.main-menu {
-  // display: none;
   ul {
     display: flex;
+  }
+
+  @media screen and (max-width: 600px) {
+    order: 3;
+    width: 100%;
+    margin-top: 1.5rem;
+    ul {
+      justify-content: center;
+    }
   }
 }
 
@@ -121,48 +139,15 @@ nav.main-menu {
   position: relative;
   z-index: 3;
   transition: transform 300ms ease;
+  display: flex;
 
-  &::after {
-    content: "Sathya Ram";
-    position: absolute;
-    width: 110px;
-    left: 70px;
-    top: 5px;
-    color: black;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: transform 300ms ease, opacity 300ms ease;
-  }
-  &:hover {
-    svg {
-      transform: scale(1.75);
-    }
-    .s-line {
-      animation: stroke-offset 1.4s ease forwards;
-      fill: transparent;
-      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
-
-      .midnight & {
-        fill: transparent;
-      }
-    }
-
-    .r-line {
-      animation: stroke-offset 0.8s ease forwards 0.2s;
-      filter: drop-shadow(0 0 2px $blue);
-      fill: transparent;
-    }
-  }
   svg {
-    width: 90px;
+    width: 100px;
     height: auto;
     position: relative;
     z-index: 3;
     transition: transform 300ms ease;
+
     .s-line {
       fill: rgb(15, 15, 15);
       stroke: rgb(15, 15, 15);
@@ -171,29 +156,56 @@ nav.main-menu {
       stroke-dashoffset: 126.93897247314453;
       transition: fill 300ms ease;
 
-      // fill: transparent;
-      // filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
-      // stroke-dashoffset: 0;
-
-      // animation: ram-glow 10s ease infinite alternate;
-
       .midnight & {
         stroke: white;
         fill: white;
       }
     }
     .r-line {
-      fill: $blue;
       stroke: $blue;
       stroke-width: 1px;
       transition: fill 300ms ease;
-
       stroke-dasharray: 160.04493713378906;
       stroke-dashoffset: 160.04493713378906;
-      // filter: drop-shadow(0 0 2px $blue);
-      // stroke-dashoffset: 0;
-      // fill: transparent;
-      // animation: ram-glow 10s ease infinite alternate;
+    }
+  }
+
+  stop {
+    transition: all 300ms ease;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.5);
+    }
+    .s-line {
+      animation: stroke-offset 1.4s ease forwards;
+      fill: transparent;
+
+      .midnight & {
+        fill: transparent;
+      }
+    }
+
+    .r-line {
+      animation: stroke-offset 0.8s ease forwards 0.2s;
+      transition: fill 300ms ease;
+    }
+
+    stop:first-child {
+      stop-color: transparent;
+    }
+    stop:last-child {
+      stop-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    order: 1;
+    width: 50%;
+
+    svg {
+      width: 70px;
     }
   }
 }
@@ -201,18 +213,31 @@ nav.main-menu {
 nav.social-media {
   display: flex;
   justify-content: flex-end;
-  width: 207px;
+  position: relative;
+  width: 100px;
+  right: -5px;
+
+  @media screen and (max-width: 600px) {
+    order: 2;
+    width: 50%;
+  }
 
   a {
     display: flex;
     align-items: center;
     flex-direction: column;
     font-size: 0.75rem;
-    padding: 0 0.5rem;
+    padding: 0 0.15rem;
     position: relative;
+
     &:hover {
+      fill: white;
       &::after {
-        transform: scale(1) translateX(-50%) translateZ(0);
+        transform: scale(1.25) translateX(-40%) translateZ(0);
+        opacity: 1;
+      }
+
+      span {
         opacity: 1;
       }
     }
@@ -233,7 +258,7 @@ nav.social-media {
     }
 
     &:nth-child(2):after {
-      background: #000000;
+      background: #888093;
     }
 
     &::after {
@@ -247,13 +272,34 @@ nav.social-media {
       z-index: -1;
       transform: translateX(-50%) scale(0.3);
       opacity: 0;
-      box-shadow: 0 5px 10px 0 rgb(0 0 0 / 25%);
+      box-shadow: 0 5px 15px 0 rgb(0 0 0 / 25%);
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
   }
   span {
-    display: none;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-family: "Maison";
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    position: absolute;
+    top: -0.75rem;
+
+    .midnight & {
+      color: white;
+    }
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 14px;
+      background-color: rgba(4, 4, 17, 0.5);
+      bottom: -14px;
+    }
   }
   svg {
     width: 32px;
@@ -270,6 +316,7 @@ nav.social-media {
   width: 100%;
   color: transparent;
   cursor: pointer;
+  display: none;
 
   &::before {
     content: "";

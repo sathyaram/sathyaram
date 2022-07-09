@@ -67,7 +67,7 @@ const main = () => {
         <div className="heading">
           <h3>Photography</h3>
           <div class="tabs">
-            <div>Portraits</div>
+            <div className="active">Portraits</div>
             <div>Cosplay</div>
             <div>Nature</div>
             <div>Lifestyle</div>

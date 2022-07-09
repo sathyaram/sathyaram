@@ -32,6 +32,7 @@ $gradient: linear-gradient(
 }
 
 @mixin glow-text {
+  text-shadow: none;
   transition: text-shadow 2s ease-in-out;
   &:hover {
     text-shadow: 0 0 5px white, 0 0 15px white, 0 0 35px white, 0 0 5px white;
