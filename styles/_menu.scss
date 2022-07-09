@@ -7,7 +7,7 @@ aside {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 5vh 10vw 0;
+  padding: 7vh 10vw 0;
 }
 
 .menu-toggle {
@@ -75,7 +75,7 @@ aside {
 
 nav.menu {
   a {
-    color: white;
+    color: inherit;
     margin: 0.25rem;
     display: inline-block;
     padding: 0.25rem 0.5rem;
@@ -142,14 +142,16 @@ nav.main-menu {
       transform: scale(1.75);
     }
     .s-line {
-      transition: fill 300ms ease;
       animation: stroke-offset 1.4s ease forwards;
       fill: transparent;
       filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+
+      .midnight & {
+        fill: transparent;
+      }
     }
 
     .r-line {
-      transition: fill 300ms ease;
       animation: stroke-offset 0.8s ease forwards 0.2s;
       filter: drop-shadow(0 0 2px $blue);
       fill: transparent;
@@ -162,23 +164,30 @@ nav.main-menu {
     z-index: 3;
     transition: transform 300ms ease;
     .s-line {
-      fill: white;
-      stroke: white;
+      fill: rgb(15, 15, 15);
+      stroke: rgb(15, 15, 15);
       stroke-width: 1px;
-      transition: fill 0ms ease;
       stroke-dasharray: 126.93897247314453;
       stroke-dashoffset: 126.93897247314453;
+      transition: fill 300ms ease;
+
       // fill: transparent;
       // filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
       // stroke-dashoffset: 0;
 
       // animation: ram-glow 10s ease infinite alternate;
+
+      .midnight & {
+        stroke: white;
+        fill: white;
+      }
     }
     .r-line {
       fill: $blue;
       stroke: $blue;
       stroke-width: 1px;
-      transition: fill 0ms ease;
+      transition: fill 300ms ease;
+
       stroke-dasharray: 160.04493713378906;
       stroke-dashoffset: 160.04493713378906;
       // filter: drop-shadow(0 0 2px $blue);
@@ -249,7 +258,7 @@ nav.social-media {
   svg {
     width: 32px;
     height: 32px;
-    fill: white;
+    fill: inherit;
   }
 }
 

@@ -8,7 +8,7 @@ section {
       text-align: center;
       z-index: 1;
       opacity: 0.2;
-      margin-bottom: -5rem;
+      margin-bottom: -2rem;
       position: relative;
       font-weight: 400;
       font-family: "Californication";
@@ -21,33 +21,41 @@ section#websites {
   margin: 0 auto;
 
   .project {
-    isolation: isolate;
-    overflow: hidden;
-
-    &::before {
-      background-color: #1a1a1a;
-      content: "";
-      width: calc(100% - 20px);
-      height: calc(100% - 20px);
+    .project-background {
+      overflow: hidden;
+      width: 100%;
+      height: calc(100% - 2rem);
+      bottom: 0;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      z-index: -1;
-      transition: transform 300ms ease;
-    }
+      left: 0;
+      display: block;
+      box-shadow: 10px 15px 15px -2px rgba(0, 0, 0, 0.25);
 
-    &::after {
-      content: "";
-      width: 1000px;
-      height: 1000px;
-      transform-origin: center;
-      position: absolute;
-      top: 50%;
-      z-index: -2;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      transition: transform 1200ms ease;
+      &::after {
+        content: "";
+        width: 1000px;
+        height: 1000px;
+        transform-origin: center;
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        transition: transform 1200ms ease;
+      }
+
+      &::before {
+        background-color: transparent;
+        content: "";
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+        transition: transform 300ms ease;
+      }
     }
 
     &.open {
@@ -84,11 +92,13 @@ section#websites {
         transform: rotateX(0deg);
       }
 
-      &::before {
-        transform: translateX(-50%) translateY(-200%);
-      }
-      &::after {
-        transform: translateY(-50%) translateX(-50%) rotate(490deg);
+      .project-background {
+        &::before {
+          transform: translateX(-50%) translateY(-200%);
+        }
+        &::after {
+          transform: translateY(-50%) translateX(-50%) rotate(490deg);
+        }
       }
     }
   }
@@ -116,15 +126,37 @@ section#photography {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 4rem;
   position: relative;
-  height: 150px;
+  height: 180px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2.5vh;
+  margin-bottom: 1.5rem;
   border-radius: 3px;
-  box-shadow: 15px 15px 15px 1px rgba(0, 0, 0, 0.25);
   transition: all 300ms ease;
+  overflow: hidden;
+
+  &:nth-child(even) {
+    align-items: flex-start;
+    .project-heading {
+      text-align: left;
+    }
+
+    .project-image {
+      right: 20px;
+    }
+  }
+
+  &:nth-child(odd) {
+    align-items: flex-end;
+    .project-heading {
+      text-align: right;
+    }
+
+    .project-image {
+      left: 20px;
+    }
+  }
 }
 
 .tabs {
@@ -154,12 +186,17 @@ section#photography {
 .project-title {
   font-size: 1.7rem;
   font-weight: 300;
+  color: white;
 }
 
 .project-subtitle {
   color: grey;
   font-weight: 400;
   font-size: 0.9rem;
+}
+
+.project-background {
+  pointer-events: none;
 }
 
 .project-year {
@@ -183,6 +220,13 @@ section#photography {
     margin-right: 1rem;
     font-size: 0.75rem;
   }
+}
+
+.project-image {
+  width: 300px;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
 }
 
 .project-description {
@@ -249,7 +293,7 @@ section#photography {
   .project-subtitle {
     color: rgb(154, 162, 187);
   }
-  &::after {
+  .project-background::after {
     background-image: linear-gradient(
       to right top,
       #0042a4,
@@ -269,7 +313,7 @@ section#photography {
 
   .project-link {
   }
-  &::after {
+  .project-background::after {
     background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
   }
 }
@@ -282,7 +326,7 @@ section#photography {
 
   .project-link {
   }
-  &::after {
+  .project-background::after {
     background-image: linear-gradient(
       to right top,
       #b8a276,
@@ -302,7 +346,7 @@ section#photography {
 
   .project-link {
   }
-  &::after {
+  .project-background::after {
     background-image: linear-gradient(
       to right top,
       #8e2626,
@@ -321,7 +365,7 @@ section#photography {
 
   .project-link {
   }
-  &::after {
+  .project-background::after {
     background-image: linear-gradient(
       to left bottom,
       #2f0932,
@@ -332,16 +376,16 @@ section#photography {
     );
   }
 
-  .project-background {
-    background-image: url(https://sathyaram.com/static/9c161170e6d2ff9d33f66b4fa8cd2526/46604/amanda-dog.png);
-    background-size: cover;
-    width: 40%;
-    height: 400px;
-    z-index: 2;
-    position: absolute;
-    top: -40px;
-    left: 0;
-  }
+  // .project-background {
+  //   background-image: url(https://sathyaram.com/static/9c161170e6d2ff9d33f66b4fa8cd2526/46604/amanda-dog.png);
+  //   background-size: cover;
+  //   width: 40%;
+  //   height: 400px;
+  //   z-index: 2;
+  //   position: absolute;
+  //   top: -40px;
+  //   left: 0;
+  // }
 }
 
 // Design

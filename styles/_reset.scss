@@ -184,6 +184,7 @@ strong {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 u {
@@ -191,12 +192,10 @@ u {
 }
 
 body {
-  color: white;
   padding: 10vw;
+  color: rgb(15, 15, 15);
   background-color: #ebf5ff;
-  background-color: #191a19;
-  background-color: #191a19;
-  // background-color: #0b282f;
+  transition: background 300ms ease;
   font-size: 1rem;
   font-family: "Maison";
   overflow-x: hidden;

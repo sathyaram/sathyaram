@@ -5,6 +5,14 @@ import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
 export default function Home() {
+  const ocean = (e) => {
+    document.body.classList.toggle("ocean");
+  };
+
+  const midnight = (e) => {
+    document.body.classList.toggle("midnight");
+  };
+
   return (
     <>
       <Head>
@@ -16,9 +24,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
+      <div className="figure-slider">
+        <button className="night" onClick={midnight}>
+          ✧ <span>Midnight</span>
+        </button>
+        <button className="sea" onClick={ocean}>
+          ✧ <span>Ocean</span>
+        </button>
+        <button>
+          ✧ <span>Forest</span>
+        </button>
+        <button>
+          ✧ <span>Sunset</span>
+        </button>
+      </div>
+      <figure role="banner">
+        <div className="ocean"></div>
+        <div className="planets">
+          <div className="planet planet1"></div>
+          <div className="planet planet2"></div>
+          <div className="planet planet3"></div>
+          <div className="planet planet4"></div>
+          <div className="planet planet5"></div>
+        </div>
+      </figure>
       <header role="header">
         <div className="circle"></div>
         <div className="circle2"></div>
+
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>

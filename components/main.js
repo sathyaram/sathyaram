@@ -1,10 +1,6 @@
 import { Data } from "../data.js";
 
 const main = () => {
-  const eclipse = (e) => {
-    document.body.classList.toggle("midnight");
-  };
-
   const projectOpen = (e) => {
     e.target.classList.toggle("open");
   };
@@ -25,7 +21,14 @@ const main = () => {
                   onClick={projectOpen}
                   key={i}
                 >
+                  <div className="project-background"></div>
                   <div className="project-heading">
+                    <div className="project-image">
+                      <img
+                        src="https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w"
+                        alt=""
+                      />
+                    </div>
                     <div className="project-title">{project.title}</div>
                     <div className="project-subtitle">{project.subtitle}</div>
 
@@ -54,7 +57,6 @@ const main = () => {
                       {project.url}
                     </a>
                   </div>
-                  <div className="project-background"></div>
                 </article>
               );
             }
