@@ -1,11 +1,4 @@
 .figure-slider {
-  // position: absolute;
-  // top: 50%;
-  // left: 2.75rem;
-  // display: flex;
-  // flex-direction: column;
-  // cursor: pointer;
-  // transform: translateY(-50%);
   position: static;
   flex-direction: row;
   align-items: center;
@@ -48,7 +41,6 @@
       border-radius: 50%;
       border: 1px solid rgb(42, 131, 214);
       position: absolute;
-      // box-shadow: 0 0 10px -1px rgb(255, 255, 255);
       top: calc(50% + 1px);
       left: 50%;
       transform: translateX(-50%) translateY(-50%) scale(0);
@@ -74,7 +66,6 @@
 }
 
 figure {
-  // display: none;
   position: absolute;
   top: 50%;
   left: 50%;

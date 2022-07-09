@@ -1,6 +1,6 @@
 import { Data } from "../data.js";
 
-const main = () => {
+const projects = () => {
   const projectOpen = (e) => {
     e.target.classList.toggle("open");
   };
@@ -100,4 +100,4 @@ const main = () => {
   );
 };
 
-export default main;
+export default projects;

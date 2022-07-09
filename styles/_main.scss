@@ -107,33 +107,25 @@ header {
   h3 {
     @include glow-text;
   }
-}
 
-.hero {
-  &:hover {
-    .pronounce {
-      opacity: 0.85;
+  .pronounce {
+    font-size: 0.5rem;
+    margin-bottom: -3.25rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    @media screen and (max-width: 600px) {
+      margin-bottom: 0;
+      opacity: 1;
     }
-  }
-}
 
-.pronounce {
-  font-size: 0.5rem;
-  margin-bottom: -3.25rem;
-  letter-spacing: 1px;
-  opacity: 0;
-  transition: opacity 300ms ease;
-
-  @media screen and (max-width: 600px) {
-    margin-bottom: 0;
-    opacity: 1;
-  }
-
-  &::before,
-  &::after {
-    content: "/";
-    color: $blue;
-    padding: 0 0.5rem;
+    &::before,
+    &::after {
+      content: "/";
+      color: $blue;
+      padding: 0 0.5rem;
+    }
   }
 }
 
@@ -145,30 +137,27 @@ footer {
   margin: 10vh 0;
   text-align: center;
 
+  .villain {
+    font-size: 3.5rem;
+    margin-top: 5rem;
+    font-family: "Californication";
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .contact-menu {
     margin-bottom: 2rem;
   }
 
-  a:not(.music) {
-    margin: 0;
+  a {
+    &.music {
+      padding: 0.25rem;
+      color: #2baae2;
+      text-shadow: none;
+    }
+    &:not(.music) {
+      margin: 0;
+    }
   }
-
-  a.music {
-    padding: 0.25rem;
-    color: #2baae2;
-    text-shadow: none;
-  }
-}
-
-.villain {
-  font-size: 3.5rem;
-  margin-top: 5rem;
-  font-family: "Californication";
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// This applies from 600px onwards
-@media (min-width: 600px) {
 }

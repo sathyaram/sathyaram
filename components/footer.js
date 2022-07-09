@@ -50,7 +50,7 @@ const footer = () => {
       <address>
         <div className="credits">
           <div>Made with Next.js</div>
-          {/* <div>All photos by Sathya Ram.</div> */}
+          <div></div>
         </div>
         <p className="copyright">
           {" "}
