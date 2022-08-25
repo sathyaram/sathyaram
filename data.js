@@ -74,20 +74,98 @@ export const Data = [
     id: "portraits",
     title: "Portraits",
     subtitle: "Brain Cancer",
-    photos: "",
+    photos: [
+      {
+        picture:
+          "https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg",
+        caption: "Rayna",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg",
+        caption: "Jordan",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg",
+        caption: "Por",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/6282ea85af8447cac6e9860ae405e3c1/4fe8c/rachel-one.jpg",
+        caption: "Rachel",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg",
+        caption: "Jack",
+      },
+    ],
   },
   {
     type: "photography",
     id: "cosplay",
     title: "Cosplay",
     subtitle: "Brain Cancer",
-    photos: "",
+    photos: [
+      {
+        picture:
+          "https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg",
+        caption: "Rayna",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg",
+        caption: "Jordan",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg",
+        caption: "Por",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/6282ea85af8447cac6e9860ae405e3c1/4fe8c/rachel-one.jpg",
+        caption: "Rachel",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg",
+        caption: "Jack",
+      },
+    ],
   },
   {
     type: "photography",
     id: "nature",
     title: "Nature",
     subtitle: "Brain Cancer",
-    photos: "",
+    photos: [
+      {
+        picture:
+          "https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg",
+        caption: "Rayna",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg",
+        caption: "Jordan",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg",
+        caption: "Por",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/6282ea85af8447cac6e9860ae405e3c1/4fe8c/rachel-one.jpg",
+        caption: "Rachel",
+      },
+      {
+        picture:
+          "https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg",
+        caption: "Jack",
+      },
+    ],
   },
 ];
