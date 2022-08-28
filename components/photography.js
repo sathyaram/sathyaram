@@ -22,7 +22,6 @@ const Photography = () => {
       </div>
       <div className="content">
         <Swiper
-          // spaceBetween={50}
           style={{
             margin: "auto",
             overflow: "visible",
@@ -35,7 +34,6 @@ const Photography = () => {
           effect="coverflow"
         >
           <SwiperSlide></SwiperSlide>
-
           <SwiperSlide>
             <img src="https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg" />
           </SwiperSlide>
@@ -43,7 +41,6 @@ const Photography = () => {
             <img src="https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            {" "}
             <img src="https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg" />
           </SwiperSlide>
           <SwiperSlide>
@@ -55,14 +52,39 @@ const Photography = () => {
           <SwiperSlide></SwiperSlide>
         </Swiper>
 
-        {/* {Data.map(function (project, i) {
-          if (project.type !== "photography") {
-            return;
-            project.photos.map(function (photo, i) {
-              <img key={i} src={photo.picture} alt={photo.caption} />;
-            });
+        {Data.map(function (project, i) {
+          if (project.type === "photography") {
+            return (
+              <div className="photograph" key={i}>
+                {project.title}
+                <Swiper
+                  style={{
+                    margin: "auto",
+                    overflow: "visible",
+                  }}
+                  slidesPerView={3}
+                  pagination={{ clickable: true }}
+                  navigation={true}
+                  keyboard={true}
+                  modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+                  effect="coverflow"
+                >
+                  {project.photos.map(function (photograph, ind) {
+                    return (
+                      <SwiperSlide className="image" key={ind}>
+                        <img
+                          src={photograph.picture}
+                          alt={photograph.caption}
+                        />
+                        <div className="caption">{photograph.caption}</div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            );
           }
-        })} */}
+        })}
       </div>
     </section>
   );
