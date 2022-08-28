@@ -225,6 +225,16 @@ section {
   }
 }
 
+.project-close {
+  background-color: red;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
 .project-heading {
   padding-top: 15px;
   transition: padding 300ms ease;

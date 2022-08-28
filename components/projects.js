@@ -1,9 +1,14 @@
 import { Data } from "../data.js";
+import { useState, useEffect } from "react";
 
 const projects = () => {
-  const projectOpen = (e) => {
-    e.target.classList.toggle("open");
+  // Project Open State
+  const [selected, setSelected] = useState();
+  const handleSelect = (project) => {
+    setSelected(project.id);
+    console.log(selected);
   };
+
   return (
     <main role="main">
       <section id="websites" title="websites">
@@ -15,12 +20,24 @@ const projects = () => {
             if (project.type === "web") {
               return (
                 <article
-                  className="project"
+                  className={
+                    "project" + (selected === project.id ? " open" : "")
+                  }
                   id={project.id}
                   name={project.id}
-                  onClick={projectOpen}
+                  onClick={() => {
+                    setSelected(project.id);
+                  }}
                   key={i}
                 >
+                  <div
+                    className="project-close"
+                    onClick={() => {
+                      setSelected("");
+                      console.log("clicked");
+                      console.log(selected);
+                    }}
+                  ></div>
                   <div className="project-background"></div>
                   <div className="project-heading">
                     <div className="project-image">
@@ -71,6 +88,39 @@ const projects = () => {
               );
             }
           })}
+        </div>
+      </section>
+      <section id="photography" title="photography">
+        <div className="heading">
+          <h3>Photography</h3>
+          <div class="tabs">
+            <div className="active">Portraits</div>
+            <div>Cosplay</div>
+            <div>Nature</div>
+            <div>Lifestyle</div>
+          </div>
+        </div>
+        <div className="content">
+          <img src="https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg" />
+          <img src="https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg" />
+          <img src="https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg" />
+          <img src="https://sathyaram.com/static/6282ea85af8447cac6e9860ae405e3c1/4fe8c/rachel-one.jpg" />
+          <img src="https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg" />
+
+          {/* {Data.map(function (project, i) {
+            if (project.type === "photography") {
+              return (
+                <div
+                  className="project"
+                  id={project.id}
+                  name={project.id}
+                  key={i}
+                >
+                  <div className="project-title">{project.title}</div>
+                </div>
+              );
+            }
+          })} */}
         </div>
       </section>
     </main>
