@@ -9,6 +9,8 @@ export const Data = [
     agency: "Push10",
     url: "sontagfoundation.org",
     link: "https://sontagfoundation.org",
+    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
+
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -51,6 +53,7 @@ export const Data = [
     agency: "Passion Project",
     url: "exhaustnotes.co",
     link: "https://exhaustnotes.co",
+    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },

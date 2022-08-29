@@ -52,7 +52,7 @@ const Photography = () => {
           <SwiperSlide></SwiperSlide>
         </Swiper>
 
-        {Data.map(function (project, i) {
+        {/* {Data.map(function (project, i) {
           if (project.type === "photography") {
             return (
               <div className="photograph" key={i}>
@@ -84,7 +84,7 @@ const Photography = () => {
               </div>
             );
           }
-        })}
+        })} */}
       </div>
     </section>
   );

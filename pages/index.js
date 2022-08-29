@@ -16,6 +16,7 @@ export default function Home() {
           content="Developer | Designer | Photographer"
         />
         <link rel="icon" href="/favicon.ico" />
+        <body className="midnight" />
       </Head>
       <Menu />
       <Hero />

@@ -22,20 +22,6 @@ const Hero = () => {
         </div>
       </figure>
       <header role="header">
-        <div className="figure-slider">
-          <button className="night" onClick={midnight}>
-            ✧ <span>Midnight</span>
-          </button>
-          <button className="sea" onClick={ocean}>
-            ✧ <span>Ocean</span>
-          </button>
-          <button>
-            ✧ <span>Forest</span>
-          </button>
-          <button>
-            ✧ <span>Sunset</span>
-          </button>
-        </div>
         <div className="circle"></div>
         <div className="circle2"></div>
         <div className="hero">

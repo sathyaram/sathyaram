@@ -6,122 +6,127 @@ header {
   justify-content: center;
   flex-direction: column;
   position: relative;
+}
 
-  h1 {
-    font-weight: 400;
-    font-size: 7rem;
-    font-family: "Californication";
-    padding-bottom: 1rem;
-    background: linear-gradient(
-      135deg,
-      rgba(112, 213, 255, 0.92),
-      rgba(0, 89, 188, 0.92)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+h1 {
+  font-weight: 400;
+  font-size: 7rem;
+  font-family: "Californication";
+  padding-bottom: 1rem;
+  position: relative;
+  z-index: 5;
+  margin-top: 10rem;
+  background: linear-gradient(
+    135deg,
+    rgba(112, 213, 255, 0.92),
+    rgba(0, 89, 188, 0.92)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    @media screen and (max-width: 600px) {
-      font-size: 4rem;
-    }
-    span {
-      transition: text-shadow 2s ease-in-out;
-      text-shadow: 0 0 0 black, 0 0 0 black;
+  @media screen and (max-width: 600px) {
+    font-size: 4rem;
+  }
+  span {
+    transition: text-shadow 2s ease-in-out;
+    text-shadow: 0 0 0 black, 0 0 0 black;
 
-      &:hover {
-        transition: none;
-        text-shadow: none;
-      }
-    }
-    .midnight & span {
-      @include glow-text;
+    &:hover {
+      transition: none;
+      text-shadow: none;
     }
   }
+  .midnight & span {
+    @include glow-text;
+  }
+}
 
-  h2 {
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgb(142, 163, 172);
+h2 {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(142, 163, 172);
+  position: relative;
+  z-index: 5;
 
-    span {
-      position: relative;
-      transition: all 300ms ease;
-      margin: 5px 0;
-      display: inline-block;
+  span {
+    position: relative;
+    transition: all 300ms ease;
+    margin: 5px 0;
+    display: inline-block;
+
+    @media screen and (max-width: 600px) {
+      margin: 0;
+    }
+
+    &.x {
+      color: rgb(121, 166, 196);
 
       @media screen and (max-width: 600px) {
+        display: block;
         margin: 0;
       }
+    }
 
-      &.x {
-        color: rgb(121, 166, 196);
+    &::before {
+      content: "";
+      width: 1px;
+      height: 200%;
+      background-color: white;
+      box-shadow: 0 0 15px 0px white;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      top: 0;
+      transition: all 150ms ease;
+      opacity: 0;
+    }
 
-        @media screen and (max-width: 600px) {
-          display: block;
-          margin: 0;
-        }
-      }
-
+    &:nth-child(even) {
       &::before {
-        content: "";
-        width: 1px;
-        height: 200%;
-        background-color: white;
-        box-shadow: 0 0 15px 0px white;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: -1;
-        top: 0;
-        transition: all 150ms ease;
-        opacity: 0;
+        transform: translateX(-50%) translateY(-150%);
       }
+    }
+    &:nth-child(odd) {
+      &::before {
+        transform: translateX(-50%) translateY(150%);
+      }
+    }
 
-      &:nth-child(even) {
-        &::before {
-          transform: translateX(-50%) translateY(-150%);
-        }
-      }
-      &:nth-child(odd) {
-        &::before {
-          transform: translateX(-50%) translateY(150%);
-        }
-      }
-
-      &:not(.x):hover {
-        color: white;
-        text-shadow: 0 0 15px white;
-        transition: none;
-        transform: scale(1.15);
-        cursor: pointer;
-        &::before {
-          transform: translateY(-50%);
-          opacity: 1;
-          top: 50%;
-        }
+    &:not(.x):hover {
+      color: white;
+      text-shadow: 0 0 15px white;
+      transition: none;
+      transform: scale(1.15);
+      cursor: pointer;
+      &::before {
+        transform: translateY(-50%);
+        opacity: 1;
+        top: 50%;
       }
     }
   }
+}
 
-  .pronounce {
-    font-size: 0.5rem;
-    margin-bottom: -3.25rem;
-    letter-spacing: 1px;
-    opacity: 0;
-    transition: opacity 300ms ease;
+.pronounce {
+  font-size: 0.5rem;
+  margin-bottom: -3.25rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 300ms ease;
 
-    @media screen and (max-width: 600px) {
-      margin-bottom: 0;
-      opacity: 1;
-    }
+  @media screen and (max-width: 600px) {
+    margin-bottom: 0;
+    opacity: 1;
+  }
 
-    &::before,
-    &::after {
-      content: "/";
-      color: $blue;
-      padding: 0 0.5rem;
-    }
+  &::before,
+  &::after {
+    content: "/";
+    color: $blue;
+    padding: 0 0.5rem;
   }
 }
 
