@@ -6,8 +6,8 @@ const menu = () => {
       <a className="logo" aria-label="Logo Home Link" name="logo" href="/">
         <svg version="1.1" viewBox="0 0 62.5 28.7">
           <linearGradient id="gradient" gradientUnits="userSpaceOnUse" fy="90%">
-            <stop offset="0" stop-color="rgba(112, 213, 255, 0.92)" />
-            <stop offset="1" stop-color="rgba(0, 89, 188, 0.92)" />
+            <stop offset="0" stopColor="rgba(112, 213, 255, 0.92)" />
+            <stop offset="1" stopColor="rgba(0, 89, 188, 0.92)" />
           </linearGradient>
           <g>
             <polygon

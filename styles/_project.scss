@@ -88,13 +88,6 @@
     align-items: flex-end;
     // text-align: right;
 
-    .project-link {
-      box-shadow: -3px -3px 0 0 white, -7px -7px 0 0 rgb(96 197 255);
-      &:hover {
-        box-shadow: none;
-      }
-    }
-
     .project-image {
       left: 20px;
     }
@@ -120,14 +113,13 @@
 }
 
 section {
-  padding-top: 140px;
-
   &#websites {
     max-width: 720px;
     margin: 0 auto;
   }
 
   &#photography {
+    padding-top: 140px;
     .heading {
       max-width: 720px;
       margin: 0 auto;

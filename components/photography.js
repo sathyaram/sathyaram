@@ -13,7 +13,7 @@ const Photography = () => {
     <section id="photography" title="photography">
       <div className="heading">
         <h3>Photography</h3>
-        <div class="tabs">
+        <div className="tabs">
           <div className="active">Portraits</div>
           <div>Cosplay</div>
           <div>Nature</div>
