@@ -33,6 +33,7 @@ const Hero = () => {
             <span>h</span>
             <span>y</span>
             <span>a</span>
+            <span>&nbsp;</span>
             <span>R</span>
             <span>a</span>
             <span>m</span>

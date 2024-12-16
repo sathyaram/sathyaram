@@ -3,6 +3,7 @@ import Image from "next/image";
 import Menu from "../components/menu.js";
 import Hero from "../components/hero.js";
 import Projects from "../components/projects.js";
+import Designs from "../components/designs.js";
 import Photography from "../components/photography.js";
 import Footer from "../components/footer.js";
 
@@ -16,11 +17,12 @@ export default function Home() {
           content="Developer | Designer | Photographer"
         />
         <link rel="icon" href="/favicon.ico" />
-        {/* <body className="midnight" /> */}
+        <body className="midnight" />
       </Head>
       <Menu />
       <Hero />
       <Projects />
+      <Designs />
       <Photography />
       <Footer />
     </>
