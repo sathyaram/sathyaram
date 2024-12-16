@@ -20,10 +20,12 @@ export default function Home() {
         <body className="midnight" />
       </Head>
       <Menu />
-      <Hero />
-      <Projects />
-      <Designs />
-      <Photography />
+        <Hero />
+      <main role="main">
+        <Projects />
+        <Designs />
+        <Photography />
+      </main>
       <Footer />
     </>
   );

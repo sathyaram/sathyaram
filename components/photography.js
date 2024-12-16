@@ -13,12 +13,12 @@ const Photography = () => {
     <section id="photography" title="photography">
       <div className="heading">
         <h3>Photography</h3>
-        <div className="tabs">
+        {/* <div className="tabs">
           <div className="active">Portraits</div>
           <div>Cosplay</div>
           <div>Nature</div>
           <div>Lifestyle</div>
-        </div>
+        </div> */}
       </div>
       <div className="content">
         <Swiper
@@ -30,10 +30,10 @@ const Photography = () => {
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
+          initialSlide={1}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
           effect="coverflow"
         >
-          <SwiperSlide></SwiperSlide>
           <SwiperSlide>
             <img src="https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg" />
           </SwiperSlide>

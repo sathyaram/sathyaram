@@ -57,14 +57,14 @@ nav.main-menu {
     display: flex;
   }
 
-  @media screen and (max-width: 600px) {
-    order: 3;
-    width: 100%;
-    margin-top: 1.5rem;
-    ul {
-      justify-content: center;
-    }
-  }
+  // @media screen and (max-width: 600px) {
+  //   order: 3;
+  //   width: 100%;
+  //   margin-top: 1.5rem;
+  //   ul {
+  //     justify-content: center;
+  //   }
+  
 }
 
 .logo {
@@ -133,9 +133,6 @@ nav.main-menu {
   }
 
   @media screen and (max-width: 600px) {
-    order: 1;
-    width: 50%;
-
     svg {
       width: 70px;
     }
@@ -149,10 +146,10 @@ nav.social-media {
   width: 100px;
   right: -5px;
 
-  @media screen and (max-width: 600px) {
-    order: 2;
-    width: 50%;
-  }
+  // @media screen and (max-width: 600px) {
+  //   order: 2;
+  //   width: 50%;
+  // }
 
   a {
     display: flex;
@@ -237,5 +234,97 @@ nav.social-media {
     width: 32px;
     height: 32px;
     fill: inherit;
+  }
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  padding: 5px 0 5px 35px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  position: relative;
+  z-index: 5;
+
+  &:hover {
+    .burger {
+      span {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          background-color: #90daff;
+          box-shadow: 0 0 15px 0 rgba($blue, 0.25);
+        }
+      }
+    }
+    .menu-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .burger {
+    width: 33px;
+    height: 18px;
+    position: relative;
+    transition: transform 200ms ease-in-out;
+
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: $blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      transform-origin: center;
+
+      &::before {
+        content: "";
+        background-color: $waterfall;
+        width: 12px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        left: -15px;
+      }
+
+      &:nth-child(1) {
+        transition: opacity 300ms ease, transform 300ms ease, background-color 300ms ease 0s, box-shadow 300ms ease 0s;
+        transform-origin: center center;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateX(0) translateY(-50%);
+        transition: opacity 600ms ease, transform 1s ease, background-color 300ms ease 200ms,
+          box-shadow 300ms ease 200ms;
+      }
+
+      &:nth-child(3) {
+        top: auto;
+        bottom: 0;
+        transition: opacity 300ms ease, transform 300ms ease, background-color 300ms ease 400ms,
+          box-shadow 300ms ease 400ms;
+      }
+    }
+  }
+
+  .menu-title {
+    font-family: 'Maison';
+    text-transform: uppercase;
+    top: 7px;
+    position: absolute;
+    left: -35px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 300ms ease, transform 300ms ease;
+    transform: translateY(-20px);
   }
 }

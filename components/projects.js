@@ -1,45 +1,42 @@
 import { gsap } from "gsap";
 import { Data } from "../data.js";
 import { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/keyboard";
 
 const projects = () => {
-  // Project Open State
-  const [selected, setSelected] = useState();
-  const handleSelect = (project) => {
-    setSelected(project.id);
-    console.log(selected);
-  };
-  // Refs
-  const titleRef = useRef();
-  // Use Effect
-  useEffect(() => {
-    console.log(titleRef.current);
-    gsap.fromTo(
-      titleRef.current,
-      { opacity: "0", x: "-100" },
-      { opacity: "1", x: "0", duration: 0.8 }
-    );
-  });
 
   return (
-    <main role="main">
       <section id="websites" title="websites">
         <div className="heading">
-          <h3 ref={titleRef}>Projects</h3>
+          <h3>Websites</h3>
         </div>
         <div className="content">
+        <Swiper
+          style={{
+            margin: "auto",
+            overflow: "visible",
+          }}
+          slidesPerView={2}
+          pagination={{ clickable: true }}
+          navigation={true}
+          keyboard={true}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+        >
           {Data.map(function (project, i) {
             if (project.type === "web") {
               return (
+                <SwiperSlide>
                 <article
-                  className={
-                    "project" + (selected === project.id ? " open" : "")
-                  }
+                  className="project"
                   id={project.id}
                   name={project.id}
-                  onClick={() => {
-                    setSelected(project.id);
-                  }}
                   key={i}
                 >
                   <div className="project-background"></div>
@@ -53,7 +50,7 @@ const projects = () => {
                       Click to Expand <span>+</span>
                     </button>
                   </div>
-                  <div className="project-content">
+                  {/* <div className="project-content">
                     <div className="wrapper">
                       <ul className="project-tags">
                         {project.tags.map(function (tag, i) {
@@ -87,14 +84,15 @@ const projects = () => {
                     >
                       {project.url}
                     </a>
-                  </div>
+                  </div> */}
                 </article>
+                </SwiperSlide>
               );
             }
           })}
+          </Swiper>
         </div>
       </section>
-    </main>
   );
 };
 

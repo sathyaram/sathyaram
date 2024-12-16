@@ -11,19 +11,12 @@ const Hero = () => {
 
   return (
     <>
-      <figure role="banner">
-        <div className="ocean"></div>
-        <div className="planets">
-          <div className="planet planet1"></div>
-          <div className="planet planet2"></div>
-          <div className="planet planet3"></div>
-          <div className="planet planet4"></div>
-          <div className="planet planet5"></div>
-        </div>
-      </figure>
       <header role="header">
-        <div className="circle"></div>
-        <div className="circle2"></div>
+      <figure role="banner">
+      <div className="circle"></div>
+      <div className="circle2"></div>
+      </figure>
+        
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>
@@ -85,6 +78,14 @@ const Hero = () => {
           </h2>
         </div>
       </header>
+      <section id="designs" title="designs">
+        <div className="heading">
+          <h3>About</h3>
+        </div>
+        <div className="content">
+
+        </div>
+        </section>
     </>
   );
 };

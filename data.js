@@ -106,6 +106,30 @@ export const Data = [
     ],
   },
   {
+    type: "design",
+    id: "design",
+    name: "Treeteck Logo Concepts",
+    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4388579/media/45fee7250929e10ada6bb6a924b2f3d1.jpg?resize=800x600&vertical=center",
+    design_alt_text: "Treeteck Logo Concepts",
+    description: "Logo concepts for Treeteck, a design and distribution company of drilling machines, balers and pruners."
+  },
+  {
+    type: "design",
+    id: "design",
+    name: "Loewy Institute Logo Concepts",
+    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4388563/media/c4a13c14635ceb14f10ea77303835e03.jpg?resize=800x600&vertical=center",
+    design_alt_text: "Loewy Institute Logo Concepts",
+    description: "Founded in 1970, The Loewy Institute had long educated students in the principles and applications of metal-forming technology, supported graduate research, and helped industry solve problems in metal forming. I had the chance to redesign their logo and this (left) is what they went with! On the right are some other concepts and how the main logo came into being!"
+  },
+  {
+    type: "design",
+    id: "design",
+    name: "Mosiac Logo Concepts",
+    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4386024/media/e2af2a14b6559c81df10023fc30d6a0e.jpg?resize=800x600&vertical=center",
+    design_alt_text: "Loewy Institute Logo Concepts",
+    description: "Mosaic is a custom integration/automation company: audio-video, whole-home control systems, lighting control, automated shades, etc. Here are some logo concepts I made for them!"
+  },
+  {
     type: "photography",
     id: "cosplay",
     title: "Cosplay",

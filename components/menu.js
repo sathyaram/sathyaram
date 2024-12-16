@@ -22,7 +22,7 @@ const menu = () => {
           </g>
         </svg>
       </a>
-      <nav
+      {/* <nav
         className="main-menu menu"
         name="main-menu"
         title="main-menu"
@@ -44,7 +44,7 @@ const menu = () => {
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> */}
       <nav className="social-media" role="navigation">
         <a
           target="_blank"
@@ -81,6 +81,7 @@ const menu = () => {
           <span>Dribbble</span>
         </a>
       </nav>
+      <button class="menu-toggle"><div class="menu-title">Menu</div><div class="burger"><span></span><span></span><span></span></div></button>
     </aside>
   );
 };
