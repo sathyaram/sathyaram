@@ -13,6 +13,9 @@ const Photography = () => {
     <section id="photography" title="photography">
       <div className="heading">
         <h3>Photography</h3>
+        <div class="heading-desc">
+        I'm an award winning photographer accomplished in a variety of disciplines with a focus on people, specifically creative portraiture.
+          </div>
         {/* <div className="tabs">
           <div className="active">Portraits</div>
           <div>Cosplay</div>

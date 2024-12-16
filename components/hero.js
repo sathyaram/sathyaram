@@ -1,4 +1,13 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
+import { Data } from "../data.js";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/keyboard";
 
 const Hero = () => {
   const ocean = (e) => {
@@ -78,14 +87,41 @@ const Hero = () => {
           </h2>
         </div>
       </header>
-      <section id="designs" title="designs">
+      {/* <section id="about" title="about">
         <div className="heading">
           <h3>About</h3>
         </div>
         <div className="content">
-
+        <Swiper
+          style={{
+            margin: "auto",
+            overflow: "visible",
+          }}
+          slidesPerView={3}
+          keyboard={true}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+        >
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="aboutism"></div>
+          </SwiperSlide>
+          </Swiper>
         </div>
-        </section>
+        </section> */}
     </>
   );
 };

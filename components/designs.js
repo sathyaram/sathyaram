@@ -18,6 +18,9 @@ const Designs = () => {
       <section id="designs" title="designs">
         <div className="heading">
           <h3>Designs</h3>
+          <div class="heading-desc">
+          I craft and activate brands with cultural insight, user-driven data, strategic vision and attentive attention to aesthetics.
+          </div>
         </div>
         <div className="content">
         <Swiper

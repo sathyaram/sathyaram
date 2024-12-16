@@ -16,6 +16,9 @@ const projects = () => {
       <section id="websites" title="websites">
         <div className="heading">
           <h3>Websites</h3>
+          <div class="heading-desc">
+          I build and develop full-scale websites and engaging UI with a variety of technologies like Drupal, WordPress, React and Grav.
+          </div>
         </div>
         <div className="content">
         <Swiper

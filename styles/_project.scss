@@ -113,57 +113,59 @@
 }
 
 section {
-  &#websites {
-    // max-width: 720px;
-    margin: 0 auto;
-  }
-
-  &#photography {
-    padding-top: 140px;
-    .heading {
-      margin: 0 auto;
-    }
-
-    .tabs {
-      display: flex;
-      margin: 2rem auto 3rem;
-      font-size: 12px;
-      justify-content: center;
-
-      div {
-        margin-right: 1rem;
-        padding: 0.5rem 1.5rem;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 25px;
-
-        &.active {
-          background: linear-gradient(
-            135deg,
-            rgba(112, 213, 255, 0.4),
-            rgba(0, 89, 188, 0.4)
-          );
-        }
-      }
-    }
-  }
+  margin-bottom: 8rem;
 
   .heading {
+    // margin: 0 auto 4rem;
+    // max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 4rem;
+
+    .heading-desc {
+      max-width: 300px;
+      width: 100%;
+      font-size: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      color: #a1aaa9;
+
+    }
 
     h3 {
       font-size: 5rem;
       z-index: 1;
-      opacity: 0.4;
       margin-bottom: -1rem;
       position: relative;
       font-weight: 400;
       font-family: "Californication";
       text-shadow: 3px 3px 4px rgba(198, 168, 207, 0.61);
-      &:hover {
+      text-shadow: 0 1px 6px #ffffff80, 0 1px 7px #fffc;
+
+      &::before {
+        content: '';
+        width: 108%;
+        height: 8px;
+        position: absolute;
+        bottom: 14px;
+        left:50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        border-bottom: 8px solid #7aadff;
+
       }
 
       @media screen and (max-width: 600px) {
         font-size: 4rem;
       }
+    }
+  }
+
+  &#designs {
+    .swiper-slide {
     }
   }
 }
