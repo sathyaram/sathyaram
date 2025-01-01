@@ -30,6 +30,7 @@ const Photography = () => {
           navigation={true}
           keyboard={true}
           centeredSlides={true} 
+          spaceBetween={10}
           loop={true}
           breakpoints={{
             530: {

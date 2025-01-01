@@ -31,6 +31,8 @@ const Designs = () => {
             pagination={{ clickable: true }}
             navigation={true}
             keyboard={true}
+          centeredSlides={true} 
+
             initialSlide={1}
             breakpoints={{
               560: {

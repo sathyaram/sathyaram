@@ -45,15 +45,15 @@ export const Data = [
   },
   {
     type: "web",
-    id: "exhaustnotes",
-    title: "Exhaust Notes",
-    subtitle: "Car revs on demand.",
-    year: "2019",
-    tags: ["React", "Custom (S)CSS"],
-    agency: "Passion Project",
-    url: "exhaustnotes.co",
-    link: "https://exhaustnotes.co",
-    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
+    id: "homeplanetfund",
+    title: "Home Planet Fund",
+    subtitle: "Patagonia's greenroots foundation",
+    year: "2024",
+    tags: ["WordPress", "Custom CSS", "JavaScript"],
+    agency: "Teal Media",
+    url: "homeplanetfund.org",
+    link: "https://homeplanetfund.org",
+    image: "https://cdn.prod.website-files.com/674e3008bf21330efc14bace/674e635d0a441c017abb6af3_123123.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -67,6 +67,21 @@ export const Data = [
     agency: "ForumOne",
     url: "amandafoundation.org",
     link: "https://amandafoundation.org",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
+  },
+  {
+    type: "web",
+    id: "lehighaad",
+    title: "Lehigh AAD",
+    subtitle: "Lehigh's Art, Architecture & Design Department",
+    year: "2018",
+    tags: ["Drupal", "JavaScript", "Custom HTML+CSS"],
+    agency: "Lehigh University",
+    url: "aad.lehigh.edu",
+    link: "https://aad.lehigh.edu",
     image:
       "https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w",
     description:

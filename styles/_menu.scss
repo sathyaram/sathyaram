@@ -72,14 +72,15 @@ nav.main-menu {
   z-index: 3;
   transition: transform 300ms ease;
   display: flex;
-  overflow: visible !important;
-
+  
   svg {
     width: 90px;
     height: auto;
     position: relative;
     z-index: 3;
     transition: transform 300ms ease;
+    overflow: visible !important;
+    stroke-linecap: round;
 
     .s-line {
       fill: rgb(15, 15, 15);
@@ -143,13 +144,11 @@ nav.main-menu {
 nav.social-media {
   display: flex;
   position: relative;
-
-
+  display: none;
 
   @media screen and (max-width: 600px) {
     order: 2;
     width: 50%;
-    display: none;
   }
 
   a {
@@ -267,14 +266,14 @@ nav.social-media {
   }
 
   .burger {
-    width: 33px;
-    height: 18px;
+    width: 42px;
+    height: 22px;
     position: relative;
     transition: transform 200ms ease-in-out;
 
     span {
       width: 100%;
-      height: 2px;
+      height: 2.5px;
       background-color: $blue;
       position: absolute;
       top: 0;
@@ -316,7 +315,7 @@ nav.social-media {
   .menu-title {
     font-family: 'Maison';
     text-transform: uppercase;
-    top: 7px;
+    top: 8px;
     position: absolute;
     left: -35px;
     color: white;

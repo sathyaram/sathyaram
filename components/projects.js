@@ -30,7 +30,8 @@ const projects = () => {
           slidesPerView={1.25}
           navigation={true}
           keyboard={true}
-          spaceBetween={60}
+          centeredSlides={true} 
+          spaceBetween={70}
           loop={true}
           breakpoints={{
             // When window width is >= 640px

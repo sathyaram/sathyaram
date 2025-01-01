@@ -54,7 +54,7 @@ const footer = () => {
       </nav>
       <address>
         <div className="credits">
-          <div>Made with Next.js</div>
+          <div>Made with Next.js. Hosted on Netlify.</div>
           <div></div>
         </div>
         <p className="copyright">
