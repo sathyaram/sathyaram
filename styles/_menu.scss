@@ -72,6 +72,7 @@ nav.main-menu {
   z-index: 3;
   transition: transform 300ms ease;
   display: flex;
+  overflow: visible !important;
 
   svg {
     width: 90px;
@@ -141,10 +142,7 @@ nav.main-menu {
 
 nav.social-media {
   display: flex;
-  justify-content: flex-end;
   position: relative;
-  width: 100px;
-  right: -5px;
 
   // @media screen and (max-width: 600px) {
   //   order: 2;
@@ -156,7 +154,7 @@ nav.social-media {
     align-items: center;
     flex-direction: column;
     font-size: 0.75rem;
-    padding: 0 0.15rem;
+    padding: 0 0.5rem;
     position: relative;
 
     &:hover {
@@ -318,7 +316,7 @@ nav.social-media {
     top: 7px;
     position: absolute;
     left: -35px;
-    color: black;
+    color: white;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;

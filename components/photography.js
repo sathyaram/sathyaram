@@ -33,10 +33,15 @@ const Photography = () => {
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
+          loop={true}
+
           initialSlide={1}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
           effect="coverflow"
         >
+          <SwiperSlide>
+            <img src="https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg" />
+          </SwiperSlide>
           <SwiperSlide>
             <img src="https://sathyaram.com/static/400f38472f745011e3eb648663c07086/47498/rania-one.jpg" />
           </SwiperSlide>
@@ -44,7 +49,7 @@ const Photography = () => {
             <img src="https://sathyaram.com/static/e71cb7c6f77c1b8a15725460c255ff0f/47498/jordan-one.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://sathyaram.com/static/ef19c539ce257e99fdb9d5dc13ce7aca/9dc27/por-one.jpg" />
+            <img src="https://cdn.prod.website-files.com/674e3008bf21330efc14bace/674e9d17a944d05429945ab5_kacey-one.jpg" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="https://sathyaram.com/static/6282ea85af8447cac6e9860ae405e3c1/4fe8c/rachel-one.jpg" />
@@ -52,7 +57,6 @@ const Photography = () => {
           <SwiperSlide>
             <img src="https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg" />
           </SwiperSlide>
-          <SwiperSlide></SwiperSlide>
         </Swiper>
 
         {/* {Data.map(function (project, i) {

@@ -1,6 +1,11 @@
 import React from "react";
 
 const menu = () => {
+
+  const menuOpen = (e) => {
+    document.body.classList.toggle("menu-open");
+  };
+
   return (
     <aside role="region">
       <a className="logo" aria-label="Logo Home Link" name="logo" href="/">
@@ -81,7 +86,7 @@ const menu = () => {
           <span>Dribbble</span>
         </a>
       </nav>
-      <button class="menu-toggle"><div class="menu-title">Menu</div><div class="burger"><span></span><span></span><span></span></div></button>
+      <button onClick={menuOpen} class="menu-toggle"><div class="menu-title">Menu</div><div class="burger"><span></span><span></span><span></span></div></button>
     </aside>
   );
 };

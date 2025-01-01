@@ -26,10 +26,14 @@ const projects = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={2}
-          pagination={{ clickable: true }}
+          slidesPerView={2.5}
+          // pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
+          spaceBetween={60}
+          loop={true}
+
+          initialSlide={1}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
         >
           {Data.map(function (project, i) {

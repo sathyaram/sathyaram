@@ -16,6 +16,7 @@ export default function Home() {
           name="description"
           content="Developer | Designer | Photographer"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight" />
       </Head>

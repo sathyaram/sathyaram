@@ -28,10 +28,13 @@ const Designs = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={3}
+          slidesPerView={2.75}
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
+          initialSlide={1}
+          spaceBetween={30}
+          loop={true}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
         >
           <SwiperSlide>
