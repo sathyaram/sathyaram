@@ -62,7 +62,7 @@ const footer = () => {
           © {new Date().getFullYear()} Sathya Ram. All rights reserved.
         </p>
       </address>
-      <div className="villain">Have a fantastic{ day }!</div>
+      <div className="villain">Have a fantastic <br></br>{ day }!</div>
     </footer>
   );
 };

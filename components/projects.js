@@ -2,13 +2,14 @@ import { gsap } from "gsap";
 import { Data } from "../data.js";
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
+import { EffectCoverflow, Keyboard, Navigation, Pagination, Autoplay } from "swiper";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
+import "swiper/css/autoplay";
 
 const projects = () => {
 
@@ -26,15 +27,23 @@ const projects = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={2.5}
-          // pagination={{ clickable: true }}
+          slidesPerView={1.25}
           navigation={true}
           keyboard={true}
           spaceBetween={60}
           loop={true}
-
+          breakpoints={{
+            // When window width is >= 640px
+            980: {
+              slidesPerView: 2,
+            },
+          }}
           initialSlide={1}
-          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+          autoplay={{
+            delay: 4500, // Delay between transitions (in milliseconds)
+            disableOnInteraction: true,
+          }}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}
         >
           {Data.map(function (project, i) {
             if (project.type === "web") {

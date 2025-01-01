@@ -11,7 +11,7 @@ aside {
   flex-wrap: wrap;
 
   @media screen and (max-width: 600px) {
-    padding-top: 1.5rem;
+    padding-top: 2.25rem;
   }
 }
 
@@ -144,10 +144,13 @@ nav.social-media {
   display: flex;
   position: relative;
 
-  // @media screen and (max-width: 600px) {
-  //   order: 2;
-  //   width: 50%;
-  // }
+
+
+  @media screen and (max-width: 600px) {
+    order: 2;
+    width: 50%;
+    display: none;
+  }
 
   a {
     display: flex;
