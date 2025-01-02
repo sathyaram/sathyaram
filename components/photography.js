@@ -31,7 +31,7 @@ const Photography = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={1.25}
+          slidesPerView="auto"
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
@@ -39,6 +39,9 @@ const Photography = () => {
           spaceBetween={10}
           loop={true}
           breakpoints={{
+            320: {
+              slidesPerView: 1.25,
+            },
             530: {
               slidesPerView: 2,
             },

@@ -33,13 +33,16 @@ const Designs = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={1.25}
+          slidesPerView="auto"
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
           centeredSlides={true}
           initialSlide={1}
           breakpoints={{
+            320: {
+              slidesPerView: 1.25,
+            },
             560: {
               slidesPerView: 2,
             },

@@ -33,7 +33,7 @@ const projects = () => {
             margin: "auto",
             overflow: "visible",
           }}
-          slidesPerView={1.25}
+          slidesPerView="auto"
           navigation={true}
           keyboard={true}
           effect="coverflow"
@@ -42,6 +42,9 @@ const projects = () => {
           loop={true}
           breakpoints={{
             // When window width is >= 640px
+            320: {
+              slidesPerView: 1.25,
+            },
             980: {
               slidesPerView: 2,
               spaceBetween: 90,
@@ -63,13 +66,12 @@ const projects = () => {
           {Data.map(function (project, i) {
             if (project.type === "web") {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <a href="/sontag" className="project-block">
                     <article
                       className="project"
                       id={project.id}
                       name={project.id}
-                      key={i}
                     >
                       <div className="project-background"></div>
                       <div className="project-heading">

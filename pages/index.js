@@ -11,19 +11,6 @@ import Footer from "../components/footer.js";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Home | Sathya Ram</title>
-        <meta
-          name="description"
-          content="Developer | Designer | Photographer"
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        ></meta>
-        <link rel="icon" href="/favicon.ico" />
-        <body className="midnight" />
-      </Head>
       <Menu />
       <Hero />
       <main role="main">
