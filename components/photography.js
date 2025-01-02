@@ -42,7 +42,7 @@ const Photography = () => {
           }}
           initialSlide={1}
           autoplay={{
-            delay: 6500, // Delay between transitions (in milliseconds)
+            delay: 7500, // Delay between transitions (in milliseconds)
             disableOnInteraction: true,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}

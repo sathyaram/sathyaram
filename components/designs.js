@@ -31,6 +31,7 @@ const Designs = () => {
             pagination={{ clickable: true }}
             navigation={true}
             keyboard={true}
+            effect="coverflow"
           centeredSlides={true} 
 
             initialSlide={1}
@@ -39,13 +40,13 @@ const Designs = () => {
                 slidesPerView: 2,
               },
               980: {
-                slidesPerView: 2.5,
+                slidesPerView: 3,
               },
             }}
             spaceBetween={30}
             loop={true}
             autoplay={{
-              delay: 5500, // Delay between transitions (in milliseconds)
+              delay: 8500, // Delay between transitions (in milliseconds)
               disableOnInteraction: true,
             }}
             modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}

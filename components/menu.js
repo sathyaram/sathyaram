@@ -7,6 +7,7 @@ const menu = () => {
   };
 
   return (
+    <>
     <aside role="region">
       <a className="logo" aria-label="Logo Home Link" name="logo" href="/">
         <svg version="1.1" viewBox="0 0 62.5 28.7">
@@ -27,29 +28,6 @@ const menu = () => {
           </g>
         </svg>
       </a>
-      {/* <nav
-        className="main-menu menu"
-        name="main-menu"
-        title="main-menu"
-        aria-label="main-menu"
-      >
-        <ul>
-          <li>
-            <a direction="right" href="/about">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/#websites">Projects</a>
-          </li>
-
-          <li>
-            <a title="Our team" href="/#photography">
-              <span>Photos</span>
-            </a>
-          </li>
-        </ul>
-      </nav> */}
       <nav className="social-media" role="navigation">
         <a
           target="_blank"
@@ -88,6 +66,46 @@ const menu = () => {
       </nav>
       <button onClick={menuOpen} class="menu-toggle"><div class="menu-title">Menu</div><div class="burger"><span></span><span></span><span></span></div></button>
     </aside>
+     <nav
+        className="main-menu menu"
+        name="main-menu"
+        title="main-menu"
+        aria-label="main-menu"
+      >
+        <ul>
+        <li>
+            <a direction="right" href="/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a direction="right" href="/about">
+              About
+            </a>
+          </li>
+          <li>
+            <a direction="right" href="/contact">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="/#websites">Home Planet Fund</a>
+          </li>
+          <li>
+            <a href="/#websites">The Sontag Foundation</a>
+          </li>
+          <li>
+            <a href="/#websites">Howard Hughes' Biointeractive</a>
+          </li>
+          <li>
+            <a href="/#websites">Vilcek Foundation</a>
+          </li>
+          <li>
+            <a href="/#websites">Lehigh University</a>
+          </li>
+        </ul>
+      </nav>
+  </>
   );
 };
 

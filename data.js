@@ -9,7 +9,7 @@ export const Data = [
     agency: "Push10",
     url: "sontagfoundation.org",
     link: "https://sontagfoundation.org",
-    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
+    image: "/assets/sontag.png",
 
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
@@ -53,37 +53,37 @@ export const Data = [
     agency: "Teal Media",
     url: "homeplanetfund.org",
     link: "https://homeplanetfund.org",
-    image: "https://cdn.prod.website-files.com/674e3008bf21330efc14bace/674e635d0a441c017abb6af3_123123.png",
+    image: "/assets/homeplanet.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
   {
     type: "web",
-    id: "amanda",
-    title: "The Amanda Foundation",
-    subtitle: "A mission-driven adoption center.",
+    id: "brookings",
+    title: "The Brookings Institute",
+    subtitle: "A mission-driven thinktank center.",
     year: "2020",
-    tags: ["Squarespace", "JavaScript", "Custom HTML+CSS"],
-    agency: "ForumOne",
-    url: "amandafoundation.org",
-    link: "https://amandafoundation.org",
+    tags: ["WordPress", "JavaScript", "Custom HTML+CSS"],
+    agency: "Teal Media",
+    url: "brookings.org",
+    link: "https://brookings.org",
     image:
-      "https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w",
+      "https://static.vecteezy.com/system/resources/previews/029/284/204/non_2x/american-flag-american-flag-transparent-usa-flag-transparent-background-ai-generative-free-png.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
   {
     type: "web",
     id: "lehighaad",
-    title: "Lehigh AAD",
-    subtitle: "Lehigh's Art, Architecture & Design Department",
+    title: "Lehigh University",
+    subtitle: "College Website Development",
     year: "2018",
     tags: ["Drupal", "JavaScript", "Custom HTML+CSS"],
     agency: "Lehigh University",
     url: "aad.lehigh.edu",
     link: "https://aad.lehigh.edu",
     image:
-      "https://images.squarespace-cdn.com/content/v1/5d8cfda57dd89a60c6560e7f/1572645740911-FQPER9ZDL83XSBFO3QQJ/CAT-DOG.png?format=500w",
+      "https://www.studentleadershipnetwork.org/wp-content/uploads/2021/08/Lehigh-University.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },

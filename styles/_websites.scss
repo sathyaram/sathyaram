@@ -1,0 +1,118 @@
+.sontag {
+    background-image: linear-gradient(
+      to right top,
+      #0042a4,
+      #003b8b,
+      #003473,
+      #002c5a,
+      #042342
+    );
+
+    main {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+  }
+
+
+#sontag {
+  .project-subtitle {
+    color: rgb(154, 162, 187);
+  }
+
+  .project-image {
+    max-width: 600px;
+    top: 45%;
+  }
+  
+  .project-background::after {
+    background-image: linear-gradient(
+      to right top,
+      #0042a4,
+      #003b8b,
+      #003473,
+      #002c5a,
+      #042342
+    );
+  }
+}
+
+
+.hhmi {
+  background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
+}
+
+#hhmi {
+  .project-subtitle {
+    color: rgb(201, 219, 204);
+  }
+
+  .project-image {
+    transform: translateX(-50%) translateY(-50%) rotate(8deg);
+  }
+
+  .project-background::after {
+    background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
+  }
+}
+
+#vilcek {
+  .project-subtitle {
+    color: rgb(177, 169, 143);
+  }
+
+  .project-image {
+    max-width: 360px;
+  }
+
+  .project-background::after {
+    background-image: linear-gradient(
+      to right top,
+      #b8a276,
+      #a48d60,
+      #90784b,
+      #7c6437,
+      #695123
+    );
+  }
+}
+
+#brookings {
+  .project-subtitle {
+    color: rgb(167, 125, 164);
+  }
+
+  .project-link {
+  }
+  .project-background::after {
+    background-image: linear-gradient(
+      to left bottom,
+      #0f266a,
+      #3529bd
+    );
+  }
+}
+
+#homeplanetfund {
+  .project-background::after {
+    background-image: linear-gradient(
+      to left bottom,
+      #f59431,
+      #8c382c,
+    );
+  }
+}
+
+
+#lehighaad {
+  .project-image {
+    max-width: 370px;
+  }
+  .project-background::after {
+    background-image: linear-gradient(
+      to left bottom,
+      #745728,
+      #2d1e02,
+    );
+  }
+}

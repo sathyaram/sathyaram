@@ -9,6 +9,9 @@ aside {
   width: 100%;
   padding-top: 4rem;
   flex-wrap: wrap;
+  max-width: 80vw;
+  width: 100%;
+  margin: 0 auto;
 
   @media screen and (max-width: 600px) {
     padding-top: 2.25rem;

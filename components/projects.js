@@ -30,18 +30,20 @@ const projects = () => {
           slidesPerView={1.25}
           navigation={true}
           keyboard={true}
+          effect="coverflow"
           centeredSlides={true} 
-          spaceBetween={70}
+          spaceBetween={40}
           loop={true}
           breakpoints={{
             // When window width is >= 640px
             980: {
               slidesPerView: 2,
+              spaceBetween: 90,
             },
           }}
           initialSlide={1}
           autoplay={{
-            delay: 4500, // Delay between transitions (in milliseconds)
+            delay: 6500, // Delay between transitions (in milliseconds)
             disableOnInteraction: true,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}
@@ -67,41 +69,6 @@ const projects = () => {
                       Click to Expand <span>+</span>
                     </button>
                   </div>
-                  {/* <div className="project-content">
-                    <div className="wrapper">
-                      <ul className="project-tags">
-                        {project.tags.map(function (tag, i) {
-                          return <li key={i}>{tag}</li>;
-                        })}
-                      </ul>
-                      <div className="project-agency">
-                        {project.agency}, <span>{project.year}</span>
-                      </div>
-                    </div>
-                    <div className="project-description">
-                      <div className="project-text">{project.description}</div>
-                      <div className="project-slides">
-                        <div className="project-slide">
-                          <img src="" alt="" />
-                        </div>
-                        <div className="project-slide">
-                          <img src="" alt="" />
-                        </div>
-                        <div className="project-slide">
-                          <img src="" alt="" />
-                        </div>
-                      </div>
-                      <div className="project-text">{project.description}</div>
-                    </div>
-                    <a
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={project.link}
-                    >
-                      {project.url}
-                    </a>
-                  </div> */}
                 </article>
                 </SwiperSlide>
               );
