@@ -1,5 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Keyboard, Navigation, Pagination, Autoplay } from "swiper";
+import {
+  EffectCoverflow,
+  Keyboard,
+  Navigation,
+  Pagination,
+  Autoplay,
+} from "swiper";
 import { Data } from "../data.js";
 
 import "swiper/css";
@@ -9,14 +15,14 @@ import "swiper/css/navigation";
 import "swiper/css/keyboard";
 import "swiper/css/autoplay";
 
-
 const Photography = () => {
   return (
     <section id="photography" title="photography">
       <div className="heading">
         <h3>Photography</h3>
-        <div class="heading-desc">
-          I'm an award winning photographer accomplished in a variety of disciplines with a focus on people, specifically creative portraiture.
+        <div className="heading-desc">
+          I'm an award winning photographer accomplished in a variety of
+          disciplines with a focus on people, specifically creative portraiture.
         </div>
       </div>
       <div className="content">
@@ -29,7 +35,7 @@ const Photography = () => {
           pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
-          centeredSlides={true} 
+          centeredSlides={true}
           spaceBetween={10}
           loop={true}
           breakpoints={{
@@ -45,7 +51,13 @@ const Photography = () => {
             delay: 7500, // Delay between transitions (in milliseconds)
             disableOnInteraction: true,
           }}
-          modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Navigation,
+            Keyboard,
+            Autoplay,
+          ]}
           effect="coverflow"
         >
           <SwiperSlide>
@@ -67,40 +79,6 @@ const Photography = () => {
             <img src="https://sathyaram.com/static/ee27bb77c952248161779381b16a20fd/4fe8c/jack-one.jpg" />
           </SwiperSlide>
         </Swiper>
-
-        {/* {Data.map(function (project, i) {
-          if (project.type === "photography") {
-            return (
-              <div className="photograph" key={i}>
-                {project.title}
-                <Swiper
-                  style={{
-                    margin: "auto",
-                    overflow: "visible",
-                  }}
-                  slidesPerView={3}
-                  pagination={{ clickable: true }}
-                  navigation={true}
-                  keyboard={true}
-                  modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-                  effect="coverflow"
-                >
-                  {project.photos.map(function (photograph, ind) {
-                    return (
-                      <SwiperSlide className="image" key={ind}>
-                        <img
-                          src={photograph.picture}
-                          alt={photograph.caption}
-                        />
-                        <div className="caption">{photograph.caption}</div>
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
-              </div>
-            );
-          }
-        })} */}
       </div>
     </section>
   );

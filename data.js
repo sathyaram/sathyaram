@@ -10,7 +10,6 @@ export const Data = [
     url: "sontagfoundation.org",
     link: "https://sontagfoundation.org",
     image: "/assets/sontag.png",
-
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -24,7 +23,7 @@ export const Data = [
     agency: "ForumOne",
     url: "biointeractive.org",
     link: "https://biointeractive.org",
-    image: "https://www.biointeractive.org/themes/gesso/images/howie.svg",
+    image: "/assets/howie.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -39,7 +38,7 @@ export const Data = [
     url: "vilcek.org",
     link: "https://vilcek.org",
     image:
-      "https://sathyaram.com/static/9d7d6fcce455f6f273ded431d852710f/630fb/vilcek.png",
+      "/assets/vilcek.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -68,7 +67,7 @@ export const Data = [
     url: "brookings.org",
     link: "https://brookings.org",
     image:
-      "https://static.vecteezy.com/system/resources/previews/029/284/204/non_2x/american-flag-american-flag-transparent-usa-flag-transparent-background-ai-generative-free-png.png",
+      "/assets/brookings.webp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -83,7 +82,7 @@ export const Data = [
     url: "aad.lehigh.edu",
     link: "https://aad.lehigh.edu",
     image:
-      "https://www.studentleadershipnetwork.org/wp-content/uploads/2021/08/Lehigh-University.png",
+      "/assets/lehighuniversity.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -124,25 +123,31 @@ export const Data = [
     type: "design",
     id: "design",
     name: "Treeteck Logo Concepts",
-    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4388579/media/45fee7250929e10ada6bb6a924b2f3d1.jpg?resize=800x600&vertical=center",
+    design_url:
+      "https://cdn.dribbble.com/users/993664/screenshots/4388579/media/45fee7250929e10ada6bb6a924b2f3d1.jpg?resize=800x600&vertical=center",
     design_alt_text: "Treeteck Logo Concepts",
-    description: "Logo concepts for Treeteck, a design and distribution company of drilling machines, balers and pruners."
+    description:
+      "Logo concepts for Treeteck, a design and distribution company of drilling machines, balers and pruners.",
   },
   {
     type: "design",
     id: "design",
     name: "Loewy Institute Logo Concepts",
-    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4388563/media/c4a13c14635ceb14f10ea77303835e03.jpg?resize=800x600&vertical=center",
+    design_url:
+      "https://cdn.dribbble.com/users/993664/screenshots/4388563/media/c4a13c14635ceb14f10ea77303835e03.jpg?resize=800x600&vertical=center",
     design_alt_text: "Loewy Institute Logo Concepts",
-    description: "Founded in 1970, The Loewy Institute had long educated students in the principles and applications of metal-forming technology, supported graduate research, and helped industry solve problems in metal forming. I had the chance to redesign their logo and this (left) is what they went with! On the right are some other concepts and how the main logo came into being!"
+    description:
+      "Founded in 1970, The Loewy Institute had long educated students in the principles and applications of metal-forming technology, supported graduate research, and helped industry solve problems in metal forming. I had the chance to redesign their logo and this (left) is what they went with! On the right are some other concepts and how the main logo came into being!",
   },
   {
     type: "design",
     id: "design",
     name: "Mosiac Logo Concepts",
-    design_url: "https://cdn.dribbble.com/users/993664/screenshots/4386024/media/e2af2a14b6559c81df10023fc30d6a0e.jpg?resize=800x600&vertical=center",
+    design_url:
+      "https://cdn.dribbble.com/users/993664/screenshots/4386024/media/e2af2a14b6559c81df10023fc30d6a0e.jpg?resize=800x600&vertical=center",
     design_alt_text: "Loewy Institute Logo Concepts",
-    description: "Mosaic is a custom integration/automation company: audio-video, whole-home control systems, lighting control, automated shades, etc. Here are some logo concepts I made for them!"
+    description:
+      "Mosaic is a custom integration/automation company: audio-video, whole-home control systems, lighting control, automated shades, etc. Here are some logo concepts I made for them!",
   },
   {
     type: "photography",

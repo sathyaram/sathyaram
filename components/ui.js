@@ -17,7 +17,7 @@ const Ui = () => {
       <section id="designs" title="designs">
         <div className="heading">
           <h3>Interface Designs</h3>
-          <div class="heading-desc">
+          <div className="heading-desc">
           I craft and activate brands with cultural insight, user-driven data, strategic vision and attentive attention to aesthetics.
           </div>
         </div>

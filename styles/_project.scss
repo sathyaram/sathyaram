@@ -38,7 +38,7 @@ section {
       max-width: 420px;
       width: calc(100% - 4rem);
       font-size: 12px;
-      margin-top: 2rem; 
+      margin-top: 2rem;
       color: #a1aaa9;
       text-align: center;
     }
@@ -51,26 +51,27 @@ section {
       font-weight: 400;
       font-family: "Californication";
       text-shadow: 3px 3px 4px rgba(198, 168, 207, 0.61);
-      text-shadow: 0 1px 6px #ffffff80, 0 1px 7px #fffc;
+      text-shadow:
+        0 1px 6px #ffffff80,
+        0 1px 7px #fffc;
 
       &::before {
-        content: '';
+        content: "";
         width: 108%;
         height: 8px;
         position: absolute;
         bottom: 14px;
-        left:50%;
+        left: 50%;
         transform: translateX(-50%);
         z-index: -1;
         border-bottom: 8px solid $blue;
-
       }
 
       @media screen and (max-width: $mobile) {
         font-size: 4rem;
       }
     }
-  } 
+  }
 }
 
 .project-background {
@@ -125,7 +126,14 @@ section {
   font-weight: bold;
   color: white;
   line-height: 100%;
-  text-shadow: 0 0 25px rgba(0,0,0,.25), 0 0 45px rgba(0,0,0,.25), 0 0 35px rgba(0,0,0,.25);
+  text-shadow:
+    0 0 25px rgba(0, 0, 0, 0.25),
+    0 0 45px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(0, 0, 0, 0.25);
+
+  @media screen and (max-width: $mobile) {
+    font-size: 2.25rem;
+  }
 }
 
 .project-subtitle {
@@ -134,9 +142,10 @@ section {
   display: none;
   font-size: 0.9rem;
   color: #f2f2f2 !important;
-  text-shadow: 0 0 25px rgba(0,0,0,.35), 0 0 45px rgba(0,0,0,.35), 0 0 35px rgba(0,0,0,.35);
-
-
+  text-shadow:
+    0 0 25px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(0, 0, 0, 0.35);
 }
 
 .project-agency {
@@ -204,7 +213,6 @@ section {
   transform: translateX(-50%) translateY(-50%);
 }
 
-
 .project-description {
   margin: 3rem 0;
   color: white;
@@ -220,7 +228,9 @@ section {
   opacity: 0;
   perspective: 100px;
   transform: rotateX(45deg);
-  transition: opacity 300ms ease, transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
 
   &::after {
     content: "";
@@ -234,7 +244,9 @@ section {
   }
 
   span {
-    text-shadow: 0 0 15px white, 0 0 5px white;
+    text-shadow:
+      0 0 15px white,
+      0 0 5px white;
     color: white;
     font-size: 0.85rem;
     position: relative;
@@ -250,7 +262,9 @@ section {
   border-radius: 4px;
   color: white;
   text-shadow: 0 0 15px white;
-  box-shadow: 3px 3px 0 0 white, 7px 7px 0 0 rgb(96, 197, 255);
+  box-shadow:
+    3px 3px 0 0 white,
+    7px 7px 0 0 rgb(96, 197, 255);
   transition: box-shadow 300ms ease;
   z-index: 3;
 
@@ -274,6 +288,3 @@ section {
     border-radius: 7px;
   }
 }
-
-
-

@@ -1,11 +1,18 @@
 import React from "react";
 
 const footer = () => {
-
-  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   const d = new Date();
   let day = weekday[d.getDay()];
-  
+
   return (
     <footer role="contentinfo">
       <nav
@@ -62,7 +69,10 @@ const footer = () => {
           © {new Date().getFullYear()} Sathya Ram. All rights reserved.
         </p>
       </address>
-      <div className="villain">Have a fantastic <br></br>{ day }!</div>
+      <div className="villain">
+        Have a fantastic <br></br>
+        {day}!
+      </div>
     </footer>
   );
 };

@@ -21,11 +21,11 @@ const Hero = () => {
   return (
     <>
       <header role="header">
-      <figure role="banner">
-      <div className="circle"></div>
-      <div className="circle2"></div>
-      </figure>
-        
+        <figure role="banner">
+          <div className="planet"></div>
+          <div className="planet-two"></div>
+        </figure>
+
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>
@@ -87,41 +87,6 @@ const Hero = () => {
           </h2>
         </div>
       </header>
-      {/* <section id="about" title="about">
-        <div className="heading">
-          <h3>About</h3>
-        </div>
-        <div className="content">
-        <Swiper
-          style={{
-            margin: "auto",
-            overflow: "visible",
-          }}
-          slidesPerView={3}
-          keyboard={true}
-          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-        >
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="aboutism"></div>
-          </SwiperSlide>
-          </Swiper>
-        </div>
-        </section> */}
     </>
   );
 };

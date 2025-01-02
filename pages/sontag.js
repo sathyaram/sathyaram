@@ -18,8 +18,13 @@ const sontag = () => {
         <h2>The Tagline of Taglines</h2>
         <h3>Web Development, Custom Theming, CSS/SCSS</h3>
         <h4>Stack: Drupal 7, HTML, SCSS, JavaScript</h4>
-        <div class="year">2021</div>
-        <p>I designed the Kendra Scott website and the product customization user flow and experience. The team was looking for a design that felt exciting yet friendly. I created prototypes and designs for the customization tool.</p>
+        <div className="year">2021</div>
+        <p>
+          I designed the Kendra Scott website and the product customization user
+          flow and experience. The team was looking for a design that felt
+          exciting yet friendly. I created prototypes and designs for the
+          customization tool.
+        </p>
         <a href="https://sontagfoundation.org">The Sontag Foundation</a>
       </main>
       <Footer />
