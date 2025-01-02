@@ -64,7 +64,7 @@ const Photography = () => {
           effect="coverflow"
         >
           <SwiperSlide>
-            <img src="/photography/kacey.jpg" />
+            <img alt="Kacey" src="/photography/kacey.jpg" />
             <div class="photo-text">
               <div class="photo-caption">
                 Kacey, in Georgetown

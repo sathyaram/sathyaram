@@ -100,7 +100,7 @@ nav.main-menu {
         text-transform: uppercase;
         font-weight: 100;
         letter-spacing: 3px;
-        
+
         @media screen and (max-width: $ipad) {
           font-size: 1.65rem;
           padding: 0.5rem 0;
@@ -121,7 +121,7 @@ nav.main-menu {
       justify-content: flex-end;
       align-items: flex-end;
     }
-    
+
     li {
       width: fit-content;
       a {
@@ -146,7 +146,7 @@ nav.main-menu {
 nav.social-media {
   display: flex;
   margin-bottom: 2.5rem;
-  margin-right: 3px;
+  margin-right: 7px;
   gap: 2rem;
   justify-content: flex-end;
 
@@ -163,7 +163,8 @@ nav.social-media {
     }
 
     &:hover {
-      path, circle {
+      path,
+      circle {
         fill: white;
       }
 
@@ -198,15 +199,15 @@ nav.social-media {
       top: -8px;
       left: 50%;
       z-index: -1;
-      
+
       transform: translateX(-50%) scale(0.3);
       opacity: 0;
       box-shadow: 0 5px 15px 0 rgb(0 0 0 / 25%);
       transition:
         transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform: scale(1.25) translateX(-40%) translateZ(0);
-        opacity: 1;
+      transform: scale(1.25) translateX(-40%) translateZ(0);
+      opacity: 1;
     }
   }
 
@@ -314,8 +315,6 @@ nav.social-media {
   }
 }
 
-
-
 .menu-toggle {
   display: flex;
   align-items: center;
@@ -326,6 +325,14 @@ nav.social-media {
   background: none;
   position: relative;
   z-index: 5;
+
+  &:focus {
+    // outline: white solid 1px;
+    // border: 2px solid blue;
+    border-radius: 3px;
+    outline-offset: 1px;
+    outline: -webkit-focus-ring-color auto 1px;
+  }
 
   &:hover {
     .burger {

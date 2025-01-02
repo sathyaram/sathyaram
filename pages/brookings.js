@@ -3,22 +3,22 @@ import Head from "next/head";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
-const sontag = () => {
+const brookings = () => {
   return (
     <>
       <Head>
-        <title>The Sontag Foundation | Sathya Ram</title>
-        <meta name="description" content="About Sontag Foundation" />
+        <title>The Brookings Institute | Sathya Ram</title>
+        <meta name="description" content="About The Brookings Institute" />
         <link rel="icon" href="/favicon.ico" />
-        <body className="midnight sontag page website" />
+        <body className="midnight brookings page website" />
       </Head>
       <Menu />
       <main>
         <div className="website-heading">
           <div class="website-image">
-            <img src="/assets/sontag.png" alt="The Sontag Foundation"></img>
+            <img src="/assets/brookings.webp" alt="The Brookings Institute"></img>
           </div>
-          <h1 className="website-name">The Sontag Foundation</h1>
+          <h1 className="website-name">The Brookings Institute</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -73,9 +73,9 @@ const sontag = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
-                    href="https://sontagfoundation.org"
+                    href="https://brookings.org"
                   >
-                    sontagfoundation.org
+                    brookings.org
                   </a>
                 </div>
               </div>
@@ -135,4 +135,4 @@ const sontag = () => {
   );
 };
 
-export default sontag;
+export default brookings;

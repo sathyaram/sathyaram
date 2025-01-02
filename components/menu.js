@@ -8,7 +8,7 @@ const menu = () => {
   return (
     <>
       <aside role="region">
-        <a className="logo" aria-label="Logo Home Link" name="logo" href="/">
+        <a tabindex="1" className="logo" aria-label="Logo Home Link" name="logo" href="/">
           <svg version="1.1" viewBox="0 0 62.5 28.7">
             <linearGradient
               id="gradient"
@@ -31,7 +31,7 @@ const menu = () => {
             </g>
           </svg>
         </a>
-        <button onClick={menuOpen} className="menu-toggle">
+        <button type="button" onClick={menuOpen} tabindex="2" className="menu-toggle" aria-label="Menu Open Close">
           <div className="menu-title">Menu</div>
           <div className="burger">
             <span></span>
@@ -112,22 +112,22 @@ const menu = () => {
           </ul>
           <ul className="website-menu">
             <li>
-              <a href="/#websites">Home Planet Fund</a>
+              <a href="/homeplanetfund">Home Planet Fund</a>
             </li>
             <li>
-              <a href="/#websites">The Brookings Institute</a>
+              <a href="/brookings">The Brookings Institute</a>
             </li>
             <li>
-              <a href="/#websites">Lehigh University</a>
+              <a href="/lehigh">Lehigh University</a>
             </li>
             <li>
               <a href="/sontag">The Sontag Foundation</a>
             </li>
             <li>
-              <a href="/#websites">Vilcek Foundation</a>
+              <a href="/hhmi">Howard Hughes' Biointeractive</a>
             </li>
             <li>
-              <a href="/#websites">Howard Hughes' Biointeractive</a>
+              <a href="/vilcek">Vilcek Foundation</a>
             </li>
           
            

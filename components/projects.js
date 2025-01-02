@@ -71,7 +71,7 @@ const projects = () => {
             if (project.type === "web") {
               return (
                 <SwiperSlide key={i}>
-                  <a href="/sontag" className="project-block">
+                  <a href={"/" + project.id} className="project-block">
                     <article
                       className="project"
                       id={project.id}

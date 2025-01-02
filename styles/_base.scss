@@ -1,0 +1,63 @@
+.col {
+  width: 100%;
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 8rem;
+
+  > div {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $ipad) {
+    flex-direction: column;
+  }
+}
+
+.col-3 {
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  margin-bottom: 3rem;
+  display: grid;
+
+  @media screen and (max-width: $ipad) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-70-30 {
+  > div:first-child {
+    width: 70%;
+  }
+  > div:last-child {
+    width: 30%;
+  }
+  @media screen and (max-width: $ipad) {
+    > div:first-child {
+      width: 100%;
+    }
+    > div:last-child {
+      width: 100%;
+    }
+  }
+}
+
+.constrained {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+
+.full-width {
+  width: 100%;
+  display: block;
+  margin-bottom: 8rem;
+}

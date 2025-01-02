@@ -3,22 +3,22 @@ import Head from "next/head";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
-const sontag = () => {
+const lehigh = () => {
   return (
     <>
       <Head>
-        <title>The Sontag Foundation | Sathya Ram</title>
-        <meta name="description" content="About Sontag Foundation" />
+        <title>Lehigh University | Sathya Ram</title>
+        <meta name="description" content="About Lehigh University" />
         <link rel="icon" href="/favicon.ico" />
-        <body className="midnight sontag page website" />
+        <body className="midnight lehigh page website" />
       </Head>
       <Menu />
       <main>
         <div className="website-heading">
           <div class="website-image">
-            <img src="/assets/sontag.png" alt="The Sontag Foundation"></img>
+            <img src="/assets/lehighuniversity.png" alt="Lehigh University"></img>
           </div>
-          <h1 className="website-name">The Sontag Foundation</h1>
+          <h1 className="website-name">Lehigh University</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -135,4 +135,4 @@ const sontag = () => {
   );
 };
 
-export default sontag;
+export default lehigh;
