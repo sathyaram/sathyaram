@@ -190,17 +190,3 @@ a {
 u {
   text-decoration: underline;
 }
-
-body {
-  padding: 0 6vw;
-  color: rgb(15, 15, 15);
-  background-color: #f4f9fd;
-  transition: background 300ms ease;
-  font-size: 1rem;
-  font-family: "Maison";
-  overflow-x: hidden;
-
-  @media screen and (max-width: 600px) {
-    padding: 0 2rem;
-  }
-}

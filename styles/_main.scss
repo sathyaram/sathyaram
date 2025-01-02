@@ -1,4 +1,17 @@
-// This applies from 0px to 600px
+body {
+  padding: 0 6vw;
+  color: rgb(15, 15, 15);
+  background-color: #f4f9fd;
+  transition: background 300ms ease;
+  font-size: 1rem;
+  font-family: "Maison";
+  overflow-x: hidden;
+
+  @media screen and (max-width: $mobile) {
+    padding: 0 2rem;
+  }
+}
+
 header {
   text-align: center;
   display: flex;
@@ -14,7 +27,7 @@ h1 {
   font-family: "The Californication";
   padding-bottom: 1rem;
   position: relative;
-  z-index: 5;
+  z-index: 3;
   background: linear-gradient(
     135deg,
     rgba(112, 213, 255, 0.92),
@@ -23,7 +36,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile) {
     font-size: 4rem;
     padding-bottom: 2rem;
   }
@@ -43,7 +56,7 @@ h2 {
   text-transform: uppercase;
   color: rgb(142, 163, 172);
   position: relative;
-  z-index: 5;
+  z-index: 3;
 
   span {
     position: relative;
@@ -51,14 +64,14 @@ h2 {
     margin: 5px 0;
     display: inline-block;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: $mobile) {
       margin: 0;
     }
 
     &.x {
       color: rgb(121, 166, 196);
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: $mobile) {
         display: block;
         margin: 0;
       }
@@ -112,7 +125,7 @@ h2 {
   opacity: 0;
   transition: opacity 300ms ease;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile) {
     margin-bottom: 0;
     opacity: 1;
   }

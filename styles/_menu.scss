@@ -31,9 +31,9 @@ nav.menu {
     &:hover {
       color: $blue;
       &:not(.music)::before {
-        left: 0;
+        left: -4px;
         right: auto;
-        width: 100%;
+        width: calc(100% + 8px);
       }
     }
 
@@ -41,7 +41,7 @@ nav.menu {
       content: "";
       position: absolute;
       width: 0;
-      bottom: 0;
+      bottom: -5px;
       height: 1px;
       background-color: #63b5f8;
       background: linear-gradient(
@@ -50,24 +50,50 @@ nav.menu {
         rgba(0, 89, 188, 0.9)
       );
       right: 0;
-      transition: width 0.3s cubic-bezier(0.37, 0, 0.21, 1.02);
+      transition: width 0.4s cubic-bezier(0.37, 0, 0.21, 1.02);
     }
   }
 }
 
 nav.main-menu {
+  background-color: rgba(1, 9, 27, 0.95);
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 4;
+  padding: 8rem 4rem 4rem;
+  transition: transform 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
+  max-width: 825px;
+  width: 100%;
+  transform: translateX(825px);
+
+  .menu-open & {
+    transform: translateX(0);
+  }
+  
   ul {
     display: flex;
-  }
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
 
-  // @media screen and (max-width: 600px) {
-  //   order: 3;
-  //   width: 100%;
-  //   margin-top: 1.5rem;
-  //   ul {
-  //     justify-content: center;
-  //   }
-  
+    li {
+      width: 100%;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgb(255 255 255 / 5%);
+      }
+      a {
+        font-size: 2.75rem;
+        padding: 2rem 0;
+        display: block;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
 
 .logo {
@@ -84,6 +110,10 @@ nav.main-menu {
     transition: transform 300ms ease;
     overflow: visible !important;
     stroke-linecap: round;
+
+    @media screen and (max-width: $mobile) {
+      width: 70px;
+    }
 
     .s-line {
       fill: rgb(15, 15, 15);
@@ -136,12 +166,6 @@ nav.main-menu {
       stop-color: transparent;
     }
   }
-
-  @media screen and (max-width: 600px) {
-    svg {
-      width: 70px;
-    }
-  }
 }
 
 nav.social-media {
@@ -149,7 +173,7 @@ nav.social-media {
   position: relative;
   display: none;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile) {
     order: 2;
     width: 50%;
   }
@@ -209,6 +233,7 @@ nav.social-media {
         opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
   }
+
   span {
     font-size: 10px;
     text-transform: uppercase;
@@ -233,6 +258,7 @@ nav.social-media {
       bottom: -14px;
     }
   }
+  
   svg {
     width: 32px;
     height: 32px;

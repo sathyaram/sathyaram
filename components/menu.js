@@ -72,6 +72,9 @@ const menu = () => {
         title="main-menu"
         aria-label="main-menu"
       >
+        {/* <div class="nav-close">
+          X
+        </div> */}
         <ul>
         <li>
             <a direction="right" href="/">
@@ -92,7 +95,7 @@ const menu = () => {
             <a href="/#websites">Home Planet Fund</a>
           </li>
           <li>
-            <a href="/#websites">The Sontag Foundation</a>
+            <a href="/sontag">The Sontag Foundation</a>
           </li>
           <li>
             <a href="/#websites">Howard Hughes' Biointeractive</a>
