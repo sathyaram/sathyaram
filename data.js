@@ -73,7 +73,7 @@ export const Data = [
   },
   {
     type: "web",
-    id: "lehighaad",
+    id: "lehigh",
     title: "Lehigh University",
     subtitle: "College Website Development",
     year: "2018",

@@ -23,10 +23,6 @@
         &:active {
             background-color: $waterfall;
         }
-
-        @media screen and (max-width: 800px) {
-            // display: none;
-        }
     }
 
     .swiper-button-next {
@@ -91,12 +87,41 @@
     .swiper-slide {
         transition: all 300ms ease;
     }
-    // .swiper-slide.swiper-slide-active {
-    //   padding: 1.5rem 1.5rem 5.5rem;
-    //   background: white;
 
-    //   @media screen and (max-width: $mobile) {
-    //     padding: 0;
-    //   }
-    // }
+    .swiper-slide-active {
+        &:hover,
+        &:active,
+        &:focus {
+            .photo-text {
+                opacity: 1;
+            }
+        }
+    }
+
+    .photo-text {
+        text-align: center;
+        opacity: 0;
+        transition: opacity 300ms ease;
+        padding-bottom: 1rem;
+    }
+
+    .photo-caption {
+        font-family: "Californication";
+        font-size: 2.5rem;
+        margin-top: -1.65rem;
+        text-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+
+        @media screen and (max-width: 1168px) {
+            font-size: 2.1rem;
+            margin-top: -1.25rem;
+        }
+    }
+
+    a {
+        letter-spacing: 2px;
+        margin-top: 1rem;
+        display: inline-block;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
 }

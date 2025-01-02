@@ -50,6 +50,9 @@ const projects = () => {
               slidesPerView: 2,
               spaceBetween: 90,
             },
+            1920: {
+              slidesPerView: 3,
+            }
           }}
           initialSlide={1}
           autoplay={{

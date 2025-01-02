@@ -65,18 +65,39 @@ const Photography = () => {
         >
           <SwiperSlide>
             <img src="/photography/kacey.jpg" />
+            <div class="photo-text">
+              <div class="photo-caption">
+                Kacey, in Georgetown
+              </div>
+              <a href="/">↗ Instagram Post ↗</a>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/jack-one.jpg" />
-
+          <div class="photo-text">
+              <div class="photo-caption">
+                Jack, in the Forest
+              </div>
+              <a href="/">↗ Instagram Post ↗</a>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/jordan-one.jpg" />
-
+          <div class="photo-text">
+              <div class="photo-caption">
+                Jordan, at the Wharf
+              </div>
+              <a target="_blank" href="/">↗ Instagram Post ↗</a>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/rania-one.jpg" />
-
+          <div class="photo-text">
+              <div class="photo-caption">
+                Rania, in the Studio
+              </div>
+              <a href="/">↗ Instagram Post ↗</a>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>

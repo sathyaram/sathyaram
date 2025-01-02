@@ -31,8 +31,8 @@ nav.menu {
     &:hover {
       color: $blue;
       &:not(.music)::before {
-        left: -4px;
-        right: auto;
+        right: -4px;
+        left: auto;
         width: calc(100% + 8px);
       }
     }
@@ -45,7 +45,7 @@ nav.menu {
       height: 1px;
       background-color: #63b5f8;
       background: linear-gradient(135deg, rgba(112, 213, 255, 0.8), rgba(0, 89, 188, 0.9));
-      right: 0;
+      left: 0;
       transition: width 0.4s cubic-bezier(0.37, 0, 0.21, 1.02);
     }
   }
@@ -94,16 +94,16 @@ nav.main-menu {
       }
 
       a {
-        font-size: 2.75rem;
-        padding: 1.35rem 0;
+        font-size: 2.5rem;
+        padding: 1rem 0;
         display: block;
         text-transform: uppercase;
         font-weight: 100;
         letter-spacing: 3px;
-
-        @media screen and (max-width: $mobile) {
+        
+        @media screen and (max-width: $ipad) {
           font-size: 1.65rem;
-          padding: 0.75rem 0;
+          padding: 0.5rem 0;
         }
       }
     }
@@ -127,6 +127,17 @@ nav.main-menu {
       a {
         font-size: 1rem;
         margin-left: 5px;
+      }
+    }
+  }
+
+  .website-menu {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 0 0 auto;
+    a {
+      &:hover {
+        background-image: linear-gradient(to left bottom, $blue, $blue) !important;
       }
     }
   }

@@ -1,21 +1,69 @@
-.sontag {
-  background-image: linear-gradient(
-    to right top,
-    #0042a4,
-    #020f1d
-  );
+.main-menu {
+  .website-menu {
+    li {
+      &:first-child {
+        a {
+          background-image: linear-gradient(to left bottom, #f59431, #80221b);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      &:nth-child(4) {
+        a {
+          background-image: linear-gradient(180deg, #0042a4, #020f1d);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
 
-    h1 {
-      margin-top: 6rem;
-      font-size: 6rem;
-    }
+      &:nth-child(6) {
+        a {
+          background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
 
-    main {
-        max-width: 80vw;
-        margin: 0 auto;
+      &:nth-child(5) {
+        a {
+          background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          background-image: linear-gradient(to left bottom, #8b6947, #2e0e04);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &:nth-child(2) {
+        a {
+          background-image: linear-gradient(to left bottom, #1d9bf0, #00274b);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
     }
   }
+}
 
+.sontag {
+  background-image: linear-gradient(to right top, #0042a4, #020f1d);
+
+  h1 {
+    margin-top: 6rem;
+    font-size: 6rem;
+  }
+
+  main {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+}
 
 #sontag {
   .project-subtitle {
@@ -26,16 +74,11 @@
     max-width: 600px;
     top: 45%;
   }
-  
+
   .project-background::after {
-    background-image: linear-gradient(
-      to right top,
-      #0042a4,
-      #020f1d
-    );
+    background-image: linear-gradient(to right top, #0042a4, #020f1d);
   }
 }
-
 
 .hhmi {
   background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
@@ -65,17 +108,11 @@
   }
 
   .project-background::after {
-    background-image: linear-gradient(
-      to right top,
-      #dfd1b4,
-      #90784b,
-      #4c370f
-    );
+    background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
   }
 }
 
 .brookings {
-  
 }
 
 #brookings {
@@ -86,35 +123,21 @@
   .project-link {
   }
   .project-background::after {
-    background-image: linear-gradient(
-      to left bottom,
-      #1d9bf0,
-      #00274b
-    );
+    background-image: linear-gradient(to left bottom, #1d9bf0, #00274b);
   }
 }
 
 #homeplanetfund {
   .project-background::after {
-    background-image: linear-gradient(
-      to left bottom,
-      #f59431,
-      #80221b,
-    
-    );
+    background-image: linear-gradient(to left bottom, #f59431, #80221b);
   }
 }
 
-
-#lehighaad {
+#lehigh {
   .project-image {
     max-width: 370px;
   }
   .project-background::after {
-    background-image: linear-gradient(
-      to left bottom,
-      #8b6947,
-      #2e0e04,
-    );
+    background-image: linear-gradient(to left bottom, #8b6947, #2e0e04);
   }
 }

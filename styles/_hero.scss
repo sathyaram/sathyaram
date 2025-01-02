@@ -5,7 +5,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 60vh;
+  height: 550px;
+
+  @media screen and (max-width: $mobile) {
+    height: 700px;
+  }
 }
 
 .midnight {
@@ -34,8 +38,10 @@
 
 .planet {
   background-color: #00b381;
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   opacity: 0.4;
   -webkit-filter: blur(120px);
@@ -48,8 +54,10 @@
 
 .planet-two {
   background-color: #469ee6;
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   opacity: 0.4;
   -webkit-filter: blur(120px);

@@ -46,9 +46,12 @@ const Designs = () => {
             560: {
               slidesPerView: 2,
             },
-            980: {
+            1080: {
               slidesPerView: 3,
             },
+            1920: {
+              slidesPerView: 4,
+            }
           }}
           spaceBetween={30}
           loop={true}
