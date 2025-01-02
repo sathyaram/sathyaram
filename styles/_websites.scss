@@ -1,12 +1,14 @@
 .sontag {
-    background-image: linear-gradient(
-      to right top,
-      #0042a4,
-      #003b8b,
-      #003473,
-      #002c5a,
-      #042342
-    );
+  background-image: linear-gradient(
+    to right top,
+    #0042a4,
+    #020f1d
+  );
+
+    h1 {
+      margin-top: 6rem;
+      font-size: 6rem;
+    }
 
     main {
         max-width: 80vw;
@@ -29,10 +31,7 @@
     background-image: linear-gradient(
       to right top,
       #0042a4,
-      #003b8b,
-      #003473,
-      #002c5a,
-      #042342
+      #020f1d
     );
   }
 }
@@ -68,13 +67,15 @@
   .project-background::after {
     background-image: linear-gradient(
       to right top,
-      #b8a276,
-      #a48d60,
+      #dfd1b4,
       #90784b,
-      #7c6437,
-      #695123
+      #4c370f
     );
   }
+}
+
+.brookings {
+  
 }
 
 #brookings {
@@ -87,8 +88,8 @@
   .project-background::after {
     background-image: linear-gradient(
       to left bottom,
-      #0f266a,
-      #3529bd
+      #1d9bf0,
+      #00274b
     );
   }
 }
@@ -98,7 +99,8 @@
     background-image: linear-gradient(
       to left bottom,
       #f59431,
-      #8c382c,
+      #80221b,
+    
     );
   }
 }
@@ -111,8 +113,8 @@
   .project-background::after {
     background-image: linear-gradient(
       to left bottom,
-      #745728,
-      #2d1e02,
+      #8b6947,
+      #2e0e04,
     );
   }
 }

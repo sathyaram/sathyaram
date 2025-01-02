@@ -58,40 +58,176 @@ nav.main-menu {
   right: 0;
   height: 100vh;
   z-index: 4;
-  padding: 8rem 4rem 4rem;
+  padding: 12rem 4rem 4rem;
   transition: transform 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
-  max-width: 70%;
+  max-width: 100%;
   width: 100%;
   transform: translateX(calc(100% + 1px));
   border-left: 1px solid $blue;
+
+  @media screen and (max-width: $mobile) {
+    padding: 7.5rem 0rem 4rem;
+  }
 
   .menu-open & {
     transform: translateX(0);
   }
 
+  .wrapper {
+    margin: 0 auto;
+    max-width: 80vw;
+    width: 100%;
+    text-align: right;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 0.8rem 0 0;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    height: 100%;
-    max-width: 620px;
-    margin: 0 auto;
 
     li {
       width: 100%;
       &:not(:last-child) {
         border-bottom: 1px solid rgb(255 255 255 / 5%);
       }
+
       a {
         font-size: 2.75rem;
-        padding: 2rem 0;
+        padding: 1.35rem 0;
         display: block;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 3px;
 
         @media screen and (max-width: $mobile) {
-          font-size: 2rem;
+          font-size: 1.65rem;
+          padding: 0.75rem 0;
         }
       }
     }
+  }
+
+  .eyebrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    @media screen and (max-width: $mobile) {
+      gap: 0;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    
+    li {
+      width: fit-content;
+      a {
+        font-size: 1rem;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+nav.social-media {
+  display: flex;
+  margin-bottom: 2.5rem;
+  margin-right: 3px;
+  gap: 2rem;
+  justify-content: flex-end;
+
+  a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+    position: relative;
+
+    &::before {
+      content: none !important;
+    }
+
+    &:hover {
+      path, circle {
+        fill: white;
+      }
+
+      &::after {
+        transform: scale(1.25) translateX(-40%) translateZ(0);
+        opacity: 1;
+      }
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    &:first-child::after {
+      background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    }
+
+    &:nth-child(3)::after {
+      background: #e83e80;
+    }
+
+    &:nth-child(2):after {
+      background: #888093;
+    }
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      z-index: -1;
+      
+      transform: translateX(-50%) scale(0.3);
+      opacity: 0;
+      box-shadow: 0 5px 15px 0 rgb(0 0 0 / 25%);
+      transition:
+        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform: scale(1.25) translateX(-40%) translateZ(0);
+        opacity: 1;
+    }
+  }
+
+  span {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-family: "Maison";
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    position: absolute;
+    top: -0.75rem;
+
+    .midnight & {
+      color: white;
+    }
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 14px;
+      background-color: rgba(4, 4, 17, 0.5);
+      bottom: -14px;
+    }
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: rgba(255, 255, 255, 0.439);
   }
 }
 
@@ -128,7 +264,6 @@ nav.main-menu {
       }
     }
     .r-line {
-      stroke: $blue;
       stroke-width: 1px;
       transition: fill 300ms ease;
       stroke-dasharray: 160.04493713378906;
@@ -156,6 +291,7 @@ nav.main-menu {
     .r-line {
       animation: stroke-offset 0.8s ease forwards 0.2s;
       transition: fill 300ms ease;
+      stroke: $blue;
     }
 
     stop:first-child {
@@ -167,102 +303,12 @@ nav.main-menu {
   }
 }
 
-nav.social-media {
-  display: flex;
-  position: relative;
-  display: none;
 
-  @media screen and (max-width: $mobile) {
-    order: 2;
-    width: 50%;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 0.75rem;
-    padding: 0 0.5rem;
-    position: relative;
-
-    &:hover {
-      fill: white;
-      &::after {
-        transform: scale(1.25) translateX(-40%) translateZ(0);
-        opacity: 1;
-      }
-
-      span {
-        opacity: 1;
-      }
-    }
-
-    &:first-child::after {
-      background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
-    }
-
-    &:nth-child(3)::after {
-      background: #e83e80;
-    }
-
-    &:nth-child(2):after {
-      background: #888093;
-    }
-
-    &::after {
-      content: "";
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: -9px;
-      left: 50%;
-      z-index: -1;
-      transform: translateX(-50%) scale(0.3);
-      opacity: 0;
-      box-shadow: 0 5px 15px 0 rgb(0 0 0 / 25%);
-      transition:
-        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-  }
-
-  span {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #000;
-    font-weight: bold;
-    font-family: "Maison";
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-    opacity: 0;
-    position: absolute;
-    top: -0.75rem;
-
-    .midnight & {
-      color: white;
-    }
-
-    &::after {
-      content: "";
-      width: 1px;
-      height: 14px;
-      background-color: rgba(4, 4, 17, 0.5);
-      bottom: -14px;
-    }
-  }
-
-  svg {
-    width: 32px;
-    height: 32px;
-    fill: inherit;
-  }
-}
 
 .menu-toggle {
   display: flex;
   align-items: center;
-  padding: 5px 0 5px 35px;
+  padding: 5px 0 5px 15px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -288,14 +334,19 @@ nav.social-media {
   }
 
   .burger {
-    width: 42px;
-    height: 22px;
+    width: 55px;
+    height: 32px;
     position: relative;
     transition: transform 200ms ease-in-out;
 
+    @media screen and (max-width: $mobile) {
+      width: 45px;
+      height: 24px;
+    }
+
     span {
       width: 100%;
-      height: 2.5px;
+      height: 4px;
       background-color: $blue;
       position: absolute;
       top: 0;
@@ -306,8 +357,8 @@ nav.social-media {
       &::before {
         content: "";
         background-color: $waterfall;
-        width: 12px;
-        height: 2px;
+        width: 20px;
+        height: 4px;
         position: absolute;
         top: 0;
         left: -15px;
@@ -343,22 +394,23 @@ nav.social-media {
       }
     }
   }
+}
 
-  .menu-title {
-    font-family: "Maison";
-    text-transform: uppercase;
-    top: 8px;
-    position: absolute;
-    left: -35px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    opacity: 0;
-    transition:
-      opacity 300ms ease,
-      transform 300ms ease;
-    transform: translateY(-20px);
-  }
+.menu-title {
+  display: none;
+  font-family: "Maison";
+  text-transform: uppercase;
+  top: 9px;
+  position: absolute;
+  left: -35px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+  transform: translateY(-20px);
 }

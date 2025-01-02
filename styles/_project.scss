@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 4rem;
+  padding: 0 2rem;
   position: relative;
   height: 400px;
   justify-content: center;
@@ -15,7 +15,7 @@
         transform: translateX(-50%) translateY(-200%);
       }
       &::after {
-        transform: translateY(-50%) translateX(-50%) rotate(490deg);
+        transform: translateY(-50%) translateX(-50%) rotate(1200deg);
       }
     }
   }
@@ -30,7 +30,7 @@ section {
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
     overflow-x: hidden;
     margin: 0 auto;
 
@@ -45,7 +45,7 @@ section {
 
     h3 {
       font-size: 5rem;
-      z-index: 1;
+      z-index: 3;
       margin-bottom: -1rem;
       position: relative;
       font-weight: 400;
@@ -122,17 +122,23 @@ section {
 }
 
 .project-title {
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   font-weight: bold;
   color: white;
   line-height: 100%;
   text-shadow:
     0 0 25px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(0, 0, 0, 0.25),
     0 0 45px rgba(0, 0, 0, 0.25),
-    0 0 35px rgba(0, 0, 0, 0.25);
+    0 0 55px rgba(0, 0, 0, 0.25),
+    0 0 65px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: $mobile) {
     font-size: 2.25rem;
+  }
+
+  @media screen and (max-width: $mini) {
+    font-size: 1.25rem;
   }
 }
 

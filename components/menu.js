@@ -31,7 +31,23 @@ const menu = () => {
             </g>
           </svg>
         </a>
-        <nav className="social-media" role="navigation">
+        <button onClick={menuOpen} className="menu-toggle">
+          <div className="menu-title">Menu</div>
+          <div className="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </aside>
+      <nav
+        className="main-menu menu"
+        name="main-menu"
+        title="main-menu"
+        aria-label="main-menu"
+      >
+      <div class="wrapper">
+         <nav className="social-media" role="navigation">
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -67,22 +83,7 @@ const menu = () => {
             <span>Dribbble</span>
           </a>
         </nav>
-        <button onClick={menuOpen} className="menu-toggle">
-          <div className="menu-title">Menu</div>
-          <div className="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </aside>
-      <nav
-        className="main-menu menu"
-        name="main-menu"
-        title="main-menu"
-        aria-label="main-menu"
-      >
-        <ul>
+        <ul className="eyebrow">
           <li>
             <a direction="right" href="/">
               Home
@@ -99,10 +100,22 @@ const menu = () => {
             </a>
           </li>
           <li>
+            <a direction="right" href="/contact">
+              Resume
+            </a>
+          </li>
+          <li>
+            <a direction="right" href="/contact">
+              LinkedIn
+            </a>
+          </li>
+          </ul>
+          <ul className="wesbite-menu">
+          <li>
             <a href="/#websites">Home Planet Fund</a>
           </li>
           <li>
-            <a href="/sontag">The Sontag Foundation</a>
+            <a href="/sontag">Sontag Foundation</a>
           </li>
           <li>
             <a href="/#websites">Howard Hughes' Biointeractive</a>
@@ -114,6 +127,7 @@ const menu = () => {
             <a href="/#websites">Lehigh University</a>
           </li>
         </ul>
+      </div>
       </nav>
     </>
   );

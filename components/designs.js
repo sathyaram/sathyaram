@@ -65,22 +65,22 @@ const Designs = () => {
           ]}
         >
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4388579/media/45fee7250929e10ada6bb6a924b2f3d1.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/lehighracing.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4388563/media/c4a13c14635ceb14f10ea77303835e03.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/mosiaclogoconcepts.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4386024/media/e2af2a14b6559c81df10023fc30d6a0e.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/indifylogoconcept.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4388509/media/5468db069f0f84d8cdca6bbd73d2069e.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/powerhouselogoconcepts.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4386077/media/2e547509b61be30885ad9603f7ca428c.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/treetecklogoconcepts.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://cdn.dribbble.com/users/993664/screenshots/4379587/indify.jpg?resize=800x600&vertical=center" />
+            <img src="/designs/loewyinstitute.jpg" />
           </SwiperSlide>
         </Swiper>
       </div>

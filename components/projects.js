@@ -38,12 +38,13 @@ const projects = () => {
           keyboard={true}
           effect="coverflow"
           centeredSlides={true}
-          spaceBetween={40}
+          spaceBetween={20}
           loop={true}
           breakpoints={{
             // When window width is >= 640px
             320: {
               slidesPerView: 1.25,
+              spaceBetween: 20,
             },
             980: {
               slidesPerView: 2,
