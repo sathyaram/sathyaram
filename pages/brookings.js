@@ -15,7 +15,7 @@ const brookings = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img src="/assets/brookings.webp" alt="The Brookings Institute"></img>
           </div>
           <h1 className="website-name">The Brookings Institute</h1>
@@ -23,7 +23,7 @@ const brookings = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>
@@ -82,42 +82,42 @@ const brookings = () => {
               </div>
             </div>
           </div>
-          <div class="full-width">
+          <div className="full-width">
             <img
               alt=""
               loading="lazy"
               src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e2575610a8cfabbdf3afa_%402xD_Homepage_Dark%201%20(3).png"
               sizes="100vw"
-              class="full-img"
+              className="full-img"
             ></img>
           </div>
-          <div class="col-3">
+          <div className="col-3">
             <img
               alt=""
               loading="lazy"
               src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
-              class="dark-mode-img"
+              className="dark-mode-img"
             ></img>
             <img
               alt=""
               loading="lazy"
               src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
-              class="dark-mode-img"
+              className="dark-mode-img"
             ></img>
             <img
               alt=""
               loading="lazy"
               src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256ce4b9de008c47a72d_M_Find%20a%20Doctor_Search%20Overlay_My%20Providers_Dark%201%20(1).png"
-              class="dark-mode-img"
+              className="dark-mode-img"
             ></img>
           </div>
-          <div class="col-2">
+          <div className="col-2">
             <div>
               <img
                 alt=""
                 loading="lazy"
                 src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
-                class="dark-mode-img"
+                className="dark-mode-img"
               ></img>
             </div>
             <div>
@@ -125,7 +125,7 @@ const brookings = () => {
                 alt=""
                 loading="lazy"
                 src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
-                class="dark-mode-img"
+                className="dark-mode-img"
               ></img>
             </div>
           </div>

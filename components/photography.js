@@ -65,8 +65,8 @@ const Photography = () => {
         >
           <SwiperSlide>
             <img alt="Kacey" src="/photography/kacey.jpg" />
-            <div class="photo-text">
-              <div class="photo-caption">
+            <div className="photo-text">
+              <div className="photo-caption">
                 Kacey, in Georgetown
               </div>
               <a href="/">↗ Instagram Post ↗</a>
@@ -74,8 +74,8 @@ const Photography = () => {
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/jack-one.jpg" />
-          <div class="photo-text">
-              <div class="photo-caption">
+          <div className="photo-text">
+              <div className="photo-caption">
                 Jack, in the Forest
               </div>
               <a href="/">↗ Instagram Post ↗</a>
@@ -83,8 +83,8 @@ const Photography = () => {
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/jordan-one.jpg" />
-          <div class="photo-text">
-              <div class="photo-caption">
+          <div className="photo-text">
+              <div className="photo-caption">
                 Jordan, at the Wharf
               </div>
               <a target="_blank" href="/">↗ Instagram Post ↗</a>
@@ -92,8 +92,8 @@ const Photography = () => {
           </SwiperSlide>
           <SwiperSlide>
           <img src="/photography/rania-one.jpg" />
-          <div class="photo-text">
-              <div class="photo-caption">
+          <div className="photo-text">
+              <div className="photo-caption">
                 Rania, in the Studio
               </div>
               <a href="/">↗ Instagram Post ↗</a>

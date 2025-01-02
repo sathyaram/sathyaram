@@ -8,7 +8,7 @@ const menu = () => {
   return (
     <>
       <aside role="region">
-        <a tabindex="1" className="logo" aria-label="Logo Home Link" name="logo" href="/">
+        <a tabIndex="1" className="logo" aria-label="Logo Home Link" name="logo" href="/">
           <svg version="1.1" viewBox="0 0 62.5 28.7">
             <linearGradient
               id="gradient"
@@ -31,7 +31,7 @@ const menu = () => {
             </g>
           </svg>
         </a>
-        <button type="button" onClick={menuOpen} tabindex="2" className="menu-toggle" aria-label="Menu Open Close">
+        <button tabIndex="2" type="button" onClick={menuOpen}  className="menu-toggle" aria-label="Menu Open Close">
           <div className="menu-title">Menu</div>
           <div className="burger">
             <span></span>
@@ -46,8 +46,8 @@ const menu = () => {
         title="main-menu"
         aria-label="main-menu"
       >
-        <div class="wrapper">
-          <nav className="social-media" role="navigation">
+        <div className="wrapper">
+          <nav className="social-media">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -83,7 +83,7 @@ const menu = () => {
               <span>Dribbble</span>
             </a>
           </nav>
-          <ul className="eyebrow">
+          <ul className="eyebrow" role="navigation">
             <li>
               <a direction="right" href="/">
                 Home
@@ -110,7 +110,7 @@ const menu = () => {
               </a>
             </li>
           </ul>
-          <ul className="website-menu">
+          <ul className="website-menu" role="navigation">
             <li>
               <a href="/homeplanetfund">Home Planet Fund</a>
             </li>
