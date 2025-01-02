@@ -73,6 +73,7 @@ const brookings = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
+                    target="_blank" rel="noopener noreferrer"
                     href="https://brookings.org"
                   >
                     brookings.org

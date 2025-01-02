@@ -100,12 +100,12 @@ const menu = () => {
               </a>
             </li>
             <li>
-              <a direction="right" href="/contact">
+              <a direction="right" target="_blank" rel="noopener noreferrer" href="/contact">
                 Resume
               </a>
             </li>
             <li>
-              <a direction="right" href="/contact">
+              <a direction="right" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sathya-ram">
                 LinkedIn
               </a>
             </li>
@@ -129,9 +129,6 @@ const menu = () => {
             <li>
               <a href="/vilcek">Vilcek Foundation</a>
             </li>
-          
-           
-            
           </ul>
         </div>
       </nav>

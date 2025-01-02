@@ -8,7 +8,10 @@ const hhmi = () => {
     <>
       <Head>
         <title>Howard Hughes' Biointeractive | Sathya Ram</title>
-        <meta name="description" content="About Howard Hughes' Biointeractive" />
+        <meta
+          name="description"
+          content="About Howard Hughes' Biointeractive"
+        />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight hhmi page website" />
       </Head>
@@ -16,7 +19,10 @@ const hhmi = () => {
       <main>
         <div className="website-heading">
           <div class="website-image">
-            <img src="/assets/howie.svg" alt="Howard Hughes' Biointeractive"></img>
+            <img
+              src="/assets/howie.svg"
+              alt="Howard Hughes' Biointeractive"
+            ></img>
           </div>
           <h1 className="website-name">Howard Hughes' Biointeractive</h1>
           <h2 className="website-tagline"></h2>
@@ -73,9 +79,11 @@ const hhmi = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
-                    href="https://sontagfoundation.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://biointeractive.org"
                   >
-                    sontagfoundation.org
+                    biointeractive.org
                   </a>
                 </div>
               </div>

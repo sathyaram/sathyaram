@@ -73,6 +73,8 @@ const sontag = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://sontagfoundation.org"
                   >
                     sontagfoundation.org

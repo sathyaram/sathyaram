@@ -20,7 +20,7 @@
     width: 100%;
     height: auto;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.1;
     min-width: 800px;
     margin: 0 auto;
     padding: 4rem;
@@ -28,6 +28,12 @@
 
   .website-heading {
     margin-bottom: 4rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   a.website-link {
@@ -149,7 +155,7 @@
 }
 
 .hhmi {
-  background: linear-gradient(90deg, #82bb44 0%, #178387 100%);
+  background-image: linear-gradient(30deg, #82bb44 0%, #178387 100%);
 }
 
 #hhmi {
@@ -162,13 +168,12 @@
   }
 
   .project-background::after {
-    background: linear-gradient(270deg, #82bb44 0%, #178387 100%);
+    background-image: linear-gradient(270deg, #82bb44 0%, #178387 100%);
   }
 }
 
 .vilcek {
   background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
-
 }
 
 #vilcek {
@@ -187,7 +192,6 @@
 
 .brookings {
   background-image: linear-gradient(360deg, #1473b2, #00274b);
-
 }
 
 #brookings {

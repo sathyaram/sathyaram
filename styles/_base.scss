@@ -37,7 +37,7 @@
     width: 70%;
   }
   > div:last-child {
-    width: 30%;
+    width: fit-content;
   }
   @media screen and (max-width: $ipad) {
     > div:first-child {

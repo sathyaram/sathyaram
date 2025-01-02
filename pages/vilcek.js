@@ -73,9 +73,11 @@ const vilcek = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
-                    href="https://sontagfoundation.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://vilcek.org"
                   >
-                    sontagfoundation.org
+                    vilcek.org
                   </a>
                 </div>
               </div>

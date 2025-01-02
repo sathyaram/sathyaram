@@ -70,13 +70,30 @@ const lehigh = () => {
                   <div>2021</div>
                 </div>
                 <div className="website-url website-info">
-                  <label>Live Website</label>
+                  <label>Live Websites</label>
+                  <div class="links">
                   <a
                     className="website-link"
-                    href="https://sontagfoundation.org"
+                    target="_blank" rel="noopener noreferrer"
+                    href="https://aad.lehigh.edu"
                   >
-                    sontagfoundation.org
+                    aad.lehigh.edu
                   </a>
+                  <a
+                    className="website-link"
+                    target="_blank" rel="noopener noreferrer"
+                    href="https://creativeinquiry.lehigh.edu"
+                  >
+                    creativeinquiry.lehigh.edu
+                  </a>
+                  <a
+                    className="website-link"
+                    target="_blank" rel="noopener noreferrer"
+                    href="https://te.lehigh.edu"
+                  >
+                    te.lehigh.edu
+                  </a>
+                  </div>
                 </div>
               </div>
             </div>

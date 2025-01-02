@@ -326,10 +326,7 @@ nav.social-media {
   position: relative;
   z-index: 5;
 
-  &:focus {
-    // outline: white solid 1px;
-    // border: 2px solid blue;
-    border-radius: 3px;
+  &:focus-visible {
     outline-offset: 1px;
     outline: -webkit-focus-ring-color auto 1px;
   }
@@ -340,7 +337,7 @@ nav.social-media {
         &:nth-child(1),
         &:nth-child(2),
         &:nth-child(3) {
-          background-color: #90daff;
+          background-color: white;
           box-shadow: 0 0 15px 0 rgba($blue, 0.25);
         }
       }
@@ -431,4 +428,35 @@ nav.social-media {
     opacity 300ms ease,
     transform 300ms ease;
   transform: translateY(-20px);
+}
+
+.menu-open {
+  .menu-toggle {
+    .burger {
+      span {
+        background-color: white;
+        box-shadow: 0 0 15px 0 white, 0 0 25px 0 white;
+
+        &:nth-child(1) {
+          transform: translateY(11px) rotate(315deg) translateX(2px);
+
+          &::before {
+            background-color: $blue;
+          }
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(-550px) translateY(-50%);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-9px) rotate(225deg) translateX(12px);
+          &::before {
+            background-color: $waterfall;
+          }
+        }
+      }
+    }
+  }
 }

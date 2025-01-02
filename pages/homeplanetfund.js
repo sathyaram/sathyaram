@@ -73,6 +73,8 @@ const homeplanetfund = () => {
                   <label>Live Website</label>
                   <a
                     className="website-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://homeplanetfund.org"
                   >
                     homeplanetfund.org
