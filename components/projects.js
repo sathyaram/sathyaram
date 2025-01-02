@@ -52,6 +52,7 @@ const projects = () => {
             if (project.type === "web") {
               return (
                 <SwiperSlide>
+                  <a href="/sontag" class="project-block">
                 <article
                   className="project"
                   id={project.id}
@@ -70,6 +71,7 @@ const projects = () => {
                     </button>
                   </div>
                 </article>
+                </a>
                 </SwiperSlide>
               );
             }

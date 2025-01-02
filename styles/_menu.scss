@@ -44,11 +44,7 @@ nav.menu {
       bottom: -5px;
       height: 1px;
       background-color: #63b5f8;
-      background: linear-gradient(
-        135deg,
-        rgba(112, 213, 255, 0.8),
-        rgba(0, 89, 188, 0.9)
-      );
+      background: linear-gradient(135deg, rgba(112, 213, 255, 0.8), rgba(0, 89, 188, 0.9));
       right: 0;
       transition: width 0.4s cubic-bezier(0.37, 0, 0.21, 1.02);
     }
@@ -64,19 +60,22 @@ nav.main-menu {
   z-index: 4;
   padding: 8rem 4rem 4rem;
   transition: transform 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
-  max-width: 825px;
+  max-width: 70%;
   width: 100%;
-  transform: translateX(825px);
+  transform: translateX(calc(100% + 1px));
+  border-left: 1px solid $blue;
 
   .menu-open & {
     transform: translateX(0);
   }
-  
+
   ul {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     height: 100%;
+    max-width: 620px;
+    margin: 0 auto;
 
     li {
       width: 100%;
@@ -101,7 +100,7 @@ nav.main-menu {
   z-index: 3;
   transition: transform 300ms ease;
   display: flex;
-  
+
   svg {
     width: 90px;
     height: auto;
@@ -199,14 +198,7 @@ nav.social-media {
     }
 
     &:first-child::after {
-      background: radial-gradient(
-        circle at 33% 100%,
-        #fed373 4%,
-        #f15245 30%,
-        #d92e7f 62%,
-        #9b36b7 85%,
-        #515ecf
-      );
+      background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
     }
 
     &:nth-child(3)::after {
@@ -229,7 +221,8 @@ nav.social-media {
       transform: translateX(-50%) scale(0.3);
       opacity: 0;
       box-shadow: 0 5px 15px 0 rgb(0 0 0 / 25%);
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      transition:
+        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
   }
@@ -258,7 +251,7 @@ nav.social-media {
       bottom: -14px;
     }
   }
-  
+
   svg {
     width: 32px;
     height: 32px;
@@ -321,28 +314,38 @@ nav.social-media {
       }
 
       &:nth-child(1) {
-        transition: opacity 300ms ease, transform 300ms ease, background-color 300ms ease 0s, box-shadow 300ms ease 0s;
+        transition:
+          opacity 300ms ease,
+          transform 300ms ease,
+          background-color 300ms ease 0s,
+          box-shadow 300ms ease 0s;
         transform-origin: center center;
       }
 
       &:nth-child(2) {
         top: 50%;
         transform: translateX(0) translateY(-50%);
-        transition: opacity 600ms ease, transform 1s ease, background-color 300ms ease 200ms,
+        transition:
+          opacity 600ms ease,
+          transform 1s ease,
+          background-color 300ms ease 200ms,
           box-shadow 300ms ease 200ms;
       }
 
       &:nth-child(3) {
         top: auto;
         bottom: 0;
-        transition: opacity 300ms ease, transform 300ms ease, background-color 300ms ease 400ms,
+        transition:
+          opacity 300ms ease,
+          transform 300ms ease,
+          background-color 300ms ease 400ms,
           box-shadow 300ms ease 400ms;
       }
     }
   }
 
   .menu-title {
-    font-family: 'Maison';
+    font-family: "Maison";
     text-transform: uppercase;
     top: 8px;
     position: absolute;
@@ -353,7 +356,9 @@ nav.social-media {
     letter-spacing: 2px;
     font-weight: 600;
     opacity: 0;
-    transition: opacity 300ms ease, transform 300ms ease;
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
     transform: translateY(-20px);
   }
 }

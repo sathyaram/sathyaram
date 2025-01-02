@@ -31,9 +31,7 @@ const Designs = () => {
             pagination={{ clickable: true }}
             navigation={true}
             keyboard={true}
-            effect="coverflow"
-          centeredSlides={true} 
-
+            centeredSlides={true} 
             initialSlide={1}
             breakpoints={{
               560: {

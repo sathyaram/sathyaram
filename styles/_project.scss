@@ -26,13 +26,12 @@ section {
 
   .heading {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 4rem;
+    padding-bottom: 10rem;
     overflow-x: hidden;
-    max-width: 80vw;
     margin: 0 auto;
 
     .heading-desc {
@@ -41,6 +40,7 @@ section {
       font-size: 12px;
       margin-top: 2rem; 
       color: #a1aaa9;
+      text-align: center;
     }
 
     h3 {
@@ -62,7 +62,7 @@ section {
         left:50%;
         transform: translateX(-50%);
         z-index: -1;
-        border-bottom: 8px solid #7aadff;
+        border-bottom: 8px solid $blue;
 
       }
 
