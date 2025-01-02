@@ -64,7 +64,10 @@ const brookings = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-
+                <div className="website-year website-info">
+                  <label>Agency</label>
+                  <div>Teal Media</div>
+                </div>
                 <div className="website-year website-info">
                   <label>Year of Creation</label>
                   <div>2021</div>

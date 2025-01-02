@@ -64,9 +64,12 @@ const sontag = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-
                 <div className="website-year website-info">
-                  <label>Year of Creation</label>
+                  <label>Agency</label>
+                  <div>∏ush10</div>
+                </div>
+                <div className="website-year website-info">
+                  <label>Published</label>
                   <div>2021</div>
                 </div>
                 <div className="website-url website-info">

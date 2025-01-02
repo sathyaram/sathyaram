@@ -66,7 +66,7 @@ const vilcek = () => {
                 </div>
                 <div className="website-year website-info">
                   <label>Agency</label>
-                  <div>Teal Media</div>
+                  <div>Forum One</div>
                 </div>
                 <div className="website-year website-info">
                   <label>Year of Creation</label>

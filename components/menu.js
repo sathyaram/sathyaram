@@ -95,12 +95,12 @@ const menu = () => {
               </a>
             </li>
             <li>
-              <a direction="right" href="/contact">
-                Contact
+              <a direction="right" href="mailto:sathyatheram@gmail.com">
+                Email
               </a>
             </li>
             <li>
-              <a direction="right" target="_blank" rel="noopener noreferrer" href="/contact">
+              <a direction="right" target="_blank" rel="noopener noreferrer" href="/SathyaRam_Resume2025.pdf">
                 Resume
               </a>
             </li>

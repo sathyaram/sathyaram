@@ -15,7 +15,7 @@ const homeplanetfund = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img src="/assets/homeplanet.png" alt="Home Planet Fund"></img>
           </div>
           <h1 className="website-name">Home Planet Fund</h1>
@@ -23,7 +23,7 @@ const homeplanetfund = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>
@@ -64,7 +64,10 @@ const homeplanetfund = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-
+                <div className="website-year website-info">
+                  <label>Agency</label>
+                  <div>Teal Media</div>
+                </div>
                 <div className="website-year website-info">
                   <label>Year of Creation</label>
                   <div>2021</div>

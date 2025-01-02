@@ -66,7 +66,7 @@ const lehigh = () => {
                 </div>
 
                 <div className="website-year website-info">
-                  <label>Year of Creation</label>
+                  <label>Launched</label>
                   <div>2021</div>
                 </div>
                 <div className="website-url website-info">

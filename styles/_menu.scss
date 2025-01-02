@@ -259,22 +259,18 @@ nav.social-media {
     stroke-linecap: round;
 
     @media screen and (max-width: $mobile) {
-      width: 70px;
+      width: 80px;
     }
 
     .s-line {
-      fill: rgb(15, 15, 15);
-      stroke: rgb(15, 15, 15);
+      fill: white;
+      stroke: white;
       stroke-width: 1px;
       stroke-dasharray: 126.93897247314453;
       stroke-dashoffset: 126.93897247314453;
       transition: fill 300ms ease;
-
-      .midnight & {
-        stroke: white;
-        fill: white;
-      }
     }
+
     .r-line {
       stroke-width: 1px;
       transition: fill 300ms ease;
@@ -294,10 +290,7 @@ nav.social-media {
     .s-line {
       animation: stroke-offset 1.4s ease forwards;
       fill: transparent;
-
-      .midnight & {
-        fill: transparent;
-      }
+      fill-opacity: 0;
     }
 
     .r-line {
@@ -435,13 +428,13 @@ nav.social-media {
 
     &:hover {
       span {
-        box-shadow: 0 0 0 0 white !important;
+        box-shadow: 0 0 15px 0 white, 0 0 25px 0 white;
       }
     }
     .burger {
       span {
         background-color: white;
-        box-shadow: 0 0 15px 0 white, 0 0 25px 0 white;
+        box-shadow: 0 0 0 0 white;
 
         &:nth-child(1) {
           transform: translateY(11px) rotate(315deg) translateX(2px);
