@@ -39,6 +39,7 @@ const Designs = () => {
           keyboard={true}
           centeredSlides={true}
           initialSlide={1}
+          spaceBetween={90}
           breakpoints={{
             320: {
               slidesPerView: 1.25,
@@ -46,14 +47,13 @@ const Designs = () => {
             560: {
               slidesPerView: 2,
             },
-            1080: {
+            1480: {
               slidesPerView: 3,
             },
             1920: {
               slidesPerView: 4,
-            }
+            },
           }}
-          spaceBetween={30}
           loop={true}
           autoplay={{
             delay: 8500, // Delay between transitions (in milliseconds)
@@ -68,23 +68,47 @@ const Designs = () => {
           ]}
         >
           <SwiperSlide>
-            <img src="/designs/lehighracing.jpg" />
+            <a href="/portal">
+              <h3>Lehigh's Campus Portal</h3>
+              <img src="/websites/lehigh-two.jpg" />
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/designs/mosiaclogoconcepts.jpg" />
+            <a href="/fudtruk">
+              <h3>Fudtruk</h3>
+              <img src="/websites/fudtruk.webp" />
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/designs/indifylogoconcept.jpg" />
+            <a href="/lehigh2018">
+              <h3>Lehigh 2018 Style Guide</h3>
+              <img src="/websites/lehigh2018-one.jpg" />
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/designs/powerhouselogoconcepts.jpg" />
+            <a href="/logos">
+              <h3>Logos</h3>
+              <img src="/designs/lehighracing.jpg" />
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/designs/treetecklogoconcepts.jpg" />
+            <a href="/engineering">
+              <h3>Lehigh's Engineering Department</h3>
+              <img src="/websites/lehighengineering.jpg" />
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/designs/loewyinstitute.jpg" />
+            <a href="/pokelogos">
+              <h3>PokéLogos</h3>
+              <img src="/websites/pokelogo-one.webp" />
+            </a>
           </SwiperSlide>
+          {/* <SwiperSlide>
+            <a href="/webdesigns">
+              <h3>Web Design Concepts</h3>
+              <img src="/websites/paulknakk.jpg" />
+            </a>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </section>

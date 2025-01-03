@@ -74,7 +74,7 @@ export const Data = [
   {
     type: "web",
     id: "lehigh",
-    title: "Lehigh University",
+    title: "Lehigh's Art, Architecture & Design Department",
     subtitle: "College Website Development",
     year: "2018",
     tags: ["Drupal", "JavaScript", "Custom HTML+CSS"],

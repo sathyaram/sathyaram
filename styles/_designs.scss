@@ -1,0 +1,128 @@
+#designs {
+    .swiper-slide {
+        position: relative;
+        // border: 2px solid white;
+        // border-radius: 10px;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: rgba(4, 14, 21, 0.391);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        h3 {
+            font-weight: 100;
+            font-size: 52px;
+            line-height: 54px;
+            text-transform: uppercase;
+            letter-spacing: 3pxw;
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            z-index: 2;
+            width: 80%;
+            transform: translateY(-50%);
+            text-shadow:
+                0 0 15px white,
+                0 0 25px white;
+
+            @media screen and (max-width: $ipad) {
+                font-size: 28px;
+                line-height: 24px;
+            }
+        }
+
+        a {
+            color: white;
+        }
+
+        img {
+            border-radius: 10px;
+
+        }
+    }
+
+    .swiper-pagination-bullets {
+        display: none;
+        bottom: -60px;
+    }
+    .swiper-pagination-bullet {
+        background: white;
+        width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+        height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+        border-radius: 0;
+        transform: rotate(45deg);
+        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
+    }
+}
+
+.design {
+    background-attachment: fixed;
+
+    h1 {
+        margin-top: 11rem;
+        font-size: 6rem;
+        text-align: center;
+    }
+
+    main {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+
+    .website-heading {
+        margin-bottom: 4rem;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .website-info {
+        text-align: right;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 100;
+
+        @media screen and (max-width: $ipad) {
+            text-align: left;
+        }
+
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .website-description {
+        max-width: 476px;
+        width: 100%;
+
+        p {
+            font-size: 20px;
+            line-height: 34px;
+            font-weight: 100;
+        }
+    }
+
+    label {
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 10px;
+        text-shadow: 0 1px 8px #fffc;
+    }
+
+    img {
+        border-radius: 15px;
+        box-shadow:
+            0 0 35px 0 rgba(0, 0, 0, 0.1),
+            0 0 65px 0 rgba(0, 0, 0, 0.1),
+            0 0 55px 0 rgba(0, 0, 0, 0.1);
+    }
+}

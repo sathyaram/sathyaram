@@ -86,41 +86,56 @@ const homeplanetfund = () => {
               </div>
             </div>
           </div>
+
           <div className="full-width">
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e2575610a8cfabbdf3afa_%402xD_Homepage_Dark%201%20(3).png"
+              src="/websites/homeplanetfund-one.png"
               sizes="100vw"
               className="full-img"
             ></img>
           </div>
-          <div className="col-3">
+          <div className="full-width">
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
-              className="dark-mode-img"
+              src="/websites/homeplanetfund-two.png"
+              sizes="100vw"
+              className="full-img"
             ></img>
+          </div>
+          <div className="full-width">
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
-              className="dark-mode-img"
+              src="/websites/homeplanetfund-three.png"
+              sizes="100vw"
+              className="full-img"
             ></img>
+          </div>
+          <div className="full-width">
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256ce4b9de008c47a72d_M_Find%20a%20Doctor_Search%20Overlay_My%20Providers_Dark%201%20(1).png"
-              className="dark-mode-img"
+              src="/websites/homeplanetfund-two.png"
+              sizes="100vw"
+              className="full-img"
             ></img>
+          </div>
+          <div className="text-block">
+            After a couple years of agency experience, it became clear that web
+            design and development was my passion. So, I decided to learn
+            programming fundamentals in a formal setting, at a coding bootcamp
+            called General Assembly, where I learned JavaScript and React.js in
+            a rigorous environment.
           </div>
           <div className="col-2">
             <div>
               <img
                 alt=""
                 loading="lazy"
-                src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
+                src="/websites/homeplanetfund-four.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -128,7 +143,7 @@ const homeplanetfund = () => {
               <img
                 alt=""
                 loading="lazy"
-                src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
+                src="/websites/homeplanetfund-five.png"
                 className="dark-mode-img"
               ></img>
             </div>

@@ -67,8 +67,8 @@
     width: 100%;
 
     p {
-      font-size: 18px;
-      line-height: 32px;
+      font-size: 20px;
+      line-height: 34px;
       font-weight: 100;
     }
   }
@@ -80,6 +80,14 @@
     font-size: 10px;
     text-shadow: 0 1px 8px #fffc;
   }
+
+  img {
+    border-radius: 15px;
+    box-shadow:
+      0 0 35px 0 rgba(0, 0, 0, 0.1),
+      0 0 65px 0 rgba(0, 0, 0, 0.1),
+      0 0 55px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 .main-menu {
@@ -87,7 +95,7 @@
     li {
       &:first-child {
         a {
-          background-image: linear-gradient(to left bottom, #f59431, #80221b);
+          background-image: linear-gradient(to left bottom, #3f270d, #80221b);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -137,6 +145,18 @@
 
 .sontag {
   background-image: linear-gradient(to right top, #0042a4, #020f1d);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(to right top, #0042a4, #020f1d);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #sontag {
@@ -155,7 +175,18 @@
 }
 
 .hhmi {
-  background-image: linear-gradient(30deg, #82bb44 0%, #178387 100%);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(30deg, #82bb44 0%, #178387 100%);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #hhmi {
@@ -173,7 +204,18 @@
 }
 
 .vilcek {
-  background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #vilcek {
@@ -191,7 +233,18 @@
 }
 
 .brookings {
-  background-image: linear-gradient(360deg, #1473b2, #00274b);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(360deg, #1473b2, #00274b);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #brookings {
@@ -207,17 +260,39 @@
 }
 
 .homeplanetfund {
-  background-image: linear-gradient(to left bottom, #f59431, #80221b);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(to right top, #1e1307, #80221b);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #homeplanetfund {
   .project-background::after {
-    background-image: linear-gradient(to left bottom, #f59431, #80221b);
+    background-image: linear-gradient(to right top, #1e1307, #80221b);
   }
 }
 
 .lehigh {
-  background-image: linear-gradient(to left bottom, #8b6947, #2e0e04);
+  &::after {
+    content: "";
+    width: 100%;
+    background-image: linear-gradient(to left bottom, #8b6947, #2e0e04);
+    height: 102%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -2;
+  }
 }
 
 #lehigh {

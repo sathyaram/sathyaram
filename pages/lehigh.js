@@ -7,8 +7,8 @@ const lehigh = () => {
   return (
     <>
       <Head>
-        <title>Lehigh University | Sathya Ram</title>
-        <meta name="description" content="About Lehigh University" />
+        <title>Lehigh's Art, Architecture & Design Department | Sathya Ram</title>
+        <meta name="description" content="About Lehigh's Art, Architecture & Design Department" />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight lehigh page website" />
       </Head>
@@ -16,9 +16,12 @@ const lehigh = () => {
       <main>
         <div className="website-heading">
           <div class="website-image">
-            <img src="/assets/lehighuniversity.png" alt="Lehigh University"></img>
+            <img
+              src="/assets/lehighuniversity.png"
+              alt="Lehigh University"
+            ></img>
           </div>
-          <h1 className="website-name">Lehigh University</h1>
+          <h1 className="website-name">Lehigh's Art, Architecture & Design Department</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -44,55 +47,45 @@ const lehigh = () => {
               <div className="col">
                 <div className="website-role website-info">
                   <label>Role</label>
-                  <div>Front-end Developer</div>
+                  <div>Senior Web Developer (Portal)</div>
                 </div>
 
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
-                    <li>WordPress</li>
+                    <li>Drupal 7</li>
+                    <li>HTML / CSS / SCSS</li>
                     <li>JavaScript</li>
-                    <li>Custom CSS Theming</li>
+                    <li>Luminius 7</li>
                   </ul>
                 </div>
 
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Theme Creation</li>
-                    <li>File Management</li>
-                    <li>Online Style Guide</li>
+                    <li>Portal Management</li>
+                    <li>Website Management</li>
+                    <li>Designer</li>
+                    <li>Developer</li>
                   </ul>
                 </div>
 
                 <div className="website-year website-info">
                   <label>Launched</label>
-                  <div>2021</div>
+                  <div>2018</div>
                 </div>
                 <div className="website-url website-info">
-                  <label>Live Websites</label>
+                  <label>Live Website</label>
                   <div class="links">
-                  <a
-                    className="website-link"
-                    target="_blank" rel="noopener noreferrer"
-                    href="https://aad.lehigh.edu"
-                  >
-                    aad.lehigh.edu
-                  </a>
-                  <a
-                    className="website-link"
-                    target="_blank" rel="noopener noreferrer"
-                    href="https://creativeinquiry.lehigh.edu"
-                  >
-                    creativeinquiry.lehigh.edu
-                  </a>
-                  <a
-                    className="website-link"
-                    target="_blank" rel="noopener noreferrer"
-                    href="https://te.lehigh.edu"
-                  >
-                    te.lehigh.edu
-                  </a>
+                    <a
+                      className="website-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://aad.lehigh.edu"
+                    >
+                      aad.lehigh.edu
+                    </a>
+                   
                   </div>
                 </div>
               </div>
@@ -102,48 +95,46 @@ const lehigh = () => {
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e2575610a8cfabbdf3afa_%402xD_Homepage_Dark%201%20(3).png"
+              src="/websites/aad-one.jpg"
               sizes="100vw"
               className="full-img"
             ></img>
           </div>
-          <div className="col-3">
+          <div className="full-width">
             <img
               alt=""
               loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
-              className="dark-mode-img"
-            ></img>
-            <img
-              alt=""
-              loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
-              className="dark-mode-img"
-            ></img>
-            <img
-              alt=""
-              loading="lazy"
-              src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256ce4b9de008c47a72d_M_Find%20a%20Doctor_Search%20Overlay_My%20Providers_Dark%201%20(1).png"
-              className="dark-mode-img"
+              src="/websites/lehigh-one.png"
+              sizes="100vw"
+              className="full-img"
             ></img>
           </div>
-          <div className="col-2">
-            <div>
-              <img
-                alt=""
-                loading="lazy"
-                src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256c9af8ab9bb2f04efb_M_Homepage_Guest_Dark%201%20(3).png"
-                className="dark-mode-img"
-              ></img>
-            </div>
-            <div>
-              <img
-                alt=""
-                loading="lazy"
-                src="https://cdn.prod.website-files.com/5d38a319524154842d081806/655e256cf611c2c0775d21b1_M_Homepage_Guest_Dark%202%20(3).png"
-                className="dark-mode-img"
-              ></img>
-            </div>
+          <div className="full-width">
+            <img
+              alt=""
+              loading="lazy"
+              src="/websites/aad-two.jpg"
+              sizes="100vw"
+              className="full-img"
+            ></img>
+          </div>
+          <div className="full-width">
+            <img
+              alt=""
+              loading="lazy"
+              src="/websites/aad-three.jpg"
+              sizes="100vw"
+              className="full-img"
+            ></img>
+          </div>
+          <div className="full-width">
+            <img
+              alt=""
+              loading="lazy"
+              src="/websites/aad-four.jpg"
+              sizes="100vw"
+              className="full-img"
+            ></img>
           </div>
         </div>
       </main>

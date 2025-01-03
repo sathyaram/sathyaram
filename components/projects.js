@@ -52,7 +52,7 @@ const projects = () => {
             },
             1920: {
               slidesPerView: 3,
-            }
+            },
           }}
           initialSlide={1}
           autoplay={{

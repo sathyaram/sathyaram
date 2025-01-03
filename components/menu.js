@@ -8,7 +8,13 @@ const menu = () => {
   return (
     <>
       <aside role="region">
-        <a tabIndex="1" className="logo" aria-label="Logo Home Link" name="logo" href="/">
+        <a
+          tabIndex="1"
+          className="logo"
+          aria-label="Logo Home Link"
+          name="logo"
+          href="/"
+        >
           <svg version="1.1" viewBox="0 0 62.5 28.7">
             <linearGradient
               id="gradient"
@@ -31,7 +37,13 @@ const menu = () => {
             </g>
           </svg>
         </a>
-        <button tabIndex="2" type="button" onClick={menuOpen}  className="menu-toggle" aria-label="Menu Open Close">
+        <button
+          tabIndex="2"
+          type="button"
+          onClick={menuOpen}
+          className="menu-toggle"
+          aria-label="Menu Open Close"
+        >
           <div className="menu-title">Menu</div>
           <div className="burger">
             <span></span>
@@ -100,12 +112,22 @@ const menu = () => {
               </a>
             </li>
             <li>
-              <a direction="right" target="_blank" rel="noopener noreferrer" href="/SathyaRam_Resume2025.pdf">
+              <a
+                direction="right"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/SathyaRam_Resume2025.pdf"
+              >
                 Resume
               </a>
             </li>
             <li>
-              <a direction="right" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/sathya-ram">
+              <a
+                direction="right"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://linkedin.com/in/sathya-ram"
+              >
                 LinkedIn
               </a>
             </li>
@@ -118,7 +140,7 @@ const menu = () => {
               <a href="/brookings">The Brookings Institute</a>
             </li>
             <li>
-              <a href="/lehigh">Lehigh University</a>
+              <a href="/lehigh">Lehigh's Art, Architecture & Design Department</a>
             </li>
             <li>
               <a href="/sontag">The Sontag Foundation</a>
@@ -128,6 +150,26 @@ const menu = () => {
             </li>
             <li>
               <a href="/vilcek">Vilcek Foundation</a>
+            </li>
+          </ul>
+          <ul className="design-menu" role="navigation">
+            <li>
+              <a href="/portal">Lehigh's Campus Portal</a>
+            </li>
+            <li>
+              <a href="/fudtruk">Fudtruk</a>
+            </li>
+            <li>
+              <a href="/lehigh2018">Lehigh 2018 Style Guide</a>
+            </li>
+            <li>
+              <a href="/logos">Logos + Concepts</a>
+            </li>
+            <li>
+              <a href="/engineering">Lehigh's Engineering Department</a>
+            </li>
+            <li>
+              <a href="/pokelogos">PokéLogos</a>
             </li>
           </ul>
         </div>
