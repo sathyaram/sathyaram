@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
@@ -6,7 +7,6 @@ import {
   Pagination,
   Autoplay,
 } from "swiper";
-import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -106,7 +106,9 @@ const Designs = () => {
           <SwiperSlide>
             <Link href="/engineering">
               <div>
-                <h3>Lehigh University&apos;s College of Engineering Web Designs</h3>
+                <h3>
+                  Lehigh University&apos;s College of Engineering Web Designs
+                </h3>
                 <img
                   src="/websites/lehighengineering.jpg"
                   alt="engineering-tile-image"

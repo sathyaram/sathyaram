@@ -1,10 +1,7 @@
 import React from "react";
 
 const rain = () => {
- 
-  return (
-   <></>
-  );
+  return <></>;
 };
 
 export default rain;

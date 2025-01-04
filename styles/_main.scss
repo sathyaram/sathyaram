@@ -124,7 +124,8 @@ main {
   @media screen and (max-width: $mobile) {
     padding: 0;
 
-    .homepage & {
+    .homepage &,
+    .about & {
       padding: 0 2rem;
     }
   }

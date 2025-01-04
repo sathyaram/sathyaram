@@ -1,6 +1,4 @@
-import { gsap } from "gsap";
 import { Data } from "../data.js";
-import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,

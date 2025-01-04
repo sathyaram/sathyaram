@@ -46,24 +46,19 @@ const engineering = () => {
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
-                    <li>Drupal 7</li>
-                    <li>HTML / CSS / SCSS</li>
-                    <li>JavaScript</li>
-                    <li>Luminius 7</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Photoshop</li>
                   </ul>
                 </div>
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Portal Management</li>
-                    <li>Website Management</li>
                     <li>Designer</li>
-                    <li>Developer</li>
                   </ul>
                 </div>
                 <div className="website-year website-info">
                   <label>Designed In</label>
-                  <div>2017-2020</div>
+                  <div>2017</div>
                 </div>
               </div>
             </div>

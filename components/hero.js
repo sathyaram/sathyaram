@@ -1,7 +1,4 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
-import { Data } from "../data.js";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";

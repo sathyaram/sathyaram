@@ -19,6 +19,36 @@ export default function Document() {
           `}
         </Script>
         <link rel="icon" href="/favicon.ico" />
+        {/* <link
+          rel="preload"
+          href="/fonts/Maison-Medium.woff"
+          as="font"
+          crossOrigin="anonymous"
+        ></link>
+        <link
+          rel="preload"
+          href="/fonts/Maison-Medium.woff2"
+          as="font"
+          crossOrigin="anonymous"
+        ></link>
+        <link
+          rel="preload"
+          href="/fonts/Maison-Light.woff"
+          as="font"
+          crossOrigin="anonymous"
+        ></link>
+        <link
+          rel="preload"
+          href="/fonts/Maison-Light.woff2"
+          as="font"
+          crossOrigin="anonymous"
+        ></link>
+        <link
+          rel="preload"
+          href="/fonts/Californication.ttf"
+          as="font"
+          crossOrigin="anonymous"
+        ></link> */}
         <body className="midnight" />
       </Head>
       <body>
