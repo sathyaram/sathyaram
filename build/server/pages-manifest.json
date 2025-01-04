@@ -1,0 +1,21 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/engineering": "pages/engineering.html",
+  "/brookings": "pages/brookings.html",
+  "/api/hello": "pages/api/hello.js",
+  "/fudtruk": "pages/fudtruk.html",
+  "/about": "pages/about.html",
+  "/hhmi": "pages/hhmi.html",
+  "/": "pages/index.html",
+  "/lehigh": "pages/lehigh.html",
+  "/lehigh2018": "pages/lehigh2018.html",
+  "/logos": "pages/logos.html",
+  "/portal": "pages/portal.html",
+  "/sontag": "pages/sontag.html",
+  "/pokelogos": "pages/pokelogos.html",
+  "/vilcek": "pages/vilcek.html",
+  "/homeplanetfund": "pages/homeplanetfund.html",
+  "/404": "pages/404.html"
+}
