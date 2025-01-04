@@ -17,7 +17,7 @@ export default function Home() {
         <meta name="next-head-count" />
         <meta
           name="description"
-          content="Web Developer | Digital Designer | Photographer"
+          content="Web Developer | UI/Graphic Designer | Photographer"
         />
         <meta
           name="viewport"
