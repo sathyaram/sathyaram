@@ -45,7 +45,7 @@ h1 {
     }
     &:last-child {
       margin-left: -1rem;
-      
+
       @media screen and (max-width: $mobile) {
         margin-right: -0.5rem;
       }
@@ -139,6 +139,7 @@ h2 {
 main {
   padding: 0 6vw;
   overflow-x: hidden;
+  box-sizing: border-box;
 
   @media screen and (max-width: $mobile) {
     padding: 0;

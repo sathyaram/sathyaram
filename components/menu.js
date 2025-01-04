@@ -44,7 +44,6 @@ const menu = () => {
           className="menu-toggle"
           aria-label="Menu Open Close"
         >
-          <div className="menu-title">Menu</div>
           <div className="burger">
             <span></span>
             <span></span>
