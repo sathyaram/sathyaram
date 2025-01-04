@@ -27,17 +27,11 @@ const vilcek = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While working at Forum One, I had the honor of being tasked to do the entire frontend of the Vilcek Foundation's brand new website. The Vilcek Foundation raises awareness of immigrant contributions in the United States and fosters appreciation of the arts and sciences. Through their prizes, they reward immigrant artists and scientists at every stage of their careers. The build involved extensive image galleries and content types for various groupings of art that Vilcek wanted to organize, as well as keep track of all their grantees, donors and art contributions. 
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    Being able to theme a majority of the project myself, I was able to build out clean SCSS directories filled with different ways to run our different gallery layouts. Even in 2025, this website is thriving, clean and preformant - reflective of a lot of the longevity I try to instill in websites. 
                   </p>
                 </div>
               </div>
@@ -52,7 +46,7 @@ const vilcek = () => {
                   <ul>
                     <li>WordPress</li>
                     <li>JavaScript</li>
-                    <li>HTML / CSS, Bootstrap</li>
+                    <li>HTML / CSS, SCSS</li>
                     <li>SCSS Theming</li>
                     <li>Advanced Custom Fields</li>
                   </ul>
@@ -61,6 +55,7 @@ const vilcek = () => {
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
+                    <li>Frontend Development</li>
                     <li>Theme Creation</li>
                     <li>File Management</li>
                     <li>Animation / Interactions</li>

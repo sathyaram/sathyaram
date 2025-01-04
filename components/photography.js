@@ -71,7 +71,7 @@ const Photography = () => {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/p/CQrRenyBPvH/?img_index=1"
               >
-                ↗ Instagram Post ↗
+                Instagram Post ↗
               </a>
             </div>
           </SwiperSlide>
@@ -84,7 +84,7 @@ const Photography = () => {
                 href="https://www.instagram.com/p/CFFxPX3hefW/?img_index=1"
                 rel="noopener noreferrer"
               >
-                ↗ Instagram Post ↗
+                Instagram Post ↗
               </a>
             </div>
           </SwiperSlide>
@@ -97,7 +97,7 @@ const Photography = () => {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/p/CM5VE9WhF3S/?img_index=1"
               >
-                ↗ Instagram Post ↗
+                Instagram Post ↗
               </a>
             </div>
           </SwiperSlide>
@@ -110,7 +110,7 @@ const Photography = () => {
                 href="https://www.instagram.com/p/CTiCXeQnF9z/?img_index=1"
                 rel="noopener noreferrer"
               >
-                ↗ Instagram Post ↗
+                Instagram Post ↗
               </a>
             </div>
           </SwiperSlide>

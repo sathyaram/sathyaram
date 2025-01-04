@@ -27,17 +27,11 @@ const sontag = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While working at Push10, The Sontag Foundation came to us and I was tasked with crafting the entire website from scratch in WordPress, while also theming it. The story of The Sontag Foundation is really the story of Rick and Susan Sontag and their ability to turn adversity into a benefit for many other people who have lived with the scourge of brain cancer.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    The idea was cleanly and effectively display information on all devices. 
                   </p>
                 </div>
               </div>
@@ -62,7 +56,7 @@ const sontag = () => {
                   <label>Scope</label>
                   <ul>
                     <li>Theme Creation</li>
-                    <li>File Management</li>
+                    <li>Extensive Custom Fields</li>
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
@@ -72,7 +66,7 @@ const sontag = () => {
                 </div>
                 <div className="website-year website-info">
                   <label>Published</label>
-                  <div>2021</div>
+                  <div>2020</div>
                 </div>
                 <div className="website-url website-info">
                   <label>Live Website</label>

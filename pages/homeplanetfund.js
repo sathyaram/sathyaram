@@ -27,17 +27,21 @@ const homeplanetfund = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While working at Teal Media, a project I received was for
+                    Home Planet Fund. Complete ground-up built in WordPress.
+                    Purely theming and crafting the fields. It was a blast. Home
+                    Planet Fund leverages the power of nature and the
+                    stewardship role of Indigenous People and Local Communities.
+                    It is also a company powered by Patagonia. Its seed money
+                    and yours is what powers this company's noble mission. To
+                    harnass nature to create better living.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    The vibe of the website is meant to capture that grass
+                    rootness. The animations, draw-like hover effects, textures
+                    and cursor changes are but some touches I added that helped
+                    ground you in the feel of the site's goal.
                   </p>
                 </div>
               </div>
@@ -117,11 +121,7 @@ const homeplanetfund = () => {
             ></img>
           </div>
           <div className="text-block">
-            After a couple years of agency experience, it became clear that web
-            design and development was my passion. So, I decided to learn
-            programming fundamentals in a formal setting, at a coding bootcamp
-            called General Assembly, where I learned JavaScript and React.js in
-            a rigorous environment.
+            Performant across all devices and integrating colorful scroll effects. They wanted a scroll experience akin to a summer breeze in the Sahara.
           </div>
           <div className="col-2">
             <div>

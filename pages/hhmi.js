@@ -7,10 +7,12 @@ const hhmi = () => {
   return (
     <>
       <Head>
-        <title>Howard Hughes Medical Institute&apos;s Biointeractive | Sathya Ram</title>
+        <title>
+          Howard Hughes Medical Institute&apos;s Biointeractive | Sathya Ram
+        </title>
         <meta
           name="description"
-          content="About Howard Hughes Medical Institute&apos;s Biointeractive"
+          content="About Howard Hughes Medical Institute's Biointeractive"
         />
         <meta name="next-head-count" />
         <body className="midnight hhmi page website" />
@@ -21,10 +23,12 @@ const hhmi = () => {
           <div className="website-image">
             <img
               src="/assets/howie.svg"
-              alt="Howard Hughes Medical Institute&apos;s Biointeractive"
+              alt="Howard Hughes Medical Institute's Biointeractive"
             ></img>
           </div>
-          <h1 className="website-name">Howard Hughes Medical Institute&apos;s Biointeractive</h1>
+          <h1 className="website-name">
+            Howard Hughes Medical Institute&apos;s Biointeractive
+          </h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -33,17 +37,23 @@ const hhmi = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    A massive undertaking - building out the frontend for small
+                    Netflix-like repository for science videos. .BioInteractive
+                    is a leading provider of free classroom resources and
+                    professional development for high school and undergraduate
+                    biology educators. They aim to connect students to big ideas
+                    in biology and promote engagement through the science
+                    practices to transform science education into a creative,
+                    interdisciplinary endeavor that reflects the excitement of
+                    real research. Funded by Howard Hughes himself and his
+                    Medical Institute, it gathers a myriad of disciplines of
+                    sciences and gives it out as a resource.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    The pages are extensive but this was a fun project. Still
+                    stands the test of time - the color schemes and div
+                    placements hold up on all browsers.
                   </p>
                 </div>
               </div>

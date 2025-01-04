@@ -22,20 +22,39 @@ const fudtruk = () => {
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-              <div className="website-description">
+                <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    I got to do the vinyl wrap for a food truck! After doing the
+                    logo and branding for the FudTruk, a food truck in the
+                    Lehigh Valley, I was able to achieve the opportunity to do
+                    the design for their actual truck! I was beyond excited!
                   </p>
                   <br></br>
+
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    I worked with a local print shop, Christmas City Printing in
+                    Bethlehem on getting the design files in perfect shape for
+                    the vinyl cuts to be just right.
                   </p>
+                  <br></br>
+
+                  <p>
+                    The folks behind the FudTruk wanted a more minimalist look
+                    so I suggested colorful icons which I thought would look
+                    good against the white truck. I wanted to throw a splash of
+                    orange near the bottom to bring out the orange from the logo
+                    and branding; I also wanted the logo to contrast
+                    dramatically, front and center, when you ordered.
+                  </p>
+                  <br></br>
+
+                  <p>
+                    I also built their website, where you'll see so much more
+                    about the FudTruk including the menu, food pictures which I
+                    took, some background video I made, some neat web design and
+                    pretty colors!
+                  </p>
+                  <br></br>
                 </div>
               </div>
               <div className="col">
@@ -136,6 +155,3 @@ const fudtruk = () => {
 };
 
 export default fudtruk;
-
-
-

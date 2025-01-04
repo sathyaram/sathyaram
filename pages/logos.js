@@ -20,16 +20,16 @@ const logos = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-          <div className="grid-2">
-            <img src="/designs/lehighracing.jpg" />
-            <img src="/designs/mosiaclogoconcepts.jpg" />
-            <img src="/designs/indifylogoconcept.jpg" />
-            <img src="/designs/powerhouselogoconcepts.jpg" />
-            <img src="/designs/treetecklogoconcepts.jpg" />
-            <img src="/designs/loewyinstitute.jpg" />
-            <img src="/websites/vertralogos.jpg" />
-            <img src="/websites/frostlogoconcepts.jpg" />
-          </div>
+            <div className="grid-2">
+              <img alt="logo-concept" src="/designs/lehighracing.jpg" />
+              <img alt="logo-concept" src="/designs/mosiaclogoconcepts.jpg" />
+              <img alt="logo-concept" src="/designs/indifylogoconcept.jpg" />
+              <img alt="logo-concept" src="/designs/powerhouselogoconcepts.jpg" />
+              <img alt="logo-concept" src="/designs/treetecklogoconcepts.jpg" />
+              <img alt="logo-concept" src="/designs/loewyinstitute.jpg" />
+              <img alt="logo-concept" src="/websites/vertralogos.jpg" />
+              <img alt="logo-concept" src="/websites/frostlogoconcepts.jpg" />
+            </div>
           </div>
         </div>
       </main>
@@ -39,6 +39,3 @@ const logos = () => {
 };
 
 export default logos;
-
-
-

@@ -18,9 +18,7 @@ const lehigh2018 = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">
-          Lehigh2018 Web Theme Style Guide
-          </h1>
+          <h1 className="website-name">Lehigh2018 Web Theme Style Guide</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -29,17 +27,22 @@ const lehigh2018 = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While at Lehigh University, I was tasked to create the new
+                    Lehigh2018 website theme that would be used across over a
+                    100 department websites, I decided it would be a great
+                    opportunity to help out users and create modular displays
+                    for content creators. These 'content sections' are
+                    pre-styled components like an Image Slider, Call to Action
+                    buttons, Card/Photo grids, Blockquotes, etcs that users can
+                    easily add to their web pages with a click of a button in
+                    Drupal. It was wildly successful and is widely used!
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    It was an absolute pleasure creating these - I also created
+                    a PDF so content creators could browse how the Content
+                    Sections look as well as their functionality and use cases.
+                    Definitely take a look!
                   </p>
                 </div>
               </div>

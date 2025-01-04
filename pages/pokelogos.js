@@ -21,15 +21,15 @@ const pokelogos = () => {
         <div className="website-content">
           <div className="constrained">
             <div className="grid-2">
-              <img src="/websites/pokelogo-one.webp" />
-              <img src="/websites/pokelogo-two.jpg" />
-              <img src="/websites/pokelogo-three.jpg" />
-              <img src="/websites/pokelogo-four.jpg" />
-              <img src="/websites/pokelogo-five.jpg" />
-              <img src="/websites/pokelogo-six.jpg" />
-              <img src="/websites/pokelogo-seven.jpg" />
-              <img src="/websites/pokelogo-eight.jpg" />
-              <img src="/websites/pokelogo-nine.jpg" />
+              <img alt="pokelogo-one" src="/websites/pokelogo-one.webp" />
+              <img alt="pokelogo-two" src="/websites/pokelogo-two.jpg" />
+              <img alt="pokelogo-three" src="/websites/pokelogo-three.jpg" />
+              <img alt="pokelogo-four" src="/websites/pokelogo-four.jpg" />
+              <img alt="pokelogo-five" src="/websites/pokelogo-five.jpg" />
+              <img alt="pokelogo-six" src="/websites/pokelogo-six.jpg" />
+              <img alt="pokelogo-seven" src="/websites/pokelogo-seven.jpg" />
+              <img alt="pokelogo-eight" src="/websites/pokelogo-eight.jpg" />
+              <img alt="pokelogo-nine" src="/websites/pokelogo-nine.jpg" />
             </div>
           </div>
         </div>

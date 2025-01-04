@@ -7,34 +7,47 @@ const engineering = () => {
   return (
     <>
       <Head>
-        <title>Lehigh University&apos;s College of Engineering Web Designs | Sathya Ram</title>
-        <meta name="description" content="About Lehigh University&apos;s College of Engineering Web Designs" />
+        <title>
+          Lehigh University&apos;s College of Engineering Web Designs | Sathya
+          Ram
+        </title>
+        <meta
+          name="description"
+          content="About Lehigh University's College of Engineering Web Designs"
+        />
         <meta name="next-head-count" />
         <body className="midnight engineering page design" />
       </Head>
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">Lehigh University&apos;s College of Engineering Web Designs</h1>
+          <h1 className="website-name">
+            Lehigh University&apos;s College of Engineering Web Designs
+          </h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-              <div className="website-description">
+                <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    I had the opportunity to redesign Lehigh's Engineering
+                    website, the crowning jewel of web design opportunities at
+                    Lehigh. Lehigh is rooted in engineering and being able to
+                    help rebrand and recreate their core was intense and
+                    amazing. This was a small style guide I put together for the
+                    website. I attempted to make things more modern - vibrant
+                    blue gradients, easily palatable colors, bold fonts and
+                    weights while still making the site and experience navigable
+                    for all prospectives.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    My defining web design moment. This is Lehigh's Engineering
+                    website. Easily one of the most ambitious, and involved
+                    sites I've ever designed. It's still in development. I
+                    really hope you like it.
                   </p>
                 </div>
               </div>
@@ -71,7 +84,7 @@ const engineering = () => {
               sizes="100vw"
               className="full-img"
             ></img>
-          </div> 
+          </div>
           <div className="full-width">
             <img
               alt="engineering-four"
@@ -170,6 +183,3 @@ const engineering = () => {
 };
 
 export default engineering;
-
-
-

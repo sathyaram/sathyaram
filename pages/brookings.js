@@ -30,17 +30,25 @@ const brookings = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    I can't believe I had the opportunity to do the frontend for
+                    The Brookings Institution. It's a a nonprofit organization
+                    based in Washington, D.C. Our mission is to conduct
+                    in-depth, nonpartisan research to improve policy and
+                    governance at local, national, and global levels.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    At the core of its mission is the quality, independence, and
+                    impact of our research. They are dedicated to finding bold,
+                    pragmatic solutions for societal challenges through
+                    open-minded inquiry, diverse perspectives, and holding
+                    ourselves to the highest standards of scholastic rigor.
+                  </p>
+                  <br></br>
+                  <p>
+                    This site took me and another frontend to pull off but we
+                    grinded it out. Over 400+ pages and growing, all themed from
+                    just a few perfectly crafted (S)CSS files.
                   </p>
                 </div>
               </div>

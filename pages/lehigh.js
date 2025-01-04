@@ -8,11 +8,12 @@ const lehigh = () => {
     <>
       <Head>
         <title>
-          Lehigh University&apos;s College of Art, Architecture & Design | Sathya Ram
+          Lehigh University&apos;s College of Art, Architecture & Design |
+          Sathya Ram
         </title>
         <meta
           name="description"
-          content="About Lehigh University&apos;s College of Art, Architecture & Design"
+          content="About Lehigh University's College of Art, Architecture & Design"
         />
         <meta name="next-head-count" />
         <body className="midnight lehigh page website" />
@@ -27,7 +28,7 @@ const lehigh = () => {
             ></img>
           </div>
           <h1 className="website-name">
-          Lehigh University&apos;s College of Art, Architecture & Design
+            Lehigh University&apos;s College of Art, Architecture & Design
           </h1>
           <h2 className="website-tagline"></h2>
         </div>
@@ -37,18 +38,18 @@ const lehigh = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While working at Lehigh University, I was honored with the
+                    opportunity to redesign the College of Arts, Architecture
+                    and Design's website. I received a BA at Lehigh - in Design
+                    and Studio Art within the College of Arts & Science, so I
+                    understood how important this opportunity was to really
+                    highlight important information. This was the result!
+                    Completely new color scheme, modern branding, as well as a
+                    fresh, contemporary look that brought it out of the stone
+                    ages.
                   </p>
                   <br></br>
-                  <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
-                  </p>
+                  <p>It's still in production, but here are the designs!</p>
                 </div>
               </div>
               <div className="col">

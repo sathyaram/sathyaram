@@ -31,17 +31,33 @@ const portal = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    While working at Lehigh University, it was my job to
+                    maintain but also elevate the Campus Portal, built on
+                    Ellucian's Luminus 7 Platform. It was the central hub on
+                    campus where students, faculty, staff, parents, perspectives
+                    and just about everyone went to get knowledge about the
+                    college, the opportunities, the news, the daily events and
+                    tons of other information. Having come fresh into the role
+                    with a graphic design degree, I was determined to inject a
+                    new modern take onto the old software. I leveraged custom
+                    JavaScript on their Java based platform to deliver my custom
+                    Masonry layout design that I had created as a new take on
+                    our portal.
                   </p>
                   <br></br>
                   <p>
-                    I designed the Kendra Scott website and the product
-                    customization user flow and experience. The team was looking
-                    for a design that felt exciting yet friendly. I created
-                    prototypes and designs for the customization tool.
+                    I focused on a very user centric design, giving stakeholders
+                    what they wanted by making almost all the helpful links
+                    available as soon as the page loads and having two equally
+                    weighted sidebars to maximize visibility. Within the content
+                    area, you can scroll and get a variety of information, like
+                    social media updates, video streams of cameras on campus,
+                    and featured events.
+                  </p>
+                  <p>
+                    It was a very defining moment for me, launching this. Hope
+                    you like it! I wish you could see the site, but it's behind
+                    my university's SSO.
                   </p>
                 </div>
               </div>
@@ -53,10 +69,10 @@ const portal = () => {
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
-                    <li>Drupal 7</li>
+                    <li>Adobe Illustrator 7</li>
                     <li>HTML / CSS / SCSS</li>
                     <li>JavaScript</li>
-                    <li>Adobe Illustrator</li>
+                    <li>Masonry</li>
                   </ul>
                 </div>
                 <div className="website-scope website-info">
