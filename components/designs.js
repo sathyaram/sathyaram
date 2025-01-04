@@ -1,16 +1,13 @@
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
   Keyboard,
   Navigation,
-  Pagination,
   Autoplay,
 } from "swiper";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
 import "swiper/css/autoplay";
@@ -32,7 +29,6 @@ const Designs = () => {
             overflow: "visible",
           }}
           slidesPerView="auto"
-          pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
           centeredSlides={true}
@@ -59,7 +55,6 @@ const Designs = () => {
           }}
           modules={[
             EffectCoverflow,
-            Pagination,
             Navigation,
             Keyboard,
             Autoplay,

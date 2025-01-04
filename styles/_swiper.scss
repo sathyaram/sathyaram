@@ -1,5 +1,4 @@
 .swiper {
-
     .swiper-button-prev,
     .swiper-button-next {
         top: -50px;
@@ -62,18 +61,6 @@
 }
 
 #photography {
-    .swiper-pagination-bullets {
-        display: none;
-        bottom: -80px;
-    }
-    .swiper-pagination-bullet {
-        background: white;
-        width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 12px));
-        height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 12px));
-        border-radius: 0;
-        transform: rotate(45deg);
-        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 12px);
-    }
     .swiper-slide {
         transition: all 300ms ease;
     }
@@ -82,36 +69,9 @@
         &:hover,
         &:active,
         &:focus {
-            .photo-text {
+            .photograph-text {
                 opacity: 1;
             }
         }
-    }
-
-    .photo-text {
-        text-align: center;
-        opacity: 0;
-        transition: opacity 300ms ease;
-        padding-bottom: 1rem;
-    }
-
-    .photo-caption {
-        font-family: $cali;
-        font-size: 2.5rem;
-        margin-top: -1.65rem;
-        text-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-
-        @media screen and (max-width: 1168px) {
-            font-size: 2.1rem;
-            margin-top: -1.25rem;
-        }
-    }
-
-    a {
-        letter-spacing: 2px;
-        margin-top: 1rem;
-        display: inline-block;
-        font-weight: 100;
-        text-transform: uppercase;
     }
 }

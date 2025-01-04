@@ -59,19 +59,6 @@
             border-radius: 10px;
         }
     }
-
-    .swiper-pagination-bullets {
-        display: none;
-        bottom: -60px;
-    }
-    .swiper-pagination-bullet {
-        background: white;
-        width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-        height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
-        border-radius: 0;
-        transform: rotate(45deg);
-        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
-    }
 }
 
 .design {

@@ -1,15 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCoverflow,
-  Keyboard,
-  Navigation,
-  Pagination,
-  Autoplay,
-} from "swiper";
-
+import { Data } from "../data.js";
+import Image from "next/image";
+import { EffectCoverflow, Keyboard, Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
 import "swiper/css/autoplay";
@@ -31,7 +25,6 @@ const Photography = () => {
             overflow: "visible",
           }}
           slidesPerView="auto"
-          pagination={{ clickable: true }}
           navigation={true}
           keyboard={true}
           centeredSlides={true}
@@ -50,74 +43,42 @@ const Photography = () => {
           }}
           initialSlide={1}
           autoplay={{
-            delay: 7500, // Delay between transitions (in milliseconds)
+            delay: 7500,
             disableOnInteraction: true,
           }}
-          modules={[
-            EffectCoverflow,
-            Pagination,
-            Navigation,
-            Keyboard,
-            Autoplay,
-          ]}
+          modules={[EffectCoverflow, Navigation, Keyboard, Autoplay]}
           effect="coverflow"
         >
-          <SwiperSlide>
-            <img alt="Kacey" loading="lazy" src="/photography/kacey.jpg" />
-            <div className="photo-text">
-              <div className="photo-caption">Kacey, in Georgetown</div>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com/p/CQrRenyBPvH/?img_index=1"
-              >
-                Instagram Post ↗
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img alt="Jack" loading="lazy" src="/photography/jack-one.jpg" />
-            <div className="photo-text">
-              <div className="photo-caption">Jack, in the Forest</div>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/p/CFFxPX3hefW/?img_index=1"
-                rel="noopener noreferrer"
-              >
-                Instagram Post ↗
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              alt="Jordan"
-              loading="lazy"
-              src="/photography/jordan-one.jpg"
-            />
-            <div className="photo-text">
-              <div className="photo-caption">Jordan, at the Wharf</div>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com/p/CM5VE9WhF3S/?img_index=1"
-              >
-                Instagram Post ↗
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img alt="Rania" loading="lazy" src="/photography/rania-one.jpg" />
-            <div className="photo-text">
-              <div className="photo-caption">Rania, in the Studio</div>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/p/CTiCXeQnF9z/?img_index=1"
-                rel="noopener noreferrer"
-              >
-                Instagram Post ↗
-              </a>
-            </div>
-          </SwiperSlide>
+          {Data.map(function (photograph, i) {
+            if (photograph.type === "photography") {
+              return (
+                <SwiperSlide>
+                  <div className="photograph">
+                    <Image
+                      width={600}
+                      height={900}
+                      loading="lazy"
+                      src={photograph.image}
+                      alt={photograph.title}
+                    ></Image>
+                    <div className="photograph-text">
+                      <div className="photograph-title">{photograph.title}</div>
+                      <div className="photograph-subtitle">
+                        {photograph.subtitle}
+                      </div>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={photograph.url}
+                      >
+                        {photograph.link}
+                      </a>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            }
+          })}
         </Swiper>
       </div>
     </section>
