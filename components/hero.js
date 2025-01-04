@@ -28,7 +28,6 @@ const Hero = () => {
           <div className="planet-seven"></div>
           <div className="planet-eight"></div>
         </figure>
-
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>

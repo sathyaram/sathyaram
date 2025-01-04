@@ -1,6 +1,8 @@
 import Head from "next/head";
+import Loader from "../components/loader.js";
 import Menu from "../components/menu.js";
 import Hero from "../components/hero.js";
+import Rain from "../components/rain.js";
 import Projects from "../components/projects.js";
 import Designs from "../components/designs.js";
 import Photography from "../components/photography.js";
@@ -24,8 +26,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight homepage" />
       </Head>
+      <Loader />
       <Menu />
       <Hero />
+      <Rain />
       <main role="main">
         <Projects />
         <Designs />

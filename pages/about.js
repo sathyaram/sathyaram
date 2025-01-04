@@ -1,9 +1,19 @@
 import React from "react";
 import Head from "next/head";
 import Menu from "../components/menu.js";
+import Rain from "../components/rain.js";
 import Footer from "../components/footer.js";
 
 const about = () => {
+  
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 10) {
+      document.body.classList.add("fade-in");
+    } else {
+      document.body.classList.remove("fade-in");
+    }
+  });
+
   return (
     <>
       <Head>
@@ -13,6 +23,7 @@ const about = () => {
         <body className="midnight page about" />
       </Head>
       <Menu />
+      <Rain />
       <main role="main">
         <div className="constrained">
           <div className="about-heading">

@@ -89,3 +89,107 @@
   margin: 0 auto;
   margin-bottom: 8rem;
 }
+
+@keyframes height {
+  0% {
+    height: 100vh;
+    background-color: white;
+  }
+
+  100% {
+    height: 0px;
+    z-index: 1;
+    background-color: $galaxy;
+  }
+}
+
+@keyframes zindex {
+  0% {
+    z-index: 7;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  100% {
+    z-index: 1;
+    opacity: 0.03;
+    top: 37%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes line-animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+
+  svg {
+    padding: 0 60px;
+    max-width: 80vw;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 7;
+    animation: 1s zindex 2.5s ease-in-out forwards;
+    opacity: 0.8;
+
+    .s-line {
+      transition: fill 300ms ease;
+      fill: #040411;
+      stroke: $sky;
+      stroke-width: 0.7px;
+      stroke-dasharray: 126.93897247314453;
+      stroke-dashoffset: 126.93897247314453;
+      animation: line-animate 2.5s ease forwards;
+      fill: transparent;
+      stroke-linecap: round;
+    }
+
+    .r-line {
+      transition: fill 300ms ease;
+      fill: #2baae2;
+      stroke: #2baae2;
+      stroke-width: 0.7px;
+      stroke-dasharray: 160.04493713378906;
+      stroke-dashoffset: 160.04493713378906;
+      animation: line-animate 1.7s ease forwards 0.2s;
+      fill: transparent;
+      stroke-linecap: round;
+    }
+  }
+
+  .slide {
+    width: 25%;
+    height: 100vh;
+    background: #fff;
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    transition: all 300ms ease;
+    animation: height 1.5s ease 2s forwards;
+
+    &:nth-child(2) {
+      left: 25%;
+      animation: height 1.5s ease 2.5s forwards;
+    }
+    &:nth-child(3) {
+      left: 50%;
+      animation: height 1.5s ease 3s forwards;
+    }
+    &:nth-child(4) {
+      left: 75%;
+      animation: height 1.5s ease 3.5s forwards;
+    }
+  }
+}

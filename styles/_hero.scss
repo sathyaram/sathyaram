@@ -68,7 +68,7 @@
   -webkit-filter: blur(120px);
   filter: blur(120px);
   position: absolute;
-  z-index: 0;
+  z-index: -4;
   top: 0;
   aspect-ratio: 1;
 
@@ -88,7 +88,7 @@
   -webkit-filter: blur(120px);
   filter: blur(120px);
   position: absolute;
-  z-index: 0;
+  z-index: -2;
   top: -250px;
   right: 0;
 }
