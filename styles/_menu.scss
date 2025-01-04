@@ -302,10 +302,10 @@ nav.social-media {
     svg {
       transform: scale(1.5);
     }
-    .s-line {
+    .s-line, polygon {
       animation: stroke-offset 1.4s ease forwards;
-      fill: transparent;
       fill-opacity: 0;
+      fill: rgba(255,255,255,0);
     }
 
     .r-line {
