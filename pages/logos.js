@@ -21,14 +21,14 @@ const logos = () => {
         <div className="website-content">
           <div className="constrained">
             <div className="grid-2">
-              <img alt="logo-concept" src="/designs/lehighracing.jpg" />
-              <img alt="logo-concept" src="/designs/mosiaclogoconcepts.jpg" />
-              <img alt="logo-concept" src="/designs/indifylogoconcept.jpg" />
-              <img alt="logo-concept" src="/designs/powerhouselogoconcepts.jpg" />
-              <img alt="logo-concept" src="/designs/treetecklogoconcepts.jpg" />
-              <img alt="logo-concept" src="/designs/loewyinstitute.jpg" />
-              <img alt="logo-concept" src="/websites/vertralogos.jpg" />
-              <img alt="logo-concept" src="/websites/frostlogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/lehighracing.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/mosiaclogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/indifylogoconcept.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/powerhouselogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/treetecklogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/loewyinstitute.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/websites/vertralogos.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/websites/frostlogoconcepts.jpg" />
             </div>
           </div>
         </div>

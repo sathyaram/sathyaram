@@ -6,13 +6,13 @@ import Footer from "../components/footer.js";
 
 const about = () => {
   
-  window.addEventListener("scroll", function () {
-    if (window.scrollY >= 10) {
-      document.body.classList.add("fade-in");
-    } else {
-      document.body.classList.remove("fade-in");
-    }
-  });
+  // window.addEventListener("scroll", function () {
+  //   if (window.scrollY >= 10) {
+  //     document.body.classList.add("fade-in");
+  //   } else {
+  //     document.body.classList.remove("fade-in");
+  //   }
+  // });
 
   return (
     <>

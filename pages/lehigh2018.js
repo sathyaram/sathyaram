@@ -31,7 +31,7 @@ const lehigh2018 = () => {
                     Lehigh2018 website theme that would be used across over a
                     100 department websites, I decided it would be a great
                     opportunity to help out users and create modular displays
-                    for content creators. These 'content sections' are
+                    for content creators. These &apos;content sections&apos; are
                     pre-styled components like an Image Slider, Call to Action
                     buttons, Card/Photo grids, Blockquotes, etcs that users can
                     easily add to their web pages with a click of a button in

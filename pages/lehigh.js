@@ -40,7 +40,7 @@ const lehigh = () => {
                   <p>
                     While working at Lehigh University, I was honored with the
                     opportunity to redesign the College of Arts, Architecture
-                    and Design's website. I received a BA at Lehigh - in Design
+                    and Design&apos;s website. I received a BA at Lehigh - in Design
                     and Studio Art within the College of Arts & Science, so I
                     understood how important this opportunity was to really
                     highlight important information. This was the result!
@@ -49,7 +49,7 @@ const lehigh = () => {
                     ages.
                   </p>
                   <br></br>
-                  <p>It's still in production, but here are the designs!</p>
+                  <p>It&apos;s still in production, but here are the designs!</p>
                 </div>
               </div>
               <div className="col">

@@ -16,7 +16,7 @@ const sontag = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img src="/assets/sontag.png" alt="The Sontag Foundation"></img>
+            <img loading="lazy" src="/assets/sontag.png" alt="The Sontag Foundation"></img>
           </div>
           <h1 className="website-name">The Sontag Foundation</h1>
           <h2 className="website-tagline"></h2>

@@ -63,7 +63,7 @@ const Photography = () => {
           effect="coverflow"
         >
           <SwiperSlide>
-            <img alt="Kacey" src="/photography/kacey.jpg" />
+            <img alt="Kacey" loading="lazy" src="/photography/kacey.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Kacey, in Georgetown</div>
               <a
@@ -76,7 +76,7 @@ const Photography = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img alt="Jack" src="/photography/jack-one.jpg" />
+            <img alt="Jack" loading="lazy" src="/photography/jack-one.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Jack, in the Forest</div>
               <a
@@ -89,7 +89,11 @@ const Photography = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img alt="Jordan" src="/photography/jordan-one.jpg" />
+            <img
+              alt="Jordan"
+              loading="lazy"
+              src="/photography/jordan-one.jpg"
+            />
             <div className="photo-text">
               <div className="photo-caption">Jordan, at the Wharf</div>
               <a
@@ -102,7 +106,7 @@ const Photography = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img alt="Rania" src="/photography/rania-one.jpg" />
+            <img alt="Rania" loading="lazy" src="/photography/rania-one.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Rania, in the Studio</div>
               <a

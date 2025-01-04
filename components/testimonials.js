@@ -7,7 +7,7 @@ const testimonials = () => {
         <div className="heading">
           <h3>Testimonials</h3>
           <div className="heading-desc">
-            I've worked with a variety of brands, enterprises and individuals
+            I&apos;ve worked with a variety of brands, enterprises and individuals
             and folks seem to like my work and results!
           </div>
         </div>
@@ -89,7 +89,7 @@ const testimonials = () => {
           <article className="testimonial">
             <div className="testimonial-quote">
               <div className="quote-text">
-                Easily one of the best people I've worked with: a genuine
+                Easily one of the best people I&apos;ve worked with: a genuine
                 creative force.
               </div>
               <div className="quote-cite">Brian Greene</div>
@@ -136,7 +136,7 @@ const testimonials = () => {
           <article className="testimonial">
             <div className="testimonial-quote">
               <div className="quote-text">
-                Sathya's creativity and energy was exactly what we and our
+                Sathya&apos;s creativity and energy was exactly what we and our
                 website needed!
               </div>
               <div className="quote-cite">Emily Farr</div>

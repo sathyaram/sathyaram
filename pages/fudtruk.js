@@ -49,7 +49,7 @@ const fudtruk = () => {
                   <br></br>
 
                   <p>
-                    I also built their website, where you'll see so much more
+                    I also built their website, where you&apos;ll see so much more
                     about the FudTruk including the menu, food pictures which I
                     took, some background video I made, some neat web design and
                     pretty colors!

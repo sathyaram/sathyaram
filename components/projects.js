@@ -78,7 +78,7 @@ const projects = () => {
                       <div className="project-background"></div>
                       <div className="project-heading">
                         <div className="project-image">
-                          <img src={project.image} alt={project.title} />
+                          <img src={project.image} loading="lazy" alt={project.title} />
                         </div>
                         <div className="project-title">{project.title}</div>
                         <div className="project-subtitle">

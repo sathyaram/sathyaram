@@ -30,8 +30,8 @@ const brookings = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I can't believe I had the opportunity to do the frontend for
-                    The Brookings Institution. It's a a nonprofit organization
+                    I can&apos;t believe I had the opportunity to do the frontend for
+                    The Brookings Institution. It&apos;s a a nonprofit organization
                     based in Washington, D.C. Our mission is to conduct
                     in-depth, nonpartisan research to improve policy and
                     governance at local, national, and global levels.

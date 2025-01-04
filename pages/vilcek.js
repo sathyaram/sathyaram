@@ -16,7 +16,7 @@ const vilcek = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img src="/assets/vilcek.png" alt="Vilcek Foundation"></img>
+            <img loading="lazy" src="/assets/vilcek.png" alt="Vilcek Foundation"></img>
           </div>
           <h1 className="website-name">Vilcek Foundation</h1>
           <h2 className="website-tagline"></h2>
@@ -27,7 +27,7 @@ const vilcek = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    While working at Forum One, I had the honor of being tasked to do the entire frontend of the Vilcek Foundation's brand new website. The Vilcek Foundation raises awareness of immigrant contributions in the United States and fosters appreciation of the arts and sciences. Through their prizes, they reward immigrant artists and scientists at every stage of their careers. The build involved extensive image galleries and content types for various groupings of art that Vilcek wanted to organize, as well as keep track of all their grantees, donors and art contributions. 
+                    While working at Forum One, I had the honor of being tasked to do the entire frontend of the Vilcek Foundation&apos;s brand new website. The Vilcek Foundation raises awareness of immigrant contributions in the United States and fosters appreciation of the arts and sciences. Through their prizes, they reward immigrant artists and scientists at every stage of their careers. The build involved extensive image galleries and content types for various groupings of art that Vilcek wanted to organize, as well as keep track of all their grantees, donors and art contributions. 
                   </p>
                   <br></br>
                   <p>

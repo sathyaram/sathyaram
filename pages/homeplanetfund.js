@@ -16,7 +16,7 @@ const homeplanetfund = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img src="/assets/homeplanet.png" alt="Home Planet Fund"></img>
+            <img loading="lazy" src="/assets/homeplanet.png" alt="Home Planet Fund"></img>
           </div>
           <h1 className="website-name">Home Planet Fund</h1>
           <h2 className="website-tagline"></h2>
@@ -33,7 +33,7 @@ const homeplanetfund = () => {
                     Planet Fund leverages the power of nature and the
                     stewardship role of Indigenous People and Local Communities.
                     It is also a company powered by Patagonia. Its seed money
-                    and yours is what powers this company's noble mission. To
+                    and yours is what powers this company&apos;s noble mission. To
                     harnass nature to create better living.
                   </p>
                   <br></br>
@@ -41,7 +41,7 @@ const homeplanetfund = () => {
                     The vibe of the website is meant to capture that grass
                     rootness. The animations, draw-like hover effects, textures
                     and cursor changes are but some touches I added that helped
-                    ground you in the feel of the site's goal.
+                    ground you in the feel of the site&apos;s goal.
                   </p>
                 </div>
               </div>

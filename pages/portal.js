@@ -33,7 +33,7 @@ const portal = () => {
                   <p>
                     While working at Lehigh University, it was my job to
                     maintain but also elevate the Campus Portal, built on
-                    Ellucian's Luminus 7 Platform. It was the central hub on
+                    Ellucian&apos;s Luminus 7 Platform. It was the central hub on
                     campus where students, faculty, staff, parents, perspectives
                     and just about everyone went to get knowledge about the
                     college, the opportunities, the news, the daily events and
@@ -56,8 +56,8 @@ const portal = () => {
                   </p>
                   <p>
                     It was a very defining moment for me, launching this. Hope
-                    you like it! I wish you could see the site, but it's behind
-                    my university's SSO.
+                    you like it! I wish you could see the site, but it&apos;s behind
+                    my university&apos;s SSO.
                   </p>
                 </div>
               </div>

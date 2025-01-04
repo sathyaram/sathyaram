@@ -32,7 +32,7 @@ const engineering = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I had the opportunity to redesign Lehigh's Engineering
+                    I had the opportunity to redesign Lehigh&apos;s Engineering
                     website, the crowning jewel of web design opportunities at
                     Lehigh. Lehigh is rooted in engineering and being able to
                     help rebrand and recreate their core was intense and
@@ -44,9 +44,9 @@ const engineering = () => {
                   </p>
                   <br></br>
                   <p>
-                    My defining web design moment. This is Lehigh's Engineering
+                    My defining web design moment. This is Lehigh&apos;s Engineering
                     website. Easily one of the most ambitious, and involved
-                    sites I've ever designed. It's still in development. I
+                    sites I&apos;ve ever designed. It&apos;s still in development. I
                     really hope you like it.
                   </p>
                 </div>

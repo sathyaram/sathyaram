@@ -67,52 +67,60 @@ const Designs = () => {
         >
           <SwiperSlide>
             <a href="/portal">
-                <h3>Lehigh University&apos;s Campus Portal Designs</h3>
-                <img
-                  src="/websites/lehigh-two.jpg"
-                  alt="lehigh-portal-tile-image"
-                />
+              <h3>Lehigh University&apos;s Campus Portal Designs</h3>
+              <img
+                src="/websites/lehigh-two.jpg"
+                alt="lehigh-portal-tile-image"
+                loading="lazy"
+              />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/fudtruk">
-                <h3>Fudtruk Branding + Designs</h3>
-                <img src="/websites/fudtruk.webp" alt="fudtruk-tile-image" />
+              <h3>Fudtruk Branding + Designs</h3>
+              <img src="/websites/fudtruk.webp" alt="fudtruk-tile-image" />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/lehigh2018">
-                <h3>Lehigh2018 Web Theme Style Guide</h3>
-                <img
-                  src="/websites/lehigh2018-one.jpg"
-                  alt="lehigh2018-guide-tile-image"
-                />
+              <h3>Lehigh2018 Web Theme Style Guide</h3>
+              <img
+                src="/websites/lehigh2018-one.jpg"
+                alt="lehigh2018-guide-tile-image"
+                loading="lazy"
+              />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/logos">
-                <h3>Logos + Concepts</h3>
-                <img src="/designs/lehighracing.jpg" alt="logos-tile-image" />
+              <h3>Logos + Concepts</h3>
+              <img
+                src="/designs/lehighracing.jpg"
+                alt="logos-tile-image"
+                loading="lazy"
+              />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/engineering">
-                <h3>
-                  Lehigh University&apos;s College of Engineering Web Designs
-                </h3>
-                <img
-                  src="/websites/lehighengineering.jpg"
-                  alt="engineering-tile-image"
-                />
+              <h3>
+                Lehigh University&apos;s College of Engineering Web Designs
+              </h3>
+              <img
+                src="/websites/lehighengineering.jpg"
+                alt="engineering-tile-image"
+                loading="lazy"
+              />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/pokelogos">
-                <h3>PokéLogos</h3>
-                <img
-                  src="/websites/pokelogo-one.webp"
-                  alt="pokelogos-tile-image"
-                />
+              <h3>PokéLogos</h3>
+              <img
+                src="/websites/pokelogo-one.webp"
+                alt="pokelogos-tile-image"
+                loading="lazy"
+              />
             </a>
           </SwiperSlide>
         </Swiper>
