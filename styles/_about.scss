@@ -8,6 +8,23 @@
     h1 {
         font-family: $maison;
     }
+
+    &::before {
+        content: "சத்யா";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        font-size: 26vw;
+        padding: 0 36px;
+        background: linear-gradient(135deg, rgba(112, 213, 255, .9), rgba(0, 89, 188, .9), rgba(112, 213, 255, .9));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: endlessly 10s ease infinite;
+        color: #d7dde6;
+        opacity: .15;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 
 .about-heading {

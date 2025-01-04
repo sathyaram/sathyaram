@@ -9,7 +9,7 @@ const engineering = () => {
       <Head>
         <title>Lehigh&apos;s Engineering Department Web Designs | Sathya Ram</title>
         <meta name="description" content="About Lehigh's Engineering Department Designs" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight engineering page design" />
       </Head>
       <Menu />

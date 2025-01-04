@@ -9,7 +9,7 @@ const pokelogos = () => {
       <Head>
         <title>PokéLogos | Sathya Ram</title>
         <meta name="description" content="Logos made by Sathya Ram" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight pokelogos page design" />
       </Head>
       <Menu />

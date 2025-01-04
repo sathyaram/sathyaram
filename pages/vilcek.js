@@ -9,7 +9,7 @@ const vilcek = () => {
       <Head>
         <title>Vilcek Foundation | Sathya Ram</title>
         <meta name="description" content="About Vilcek Foundation" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight vilcek page website" />
       </Head>
       <Menu />

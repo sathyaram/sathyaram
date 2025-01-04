@@ -9,7 +9,7 @@ const about = () => {
       <Head>
         <title>About | Sathya Ram</title>
         <meta name="description" content="About Sathya Ram" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight page about" />
       </Head>
       <Menu />

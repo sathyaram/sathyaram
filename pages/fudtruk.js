@@ -10,6 +10,7 @@ const fudtruk = () => {
         <title>Fudtruk Branding and Designs | Sathya Ram</title>
         <meta name="description" content="About Fudtruk Branding and Designs" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight fudtruk page design" />
       </Head>
       <Menu />

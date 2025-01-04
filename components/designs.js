@@ -42,7 +42,7 @@ const Designs = () => {
             320: {
               slidesPerView: 1.25,
             },
-            560: {
+            720: {
               slidesPerView: 2,
             },
             1480: {
@@ -66,46 +66,37 @@ const Designs = () => {
           ]}
         >
           <SwiperSlide>
-            <Link href="/portal">
-              <div>
+            <a href="/portal">
                 <h3>Lehigh University&apos;s Campus Portal Designs</h3>
                 <img
                   src="/websites/lehigh-two.jpg"
                   alt="lehigh-portal-tile-image"
                 />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <Link href="/fudtruk">
-              <div>
+            <a href="/fudtruk">
                 <h3>Fudtruk Branding + Designs</h3>
                 <img src="/websites/fudtruk.webp" alt="fudtruk-tile-image" />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <Link href="/lehigh2018">
-              <div>
+            <a href="/lehigh2018">
                 <h3>Lehigh2018 Web Theme Style Guide</h3>
                 <img
                   src="/websites/lehigh2018-one.jpg"
                   alt="lehigh2018-guide-tile-image"
                 />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <Link href="/logos">
-              <div>
+            <a href="/logos">
                 <h3>Logos + Concepts</h3>
                 <img src="/designs/lehighracing.jpg" alt="logos-tile-image" />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <Link href="/engineering">
-              <div>
+            <a href="/engineering">
                 <h3>
                   Lehigh University&apos;s College of Engineering Web Designs
                 </h3>
@@ -113,19 +104,16 @@ const Designs = () => {
                   src="/websites/lehighengineering.jpg"
                   alt="engineering-tile-image"
                 />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
           <SwiperSlide>
-            <Link href="/pokelogos">
-              <div>
+            <a href="/pokelogos">
                 <h3>PokéLogos</h3>
                 <img
                   src="/websites/pokelogo-one.webp"
                   alt="pokelogos-tile-image"
                 />
-              </div>
-            </Link>
+            </a>
           </SwiperSlide>
         </Swiper>
       </div>

@@ -12,7 +12,7 @@ const hhmi = () => {
           name="description"
           content="About Howard Hughes Medical Institute&apos;s Biointeractive"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight hhmi page website" />
       </Head>
       <Menu />

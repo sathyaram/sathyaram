@@ -12,7 +12,7 @@ const lehigh2018 = () => {
           name="description"
           content="About Lehigh's 2018 Drupal 7 Theme + Style Guide"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight portal page design" />
       </Head>
       <Menu />

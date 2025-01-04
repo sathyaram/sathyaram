@@ -9,7 +9,7 @@ const homeplanetfund = () => {
       <Head>
         <title>Home Planet Fund | Sathya Ram</title>
         <meta name="description" content="About Home Planet Fund" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight homeplanetfund page website" />
       </Head>
       <Menu />

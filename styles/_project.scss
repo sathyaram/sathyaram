@@ -134,10 +134,12 @@ section {
 }
 
 .project-title {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: bold;
   color: white;
   line-height: 100%;
+  position: relative;
+  z-index: 3;
   transition: text-shadow 300ms ease;
   text-shadow:
     0 0 25px rgba(0, 0, 0, 0.35),

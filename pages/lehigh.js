@@ -14,7 +14,7 @@ const lehigh = () => {
           name="description"
           content="About Lehigh University&apos;s College of Art, Architecture & Design"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight lehigh page website" />
       </Head>
       <Menu />

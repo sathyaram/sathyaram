@@ -9,7 +9,7 @@ const brookings = () => {
       <Head>
         <title>The Brookings Institute | Sathya Ram</title>
         <meta name="description" content="About The Brookings Institute" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight brookings page website" />
       </Head>
       <Menu />

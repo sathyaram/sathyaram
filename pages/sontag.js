@@ -9,7 +9,7 @@ const sontag = () => {
       <Head>
         <title>The Sontag Foundation | Sathya Ram</title>
         <meta name="description" content="About Sontag Foundation" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight sontag page website" />
       </Head>
       <Menu />

@@ -14,7 +14,7 @@ const portal = () => {
           name="description"
           content="AboutLehigh University's Campus Portal Designs"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="next-head-count" />
         <body className="midnight portal page design" />
       </Head>
       <Menu />

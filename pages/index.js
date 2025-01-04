@@ -4,6 +4,7 @@ import Hero from "../components/hero.js";
 import Projects from "../components/projects.js";
 import Designs from "../components/designs.js";
 import Photography from "../components/photography.js";
+import Testimonials from "../components/testimonials.js";
 import Footer from "../components/footer.js";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home | Sathya Ram</title>
-        <meta name="next-head-count" content="4"/>
+        <meta name="next-head-count" />
         <meta
           name="description"
           content="Web Developer | Digital Designer | Photographer"
@@ -20,6 +21,7 @@ export default function Home() {
           name="viewport"
           content="width=device-width, initial-scale=1"
         ></meta>
+        <link rel="icon" href="/favicon.ico" />
         <body className="midnight homepage" />
       </Head>
       <Menu />
@@ -28,6 +30,7 @@ export default function Home() {
         <Projects />
         <Designs />
         <Photography />
+        <Testimonials />
       </main>
       <Footer />
     </>
