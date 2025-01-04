@@ -33,6 +33,25 @@ h1 {
     padding-bottom: 2rem;
   }
 
+  div {
+    display: inline-block;
+
+    &:first-child {
+      margin-right: -1rem;
+
+      @media screen and (max-width: $mobile) {
+        margin-right: -0.5rem;
+      }
+    }
+    &:last-child {
+      margin-left: -1rem;
+      
+      @media screen and (max-width: $mobile) {
+        margin-right: -0.5rem;
+      }
+    }
+  }
+
   span {
     transition: text-shadow 2s ease-in-out;
     font-family: $cali;

@@ -31,16 +31,20 @@ const Hero = () => {
         <div className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>
+            <div>
             <span>S</span>
             <span>a</span>
             <span>t</span>
             <span>h</span>
             <span>y</span>
             <span>a</span>
-            {/* <span>&nbsp;</span> */}
+            </div>
+            <span>&nbsp;</span>
+            <div>
             <span>R</span>
             <span>a</span>
             <span>m</span>
+            </div>
           </h1>
           <div className="website-version">v7.0</div>
           <h2>
