@@ -5,7 +5,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  distDir: "build",
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
