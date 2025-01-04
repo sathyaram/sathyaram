@@ -166,6 +166,10 @@ nav.social-media {
   gap: 2rem;
   justify-content: flex-end;
 
+  @media screen and (max-width: $mobile) {
+    gap: 1rem;
+  }
+
   a {
     display: flex;
     align-items: center;
@@ -173,6 +177,11 @@ nav.social-media {
     font-size: 0.75rem;
     padding: 0 0.5rem;
     position: relative;
+
+    @media screen and (max-width: $mobile) {
+      padding: 0 0.15rem;
+
+    }
 
     &::before {
       content: none !important;
@@ -227,6 +236,12 @@ nav.social-media {
         opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transform: scale(1.25) translateX(-40%) translateZ(0);
       opacity: 1;
+
+      @media screen and (max-width: $mobile) {
+        width: 35px;
+        top: -1px;
+        height: 35px;
+      }
     }
   }
 

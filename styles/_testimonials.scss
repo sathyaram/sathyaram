@@ -1,7 +1,5 @@
 #testimonials {
     .content {
-        max-width: 980px;
-        margin: 0 auto;
         width: 100%;
         display: flex;
         align-items: center;
@@ -60,6 +58,7 @@
         flex-grow: 1;
         position: relative;
         overflow: hidden;
+        box-sizing: border-box;
         perspective: 1000px;
         transition:
             border 300ms ease,
@@ -107,6 +106,7 @@
     justify-content: center;
     padding-top: 2rem;
     opacity: 0;
+    box-sizing: border-box;
     transform: translateY(-10px) rotateY(220deg);
     transition:
         transform 300ms ease-in-out,
@@ -116,8 +116,8 @@
         content: "“";
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
-        top: -2rem;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
         font-size: 200px;
         opacity: 0.25;
         @include gradient-text;

@@ -6,15 +6,26 @@
   justify-content: center;
   text-align: center;
   height: 550px;
+  padding: 0 2rem;
+  box-sizing: border-box;
 
   @media screen and (max-width: $mobile) {
     height: 700px;
   }
 }
 
+.constellation {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .website-version {
   position: absolute;
-  right: -17px;
+  left: calc(50% + 240px);
   top: 49%;
   transform: translateY(-50%);
   font-size: 8px;
@@ -25,7 +36,7 @@
   opacity: 0.35;
 
   @media screen and (max-width: $mobile) {
-    right: -15px;
+    left: calc(50% + 130px);
     top: 46%;
   }
 }
@@ -50,7 +61,6 @@
     padding: 0 0.5rem;
   }
 }
-
 
 .planet {
   background-color: #00b381;

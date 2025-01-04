@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
 }
 
 .rays {
@@ -53,7 +53,7 @@
     z-index: 1;
 
     .rain {
-        width: 5px;
+        width: 3px;
         height: 60px;
         background-color: white;
         position: absolute;
@@ -74,7 +74,7 @@
         &:hover {
             cursor: crosshair;
             opacity: 1;
-            animation-play-state: paused !important;
+            // animation-play-state: paused !important;
             transition: none;
             box-shadow:
             0 0 5px 0 white,
