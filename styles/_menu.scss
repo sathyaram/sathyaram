@@ -141,7 +141,18 @@ nav.main-menu {
     margin: 0 0 0 auto;
     a {
       &:hover {
-        background-image: linear-gradient(to left bottom, $blue, $blue) !important;
+        background-image: linear-gradient(to left bottom, $blue, $waterfall) !important;
+      }
+    }
+  }
+  .design-menu {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 0 0 auto;
+    a {
+      &:hover {
+        color: $blue;
+        transition: none;
       }
     }
   }
@@ -277,9 +288,9 @@ nav.social-media {
 
     .r-line {
       stroke-width: 1px;
-      transition: fill 300ms ease;
       stroke-dasharray: 160.04493713378906;
       stroke-dashoffset: 160.04493713378906;
+      transition: all 300ms ease;
     }
   }
 
@@ -468,6 +479,32 @@ nav.social-media {
           }
         }
       }
+    }
+  }
+}
+
+.midnight {
+  color: white;
+  background-color: #08031b;
+
+  .social-media path,
+  .social-media circle {
+    fill: rgba(255, 255, 255, 0.65);
+    transition: fill 300ms ease;
+  }
+
+  section#websites .project::before {
+    background-color: #191a19;
+  }
+  .logo:hover {
+    .s-line {
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+    }
+
+    .r-line {
+      -webkit-filter: drop-shadow(0 0 2px $blue);
+      filter: drop-shadow(0 0 2px $blue);
     }
   }
 }

@@ -15,7 +15,7 @@ const vilcek = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img src="/assets/vilcek.png" alt="Vilcek Foundation"></img>
           </div>
           <h1 className="website-name">Vilcek Foundation</h1>
@@ -23,7 +23,7 @@ const vilcek = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>

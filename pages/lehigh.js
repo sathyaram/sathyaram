@@ -20,7 +20,7 @@ const lehigh = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img
               src="/assets/lehighuniversity.png"
               alt="Lehigh University"
@@ -33,7 +33,7 @@ const lehigh = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>
@@ -81,7 +81,7 @@ const lehigh = () => {
                 </div>
                 <div className="website-url website-info">
                   <label>Live Website</label>
-                  <div class="links">
+                  <div className="links">
                     <a
                       className="website-link"
                       target="_blank"

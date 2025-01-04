@@ -54,15 +54,15 @@ const brookings = () => {
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
-                    <li>JavaScript</li>
-                    <li>Custom CSS Theming</li>
+                    <li>Custom JavaScript</li>
+                    <li>HTML / SCSS, CSS</li>
                   </ul>
                 </div>
 
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Theme Creation</li>
+                    <li>Frontend Development</li>
                     <li>File Management</li>
                     <li>Online Style Guide</li>
                   </ul>
@@ -98,7 +98,7 @@ const brookings = () => {
               className="full-img"
             ></img>
           </div>
-          <div class="col-2">
+          <div className="col-2">
             <div>
               <img
                 alt=""

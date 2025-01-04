@@ -140,7 +140,7 @@ const menu = () => {
               <a href="/brookings">The Brookings Institute</a>
             </li>
             <li>
-              <a href="/lehigh">Lehigh's College of Art, Architecture & Design</a>
+              <a href="/lehigh">Lehigh University's College of Art, Architecture & Design</a>
             </li>
             <li>
               <a href="/sontag">The Sontag Foundation</a>
@@ -154,19 +154,19 @@ const menu = () => {
           </ul>
           <ul className="design-menu" role="navigation">
             <li>
-              <a href="/portal">Lehigh's Campus Portal</a>
-            </li>
-            <li>
-              <a href="/fudtruk">Fudtruk</a>
-            </li>
-            <li>
-              <a href="/lehigh2018">Lehigh 2018 Style Guide</a>
-            </li>
-            <li>
               <a href="/logos">Logos + Concepts</a>
             </li>
             <li>
-              <a href="/engineering">Lehigh's Engineering Department</a>
+              <a href="/fudtruk">Fudtruk Branding + Designs</a>
+            </li>
+            <li>
+              <a href="/portal">Lehigh University's Campus Portal Designs</a>
+            </li>
+            <li>
+              <a href="/lehigh2018">Lehigh2018 Web Theme Style Guide</a>
+            </li>
+            <li>
+              <a href="/engineering">Lehigh University's College of Engineering Web Designs</a>
             </li>
             <li>
               <a href="/pokelogos">PokéLogos</a>

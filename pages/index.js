@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home | Sathya Ram</title>
+        <meta name="next-head-count" content="4"/>
         <meta
           name="description"
           content="Web Developer | Digital Designer | Photographer"

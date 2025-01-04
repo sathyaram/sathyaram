@@ -69,19 +69,19 @@ const Designs = () => {
         >
           <SwiperSlide>
             <a href="/portal">
-              <h3>Lehigh's Campus Portal</h3>
+              <h3>Lehigh University's Campus Portal Designs</h3>
               <img src="/websites/lehigh-two.jpg" />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/fudtruk">
-              <h3>Fudtruk</h3>
+              <h3>Fudtruk Branding + Designs</h3>
               <img src="/websites/fudtruk.webp" />
             </a>
           </SwiperSlide>
           <SwiperSlide>
             <a href="/lehigh2018">
-              <h3>Lehigh 2018 Style Guide</h3>
+              <h3>Lehigh2018 Web Theme Style Guide</h3>
               <img src="/websites/lehigh2018-one.jpg" />
             </a>
           </SwiperSlide>
@@ -93,7 +93,7 @@ const Designs = () => {
           </SwiperSlide>
           <SwiperSlide>
             <a href="/engineering">
-              <h3>Lehigh's Engineering Department</h3>
+              <h3>Lehigh University's College of Engineering Web Designs</h3>
               <img src="/websites/lehighengineering.jpg" />
             </a>
           </SwiperSlide>

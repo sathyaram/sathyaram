@@ -7,15 +7,15 @@ const fudtruk = () => {
   return (
     <>
       <Head>
-        <title>Fudtruk Designs | Sathya Ram</title>
-        <meta name="description" content="About Fudtruk" />
+        <title>Fudtruk Branding and Designs | Sathya Ram</title>
+        <meta name="description" content="About Fudtruk Branding and Designs" />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight fudtruk page design" />
       </Head>
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">Fudtruk</h1>
+          <h1 className="website-name">Fudtruk Branding and Designs</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
