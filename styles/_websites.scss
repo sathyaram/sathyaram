@@ -5,6 +5,11 @@
     margin-top: 11rem;
     font-size: 6rem;
     text-align: center;
+    font-family: $maison;
+
+    @media screen and (max-width: $ipad) {
+      font-size: 3rem;
+  }
   }
 
   main {
@@ -63,7 +68,6 @@
   }
 
   .website-description {
-    max-width: 476px;
     width: 100%;
 
     p {

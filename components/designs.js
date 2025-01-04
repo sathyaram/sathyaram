@@ -87,7 +87,7 @@ const Designs = () => {
           </SwiperSlide>
           <SwiperSlide>
             <a href="/logos">
-              <h3>Logos</h3>
+              <h3>Logos + Concepts</h3>
               <img src="/designs/lehighracing.jpg" />
             </a>
           </SwiperSlide>

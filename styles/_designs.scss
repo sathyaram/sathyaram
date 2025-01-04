@@ -4,35 +4,52 @@
         // border: 2px solid white;
         // border-radius: 10px;
 
+        &:hover {
+            &::after {
+                background-color: rgb(3 17 43 / 20%);
+            }
+
+            h3 {
+                text-shadow:
+                    0 0 15px white,
+                    0 0 5px white,
+                    0 0 5px rgba(0, 0, 0, 0.478),
+                    0 0 15px rgba(0, 0, 0, 0.98),
+                    0 0 25px rgba(0, 0, 0, 0.424);
+            }
+        }
+
         &::after {
             position: absolute;
             content: "";
-            background-color: rgba(4, 14, 21, 0.391);
+            background-color: rgb(3 17 43 / 50%);
             width: 100%;
+            transition: background-color 300ms ease;
             height: 100%;
             top: 0;
             left: 0;
+            pointer-events: none;
         }
 
         h3 {
             font-weight: 100;
             font-size: 52px;
-            line-height: 54px;
-            text-transform: uppercase;
-            letter-spacing: 3pxw;
+            line-height: 50px;
             position: absolute;
             top: 50%;
             left: -40px;
             z-index: 2;
-            width: 80%;
+            max-width: 320px;
+            width: 100%;
             transform: translateY(-50%);
             text-shadow:
                 0 0 15px white,
-                0 0 25px white;
+                0 0 5px white;
 
             @media screen and (max-width: $ipad) {
-                font-size: 28px;
-                line-height: 24px;
+                font-size: 36px;
+                line-height: 30px;
+                max-width: 200px;
             }
         }
 
@@ -42,7 +59,6 @@
 
         img {
             border-radius: 10px;
-
         }
     }
 
@@ -67,6 +83,11 @@
         margin-top: 11rem;
         font-size: 6rem;
         text-align: center;
+        font-family: $maison;
+
+        @media screen and (max-width: $ipad) {
+            font-size: 3rem;
+        }
     }
 
     main {
@@ -100,7 +121,6 @@
     }
 
     .website-description {
-        max-width: 476px;
         width: 100%;
 
         p {

@@ -7,7 +7,7 @@ const logos = () => {
   return (
     <>
       <Head>
-        <title>Logos | Sathya Ram</title>
+        <title>Logos + Concepts | Sathya Ram</title>
         <meta name="description" content="Logos made by Sathya Ram" />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight logos page design" />
@@ -15,7 +15,7 @@ const logos = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">Logos</h1>
+          <h1 className="website-name">Logos + Concepts</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -27,6 +27,8 @@ const logos = () => {
             <img src="/designs/powerhouselogoconcepts.jpg" />
             <img src="/designs/treetecklogoconcepts.jpg" />
             <img src="/designs/loewyinstitute.jpg" />
+            <img src="/websites/vertralogos.jpg" />
+            <img src="/websites/frostlogoconcepts.jpg" />
           </div>
           </div>
         </div>

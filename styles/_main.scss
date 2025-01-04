@@ -22,6 +22,7 @@ h1 {
   font-family: $cali;
   padding-bottom: 2rem;
   position: relative;
+  line-height: 100%;
   z-index: 3;
   background: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0.92));
   -webkit-background-clip: text;
@@ -116,32 +117,16 @@ h2 {
   }
 }
 
-.pronounce {
-  font-size: 0.5rem;
-  margin-bottom: -3.25rem;
-  letter-spacing: 1px;
-  opacity: 0;
-  transition: opacity 300ms ease;
-
-  @media screen and (max-width: $mobile) {
-    margin-bottom: 0;
-    opacity: 1;
-  }
-
-  &::before,
-  &::after {
-    content: "/";
-    color: $blue;
-    padding: 0 0.5rem;
-  }
-}
-
 main {
   padding: 0 6vw;
   overflow-x: hidden;
 
   @media screen and (max-width: $mobile) {
-    padding: 0 2rem;
+    padding: 0;
+
+    .homepage & {
+      padding: 0 2rem;
+    }
   }
 }
 
@@ -159,6 +144,10 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 90%;
+    @media screen and (max-width: $mobile) {
+      padding: 0 2rem 10rem;
+      word-break: break-word;
+    }
   }
 
   .contact-menu {

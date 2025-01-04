@@ -20,7 +20,7 @@ const engineering = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div className="col-2">
+            <div className="col-2 split-70-30">
               <div className="col">
               <div className="website-description">
                   <p>

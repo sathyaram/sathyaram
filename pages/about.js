@@ -48,14 +48,17 @@ const about = () => {
             <h4>At a Glance</h4>
             <div className="about-text">
               <p>I build websites with WordPress, Drupal, React and Webflow.</p>
+              <br></br>
               <p>
                 I write HTML, (S)CSS, front-end JavaScript, jQuery, JSX, PHP,
                 and Twig.
               </p>
+              <br></br>
               <p>
                 I design and prototype in Adobe XD, Figma, Sketch, Adobe
                 Illustrator, and InVision.
               </p>
+              <br></br>
               <p>I capture photos with my Sony A7R4.</p>
             </div>
           </div>
@@ -119,9 +122,6 @@ const about = () => {
                     PA BUG Best Portal Design Award
                   </a>
                   <span>First Place</span>
-                </li>
-                <li>
-                  Business Insider<span>Published Photography</span>
                 </li>
                 <li>
                   Lehigh Acumen<span>Published Photography</span>

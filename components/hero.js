@@ -40,6 +40,7 @@ const Hero = () => {
             <span>a</span>
             <span>m</span>
           </h1>
+          <div className="website-version">v7</div>
           <h2>
             <span>W</span>
             <span>e</span>
@@ -55,13 +56,16 @@ const Hero = () => {
             <span>e</span>
             <span>r</span>
             <span className="x">&nbsp;×&nbsp;</span>
-            <span>D</span>
-            <span>i</span>
-            <span>g</span>
-            <span>i</span>
-            <span>t</span>
+            <span>U</span>
+            <span>I</span>
+            <span>/</span>
+            <span>G</span>
+            <span>r</span>
             <span>a</span>
-            <span>l</span>
+            <span>p</span>
+            <span>h</span>
+            <span>i</span>
+            <span>c</span>
             &nbsp;
             <span>D</span>
             <span>e</span>
