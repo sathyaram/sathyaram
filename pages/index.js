@@ -15,6 +15,14 @@ export default function Home() {
       <Head>
         <title>Home | Sathya Ram</title>
         <meta name="next-head-count" />
+        <meta property="og:title" content="It's Sathya Ram Website" />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image:alt" content="Sathya Ram OG Image" />
+        <meta
+          property="og:description"
+          content="Web Developer | UI/Graphic Designer | Photographer"
+        />
+
         <meta
           name="description"
           content="Web Developer | UI/Graphic Designer | Photographer"
