@@ -7,8 +7,13 @@ const lehigh = () => {
   return (
     <>
       <Head>
-        <title>Lehigh's Art, Architecture & Design Department | Sathya Ram</title>
-        <meta name="description" content="About Lehigh's Art, Architecture & Design Department" />
+        <title>
+          Lehigh's College of Art, Architecture & Design | Sathya Ram
+        </title>
+        <meta
+          name="description"
+          content="About Lehigh's College of Art, Architecture & Design"
+        />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight lehigh page website" />
       </Head>
@@ -21,7 +26,9 @@ const lehigh = () => {
               alt="Lehigh University"
             ></img>
           </div>
-          <h1 className="website-name">Lehigh's Art, Architecture & Design Department</h1>
+          <h1 className="website-name">
+          Lehigh's College of Art, Architecture & Design
+          </h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -47,7 +54,7 @@ const lehigh = () => {
               <div className="col">
                 <div className="website-role website-info">
                   <label>Role</label>
-                  <div>Senior Web Developer (Portal)</div>
+                  <div>Senior Web Developer</div>
                 </div>
 
                 <div className="website-stack website-info">
@@ -56,14 +63,12 @@ const lehigh = () => {
                     <li>Drupal 7</li>
                     <li>HTML / CSS / SCSS</li>
                     <li>JavaScript</li>
-                    <li>Luminius 7</li>
                   </ul>
                 </div>
 
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Portal Management</li>
                     <li>Website Management</li>
                     <li>Designer</li>
                     <li>Developer</li>
@@ -85,7 +90,6 @@ const lehigh = () => {
                     >
                       aad.lehigh.edu
                     </a>
-                   
                   </div>
                 </div>
               </div>
@@ -105,15 +109,6 @@ const lehigh = () => {
               alt=""
               loading="lazy"
               src="/websites/lehigh-one.png"
-              sizes="100vw"
-              className="full-img"
-            ></img>
-          </div>
-          <div className="full-width">
-            <img
-              alt=""
-              loading="lazy"
-              src="/websites/aad-two.jpg"
               sizes="100vw"
               className="full-img"
             ></img>

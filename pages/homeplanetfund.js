@@ -51,17 +51,19 @@ const homeplanetfund = () => {
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
-                    <li>JavaScript</li>
-                    <li>Custom CSS Theming</li>
+                    <li>Custom JavaScript</li>
+                    <li>HTML / SCSS, CSS</li>
+                    <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
 
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Theme Creation</li>
-                    <li>File Management</li>
-                    <li>Online Style Guide</li>
+                    <li>Development</li>
+                    <li>Animation / Interactions</li>
+                    <li>Responsiveness</li>
+                    <li>Accessibility</li>
                   </ul>
                 </div>
                 <div className="website-year website-info">
@@ -70,7 +72,7 @@ const homeplanetfund = () => {
                 </div>
                 <div className="website-year website-info">
                   <label>Year of Creation</label>
-                  <div>2021</div>
+                  <div>2023</div>
                 </div>
                 <div className="website-url website-info">
                   <label>Live Website</label>
@@ -110,15 +112,6 @@ const homeplanetfund = () => {
               alt=""
               loading="lazy"
               src="/websites/homeplanetfund-three.png"
-              sizes="100vw"
-              className="full-img"
-            ></img>
-          </div>
-          <div className="full-width">
-            <img
-              alt=""
-              loading="lazy"
-              src="/websites/homeplanetfund-two.png"
               sizes="100vw"
               className="full-img"
             ></img>

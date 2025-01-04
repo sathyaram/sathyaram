@@ -52,7 +52,9 @@ const vilcek = () => {
                   <ul>
                     <li>WordPress</li>
                     <li>JavaScript</li>
-                    <li>Custom CSS Theming</li>
+                    <li>HTML / CSS, Bootstrap</li>
+                    <li>SCSS Theming</li>
+                    <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
 
@@ -61,7 +63,7 @@ const vilcek = () => {
                   <ul>
                     <li>Theme Creation</li>
                     <li>File Management</li>
-                    <li>Online Style Guide</li>
+                    <li>Animation / Interactions</li>
                   </ul>
                 </div>
                 <div className="website-year website-info">

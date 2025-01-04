@@ -140,7 +140,7 @@ const menu = () => {
               <a href="/brookings">The Brookings Institute</a>
             </li>
             <li>
-              <a href="/lehigh">Lehigh's Art, Architecture & Design Department</a>
+              <a href="/lehigh">Lehigh's College of Art, Architecture & Design</a>
             </li>
             <li>
               <a href="/sontag">The Sontag Foundation</a>

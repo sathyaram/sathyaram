@@ -52,7 +52,9 @@ const sontag = () => {
                   <ul>
                     <li>WordPress</li>
                     <li>JavaScript</li>
-                    <li>Custom CSS Theming</li>
+                    <li>HTML / CSS, Bootstrap</li>
+                    <li>SCSS Theming</li>
+                    <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
 
@@ -66,7 +68,7 @@ const sontag = () => {
                 </div>
                 <div className="website-year website-info">
                   <label>Agency</label>
-                  <div>∏ush10</div>
+                  <div>Push10</div>
                 </div>
                 <div className="website-year website-info">
                   <label>Published</label>

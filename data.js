@@ -16,7 +16,7 @@ export const Data = [
   {
     type: "web",
     id: "hhmi",
-    title: "Howard Hughes' Biointeractive",
+    title: "Howard Hughes Medical Institute's Biointeractive",
     subtitle: "Netflixing science, for kids.",
     year: "2020",
     tags: ["Drupal 8", "JavaScript", "Styled Components"],
@@ -74,7 +74,7 @@ export const Data = [
   {
     type: "web",
     id: "lehigh",
-    title: "Lehigh's Art, Architecture & Design Department",
+    title: "Lehigh University's College of Art, Architecture & Design",
     subtitle: "College Website Development",
     year: "2018",
     tags: ["Drupal", "JavaScript", "Custom HTML+CSS"],

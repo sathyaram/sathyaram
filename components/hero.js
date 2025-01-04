@@ -40,7 +40,7 @@ const Hero = () => {
             <span>a</span>
             <span>m</span>
           </h1>
-          <div className="website-version">v7</div>
+          <div className="website-version">v7.0</div>
           <h2>
             <span>W</span>
             <span>e</span>
