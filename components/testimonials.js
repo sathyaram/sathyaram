@@ -7,8 +7,7 @@ const testimonials = () => {
         <div className="heading">
           <h3>Testimonials</h3>
           <div className="heading-desc">
-            I've worked with many brands, enterprises and individuals and it
-            seems people like my work.
+            I've worked with a variety of brands, enterprises and individuals and folks seem to like my work and results!
           </div>
         </div>
         <div className="content">

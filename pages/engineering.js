@@ -7,15 +7,15 @@ const engineering = () => {
   return (
     <>
       <Head>
-        <title>Lehigh&apos;s Engineering Department Web Designs | Sathya Ram</title>
-        <meta name="description" content="About Lehigh's Engineering Department Designs" />
+        <title>Lehigh University&apos;s College of Engineering Web Designs | Sathya Ram</title>
+        <meta name="description" content="About Lehigh University&apos;s College of Engineering Web Designs" />
         <meta name="next-head-count" />
         <body className="midnight engineering page design" />
       </Head>
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">Lehigh&apos;s Engineering Department Web Designs</h1>
+          <h1 className="website-name">Lehigh University&apos;s College of Engineering Web Designs</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">

@@ -196,8 +196,11 @@ nav.social-media {
       background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
     }
 
-    &:nth-child(3)::after {
+    &:nth-child(4)::after {
       background: #e83e80;
+    }
+    &:nth-child(3)::after {
+      background: #552775;
     }
 
     &:nth-child(2):after {

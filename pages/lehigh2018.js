@@ -7,10 +7,10 @@ const lehigh2018 = () => {
   return (
     <>
       <Head>
-        <title>Lehigh&apos;s Campus Portal | Sathya Ram</title>
+        <title>Lehigh2018 Web Theme Style Guide | Sathya Ram</title>
         <meta
           name="description"
-          content="About Lehigh's 2018 Drupal 7 Theme + Style Guide"
+          content="About Lehigh2018 Web Theme Style Guide"
         />
         <meta name="next-head-count" />
         <body className="midnight portal page design" />
@@ -19,7 +19,7 @@ const lehigh2018 = () => {
       <main>
         <div className="website-heading">
           <h1 className="website-name">
-            Lehigh&apos;s 2018 Drupal 7 Theme + Style Guide
+          Lehigh2018 Web Theme Style Guide
           </h1>
           <h2 className="website-tagline"></h2>
         </div>

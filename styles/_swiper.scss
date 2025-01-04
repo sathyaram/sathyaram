@@ -27,10 +27,20 @@
 
     .swiper-button-next {
         left: calc(50% + 4rem);
+
+        &::after {
+            left: 1.5px;
+            position: relative;
+        }
     }
 
     .swiper-button-prev {
         left: calc(50% - 4rem);
+
+        &::after {
+            left: -1.5px;
+            position: relative;
+        }
     }
 }
 

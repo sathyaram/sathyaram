@@ -9,7 +9,6 @@ const fudtruk = () => {
       <Head>
         <title>Fudtruk Branding and Designs | Sathya Ram</title>
         <meta name="description" content="About Fudtruk Branding and Designs" />
-        <link rel="icon" href="/favicon.ico" />
         <meta name="next-head-count" />
         <body className="midnight fudtruk page design" />
       </Head>
@@ -42,29 +41,26 @@ const fudtruk = () => {
               <div className="col">
                 <div className="website-role website-info">
                   <label>Role</label>
-                  <div>Senior Web Developer (Portal)</div>
+                  <div>Designer</div>
                 </div>
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
-                    <li>Drupal 7</li>
-                    <li>HTML / CSS / SCSS</li>
-                    <li>JavaScript</li>
-                    <li>Luminius 7</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe InDesign</li>
                   </ul>
                 </div>
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
-                    <li>Portal Management</li>
-                    <li>Website Management</li>
-                    <li>Designer</li>
-                    <li>Developer</li>
+                    <li>Branding</li>
+                    <li>Vinyl Wrap</li>
+                    <li>Files, Assets, Exports</li>
                   </ul>
                 </div>
                 <div className="website-year website-info">
                   <label>Designed In</label>
-                  <div>2017-2020</div>
+                  <div>2017</div>
                 </div>
               </div>
             </div>

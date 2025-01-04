@@ -20,25 +20,17 @@ const pokelogos = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-          <div className="grid-2">
-            <img src="/websites/pokelogo-one.webp" />
-            <img src="/websites/pokelogo-two.jpg" />
-
-            <img src="/websites/pokelogo-three.jpg" />
-
-            <img src="/websites/pokelogo-four.jpg" />
-
-            <img src="/websites/pokelogo-five.jpg" />
-
-            <img src="/websites/pokelogo-six.jpg" />
-
-            <img src="/websites/pokelogo-seven.jpg" />
-
-            <img src="/websites/pokelogo-eight.jpg" />
-
-            <img src="/websites/pokelogo-nine.jpg" />
-
-          </div>
+            <div className="grid-2">
+              <img src="/websites/pokelogo-one.webp" />
+              <img src="/websites/pokelogo-two.jpg" />
+              <img src="/websites/pokelogo-three.jpg" />
+              <img src="/websites/pokelogo-four.jpg" />
+              <img src="/websites/pokelogo-five.jpg" />
+              <img src="/websites/pokelogo-six.jpg" />
+              <img src="/websites/pokelogo-seven.jpg" />
+              <img src="/websites/pokelogo-eight.jpg" />
+              <img src="/websites/pokelogo-nine.jpg" />
+            </div>
           </div>
         </div>
       </main>
@@ -48,6 +40,3 @@ const pokelogos = () => {
 };
 
 export default pokelogos;
-
-
-

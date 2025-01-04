@@ -21,6 +21,12 @@ const Hero = () => {
         <figure role="banner">
           <div className="planet"></div>
           <div className="planet-two"></div>
+          <div className="planet-three"></div>
+          <div className="planet-four"></div>
+          <div className="planet-five"></div>
+          <div className="planet-six"></div>
+          <div className="planet-seven"></div>
+          <div className="planet-eight"></div>
         </figure>
 
         <div className="hero">
