@@ -51,11 +51,6 @@
   }
 }
 
-// figure {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-// }
 
 .planet {
   background-color: #00b381;
@@ -169,7 +164,7 @@
   filter: blur(120px);
     aspect-ratio: 1;
     transform: rotate(-135deg);
-    top: 430vh;
+    top: 420vh;
     opacity: 0.4;
     left: -20%;
     background: conic-gradient(rgb(83, 16, 183) 60%, rgb(255, 159, 14) 40%);
