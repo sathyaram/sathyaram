@@ -6,7 +6,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper";
-import { Data } from "../data.js";
+import Link from 'next/link'
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -21,8 +21,8 @@ const Photography = () => {
       <div className="heading">
         <h3>Photography</h3>
         <div className="heading-desc">
-          I'm an award winning photographer accomplished in a variety of
-          disciplines with a focus on people, specifically creative portraiture.
+          {`I'm an award winning photographer accomplished in a variety of
+          disciplines with a focus on people, specifically creative portraiture.`}
         </div>
       </div>
       <div className="content">
@@ -67,30 +67,30 @@ const Photography = () => {
             <img alt="Kacey" src="/photography/kacey.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Kacey, in Georgetown</div>
-              <a href="/">↗ Instagram Post ↗</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/p/CQrRenyBPvH/?img_index=1">↗ Instagram Post ↗</a>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/photography/jack-one.jpg" />
+            <img alt="Jack" src="/photography/jack-one.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Jack, in the Forest</div>
-              <a href="/">↗ Instagram Post ↗</a>
+              <a target="_blank" href="https://www.instagram.com/p/CFFxPX3hefW/?img_index=1" rel="noopener noreferrer">↗ Instagram Post ↗</a>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/photography/jordan-one.jpg" />
+            <img alt="Jordan" src="/photography/jordan-one.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Jordan, at the Wharf</div>
-              <a target="_blank" href="/">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/p/CM5VE9WhF3S/?img_index=1">
                 ↗ Instagram Post ↗
               </a>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/photography/rania-one.jpg" />
+            <img alt="Rania" src="/photography/rania-one.jpg" />
             <div className="photo-text">
               <div className="photo-caption">Rania, in the Studio</div>
-              <a href="/">↗ Instagram Post ↗</a>
+              <a target="_blank" href="https://www.instagram.com/p/CTiCXeQnF9z/?img_index=1" rel="noopener noreferrer">↗ Instagram Post ↗</a>
             </div>
           </SwiperSlide>
         </Swiper>

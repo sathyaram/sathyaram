@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <>
-      <header role="header">
+      <header>
         <figure role="banner">
           <div className="planet"></div>
           <div className="planet-two"></div>

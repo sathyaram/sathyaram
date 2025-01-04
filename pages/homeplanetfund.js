@@ -91,7 +91,7 @@ const homeplanetfund = () => {
 
           <div className="full-width">
             <img
-              alt=""
+              alt="homeplanetfund-one"
               loading="lazy"
               src="/websites/homeplanetfund-one.png"
               sizes="100vw"
@@ -100,7 +100,7 @@ const homeplanetfund = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="homeplanetfund-two"
               loading="lazy"
               src="/websites/homeplanetfund-two.png"
               sizes="100vw"
@@ -109,7 +109,7 @@ const homeplanetfund = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="homeplanetfund-three"
               loading="lazy"
               src="/websites/homeplanetfund-three.png"
               sizes="100vw"
@@ -126,7 +126,7 @@ const homeplanetfund = () => {
           <div className="col-2">
             <div>
               <img
-                alt=""
+                alt="homeplanetfund-four"
                 loading="lazy"
                 src="/websites/homeplanetfund-four.png"
                 className="dark-mode-img"
@@ -134,7 +134,7 @@ const homeplanetfund = () => {
             </div>
             <div>
               <img
-                alt=""
+                alt="homeplanetfund-five"
                 loading="lazy"
                 src="/websites/homeplanetfund-five.png"
                 className="dark-mode-img"

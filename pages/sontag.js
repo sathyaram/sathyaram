@@ -15,7 +15,7 @@ const sontag = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img src="/assets/sontag.png" alt="The Sontag Foundation"></img>
           </div>
           <h1 className="website-name">The Sontag Foundation</h1>
@@ -23,7 +23,7 @@ const sontag = () => {
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>
@@ -90,7 +90,7 @@ const sontag = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="sontag-one"
               loading="lazy"
               src="/websites/sontag-one.png"
               sizes="100vw"
@@ -99,7 +99,7 @@ const sontag = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="sontag-two"
               loading="lazy"
               src="/websites/sontag-two.png"
               sizes="100vw"
@@ -109,7 +109,7 @@ const sontag = () => {
           <div className="col-2">
             <div>
               <img
-                alt=""
+                alt="sontag-four"
                 loading="lazy"
                 src="/websites/sontag-four.png"
                 className="dark-mode-img"
@@ -117,7 +117,7 @@ const sontag = () => {
             </div>
             <div>
               <img
-                alt=""
+                alt="sontag-five"
                 loading="lazy"
                 src="/websites/sontag-five.png"
                 className="dark-mode-img"
@@ -126,7 +126,7 @@ const sontag = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="sontag-three"
               loading="lazy"
               src="/websites/sontag-three.png"
               sizes="100vw"

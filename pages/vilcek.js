@@ -90,7 +90,7 @@ const vilcek = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="vilcek-one"
               loading="lazy"
               src="/websites/vilcek-one.png"
               sizes="100vw"
@@ -99,19 +99,19 @@ const vilcek = () => {
           </div>
           <div className="col-3">
             <img
-              alt=""
+              alt="vilcek-four"
               loading="lazy"
               src="/websites/vilcek-four.png"
               className="dark-mode-img"
             ></img>
             <img
-              alt=""
+              alt="vilcek-five"
               loading="lazy"
               src="/websites/vilcek-five.png"
               className="dark-mode-img"
             ></img>
             <img
-              alt=""
+              alt="vilcek-six"
               loading="lazy"
               src="/websites/vilcek-six.png"
               className="dark-mode-img"
@@ -119,7 +119,7 @@ const vilcek = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="vilcek-seven"
               loading="lazy"
               src="/websites/vilcek-seven.png"
               sizes="100vw"
@@ -129,7 +129,7 @@ const vilcek = () => {
           <div className="col-2">
             <div>
               <img
-                alt=""
+                alt="vilcek-two"
                 loading="lazy"
                 src="/websites/vilcek-two.png"
                 className="dark-mode-img"
@@ -137,7 +137,7 @@ const vilcek = () => {
             </div>
             <div>
               <img
-                alt=""
+                alt="vilcek-three"
                 loading="lazy"
                 src="/websites/vilcek-three.png"
                 className="dark-mode-img"

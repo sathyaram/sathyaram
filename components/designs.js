@@ -1,6 +1,3 @@
-import { gsap } from "gsap";
-import { Data } from "../data.js";
-import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
@@ -9,6 +6,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -68,47 +66,65 @@ const Designs = () => {
           ]}
         >
           <SwiperSlide>
-            <a href="/portal">
-              <h3>Lehigh University's Campus Portal Designs</h3>
-              <img src="/websites/lehigh-two.jpg" />
-            </a>
+            <Link href="/portal">
+              <div>
+                <h3>Lehigh University&apos;s Campus Portal Designs</h3>
+                <img
+                  src="/websites/lehigh-two.jpg"
+                  alt="lehigh-portal-tile-image"
+                />
+              </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="/fudtruk">
-              <h3>Fudtruk Branding + Designs</h3>
-              <img src="/websites/fudtruk.webp" />
-            </a>
+            <Link href="/fudtruk">
+              <div>
+                <h3>Fudtruk Branding + Designs</h3>
+                <img src="/websites/fudtruk.webp" alt="fudtruk-tile-image" />
+              </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="/lehigh2018">
-              <h3>Lehigh2018 Web Theme Style Guide</h3>
-              <img src="/websites/lehigh2018-one.jpg" />
-            </a>
+            <Link href="/lehigh2018">
+              <div>
+                <h3>Lehigh2018 Web Theme Style Guide</h3>
+                <img
+                  src="/websites/lehigh2018-one.jpg"
+                  alt="lehigh2018-guide-tile-image"
+                />
+              </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="/logos">
-              <h3>Logos + Concepts</h3>
-              <img src="/designs/lehighracing.jpg" />
-            </a>
+            <Link href="/logos">
+              <div>
+                <h3>Logos + Concepts</h3>
+                <img src="/designs/lehighracing.jpg" alt="logos-tile-image" />
+              </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="/engineering">
-              <h3>Lehigh University's College of Engineering Web Designs</h3>
-              <img src="/websites/lehighengineering.jpg" />
-            </a>
+            <Link href="/engineering">
+              <div>
+                <h3>Lehigh University&apos;s College of Engineering Web Designs</h3>
+                <img
+                  src="/websites/lehighengineering.jpg"
+                  alt="engineering-tile-image"
+                />
+              </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <a href="/pokelogos">
-              <h3>PokéLogos</h3>
-              <img src="/websites/pokelogo-one.webp" />
-            </a>
+            <Link href="/pokelogos">
+              <div>
+                <h3>PokéLogos</h3>
+                <img
+                  src="/websites/pokelogo-one.webp"
+                  alt="pokelogos-tile-image"
+                />
+              </div>
+            </Link>
           </SwiperSlide>
-          {/* <SwiperSlide>
-            <a href="/webdesigns">
-              <h3>Web Design Concepts</h3>
-              <img src="/websites/paulknakk.jpg" />
-            </a>
-          </SwiperSlide> */}
         </Swiper>
       </div>
     </section>

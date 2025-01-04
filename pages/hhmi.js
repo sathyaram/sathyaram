@@ -7,10 +7,10 @@ const hhmi = () => {
   return (
     <>
       <Head>
-        <title>Howard Hughes' Biointeractive | Sathya Ram</title>
+        <title>Howard Hughes Medical Institute&apos;s Biointeractive | Sathya Ram</title>
         <meta
           name="description"
-          content="About Howard Hughes' Biointeractive"
+          content="About Howard Hughes Medical Institute&apos;s Biointeractive"
         />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight hhmi page website" />
@@ -18,18 +18,18 @@ const hhmi = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <div class="website-image">
+          <div className="website-image">
             <img
               src="/assets/howie.svg"
-              alt="Howard Hughes' Biointeractive"
+              alt="Howard Hughes Medical Institute&apos;s Biointeractive"
             ></img>
           </div>
-          <h1 className="website-name">Howard Hughes' Biointeractive</h1>
+          <h1 className="website-name">Howard Hughes Medical Institute&apos;s Biointeractive</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
-            <div class="col-2 split-70-30">
+            <div className="col-2 split-70-30">
               <div className="col">
                 <div className="website-description">
                   <p>
@@ -94,7 +94,7 @@ const hhmi = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="biointeractive-one"
               loading="lazy"
               src="/websites/biointeractive-one.png"
               sizes="100vw"
@@ -105,7 +105,7 @@ const hhmi = () => {
           <div className="col-2">
             <div>
               <img
-                alt=""
+                alt="biointeractive-three"
                 loading="lazy"
                 src="/websites/biointeractive-three.png"
                 className="dark-mode-img"
@@ -113,7 +113,7 @@ const hhmi = () => {
             </div>
             <div>
               <img
-                alt=""
+                alt="biointeractive-two"
                 loading="lazy"
                 src="/websites/biointeractive-two.png"
                 className="dark-mode-img"
@@ -122,7 +122,7 @@ const hhmi = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="biointeractive-five"
               loading="lazy"
               src="/websites/biointeractive-five.png"
               sizes="100vw"
@@ -131,7 +131,7 @@ const hhmi = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="biointeractive-four"
               loading="lazy"
               src="/websites/biointeractive-four.png"
               sizes="100vw"

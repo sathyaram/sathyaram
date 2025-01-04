@@ -91,7 +91,7 @@ const brookings = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="brookings-one"
               loading="lazy"
               src="/websites/brookings-one.png"
               sizes="100vw"
@@ -101,7 +101,7 @@ const brookings = () => {
           <div className="col-2">
             <div>
               <img
-                alt=""
+                alt="brookings-three"
                 loading="lazy"
                 src="/websites/brookings-three.png"
                 sizes="100vw"
@@ -110,7 +110,7 @@ const brookings = () => {
             </div>
             <div>
               <img
-                alt=""
+                alt="brookings-two"
                 loading="lazy"
                 src="/websites/brookings-two.png"
                 sizes="100vw"
@@ -120,7 +120,7 @@ const brookings = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="brookings-four"
               loading="lazy"
               src="/websites/brookings-four.png"
               sizes="100vw"

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const menu = () => {
   const menuOpen = (e) => {
@@ -9,7 +10,7 @@ const menu = () => {
     <>
       <aside role="region">
         <a
-          tabIndex="1"
+          tabIndex="0"
           className="logo"
           aria-label="Logo Home Link"
           name="logo"
@@ -38,7 +39,7 @@ const menu = () => {
           </svg>
         </a>
         <button
-          tabIndex="2"
+          tabIndex="0"
           type="button"
           onClick={menuOpen}
           className="menu-toggle"
@@ -95,7 +96,7 @@ const menu = () => {
               <span>Dribbble</span>
             </a>
           </nav>
-          <ul className="eyebrow" role="navigation">
+          <ul className="eyebrow">
             <li>
               <a direction="right" href="/">
                 Home
@@ -132,44 +133,68 @@ const menu = () => {
               </a>
             </li>
           </ul>
-          <ul className="website-menu" role="navigation">
+          <ul className="website-menu">
             <li>
-              <a href="/homeplanetfund">Home Planet Fund</a>
+              <a rel="noopener noreferrer" href="/homeplanetfund">
+                Home Planet Fund
+              </a>
             </li>
             <li>
-              <a href="/brookings">The Brookings Institute</a>
+              <a rel="noopener noreferrer" href="/brookings">
+                The Brookings Institute
+              </a>
             </li>
             <li>
-              <a href="/lehigh">Lehigh University's College of Art, Architecture & Design</a>
+              <a rel="noopener noreferrer" href="/lehigh">
+                Lehigh University&apos;s College of Art, Architecture & Design
+              </a>
             </li>
             <li>
-              <a href="/sontag">The Sontag Foundation</a>
+              <a rel="noopener noreferrer" href="/sontag">
+                The Sontag Foundation
+              </a>
             </li>
             <li>
-              <a href="/hhmi">Howard Hughes' Biointeractive</a>
+              <a rel="noopener noreferrer" href="/hhmi">
+                Howard Hughes Medical Institute&apos;s Biointeractive
+              </a>
             </li>
             <li>
-              <a href="/vilcek">Vilcek Foundation</a>
+              <a rel="noopener noreferrer" href="/vilcek">
+                Vilcek Foundation
+              </a>
             </li>
           </ul>
-          <ul className="design-menu" role="navigation">
+          <ul className="design-menu">
             <li>
-              <a href="/logos">Logos + Concepts</a>
+              <a rel="noopener noreferrer" href="/logos">
+                Logos + Concepts
+              </a>
             </li>
             <li>
-              <a href="/fudtruk">Fudtruk Branding + Designs</a>
+              <a rel="noopener noreferrer" href="/fudtruk">
+                Fudtruk Branding + Designs
+              </a>
             </li>
             <li>
-              <a href="/portal">Lehigh University's Campus Portal Designs</a>
+              <a rel="noopener noreferrer" href="/portal">
+                Lehigh University&apos;s Campus Portal Designs
+              </a>
             </li>
             <li>
-              <a href="/lehigh2018">Lehigh2018 Web Theme Style Guide</a>
+              <a rel="noopener noreferrer" href="/lehigh2018">
+                Lehigh2018 Web Theme Style Guide
+              </a>
             </li>
             <li>
-              <a href="/engineering">Lehigh University's College of Engineering Web Designs</a>
+              <a rel="noopener noreferrer" href="/engineering">
+                Lehigh University&apos;s College of Engineering Web Designs
+              </a>
             </li>
             <li>
-              <a href="/pokelogos">PokéLogos</a>
+              <a rel="noopener noreferrer" href="/pokelogos">
+                PokéLogos
+              </a>
             </li>
           </ul>
         </div>

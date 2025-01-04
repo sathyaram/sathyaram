@@ -8,11 +8,11 @@ const lehigh = () => {
     <>
       <Head>
         <title>
-          Lehigh's College of Art, Architecture & Design | Sathya Ram
+          Lehigh University&apos;s College of Art, Architecture & Design | Sathya Ram
         </title>
         <meta
           name="description"
-          content="About Lehigh's College of Art, Architecture & Design"
+          content="About Lehigh University&apos;s College of Art, Architecture & Design"
         />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight lehigh page website" />
@@ -27,7 +27,7 @@ const lehigh = () => {
             ></img>
           </div>
           <h1 className="website-name">
-          Lehigh's College of Art, Architecture & Design
+          Lehigh University&apos;s College of Art, Architecture & Design
           </h1>
           <h2 className="website-tagline"></h2>
         </div>
@@ -97,7 +97,7 @@ const lehigh = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="aad-one"
               loading="lazy"
               src="/websites/aad-one.jpg"
               sizes="100vw"
@@ -106,7 +106,7 @@ const lehigh = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="aad-two"
               loading="lazy"
               src="/websites/lehigh-one.png"
               sizes="100vw"
@@ -115,7 +115,7 @@ const lehigh = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="aad-three"
               loading="lazy"
               src="/websites/aad-three.jpg"
               sizes="100vw"
@@ -124,7 +124,7 @@ const lehigh = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="aad-four"
               loading="lazy"
               src="/websites/aad-four.jpg"
               sizes="100vw"

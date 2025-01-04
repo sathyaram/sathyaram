@@ -21,10 +21,10 @@ const about = () => {
           <div className="about-section">
             <h4>Synopsis</h4>
             <div className="about-text">
-              <p>Hi there! 👋🏽 I'm Sathya Ram.</p>
+              <p>Hi there! 👋🏽 I&apos;m Sathya Ram.</p>
               <br></br>
               <p>
-                I design and develop modern websites;I build engaging layouts,
+                I design and develop modern websites; I build engaging layouts,
                 and user interfaces; and I craft delightful web animations and
                 interactions.
               </p>
@@ -85,7 +85,7 @@ const about = () => {
               <p>
                 Currently, I operate my own freelance website development,
                 interface design and professional photography LLC. Right now,
-                I'm seeking a creative developer + designer role.
+                I&apos;m seeking a creative developer + designer role.
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ const about = () => {
                 href="https://www.imdb.com/user/ur37032307/ratings?sort=your_rating,desc&amp;ratingFilter=0&amp;mode=detail&amp;last"
               >
                 {" "}
-                what I've rated
+                what I&apos;ve rated
               </a>
               .<br></br>
               <p>

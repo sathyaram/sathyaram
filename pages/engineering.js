@@ -7,7 +7,7 @@ const engineering = () => {
   return (
     <>
       <Head>
-        <title>Lehigh's Engineering Department Web Designs | Sathya Ram</title>
+        <title>Lehigh&apos;s Engineering Department Web Designs | Sathya Ram</title>
         <meta name="description" content="About Lehigh's Engineering Department Designs" />
         <link rel="icon" href="/favicon.ico" />
         <body className="midnight engineering page design" />
@@ -15,7 +15,7 @@ const engineering = () => {
       <Menu />
       <main>
         <div className="website-heading">
-          <h1 className="website-name">Lehigh's Engineering Department Web Designs</h1>
+          <h1 className="website-name">Lehigh&apos;s Engineering Department Web Designs</h1>
           <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
@@ -70,7 +70,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-one"
               loading="lazy"
               src="/websites/lehighengineering.jpg"
               sizes="100vw"
@@ -79,7 +79,7 @@ const engineering = () => {
           </div> 
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-four"
               loading="lazy"
               src="/websites/lehigh-four.jpg"
               sizes="100vw"
@@ -88,7 +88,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-two"
               loading="lazy"
               src="/websites/engineering-two.jpg"
               sizes="100vw"
@@ -97,7 +97,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-three"
               loading="lazy"
               src="/websites/engineering-three.jpg"
               sizes="100vw"
@@ -106,7 +106,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-four"
               loading="lazy"
               src="/websites/engineering-four.jpg"
               sizes="100vw"
@@ -115,7 +115,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-five"
               loading="lazy"
               src="/websites/engineering-five.jpg"
               sizes="100vw"
@@ -124,7 +124,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-six"
               loading="lazy"
               src="/websites/engineering-six.jpg"
               sizes="100vw"
@@ -133,7 +133,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-seven"
               loading="lazy"
               src="/websites/engineering-seven.jpg"
               sizes="100vw"
@@ -142,7 +142,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-eight"
               loading="lazy"
               src="/websites/engineering-eight.jpg"
               sizes="100vw"
@@ -151,7 +151,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-nine"
               loading="lazy"
               src="/websites/engineering-nine.jpg"
               sizes="100vw"
@@ -160,7 +160,7 @@ const engineering = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="engineering-ten"
               loading="lazy"
               src="/websites/engineering-ten.jpg"
               sizes="100vw"

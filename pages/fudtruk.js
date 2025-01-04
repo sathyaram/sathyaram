@@ -70,7 +70,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="fudtruk-one"
               loading="lazy"
               src="/websites/fudtruk.jpg"
               sizes="100vw"
@@ -79,7 +79,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="fudtruk-two"
               loading="lazy"
               src="/websites/fudtruk-two.jpg"
               sizes="100vw"
@@ -88,7 +88,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width full-small">
             <img
-              alt=""
+              alt="fudtruk-three"
               loading="lazy"
               src="/websites/fudtruk-three.jpg"
               sizes="100vw"
@@ -97,7 +97,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="fudtruk-four"
               loading="lazy"
               src="/websites/fudtruk-four.jpg"
               sizes="100vw"
@@ -106,7 +106,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="fudtruk-five"
               loading="lazy"
               src="/websites/fudtruk-five.jpg"
               sizes="100vw"
@@ -115,7 +115,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width full-small">
             <img
-              alt=""
+              alt="fudtruk-six"
               loading="lazy"
               src="/websites/fudtruk-six.png"
               sizes="100vw"
@@ -124,7 +124,7 @@ const fudtruk = () => {
           </div>
           <div className="full-width">
             <img
-              alt=""
+              alt="fudtruk-seven"
               loading="lazy"
               src="/websites/fudtruk-seven.jpg"
               sizes="100vw"
