@@ -14,7 +14,6 @@ export default function Home() {
     <>
       <Head>
         <title>Home | Sathya Ram</title>
-        <meta name="next-head-count" />
         <meta property="og:title" content="It's Sathya Ram Website" />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:image:alt" content="Sathya Ram OG Image" />
@@ -22,7 +21,13 @@ export default function Home() {
           property="og:description"
           content="Web Developer | UI/Graphic Designer | Photographer"
         />
-
+        <link
+          rel="preload"
+          href="/fonts/Californication.ttf"
+          as="font"
+          crossOrigin=""
+          type="font/ttf"
+        />
         <meta
           name="description"
           content="Web Developer | UI/Graphic Designer | Photographer"
