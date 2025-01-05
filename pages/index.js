@@ -21,13 +21,6 @@ export default function Home() {
           property="og:description"
           content="Web Developer | UI/Graphic Designer | Photographer"
         />
-        <link
-          rel="preload"
-          href="/fonts/Californication.ttf"
-          as="font"
-          crossOrigin=""
-          type="font/ttf"
-        />
         <meta
           name="description"
           content="Web Developer | UI/Graphic Designer | Photographer"

@@ -6,6 +6,7 @@ import {
   Navigation,
   Autoplay,
 } from "swiper";
+import Image from 'next/image';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
@@ -73,15 +74,13 @@ const projects = () => {
                       <div className="project-background"></div>
                       <div className="project-heading">
                         <div className="project-image">
-                          <img src={project.image} loading="lazy" alt={project.title} />
+                          <Image priority width={800} height={600} src={project.image} alt={project.title}></Image>
                         </div>
                         <div className="project-title">{project.title}</div>
                         <div className="project-subtitle">
                           {project.subtitle}
                         </div>
-                        <button className="project-expand">
-                          Click to Expand <span>+</span>
-                        </button>
+                        
                       </div>
                     </article>
                   </a>
