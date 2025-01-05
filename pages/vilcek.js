@@ -18,7 +18,7 @@ const vilcek = () => {
           <div className="website-image">
             <img
               loading="lazy"
-              src="/assets/vilcek.png"
+              src="/websites/assets/vilcek.png"
               alt="Vilcek Foundation"
             ></img>
           </div>

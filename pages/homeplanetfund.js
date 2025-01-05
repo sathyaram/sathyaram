@@ -18,7 +18,7 @@ const homeplanetfund = () => {
           <div className="website-image">
             <img
               loading="lazy"
-              src="/assets/homeplanet.png"
+              src="/websites/assets/homeplanet.png"
               alt="Home Planet Fund"
             ></img>
           </div>

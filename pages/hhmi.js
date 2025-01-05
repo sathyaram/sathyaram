@@ -22,7 +22,7 @@ const hhmi = () => {
         <div className="website-heading">
           <div className="website-image">
             <img
-              src="/assets/howie.svg"
+              src="/websites/assets/howie.png"
               alt="Howard Hughes Medical Institute's Biointeractive"
             ></img>
           </div>

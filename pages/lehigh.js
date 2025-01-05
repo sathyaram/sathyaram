@@ -23,7 +23,7 @@ const lehigh = () => {
         <div className="website-heading">
           <div className="website-image">
             <img
-              src="/assets/lehighuniversity.png"
+              src="/websites/assets/lehighuniversity.png"
               alt="Lehigh University"
             ></img>
           </div>

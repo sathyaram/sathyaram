@@ -17,7 +17,7 @@ const brookings = () => {
         <div className="website-heading">
           <div className="website-image">
             <img
-              src="/assets/brookings.webp"
+              src="/websites/assets/brookings.webp"
               alt="The Brookings Institute"
             ></img>
           </div>
