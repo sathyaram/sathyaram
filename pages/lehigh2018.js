@@ -76,8 +76,7 @@ const lehigh2018 = () => {
             <img
               alt="lehigh2018-one"
               loading="lazy"
-              src="/websites/lehigh2018-one.jpg"
-
+              src="/designs/assets/lehigh2018-one.jpg"
               className="full-img"
             ></img>
           </div>
@@ -86,8 +85,7 @@ const lehigh2018 = () => {
               <img
                 alt="lehigh2018-two"
                 loading="lazy"
-                src="/websites/lehigh2018-two.jpg"
-  
+                src="/designs/lehigh2018/lehigh2018-two.jpg"
                 className="full-img"
               ></img>
             </div>
@@ -95,8 +93,7 @@ const lehigh2018 = () => {
               <img
                 alt="lehigh2018-three"
                 loading="lazy"
-                src="/websites/lehigh2018-three.jpg"
-  
+                src="/designs/lehigh2018/lehigh2018-three.jpg"
                 className="full-img"
               ></img>
             </div>
@@ -105,8 +102,7 @@ const lehigh2018 = () => {
             <img
               alt="lehigh2018-four"
               loading="lazy"
-              src="/websites/lehigh2018-four.jpg"
-
+              src="/designs/lehigh2018/lehigh2018-four.jpg"
               className="full-img"
             ></img>
           </div>
@@ -114,8 +110,7 @@ const lehigh2018 = () => {
             <img
               alt="lehigh2018-five"
               loading="lazy"
-              src="/websites/lehigh2018-five.jpg"
-
+              src="/designs/lehigh2018/lehigh2018-five.jpg"
               className="full-img"
             ></img>
           </div>
@@ -123,8 +118,7 @@ const lehigh2018 = () => {
             <img
               alt="lehigh2018-six"
               loading="lazy"
-              src="/websites/lehigh2018-six.jpg"
-
+              src="/designs/lehigh2018/lehigh2018-six.jpg"
               className="full-img"
             ></img>
           </div>
@@ -132,8 +126,7 @@ const lehigh2018 = () => {
             <img
               alt="lehigh2018-seven"
               loading="lazy"
-              src="/websites/lehigh2018-seven.png"
-
+              src="/designs/lehigh2018/lehigh2018-seven.png"
               className="full-img"
             ></img>
           </div>
@@ -142,7 +135,7 @@ const lehigh2018 = () => {
           <img
             alt="lehigh2018-eight"
             loading="lazy"
-            src="/websites/lehigh2018-eight.png"
+            src="/designs/lehigh2018/lehigh2018-eight.png"
             className="full-img"
           ></img>
         </div>
@@ -150,7 +143,7 @@ const lehigh2018 = () => {
           <img
             alt="lehigh2018-nine"
             loading="lazy"
-            src="/websites/lehigh2018-nine.png"
+            src="/designs/lehigh2018/lehigh2018-nine.png"
             className="full-img"
           ></img>
         </div>
@@ -158,7 +151,7 @@ const lehigh2018 = () => {
           <img
             alt="lehigh2018-ten"
             loading="lazy"
-            src="/websites/lehigh2018-ten.png"
+            src="/designs/lehigh2018/lehigh2018-ten.png"
             className="full-img"
           ></img>
         </div>
@@ -166,7 +159,7 @@ const lehigh2018 = () => {
           <img
             alt="lehigh2018-eleven"
             loading="lazy"
-            src="/websites/lehigh2018-eleven.png"
+            src="/designs/lehigh2018/lehigh2018-eleven.png"
             className="full-img"
           ></img>
         </div>

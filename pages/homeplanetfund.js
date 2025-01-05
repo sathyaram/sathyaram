@@ -16,7 +16,11 @@ const homeplanetfund = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img loading="lazy" src="/assets/homeplanet.png" alt="Home Planet Fund"></img>
+            <img
+              loading="lazy"
+              src="/assets/homeplanet.png"
+              alt="Home Planet Fund"
+            ></img>
           </div>
           <h1 className="website-name">Home Planet Fund</h1>
           <h2 className="website-tagline"></h2>
@@ -33,8 +37,8 @@ const homeplanetfund = () => {
                     Planet Fund leverages the power of nature and the
                     stewardship role of Indigenous People and Local Communities.
                     It is also a company powered by Patagonia. Its seed money
-                    and yours is what powers this company&apos;s noble mission. To
-                    harnass nature to create better living.
+                    and yours is what powers this company&apos;s noble mission.
+                    To harnass nature to create better living.
                   </p>
                   <br></br>
                   <p>
@@ -50,7 +54,6 @@ const homeplanetfund = () => {
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
@@ -60,7 +63,6 @@ const homeplanetfund = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
@@ -92,7 +94,6 @@ const homeplanetfund = () => {
               </div>
             </div>
           </div>
-
           <div className="full-width">
             <img
               alt="homeplanetfund-one"
@@ -118,7 +119,9 @@ const homeplanetfund = () => {
             ></img>
           </div>
           <div className="text-block">
-            Performant across all devices and integrating colorful scroll effects. They wanted a scroll experience akin to a summer breeze in the Sahara.
+            Performant across all devices and integrating colorful scroll
+            effects. They wanted a scroll experience akin to a summer breeze in
+            the Sahara.
           </div>
           <div className="col-2">
             <div>

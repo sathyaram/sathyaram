@@ -21,15 +21,15 @@ const pokelogos = () => {
         <div className="website-content">
           <div className="constrained">
             <div className="grid-2">
-              <img loading="lazy" alt="pokelogo-one" src="/websites/pokelogo-one.webp" />
-              <img loading="lazy" alt="pokelogo-two" src="/websites/pokelogo-two.jpg" />
-              <img loading="lazy" alt="pokelogo-three" src="/websites/pokelogo-three.jpg" />
-              <img loading="lazy" alt="pokelogo-four" src="/websites/pokelogo-four.jpg" />
-              <img loading="lazy" alt="pokelogo-five" src="/websites/pokelogo-five.jpg" />
-              <img loading="lazy" alt="pokelogo-six" src="/websites/pokelogo-six.jpg" />
-              <img loading="lazy" alt="pokelogo-seven" src="/websites/pokelogo-seven.jpg" />
-              <img loading="lazy" alt="pokelogo-eight" src="/websites/pokelogo-eight.jpg" />
-              <img loading="lazy" alt="pokelogo-nine" src="/websites/pokelogo-nine.jpg" />
+              <img loading="lazy" alt="pokelogo-one" src="/designs/assets/pokelogo-one.webp" />
+              <img loading="lazy" alt="pokelogo-two" src="/designs/pokelogos/pokelogo-two.jpg" />
+              <img loading="lazy" alt="pokelogo-three" src="/designs/pokelogos/pokelogo-three.jpg" />
+              <img loading="lazy" alt="pokelogo-four" src="/designs/pokelogos/pokelogo-four.jpg" />
+              <img loading="lazy" alt="pokelogo-five" src="/designs/pokelogos/pokelogo-five.jpg" />
+              <img loading="lazy" alt="pokelogo-six" src="/designs/pokelogos/pokelogo-six.jpg" />
+              <img loading="lazy" alt="pokelogo-seven" src="/designs/pokelogos/pokelogo-seven.jpg" />
+              <img loading="lazy" alt="pokelogo-eight" src="/designs/pokelogos/pokelogo-eight.jpg" />
+              <img loading="lazy" alt="pokelogo-nine" src="/designs/pokelogos/pokelogo-nine.jpg" />
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const logos = () => {
         <div className="website-content">
           <div className="constrained">
             <div className="grid-2">
-              <img loading="lazy" alt="logo-concept" src="/designs/lehighracing.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/assets/lehighracing.jpg" />
               <img loading="lazy" alt="logo-concept" src="/designs/logos/mosiaclogoconcepts.jpg" />
               <img loading="lazy" alt="logo-concept" src="/designs/logos/indifylogoconcept.jpg" />
               <img loading="lazy" alt="logo-concept" src="/designs/logos/powerhouselogoconcepts.jpg" />

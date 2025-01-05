@@ -5,15 +5,6 @@ import Rain from "../components/rain.js";
 import Footer from "../components/footer.js";
 
 const about = () => {
-  
-  // window.addEventListener("scroll", function () {
-  //   if (window.scrollY >= 10) {
-  //     document.body.classList.add("fade-in");
-  //   } else {
-  //     document.body.classList.remove("fade-in");
-  //   }
-  // });
-
   return (
     <>
       <Head>
@@ -39,16 +30,13 @@ const about = () => {
                 and user interfaces; and I craft delightful web animations and
                 interactions.
               </p>
-
               <br></br>
               <p>I am also an avid photographer and freelancer.</p>
-
               <br></br>
               <p>
                 Combining these skills, I bring beautiful digital experiences to
                 life.
               </p>
-
               <br></br>
               <p>
                 At heart, I am a creator: I believe in aesthetics with purpose.
@@ -162,18 +150,16 @@ const about = () => {
                 rel="noopener noreferrer"
                 href="https://www.imdb.com/user/ur37032307/ratings?sort=your_rating,desc&amp;ratingFilter=0&amp;mode=detail&amp;last"
               >
-                {" "}
                 what I&apos;ve rated
               </a>
               .<br></br>
               <p>
-                I <s>used to</s> play{" "}
+                I <s>used to</s> play
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://worldofwarcraft.com/en-us/character/us/tichondrius/sathya"
                 >
-                  {" "}
                   World of Warcraft
                 </a>
                 .
@@ -186,7 +172,6 @@ const about = () => {
                   rel="noopener noreferrer"
                   href="https://instagram.com/sathya.ram"
                 >
-                  {" "}
                   my Instagram
                 </a>
                 , so follow me if you want a little vibrance on your daily

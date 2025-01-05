@@ -30,11 +30,11 @@ const brookings = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    I can&apos;t believe I had the opportunity to do the frontend for
-                    The Brookings Institution. It&apos;s a a nonprofit organization
-                    based in Washington, D.C. Our mission is to conduct
-                    in-depth, nonpartisan research to improve policy and
-                    governance at local, national, and global levels.
+                    I can&apos;t believe I had the opportunity to do the
+                    frontend for The Brookings Institution. It&apos;s a a
+                    nonprofit organization based in Washington, D.C. Our mission
+                    is to conduct in-depth, nonpartisan research to improve
+                    policy and governance at local, national, and global levels.
                   </p>
                   <br></br>
                   <p>
@@ -101,7 +101,7 @@ const brookings = () => {
             <img
               alt="brookings-one"
               loading="lazy"
-              src="/websites/brookings-one.png"
+              src="/websites/brookings/brookings-one.png"
               className="full-img"
             ></img>
           </div>
@@ -110,8 +110,7 @@ const brookings = () => {
               <img
                 alt="brookings-three"
                 loading="lazy"
-                src="/websites/brookings-three.png"
-
+                src="/websites/brookings/brookings-three.png"
                 className="full-img"
               ></img>
             </div>
@@ -119,8 +118,7 @@ const brookings = () => {
               <img
                 alt="brookings-two"
                 loading="lazy"
-                src="/websites/brookings-two.png"
-
+                src="/websites/brookings/brookings-two.png"
                 className="full-img"
               ></img>
             </div>
@@ -129,7 +127,7 @@ const brookings = () => {
             <img
               alt="brookings-four"
               loading="lazy"
-              src="/websites/brookings-four.png"
+              src="/websites/brookings/brookings-four.png"
               className="full-img"
             ></img>
           </div>

@@ -33,16 +33,16 @@ const portal = () => {
                   <p>
                     While working at Lehigh University, it was my job to
                     maintain but also elevate the Campus Portal, built on
-                    Ellucian&apos;s Luminus 7 Platform. It was the central hub on
-                    campus where students, faculty, staff, parents, perspectives
-                    and just about everyone went to get knowledge about the
-                    college, the opportunities, the news, the daily events and
-                    tons of other information. Having come fresh into the role
-                    with a graphic design degree, I was determined to inject a
-                    new modern take onto the old software. I leveraged custom
-                    JavaScript on their Java based platform to deliver my custom
-                    Masonry layout design that I had created as a new take on
-                    our portal.
+                    Ellucian&apos;s Luminus 7 Platform. It was the central hub
+                    on campus where students, faculty, staff, parents,
+                    perspectives and just about everyone went to get knowledge
+                    about the college, the opportunities, the news, the daily
+                    events and tons of other information. Having come fresh into
+                    the role with a graphic design degree, I was determined to
+                    inject a new modern take onto the old software. I leveraged
+                    custom JavaScript on their Java based platform to deliver my
+                    custom Masonry layout design that I had created as a new
+                    take on our portal.
                   </p>
                   <br></br>
                   <p>
@@ -56,8 +56,8 @@ const portal = () => {
                   </p>
                   <p>
                     It was a very defining moment for me, launching this. Hope
-                    you like it! I wish you could see the site, but it&apos;s behind
-                    my university&apos;s SSO.
+                    you like it! I wish you could see the site, but it&apos;s
+                    behind my university&apos;s SSO.
                   </p>
                 </div>
               </div>
@@ -94,8 +94,7 @@ const portal = () => {
             <img
               alt="portal-og"
               loading="lazy"
-              src="/websites/portal.jpg"
-              sizes="100vw"
+              src="/designs/portal/portal.jpg"
               className="full-img"
             ></img>
           </div>
@@ -104,8 +103,7 @@ const portal = () => {
               <img
                 alt="portal-three"
                 loading="lazy"
-                src="/websites/portal-three.jpg"
-                sizes="100vw"
+                src="/designs/portal/portal-three.jpg"
                 className="full-img"
               ></img>
             </div>
@@ -113,8 +111,7 @@ const portal = () => {
               <img
                 alt="portal-five"
                 loading="lazy"
-                src="/websites/portal-five.jpg"
-                sizes="100vw"
+                src="/designs/portal/portal-five.jpg"
                 className="full-img"
               ></img>
             </div>
@@ -123,8 +120,7 @@ const portal = () => {
             <img
               alt="portal-two"
               loading="lazy"
-              src="/websites/portal-two.jpg"
-              sizes="100vw"
+              src="/designs/portal/portal-two.jpg"
               className="full-img"
             ></img>
           </div>
@@ -132,8 +128,7 @@ const portal = () => {
             <img
               alt="portal-four"
               loading="lazy"
-              src="/websites/portal-four.jpg"
-              sizes="100vw"
+              src="/designs/portal/portal-four.jpg"
               className="full-img"
             ></img>
           </div>
@@ -142,8 +137,7 @@ const portal = () => {
             <img
               alt="portal-six"
               loading="lazy"
-              src="/websites/portal-six.jpg"
-              sizes="100vw"
+              src="/designs/portal/portal-six.jpg"
               className="full-img"
             ></img>
           </div>
@@ -151,8 +145,7 @@ const portal = () => {
             <img
               alt="portal-seven"
               loading="lazy"
-              src="/websites/portal-seven.jpg"
-              sizes="100vw"
+              src="/designs/portal/portal-seven.jpg"
               className="full-img"
             ></img>
           </div>

@@ -49,10 +49,10 @@ const fudtruk = () => {
                   <br></br>
 
                   <p>
-                    I also built their website, where you&apos;ll see so much more
-                    about the FudTruk including the menu, food pictures which I
-                    took, some background video I made, some neat web design and
-                    pretty colors!
+                    I also built their website, where you&apos;ll see so much
+                    more about the FudTruk including the menu, food pictures
+                    which I took, some background video I made, some neat web
+                    design and pretty colors!
                   </p>
                   <br></br>
                 </div>
@@ -88,7 +88,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-one"
               loading="lazy"
-              src="/websites/fudtruk.jpg"
+              src="/designs/fudtruk/fudtruk.jpg"
               className="full-img"
             ></img>
           </div>
@@ -96,7 +96,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-two"
               loading="lazy"
-              src="/websites/fudtruk-two.jpg"
+              src="/designs/fudtruk/fudtruk-two.jpg"
               className="full-img"
             ></img>
           </div>
@@ -104,7 +104,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-three"
               loading="lazy"
-              src="/websites/fudtruk-three.jpg"
+              src="/designs/fudtruk/fudtruk-three.jpg"
               className="full-img"
             ></img>
           </div>
@@ -112,7 +112,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-four"
               loading="lazy"
-              src="/websites/fudtruk-four.jpg"
+              src="/designs/fudtruk/fudtruk-four.jpg"
               className="full-img"
             ></img>
           </div>
@@ -120,7 +120,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-five"
               loading="lazy"
-              src="/websites/fudtruk-five.jpg"
+              src="/designs/fudtruk/fudtruk-five.jpg"
               className="full-img"
             ></img>
           </div>
@@ -128,7 +128,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-six"
               loading="lazy"
-              src="/websites/fudtruk-six.png"
+              src="/designs/fudtruk/fudtruk-six.png"
               className="full-img"
             ></img>
           </div>
@@ -136,7 +136,7 @@ const fudtruk = () => {
             <img
               alt="fudtruk-seven"
               loading="lazy"
-              src="/websites/fudtruk-seven.jpg"
+              src="/designs/fudtruk/fudtruk-seven.jpg"
               className="full-img"
             ></img>
           </div>

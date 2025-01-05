@@ -9,7 +9,7 @@ export const Data = [
     agency: "Push10",
     url: "sontagfoundation.org",
     link: "https://sontagfoundation.org",
-    image: "/assets/sontag.png",
+    image: "/websites/assets/sontag.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -23,7 +23,7 @@ export const Data = [
     agency: "ForumOne",
     url: "biointeractive.org",
     link: "https://biointeractive.org",
-    image: "/assets/howie.svg",
+    image: "/websites/assets/howie.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -38,7 +38,7 @@ export const Data = [
     url: "vilcek.org",
     link: "https://vilcek.org",
     image:
-      "/assets/vilcek.png",
+      "/websites/assets/vilcek.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -52,7 +52,7 @@ export const Data = [
     agency: "Teal Media",
     url: "homeplanetfund.org",
     link: "https://homeplanetfund.org",
-    image: "/assets/homeplanet.png",
+    image: "/websites/assets/homeplanet.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -67,7 +67,7 @@ export const Data = [
     url: "brookings.org",
     link: "https://brookings.org",
     image:
-      "/assets/brookings.webp",
+      "/websites/assets/brookings.webp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -82,7 +82,7 @@ export const Data = [
     url: "aad.lehigh.edu",
     link: "https://aad.lehigh.edu",
     image:
-      "/assets/lehighuniversity.png",
+      "/websites/assets/lehighuniversity.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -127,41 +127,41 @@ export const Data = [
     id: "portal",
     title: "Lehigh University's Campus Portal Designs",
     image:
-      "/designs/sathya-lehigh-portal-redesign.jpg",
+      "/designs/assets/sathya-lehigh-portal-redesign.jpg",
   },
   {
     type: "design",
     id: "fudtruk",
     title: "Fudtruk Branding + Designs",
     image:
-      "/designs/fudtruk.webp",
+      "/designs/assets/fudtruk.webp",
   },
   {
     type: "design",
     id: "lehigh2018",
     title: "Lehigh2018 Web Theme Style Guide",
     image:
-      "/designs/lehigh2018-one.jpg",
+      "/designs/assets/lehigh2018-one.jpg",
   },
   {
     type: "design",
     id: "logos",
     title: "Logos + Concepts",
     image:
-      "/designs/lehighracing.jpg",
+      "/designs/assets/lehighracing.jpg",
   },
   {
     type: "design",
     id: "engineering",
     title: " Lehigh University's College of Engineering Web Designs",
     image:
-      "/designs/lehighengineering.jpg",
+      "/designs/assets/lehighengineering.jpg",
   },
   {
     type: "design",
     id: "pokelogos",
     title: "PokéLogos",
     image:
-      "/designs/pokelogo-one.webp",
+      "/designs/assets/pokelogo-one.webp",
   },
 ];
