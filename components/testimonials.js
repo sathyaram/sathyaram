@@ -26,7 +26,6 @@ const testimonials = () => {
             <div className="testimonial-svg">
               <svg
                 data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 280.9 251.41"
               >
                 <g>
@@ -101,7 +100,6 @@ const testimonials = () => {
               <svg
                 id="Layer_1"
                 data-name="Layer 1"
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 595.14 324.07"
               >
                 <g>

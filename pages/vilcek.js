@@ -16,7 +16,11 @@ const vilcek = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img loading="lazy" src="/assets/vilcek.png" alt="Vilcek Foundation"></img>
+            <img
+              loading="lazy"
+              src="/assets/vilcek.png"
+              alt="Vilcek Foundation"
+            ></img>
           </div>
           <h1 className="website-name">Vilcek Foundation</h1>
           <h2 className="website-tagline"></h2>
@@ -27,11 +31,25 @@ const vilcek = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    While working at Forum One, I had the honor of being tasked to do the entire frontend of the Vilcek Foundation&apos;s brand new website. The Vilcek Foundation raises awareness of immigrant contributions in the United States and fosters appreciation of the arts and sciences. Through their prizes, they reward immigrant artists and scientists at every stage of their careers. The build involved extensive image galleries and content types for various groupings of art that Vilcek wanted to organize, as well as keep track of all their grantees, donors and art contributions. 
+                    While working at Forum One, I had the honor of being tasked
+                    to do the entire frontend of the Vilcek Foundation&apos;s
+                    brand new website. The Vilcek Foundation raises awareness of
+                    immigrant contributions in the United States and fosters
+                    appreciation of the arts and sciences. Through their prizes,
+                    they reward immigrant artists and scientists at every stage
+                    of their careers. The build involved extensive image
+                    galleries and content types for various groupings of art
+                    that Vilcek wanted to organize, as well as keep track of all
+                    their grantees, donors and art contributions.
                   </p>
                   <br></br>
                   <p>
-                    Being able to theme a majority of the project myself, I was able to build out clean SCSS directories filled with different ways to run our different gallery layouts. Even in 2025, this website is thriving, clean and preformant - reflective of a lot of the longevity I try to instill in websites. 
+                    Being able to theme a majority of the project myself, I was
+                    able to build out clean SCSS directories filled with
+                    different ways to run our different gallery layouts. Even in
+                    2025, this website is thriving, clean and preformant -
+                    reflective of a lot of the longevity I try to instill in
+                    websites.
                   </p>
                 </div>
               </div>
@@ -40,7 +58,6 @@ const vilcek = () => {
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
@@ -51,7 +68,6 @@ const vilcek = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
@@ -87,8 +103,7 @@ const vilcek = () => {
             <img
               alt="vilcek-one"
               loading="lazy"
-              src="/websites/vilcek-one.png"
-              sizes="100vw"
+              src="/websites/vilcek/vilcek-one.png"
               className="full-img"
             ></img>
           </div>
@@ -96,19 +111,19 @@ const vilcek = () => {
             <img
               alt="vilcek-four"
               loading="lazy"
-              src="/websites/vilcek-four.png"
+              src="/websites/vilcek/vilcek-four.png"
               className="dark-mode-img"
             ></img>
             <img
               alt="vilcek-five"
               loading="lazy"
-              src="/websites/vilcek-five.png"
+              src="/websites/vilcek/vilcek-five.png"
               className="dark-mode-img"
             ></img>
             <img
               alt="vilcek-six"
               loading="lazy"
-              src="/websites/vilcek-six.png"
+              src="/websites/vilcek/vilcek-six.png"
               className="dark-mode-img"
             ></img>
           </div>
@@ -116,8 +131,7 @@ const vilcek = () => {
             <img
               alt="vilcek-seven"
               loading="lazy"
-              src="/websites/vilcek-seven.png"
-              sizes="100vw"
+              src="/websites/vilcek/vilcek-seven.png"
               className="full-img"
             ></img>
           </div>
@@ -126,7 +140,7 @@ const vilcek = () => {
               <img
                 alt="vilcek-two"
                 loading="lazy"
-                src="/websites/vilcek-two.png"
+                src="/websites/vilcek/vilcek-two.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -134,7 +148,7 @@ const vilcek = () => {
               <img
                 alt="vilcek-three"
                 loading="lazy"
-                src="/websites/vilcek-three.png"
+                src="/websites/vilcek/vilcek-three.png"
                 className="dark-mode-img"
               ></img>
             </div>

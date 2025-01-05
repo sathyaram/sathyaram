@@ -40,16 +40,18 @@ const lehigh = () => {
                   <p>
                     While working at Lehigh University, I was honored with the
                     opportunity to redesign the College of Arts, Architecture
-                    and Design&apos;s website. I received a BA at Lehigh - in Design
-                    and Studio Art within the College of Arts & Science, so I
-                    understood how important this opportunity was to really
+                    and Design&apos;s website. I received a BA at Lehigh - in
+                    Design and Studio Art within the College of Arts & Science,
+                    so I understood how important this opportunity was to really
                     highlight important information. This was the result!
                     Completely new color scheme, modern branding, as well as a
                     fresh, contemporary look that brought it out of the stone
                     ages.
                   </p>
                   <br></br>
-                  <p>It&apos;s still in production, but here are the designs!</p>
+                  <p>
+                    It&apos;s still in production, but here are the designs!
+                  </p>
                 </div>
               </div>
               <div className="col">
@@ -100,8 +102,7 @@ const lehigh = () => {
             <img
               alt="aad-one"
               loading="lazy"
-              src="/websites/aad-one.jpg"
-              sizes="100vw"
+              src="/websites/lehigh/lehigh-aad-designs-one.jpg"
               className="full-img"
             ></img>
           </div>
@@ -109,8 +110,7 @@ const lehigh = () => {
             <img
               alt="aad-two"
               loading="lazy"
-              src="/websites/lehigh-one.png"
-              sizes="100vw"
+              src="/websites/lehigh/lehigh-aad-designs-two.jpg"
               className="full-img"
             ></img>
           </div>
@@ -118,8 +118,7 @@ const lehigh = () => {
             <img
               alt="aad-three"
               loading="lazy"
-              src="/websites/aad-three.jpg"
-              sizes="100vw"
+              src="/websites/lehigh/lehigh-aad-designs-three.png"
               className="full-img"
             ></img>
           </div>
@@ -127,8 +126,7 @@ const lehigh = () => {
             <img
               alt="aad-four"
               loading="lazy"
-              src="/websites/aad-four.jpg"
-              sizes="100vw"
+              src="/websites/lehigh/lehigh-aad-designs-four.jpg"
               className="full-img"
             ></img>
           </div>

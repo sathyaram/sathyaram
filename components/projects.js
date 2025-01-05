@@ -4,13 +4,10 @@ import {
   EffectCoverflow,
   Keyboard,
   Navigation,
-  Pagination,
   Autoplay,
 } from "swiper";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/keyboard";
 import "swiper/css/autoplay";
@@ -39,7 +36,6 @@ const projects = () => {
           spaceBetween={20}
           loop={true}
           breakpoints={{
-            // When window width is >= 640px
             320: {
               slidesPerView: 1.25,
               spaceBetween: 20,
@@ -54,12 +50,11 @@ const projects = () => {
           }}
           initialSlide={1}
           autoplay={{
-            delay: 6500, // Delay between transitions (in milliseconds)
+            delay: 6500,
             disableOnInteraction: true,
           }}
           modules={[
             EffectCoverflow,
-            Pagination,
             Navigation,
             Keyboard,
             Autoplay,

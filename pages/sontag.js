@@ -16,7 +16,11 @@ const sontag = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img loading="lazy" src="/assets/sontag.png" alt="The Sontag Foundation"></img>
+            <img
+              loading="lazy"
+              src="/assets/sontag.png"
+              alt="The Sontag Foundation"
+            ></img>
           </div>
           <h1 className="website-name">The Sontag Foundation</h1>
           <h2 className="website-tagline"></h2>
@@ -27,11 +31,18 @@ const sontag = () => {
               <div className="col">
                 <div className="website-description">
                   <p>
-                    While working at Push10, The Sontag Foundation came to us and I was tasked with crafting the entire website from scratch in WordPress, while also theming it. The story of The Sontag Foundation is really the story of Rick and Susan Sontag and their ability to turn adversity into a benefit for many other people who have lived with the scourge of brain cancer.
+                    While working at Push10, The Sontag Foundation came to us
+                    and I was tasked with crafting the entire website from
+                    scratch in WordPress, while also theming it. The story of
+                    The Sontag Foundation is really the story of Rick and Susan
+                    Sontag and their ability to turn adversity into a benefit
+                    for many other people who have lived with the scourge of
+                    brain cancer.
                   </p>
                   <br></br>
                   <p>
-                    The idea was cleanly and effectively display information on all devices. 
+                    The idea was cleanly and effectively display information on
+                    all devices.
                   </p>
                 </div>
               </div>
@@ -40,7 +51,6 @@ const sontag = () => {
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-
                 <div className="website-stack website-info">
                   <label>Stack</label>
                   <ul>
@@ -51,7 +61,6 @@ const sontag = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-
                 <div className="website-scope website-info">
                   <label>Scope</label>
                   <ul>
@@ -86,8 +95,7 @@ const sontag = () => {
             <img
               alt="sontag-one"
               loading="lazy"
-              src="/websites/sontag-one.png"
-              sizes="100vw"
+              src="/websites/sontag/sontag-one.png"
               className="full-img"
             ></img>
           </div>
@@ -95,8 +103,7 @@ const sontag = () => {
             <img
               alt="sontag-two"
               loading="lazy"
-              src="/websites/sontag-two.png"
-              sizes="100vw"
+              src="/websites/sontag/sontag-two.png"
               className="full-img"
             ></img>
           </div>
@@ -105,7 +112,7 @@ const sontag = () => {
               <img
                 alt="sontag-four"
                 loading="lazy"
-                src="/websites/sontag-four.png"
+                src="/websites/sontag/sontag-four.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -113,7 +120,7 @@ const sontag = () => {
               <img
                 alt="sontag-five"
                 loading="lazy"
-                src="/websites/sontag-five.png"
+                src="/websites/sontag/sontag-five.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -122,8 +129,7 @@ const sontag = () => {
             <img
               alt="sontag-three"
               loading="lazy"
-              src="/websites/sontag-three.png"
-              sizes="100vw"
+              src="/websites/sontag/sontag-three.png"
               className="full-img"
             ></img>
           </div>

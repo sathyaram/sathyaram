@@ -52,7 +52,7 @@ const Photography = () => {
           {Data.map(function (photograph, i) {
             if (photograph.type === "photography") {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={i}>
                   <div className="photograph">
                     <Image
                       width={600}

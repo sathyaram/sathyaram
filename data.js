@@ -124,12 +124,44 @@ export const Data = [
   },
   {
     type: "design",
-    id: "design",
-    name: "Treeteck Logo Concepts",
-    design_url:
-      "https://cdn.dribbble.com/users/993664/screenshots/4388579/media/45fee7250929e10ada6bb6a924b2f3d1.jpg?resize=800x600&vertical=center",
-    design_alt_text: "Treeteck Logo Concepts",
-    description:
-      "Logo concepts for Treeteck, a design and distribution company of drilling machines, balers and pruners.",
+    id: "portal",
+    title: "Lehigh University's Campus Portal Designs",
+    image:
+      "/designs/sathya-lehigh-portal-redesign.jpg",
+  },
+  {
+    type: "design",
+    id: "fudtruk",
+    title: "Fudtruk Branding + Designs",
+    image:
+      "/designs/fudtruk.webp",
+  },
+  {
+    type: "design",
+    id: "lehigh2018",
+    title: "Lehigh2018 Web Theme Style Guide",
+    image:
+      "/designs/lehigh2018-one.jpg",
+  },
+  {
+    type: "design",
+    id: "logos",
+    title: "Logos + Concepts",
+    image:
+      "/designs/lehighracing.jpg",
+  },
+  {
+    type: "design",
+    id: "engineering",
+    title: " Lehigh University's College of Engineering Web Designs",
+    image:
+      "/designs/lehighengineering.jpg",
+  },
+  {
+    type: "design",
+    id: "pokelogos",
+    title: "PokéLogos",
+    image:
+      "/designs/pokelogo-one.webp",
   },
 ];

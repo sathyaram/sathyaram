@@ -65,7 +65,6 @@ nav.main-menu {
   max-width: 100%;
   width: 100%;
   transform: translateX(calc(100% + 1px));
-  border-left: 1px solid $blue;
 
   @media screen and (max-width: $mobile) {
     padding: 7.5rem 0rem 4rem;

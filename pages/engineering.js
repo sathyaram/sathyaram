@@ -81,7 +81,6 @@ const engineering = () => {
               alt="engineering-one"
               loading="lazy"
               src="/websites/lehighengineering.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -90,7 +89,6 @@ const engineering = () => {
               alt="engineering-four"
               loading="lazy"
               src="/websites/lehigh-four.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -99,7 +97,6 @@ const engineering = () => {
               alt="engineering-two"
               loading="lazy"
               src="/websites/engineering-two.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -108,7 +105,6 @@ const engineering = () => {
               alt="engineering-three"
               loading="lazy"
               src="/websites/engineering-three.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -117,7 +113,6 @@ const engineering = () => {
               alt="engineering-four"
               loading="lazy"
               src="/websites/engineering-four.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -126,7 +121,6 @@ const engineering = () => {
               alt="engineering-five"
               loading="lazy"
               src="/websites/engineering-five.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -135,7 +129,6 @@ const engineering = () => {
               alt="engineering-six"
               loading="lazy"
               src="/websites/engineering-six.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -144,7 +137,6 @@ const engineering = () => {
               alt="engineering-seven"
               loading="lazy"
               src="/websites/engineering-seven.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -153,7 +145,6 @@ const engineering = () => {
               alt="engineering-eight"
               loading="lazy"
               src="/websites/engineering-eight.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -162,7 +153,6 @@ const engineering = () => {
               alt="engineering-nine"
               loading="lazy"
               src="/websites/engineering-nine.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -171,7 +161,6 @@ const engineering = () => {
               alt="engineering-ten"
               loading="lazy"
               src="/websites/engineering-ten.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>

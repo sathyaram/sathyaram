@@ -106,18 +106,16 @@ const hhmi = () => {
             <img
               alt="biointeractive-one"
               loading="lazy"
-              src="/websites/biointeractive-one.png"
-              sizes="100vw"
+              src="/websites/hhmi/hhmi-one.png"
               className="full-img"
             ></img>
           </div>
-
           <div className="col-2">
             <div>
               <img
                 alt="biointeractive-three"
                 loading="lazy"
-                src="/websites/biointeractive-three.png"
+                src="/websites/hhmi/hhmi-three.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -125,7 +123,7 @@ const hhmi = () => {
               <img
                 alt="biointeractive-two"
                 loading="lazy"
-                src="/websites/biointeractive-two.png"
+                src="/websites/hhmi/hhmi-two.png"
                 className="dark-mode-img"
               ></img>
             </div>
@@ -134,8 +132,7 @@ const hhmi = () => {
             <img
               alt="biointeractive-five"
               loading="lazy"
-              src="/websites/biointeractive-five.png"
-              sizes="100vw"
+              src="/websites/hhmi/hhmi-five.png"
               className="full-img"
             ></img>
           </div>
@@ -143,8 +140,7 @@ const hhmi = () => {
             <img
               alt="biointeractive-four"
               loading="lazy"
-              src="/websites/biointeractive-four.png"
-              sizes="100vw"
+              src="/websites/hhmi/hhmi-four.png"
               className="full-img"
             ></img>
           </div>

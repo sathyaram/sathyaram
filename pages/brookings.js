@@ -102,7 +102,6 @@ const brookings = () => {
               alt="brookings-one"
               loading="lazy"
               src="/websites/brookings-one.png"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -112,7 +111,7 @@ const brookings = () => {
                 alt="brookings-three"
                 loading="lazy"
                 src="/websites/brookings-three.png"
-                sizes="100vw"
+
                 className="full-img"
               ></img>
             </div>
@@ -121,7 +120,7 @@ const brookings = () => {
                 alt="brookings-two"
                 loading="lazy"
                 src="/websites/brookings-two.png"
-                sizes="100vw"
+
                 className="full-img"
               ></img>
             </div>
@@ -131,7 +130,6 @@ const brookings = () => {
               alt="brookings-four"
               loading="lazy"
               src="/websites/brookings-four.png"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>

@@ -89,7 +89,6 @@ const fudtruk = () => {
               alt="fudtruk-one"
               loading="lazy"
               src="/websites/fudtruk.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -98,7 +97,6 @@ const fudtruk = () => {
               alt="fudtruk-two"
               loading="lazy"
               src="/websites/fudtruk-two.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -107,7 +105,6 @@ const fudtruk = () => {
               alt="fudtruk-three"
               loading="lazy"
               src="/websites/fudtruk-three.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -116,7 +113,6 @@ const fudtruk = () => {
               alt="fudtruk-four"
               loading="lazy"
               src="/websites/fudtruk-four.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -125,7 +121,6 @@ const fudtruk = () => {
               alt="fudtruk-five"
               loading="lazy"
               src="/websites/fudtruk-five.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -134,7 +129,6 @@ const fudtruk = () => {
               alt="fudtruk-six"
               loading="lazy"
               src="/websites/fudtruk-six.png"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>
@@ -143,7 +137,6 @@ const fudtruk = () => {
               alt="fudtruk-seven"
               loading="lazy"
               src="/websites/fudtruk-seven.jpg"
-              sizes="100vw"
               className="full-img"
             ></img>
           </div>

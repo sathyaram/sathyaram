@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -22,13 +23,13 @@ const logos = () => {
           <div className="constrained">
             <div className="grid-2">
               <img loading="lazy" alt="logo-concept" src="/designs/lehighracing.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/mosiaclogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/indifylogoconcept.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/powerhouselogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/treetecklogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/loewyinstitute.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/websites/vertralogos.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/websites/frostlogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/mosiaclogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/indifylogoconcept.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/powerhouselogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/treetecklogoconcepts.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/loewyinstitute.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/vertralogos.jpg" />
+              <img loading="lazy" alt="logo-concept" src="/designs/logos/frostlogoconcepts.jpg" />
             </div>
           </div>
         </div>
