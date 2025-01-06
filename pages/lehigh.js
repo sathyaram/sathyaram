@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -22,10 +23,13 @@ const lehigh = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               src="/websites/assets/lehighuniversity.png"
               alt="Lehigh University"
-            ></img>
+              priority
+            />
           </div>
           <h1 className="website-name">
             Lehigh University&apos;s College of Art, Architecture & Design
@@ -99,36 +103,40 @@ const lehigh = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="aad-one"
               loading="lazy"
               src="/websites/lehigh/lehigh-aad-designs-one.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="aad-two"
               loading="lazy"
               src="/websites/lehigh/lehigh-aad-designs-two.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="aad-three"
               loading="lazy"
               src="/websites/lehigh/lehigh-aad-designs-three.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="aad-four"
               loading="lazy"
               src="/websites/lehigh/lehigh-aad-designs-four.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

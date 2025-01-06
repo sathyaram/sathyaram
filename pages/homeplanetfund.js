@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -16,11 +17,11 @@ const homeplanetfund = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
-              loading="lazy"
+            <Image width={1200} height={2000}
+              priority
               src="/websites/assets/homeplanet.png"
               alt="Home Planet Fund"
-            ></img>
+            ></Image>
           </div>
           <h1 className="website-name">Home Planet Fund</h1>
           <h2 className="website-tagline"></h2>
@@ -95,28 +96,31 @@ const homeplanetfund = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="homeplanetfund-one"
               loading="lazy"
               src="/websites/homeplanetfund/homeplanetfund-one.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="homeplanetfund-two"
               loading="lazy"
               src="/websites/homeplanetfund/homeplanetfund-two.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="homeplanetfund-three"
               loading="lazy"
               src="/websites/homeplanetfund/homeplanetfund-three.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="text-block">
             Performant across all devices and integrating colorful scroll
@@ -125,20 +129,22 @@ const homeplanetfund = () => {
           </div>
           <div className="col-2">
             <div>
-              <img
+              <Image
+                width={1200}
+                height={2000}
                 alt="homeplanetfund-four"
                 loading="lazy"
                 src="/websites/homeplanetfund/homeplanetfund-four.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
             <div>
-              <img
+              <Image
+                width={1200}
+                height={2000}
                 alt="homeplanetfund-five"
                 loading="lazy"
                 src="/websites/homeplanetfund/homeplanetfund-five.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
           </div>
         </div>

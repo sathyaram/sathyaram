@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -85,60 +86,53 @@ const fudtruk = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-one"
               loading="lazy"
               src="/designs/fudtruk/fudtruk.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-two"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-two.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width full-small">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-three"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-three.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-four"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-four.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-five"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-five.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width full-small">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-six"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-six.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="fudtruk-seven"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-seven.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

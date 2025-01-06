@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -91,63 +92,70 @@ const portal = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="portal-og"
               loading="lazy"
               src="/designs/portal/portal.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div className="col">
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="portal-three"
                 loading="lazy"
                 src="/designs/portal/portal-three.jpg"
-                className="full-img"
-              ></img>
+              ></Image>
             </div>
             <div className="col">
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="portal-five"
                 loading="lazy"
                 src="/designs/portal/portal-five.jpg"
-                className="full-img"
-              ></img>
+              ></Image>
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="portal-two"
               loading="lazy"
               src="/designs/portal/portal-two.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="portal-four"
               loading="lazy"
               src="/designs/portal/portal-four.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
 
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="portal-six"
               loading="lazy"
               src="/designs/portal/portal-six.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="portal-seven"
               loading="lazy"
               src="/designs/portal/portal-seven.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

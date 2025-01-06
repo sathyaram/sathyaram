@@ -38,12 +38,12 @@ export const Data = [
     image: "/websites/assets/howie.png",
     images: [
       { 
-        picture: '/websites/assets/vilcek.png',
-        alt_text: "vilcek test"
+        picture: "/websites/vilcek/vilcek-three.png",
+        alt_text: "vilcek mobile design"
       },
       { 
-        picture: '/websites/assets/howie.png',
-        alt_text: "howie test"
+        picture: '"/websites/vilcek/vilcek-two.png"',
+        alt_text: "vilcek desktop design"
       }
   ],
     description:
@@ -63,12 +63,28 @@ export const Data = [
     image: "/websites/assets/vilcek.png",
     images: [
       { 
-        picture: '/websites/assets/vilcek.png',
-        alt_text: "vilcek test"
+        picture: "/websites/vilcek/vilcek-one.png",
+        alt_text: "vilcek mobile design"
       },
       { 
-        picture: '/websites/assets/howie.png',
-        alt_text: "howie test"
+        picture: "/websites/vilcek/vilcek-four.png",
+        alt_text: "vilcek desktop design"
+      },
+      { 
+        picture: "/websites/vilcek/vilcek-five.png",
+        alt_text: "vilcek mobile design"
+      },
+      { 
+        picture: "/websites/vilcek/vilcek-six.png",
+        alt_text: "vilcek desktop design"
+      },
+      { 
+        picture: "/websites/vilcek/vilcek-seven.png",
+        alt_text: "vilcek mobile design"
+      },
+      { 
+        picture: "/websites/vilcek/vilcek-two.png",
+        alt_text: "vilcek desktop design"
       }
   ],
     description:

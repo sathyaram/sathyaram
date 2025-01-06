@@ -22,14 +22,14 @@ const logos = () => {
         <div className="website-content">
           <div className="constrained">
             <div className="grid-2">
-              <img loading="lazy" alt="logo-concept" src="/designs/assets/lehighracing.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/mosiaclogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/indifylogoconcept.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/powerhouselogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/treetecklogoconcepts.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/loewyinstitute.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/vertralogos.jpg" />
-              <img loading="lazy" alt="logo-concept" src="/designs/logos/frostlogoconcepts.jpg" />
+              <Image width={800} height={600} priority alt="logo-concept" src="/designs/assets/lehighracing.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/mosiaclogoconcepts.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/indifylogoconcept.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/powerhouselogoconcepts.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/treetecklogoconcepts.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/loewyinstitute.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/vertralogos.jpg" />
+              <Image width={800} height={600} loading="lazy" alt="logo-concept" src="/designs/logos/frostlogoconcepts.jpg" />
             </div>
           </div>
         </div>

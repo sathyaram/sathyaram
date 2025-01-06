@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -16,10 +17,11 @@ const brookings = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
+            <Image width={1200} height={1200}
               src="/websites/assets/brookings.webp"
               alt="The Brookings Institute"
-            ></img>
+              priority
+            ></Image>
           </div>
           <h1 className="website-name">The Brookings Institute</h1>
           <h2 className="website-tagline"></h2>
@@ -98,38 +100,36 @@ const brookings = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="brookings-one"
               loading="lazy"
               src="/websites/brookings/brookings-one.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div>
-              <img
+              <Image width={1200} height={2000}
                 alt="brookings-three"
                 loading="lazy"
                 src="/websites/brookings/brookings-three.png"
-                className="full-img"
-              ></img>
+
+              ></Image>
             </div>
             <div>
-              <img
+              <Image width={1200} height={2000}
                 alt="brookings-two"
                 loading="lazy"
                 src="/websites/brookings/brookings-two.png"
-                className="full-img"
-              ></img>
+
+              ></Image>
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000} 
               alt="brookings-four"
               loading="lazy"
               src="/websites/brookings/brookings-four.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

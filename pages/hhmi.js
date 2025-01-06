@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -21,10 +22,13 @@ const hhmi = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               src="/websites/assets/howie.png"
               alt="Howard Hughes Medical Institute's Biointeractive"
-            ></img>
+              priority
+            ></Image>
           </div>
           <h1 className="website-name">
             Howard Hughes Medical Institute&apos;s Biointeractive
@@ -103,46 +107,51 @@ const hhmi = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="biointeractive-one"
               loading="lazy"
               src="/websites/hhmi/hhmi-one.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div>
-              <img
+              <Image
+                width={1200}
+                height={2000}
                 alt="biointeractive-three"
                 loading="lazy"
                 src="/websites/hhmi/hhmi-three.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
             <div>
-              <img
+              <Image
+                width={1200}
+                height={2000}
                 alt="biointeractive-two"
                 loading="lazy"
                 src="/websites/hhmi/hhmi-two.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="biointeractive-five"
               loading="lazy"
               src="/websites/hhmi/hhmi-five.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1200}
+              height={2000}
               alt="biointeractive-four"
               loading="lazy"
               src="/websites/hhmi/hhmi-four.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

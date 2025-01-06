@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -16,11 +17,13 @@ const sontag = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
-              loading="lazy"
+            <Image
+              width={1200}
+              height={2000}
+              priority
               src="/websites/assets/sontag.png"
               alt="The Sontag Foundation"
-            ></img>
+            />
           </div>
           <h1 className="website-name">The Sontag Foundation</h1>
           <h2 className="website-tagline"></h2>
@@ -92,46 +95,51 @@ const sontag = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="sontag-one"
               loading="lazy"
               src="/websites/sontag/sontag-one.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="sontag-two"
               loading="lazy"
               src="/websites/sontag/sontag-two.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div>
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="sontag-four"
                 loading="lazy"
                 src="/websites/sontag/sontag-four.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
             <div>
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="sontag-five"
                 loading="lazy"
                 src="/websites/sontag/sontag-five.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="sontag-three"
               loading="lazy"
               src="/websites/sontag/sontag-three.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>

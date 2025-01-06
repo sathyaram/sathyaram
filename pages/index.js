@@ -3,7 +3,7 @@ import Loader from "../components/loader.js";
 import Menu from "../components/menu.js";
 import Hero from "../components/hero.js";
 import Rain from "../components/rain.js";
-import Projects from "../components/projects.js";
+import Websites from "../components/websites.js";
 import Designs from "../components/designs.js";
 import Photography from "../components/photography.js";
 import Testimonials from "../components/testimonials.js";
@@ -40,7 +40,7 @@ export default function Home() {
       <Hero />
       <Rain />
       <main role="main">
-        <Projects />
+        <Websites />
         <Designs />
         <Photography />
         <Testimonials />

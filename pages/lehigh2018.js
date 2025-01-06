@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -73,95 +74,84 @@ const lehigh2018 = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="lehigh2018-one"
-              loading="lazy"
+              priority
               src="/designs/assets/lehigh2018-one.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div className="col">
-              <img
+              <Image width={1200} height={2000}
                 alt="lehigh2018-two"
                 loading="lazy"
                 src="/designs/lehigh2018/lehigh2018-two.jpg"
-                className="full-img"
-              ></img>
+              ></Image>
             </div>
             <div className="col">
-              <img
+              <Image width={1200} height={2000}
                 alt="lehigh2018-three"
                 loading="lazy"
                 src="/designs/lehigh2018/lehigh2018-three.jpg"
-                className="full-img"
-              ></img>
+              ></Image>
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="lehigh2018-four"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-four.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="lehigh2018-five"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-five.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="lehigh2018-six"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-six.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="lehigh2018-seven"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-seven.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
         <div className="full-width">
-          <img
+          <Image width={1200} height={2000}
             alt="lehigh2018-eight"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-eight.png"
-            className="full-img"
-          ></img>
+          ></Image>
         </div>
         <div className="full-width">
-          <img
+          <Image width={1200} height={2000}
             alt="lehigh2018-nine"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-nine.png"
-            className="full-img"
-          ></img>
+          ></Image>
         </div>
         <div className="full-width">
-          <img
+          <Image width={1200} height={2000}
             alt="lehigh2018-ten"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-ten.png"
-            className="full-img"
-          ></img>
+          ></Image>
         </div>
         <div className="full-width">
-          <img
+          <Image width={1200} height={2000}
             alt="lehigh2018-eleven"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-eleven.png"
-            className="full-img"
-          ></img>
+          ></Image>
         </div>
       </main>
       <Footer />

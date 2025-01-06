@@ -13,14 +13,14 @@ import "swiper/css/navigation";
 import "swiper/css/keyboard";
 import "swiper/css/autoplay";
 
-const projects = () => {
+const websites = () => {
   return (
     <section id="websites" title="websites">
       <div className="heading">
         <h3 className="heading-title">Websites</h3>
         <div className="heading-desc">
           I build and develop full-scale websites and engaging UI with a variety
-          of technologies like Drupal, WordPress, React and Grav.
+          of technologies like WordPress, Drupal, Webflow and Next.js.
         </div>
       </div>
       <div className="content">
@@ -94,4 +94,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default websites;

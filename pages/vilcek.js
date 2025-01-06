@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -16,11 +17,11 @@ const vilcek = () => {
       <main>
         <div className="website-heading">
           <div className="website-image">
-            <img
-              loading="lazy"
+            <Image width={1200} height={2000}
+              priority
               src="/websites/assets/vilcek.png"
               alt="Vilcek Foundation"
-            ></img>
+            />
           </div>
           <h1 className="website-name">Vilcek Foundation</h1>
           <h2 className="website-tagline"></h2>
@@ -100,57 +101,64 @@ const vilcek = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="vilcek-one"
               loading="lazy"
               src="/websites/vilcek/vilcek-one.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-3">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="vilcek-four"
               loading="lazy"
               src="/websites/vilcek/vilcek-four.png"
-              className="dark-mode-img"
-            ></img>
-            <img
+            ></Image>
+            <Image
+              width={1000}
+              height={4000}
               alt="vilcek-five"
               loading="lazy"
               src="/websites/vilcek/vilcek-five.png"
-              className="dark-mode-img"
-            ></img>
-            <img
+            ></Image>
+            <Image
+              width={1000}
+              height={4000}
               alt="vilcek-six"
               loading="lazy"
               src="/websites/vilcek/vilcek-six.png"
-              className="dark-mode-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image
+              width={1000}
+              height={4000}
               alt="vilcek-seven"
               loading="lazy"
               src="/websites/vilcek/vilcek-seven.png"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="col-2">
             <div>
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="vilcek-two"
                 loading="lazy"
                 src="/websites/vilcek/vilcek-two.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
             <div>
-              <img
+              <Image
+                width={1000}
+                height={4000}
                 alt="vilcek-three"
                 loading="lazy"
                 src="/websites/vilcek/vilcek-three.png"
-                className="dark-mode-img"
-              ></img>
+              ></Image>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ const Photography = () => {
         <h3 className="heading-title">Photography</h3>
         <div className="heading-desc">
           {`I'm an award winning photographer accomplished in a variety of
-          disciplines with a focus on people, specifically creative portraiture.`}
+          disciplines with a focus on people and creative portraiture.`}
         </div>
       </div>
       <div className="content">

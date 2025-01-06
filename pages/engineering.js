@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Menu from "../components/menu.js";
 import Footer from "../components/footer.js";
 
@@ -77,92 +78,81 @@ const engineering = () => {
             </div>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-one"
               loading="lazy"
               src="/designs/assets/lehighengineering.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-four"
               loading="lazy"
               src="/designs/engineering/engineering.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-two"
               loading="lazy"
               src="/designs/engineering/engineering-two.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-three"
               loading="lazy"
               src="/designs/engineering/engineering-three.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-four"
               loading="lazy"
               src="/designs/engineering/engineering-four.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-five"
               loading="lazy"
               src="/designs/engineering/engineering-five.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-six"
               loading="lazy"
               src="/designs/engineering/engineering-six.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-seven"
               loading="lazy"
               src="/designs/engineering/engineering-seven.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-eight"
               loading="lazy"
               src="/designs/engineering/engineering-eight.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-nine"
               loading="lazy"
               src="/designs/engineering/engineering-nine.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
           <div className="full-width">
-            <img
+            <Image width={1200} height={2000}
               alt="engineering-ten"
               loading="lazy"
               src="/designs/engineering/engineering-ten.jpg"
-              className="full-img"
-            ></img>
+            ></Image>
           </div>
         </div>
       </main>
