@@ -60,7 +60,7 @@ const Designs = () => {
                     <Image
                       width={800}
                       height={600}
-                      priority
+                      loading="lazy"
                       alt={design.alt}
                       src={design.image}
                     ></Image>

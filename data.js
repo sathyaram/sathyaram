@@ -11,6 +11,16 @@ export const Data = [
     url: "sontagfoundation.org",
     link: "https://sontagfoundation.org",
     image: "/websites/assets/sontag.png",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -26,6 +36,16 @@ export const Data = [
     url: "biointeractive.org",
     link: "https://biointeractive.org",
     image: "/websites/assets/howie.png",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -41,6 +61,16 @@ export const Data = [
     url: "vilcek.org",
     link: "https://vilcek.org",
     image: "/websites/assets/vilcek.png",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -56,6 +86,16 @@ export const Data = [
     url: "homeplanetfund.org",
     link: "https://homeplanetfund.org",
     image: "/websites/assets/homeplanet.png",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -71,6 +111,16 @@ export const Data = [
     url: "brookings.org",
     link: "https://brookings.org",
     image: "/websites/assets/brookings.webp",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
@@ -86,6 +136,16 @@ export const Data = [
     url: "aad.lehigh.edu",
     link: "https://aad.lehigh.edu",
     image: "/websites/assets/lehighuniversity.png",
+    images: [
+      { 
+        picture: '/websites/assets/vilcek.png',
+        alt_text: "vilcek test"
+      },
+      { 
+        picture: '/websites/assets/howie.png',
+        alt_text: "howie test"
+      }
+  ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cras malesuada felis sit amet ligula maximus, nec blandi test porta. Fusce euismod accumsan lacus, non tempus null. Nec blandi test porta. Fusce euismod accumsan lacus, non tempus null.",
   },
