@@ -113,9 +113,8 @@ const footer = () => {
           © {new Date().getFullYear()} Sathya Ram. All rights reserved.
         </p>
       </address>
-      <h5 className="villain">
+      <div className="villain">
         <span>&nbsp;</span>
-
         <div>
           <span>K</span>
           <span>e</span>
@@ -148,7 +147,7 @@ const footer = () => {
           <span>e</span>
           <span>.</span>
         </div>
-      </h5>
+      </div>
     </footer>
   );
 };

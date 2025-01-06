@@ -48,6 +48,31 @@
     }
   }
 
+  .raindrops, .constellation {
+    display: block;
+  }
+
+  h1,
+  .villain {
+    span {
+      transition: text-shadow 2s ease-in-out;
+      display: inline-block;
+
+      &:hover {
+        text-shadow:
+          0 0 5px white,
+          0 0 15px white,
+          0 0 35px white,
+          0 0 5px white;
+        transition: none;
+      }
+    }
+  }
+
+  .version {
+    color: $midnight;
+  }
+
   .logo {
     svg {
       .s-line {
