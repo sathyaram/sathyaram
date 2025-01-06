@@ -227,4 +227,5 @@ export const Data = [
     title: "PokéLogos",
     image: "/designs/assets/pokelogo-one.webp",
   },
+  {}
 ];

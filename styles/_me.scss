@@ -1,0 +1,13 @@
+#about {
+    .swiper-slide {
+        height: 100px;
+        background-color: transparent;
+        border: 2px solid cyan;
+        box-shadow: 0 0 15px 0 white;
+        border-radius: 10px;
+        padding: 2rem;
+        img {
+            display: none;
+        }
+    }
+}

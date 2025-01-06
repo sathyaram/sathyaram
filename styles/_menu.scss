@@ -61,9 +61,13 @@ nav.main-menu {
   box-sizing: border-box;
   z-index: 4;
   padding: 10rem 4rem 4rem;
-  transition: transform 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
+  transition: all 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
   max-width: 100%;
   width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
   transform: translateX(calc(100% + 1px));
 
   @media screen and (max-width: $mobile) {
@@ -72,6 +76,9 @@ nav.main-menu {
 
   .menu-open & {
     transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
   }
 
   .wrapper {
@@ -81,7 +88,7 @@ nav.main-menu {
     text-align: right;
     overflow-y: scroll;
     height: 100%;
-    padding: 0.8rem 1rem 0 0;
+    padding-top: 1rem;
   }
 
   ul {
@@ -161,7 +168,7 @@ nav.main-menu {
 nav.social-media {
   display: flex;
   margin-bottom: 2.5rem;
-  margin-right: 7px;
+  margin-right: 4px;
   gap: 2rem;
   justify-content: flex-end;
 
