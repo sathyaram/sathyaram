@@ -80,7 +80,6 @@ const about = () => {
                 React.js in a rigorous environment.
               </p>
               <br></br>
-
               <p>
                 Currently, I operate my own freelance website development,
                 interface design and professional photography LLC. Right now,
@@ -144,7 +143,7 @@ const about = () => {
               <br></br>
               <p>I live on iMDB: I love all things film/TV.</p>
               <br></br>
-              Check out
+              Check out{" "}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -154,7 +153,7 @@ const about = () => {
               </a>
               .<br></br>
               <p>
-                I <s>used to</s> play
+                I <s>used to</s> play{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -166,7 +165,7 @@ const about = () => {
               </p>
               <br></br>
               <p>
-                I post my photography on
+                I post my photography on{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

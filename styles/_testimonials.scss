@@ -127,16 +127,18 @@
         font-size: 15px;
         padding: 0 0.5rem 0.5rem;
         line-height: 110%;
+        font-family: $maison-medium;
     }
 
     .quote-cite {
-        font-weight: 400;
+        font-weight: bold;
+        font-family: $maison-medium;
         font-size: 14px;
         margin-bottom: 0.35rem;
         color: $lilac;
     }
     .quote-role {
-        font-weight: regular;
+        font-family: $maison-medium;
         font-size: 11px;
         max-width: 150px;
         margin: 0 auto;
@@ -146,7 +148,7 @@
 
     .quote-company {
         font-size: 10px;
-        font-weight: 600;
+        font-weight: bold;
         color: $velvet;
     }
 }
