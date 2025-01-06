@@ -13,7 +13,7 @@
     width: 100%;
   }
 
-  @media screen and (max-width: $ipad) {
+  @media screen and (max-width: $screen) {
     flex-direction: column;
   }
 }
@@ -27,7 +27,7 @@
   margin-bottom: 8rem;
   display: grid;
 
-  @media screen and (max-width: $ipad) {
+  @media screen and (max-width: $screen) {
     grid-template-columns: 1fr;
   }
 }
@@ -39,7 +39,7 @@
   > div:last-child {
     width: fit-content;
   }
-  @media screen and (max-width: $ipad) {
+  @media screen and (max-width: $screen) {
     > div:first-child {
       width: 100%;
     }
@@ -78,7 +78,7 @@
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
-  @media screen and (max-width: $ipad) {
+  @media screen and (max-width: $screen) {
     grid-template-columns: 1fr;
   }
 }

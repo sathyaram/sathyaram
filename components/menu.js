@@ -186,12 +186,12 @@ c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.
             </li>
             <li>
               <a rel="noopener noreferrer" href="/fudtruk">
-                Fudtruk Branding + Designs
+                Fudtruk Branding
               </a>
             </li>
             <li>
               <a rel="noopener noreferrer" href="/portal">
-                Lehigh University&apos;s Campus Portal Designs
+                Lehigh University&apos;s Campus Portal
               </a>
             </li>
             <li>
@@ -201,7 +201,7 @@ c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.
             </li>
             <li>
               <a rel="noopener noreferrer" href="/engineering">
-                Lehigh University&apos;s College of Engineering Web Designs
+                Lehigh University&apos;s College of Engineering
               </a>
             </li>
             <li>

@@ -205,14 +205,14 @@ export const Data = [
     type: "design",
     id: "portal",
     alt: "sathya ram's lehigh portal redesign graphic",
-    title: "Lehigh University's Campus Portal Designs",
+    title: "Lehigh University's Campus Portal",
     image: "/designs/assets/sathya-lehigh-portal-redesign.jpg",
   },
   {
     type: "design",
     id: "fudtruk",
     alt: "the fudtruk with sathya's vinyl graphic wrap",
-    title: "Fudtruk Branding + Designs",
+    title: "Fudtruk Branding",
     image: "/designs/assets/fudtruk.webp",
   },
   {
@@ -233,7 +233,7 @@ export const Data = [
     type: "design",
     id: "engineering",
     alt: "sathya ram's lehigh college of engineering web designs",
-    title: " Lehigh University's College of Engineering Web Designs",
+    title: " Lehigh University's College of Engineering",
     image: "/designs/assets/lehighengineering.jpg",
   },
   {

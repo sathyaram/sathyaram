@@ -12,7 +12,6 @@
   -webkit-transform: translate3d(0, 0, 0);
 
   &:hover {
-    transform: translateY(-10px);
     .project-title {
       text-shadow:
         0 0 25px rgba(0, 0, 0, 0.35),
@@ -21,6 +20,7 @@
         0 1px 7px #fffc;
     }
     .project-background {
+      transform: translateX(-50%) translateY(-50%) scale(1.1);
       &::before {
         transform: translateX(-50%) translateY(-200%);
       }
@@ -37,6 +37,7 @@
   height: calc(100% - 2rem);
   height: 70%;
   top: 50%;
+  transition: all 300ms ease;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: -1;
@@ -220,39 +221,39 @@
   }
 }
 
-.project-link {
-  display: inline-block;
+a.website-link {
   position: relative;
-  padding: 0.75rem 1.5rem 0.75rem 4.1rem;
-  background-color: rgba($blue, 0.75);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem 0.75rem 2.25rem;
+  background-color: rgba($baby, 1);
   border-radius: 4px;
-  color: white;
   text-shadow: 0 0 15px white;
-  box-shadow:
-    3px 3px 0 0 white,
-    7px 7px 0 0 rgb(96, 197, 255);
-  transition: box-shadow 300ms ease;
+  color: white;
+  display: block;
+  background: $gradient;
+  transition: all 300ms ease;
   z-index: 3;
 
   &::after {
     content: "https";
     color: green;
-    opacity: 0.8;
-    background-color: lightgreen;
+    opacity: 1;
+    background-color: rgba(144, 238, 144, 0.9);
     position: absolute;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.5rem;
     font-size: 0.65rem;
     border-radius: 5px;
-    left: 10px;
-    top: 12px;
+    left: -20px;
+    top: 10px;
     display: block;
     z-index: 3;
   }
 
   &:hover {
-    background-color: rgba(rgb(89, 158, 223), 1);
-    box-shadow: 0 0 0 0 white;
-    border-radius: 7px;
+    background: white;
+    color: $blue;
   }
 }
 
@@ -303,24 +304,13 @@
     display: none;
   }
 
-  a.website-link {
-    font-size: 22px;
-    font-weight: 400;
-    display: block;
-    transition: color 300ms ease;
-
-    &:hover {
-      color: $waterfall;
-    }
-  }
-
   .website-info {
     text-align: right;
     font-size: 14px;
     line-height: 20px;
     font-weight: 100;
 
-    @media screen and (max-width: $ipad) {
+    @media screen and (max-width: $screen) {
       text-align: left;
     }
 
@@ -345,6 +335,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 10px;
+    display: block;
     text-shadow: 0 1px 8px #fffc;
   }
 
@@ -519,8 +510,6 @@
     color: rgb(167, 125, 164);
   }
 
-  .project-link {
-  }
   .project-background::after {
     background-image: linear-gradient(to left bottom, #1d9bf0, #00274b);
   }
