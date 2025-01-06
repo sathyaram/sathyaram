@@ -1,0 +1,81 @@
+.midnight {
+  color: white;
+  background-color: #08031b;
+
+  .social-media path,
+  .social-media circle {
+    fill: rgba(255, 255, 255, 0.65);
+    transition: fill 300ms ease;
+  }
+
+  section#websites .project::before {
+    background-color: #191a19;
+  }
+
+  .loader {
+    .loader-svg {
+      .s-line {
+        stroke: $sky;
+      }
+    }
+  }
+
+  section {
+    .heading {
+      h3 {
+        text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5019607843), 0 1px 7px rgba(255, 255, 255, 0.8);
+
+        &::before {
+        border-bottom: 8px solid $blue;
+        }
+      }
+    }
+  }
+
+  .logo {
+    svg {
+      .s-line {
+        fill: white;
+        stroke: white;
+      }
+    }
+
+    &:hover {
+      .s-line {
+        -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+      }
+  
+      .r-line {
+        -webkit-filter: drop-shadow(0 0 2px $blue);
+        filter: drop-shadow(0 0 2px $blue);
+      }
+    }
+  }
+
+  nav.main-menu {
+    background-color: rgba(1, 9, 27, 0.95);
+  }
+
+  .design-menu {
+    a {
+      color: $sky;
+    }
+  }
+
+  footer {
+    address {
+      color: $grey;
+    }
+
+    .social-media-footer svg {
+      fill: $sky;
+    }
+  }
+}
+
+.eclipse {
+  width: 1rem;
+  height: 1rem;
+  fill: $mystical;
+}

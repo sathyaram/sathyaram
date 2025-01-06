@@ -10,11 +10,10 @@ import "swiper/css/autoplay";
 
 const me = () => {
   return (
-  <>
-  <section id="about" title="about">
+    <>
+      <section id="about">
         <div className="heading">
           <h3 className="heading-title">About</h3>
- 
         </div>
         <div className="content">
           <Swiper
@@ -70,7 +69,8 @@ const me = () => {
           </Swiper>
         </div>
       </section>
-  </>);
+    </>
+  );
 };
 
 export default me;

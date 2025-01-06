@@ -3,7 +3,7 @@ import React from "react";
 const testimonials = () => {
   return (
     <>
-      <section id="testimonials" title="testimonials">
+      <section id="testimonials">
         <div className="heading">
           <h3 className="heading-title">Testimonials</h3>
           <div className="heading-desc">

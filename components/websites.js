@@ -15,7 +15,7 @@ import "swiper/css/autoplay";
 
 const websites = () => {
   return (
-    <section id="websites" title="websites">
+    <section id="websites">
       <div className="heading">
         <h3 className="heading-title">Websites</h3>
         <div className="heading-desc">
@@ -61,24 +61,23 @@ const websites = () => {
             Autoplay,
           ]}
         >
-          {Data.map(function (project, i) {
-            if (project.type === "web") {
+          {Data.map(function (website, i) {
+            if (website.type === "web") {
               return (
-                <SwiperSlide key={i}>
-                  <a href={"/" + project.id} rel="noopener noreferrer" className="project-block">
+                <SwiperSlide title={website.title} key={i}>
+                  <a href={"/" + website.id} rel="noopener noreferrer" className="project-block">
                     <article
                       className="project"
-                      id={project.id}
-                      name={project.id}
+                      id={website.id}
                     >
                       <div className="project-background"></div>
                       <div className="project-heading">
                         <div className="project-image">
-                          <Image priority width={800} height={600} src={project.image} alt={project.alt}></Image>
+                          <Image priority width={800} height={600} src={website.image} alt={website.alt}></Image>
                         </div>
-                        <div className="project-title">{project.title}</div>
+                        <div className="project-title">{website.title}</div>
                         <div className="project-subtitle">
-                          {project.subtitle}
+                          {website.subtitle}
                         </div>
                         
                       </div>

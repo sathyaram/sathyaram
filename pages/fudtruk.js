@@ -31,14 +31,12 @@ const fudtruk = () => {
                     the design for their actual truck! I was beyond excited!
                   </p>
                   <br></br>
-
                   <p>
                     I worked with a local print shop, Christmas City Printing in
                     Bethlehem on getting the design files in perfect shape for
                     the vinyl cuts to be just right.
                   </p>
                   <br></br>
-
                   <p>
                     The folks behind the FudTruk wanted a more minimalist look
                     so I suggested colorful icons which I thought would look
@@ -48,7 +46,6 @@ const fudtruk = () => {
                     dramatically, front and center, when you ordered.
                   </p>
                   <br></br>
-
                   <p>
                     I also built their website, where you&apos;ll see so much
                     more about the FudTruk including the menu, food pictures
@@ -86,49 +83,63 @@ const fudtruk = () => {
             </div>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-one"
               loading="lazy"
               src="/designs/fudtruk/fudtruk.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-two"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-two.jpg"
             ></Image>
           </div>
           <div className="full-width full-small">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-three"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-three.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-four"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-four.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-five"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-five.jpg"
             ></Image>
           </div>
           <div className="full-width full-small">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-six"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-six.png"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="fudtruk-seven"
               loading="lazy"
               src="/designs/fudtruk/fudtruk-seven.jpg"

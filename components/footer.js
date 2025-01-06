@@ -65,7 +65,6 @@ const footer = () => {
       <nav
         className="contact-menu menu"
         role="navigation"
-        name="contact-menu"
         aria-label="contact-menu"
       >
         <a

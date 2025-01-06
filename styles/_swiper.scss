@@ -59,14 +59,21 @@
 }
 
 #photography {
-    .swiper-slide {
+    .photograph {
         transition: all 300ms ease;
     }
 
     .swiper-slide-active {
+        transition: all 300ms ease;
+        transform: translateY(0);
         &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &:focus-within,
+        &:target {
+            .photograph {
+                transform: translateY(-10px) !important;
+            }
             .photograph-text {
                 opacity: 1;
             }

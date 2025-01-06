@@ -13,7 +13,7 @@ const portal = () => {
         </title>
         <meta
           name="description"
-          content="AboutLehigh University's Campus Portal Designs"
+          content="About Lehigh University's Campus Portal Designs"
         />
         <meta name="next-head-count" />
         <body className="midnight portal page design" />

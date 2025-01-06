@@ -195,7 +195,7 @@ export const Data = [
   {
     type: "photography",
     id: "kacey",
-    title: "Kacey, on the scene",
+    title: "Kacey, on the Scene",
     subtitle: "Sony A7RIV | Sigma 35mm 1.2",
     image: "/photography/kacey.jpg",
     link: "↗ Instagram Post ↗",

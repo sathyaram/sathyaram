@@ -16,7 +16,7 @@
     }
     100% {
       z-index: 1;
-      opacity: 0.03;
+      opacity: 0.05;
       top: 50%;
     }
   }
@@ -57,7 +57,7 @@
       .s-line {
         transition: fill 300ms ease;
         fill: #040411;
-        stroke: $sky;
+        stroke: #6d93a9;
         stroke-width: 0.7px;
         stroke-dasharray: 126.93897247314453;
         stroke-dashoffset: 126.93897247314453;
@@ -68,8 +68,8 @@
   
       .r-line {
         transition: fill 300ms ease;
-        fill: #2baae2;
-        stroke: #2baae2;
+        fill: $blue;
+        stroke: $blue;
         stroke-width: 0.7px;
         stroke-dasharray: 160.04493713378906;
         stroke-dashoffset: 160.04493713378906;

@@ -8,8 +8,12 @@ import Designs from "../components/designs.js";
 import Photography from "../components/photography.js";
 import Testimonials from "../components/testimonials.js";
 import Footer from "../components/footer.js";
+import sitemap from "./sitemap.js";
 
 export default function Home() {
+
+  sitemap();
+  
   return (
     <>
       <Head>

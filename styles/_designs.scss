@@ -1,8 +1,10 @@
 #designs {
     .swiper-slide {
         position: relative;
-
+        transition: transform 300ms ease;
         &:hover {
+    transform: translateY(-10px);
+
             &::after {
                 background-color: rgb(3 17 43 / 20%);
             }

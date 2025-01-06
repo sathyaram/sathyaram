@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 
 const Photography = () => {
   return (
-    <section id="photography" title="photography">
+    <section id="photography">
       <div className="heading">
         <h3 className="heading-title">Photography</h3>
         <div className="heading-desc">
@@ -52,7 +52,7 @@ const Photography = () => {
           {Data.map(function (photograph, i) {
             if (photograph.type === "photography") {
               return (
-                <SwiperSlide key={i}>
+                <SwiperSlide title={photograph.title} key={i}>
                   <div className="photograph">
                     <Image
                       width={600}

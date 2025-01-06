@@ -5,16 +5,14 @@ const menu = () => {
     document.body.classList.toggle("menu-open");
   };
 
+  const eclipse = (e) => {
+    document.body.classList.toggle("midnight");
+  };
+
   return (
     <>
       <aside role="region">
-        <a
-          tabIndex="0"
-          className="logo"
-          aria-label="Logo Home Link"
-          name="logo"
-          href="/"
-        >
+        <a tabIndex="0" className="logo" aria-label="Logo Home Link" href="/">
           <svg version="1.1" viewBox="0 0 62.5 28.7">
             <linearGradient
               id="gradient"
@@ -37,6 +35,15 @@ const menu = () => {
             </g>
           </svg>
         </a>
+        <button onClick={eclipse} type="button" className="eclipse" title="Toggle Night Mode">
+          <svg className="moon" viewBox="0 0 11.6 11.7">
+            <path
+              className="st0"
+              d="M4.1,7.2c-1.5-2-1.1-4.8,0.8-6.3c0.4-0.3,0.8-0.5,1.3-0.7C4.9,0.1,3.6,0.5,2.4,1.4C0,3.3-0.5,6.8,1.4,9.3
+c1.9,2.5,5.5,3,7.9,1.1c1.1-0.9,1.8-2,2.1-3.3c-0.3,0.4-0.6,0.7-1,1C8.4,9.6,5.6,9.2,4.1,7.2z"
+            ></path>
+          </svg>
+        </button>
         <button
           tabIndex="0"
           type="button"
@@ -51,12 +58,7 @@ const menu = () => {
           </div>
         </button>
       </aside>
-      <nav
-        className="main-menu menu"
-        name="main-menu"
-        title="main-menu"
-        aria-label="main-menu"
-      >
+      <nav className="main-menu menu" aria-label="main-menu">
         <div className="wrapper">
           <nav className="social-media">
             <a
