@@ -17,7 +17,7 @@ const projects = () => {
   return (
     <section id="websites" title="websites">
       <div className="heading">
-        <h3>Websites</h3>
+        <h3 className="heading-title">Websites</h3>
         <div className="heading-desc">
           I build and develop full-scale websites and engaging UI with a variety
           of technologies like Drupal, WordPress, React and Grav.
@@ -65,7 +65,7 @@ const projects = () => {
             if (project.type === "web") {
               return (
                 <SwiperSlide key={i}>
-                  <a href={"/" + project.id} className="project-block">
+                  <a href={"/" + project.id} rel="noopener noreferrer" className="project-block">
                     <article
                       className="project"
                       id={project.id}
@@ -74,7 +74,7 @@ const projects = () => {
                       <div className="project-background"></div>
                       <div className="project-heading">
                         <div className="project-image">
-                          <Image priority width={800} height={600} src={project.image} alt={project.title}></Image>
+                          <Image priority width={800} height={600} src={project.image} alt={project.alt}></Image>
                         </div>
                         <div className="project-title">{project.title}</div>
                         <div className="project-subtitle">

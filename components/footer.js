@@ -15,7 +15,7 @@ const footer = () => {
 
   return (
     <footer role="contentinfo">
-       <nav className="social-media-footer" role="navigation">
+      <nav className="social-media-footer" role="navigation">
         <a
           target="_blank"
           rel="noopener noreferrer"

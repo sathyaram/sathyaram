@@ -12,7 +12,7 @@ const Designs = () => {
   return (
     <section id="designs" title="designs">
       <div className="heading">
-        <h3>Designs</h3>
+        <h3 className="heading-title">Designs</h3>
         <div className="heading-desc">
           I craft and activate brands with cultural insight, user-driven data,
           strategic vision and attentive attention to aesthetics.
@@ -55,13 +55,13 @@ const Designs = () => {
             if (design.type === "design") {
               return (
                 <SwiperSlide key={i}>
-                  <a className="design" href={`/` + design.id}>
-                    <h3>{design.title}</h3>
+                  <a className="design" rel="noopener noreferrer" href={`/` + design.id}>
+                    <h4>{design.title}</h4>
                     <Image
                       width={800}
                       height={600}
-                      loading="lazy"
-                      alt={design.title}
+                      priority
+                      alt={design.alt}
                       src={design.image}
                     ></Image>
                   </a>

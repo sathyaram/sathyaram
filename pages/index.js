@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | Sathya Ram</title>
+        <title>Home | Sathya Ram ⸺ Web Developer, UI/Graphic Designer, Photographer</title>
         <meta property="og:title" content="It's Sathya Ram Website" />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:image:alt" content="Sathya Ram OG Image" />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image:alt" content="Sathya Ram Website Image" />
         <meta
           property="og:description"
           content="Web Developer | UI/Graphic Designer | Photographer"

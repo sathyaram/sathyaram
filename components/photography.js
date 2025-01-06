@@ -12,7 +12,7 @@ const Photography = () => {
   return (
     <section id="photography" title="photography">
       <div className="heading">
-        <h3>Photography</h3>
+        <h3 className="heading-title">Photography</h3>
         <div className="heading-desc">
           {`I'm an award winning photographer accomplished in a variety of
           disciplines with a focus on people, specifically creative portraiture.`}
@@ -57,7 +57,7 @@ const Photography = () => {
                     <Image
                       width={600}
                       height={900}
-                      loading="lazy"
+                      priority
                       src={photograph.image}
                       alt={photograph.title}
                     ></Image>

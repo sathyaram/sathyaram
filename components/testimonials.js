@@ -5,7 +5,7 @@ const testimonials = () => {
     <>
       <section id="testimonials" title="testimonials">
         <div className="heading">
-          <h3>Testimonials</h3>
+          <h3 className="heading-title">Testimonials</h3>
           <div className="heading-desc">
             I&apos;ve worked with a variety of brands, enterprises and individuals
             and folks seem to like my work and results!
