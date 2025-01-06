@@ -37,9 +37,9 @@ export default function Home() {
         <body className="midnight homepage" />
       </Head>
       <Loader />
+      <Rain />
       <Menu />
       <Hero />
-      <Rain />
       <main role="main">
         <Websites />
         <Designs />

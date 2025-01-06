@@ -6,7 +6,6 @@ aside {
   z-index: 5;
   top: 0;
   left: 0;
-  width: 100%;
   padding-top: 4rem;
   flex-wrap: wrap;
   max-width: 80vw;
@@ -32,6 +31,7 @@ nav.menu {
 
     &:hover {
       color: $blue;
+
       &:not(.music)::before {
         right: -4px;
         left: auto;
@@ -466,7 +466,7 @@ nav.social-media {
         box-shadow: 0 0 0 0 white;
 
         &:nth-child(1) {
-          transform: translateY(5px) rotate(315deg) translateX(0px);
+          transform: translateY(10px) rotate(315deg) translateX(5px);
           &::before {
             background-color: $blue;
           }
@@ -478,7 +478,7 @@ nav.social-media {
         }
 
         &:nth-child(3) {
-          transform: translateY(-4px) rotate(225deg) translateX(26px);
+          transform: translateY(-6px) rotate(225deg) translateX(22px);
 
           &::before {
             background-color: $waterfall;

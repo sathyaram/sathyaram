@@ -281,7 +281,7 @@ a.website-link {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 90%;
     height: auto;
     z-index: -1;
     opacity: 0.1;
@@ -292,6 +292,16 @@ a.website-link {
 
   .website-heading {
     margin-bottom: 4rem;
+  }
+
+  .website-content {
+    img {
+      border-radius: 15px;
+      box-shadow:
+        0 0 35px 0 rgba(0, 0, 0, 0.1),
+        0 0 65px 0 rgba(0, 0, 0, 0.1),
+        0 0 55px 0 rgba(0, 0, 0, 0.1);
+    }
   }
 
   .links {
@@ -337,14 +347,6 @@ a.website-link {
     font-size: 10px;
     display: block;
     text-shadow: 0 1px 8px #fffc;
-  }
-
-  img {
-    border-radius: 15px;
-    box-shadow:
-      0 0 35px 0 rgba(0, 0, 0, 0.1),
-      0 0 65px 0 rgba(0, 0, 0, 0.1),
-      0 0 55px 0 rgba(0, 0, 0, 0.1);
   }
 }
 

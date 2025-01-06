@@ -1,6 +1,7 @@
 footer {
     font-size: 0.75rem;
     text-align: center;
+    
 
     .villain {
         font-size: 70px;
@@ -33,6 +34,10 @@ footer {
 
     .contact-menu {
         margin-bottom: 2rem;
+
+        a {
+            font-weight: bold;
+        }
     }
 
     a {
