@@ -108,17 +108,47 @@ const footer = () => {
       <address>
         <div className="credits">
           <div>Handcrafted with Next.js</div>
-          <div></div>
         </div>
         <p className="copyright">
-          {" "}
           © {new Date().getFullYear()} Sathya Ram. All rights reserved.
         </p>
       </address>
-      <div className="villain">
-        {/* Have a fantastic{day}! */}
-        Keep your friends close.
-      </div>
+      <h5 className="villain">
+        <span>&nbsp;</span>
+
+        <div>
+          <span>K</span>
+          <span>e</span>
+          <span>e</span>
+          <span>p</span>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+          <span>y</span>
+          <span>o</span>
+          <span>u</span>
+          <span>r</span>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+          <span>f</span>
+          <span>r</span>
+          <span>i</span>
+          <span>e</span>
+          <span>n</span>
+          <span>d</span>
+          <span>s</span>
+        </div>
+        <span>&nbsp;</span>
+        <div>
+          <span>c</span>
+          <span>l</span>
+          <span>o</span>
+          <span>s</span>
+          <span>e</span>
+          <span>.</span>
+        </div>
+      </h5>
     </footer>
   );
 };

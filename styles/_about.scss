@@ -17,12 +17,9 @@
         z-index: 0;
         font-size: 35vw;
         padding: 0 36px;
-        background: linear-gradient(135deg, rgba(112, 213, 255, .9), rgba(0, 89, 188, .9), rgba(112, 213, 255, .9));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: endlessly 10s ease infinite;
+        @include gradient-text;
         color: #d7dde6;
-        opacity: .085;
+        opacity: 0.085;
         transform: translateX(-50%) translateY(-50%);
     }
 }

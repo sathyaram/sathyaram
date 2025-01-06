@@ -21,7 +21,6 @@ $lilac: #17172d;
 $velvet: #404066;
 $galaxy: #353561;
 
-
 $cali:
   "Californication",
   Palatino Linotype,
@@ -37,11 +36,15 @@ $gradient: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0
   }
 }
 
-@keyframes ram-glow {
-  to {
-    fill: transparent;
-    // stroke-dashoffset: 0;
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+@keyframes gradient-motion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -60,6 +63,7 @@ $gradient: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0
 @mixin glow-text {
   text-shadow: none;
   transition: text-shadow 2s ease-in-out;
+
   &:hover {
     text-shadow:
       0 0 5px white,

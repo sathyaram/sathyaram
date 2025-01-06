@@ -35,7 +35,7 @@ const homeplanetfund = () => {
                   <p>
                     While working at Teal Media, a project I received was for
                     Home Planet Fund. Complete ground-up built in WordPress.
-                    Purely theming and crafting the fields. It was a blast.{" "}
+                    Purely theming and crafting the fields. It was a blast.
                   </p>
                   <br></br>
                   <p>

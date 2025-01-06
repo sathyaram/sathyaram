@@ -38,7 +38,7 @@ const Hero = () => {
             <span>y</span>
             <span>a</span>
             </div>
-            <span>&nbsp;</span>
+            <span className="nbsp">&nbsp;</span>
             <div>
             <span>R</span>
             <span>a</span>

@@ -7,9 +7,8 @@ body {
   overflow-x: hidden;
 }
 
-
-
-h1 {
+h1,
+h5 {
   font-weight: 400;
   font-size: 7rem;
   font-family: $cali;
@@ -17,9 +16,7 @@ h1 {
   position: relative;
   line-height: 100%;
   z-index: 3;
-  background: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0.92));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include gradient-text;
 
   @media screen and (max-width: $mobile) {
     font-size: 4rem;
@@ -28,7 +25,31 @@ h1 {
 
   div {
     display: inline-block;
+  }
 
+  .nbsp {
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  span {
+    transition: text-shadow 2s ease-in-out;
+    display: inline-block;
+
+    &:hover {
+      text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 35px white,
+        0 0 5px white;
+      transition: none;
+    }
+  }
+}
+
+h1 {
+  div {
     &:first-child {
       margin-right: -1rem;
 
@@ -42,20 +63,6 @@ h1 {
       @media screen and (max-width: $mobile) {
         margin-right: -0.5rem;
       }
-    }
-  }
-
-  span {
-    transition: text-shadow 2s ease-in-out;
-    font-family: $cali;
-
-    &:hover {
-      text-shadow:
-        0 0 5px white,
-        0 0 15px white,
-        0 0 35px white,
-        0 0 5px white;
-      transition: none;
     }
   }
 }

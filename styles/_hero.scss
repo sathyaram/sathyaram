@@ -8,6 +8,7 @@ header.hero {
   height: 80vh;
   padding: 0 2rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .constellation {
@@ -32,10 +33,12 @@ header.hero {
   letter-spacing: 1px;
   color: $baby;
 
-
   @media screen and (max-width: $mobile) {
-    left: calc(50% + 130px);
-    top: 46%;
+    font-weight: bold;
+    position: static;
+    margin-bottom: 0.5rem;
+    margin-top: -1rem;
+    text-shadow: 0 0 15px white;
   }
 }
 
@@ -44,11 +47,12 @@ header.hero {
   margin-bottom: -2.25rem;
   margin-left: 10px;
   letter-spacing: 1px;
-  opacity: 0;
+  opacity: 0.25;
   transition: opacity 300ms ease;
 
   @media screen and (max-width: $mobile) {
-    margin-bottom: 0;
+    margin-bottom: 0.75rem;
+    margin-left: 2px;
     opacity: 1;
   }
 

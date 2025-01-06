@@ -7,11 +7,6 @@ footer {
         font-size: 70px;
         margin-top: 5rem;
         padding: 0 2rem 10rem;
-        font-family: $cali;
-        background: $gradient;
-        background: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0.92));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         line-height: 90%;
 
         .homepage &,
@@ -24,7 +19,6 @@ footer {
 
         @media screen and (max-width: $mobile) {
             padding: 0 4rem 10rem;
-            word-break: break-word;
         }
     }
 
