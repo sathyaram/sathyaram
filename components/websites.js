@@ -37,7 +37,7 @@ const websites = () => {
           spaceBetween={20}
           loop={true}
           breakpoints={{
-            320: {
+            200: {
               slidesPerView: 1.25,
               spaceBetween: 20,
             },

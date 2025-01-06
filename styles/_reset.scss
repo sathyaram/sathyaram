@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Maison";
+  font-family: "Maison-Medium";
   src:
     url("../public/fonts/Maison-Medium.woff2") format("woff2"),
     url("../public/fonts/Maison-Medium.woff") format("woff");
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "Maison";
+  font-family: "Maison-Light";
   src:
     url("../public/fonts/Maison-Light.woff2") format("woff2"),
     url("../public/fonts/Maison-Light.woff") format("woff");
@@ -177,7 +177,7 @@ body {
 }
 
 strong {
-  font-weight: bold;
+  font-family: $maison-medium;
 }
 
 a {

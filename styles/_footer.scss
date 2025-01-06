@@ -16,6 +16,9 @@ footer {
         .homepage &,
         .about & {
             padding: 0 4rem 20rem;
+            @media screen and (max-width: $mobile) {
+                padding: 0 4rem 6rem;
+            }
         }
 
         @media screen and (max-width: $mobile) {
@@ -62,8 +65,9 @@ footer {
         position: relative;
 
         span {
-            color: white;
+            color: $midnight;
             font-size: 10px;
+            margin-top: 1rem;
         }
 
         &::before {

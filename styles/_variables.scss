@@ -1,4 +1,5 @@
 $mini: 360px;
+$iphone: 452px;
 $surface: 540px;
 $mobile: 600px;
 $tablet: 768px;
@@ -25,7 +26,8 @@ $cali:
   "Californication",
   Palatino Linotype,
   sans-serif;
-$maison: "Maison", Tahoma, sans-serif;
+$maison-medium: "Maison-Medium", Tahoma, sans-serif;
+$maison-light: "Maison-Light", Tahoma, sans-serif;
 
 $gradient: linear-gradient(135deg, rgba(112, 213, 255, 0.92), rgba(0, 89, 188, 0.92));
 

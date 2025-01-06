@@ -37,6 +37,7 @@
             font-size: 2.75rem;
             line-height: 48px;
             position: absolute;
+            font-family: $maison-medium;
             top: 50%;
             left: -40px;
             z-index: 2;
@@ -50,6 +51,12 @@
             @media screen and (max-width: $screen) {
                 font-size: 32px;
                 line-height: 36px;
+                max-width: 215px;
+            }
+
+            @media screen and (max-width: $ipad) {
+                font-size: 28px;
+                line-height: 28px;
                 max-width: 215px;
             }
         }
@@ -71,7 +78,7 @@
         margin-top: 11rem;
         font-size: 6rem;
         text-align: center;
-        font-family: $maison;
+        font-family: $maison-medium;
 
         @media screen and (max-width: $ipad) {
             font-size: 3rem;
@@ -119,7 +126,7 @@
     }
 
     label {
-        font-weight: bold;
+        font-weight: 400;
         letter-spacing: 2px;
         text-transform: uppercase;
         font-size: 10px;

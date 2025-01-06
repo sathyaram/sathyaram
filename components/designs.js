@@ -31,8 +31,9 @@ const Designs = () => {
           initialSlide={1}
           spaceBetween={90}
           breakpoints={{
-            320: {
+            200: {
               slidesPerView: 1.25,
+              spaceBetween: 60
             },
             720: {
               slidesPerView: 2,

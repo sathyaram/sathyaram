@@ -2,9 +2,15 @@
   color: white;
   background-color: #08031b;
 
+  .social-media-footer {
+    a span {
+      color: white;
+    }
+  }
+
   .social-media path,
   .social-media circle {
-    fill: rgba(255, 255, 255, 0.65);
+    fill: white;
     transition: fill 300ms ease;
   }
 
@@ -23,7 +29,7 @@
   #designs {
     .swiper-slide {
       &::after {
-            background-color: rgb(3 17 43 / 55%);
+        background-color: rgb(3 17 43 / 55%);
       }
     }
   }
@@ -31,10 +37,12 @@
   section {
     .heading {
       h3 {
-        text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5019607843), 0 1px 7px rgba(255, 255, 255, 0.8);
+        text-shadow:
+          0 1px 6px rgba(255, 255, 255, 0.5019607843),
+          0 1px 7px rgba(255, 255, 255, 0.8);
 
         &::before {
-        border-bottom: 8px solid $blue;
+          border-bottom: 8px solid $blue;
         }
       }
     }
@@ -53,7 +61,7 @@
         -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
         filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
       }
-  
+
       .r-line {
         -webkit-filter: drop-shadow(0 0 2px $blue);
         filter: drop-shadow(0 0 2px $blue);
@@ -76,8 +84,17 @@
       color: $grey;
     }
 
-    .social-media-footer svg {
-      fill: $sky;
+    .social-media-footer {
+      a {
+        &:hover {
+          svg {
+            fill: white;
+          }
+        }
+        svg {
+          fill: $sky;
+        }
+      }
     }
   }
 }

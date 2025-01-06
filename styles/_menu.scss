@@ -114,6 +114,7 @@ nav.main-menu {
         @media screen and (max-width: $ipad) {
           font-size: 1.65rem;
           padding: 0.5rem 0;
+          line-height: 30px;
         }
       }
     }
@@ -134,6 +135,11 @@ nav.main-menu {
 
     li {
       width: fit-content;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
       a {
         font-size: 1rem;
         margin-left: 5px;
@@ -202,7 +208,7 @@ nav.social-media {
       }
 
       &::after {
-        transform: scale(1.25) translateX(-40%) translateZ(0);
+        transform: scale(1.45) translateX(-33%);
         opacity: 1;
       }
 
@@ -256,7 +262,7 @@ nav.social-media {
   span {
     font-size: 10px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
     font-family: "Maison";
     transition: all 0.3s ease;
     letter-spacing: 0.5px;

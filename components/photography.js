@@ -31,7 +31,7 @@ const Photography = () => {
           spaceBetween={10}
           loop={true}
           breakpoints={{
-            320: {
+            200: {
               slidesPerView: 1.25,
             },
             530: {

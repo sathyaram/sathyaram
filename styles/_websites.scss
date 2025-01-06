@@ -80,6 +80,7 @@
 
 .project-title {
   font-size: 2.75rem;
+  font-family: $maison-medium;
   font-weight: bold;
   color: white;
   line-height: 100%;
@@ -94,8 +95,9 @@
     font-size: 2.25rem;
   }
 
-  @media screen and (max-width: $mini) {
-    font-size: 1.25rem;
+  @media screen and (max-width: $iphone) {
+    font-size: 1.75rem;
+    font-weight: bold;
   }
 }
 
@@ -168,6 +170,7 @@
 
 .project-image {
   max-width: 450px;
+  min-width: 310px;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -260,7 +263,7 @@
     margin-top: 11rem;
     font-size: 6rem;
     text-align: center;
-    font-family: $maison;
+    font-family: $maison-medium;
 
     @media screen and (max-width: $ipad) {
       font-size: 3rem;
@@ -302,7 +305,7 @@
 
   a.website-link {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 400;
     display: block;
     transition: color 300ms ease;
 
@@ -337,7 +340,7 @@
   }
 
   label {
-    font-weight: bold;
+    font-family: $maison-medium;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 10px;
