@@ -25,6 +25,7 @@ nav.menu {
     margin: 0.25rem;
     display: inline-block;
     padding: 0.25rem 0.5rem;
+    line-height: 40px;
     font-size: 13px;
     position: relative;
     transition: color 300ms ease;
@@ -89,6 +90,10 @@ nav.main-menu {
     overflow-y: scroll;
     height: 100%;
     padding-top: 1rem;
+    padding-right: 1.75rem;
+    position: relative;
+    right: -15px;
+    
   }
 
   ul {
@@ -97,9 +102,7 @@ nav.main-menu {
 
     li {
       width: 100%;
-      &:not(:last-child) {
-        border-bottom: 1px solid rgb(255 255 255 / 5%);
-      }
+      border-bottom: 1px solid rgb(255 255 255 / 5%);
 
       a {
         font-size: 2.5rem;
@@ -168,12 +171,14 @@ nav.main-menu {
 nav.social-media {
   display: flex;
   margin-bottom: 2.5rem;
-  margin-right: 4px;
+  margin-right: 9px;
   gap: 2rem;
   justify-content: flex-end;
 
   @media screen and (max-width: $mobile) {
     gap: 1rem;
+  margin-right: 4px;
+
   }
 
   a {
