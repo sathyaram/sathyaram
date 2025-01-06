@@ -277,7 +277,7 @@ nav.social-media {
   svg {
     width: 32px;
     height: 32px;
-    fill: rgba(255, 255, 255, 0.439);
+    fill: white;
   }
 }
 
@@ -297,7 +297,7 @@ nav.social-media {
     stroke-linecap: round;
 
     @media screen and (max-width: $mobile) {
-      width: 80px;
+      width: 85px;
     }
 
     .s-line {
@@ -460,7 +460,7 @@ nav.social-media {
         box-shadow: 0 0 0 0 white;
 
         &:nth-child(1) {
-          transform: translateY(12px) rotate(315deg) translateX(10px);
+          transform: translateY(5px) rotate(315deg) translateX(0px);
           &::before {
             background-color: $blue;
           }
@@ -472,7 +472,7 @@ nav.social-media {
         }
 
         &:nth-child(3) {
-          transform: translateY(-11px) rotate(225deg) translateX(16px);
+          transform: translateY(-4px) rotate(225deg) translateX(26px);
 
           &::before {
             background-color: $waterfall;

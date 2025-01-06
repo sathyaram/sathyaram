@@ -3,7 +3,7 @@
         position: relative;
         transition: transform 300ms ease;
         &:hover {
-    transform: translateY(-10px);
+            transform: translateY(-10px);
 
             &::after {
                 background-color: rgb(3 17 43 / 20%);
@@ -13,22 +13,23 @@
                 text-shadow:
                     0 0 15px white,
                     0 0 5px white,
-                    0 0 5px rgba(0, 0, 0, 0.478),
-                    0 0 15px rgba(0, 0, 0, 0.98),
-                    0 0 25px rgba(0, 0, 0, 0.424);
+                    0 0 15px rgba(0, 0, 0, 0.478),
+                    0 0 25px rgba(0, 0, 0, 0.48),
+                    0 0 35px rgba(0, 0, 0, 0.424);
             }
         }
 
         &::after {
             position: absolute;
             content: "";
-            background-color: rgb(3 17 43 / 55%);
+            background-color: rgb(108 170 215 / 75%);
             width: 100%;
             transition: background-color 300ms ease;
             height: 100%;
             top: 0;
             left: 0;
             pointer-events: none;
+            border-radius: 10px;
         }
 
         h4 {
