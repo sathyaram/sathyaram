@@ -14,12 +14,11 @@ const pokelogos = () => {
         <body className="midnight pokelogos page design" />
       </Head>
       <Menu />
-      <main>
-        <div className="website-heading">
-          <h1 className="website-name">PokéLogos</h1>
-          <h2 className="website-tagline"></h2>
+      <main role="main">
+        <div className="design-heading">
+          <h1 className="design-name">PokéLogos</h1>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="grid-2">
               <Image width={800} height={600} priority alt="pokelogo-one" src="/designs/assets/pokelogo-one.webp" />

@@ -20,7 +20,7 @@ const lehigh = () => {
         <body className="midnight lehigh page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
             <Image
@@ -34,23 +34,25 @@ const lehigh = () => {
           <h1 className="website-name">
             Lehigh University&apos;s College of Art, Architecture & Design
           </h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While working at Lehigh University, I was honored with the
                     opportunity to redesign the College of Arts, Architecture
                     and Design&apos;s website. I received a BA at Lehigh - in
                     Design and Studio Art within the College of Arts & Science,
                     so I understood how important this opportunity was to really
-                    highlight important information. This was the result!
-                    Completely new color scheme, modern branding, as well as a
-                    fresh, contemporary look that brought it out of the stone
-                    ages.
+                    highlight important information.
+                  </p>
+                  <br></br>
+                  <p>
+                    This was the result! Completely new color scheme, modern
+                    branding, as well as a fresh, contemporary look that brought
+                    it out of the stone ages.
                   </p>
                   <br></br>
                   <p>
@@ -59,12 +61,12 @@ const lehigh = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Senior Web Developer</div>
                 </div>
 
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>Drupal 7</li>
@@ -73,7 +75,7 @@ const lehigh = () => {
                   </ul>
                 </div>
 
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Website Management</li>
@@ -82,22 +84,20 @@ const lehigh = () => {
                   </ul>
                 </div>
 
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Launched</label>
                   <div>2018</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
-                  <div className="links">
-                    <a
-                      className="website-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://aad.lehigh.edu"
-                    >
-                      aad.lehigh.edu
-                    </a>
-                  </div>
+                  <a
+                    className="website-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://aad.lehigh.edu"
+                  >
+                    aad.lehigh.edu
+                  </a>
                 </div>
               </div>
             </div>

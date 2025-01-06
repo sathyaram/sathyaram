@@ -19,18 +19,17 @@ const portal = () => {
         <body className="midnight portal page design" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <h1 className="website-name">
             Lehigh University&apos;s Campus Portal Designs
           </h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While working at Lehigh University, it was my job to
                     maintain but also elevate the Campus Portal, built on
@@ -63,11 +62,11 @@ const portal = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Senior Web Developer (Portal)</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>Adobe Illustrator 7</li>
@@ -76,7 +75,7 @@ const portal = () => {
                     <li>Masonry</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Portal Management</li>
@@ -84,7 +83,7 @@ const portal = () => {
                     <li>Developer</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Launched</label>
                   <div>2017</div>
                 </div>

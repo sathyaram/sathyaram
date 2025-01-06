@@ -14,28 +14,32 @@ const homeplanetfund = () => {
         <body className="midnight homeplanetfund page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               priority
               src="/websites/assets/homeplanet.png"
               alt="Home Planet Fund"
             ></Image>
           </div>
           <h1 className="website-name">Home Planet Fund</h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While working at Teal Media, a project I received was for
                     Home Planet Fund. Complete ground-up built in WordPress.
-                    Purely theming and crafting the fields. It was a blast. Home
-                    Planet Fund leverages the power of nature and the
+                    Purely theming and crafting the fields. It was a blast.{" "}
+                  </p>
+                  <br></br>
+                  <p>
+                    Home Planet Fund leverages the power of nature and the
                     stewardship role of Indigenous People and Local Communities.
                     It is also a company powered by Patagonia. Its seed money
                     and yours is what powers this company&apos;s noble mission.
@@ -51,11 +55,11 @@ const homeplanetfund = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
@@ -64,7 +68,7 @@ const homeplanetfund = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Development</li>
@@ -73,15 +77,15 @@ const homeplanetfund = () => {
                     <li>Accessibility</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Agency</label>
                   <div>Teal Media</div>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Year of Creation</label>
                   <div>2023</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
                   <a
                     className="website-link"

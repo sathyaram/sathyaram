@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="planet-seven"></div>
           <div className="planet-eight"></div>
         </div>
-        <div className="hero">
+        <header className="hero">
           <div className="pronounce">Sa-thee-uh · Ram</div>
           <h1>
             <div>
@@ -45,7 +45,7 @@ const Hero = () => {
             <span>m</span>
             </div>
           </h1>
-          {/* <div className="website-version">v7.1</div> */}
+          <div className="version">v7.2</div>
           <h2>
             <span>W</span>
             <span>e</span>
@@ -94,7 +94,7 @@ const Hero = () => {
             <span>e</span>
             <span>r</span>
           </h2>
-        </div>
+        </header>
     </>
   );
 };

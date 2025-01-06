@@ -17,16 +17,15 @@ const lehigh2018 = () => {
         <body className="midnight portal page design" />
       </Head>
       <Menu />
-      <main>
-        <div className="website-heading">
-          <h1 className="website-name">Lehigh2018 Web Theme Style Guide</h1>
-          <h2 className="website-tagline"></h2>
+      <main role="main">
+        <div className="design-heading">
+          <h1 className="design-name">Lehigh2018 Web Theme Style Guide</h1>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While at Lehigh University, I was tasked to create the new
                     Lehigh2018 website theme that would be used across over a
@@ -48,11 +47,11 @@ const lehigh2018 = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Senior Web Developer (Portal)</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>Adobe Illustrator 7</li>
@@ -60,13 +59,13 @@ const lehigh2018 = () => {
                     <li>JavaScript</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Designer</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Designed In</label>
                   <div>2018</div>
                 </div>
@@ -74,7 +73,9 @@ const lehigh2018 = () => {
             </div>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="lehigh2018-one"
               priority
               src="/designs/assets/lehigh2018-one.jpg"
@@ -82,14 +83,18 @@ const lehigh2018 = () => {
           </div>
           <div className="col-2">
             <div className="col">
-              <Image width={1200} height={2000}
+              <Image
+                width={1200}
+                height={2000}
                 alt="lehigh2018-two"
                 loading="lazy"
                 src="/designs/lehigh2018/lehigh2018-two.jpg"
               ></Image>
             </div>
             <div className="col">
-              <Image width={1200} height={2000}
+              <Image
+                width={1200}
+                height={2000}
                 alt="lehigh2018-three"
                 loading="lazy"
                 src="/designs/lehigh2018/lehigh2018-three.jpg"
@@ -97,28 +102,36 @@ const lehigh2018 = () => {
             </div>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="lehigh2018-four"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-four.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="lehigh2018-five"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-five.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="lehigh2018-six"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-six.jpg"
             ></Image>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="lehigh2018-seven"
               loading="lazy"
               src="/designs/lehigh2018/lehigh2018-seven.png"
@@ -126,28 +139,36 @@ const lehigh2018 = () => {
           </div>
         </div>
         <div className="full-width">
-          <Image width={1200} height={2000}
+          <Image
+            width={1200}
+            height={2000}
             alt="lehigh2018-eight"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-eight.png"
           ></Image>
         </div>
         <div className="full-width">
-          <Image width={1200} height={2000}
+          <Image
+            width={1200}
+            height={2000}
             alt="lehigh2018-nine"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-nine.png"
           ></Image>
         </div>
         <div className="full-width">
-          <Image width={1200} height={2000}
+          <Image
+            width={1200}
+            height={2000}
             alt="lehigh2018-ten"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-ten.png"
           ></Image>
         </div>
         <div className="full-width">
-          <Image width={1200} height={2000}
+          <Image
+            width={1200}
+            height={2000}
             alt="lehigh2018-eleven"
             loading="lazy"
             src="/designs/lehigh2018/lehigh2018-eleven.png"

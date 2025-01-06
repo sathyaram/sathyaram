@@ -14,7 +14,7 @@ const brookings = () => {
         <body className="midnight brookings page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
             <Image width={1200} height={1200}
@@ -24,13 +24,12 @@ const brookings = () => {
             ></Image>
           </div>
           <h1 className="website-name">The Brookings Institute</h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     I can&apos;t believe I had the opportunity to do the
                     frontend for The Brookings Institution. It&apos;s a a
@@ -55,12 +54,12 @@ const brookings = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
 
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
@@ -69,7 +68,7 @@ const brookings = () => {
                   </ul>
                 </div>
 
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Frontend Development</li>
@@ -77,15 +76,15 @@ const brookings = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Agency</label>
                   <div>Teal Media</div>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Year of Creation</label>
                   <div>2021</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
                   <a
                     className="website-link"

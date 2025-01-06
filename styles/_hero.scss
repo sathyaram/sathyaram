@@ -1,4 +1,4 @@
-.hero {
+header.hero {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,17 +21,17 @@
   pointer-events: none;
 }
 
-.website-version {
+.version {
   position: absolute;
   left: calc(50% + 240px);
   top: 49%;
   transform: translateY(-50%);
-  font-size: 8px;
+  font-size: 6px;
   font-family: "Maison";
   font-weight: 100;
   letter-spacing: 1px;
-  color: white;
-  opacity: 0.35;
+  color: $baby;
+
 
   @media screen and (max-width: $mobile) {
     left: calc(50% + 130px);

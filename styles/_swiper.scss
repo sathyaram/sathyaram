@@ -44,6 +44,31 @@
     }
 }
 
+#websites {
+    .swiper-slide {
+        cursor: pointer;
+
+        &:hover {
+            .project-title {
+                text-shadow:
+                    0 0 25px rgba(0, 0, 0, 0.35),
+                    0 0 35px rgba(0, 0, 0, 0.35),
+                    0 1px 6px #ffffff80,
+                    0 1px 7px #fffc;
+            }
+            .project-background {
+                transform: translateX(-50%) translateY(-50%) scaleY(1.45);
+                &::before {
+                    transform: translateX(-50%) translateY(-200%);
+                }
+                &::after {
+                    transform: translateY(-50%) translateX(-50%) rotate(1200deg);
+                }
+            }
+        }
+    }
+}
+
 .swiper-3d .swiper-slide-shadow-right,
 .swiper-3d .swiper-slide-shadow-left {
     background-image: none !important;

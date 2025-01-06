@@ -20,18 +20,17 @@ const engineering = () => {
         <body className="midnight engineering page design" />
       </Head>
       <Menu />
-      <main>
-        <div className="website-heading">
-          <h1 className="website-name">
+      <main role="main">
+        <div className="design-heading">
+          <h1 className="design-name">
             Lehigh University&apos;s College of Engineering Web Designs
           </h1>
-          <h2 className="website-tagline"></h2>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     I had the opportunity to redesign Lehigh&apos;s Engineering
                     website, the crowning jewel of web design opportunities at
@@ -53,24 +52,24 @@ const engineering = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Senior Web Developer (Portal)</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>Adobe Illustrator</li>
                     <li>Adobe Photoshop</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Designer</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Designed In</label>
                   <div>2017</div>
                 </div>

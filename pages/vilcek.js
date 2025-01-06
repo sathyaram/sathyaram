@@ -14,7 +14,7 @@ const vilcek = () => {
         <body className="midnight vilcek page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
             <Image width={1200} height={2000}
@@ -24,19 +24,22 @@ const vilcek = () => {
             />
           </div>
           <h1 className="website-name">Vilcek Foundation</h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While working at Forum One, I had the honor of being tasked
                     to do the entire frontend of the Vilcek Foundation&apos;s
                     brand new website. The Vilcek Foundation raises awareness of
                     immigrant contributions in the United States and fosters
-                    appreciation of the arts and sciences. Through their prizes,
+                    appreciation of the arts and sciences. 
+                    </p>
+                  <br></br>
+                  <p>
+                    Through their prizes,
                     they reward immigrant artists and scientists at every stage
                     of their careers. The build involved extensive image
                     galleries and content types for various groupings of art
@@ -55,11 +58,11 @@ const vilcek = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
@@ -69,7 +72,7 @@ const vilcek = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Frontend Development</li>
@@ -78,15 +81,15 @@ const vilcek = () => {
                     <li>Animation / Interactions</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Agency</label>
                   <div>Forum One</div>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Year of Creation</label>
                   <div>2021</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
                   <a
                     className="website-link"

@@ -242,6 +242,5 @@ export const Data = [
     alt: "houndoom pokelogo concept",
     title: "PokéLogos",
     image: "/designs/assets/pokelogo-one.webp",
-  },
-  {}
+  }
 ];

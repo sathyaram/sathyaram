@@ -14,16 +14,15 @@ const fudtruk = () => {
         <body className="midnight fudtruk page design" />
       </Head>
       <Menu />
-      <main>
-        <div className="website-heading">
-          <h1 className="website-name">Fudtruk Branding and Designs</h1>
-          <h2 className="website-tagline"></h2>
+      <main role="main">
+        <div className="design-heading">
+          <h1 className="design-name">Fudtruk Branding and Designs</h1>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     I got to do the vinyl wrap for a food truck! After doing the
                     logo and branding for the FudTruk, a food truck in the
@@ -56,18 +55,18 @@ const fudtruk = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Designer</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>Adobe Illustrator</li>
                     <li>Adobe InDesign</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Branding</li>
@@ -75,7 +74,7 @@ const fudtruk = () => {
                     <li>Files, Assets, Exports</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Designed In</label>
                   <div>2017</div>
                 </div>

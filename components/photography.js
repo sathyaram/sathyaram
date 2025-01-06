@@ -53,7 +53,7 @@ const Photography = () => {
             if (photograph.type === "photography") {
               return (
                 <SwiperSlide title={photograph.title} key={i}>
-                  <div className="photograph">
+                  <figure className="photograph">
                     <Image
                       width={600}
                       height={900}
@@ -61,7 +61,7 @@ const Photography = () => {
                       src={photograph.image}
                       alt={photograph.title}
                     ></Image>
-                    <div className="photograph-text">
+                    <figcaption className="photograph-text">
                       <div className="photograph-title">{photograph.title}</div>
                       <div className="photograph-subtitle">
                         {photograph.subtitle}
@@ -73,8 +73,8 @@ const Photography = () => {
                       >
                         {photograph.link}
                       </a>
-                    </div>
-                  </div>
+                    </figcaption>
+                  </figure>
                 </SwiperSlide>
               );
             }

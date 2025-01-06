@@ -33,7 +33,7 @@ const Designs = () => {
           breakpoints={{
             200: {
               slidesPerView: 1.25,
-              spaceBetween: 60
+              spaceBetween: 60,
             },
             720: {
               slidesPerView: 2,
@@ -56,16 +56,24 @@ const Designs = () => {
             if (design.type === "design") {
               return (
                 <SwiperSlide title={design.title} key={i}>
-                  <a className="design" rel="noopener noreferrer" href={`/` + design.id}>
-                    <h4>{design.title}</h4>
-                    <Image
-                      width={800}
-                      height={600}
-                      loading="lazy"
-                      alt={design.alt}
-                      src={design.image}
-                    ></Image>
-                  </a>
+                  <figure>
+                    <a
+                      className="design"
+                      rel="noopener noreferrer"
+                      href={`/` + design.id}
+                    >
+                      <figcaption>
+                        <h4>{design.title}</h4>
+                      </figcaption>
+                      <Image
+                        width={800}
+                        height={600}
+                        loading="lazy"
+                        alt={design.alt}
+                        src={design.image}
+                      ></Image>
+                    </a>
+                  </figure>
                 </SwiperSlide>
               );
             }

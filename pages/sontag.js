@@ -14,7 +14,7 @@ const sontag = () => {
         <body className="midnight sontag page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
             <Image
@@ -26,21 +26,23 @@ const sontag = () => {
             />
           </div>
           <h1 className="website-name">The Sontag Foundation</h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     While working at Push10, The Sontag Foundation came to us
                     and I was tasked with crafting the entire website from
-                    scratch in WordPress, while also theming it. The story of
-                    The Sontag Foundation is really the story of Rick and Susan
-                    Sontag and their ability to turn adversity into a benefit
-                    for many other people who have lived with the scourge of
-                    brain cancer.
+                    scratch in WordPress, while also theming it.
+                  </p>
+                  <br></br>
+                  <p>
+                    The story of The Sontag Foundation is really the story of
+                    Rick and Susan Sontag and their ability to turn adversity
+                    into a benefit for many other people who have lived with the
+                    scourge of brain cancer.
                   </p>
                   <br></br>
                   <p>
@@ -50,11 +52,11 @@ const sontag = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
@@ -64,7 +66,7 @@ const sontag = () => {
                     <li>Advanced Custom Fields</li>
                   </ul>
                 </div>
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Theme Creation</li>
@@ -72,15 +74,15 @@ const sontag = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Agency</label>
                   <div>Push10</div>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Published</label>
                   <div>2020</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
                   <a
                     className="website-link"

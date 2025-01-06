@@ -14,12 +14,11 @@ const logos = () => {
         <body className="midnight logos page design" />
       </Head>
       <Menu />
-      <main>
-        <div className="website-heading">
-          <h1 className="website-name">Logos + Concepts</h1>
-          <h2 className="website-tagline"></h2>
+      <main role="main">
+        <div className="design-heading">
+          <h1 className="design-name">Logos + Concepts</h1>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="grid-2">
               <Image width={800} height={600} priority alt="logo-concept" src="/designs/assets/lehighracing.jpg" />

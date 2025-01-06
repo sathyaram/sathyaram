@@ -19,7 +19,7 @@ const hhmi = () => {
         <body className="midnight hhmi page website" />
       </Head>
       <Menu />
-      <main>
+      <main role="main">
         <div className="website-heading">
           <div className="website-image">
             <Image
@@ -33,21 +33,24 @@ const hhmi = () => {
           <h1 className="website-name">
             Howard Hughes Medical Institute&apos;s Biointeractive
           </h1>
-          <h2 className="website-tagline"></h2>
         </div>
         <div className="website-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">
-                <div className="website-description">
+                <div className="description">
                   <p>
                     A massive undertaking - building out the frontend for small
-                    Netflix-like repository for science videos. .BioInteractive
+                    Netflix-like repository for science videos. BioInteractive
                     is a leading provider of free classroom resources and
                     professional development for high school and undergraduate
-                    biology educators. They aim to connect students to big ideas
-                    in biology and promote engagement through the science
-                    practices to transform science education into a creative,
+                    biology educators.
+                  </p>
+                  <br></br>
+                  <p>
+                    They aim to connect students to big ideas in biology and
+                    promote engagement through the science practices to
+                    transform science education into a creative,
                     interdisciplinary endeavor that reflects the excitement of
                     real research. Funded by Howard Hughes himself and his
                     Medical Institute, it gathers a myriad of disciplines of
@@ -62,12 +65,12 @@ const hhmi = () => {
                 </div>
               </div>
               <div className="col">
-                <div className="website-role website-info">
+                <div className="role info">
                   <label>Role</label>
                   <div>Front-end Developer</div>
                 </div>
 
-                <div className="website-stack website-info">
+                <div className="stack info">
                   <label>Stack</label>
                   <ul>
                     <li>WordPress</li>
@@ -76,7 +79,7 @@ const hhmi = () => {
                   </ul>
                 </div>
 
-                <div className="website-scope website-info">
+                <div className="scope info">
                   <label>Scope</label>
                   <ul>
                     <li>Theme Creation</li>
@@ -84,15 +87,15 @@ const hhmi = () => {
                     <li>Online Style Guide</li>
                   </ul>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Agency</label>
                   <div>Forum One</div>
                 </div>
-                <div className="website-year website-info">
+                <div className="year info">
                   <label>Launched</label>
                   <div>2021</div>
                 </div>
-                <div className="website-url website-info">
+                <div className="url info">
                   <label>Live Website</label>
                   <a
                     className="website-link"
