@@ -85,73 +85,6 @@
   }
 }
 
-.project-subtitle {
-  color: grey;
-  font-weight: 400;
-  display: none;
-  font-size: 0.9rem;
-  color: #f2f2f2 !important;
-  text-shadow:
-    0 0 25px rgba(0, 0, 0, 0.35),
-    0 0 45px rgba(0, 0, 0, 0.35),
-    0 0 35px rgba(0, 0, 0, 0.35);
-}
-
-.project-agency {
-  color: white;
-  font-weight: 300;
-  font-size: 1.25rem;
-  position: relative;
-
-  span {
-    font-size: 0.75rem;
-  }
-
-  &::before {
-    content: "While Working At";
-    color: white;
-    text-shadow: 0 0 5px white;
-    display: block;
-    font-weight: 400;
-    font-size: 0.75rem;
-  }
-}
-
-.project-year {
-  font-size: 0.75rem;
-}
-
-.project-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 300ms ease;
-  width: 100%;
-}
-
-.project-tags {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  &::before {
-    content: "Technologies Used";
-    color: white;
-    display: block;
-    font-weight: 400;
-    font-size: 0.75rem;
-    text-shadow: 0 0 5px white;
-  }
-
-  li {
-    padding: 0.25rem 0.5rem;
-    background-color: rgb(96, 197, 255, 0.25);
-    border-radius: 5px;
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
-  }
-}
-
 .project-image {
   max-width: 450px;
   min-width: 310px;
@@ -161,47 +94,6 @@
   left: 50%;
   z-index: -1;
   transform: translateX(-50%) translateY(-50%);
-}
-
-.project-description {
-  margin: 3rem 0;
-  color: white;
-}
-.project-tagline {
-  margin-bottom: 0.5rem;
-}
-
-.project-expand {
-  color: rgb(195, 222, 231);
-  font-size: 0.75rem;
-  font-family: "Maison";
-  opacity: 0;
-  perspective: 100px;
-  transform: rotateX(45deg);
-  transition:
-    opacity 300ms ease,
-    transform 300ms ease;
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: 1.5px;
-    background-color: white;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.9);
-  }
-
-  span {
-    text-shadow:
-      0 0 15px white,
-      0 0 5px white;
-    color: white;
-    font-size: 0.85rem;
-    position: relative;
-    top: 0.5px;
-  }
 }
 
 a.website-link {
@@ -259,7 +151,6 @@ a.website-link {
 
     @media screen and (max-width: $surface) {
       font-size: 2.5rem;
-
     }
   }
 
@@ -284,6 +175,7 @@ a.website-link {
 
   .website-content {
     img {
+      background: $blue;
       border-radius: 15px;
       box-shadow:
         0 0 35px 0 rgba(0, 0, 0, 0.1),
@@ -294,52 +186,6 @@ a.website-link {
 
   .eclipse {
     display: none;
-  }
-}
-
-.main-menu {
-  .website-menu {
-    li {
-      a {
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      &:first-child {
-        a {
-          background-image: linear-gradient(to left bottom, #a7440b, #51120d);
-        }
-      }
-      &:nth-child(2) {
-        a {
-          background-image: linear-gradient(to left bottom, #1d9bf0, #00274b);
-        }
-      }
-
-      &:nth-child(3) {
-        a {
-          background-image: linear-gradient(to left bottom, #8b6947, #2e0e04);
-        }
-      }
-
-      &:nth-child(4) {
-        a {
-          background-image: linear-gradient(180deg, #0042a4, #020f1d);
-        }
-      }
-
-      &:nth-child(5) {
-        a {
-          background-image: linear-gradient(270deg, #82bb44 0%, #178387 100%);
-        }
-      }
-
-      &:nth-child(6) {
-        a {
-          background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
-        }
-      }
-    }
   }
 }
 

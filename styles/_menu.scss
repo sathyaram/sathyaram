@@ -71,7 +71,7 @@ nav.main-menu {
   height: 100vh;
   box-sizing: border-box;
   z-index: 4;
-  padding: 11rem 4rem 5rem;
+  padding: 10rem 4rem 5rem;
   transition: all 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
   max-width: 100%;
   width: 100%;
@@ -111,7 +111,7 @@ nav.main-menu {
 
       a {
         font-size: 1.75rem;
-        padding: 0.95rem 0;
+        padding: 0.75rem 0;
         display: block;
         text-transform: uppercase;
         font-weight: 300;
@@ -160,16 +160,6 @@ nav.main-menu {
     }
   }
 
-  .website-menu {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 0 0 auto;
-    a {
-      &:hover {
-        background-image: linear-gradient(to left bottom, $blue, $waterfall) !important;
-      }
-    }
-  }
   .design-menu {
     max-width: 1050px;
     width: 100%;
@@ -181,11 +171,62 @@ nav.main-menu {
       }
     }
   }
+
+  .website-menu {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 0 0 auto;
+    li {
+      a {
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &:hover {
+          background-image: linear-gradient(to left bottom, $blue, $waterfall) !important;
+        }
+      }
+      &:first-child {
+        a {
+          background-image: linear-gradient(to left bottom, #a7440b, #51120d);
+        }
+      }
+      &:nth-child(2) {
+        a {
+          background-image: linear-gradient(to left bottom, #1d9bf0, #00274b);
+        }
+      }
+
+      &:nth-child(3) {
+        a {
+          background-image: linear-gradient(to left bottom, #8b6947, #471709);
+        }
+      }
+
+      &:nth-child(4) {
+        a {
+          background-image: linear-gradient(180deg, #165bc4, #071f3a);
+        }
+      }
+
+      &:nth-child(5) {
+        a {
+          background-image: linear-gradient(270deg, #82bb44 0%, #178387 100%);
+        }
+      }
+
+      &:nth-child(6) {
+        a {
+          background-image: linear-gradient(to right top, #dfd1b4, #90784b, #4c370f);
+        }
+      }
+    }
+  }
 }
 
 nav.social-media {
   display: flex;
-  margin-bottom: 4.5rem;
+  margin-bottom: 4rem;
   margin-left: 6px;
   gap: 2rem;
   justify-content: flex-start;

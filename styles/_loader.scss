@@ -15,7 +15,7 @@
     0% {
     }
     100% {
-      z-index: 1;
+      z-index: -1;
       opacity: 0.05;
       top: 50%;
     }
@@ -42,7 +42,7 @@
     
   
     .loader-svg {
-      max-width: 70vw;
+      max-width: 80vw;
       margin: 0 auto;
       position: fixed;
       width: 100%;

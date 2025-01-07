@@ -46,16 +46,16 @@ const about = () => {
           <div className="about-section">
             <h4>At a Glance</h4>
             <div className="about-text">
-              <p>I build websites with WordPress, Drupal, React and Webflow.</p>
+              <p>I build websites with WordPress, Drupal, Next and Webflow.</p>
               <br></br>
               <p>
-                I write HTML, (S)CSS, front-end JavaScript, jQuery, JSX, PHP,
+                I write HTML, CSS, SASS, front-end JavaScript, jQuery, React, PHP,
                 and Twig.
               </p>
               <br></br>
               <p>
-                I design and prototype in Adobe XD, Figma, Sketch, Adobe
-                Illustrator, and InVision.
+                I design and prototype in Adobe XD, Figma, and Adobe
+                Illustrator.
               </p>
               <br></br>
               <p>I capture photos with my Sony A7R4.</p>
@@ -137,23 +137,29 @@ const about = () => {
             <h4>Etc.</h4>
             <div className="about-text">
               <p>
-                ENFP. Movie buff. Voice actor. CSS Wiz. Passionate nerd. Avid
+                ENFP. Movie buff. Passionate nerd. Avid
                 conversationalist.
               </p>
               <br></br>
-              <p>I live on iMDB: I love all things film/TV.</p>
-              <br></br>
-              Check out{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.imdb.com/user/ur37032307/ratings?sort=your_rating,desc&amp;ratingFilter=0&amp;mode=detail&amp;last"
-              >
-                what I&apos;ve rated
-              </a>
-              .<br></br>
               <p>
-                I <s>used to</s> play{" "}
+                I live on iMDB: I love all things film/TV.  Check out{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.imdb.com/user/ur37032307/ratings?sort=your_rating,desc&amp;ratingFilter=0&amp;mode=detail&amp;last"
+                >
+                  what I&apos;ve rated
+                </a>
+                .
+              </p>
+              <br></br>
+              <p>
+                The font's used on this website are <em>Maison</em> and{" "}
+                <em>The Californication.</em>{" "}
+              </p>
+              <br></br>
+              <p>
+                I <s>play</s> used to{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"

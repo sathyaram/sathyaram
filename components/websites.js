@@ -1,12 +1,7 @@
 import { Data } from "../data.js";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCoverflow,
-  Keyboard,
-  Navigation,
-  Autoplay,
-} from "swiper";
-import Image from 'next/image';
+import { EffectCoverflow, Keyboard, Navigation, Autoplay } from "swiper";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
@@ -54,32 +49,30 @@ const websites = () => {
             delay: 6500,
             disableOnInteraction: true,
           }}
-          modules={[
-            EffectCoverflow,
-            Navigation,
-            Keyboard,
-            Autoplay,
-          ]}
+          modules={[EffectCoverflow, Navigation, Keyboard, Autoplay]}
         >
           {Data.map(function (website, i) {
             if (website.type === "web") {
               return (
                 <SwiperSlide title={website.title} key={i}>
-                  <a href={"/" + website.id} rel="noopener noreferrer" className="project-block">
-                    <article
-                      className="project"
-                      id={website.id}
-                    >
+                  <a
+                    href={"/" + website.id}
+                    rel="noopener noreferrer"
+                    className="project-wrapper"
+                  >
+                    <article className="project" id={website.id}>
                       <div className="project-background"></div>
                       <div className="project-heading">
                         <div className="project-image">
-                          <Image priority width={800} height={600} src={website.image} alt={website.alt}></Image>
+                          <Image
+                            priority
+                            width={800}
+                            height={600}
+                            src={website.image}
+                            alt={website.alt}
+                          ></Image>
                         </div>
                         <div className="project-title">{website.title}</div>
-                        <div className="project-subtitle">
-                          {website.subtitle}
-                        </div>
-                        
                       </div>
                     </article>
                   </a>

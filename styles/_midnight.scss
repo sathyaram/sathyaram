@@ -95,7 +95,7 @@
   }
 
   nav.main-menu {
-    background-color: rgba(1, 9, 27, 0.95);
+    background-color: rgba(1, 9, 27, 0.96);
   }
 
   .design-menu {
@@ -127,7 +127,7 @@
 .eclipse {
   width: 2rem;
   height: 2rem;
-  fill: $mystical;
+  fill: $blue;
   padding: 0.5rem;
   transition: fill 300ms ease;
 
@@ -137,6 +137,6 @@
   }
 
   &:hover {
-    fill: $sky;
+    fill: $waterfall;
   }
 }
