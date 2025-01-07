@@ -58,10 +58,6 @@
         a {
             color: white;
         }
-
-        img {
-            border-radius: 10px;
-        }
     }
 }
 
@@ -103,6 +99,7 @@
     .design-content {
         img {
             border-radius: 15px;
+            background-color: $blue;
             box-shadow:
                 0 0 35px 0 rgba(0, 0, 0, 0.1),
                 0 0 65px 0 rgba(0, 0, 0, 0.05),
