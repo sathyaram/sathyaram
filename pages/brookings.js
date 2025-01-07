@@ -90,9 +90,9 @@ const brookings = () => {
                     className="website-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://brookings.org"
+                    href="https://brookings.edu"
                   >
-                    brookings.org
+                    brookings.edu
                   </a>
                 </div>
               </div>

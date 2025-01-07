@@ -124,8 +124,8 @@ export const Data = [
     year: "2020",
     tags: ["WordPress", "JavaScript", "Custom HTML+CSS"],
     agency: "Teal Media",
-    url: "brookings.org",
-    link: "https://brookings.org",
+    url: "brookings.edu",
+    link: "https://brookings.edu",
     image: "/websites/assets/brookings.webp",
     images: [
       { 
