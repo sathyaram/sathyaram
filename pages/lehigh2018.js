@@ -70,7 +70,7 @@ const lehigh2018 = () => {
                   </ul>
                 </div>
                 <div className="year info">
-                  <label>Designed In</label>
+                  <label>Created</label>
                   <div>2018</div>
                 </div>
               </div>

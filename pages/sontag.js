@@ -79,7 +79,7 @@ const sontag = () => {
                   <div>Push10</div>
                 </div>
                 <div className="year info">
-                  <label>Published</label>
+                  <label>Launched</label>
                   <div>2020</div>
                 </div>
                 <div className="url info">

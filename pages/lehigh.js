@@ -69,7 +69,6 @@ const lehigh = () => {
                   <label>Role</label>
                   <div>Senior Web Developer</div>
                 </div>
-
                 <div className="stack info">
                   <label>Stack</label>
                   <ul>
@@ -78,7 +77,6 @@ const lehigh = () => {
                     <li>JavaScript</li>
                   </ul>
                 </div>
-
                 <div className="scope info">
                   <label>Scope</label>
                   <ul>
@@ -87,7 +85,6 @@ const lehigh = () => {
                     <li>Developer</li>
                   </ul>
                 </div>
-
                 <div className="year info">
                   <label>Launched</label>
                   <div>2018</div>

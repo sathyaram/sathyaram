@@ -70,7 +70,7 @@ const engineering = () => {
                   </ul>
                 </div>
                 <div className="year info">
-                  <label>Designed In</label>
+                  <label>Created</label>
                   <div>2017</div>
                 </div>
               </div>

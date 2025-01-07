@@ -30,7 +30,6 @@ const footer = () => {
           </svg>
           <span>Instagram</span>
         </a>
-
         <a
           target="_blank"
           rel="noopener noreferrer"

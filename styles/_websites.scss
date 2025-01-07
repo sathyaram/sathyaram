@@ -70,7 +70,8 @@
   z-index: 3;
   transition: all 300ms ease;
   text-shadow:
-  0 0 15px rgba(0, 0, 0, 0.278), 0 0 25px rgba(0, 0, 0, 0.28), 0 0 35px rgba(0, 0, 0, 0.224);
+    0 0 25px #858585,
+    0 0 15px #858585;
 
   @media screen and (max-width: $mobile) {
     font-size: 2.25rem;

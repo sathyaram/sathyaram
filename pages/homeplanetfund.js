@@ -82,7 +82,7 @@ const homeplanetfund = () => {
                   <div>Teal Media</div>
                 </div>
                 <div className="year info">
-                  <label>Year of Creation</label>
+                  <label>Launched</label>
                   <div>2023</div>
                 </div>
                 <div className="url info">
