@@ -20,12 +20,12 @@ const portal = () => {
       </Head>
       <Menu />
       <main role="main">
-        <div className="website-heading">
-          <h1 className="website-name">
+        <div className="design-heading">
+          <h1 className="design-name">
             Lehigh University&apos;s Campus Portal Designs
           </h1>
         </div>
-        <div className="website-content">
+        <div className="design-content">
           <div className="constrained">
             <div className="col-2 split-70-30">
               <div className="col">

@@ -33,8 +33,8 @@ nav.menu {
       color: $blue;
 
       &:not(.music)::before {
-        right: -4px;
-        left: auto;
+        left: -4px;
+        right: auto;
         width: calc(100% + 8px);
       }
     }
@@ -47,9 +47,19 @@ nav.menu {
       height: 1px;
       background-color: #63b5f8;
       background: linear-gradient(135deg, rgba(112, 213, 255, 0.8), rgba(0, 89, 188, 0.9));
-      left: 0;
+      right: 0;
       transition: width 0.4s cubic-bezier(0.37, 0, 0.21, 1.02);
     }
+  }
+}
+
+.menu-wrapper {
+  display: flex;
+  gap: 3rem;
+
+  @media screen and (max-width: $ipad) {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
@@ -61,7 +71,7 @@ nav.main-menu {
   height: 100vh;
   box-sizing: border-box;
   z-index: 4;
-  padding: 10rem 4rem 5rem;
+  padding: 11rem 4rem 5rem;
   transition: all 0.2s cubic-bezier(0.37, 0, 0.21, 1.02);
   max-width: 100%;
   width: 100%;
@@ -86,13 +96,9 @@ nav.main-menu {
     margin: 0 auto;
     max-width: 80vw;
     width: 100%;
-    text-align: right;
     overflow-y: scroll;
     height: 100%;
     padding-top: 1rem;
-    padding-right: 1.75rem;
-    position: relative;
-    right: -15px;
   }
 
   ul {
@@ -104,17 +110,17 @@ nav.main-menu {
       border-bottom: 1px solid rgb(255 255 255 / 5%);
 
       a {
-        font-size: 2.5rem;
-        padding: 1rem 0;
+        font-size: 1.75rem;
+        padding: 0.95rem 0;
         display: block;
         text-transform: uppercase;
         font-weight: 300;
         letter-spacing: 3px;
+        line-height: 30px;
 
         @media screen and (max-width: $ipad) {
           font-size: 1.65rem;
           padding: 0.5rem 0;
-          line-height: 30px;
         }
       }
     }
@@ -123,14 +129,16 @@ nav.main-menu {
   .eyebrow {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 1rem;
+    margin-bottom: 3rem;
 
     @media screen and (max-width: $mobile) {
       gap: 0;
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
+      margin-bottom: 0;
     }
 
     li {
@@ -143,6 +151,8 @@ nav.main-menu {
       a {
         font-size: 1rem;
         margin-left: 5px;
+        padding: 0.25rem 0;
+
         &:hover {
           transition: none;
         }
@@ -175,14 +185,14 @@ nav.main-menu {
 
 nav.social-media {
   display: flex;
-  margin-bottom: 2.5rem;
-  margin-right: 9px;
+  margin-bottom: 2rem;
+  margin-left: 3px;
   gap: 2rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   @media screen and (max-width: $mobile) {
     gap: 1rem;
-    margin-right: 4px;
+    margin-bottom: 1rem;
   }
 
   a {
@@ -478,7 +488,7 @@ nav.social-media {
         }
 
         &:nth-child(3) {
-          transform: translateY(-6px) rotate(225deg) translateX(22px);
+          transform: translateY(-6px) rotate(225deg) translateX(21px);
 
           &::before {
             background-color: $waterfall;

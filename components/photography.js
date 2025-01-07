@@ -40,6 +40,12 @@ const Photography = () => {
             980: {
               slidesPerView: 3,
             },
+            1440: {
+              slidesPerView: 3.5,
+            },
+            1920: {
+              slidesPerView: 4,
+            },
           }}
           initialSlide={1}
           autoplay={{

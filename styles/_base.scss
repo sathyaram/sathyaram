@@ -155,6 +155,7 @@ section {
     padding-bottom: 8rem;
     overflow-x: hidden;
     margin: 0 auto;
+    
 
     .heading-desc {
       max-width: 420px;
@@ -168,18 +169,19 @@ section {
     h3 {
       font-size: 5rem;
       z-index: 3;
-      margin-bottom: -1rem;
+      margin-bottom: -2rem;
       position: relative;
       font-weight: 400;
       font-family: $cali;
       text-shadow: none;
+      padding-bottom: 1rem;
 
       &::before {
         content: "";
         width: 108%;
         height: 8px;
         position: absolute;
-        bottom: 14px;
+        bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;

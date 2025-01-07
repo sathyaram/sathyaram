@@ -145,7 +145,7 @@ const footer = () => {
           <span>o</span>
           <span>s</span>
           <span>e</span>
-          <span>.</span>
+          <span>!</span>
         </div>
       </div>
     </footer>
