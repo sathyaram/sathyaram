@@ -63,15 +63,17 @@
 .project-title {
   font-size: 2.75rem;
   font-family: $maison-medium;
-  font-weight: bold;
+  font-weight: 400;
   color: white;
   line-height: 100%;
   position: relative;
   z-index: 3;
   transition: all 300ms ease;
   text-shadow:
-    0 0 25px #858585,
-    0 0 15px #858585;
+    0 0 5px white,
+    0 0 15px rgba(10, 10, 10, 0.15),
+    0 0 25px rgba(10, 10, 10, 0.15),
+    0 0 35px rgba(10, 10, 10, 0.15);
 
   @media screen and (max-width: $mobile) {
     font-size: 2.25rem;
@@ -254,6 +256,11 @@ a.website-link {
       padding-bottom: 4rem;
       margin-top: 6rem;
     }
+
+    @media screen and (max-width: $surface) {
+      font-size: 2.5rem;
+
+    }
   }
 
   main {
@@ -372,7 +379,7 @@ a.website-link {
   &::after {
     content: "";
     width: 100%;
-    background-image: linear-gradient(30deg, #82bb44 0%, #178387 100%);
+    background-image: linear-gradient(30deg, #82bb44 0%, #006468 100%);
     height: 102%;
     background-attachment: fixed;
     position: fixed;
