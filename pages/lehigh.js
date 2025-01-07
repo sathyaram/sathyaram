@@ -43,10 +43,14 @@ const lehigh = () => {
                   <p>
                     While working at Lehigh University, I was honored with the
                     opportunity to redesign the College of Arts, Architecture
-                    and Design&apos;s website. I received a BA at Lehigh - in
-                    Design and Studio Art within the College of Arts & Science,
-                    so I understood how important this opportunity was to really
-                    highlight important information.
+                    and Design&apos;s website.
+                  </p>
+                  <br></br>
+                  <p>
+                    I received a BA at Lehigh - in Design and Studio Art within
+                    the College of Arts & Science, so I understood how important
+                    this opportunity was to really highlight important
+                    information.
                   </p>
                   <br></br>
                   <p>
