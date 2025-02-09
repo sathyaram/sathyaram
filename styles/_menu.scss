@@ -99,7 +99,7 @@ nav.main-menu {
     height: 100%;
     padding-top: 1rem;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $ipad) {
       overflow-x: scroll;
     }
   }
