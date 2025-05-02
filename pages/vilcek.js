@@ -49,11 +49,8 @@ const vilcek = () => {
                   <br></br>
                   <p>
                     Being able to theme a majority of the project myself, I was
-                    able to build out clean SCSS directories filled with
-                    different ways to run our different gallery layouts. Even in
-                    2025, this website is thriving, clean and preformant -
-                    reflective of a lot of the longevity I try to instill in
-                    websites.
+                    able to buildout clean SCSS directories filled with
+                    different ways to run our different gallery layouts. Even in 2025, after x years, this website is thriving, clean and performant - reflective of my thorough execution.
                   </p>
                 </div>
               </div>

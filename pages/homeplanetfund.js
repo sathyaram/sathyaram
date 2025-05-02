@@ -33,24 +33,23 @@ const homeplanetfund = () => {
               <div className="col">
                 <div className="description">
                   <p>
-                    While working at Teal Media, a project I received was for
-                    Home Planet Fund. Complete ground-up built in WordPress.
-                    Purely theming and crafting the fields. It was a blast.
+                    An example of a ground-up build in WordPress I carried out
+                    was this website for Home Planet Fund. Pure website theming and
+                    crafting of all fields from scratch. It was a blast! Home Planet Fund
+                    leverages the power of nature and the stewardship role of
+                    Indigenous People and Local Communities.
                   </p>
                   <br></br>
                   <p>
-                    Home Planet Fund leverages the power of nature and the
-                    stewardship role of Indigenous People and Local Communities.
-                    It is also a company powered by Patagonia. Its seed money
-                    and yours is what powers this company&apos;s noble mission.
-                    To harnass nature to create better living.
+                    It is also a company powered by Patagonia and sustained by
+                    donors: To harness nature to create better living. The vibe
+                    of the website is meant to capture that grass rootness.
                   </p>
                   <br></br>
                   <p>
-                    The vibe of the website is meant to capture that grass
-                    rootness. The animations, draw-like hover effects, textures
-                    and cursor changes are but some touches I added that helped
-                    ground you in the feel of the site&apos;s goal.
+                    The animations, draw-like hover effects, textures and cursor
+                    changes some touches I added that I hope convey that
+                    feeling.
                   </p>
                 </div>
               </div>

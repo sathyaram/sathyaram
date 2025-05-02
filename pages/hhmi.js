@@ -40,27 +40,15 @@ const hhmi = () => {
               <div className="col">
                 <div className="description">
                   <p>
-                    A massive undertaking - building out the frontend for small
-                    Netflix-like repository for science videos. BioInteractive
-                    is a leading provider of free classroom resources and
-                    professional development for high school and undergraduate
-                    biology educators.
+                  This was a massive undertaking - building out the frontend for a small Netflix®-like repository for science videos.  BioInteractive is a leading provider of free classroom resources and professional development for high school and undergraduate biology educators.
                   </p>
                   <br></br>
                   <p>
-                    They aim to connect students to big ideas in biology and
-                    promote engagement through the science practices to
-                    transform science education into a creative,
-                    interdisciplinary endeavor that reflects the excitement of
-                    real research. Funded by Howard Hughes himself and his
-                    Medical Institute, it gathers a myriad of disciplines of
-                    sciences and gives it out as a resource.
+                  They aim to connect students to big ideas in biology and promote engagement to transform science education into a creative, interdisciplinary endeavor that reflects the excitement of real research. Funded by Howard Hughes himself and his Medical Institute, it gathers a myriad of disciplines of sciences and serves it as a valuable resource.
                   </p>
                   <br></br>
                   <p>
-                    The pages are extensive but this was a fun project. Still
-                    stands the test of time - the color schemes and div
-                    placements hold up on all browsers.
+                  The pages are extensive but this was a fun project. Still stands the test of time - the color schemes and div placements hold up on all browsers.
                   </p>
                 </div>
               </div>

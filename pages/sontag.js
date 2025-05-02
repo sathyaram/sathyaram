@@ -33,21 +33,11 @@ const sontag = () => {
               <div className="col">
                 <div className="description">
                   <p>
-                    While working at Push10, The Sontag Foundation came to us
-                    and I was tasked with crafting the entire website from
-                    scratch in WordPress, while also theming it.
+                  One of my projects was to craft the entire website for the Sontag Foundation. The story of Sontag Foundation is a heartwarming experience of Rick and Susan Sontag and their ability to turn adversity into a benefit for many others who suffer from brain cancer.  
                   </p>
                   <br></br>
                   <p>
-                    The story of The Sontag Foundation is really the story of
-                    Rick and Susan Sontag and their ability to turn adversity
-                    into a benefit for many other people who have lived with the
-                    scourge of brain cancer.
-                  </p>
-                  <br></br>
-                  <p>
-                    The idea was cleanly and effectively display information on
-                    all devices.
+                  On the social side this was satisfying because of what it represents to the patients.  On the technical side, I was quite pleased because I was entrusted with crafting the entire website from scratch in WordPress, while also theming it.  I think the deep meaning of what the Foundation stands for is effectively depicted in the design. 
                   </p>
                 </div>
               </div>
