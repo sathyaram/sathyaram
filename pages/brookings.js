@@ -17,7 +17,9 @@ const brookings = () => {
       <main role="main">
         <div className="website-heading">
           <div className="website-image">
-            <Image width={1200} height={1200}
+            <Image
+              width={1200}
+              height={1200}
               src="/websites/assets/brookings.webp"
               alt="The Brookings Institute"
               priority
@@ -31,25 +33,18 @@ const brookings = () => {
               <div className="col">
                 <div className="description">
                   <p>
-                    I can&apos;t believe I had the opportunity to do the
-                    frontend for The Brookings Institute. It&apos;s a
-                    nonprofit organization based in Washington, D.C. Our mission
-                    is to conduct in-depth, nonpartisan research to improve
-                    policy and governance at local, national, and global levels.
+                    I can't believe I had the opportunity to do the frontend for
+                    The Brookings Institute. It's a nonprofit organization based
+                    in Washington, D.C., with a mission to conduct in-depth,
+                    nonpartisan research to improve policy and governance at
+                    local, national, and global levels. They are dedicated to
+                    finding bold, pragmatic solutions for societal challenges.
                   </p>
                   <br></br>
                   <p>
-                    At the core of its mission is the quality, independence, and
-                    impact of our research. They are dedicated to finding bold,
-                    pragmatic solutions for societal challenges through
-                    open-minded inquiry, diverse perspectives, and holding
-                    ourselves to the highest standards of scholastic rigor.
-                  </p>
-                  <br></br>
-                  <p>
-                    This site took me and another frontend to pull off but we
-                    grinded it out. Over 400+ pages and growing, all themed from
-                    just a few perfectly crafted (S)CSS files.
+                    This site took me and another front-end developer to pull
+                    off. Over 400+ pages and growing, all themed from just a few
+                    well-crafted (S)CSS files.
                   </p>
                 </div>
               </div>
@@ -99,7 +94,9 @@ const brookings = () => {
             </div>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000}
+            <Image
+              width={1200}
+              height={2000}
               alt="brookings-one"
               loading="lazy"
               src="/websites/brookings/brookings-one.png"
@@ -107,24 +104,28 @@ const brookings = () => {
           </div>
           <div className="col-2">
             <div>
-              <Image width={1200} height={2000}
+              <Image
+                width={1200}
+                height={2000}
                 alt="brookings-three"
                 loading="lazy"
                 src="/websites/brookings/brookings-three.png"
-
               ></Image>
             </div>
             <div>
-              <Image width={1200} height={2000}
+              <Image
+                width={1200}
+                height={2000}
                 alt="brookings-two"
                 loading="lazy"
                 src="/websites/brookings/brookings-two.png"
-
               ></Image>
             </div>
           </div>
           <div className="full-width">
-            <Image width={1200} height={2000} 
+            <Image
+              width={1200}
+              height={2000}
               alt="brookings-four"
               loading="lazy"
               src="/websites/brookings/brookings-four.png"

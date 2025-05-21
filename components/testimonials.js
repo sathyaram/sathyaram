@@ -93,7 +93,7 @@ const testimonials = () => {
               </div>
               <div className="quote-cite">Brian Greene</div>
               <div className="quote-role">VP/Director, Architect</div>
-              <div className="quote-company">Bank of America</div>
+              <div className="quote-company">Groupeconnect/Bank of America</div>
             </div>
             <div className="testimonial-company"></div>
             <div className="testimonial-svg">
