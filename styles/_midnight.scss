@@ -42,13 +42,13 @@
           0 1px 7px rgba(255, 255, 255, 0.8);
 
         &::before {
-          border-bottom: 8px solid $blue;
+          border-bottom: 5px solid $blue;
         }
       }
     }
   }
 
-  .raindrops, .constellation {
+  .raindrops {
     display: block;
   }
 

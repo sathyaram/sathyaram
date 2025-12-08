@@ -61,7 +61,7 @@
 }
 
 .project-title {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-family: $maison-medium;
   font-weight: 300;
   color: white;
@@ -70,10 +70,10 @@
   z-index: 3;
   transition: all 300ms ease;
   text-shadow:
-    0 0 5px white,
-    0 0 15px rgba(10, 10, 10, 0.15),
-    0 0 25px rgba(10, 10, 10, 0.15),
-    0 0 35px rgba(10, 10, 10, 0.15);
+    0 0 10px rgba(10, 10, 10, 0.30),
+    0 0 20px rgba(10, 10, 10, 0.30),
+    0 0 30px rgba(10, 10, 10, 0.30),
+    0 0 40px rgba(10, 10, 10, 0.20);
 
   @media screen and (max-width: $mobile) {
     font-size: 2.25rem;
@@ -106,8 +106,8 @@ a.website-link {
   border-radius: 4px;
   text-shadow: 0 0 15px white;
   color: white;
-  display: block;
-  background: $gradient;
+  display: inline-block;
+  background: $waterfall;
   transition: all 300ms ease;
   z-index: 3;
   margin-left: 1.25rem;
@@ -123,6 +123,7 @@ a.website-link {
     border-radius: 5px;
     left: -20px;
     top: 10px;
+    pointer-events: none;
     display: block;
     z-index: 3;
   }

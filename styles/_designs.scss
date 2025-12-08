@@ -24,22 +24,21 @@
 
         h4 {
             font-weight: 300;
-            font-size: 2.75rem;
-            line-height: 48px;
+            font-size: 2.5rem;
+            line-height: 40px;
             position: absolute;
             font-family: $maison-medium;
             top: 50%;
             left: -40px;
             z-index: 2;
-            max-width: 320px;
+            max-width: 300px;
             width: 100%;
             transform: translateY(-50%);
             text-shadow:
                 0 0 15px white,
-                0 0 5px white,
-                0 0 15px rgba(0, 0, 0, 0.478),
-                0 0 25px rgba(0, 0, 0, 0.48),
-                0 0 35px rgba(0, 0, 0, 0.424);
+                0 0 15px rgba(0, 0, 0, 0.25),
+                0 0 25px rgba(0, 0, 0, 0.25),
+                0 0 35px rgba(0, 0, 0, 0.25);
 
             @media screen and (max-width: $screen) {
                 font-size: 32px;
