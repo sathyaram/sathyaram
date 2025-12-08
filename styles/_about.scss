@@ -51,6 +51,7 @@
     font-weight: 300;
 
     li {
+        line-height: 100%;
         &:not(:last-child) {
             margin-bottom: 1rem;
         }
