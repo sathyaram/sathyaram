@@ -69,7 +69,7 @@ const footer = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="/SathyaRam_Resume2025.pdf"
+          href="/SathyaRam_Resume2026.pdf"
         >
           Resume
         </a>
