@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import "./custom.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sathya Ram",
+  title: {
+    template: "%s | Sathya Ram",
+    default: "Sathya Ram",
+  },
   description: "Portfolio of Sathya Ram — websites, design, and photography.",
 };
 

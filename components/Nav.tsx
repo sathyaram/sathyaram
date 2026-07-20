@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from "./Nav.module.scss";
 
 const links = [
   { href: "/about", label: "About" },
@@ -17,7 +18,7 @@ export default function Nav() {
   return (
     <nav>
       <Link href="/">Sathya Ram</Link>
-      <ul>
+      <ul className={styles.list}>
         {links.map((link) => {
           const isActive =
             pathname === link.href || pathname.startsWith(`${link.href}/`);
