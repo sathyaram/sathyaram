@@ -36,15 +36,22 @@ body {
     color 200ms ease;
 }
 
-@keyframes gradient-swirl {
+/*
+ * "Bounce" style: an oscillating rotate + translate, swinging back and
+ * forth rather than spinning continuously. Reverse-engineered from
+ * sairohit.in's actual CSS keyframes (two oversized SVG shapes doing
+ * exactly this, 35s, ~5deg-15deg swing) — this is what makes it read as
+ * a soft sway instead of a mechanical spin.
+ */
+@keyframes gradient-bounce {
   0% {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(-6deg) translate(0, 0) scale(1);
   }
   50% {
-    transform: rotate(180deg) scale(1.1);
+    transform: rotate(8deg) translate(3%, -4%) scale(1.04);
   }
   100% {
-    transform: rotate(360deg) scale(1);
+    transform: rotate(-6deg) translate(0, 0) scale(1);
   }
 }
 
@@ -60,36 +67,24 @@ body {
 
 @keyframes star-drift-small {
   0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(1.5%, -2%);
+    transform: rotate(-1deg) translate(0, 0);
   }
   50% {
-    transform: translate(-2%, 1.5%);
-  }
-  75% {
-    transform: translate(2%, 2%);
+    transform: rotate(1.5deg) translate(1.5%, -2%);
   }
   100% {
-    transform: translate(0, 0);
+    transform: rotate(-1deg) translate(0, 0);
   }
 }
 
 @keyframes star-drift-big {
   0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(-3%, 2.5%);
+    transform: rotate(1.5deg) translate(0, 0);
   }
   50% {
-    transform: translate(3%, -2%);
-  }
-  75% {
-    transform: translate(-2.5%, -3%);
+    transform: rotate(-2deg) translate(-2.5%, 2%);
   }
   100% {
-    transform: translate(0, 0);
+    transform: rotate(1.5deg) translate(0, 0);
   }
 }
