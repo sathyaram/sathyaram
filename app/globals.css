@@ -36,9 +36,15 @@ body {
     color 200ms ease;
 }
 
-@keyframes gradient-spin {
-  to {
-    transform: rotate(360deg);
+@keyframes gradient-swirl {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
   }
 }
 
@@ -49,5 +55,41 @@ body {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes star-drift-small {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1.5%, -2%);
+  }
+  50% {
+    transform: translate(-2%, 1.5%);
+  }
+  75% {
+    transform: translate(2%, 2%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes star-drift-big {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3%, 2.5%);
+  }
+  50% {
+    transform: translate(3%, -2%);
+  }
+  75% {
+    transform: translate(-2.5%, -3%);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
