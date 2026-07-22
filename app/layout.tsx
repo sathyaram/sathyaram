@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Work_Sans } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -24,6 +23,13 @@ export const metadata: Metadata = {
   description: "Portfolio of Sathya Ram — websites, design, and photography.",
 };
 
+const themeInitScript = `(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    document.documentElement.classList.toggle("dark", stored === "dark");
+  } catch (e) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,12 +41,13 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${workSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Nav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
