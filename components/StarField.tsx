@@ -85,15 +85,15 @@ export default function StarField() {
       <div className="absolute inset-0 animate-[star-drift-small_70s_ease-in-out_infinite] motion-reduce:animate-none">
         <div
           ref={smallRef}
-          className="absolute h-[1px] w-[1px] animate-[star-twinkle_5s_ease-in-out_infinite] rounded-full bg-white motion-reduce:animate-none"
+          className="absolute h-[1px] w-[1px] rounded-full bg-white"
           style={{ boxShadow: smallStars }}
         />
       </div>
       <div className="absolute inset-0 animate-[star-drift-big_50s_ease-in-out_infinite] motion-reduce:animate-none">
         <div
           ref={bigRef}
-          className="absolute h-[2px] w-[2px] animate-[star-twinkle_7s_ease-in-out_infinite] rounded-full bg-white motion-reduce:animate-none"
-          style={{ boxShadow: bigStars, animationDelay: "2s" }}
+          className="absolute h-[2px] w-[2px] rounded-full bg-white"
+          style={{ boxShadow: bigStars }}
         />
       </div>
     </div>

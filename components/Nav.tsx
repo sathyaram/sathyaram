@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
-      <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-full border border-border bg-background/80 px-4 py-2 backdrop-blur">
+      <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-full border border-border bg-background/80 px-6 py-2 backdrop-blur">
         <Link href="/" className="font-display text-lg font-semibold">
           Sathya Ram
         </Link>
