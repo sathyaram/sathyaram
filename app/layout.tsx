@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
 import StarField from "@/components/StarField";
+import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
 import "./custom.scss";
 
@@ -50,7 +51,9 @@ export default function RootLayout({
         <GradientBackground />
         <StarField />
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <RouteTransition>{children}</RouteTransition>
+        </main>
         <Footer />
       </body>
     </html>
