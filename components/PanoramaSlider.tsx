@@ -13,6 +13,10 @@ const ANGLE = 30;
 // the camera, so we fade it out rather than render it.
 const VISIBLE_RANGE = 2.5;
 
+// Fraction of the container's height a slide occupies (the rest is breathing
+// room so the shadow/edges aren't clipped).
+const SLIDE_HEIGHT_RATIO = 0.88;
+
 const toRadians = (degrees: number) => (degrees * Math.PI) / 180;
 
 export default function PanoramaSlider() {
@@ -43,8 +47,14 @@ export default function PanoramaSlider() {
     if (!el) return;
     const measure = () => {
       const width = el.clientWidth;
-      if (!width) return;
-      setSlideWidth(Math.round(Math.min(width * 0.34, 420)));
+      const height = el.clientHeight;
+      if (!width || !height) return;
+      // Every photo is natively 2:3, so size the slide to that exact ratio
+      // (off the height it actually occupies) and nothing gets cropped.
+      const slideHeight = height * SLIDE_HEIGHT_RATIO;
+      setSlideWidth(
+        Math.round(Math.min(slideHeight * (2 / 3), width * 0.42)),
+      );
     };
     const observer = new ResizeObserver(measure);
     observer.observe(el);
@@ -109,6 +119,33 @@ export default function PanoramaSlider() {
     };
   }, [lightbox]);
 
+  /**
+   * Chromium doesn't hit-test through to the slides: they're 3D-transformed
+   * inside a preserve-3d/perspective subtree, so a real pointer click lands on
+   * the wrapper and the button's own onClick never fires (synthetic .click()
+   * does work, which is what made this look fine in testing). So we listen on
+   * the container and resolve which slide is genuinely under the cursor.
+   */
+  const resolveSlideIndex = (event: React.MouseEvent): number | null => {
+    // Keyboard activation targets the button directly.
+    const direct = (event.target as HTMLElement).closest?.("[data-slide-index]");
+    if (direct) return Number((direct as HTMLElement).dataset.slideIndex);
+
+    if (!event.clientX && !event.clientY) return null;
+    const hit = document
+      .elementsFromPoint(event.clientX, event.clientY)
+      .find((node) => (node as HTMLElement).dataset?.slideIndex !== undefined);
+    return hit ? Number((hit as HTMLElement).dataset.slideIndex) : null;
+  };
+
+  const openSlide = (event: React.MouseEvent) => {
+    if (didDrag.current) return;
+    const index = resolveSlideIndex(event);
+    if (index === null || Number.isNaN(index)) return;
+    if (index !== safeActive) go(index);
+    setLightbox(index);
+  };
+
   const endDrag = () => {
     if (dragStart.current === null) return;
     dragStart.current = null;
@@ -152,7 +189,7 @@ export default function PanoramaSlider() {
         role="region"
         aria-roledescription="carousel"
         aria-label="Photography"
-        className="relative mx-auto h-[clamp(20rem,42vw,30rem)] w-full touch-pan-y overflow-hidden"
+        className="relative mx-auto h-[clamp(22rem,46vw,34rem)] w-full touch-pan-y overflow-hidden"
         style={{ perspective: "1200px" }}
         onPointerDown={(event) => {
           dragStart.current = event.clientX;
@@ -168,6 +205,7 @@ export default function PanoramaSlider() {
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
         onPointerLeave={endDrag}
+        onClick={openSlide}
       >
         <div
           key={filter}
@@ -196,12 +234,7 @@ export default function PanoramaSlider() {
                 aria-hidden={hidden}
                 tabIndex={hidden ? -1 : 0}
                 aria-label={`Open ${photo.title}`}
-                onClick={() => {
-                  // A drag shouldn't also open the lightbox.
-                  if (didDrag.current) return;
-                  if (offset !== 0) go(index);
-                  else setLightbox(index);
-                }}
+                data-slide-index={index}
                 className="absolute left-1/2 top-1/2 block cursor-pointer overflow-hidden rounded-2xl border border-white/10"
                 style={{
                   width: slideWidth,
@@ -225,7 +258,8 @@ export default function PanoramaSlider() {
                   src={photo.image}
                   alt={photo.title}
                   fill
-                  sizes="(min-width: 640px) 420px, 62vw"
+                  sizes="(min-width: 640px) 380px, 60vw"
+                  quality={90}
                   className="object-cover"
                   draggable={false}
                   priority={index < 3}
@@ -326,6 +360,7 @@ export default function PanoramaSlider() {
                 alt={visible[lightbox].title}
                 fill
                 sizes="(min-width: 640px) 60rem, 90vw"
+                quality={90}
                 className="rounded-2xl object-contain"
                 priority
               />

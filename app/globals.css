@@ -78,8 +78,8 @@ body {
   text-shadow: none;
   /* Leaving a letter: the glow drifts back out slowly. */
   transition:
-    color 2s ease-in-out,
-    text-shadow 2s ease-in-out;
+    color 700ms ease-in-out,
+    text-shadow 700ms ease-in-out;
 }
 
 .name-glow:hover {

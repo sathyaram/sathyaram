@@ -10,7 +10,7 @@ export default function Brookings() {
     <WebsiteCaseStudy
       title="The Brookings Institute"
       subtitle="A mission-driven thinktank center."
-      year="2020"
+      year="2024"
       agency="Teal Media"
       tags={["WordPress", "JavaScript", "Custom HTML+CSS"]}
       url="brookings.edu"

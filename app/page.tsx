@@ -13,7 +13,7 @@ const featured = [
   {
     slug: "brookings",
     title: "The Brookings Institute",
-    year: "2020",
+    year: "2024",
     blurb: "A mission-driven thinktank center.",
     from: "#022A4E",
     to: "#00649F",
