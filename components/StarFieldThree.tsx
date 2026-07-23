@@ -4,10 +4,7 @@ import { useEffect, useRef, useSyncExternalStore } from "react";
 import * as THREE from "three";
 import { getTheme, getServerTheme, subscribeTheme } from "@/lib/theme";
 
-// Most stars are soft round dots; a sprinkle use the site's four-point
-// sparkle mark so the field ties back to the hero flourishes.
-const ROUND_COUNT = 2000;
-const SPARKLE_COUNT = 130;
+const STAR_COUNT = 2200;
 // Depth of the slab of space the stars occupy, in world units.
 const FIELD_DEPTH = 900;
 const FIELD_SPREAD = 700;
@@ -16,10 +13,6 @@ const SPEED = 26;
 // How far the cursor pushes the camera, and how quickly it eases there.
 const PARALLAX = 90;
 const EASE = 0.045;
-
-// Same path as components/Sparkle.tsx, in a 24×24 box.
-const SPARKLE_PATH =
-  "M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0Z";
 
 function makeTexture(draw: (ctx: CanvasRenderingContext2D) => void) {
   const canvas = document.createElement("canvas");
@@ -42,6 +35,12 @@ export default function StarFieldThree() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const scene = new THREE.Scene();
+    // Stars are recycled to the back of the slab, which would make them pop
+    // in at full brightness. Black fog fades anything near the far plane to
+    // nothing (additive blending + black = invisible), so they ease in as
+    // they approach. This is done on the GPU, so it costs nothing per frame.
+    scene.fog = new THREE.Fog(0x000000, FIELD_DEPTH * 0.3, FIELD_DEPTH);
+
     const camera = new THREE.PerspectiveCamera(
       70,
       1,
@@ -55,23 +54,16 @@ export default function StarFieldThree() {
     renderer.setClearAlpha(0);
     mount.appendChild(renderer.domElement);
 
-    // Soft round dot.
+    // Round dot with a tight falloff: a crisp core and only a hint of halo,
+    // so the field reads as pinpoint stars rather than soft blobs.
     const roundTexture = makeTexture((ctx) => {
       const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
       gradient.addColorStop(0, "rgba(255,255,255,1)");
-      gradient.addColorStop(0.3, "rgba(255,255,255,0.7)");
+      gradient.addColorStop(0.16, "rgba(255,255,255,0.95)");
+      gradient.addColorStop(0.4, "rgba(255,255,255,0.16)");
       gradient.addColorStop(1, "rgba(255,255,255,0)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 64, 64);
-    });
-
-    // Four-point sparkle, with a soft glow so it doesn't look like a decal.
-    const sparkleTexture = makeTexture((ctx) => {
-      ctx.scale(64 / 24, 64 / 24);
-      ctx.fillStyle = "#ffffff";
-      ctx.shadowColor = "rgba(255,255,255,0.9)";
-      ctx.shadowBlur = 4;
-      ctx.fill(new Path2D(SPARKLE_PATH));
     });
 
     // Builds one cloud of points scattered through the slab of space.
@@ -90,11 +82,17 @@ export default function StarFieldThree() {
         positions[o + 1] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
         positions[o + 2] = -Math.random() * FIELD_DEPTH;
 
-        // Mostly white, occasionally a cool blue or mint cast.
+        // Roughly the real spectral spread: a few hot blue stars, mostly
+        // white, then yellow/orange, and the occasional red one. Saturation
+        // stays low so it reads as a night sky, not confetti.
         const roll = Math.random();
-        if (roll > 0.92) tint.setHSL(0.45, 0.5, 0.8);
-        else if (roll > 0.84) tint.setHSL(0.6, 0.4, 0.82);
-        else tint.setHSL(0, 0, 0.75 + Math.random() * 0.25);
+        if (roll < 0.06) tint.setHSL(0.6, 0.45, 0.84); // blue
+        else if (roll < 0.2) tint.setHSL(0.58, 0.2, 0.92); // blue-white
+        else if (roll < 0.62) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
+        else if (roll < 0.8) tint.setHSL(0.13, 0.28, 0.9); // yellow-white
+        else if (roll < 0.92) tint.setHSL(0.1, 0.5, 0.82); // yellow
+        else if (roll < 0.98) tint.setHSL(0.07, 0.6, 0.76); // orange
+        else tint.setHSL(0.03, 0.65, 0.7); // red
         colors[o] = tint.r;
         colors[o + 1] = tint.g;
         colors[o + 2] = tint.b;
@@ -112,6 +110,7 @@ export default function StarFieldThree() {
         transparent: true,
         opacity: 0.95,
         depthWrite: false,
+        fog: true,
         blending: THREE.AdditiveBlending,
       });
 
@@ -120,10 +119,7 @@ export default function StarFieldThree() {
       return { geometry, material, count };
     };
 
-    const clouds = [
-      createCloud(ROUND_COUNT, roundTexture, 4.5),
-      createCloud(SPARKLE_COUNT, sparkleTexture, 13),
-    ];
+    const clouds = [createCloud(STAR_COUNT, roundTexture, 4.5)];
 
     const pointer = { x: 0, y: 0 };
     const handlePointerMove = (event: PointerEvent) => {
@@ -192,7 +188,6 @@ export default function StarFieldThree() {
         cloud.material.dispose();
       }
       roundTexture.dispose();
-      sparkleTexture.dispose();
       renderer.dispose();
       if (renderer.domElement.parentNode === mount) {
         mount.removeChild(renderer.domElement);

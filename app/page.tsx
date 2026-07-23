@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Sparkle from "@/components/Sparkle";
+import PanoramaSlider from "@/components/PanoramaSlider";
 
 // Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
 const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
@@ -112,6 +113,30 @@ export default function Home() {
           <span aria-hidden="true">→</span>
         </Link>
       </div>
+
+      {/* ---------- Photography panorama ---------- */}
+      <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
+        <div className="mb-12 text-center">
+          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+            Photography
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+            In my free time.
+          </h2>
+        </div>
+
+        <PanoramaSlider />
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/photography"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground/30"
+          >
+            View all photography
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
