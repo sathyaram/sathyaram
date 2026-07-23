@@ -14,21 +14,14 @@ export default function IntroLoader() {
   const [phase, setPhase] = useState<"intro" | "done">("intro");
 
   useIsomorphicLayoutEffect(() => {
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem("intro-seen") === "1";
-    } catch {
-      // sessionStorage can throw in private modes; just play the intro.
-    }
-
-    if (seen) {
-      setPhase("done");
-      return;
-    }
-
-    try {
-      sessionStorage.setItem("intro-seen", "1");
-    } catch {}
+    // TEMPORARY: playing on every load (including client-side nav back to
+    // "/") so it's easy to review. Restore the sessionStorage gate below —
+    // play once per tab session — before shipping:
+    //
+    //   let seen = false;
+    //   try { seen = sessionStorage.getItem("intro-seen") === "1"; } catch {}
+    //   if (seen) { setPhase("done"); return; }
+    //   try { sessionStorage.setItem("intro-seen", "1"); } catch {}
 
     const html = document.documentElement;
     const previousOverflow = document.body.style.overflow;

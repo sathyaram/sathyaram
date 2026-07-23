@@ -88,13 +88,19 @@ export default function Home() {
       </section>
 
       {/* ---------- Featured work: 2×2 full-width grid ---------- */}
-      <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 sm:grid-cols-5 sm:gap-8">
+      {/*
+        The 40/60 asymmetric split only has room for a single-line title once
+        a column is wide enough — below that, cards stack one-per-row instead
+        (grid-cols-1 all the way up to lg), rather than squeezing into a
+        column too narrow for the title.
+      */}
+      <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
           <Link
             key={project.slug}
             href={`/websites/${project.slug}`}
             style={{ transitionTimingFunction: SPRING }}
-            className={`group relative min-h-[26rem] overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10 ${project.span}`}
+            className={`group @container relative min-h-[26rem] overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10 ${project.span}`}
           >
             {/* The brand fill lives on its own layer so hover can dissolve it,
                 leaving just the outline with the starfield showing through. */}
@@ -141,7 +147,14 @@ export default function Home() {
               </p>
               <Reveal
                 as="h2"
-                className="mt-2 block max-w-[85%] font-display text-3xl font-bold leading-[1.05] text-white sm:text-[2.5rem]"
+                // Sized off the card's own width (cqw), not the viewport —
+                // the asymmetric grid gives some cards a much narrower
+                // column than others, so a vw-based size would either
+                // overflow the narrow ones or stay too small on the wide
+                // ones. whitespace-nowrap is the hard rule (never wrap);
+                // overflow+ellipsis is just a safety net for an edge case
+                // the clamp doesn't cover.
+                className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-display font-bold leading-[1.05] text-white [font-size:clamp(1.125rem,7.5cqw,2.5rem)]"
                 text={project.title}
               />
               <p className="mt-3 max-w-sm text-sm text-white/75">
