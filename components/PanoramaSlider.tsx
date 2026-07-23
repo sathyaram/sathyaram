@@ -53,6 +53,31 @@ export default function PanoramaSlider() {
     setActive((prev) => (((prev + delta) % count) + count) % count);
   };
 
+  // Arrow keys drive the slider whenever it's on screen — no click required.
+  // Left/right arrows don't scroll the page vertically, so claiming them
+  // while the slider is in view doesn't fight normal scrolling.
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+      // Measure on the keypress itself rather than tracking scroll — it only
+      // runs when an arrow is actually pressed, so it's cheaper than an
+      // observer and has no setup/teardown to get out of sync.
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const visible =
+        Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      if (visible < rect.height * 0.4) return;
+
+      event.preventDefault();
+      step(event.key === "ArrowLeft" ? -1 : 1);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const endDrag = () => {
     if (dragStart.current === null) return;
     dragStart.current = null;
@@ -69,17 +94,7 @@ export default function PanoramaSlider() {
         role="region"
         aria-roledescription="carousel"
         aria-label="Photography"
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            step(-1);
-          } else if (event.key === "ArrowRight") {
-            event.preventDefault();
-            step(1);
-          }
-        }}
-        className="relative mx-auto h-[clamp(20rem,42vw,30rem)] w-full touch-pan-y overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+        className="relative mx-auto h-[clamp(20rem,42vw,30rem)] w-full touch-pan-y overflow-hidden"
         style={{ perspective: "1200px" }}
         onPointerDown={(event) => {
           dragStart.current = event.clientX;

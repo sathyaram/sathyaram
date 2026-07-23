@@ -6,37 +6,44 @@ import PanoramaSlider from "@/components/PanoramaSlider";
 // Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
 const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
 
+// Colours sampled from each client's live site. Each gradient runs from a
+// deep shade (top-left, behind the text) to the brand colour (bottom-right,
+// behind the artwork) so light type stays legible across the whole card.
 const featured = [
   {
     slug: "brookings",
     title: "The Brookings Institute",
-    eyebrow: "Teal Media · 2020",
+    year: "2020",
     blurb: "A mission-driven thinktank center.",
-    color: "#93b8f2",
+    from: "#022A4E",
+    to: "#00649F",
     image: "/websites/assets/brookings.webp",
   },
   {
     slug: "homeplanetfund",
     title: "Home Planet Fund",
-    eyebrow: "Teal Media · 2024",
+    year: "2024",
     blurb: "Patagonia's greenroots foundation.",
-    color: "#8fd9c4",
+    from: "#8C382C",
+    to: "#F59431",
     image: "/websites/assets/homeplanet.png",
   },
   {
     slug: "vilcek",
     title: "Vilcek Foundation",
-    eyebrow: "ForumOne · 2020",
+    year: "2020",
     blurb: "A celebration of immigrants & the arts.",
-    color: "#c9a9e0",
+    from: "#5E1F52",
+    to: "#FFB0F0",
     image: "/websites/assets/vilcek.png",
   },
   {
     slug: "sontag",
     title: "The Sontag Foundation",
-    eyebrow: "Push10 · 2021",
+    year: "2021",
     blurb: "The definitive enterprise for brain cancer research.",
-    color: "#f0a8b4",
+    from: "#042342",
+    to: "#2B86E0",
     image: "/websites/assets/sontag.png",
   },
 ];
@@ -51,9 +58,13 @@ export default function Home() {
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-accent [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-accent/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
-        <h1 className="font-display text-[clamp(2.5rem,7.4vw,5.75rem)] font-bold leading-[1.02] tracking-[-0.035em]">
-          <span className="block text-accent">Hi! I&apos;m Sathya Ram.</span>
-          <span className="block">A Developer &amp; Designer</span>
+        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
+          <span className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-accent">
+            Hi! I&apos;m <span className="name-glow">Sathya Ram</span>.
+          </span>
+          <span className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]">
+            Developer &amp; Designer
+          </span>
         </h1>
 
         <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
@@ -68,37 +79,46 @@ export default function Home() {
           <Link
             key={project.slug}
             href={`/websites/${project.slug}`}
-            style={{ backgroundColor: project.color, transitionTimingFunction: SPRING }}
-            className="group relative flex min-h-[26rem] flex-col overflow-hidden rounded-[2.5rem] p-8 transition-transform duration-500 hover:-translate-y-2 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10"
+            style={{ transitionTimingFunction: SPRING }}
+            className="group relative min-h-[26rem] overflow-hidden rounded-[2.5rem] border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10"
           >
-            {/* Flourish: pops in on hover, like Seán's card icons */}
-            <Sparkle
-              className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-[#171412]/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10"
+            {/* The brand fill lives on its own layer so hover can dissolve it,
+                leaving just the outline with the starfield showing through. */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+              style={{
+                background: `linear-gradient(135deg, ${project.from} 0%, ${project.to} 100%)`,
+              }}
             />
 
-            <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-[#171412]/60">
-              {project.eyebrow}
-            </p>
-            <h2 className="mt-2 max-w-[85%] font-display text-3xl font-bold leading-[1.05] text-[#171412] sm:text-[2.5rem]">
-              {project.title}
-            </h2>
-            <p className="mt-3 max-w-sm text-sm text-[#171412]/70">
-              {project.blurb}
-            </p>
-
-            {/* Screenshot fills the remaining space and eases up on hover */}
+            {/* Artwork tucked into the bottom-left corner, peeking out. */}
             <div
-              className="relative mt-8 min-h-0 flex-1 overflow-hidden rounded-3xl shadow-lg transition-transform duration-500 group-hover:-translate-y-1"
+              className="absolute bottom-0 left-6 h-[46%] w-[72%] overflow-hidden rounded-t-3xl shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 sm:left-10"
               style={{ transitionTimingFunction: SPRING }}
             >
               <Image
                 src={project.image}
                 alt={`${project.title} website`}
                 fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                sizes="(min-width: 640px) 40vw, 72vw"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 style={{ transitionTimingFunction: SPRING }}
               />
+            </div>
+
+            <Sparkle className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10" />
+
+            <div className="relative">
+              <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60">
+                {project.year}
+              </p>
+              <h2 className="mt-2 max-w-[85%] font-display text-3xl font-bold leading-[1.05] text-white sm:text-[2.5rem]">
+                {project.title}
+              </h2>
+              <p className="mt-3 max-w-sm text-sm text-white/75">
+                {project.blurb}
+              </p>
             </div>
           </Link>
         ))}

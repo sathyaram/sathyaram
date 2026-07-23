@@ -3,12 +3,13 @@ export type Theme = "light" | "dark";
 const listeners = new Set<() => void>();
 
 export function getTheme(): Theme {
-  if (typeof document === "undefined") return "light";
+  if (typeof document === "undefined") return "dark";
   return document.documentElement.classList.contains("dark") ? "dark" : "light";
 }
 
+// Dark (the starfield) is the site's default; light is opt-in.
 export function getServerTheme(): Theme {
-  return "light";
+  return "dark";
 }
 
 export function setTheme(theme: Theme) {

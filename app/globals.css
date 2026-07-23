@@ -68,3 +68,28 @@ body {
   }
 }
 
+/*
+ * Hover glow on the hero name, ported from the old site (_midnight.scss):
+ * the glow snaps on instantly and fades back out slowly over 2s.
+ */
+.name-glow {
+  display: inline-block;
+  text-shadow: none;
+  transition: text-shadow 2s ease-in-out;
+}
+
+.name-glow:hover {
+  text-shadow:
+    0 0 5px white,
+    0 0 15px white,
+    0 0 35px white,
+    0 0 5px white;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-glow,
+  .name-glow:hover {
+    transition: none;
+  }
+}

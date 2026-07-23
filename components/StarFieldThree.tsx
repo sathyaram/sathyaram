@@ -11,7 +11,7 @@ const FIELD_SPREAD = 700;
 // How fast stars stream toward the camera (world units per second).
 const SPEED = 26;
 // How far the cursor pushes the camera, and how quickly it eases there.
-const PARALLAX = 90;
+const PARALLAX = 135;
 const EASE = 0.045;
 
 function makeTexture(draw: (ctx: CanvasRenderingContext2D) => void) {
