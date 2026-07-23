@@ -13,6 +13,10 @@ const ANGLE = 30;
 // the camera, so we fade it out rather than render it.
 const VISIBLE_RANGE = 2.5;
 
+// Breathing room between neighbouring photos, in px. Folding this into the
+// radius spreads the slides apart instead of letting them overlap.
+const SLIDE_GAP = 34;
+
 // Fraction of the container's height a slide occupies (the rest is breathing
 // room so the shadow/edges aren't clipped).
 const SLIDE_HEIGHT_RATIO = 0.88;
@@ -61,7 +65,7 @@ export default function PanoramaSlider() {
     return () => observer.disconnect();
   }, []);
 
-  const radius = slideWidth / (2 * Math.tan(toRadians(ANGLE) / 2));
+  const radius = (slideWidth + SLIDE_GAP) / (2 * Math.tan(toRadians(ANGLE) / 2));
 
   const go = (next: number) => {
     setActive(((next % count) + count) % count);
@@ -197,6 +201,21 @@ export default function PanoramaSlider() {
           setIsDragging(true);
         }}
         onPointerMove={(event) => {
+          // Slides are 3D-transformed, so the browser hit-tests to the wrapper
+          // and never applies their cursor. Work out what's actually under the
+          // pointer and set the cursor here instead. pointermove is already
+          // rate-limited by the browser, so this needs no extra throttling.
+          const container = containerRef.current;
+          if (container) {
+            const overSlide = document
+              .elementsFromPoint(event.clientX, event.clientY)
+              .some(
+                (node) =>
+                  (node as HTMLElement).dataset?.slideIndex !== undefined,
+              );
+            container.style.cursor = overSlide ? "pointer" : "";
+          }
+
           if (dragStart.current === null) return;
           const delta = event.clientX - dragStart.current;
           if (Math.abs(delta) > 8) didDrag.current = true;
@@ -207,11 +226,7 @@ export default function PanoramaSlider() {
         onPointerLeave={endDrag}
         onClick={openSlide}
       >
-        <div
-          key={filter}
-          className="absolute inset-0 animate-[photo-fade_450ms_ease-out] motion-reduce:animate-none"
-          style={{ transformStyle: "preserve-3d" }}
-        >
+        <div className="absolute inset-0" style={{ transformStyle: "preserve-3d" }}>
           {visible.map((photo, index) => {
             let offset = index - safeActive;
             if (offset > count / 2) offset -= count;
@@ -255,12 +270,13 @@ export default function PanoramaSlider() {
                 }}
               >
                 <Image
+                  key={filter}
                   src={photo.image}
                   alt={photo.title}
                   fill
                   sizes="(min-width: 640px) 380px, 60vw"
                   quality={90}
-                  className="object-cover"
+                  className="object-cover animate-[photo-fade_450ms_ease-out] motion-reduce:animate-none"
                   draggable={false}
                   priority={index < 3}
                 />
@@ -326,7 +342,7 @@ export default function PanoramaSlider() {
           aria-modal="true"
           aria-label={visible[lightbox].title}
           onClick={() => setLightbox(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-10"
+          className="fixed inset-0 z-[100] flex animate-[lightbox-in_250ms_ease-out] items-center justify-center bg-black/90 p-4 backdrop-blur-sm motion-reduce:animate-none sm:p-10"
         >
           <button
             type="button"
@@ -356,12 +372,13 @@ export default function PanoramaSlider() {
           >
             <div className="relative h-[70vh] w-[min(90vw,60rem)]">
               <Image
+                key={visible[lightbox].id}
                 src={visible[lightbox].image}
                 alt={visible[lightbox].title}
                 fill
                 sizes="(min-width: 640px) 60rem, 90vw"
                 quality={90}
-                className="rounded-2xl object-contain"
+                className="rounded-2xl object-contain animate-[photo-fade_300ms_ease-out] motion-reduce:animate-none"
                 priority
               />
             </div>

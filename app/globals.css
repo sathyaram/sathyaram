@@ -194,3 +194,13 @@ body {
     opacity: 1;
   }
 }
+
+/* Lightbox entrance. */
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
