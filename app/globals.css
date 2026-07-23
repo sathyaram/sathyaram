@@ -29,6 +29,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   transition:
@@ -79,6 +80,7 @@ body {
 }
 
 .name-glow:hover {
+  color: #fff;
   text-shadow:
     0 0 5px white,
     0 0 15px white,
@@ -92,4 +94,79 @@ body {
   .name-glow:hover {
     transition: none;
   }
+}
+
+/* Line-draw keyframe used by the logo hover, ported from the old site. */
+@keyframes stroke-offset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*
+ * Logo hover, ported from the old site's _menu.scss: the mark scales up, its
+ * fills dissolve, and the outlines draw themselves in.
+ */
+.logo-mark {
+  overflow: visible;
+  stroke-linecap: round;
+  transition: transform 300ms ease;
+}
+
+.logo-mark .s-line {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1px;
+  stroke-dasharray: 126.939;
+  stroke-dashoffset: 126.939;
+  transition: all 300ms ease;
+}
+
+.logo-mark .r-line {
+  stroke-width: 1px;
+  stroke: transparent;
+  stroke-dasharray: 160.045;
+  stroke-dashoffset: 160.045;
+  transition: all 300ms ease;
+}
+
+.logo-link:hover .logo-mark {
+  transform: scale(1.5);
+}
+
+.logo-link:hover .logo-mark .s-line {
+  fill: transparent;
+  animation: stroke-offset 1.4s ease forwards;
+}
+
+.logo-link:hover .logo-mark .r-line {
+  fill: transparent;
+  stroke: currentColor;
+  animation: stroke-offset 0.8s ease forwards 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-link:hover .logo-mark {
+    transform: none;
+  }
+  .logo-mark .s-line,
+  .logo-mark .r-line {
+    animation: none !important;
+  }
+}
+
+/*
+ * Gradient outline that appears on card hover. The two-layer mask keeps only
+ * the padding ring painted, so the card interior stays transparent and the
+ * starfield shows through.
+ */
+.gradient-ring {
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--ring-from), var(--ring-to));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }

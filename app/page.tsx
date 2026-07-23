@@ -17,6 +17,7 @@ const featured = [
     blurb: "A mission-driven thinktank center.",
     from: "#022A4E",
     to: "#00649F",
+    span: "sm:col-span-2",
     image: "/websites/assets/brookings.webp",
   },
   {
@@ -26,6 +27,7 @@ const featured = [
     blurb: "Patagonia's greenroots foundation.",
     from: "#8C382C",
     to: "#F59431",
+    span: "sm:col-span-3",
     image: "/websites/assets/homeplanet.png",
   },
   {
@@ -33,8 +35,9 @@ const featured = [
     title: "Vilcek Foundation",
     year: "2020",
     blurb: "A celebration of immigrants & the arts.",
-    from: "#5E1F52",
-    to: "#FFB0F0",
+    from: "#5C4433",
+    to: "#E3D2B4",
+    span: "sm:col-span-3",
     image: "/websites/assets/vilcek.png",
   },
   {
@@ -44,6 +47,7 @@ const featured = [
     blurb: "The definitive enterprise for brain cancer research.",
     from: "#042342",
     to: "#2B86E0",
+    span: "sm:col-span-2",
     image: "/websites/assets/sontag.png",
   },
 ];
@@ -60,7 +64,18 @@ export default function Home() {
 
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
           <span className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-accent">
-            Hi! I&apos;m <span className="name-glow">Sathya Ram</span>.
+            Hi! I&apos;m{" "}
+            {/* Split per letter so each one glows independently on hover. */}
+            {"Sathya Ram".split("").map((char, index) =>
+              char === " " ? (
+                <span key={index}>&nbsp;</span>
+              ) : (
+                <span key={index} className="name-glow">
+                  {char}
+                </span>
+              ),
+            )}
+            .
           </span>
           <span className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]">
             Developer &amp; Designer
@@ -74,13 +89,13 @@ export default function Home() {
       </section>
 
       {/* ---------- Featured work: 2×2 full-width grid ---------- */}
-      <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
+      <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 sm:grid-cols-5 sm:gap-8">
         {featured.map((project) => (
           <Link
             key={project.slug}
             href={`/websites/${project.slug}`}
             style={{ transitionTimingFunction: SPRING }}
-            className="group relative min-h-[26rem] overflow-hidden rounded-[2.5rem] border border-white/10 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/40 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10"
+            className={`group relative min-h-[26rem] overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10 ${project.span}`}
           >
             {/* The brand fill lives on its own layer so hover can dissolve it,
                 leaving just the outline with the starfield showing through. */}
@@ -92,9 +107,21 @@ export default function Home() {
               }}
             />
 
+            {/* ...and the same gradient takes over as the outline. */}
+            <div
+              aria-hidden="true"
+              className="gradient-ring pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              style={
+                {
+                  "--ring-from": project.from,
+                  "--ring-to": project.to,
+                } as React.CSSProperties
+              }
+            />
+
             {/* Artwork tucked into the bottom-left corner, peeking out. */}
             <div
-              className="absolute bottom-0 left-6 h-[46%] w-[72%] overflow-hidden rounded-t-3xl shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 sm:left-10"
+              className="absolute bottom-0 right-6 h-[46%] w-[72%] overflow-hidden rounded-t-3xl transition-transform duration-500 group-hover:-translate-y-2 sm:right-10"
               style={{ transitionTimingFunction: SPRING }}
             >
               <Image
@@ -124,15 +151,6 @@ export default function Home() {
         ))}
       </section>
 
-      <div className="mx-auto mt-12 max-w-[1600px] text-center">
-        <Link
-          href="/websites"
-          className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground/30"
-        >
-          View all websites
-          <span aria-hidden="true">→</span>
-        </Link>
-      </div>
 
       {/* ---------- Photography panorama ---------- */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
@@ -145,16 +163,8 @@ export default function Home() {
           </h2>
         </div>
 
-        <PanoramaSlider />
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/photography"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground/30"
-          >
-            View all photography
-            <span aria-hidden="true">→</span>
-          </Link>
+        <div className="relative w-screen ml-[calc(50%-50vw)]">
+          <PanoramaSlider />
         </div>
       </section>
     </div>

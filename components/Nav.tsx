@@ -26,7 +26,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-full border border-border bg-background/80 px-6 py-2 backdrop-blur">
-        <Link href="/" aria-label="Sathya Ram — home" className="flex items-center">
+        <Link href="/" aria-label="Sathya Ram — home" className="logo-link flex items-center">
           <Logo className="h-7 w-auto text-foreground transition-opacity hover:opacity-80" />
         </Link>
 
