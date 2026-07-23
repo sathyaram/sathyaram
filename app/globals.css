@@ -76,7 +76,10 @@ body {
 .name-glow {
   display: inline-block;
   text-shadow: none;
-  transition: text-shadow 2s ease-in-out;
+  /* Leaving a letter: the glow drifts back out slowly. */
+  transition:
+    color 2s ease-in-out,
+    text-shadow 2s ease-in-out;
 }
 
 .name-glow:hover {
@@ -86,7 +89,10 @@ body {
     0 0 15px white,
     0 0 35px white,
     0 0 5px white;
-  transition: none;
+  /* Entering: quick, but still eased rather than a hard snap. */
+  transition:
+    color 250ms ease-out,
+    text-shadow 250ms ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -104,29 +110,34 @@ body {
 }
 
 /*
- * Logo hover, ported from the old site's _menu.scss: the mark scales up, its
- * fills dissolve, and the outlines draw themselves in.
+ * Logo hover — a 1:1 port of the old site's _menu.scss. The mark scales up,
+ * the fills dissolve, the outlines draw themselves in, and (the bit that
+ * makes it work) the gradient's own <stop> colours animate to transparent
+ * rather than the shape's fill being swapped out.
  */
 .logo-mark {
-  overflow: visible;
+  overflow: visible !important;
   stroke-linecap: round;
   transition: transform 300ms ease;
 }
 
 .logo-mark .s-line {
-  fill: currentColor;
-  stroke: currentColor;
+  fill: rgba(43, 170, 226, 0.5);
+  stroke: rgba(43, 170, 226, 0.5);
   stroke-width: 1px;
-  stroke-dasharray: 126.939;
-  stroke-dashoffset: 126.939;
+  stroke-dasharray: 126.93897247314453;
+  stroke-dashoffset: 126.93897247314453;
   transition: all 300ms ease;
 }
 
 .logo-mark .r-line {
   stroke-width: 1px;
-  stroke: transparent;
-  stroke-dasharray: 160.045;
-  stroke-dashoffset: 160.045;
+  stroke-dasharray: 160.04493713378906;
+  stroke-dashoffset: 160.04493713378906;
+  transition: all 300ms ease;
+}
+
+.logo-mark stop {
   transition: all 300ms ease;
 }
 
@@ -134,24 +145,27 @@ body {
   transform: scale(1.5);
 }
 
-.logo-link:hover .logo-mark .s-line {
-  fill: transparent;
+.logo-link:hover .logo-mark .s-line,
+.logo-link:hover .logo-mark polygon {
   animation: stroke-offset 1.4s ease forwards;
+  fill-opacity: 0;
+  fill: rgba(255, 255, 255, 0);
 }
 
 .logo-link:hover .logo-mark .r-line {
-  fill: transparent;
-  stroke: currentColor;
   animation: stroke-offset 0.8s ease forwards 0.2s;
+  transition: fill 300ms ease;
+  stroke: #2baae2;
+}
+
+.logo-link:hover .logo-mark stop:first-child,
+.logo-link:hover .logo-mark stop:last-child {
+  stop-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .logo-link:hover .logo-mark {
     transform: none;
-  }
-  .logo-mark .s-line,
-  .logo-mark .r-line {
-    animation: none !important;
   }
 }
 
@@ -161,7 +175,7 @@ body {
  * starfield shows through.
  */
 .gradient-ring {
-  padding: 2px;
+  padding: 4px;
   border-radius: inherit;
   background: linear-gradient(135deg, var(--ring-from), var(--ring-to));
   -webkit-mask:
@@ -169,4 +183,14 @@ body {
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+/* Photos easing in after the photography filter changes. */
+@keyframes photo-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

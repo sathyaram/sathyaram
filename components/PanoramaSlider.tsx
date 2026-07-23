@@ -25,6 +25,9 @@ export default function PanoramaSlider() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const dragStart = useRef<number | null>(null);
+  // Synchronous flag: `dragDelta` is state, so it can still read stale inside
+  // the click handler and wrongly swallow a plain click.
+  const didDrag = useRef(false);
 
   const visible = useMemo(
     () => (filter === "all" ? photos : photos.filter((p) => p.category === filter)),
@@ -153,17 +156,24 @@ export default function PanoramaSlider() {
         style={{ perspective: "1200px" }}
         onPointerDown={(event) => {
           dragStart.current = event.clientX;
+          didDrag.current = false;
           setIsDragging(true);
         }}
         onPointerMove={(event) => {
           if (dragStart.current === null) return;
-          setDragDelta(event.clientX - dragStart.current);
+          const delta = event.clientX - dragStart.current;
+          if (Math.abs(delta) > 8) didDrag.current = true;
+          setDragDelta(delta);
         }}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
         onPointerLeave={endDrag}
       >
-        <div className="absolute inset-0" style={{ transformStyle: "preserve-3d" }}>
+        <div
+          key={filter}
+          className="absolute inset-0 animate-[photo-fade_450ms_ease-out] motion-reduce:animate-none"
+          style={{ transformStyle: "preserve-3d" }}
+        >
           {visible.map((photo, index) => {
             let offset = index - safeActive;
             if (offset > count / 2) offset -= count;
@@ -188,7 +198,7 @@ export default function PanoramaSlider() {
                 aria-label={`Open ${photo.title}`}
                 onClick={() => {
                   // A drag shouldn't also open the lightbox.
-                  if (Math.abs(dragDelta) > 6) return;
+                  if (didDrag.current) return;
                   if (offset !== 0) go(index);
                   else setLightbox(index);
                 }}
@@ -201,7 +211,11 @@ export default function PanoramaSlider() {
                   transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${-theta}deg)`,
                   transition: isDragging
                     ? "none"
-                    : "transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease",
+                    : hidden
+                      ? // Wrapping slide: reposition instantly while invisible,
+                        // otherwise it visibly flies across the frame.
+                        "opacity 400ms ease"
+                      : "transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease",
                   opacity: hidden ? 0 : 1,
                   pointerEvents: hidden ? "none" : "auto",
                   zIndex: 100 - Math.round(Math.abs(fractional) * 10),

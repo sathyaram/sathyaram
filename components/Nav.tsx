@@ -8,9 +8,8 @@ import Logo from "./Logo";
 import { MenuIcon, CloseIcon } from "./icons";
 import styles from "./Nav.module.scss";
 
-// The site reads as a one-pager now: Websites, Photography and Designs all
-// live on the homepage. Their routes still exist (case studies are linked
-// from the homepage cards), they're just not in the nav.
+// One-pager: everything lives on the homepage, with individual routes only
+// for the website case studies (linked from the homepage cards).
 const links = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

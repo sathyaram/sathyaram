@@ -6,7 +6,6 @@ import GradientBackground from "@/components/GradientBackground";
 import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
-import "./custom.scss";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
