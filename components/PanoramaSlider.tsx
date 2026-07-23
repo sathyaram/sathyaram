@@ -236,10 +236,13 @@ export default function PanoramaSlider() {
             const theta = fractional * ANGLE;
             const radians = toRadians(theta);
 
+            // A true concave cylinder: each photo sits on a ring, the centre
+            // one flat against the viewing plane and the rest receding behind
+            // it. x = R·sinθ, z = -R·(1-cosθ), and the panel rotates by +θ to
+            // stay tangent to the ring. (The earlier damped version flipped
+            // the rotation sign, which is what made the tilt look off.)
             const x = radius * Math.sin(radians);
-            // Damped cylinder depth — at full strength the outer slides rush
-            // the camera and balloon past the frame.
-            const z = radius * (1 - Math.cos(radians)) * 0.7 - radius * 0.35;
+            const z = -radius * (1 - Math.cos(radians));
             const hidden = Math.abs(fractional) > VISIBLE_RANGE;
 
             return (
@@ -256,7 +259,7 @@ export default function PanoramaSlider() {
                   height: "88%",
                   // Percentage margins resolve against the container's *width*,
                   // so centring has to be done with a translate instead.
-                  transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${-theta}deg)`,
+                  transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${theta}deg)`,
                   transition: isDragging
                     ? "none"
                     : hidden
