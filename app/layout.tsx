@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
 import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
+import IntroLoader from "@/components/IntroLoader";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -49,6 +50,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="relative min-h-full flex flex-col font-sans">
+        <IntroLoader />
         <GradientBackground />
         <StarFieldThree />
         <Nav />

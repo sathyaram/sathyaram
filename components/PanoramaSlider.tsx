@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { photos, CAMERA, CATEGORIES, type Category } from "@/lib/photos";
@@ -30,6 +30,7 @@ export default function PanoramaSlider() {
   const [dragDelta, setDragDelta] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [closing, setClosing] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const dragStart = useRef<number | null>(null);
@@ -44,6 +45,16 @@ export default function PanoramaSlider() {
   const count = visible.length;
   // Guard against a filter change leaving `active` past the end of the list.
   const safeActive = Math.min(active, Math.max(count - 1, 0));
+
+  // Fade the lightbox out before unmounting it (matches the lightbox-out
+  // animation duration) rather than having it vanish instantly.
+  const closeLightbox = useCallback(() => {
+    setClosing(true);
+    window.setTimeout(() => {
+      setLightbox(null);
+      setClosing(false);
+    }, 200);
+  }, []);
 
   // Slide width drives the cylinder radius, so it has to react to layout.
   useEffect(() => {
@@ -82,7 +93,7 @@ export default function PanoramaSlider() {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (lightbox !== null) {
-        if (event.key === "Escape") setLightbox(null);
+        if (event.key === "Escape") closeLightbox();
         if (event.key === "ArrowLeft")
           setLightbox((i) => (i === null ? i : (i - 1 + count) % count));
         if (event.key === "ArrowRight")
@@ -111,7 +122,7 @@ export default function PanoramaSlider() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [count, lightbox]);
+  }, [count, lightbox, closeLightbox]);
 
   // Don't let the page scroll behind an open lightbox.
   useEffect(() => {
@@ -147,6 +158,7 @@ export default function PanoramaSlider() {
     const index = resolveSlideIndex(event);
     if (index === null || Number.isNaN(index)) return;
     if (index !== safeActive) go(index);
+    setClosing(false);
     setLightbox(index);
   };
 
@@ -344,12 +356,16 @@ export default function PanoramaSlider() {
           role="dialog"
           aria-modal="true"
           aria-label={visible[lightbox].title}
-          onClick={() => setLightbox(null)}
-          className="fixed inset-0 z-[100] flex animate-[lightbox-in_250ms_ease-out] items-center justify-center bg-black/90 p-4 backdrop-blur-sm motion-reduce:animate-none sm:p-10"
+          onClick={closeLightbox}
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm motion-reduce:animate-none sm:p-10 ${
+            closing
+              ? "animate-[lightbox-out_200ms_ease-in_forwards]"
+              : "animate-[lightbox-in_250ms_ease-out]"
+          }`}
         >
           <button
             type="button"
-            onClick={() => setLightbox(null)}
+            onClick={closeLightbox}
             aria-label="Close"
             className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10 sm:right-8 sm:top-8"
           >

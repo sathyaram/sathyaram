@@ -82,19 +82,20 @@ export default function StarFieldThree() {
         positions[o + 1] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
         positions[o + 2] = -Math.random() * FIELD_DEPTH;
 
-        // Loosely the real spectral spread — blue through white, yellow,
-        // orange, red — plus a little ice-cyan and violet, which aren't
-        // strictly astronomical but add colour without tipping into confetti.
+        // Loosely the real spectral spread, but leaning a bit more colourful:
+        // roughly 40% white, the rest spread across blue, cyan, yellow,
+        // orange, red, and violet at slightly higher saturation than a strict
+        // night sky — enough colour to notice without tipping into confetti.
         const roll = Math.random();
-        if (roll < 0.05) tint.setHSL(0.6, 0.5, 0.82); // blue
-        else if (roll < 0.11) tint.setHSL(0.52, 0.45, 0.85); // ice cyan
-        else if (roll < 0.22) tint.setHSL(0.58, 0.22, 0.92); // blue-white
+        if (roll < 0.09) tint.setHSL(0.6, 0.6, 0.8); // blue
+        else if (roll < 0.17) tint.setHSL(0.52, 0.55, 0.83); // ice cyan
+        else if (roll < 0.27) tint.setHSL(0.58, 0.28, 0.9); // blue-white
         else if (roll < 0.55) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
-        else if (roll < 0.7) tint.setHSL(0.13, 0.3, 0.9); // yellow-white
-        else if (roll < 0.82) tint.setHSL(0.1, 0.55, 0.82); // yellow
-        else if (roll < 0.9) tint.setHSL(0.07, 0.6, 0.76); // orange
-        else if (roll < 0.96) tint.setHSL(0.03, 0.65, 0.72); // red
-        else tint.setHSL(0.76, 0.4, 0.82); // violet
+        else if (roll < 0.68) tint.setHSL(0.13, 0.4, 0.88); // yellow-white
+        else if (roll < 0.8) tint.setHSL(0.1, 0.65, 0.8); // yellow
+        else if (roll < 0.89) tint.setHSL(0.07, 0.7, 0.74); // orange
+        else if (roll < 0.95) tint.setHSL(0.02, 0.72, 0.7); // red
+        else tint.setHSL(0.77, 0.5, 0.8); // violet
         colors[o] = tint.r;
         colors[o + 1] = tint.g;
         colors[o + 2] = tint.b;

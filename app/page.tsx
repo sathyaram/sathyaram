@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Sparkle from "@/components/Sparkle";
 import PanoramaSlider from "@/components/PanoramaSlider";
+import Reveal from "@/components/Reveal";
 
 // Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
 const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
@@ -63,26 +64,24 @@ export default function Home() {
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-accent/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
-          <span className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-accent">
-            Hi! I&apos;m{" "}
-            {/* Split per letter so each one glows independently on hover. */}
-            {"Sathya Ram".split("").map((char, index) =>
-              char === " " ? (
-                <span key={index}>&nbsp;</span>
-              ) : (
-                <span key={index} className="name-glow">
-                  {char}
-                </span>
-              ),
-            )}
-            .
-          </span>
-          <span className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]">
-            Developer &amp; Designer
-          </span>
+          <Reveal
+            as="span"
+            className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-accent"
+            segments={[
+              { text: "Hi! I'm " },
+              { text: "Sathya Ram", className: "name-glow" },
+              { text: "." },
+            ]}
+          />
+          <Reveal
+            as="span"
+            className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]"
+            text="Developer & Designer"
+            delay={340}
+          />
         </h1>
 
-        <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+        <p className="reveal-block mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted [animation-delay:900ms] sm:text-xl">
           I build institutional websites, design brand and interface work, and
           shoot photography on the side.
         </p>
@@ -140,9 +139,11 @@ export default function Home() {
               <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60">
                 {project.year}
               </p>
-              <h2 className="mt-2 max-w-[85%] font-display text-3xl font-bold leading-[1.05] text-white sm:text-[2.5rem]">
-                {project.title}
-              </h2>
+              <Reveal
+                as="h2"
+                className="mt-2 block max-w-[85%] font-display text-3xl font-bold leading-[1.05] text-white sm:text-[2.5rem]"
+                text={project.title}
+              />
               <p className="mt-3 max-w-sm text-sm text-white/75">
                 {project.blurb}
               </p>

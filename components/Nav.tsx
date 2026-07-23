@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
@@ -18,13 +18,31 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // The bar is chromeless at the top and only gains its pill background once
+  // you scroll (or when the mobile menu is open, so it stays legible).
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = scrolled || open;
 
   const isLinkActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
-      <nav className="mx-auto flex max-w-4xl items-center justify-between rounded-full border border-border bg-background/80 px-4 py-2 backdrop-blur">
+      <nav
+        className={`mx-auto flex max-w-4xl items-center justify-between rounded-full border px-4 py-2 transition-colors duration-300 ${
+          solid
+            ? "border-border bg-background/80 backdrop-blur"
+            : "border-transparent bg-transparent"
+        }`}
+      >
         <Link href="/" aria-label="Sathya Ram — home" className="logo-link flex items-center">
           <Logo className="h-7 w-auto text-foreground transition-opacity hover:opacity-80" />
         </Link>

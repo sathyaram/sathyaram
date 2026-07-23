@@ -122,12 +122,17 @@ body {
 }
 
 .logo-mark .s-line {
-  fill: rgba(43, 170, 226, 0.5);
-  stroke: rgba(43, 170, 226, 0.5);
+  fill: #171412;
+  stroke: #171412;
   stroke-width: 1px;
   stroke-dasharray: 126.93897247314453;
   stroke-dashoffset: 126.93897247314453;
   transition: all 300ms ease;
+}
+
+.dark .logo-mark .s-line {
+  fill: #ffffff;
+  stroke: #ffffff;
 }
 
 .logo-mark .r-line {
@@ -139,10 +144,6 @@ body {
 
 .logo-mark stop {
   transition: all 300ms ease;
-}
-
-.logo-link:hover .logo-mark {
-  transform: scale(1.5);
 }
 
 .logo-link:hover .logo-mark .s-line,
@@ -163,19 +164,13 @@ body {
   stop-color: transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .logo-link:hover .logo-mark {
-    transform: none;
-  }
-}
-
 /*
  * Gradient outline that appears on card hover. The two-layer mask keeps only
  * the padding ring painted, so the card interior stays transparent and the
  * starfield shows through.
  */
 .gradient-ring {
-  padding: 4px;
+  padding: 6px;
   border-radius: inherit;
   background: linear-gradient(135deg, var(--ring-from), var(--ring-to));
   -webkit-mask:
@@ -195,12 +190,143 @@ body {
   }
 }
 
-/* Lightbox entrance. */
+/* Lightbox entrance / exit. */
 @keyframes lightbox-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes lightbox-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*
+ * Per-letter "rise" reveal (inspired by yasingenc.net): each letter starts
+ * below its line, invisible, and eases up into place. The stagger comes from
+ * an inline animation-delay set per letter in the Reveal component.
+ */
+@keyframes letter-rise {
+  from {
+    transform: translateY(0.85em);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.reveal-letter {
+  display: inline-block;
+  white-space: pre;
+  animation: letter-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* While the intro loader is on screen, hold every reveal at its start frame
+   (both-fill + paused = frozen at opacity 0) so the text streams in as the
+   loader clears rather than finishing behind it. */
+/* Whole-block variant for longer copy (subheads) — one gentle rise+fade. */
+.reveal-block {
+  animation: letter-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html.intro-playing .reveal-letter,
+html.intro-playing .reveal-block {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-letter,
+  .reveal-block {
+    animation: none;
+  }
+}
+
+/* ---------- Intro loader ---------- */
+@keyframes intro-panel-up {
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes intro-logo-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.intro-panel {
+  position: absolute;
+  top: 0;
+  width: 25.5%;
+  height: 100%;
+  background: #0b0f1a;
+  will-change: transform;
+  animation: intro-panel-up 750ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.intro-panel:nth-child(1) {
+  left: 0;
+  animation-delay: 2200ms;
+}
+.intro-panel:nth-child(2) {
+  left: 25%;
+  animation-delay: 2320ms;
+}
+.intro-panel:nth-child(3) {
+  left: 50%;
+  animation-delay: 2440ms;
+}
+.intro-panel:nth-child(4) {
+  left: 75%;
+  animation-delay: 2560ms;
+}
+
+.intro-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(260px, 42vw);
+  transform: translate(-50%, -50%);
+  z-index: 201;
+  animation: intro-logo-out 500ms ease forwards 1900ms;
+}
+
+/* The intro logo draws itself (independent of the hover animation). */
+.intro-logo .logo-mark .s-line {
+  fill: transparent;
+  stroke: #ffffff;
+  animation: stroke-offset 1600ms ease forwards;
+}
+
+.intro-logo .logo-mark .r-line {
+  fill: transparent;
+  stroke: #2baae2;
+  animation: stroke-offset 1200ms ease forwards 250ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-panel,
+  .intro-logo,
+  .intro-logo .logo-mark .s-line,
+  .intro-logo .logo-mark .r-line {
+    animation: none;
   }
 }
