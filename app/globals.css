@@ -68,26 +68,3 @@ body {
   }
 }
 
-@keyframes star-drift-small {
-  0% {
-    transform: rotate(-1deg) translate(0, 0);
-  }
-  50% {
-    transform: rotate(1.5deg) translate(1.5%, -2%);
-  }
-  100% {
-    transform: rotate(-1deg) translate(0, 0);
-  }
-}
-
-@keyframes star-drift-big {
-  0% {
-    transform: rotate(1.5deg) translate(0, 0);
-  }
-  50% {
-    transform: rotate(-2deg) translate(-2.5%, 2%);
-  }
-  100% {
-    transform: rotate(1.5deg) translate(0, 0);
-  }
-}

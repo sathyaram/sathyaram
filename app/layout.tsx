@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Work_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
-import StarField from "@/components/StarField";
+import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
 import "./globals.css";
 import "./custom.scss";
@@ -49,7 +49,7 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-full flex flex-col font-sans">
         <GradientBackground />
-        <StarField />
+        <StarFieldThree />
         <Nav />
         <main className="flex-1">
           <RouteTransition>{children}</RouteTransition>
