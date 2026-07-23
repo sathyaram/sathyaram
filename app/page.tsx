@@ -45,15 +45,15 @@ export default function Home() {
   return (
     <div className="px-4 pb-24 sm:px-6">
       {/* ---------- Hero ---------- */}
-      <section className="relative mx-auto max-w-5xl py-20 text-center sm:py-28">
+      <section className="relative mx-auto max-w-6xl pt-20 pb-32 text-center sm:pt-28 sm:pb-44">
         {/* Decorative sparkles, positioned asymmetrically around the headline */}
         <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-accent motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-accent [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-accent/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
-        <h1 className="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-bold leading-[0.95] tracking-[-0.035em]">
-          <span className="block text-accent">Hi. I&apos;m Sathya.</span>
-          <span className="block">A Designer.</span>
+        <h1 className="font-display text-[clamp(2.5rem,7.4vw,5.75rem)] font-bold leading-[1.02] tracking-[-0.035em]">
+          <span className="block text-accent">Hi! I&apos;m Sathya Ram.</span>
+          <span className="block">A Developer &amp; Designer</span>
         </h1>
 
         <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">

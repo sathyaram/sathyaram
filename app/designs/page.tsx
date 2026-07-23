@@ -3,6 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Designs",
+  // Section is hidden from the nav for now; keep it out of search too.
+  robots: { index: false, follow: false },
 };
 
 const designs = [

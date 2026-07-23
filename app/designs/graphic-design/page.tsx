@@ -3,6 +3,8 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Graphic Design",
+  // Section is hidden from the nav for now; keep it out of search too.
+  robots: { index: false, follow: false },
 };
 
 const pieces = [

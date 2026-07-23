@@ -39,9 +39,18 @@ export default function PanoramaSlider() {
   // Radius that seats slides of this width edge-to-edge around the cylinder.
   const radius = slideWidth / (2 * Math.tan(toRadians(ANGLE) / 2));
 
+  // Jump to an absolute index (used by the dots).
   const go = (next: number) => {
     const count = photos.length;
     setActive(((next % count) + count) % count);
+  };
+
+  // Move by a relative amount. Uses the functional updater so that rapid
+  // successive calls (holding an arrow key) each build on the previous
+  // value rather than a stale one from the same render.
+  const step = (delta: number) => {
+    const count = photos.length;
+    setActive((prev) => (((prev + delta) % count) + count) % count);
   };
 
   const endDrag = () => {
@@ -49,7 +58,7 @@ export default function PanoramaSlider() {
     dragStart.current = null;
     setIsDragging(false);
     const steps = Math.round(-dragDelta / (slideWidth * 0.6));
-    if (steps !== 0) go(active + steps);
+    if (steps !== 0) step(steps);
     setDragDelta(0);
   };
 
@@ -60,7 +69,17 @@ export default function PanoramaSlider() {
         role="region"
         aria-roledescription="carousel"
         aria-label="Photography"
-        className="relative mx-auto h-[clamp(20rem,42vw,30rem)] w-full touch-pan-y overflow-hidden"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            step(-1);
+          } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            step(1);
+          }
+        }}
+        className="relative mx-auto h-[clamp(20rem,42vw,30rem)] w-full touch-pan-y overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
         style={{ perspective: "1200px" }}
         onPointerDown={(event) => {
           dragStart.current = event.clientX;
@@ -98,7 +117,6 @@ export default function PanoramaSlider() {
             // curve readable while holding the panorama feel.
             const z = radius * (1 - Math.cos(radians)) * 0.7 - radius * 0.35;
             const hidden = Math.abs(fractional) > VISIBLE_RANGE;
-            const isActive = offset === 0;
 
             return (
               <a
@@ -116,7 +134,10 @@ export default function PanoramaSlider() {
                 className="absolute left-1/2 top-1/2 block overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
                 style={{
                   width: slideWidth,
-                  height: "100%",
+                  // Slightly shorter than the container so the drop shadow has
+                  // room to breathe instead of being clipped by overflow-hidden
+                  // (which we still need to clip the panorama's side slides).
+                  height: "88%",
                   // Percentage margins resolve against the container's *width*,
                   // so centring has to be done with a translate instead.
                   transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${-theta}deg)`,
@@ -137,13 +158,6 @@ export default function PanoramaSlider() {
                   draggable={false}
                   priority={index < 3}
                 />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-black/40 transition-opacity duration-500"
-                  // Enough to recede behind the active slide, but light enough
-                  // that already-dark photos don't crush to black.
-                  style={{ opacity: isActive ? 0 : 0.3 }}
-                />
               </a>
             );
           })}
@@ -162,7 +176,7 @@ export default function PanoramaSlider() {
         <div className="flex items-center gap-4">
           <button
             type="button"
-            onClick={() => go(active - 1)}
+            onClick={() => step(-1)}
             aria-label="Previous photo"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground/5"
           >
@@ -188,7 +202,7 @@ export default function PanoramaSlider() {
 
           <button
             type="button"
-            onClick={() => go(active + 1)}
+            onClick={() => step(1)}
             aria-label="Next photo"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground/5"
           >

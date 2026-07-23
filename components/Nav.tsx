@@ -10,7 +10,9 @@ import styles from "./Nav.module.scss";
 const links = [
   { href: "/about", label: "About" },
   { href: "/websites", label: "Websites" },
-  { href: "/designs", label: "Designs" },
+  // Designs is hidden for now — the pages still exist at /designs, so
+  // restoring it is just uncommenting this line.
+  // { href: "/designs", label: "Designs" },
   { href: "/photography", label: "Photography" },
   { href: "/contact", label: "Contact" },
 ];

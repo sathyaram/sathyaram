@@ -82,17 +82,19 @@ export default function StarFieldThree() {
         positions[o + 1] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
         positions[o + 2] = -Math.random() * FIELD_DEPTH;
 
-        // Roughly the real spectral spread: a few hot blue stars, mostly
-        // white, then yellow/orange, and the occasional red one. Saturation
-        // stays low so it reads as a night sky, not confetti.
+        // Loosely the real spectral spread — blue through white, yellow,
+        // orange, red — plus a little ice-cyan and violet, which aren't
+        // strictly astronomical but add colour without tipping into confetti.
         const roll = Math.random();
-        if (roll < 0.06) tint.setHSL(0.6, 0.45, 0.84); // blue
-        else if (roll < 0.2) tint.setHSL(0.58, 0.2, 0.92); // blue-white
-        else if (roll < 0.62) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
-        else if (roll < 0.8) tint.setHSL(0.13, 0.28, 0.9); // yellow-white
-        else if (roll < 0.92) tint.setHSL(0.1, 0.5, 0.82); // yellow
-        else if (roll < 0.98) tint.setHSL(0.07, 0.6, 0.76); // orange
-        else tint.setHSL(0.03, 0.65, 0.7); // red
+        if (roll < 0.05) tint.setHSL(0.6, 0.5, 0.82); // blue
+        else if (roll < 0.11) tint.setHSL(0.52, 0.45, 0.85); // ice cyan
+        else if (roll < 0.22) tint.setHSL(0.58, 0.22, 0.92); // blue-white
+        else if (roll < 0.55) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
+        else if (roll < 0.7) tint.setHSL(0.13, 0.3, 0.9); // yellow-white
+        else if (roll < 0.82) tint.setHSL(0.1, 0.55, 0.82); // yellow
+        else if (roll < 0.9) tint.setHSL(0.07, 0.6, 0.76); // orange
+        else if (roll < 0.96) tint.setHSL(0.03, 0.65, 0.72); // red
+        else tint.setHSL(0.76, 0.4, 0.82); // violet
         colors[o] = tint.r;
         colors[o + 1] = tint.g;
         colors[o + 2] = tint.b;
