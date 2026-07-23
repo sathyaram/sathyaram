@@ -10,6 +10,23 @@ const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,
 // behind the artwork) so light type stays legible across the whole card.
+const services = [
+  {
+    title: "Development",
+    blurb:
+      "Institutional and nonprofit websites, built with React, Next.js, WordPress, and Drupal.",
+  },
+  {
+    title: "Design",
+    blurb:
+      "Brand identity, interface design, and prototyping in Figma and Illustrator.",
+  },
+  {
+    title: "Photography",
+    blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
+  },
+];
+
 const featured = [
   {
     slug: "brookings",
@@ -87,6 +104,34 @@ export default function Home() {
         </p>
       </section>
 
+      {/* ---------- Services ---------- */}
+      <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
+        <div className="mb-12 text-center">
+          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+            Services
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+            What I do.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="rounded-3xl border border-border p-7"
+            >
+              <h3 className="font-display text-lg font-semibold">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {service.blurb}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ---------- Featured work: 2×2 full-width grid ---------- */}
       {/*
         The 40/60 asymmetric split only has room for a single-line title once
@@ -100,7 +145,7 @@ export default function Home() {
             key={project.slug}
             href={`/websites/${project.slug}`}
             style={{ transitionTimingFunction: SPRING }}
-            className={`group @container relative min-h-[26rem] overflow-hidden rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 sm:min-h-[34rem] sm:rounded-[4rem] sm:p-10 ${project.span}`}
+            className={`group @container relative min-h-[22rem] overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:min-h-[28rem] sm:rounded-[4rem] sm:p-12 ${project.span}`}
           >
             {/* The brand fill lives on its own layer so hover can dissolve it,
                 leaving just the outline with the starfield showing through. */}

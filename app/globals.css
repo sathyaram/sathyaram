@@ -3,11 +3,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #faf9f6;
+  --background: #ede7de;
   --foreground: #171412;
   --accent: #1f4d3f;
   --muted: #6b6b6b;
-  --border: #e5e3df;
+  --border: #ddd6c9;
 }
 
 .dark {
@@ -38,21 +38,53 @@ body {
 }
 
 /*
- * "Bounce" style: an oscillating rotate + translate, swinging back and
- * forth rather than spinning continuously. Reverse-engineered from
- * sairohit.in's actual CSS keyframes (two oversized SVG shapes doing
- * exactly this, 35s, ~5deg-15deg swing) — this is what makes it read as
- * a soft sway instead of a mechanical spin.
+ * Light-mode hero gradient: a handful of large blurred blobs, each drifting
+ * its own independent loop (inspired by the moving mesh gradient on
+ * seanhalpin.xyz) so the blend reads as one soft, living gradient rather
+ * than a single shape spinning in place.
  */
-@keyframes gradient-bounce {
+@keyframes blob-drift-a {
   0% {
-    transform: rotate(-6deg) translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
   }
-  50% {
-    transform: rotate(8deg) translate(3%, -4%) scale(1.04);
+  33% {
+    transform: translate(6%, 8%) scale(1.08);
+  }
+  66% {
+    transform: translate(-4%, 5%) scale(0.96);
   }
   100% {
-    transform: rotate(-6deg) translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes blob-drift-b {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-7%, 4%) scale(0.94);
+  }
+  66% {
+    transform: translate(5%, -6%) scale(1.06);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes blob-drift-c {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, -7%) scale(1.05);
+  }
+  66% {
+    transform: translate(-6%, -3%) scale(0.97);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
 
@@ -328,5 +360,106 @@ html.intro-playing .reveal-block {
   .intro-logo .logo-mark .s-line,
   .intro-logo .logo-mark .r-line {
     animation: none;
+  }
+}
+
+/*
+ * Footer social links — 1:1 port of the old site's hover effect
+ * (_footer.scss): a brand-coloured circle springs in behind the icon and a
+ * text label fades in below it.
+ */
+.social-link {
+  position: relative;
+  display: flex;
+  width: 68px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  color: var(--muted);
+  transition: color 300ms ease;
+}
+
+.social-link svg {
+  position: relative;
+  z-index: 2;
+}
+
+.social-link span {
+  position: relative;
+  z-index: 2;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.social-link::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transform: translateX(-50%) scale(0.3);
+  opacity: 0;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: #fff;
+}
+
+.social-link:hover span,
+.social-link:focus-visible span {
+  opacity: 1;
+}
+
+.social-link:hover::after,
+.social-link:focus-visible::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.social-link[data-brand="resume"]::after {
+  background: var(--accent);
+}
+
+.social-link[data-brand="instagram"]::after {
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+}
+
+.social-link[data-brand="dribbble"]::after {
+  background: #e83e80;
+}
+
+.social-link[data-brand="github"]::after {
+  background: #552775;
+}
+
+.social-link[data-brand="codepen"]::after {
+  background: #181818;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .social-link span,
+  .social-link::after {
+    transition: none;
   }
 }

@@ -169,6 +169,7 @@ export default function PanoramaSlider() {
     const steps = Math.round(-dragDelta / (slideWidth * 0.6));
     if (steps !== 0) step(steps);
     setDragDelta(0);
+    if (containerRef.current) containerRef.current.style.cursor = "";
   };
 
   const current = visible[safeActive];
@@ -211,6 +212,7 @@ export default function PanoramaSlider() {
           dragStart.current = event.clientX;
           didDrag.current = false;
           setIsDragging(true);
+          if (containerRef.current) containerRef.current.style.cursor = "grabbing";
         }}
         onPointerMove={(event) => {
           // Slides are 3D-transformed, so the browser hit-tests to the wrapper
@@ -218,6 +220,15 @@ export default function PanoramaSlider() {
           // pointer and set the cursor here instead. pointermove is already
           // rate-limited by the browser, so this needs no extra throttling.
           const container = containerRef.current;
+
+          if (dragStart.current !== null) {
+            if (container) container.style.cursor = "grabbing";
+            const delta = event.clientX - dragStart.current;
+            if (Math.abs(delta) > 8) didDrag.current = true;
+            setDragDelta(delta);
+            return;
+          }
+
           if (container) {
             const overSlide = document
               .elementsFromPoint(event.clientX, event.clientY)
@@ -227,11 +238,6 @@ export default function PanoramaSlider() {
               );
             container.style.cursor = overSlide ? "pointer" : "";
           }
-
-          if (dragStart.current === null) return;
-          const delta = event.clientX - dragStart.current;
-          if (Math.abs(delta) > 8) didDrag.current = true;
-          setDragDelta(delta);
         }}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
@@ -302,7 +308,7 @@ export default function PanoramaSlider() {
       </div>
 
       {/* Caption + controls */}
-      <div className="mx-auto mt-8 flex max-w-xl flex-col items-center gap-4 px-6 text-center">
+      <div className="mx-auto mt-4 flex max-w-xl flex-col items-center gap-8 px-6 text-center">
         <div>
           <p className="font-display text-lg font-semibold">{current?.title}</p>
           <p className="mt-1 text-xs text-muted">{CAMERA}</p>
