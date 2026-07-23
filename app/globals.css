@@ -8,6 +8,8 @@
   --accent: #1f4d3f;
   --muted: #6b6b6b;
   --border: #ddd6c9;
+  /* The logo gradient's deep-blue stop — richer, so it holds up on beige. */
+  --logo-blue: #0059bc;
 }
 
 .dark {
@@ -16,6 +18,8 @@
   --accent: #8fd9c4;
   --muted: #9a9a9a;
   --border: #23283a;
+  /* The logo gradient's light-cyan stop — pops against the near-black bg. */
+  --logo-blue: #70d5ff;
 }
 
 @theme inline {
@@ -24,6 +28,7 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-logo-blue: var(--logo-blue);
   --font-sans: var(--font-work-sans);
   --font-display: var(--font-bricolage);
 }
@@ -363,97 +368,34 @@ html.intro-playing .reveal-block {
   }
 }
 
-/*
- * Footer social links — 1:1 port of the old site's hover effect
- * (_footer.scss): a brand-coloured circle springs in behind the icon and a
- * text label fades in below it.
- */
-.social-link {
-  position: relative;
+/* Footer icon links — plain currentColor icons, no pseudo-elements: a
+   background tint and a lift on hover, nothing else competing for
+   attention. Accessible name comes from the <a>'s aria-label. */
+.icon-link {
   display: flex;
-  width: 68px;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
   color: var(--muted);
-  transition: color 300ms ease;
-}
-
-.social-link svg {
-  position: relative;
-  z-index: 2;
-}
-
-.social-link span {
-  position: relative;
-  z-index: 2;
-  margin-top: 8px;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-
-.social-link::after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  z-index: 1;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  transform: translateX(-50%) scale(0.3);
-  opacity: 0;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
   transition:
-    transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    opacity 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
 }
 
-.social-link:hover,
-.social-link:focus-visible {
-  color: #fff;
+.icon-link:hover,
+.icon-link:focus-visible {
+  color: var(--foreground);
+  transform: translateY(-2px);
 }
 
-.social-link:hover span,
-.social-link:focus-visible span {
-  opacity: 1;
-}
-
-.social-link:hover::after,
-.social-link:focus-visible::after {
-  transform: translateX(-50%) scale(1);
-  opacity: 1;
-}
-
-.social-link[data-brand="resume"]::after {
-  background: var(--accent);
-}
-
-.social-link[data-brand="instagram"]::after {
-  background: radial-gradient(
-    circle at 33% 100%,
-    #fed373 4%,
-    #f15245 30%,
-    #d92e7f 62%,
-    #9b36b7 85%,
-    #515ecf
-  );
-}
-
-.social-link[data-brand="dribbble"]::after {
-  background: #e83e80;
-}
-
-.social-link[data-brand="github"]::after {
-  background: #552775;
-}
-
-.social-link[data-brand="codepen"]::after {
-  background: #181818;
+@media (prefers-reduced-motion: reduce) {
+  .icon-link {
+    transition: color 200ms ease, background-color 200ms ease;
+  }
+  .icon-link:hover,
+  .icon-link:focus-visible {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

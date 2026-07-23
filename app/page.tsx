@@ -83,7 +83,7 @@ export default function Home() {
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
           <Reveal
             as="span"
-            className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-accent"
+            className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-logo-blue"
             segments={[
               { text: "Hi! I'm " },
               { text: "Sathya Ram", className: "name-glow" },
@@ -139,7 +139,17 @@ export default function Home() {
         (grid-cols-1 all the way up to lg), rather than squeezing into a
         column too narrow for the title.
       */}
-      <section className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
+      <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
+        <div className="mb-12 text-center">
+          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+            Work
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+            Selected projects.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
           <Link
             key={project.slug}
@@ -191,7 +201,7 @@ export default function Home() {
                 {project.year}
               </p>
               <Reveal
-                as="h2"
+                as="h3"
                 // Sized off the card's own width (cqw), not the viewport —
                 // the asymmetric grid gives some cards a much narrower
                 // column than others, so a vw-based size would either
@@ -208,8 +218,8 @@ export default function Home() {
             </div>
           </Link>
         ))}
+        </div>
       </section>
-
 
       {/* ---------- Photography panorama ---------- */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
