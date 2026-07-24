@@ -15,7 +15,7 @@ const services = [
   {
     emoji: "💻",
     title: "Development",
-    blurb: "Institutional and nonprofit websites, built with React, Next, and WordPress.",
+    blurb: "Institutional and nonprofit websites, built with React, Next.js, and WordPress.",
   },
   {
     emoji: "🎨",
@@ -112,15 +112,12 @@ export default function Home() {
           {/* A little version tag, ported from the old site's hero (v7.3
               there — bumped for this rebuild). Plain inline <sup>, letting
               Tailwind's preflight reset (position: relative; top: -0.5em;
-              font-size: 75%) do the actual raising — earlier attempts at
-              manually positioning this absolutely fought that reset
-              instead of using it. The 0.28em here also needs the h1 itself
-              to carry the headline's font-size (moved up from the Reveal
-              span below it) — em on a sibling of the actually-sized
-              element resolves against the inherited ~16px default, not
-              the visible text size, which is why this rendered at 6px
-              before. */}
-          <sup className="text-[0.28em] font-sans font-normal tracking-wide text-muted">
+              font-size: 75%) do the actual raising. The em unit here needs
+              the h1 itself to carry the headline's font-size (moved up
+              from the Reveal span below it) — em on a sibling of the
+              actually-sized element resolves against the inherited
+              ~16px default, not the visible text size. */}
+          <sup className="ml-1 text-[0.18em] font-sans font-normal tracking-wide text-muted">
             v8.0
           </sup>
           <Reveal
@@ -134,17 +131,19 @@ export default function Home() {
 
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
-        <div className="mb-10 text-center">
-          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+        {/* Heading, blurb, and every card are flat siblings in one
+            ScrollGroup so the whole section cascades in as one fast
+            sequence on scroll — heading, then blurb, then each card a
+            beat later — rather than the heading appearing separately
+            from the (previously not-scroll-triggered) grid below it. */}
+        <ScrollGroup className="grid grid-cols-1 gap-5 sm:grid-cols-3" step={70}>
+          <h2 className="col-span-full text-center font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Services
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="col-span-full mx-auto mb-4 max-w-md text-center text-sm leading-normal text-muted sm:text-base">
             I build institutional websites, design brand and interface work,
             and shoot photography on the side.
           </p>
-        </div>
-
-        <ScrollGroup className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}
@@ -175,17 +174,15 @@ export default function Home() {
         column too narrow for the title.
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
-        <div className="mb-10 text-center">
-          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+        {/* Same flat cascade as Services — see the comment there. */}
+        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8" step={70}>
+          <h2 className="col-span-full text-center font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Work
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="col-span-full mx-auto mb-4 max-w-md text-center text-sm leading-normal text-muted sm:text-base">
             A selection of institutional and nonprofit websites I&apos;ve
             designed and built for real clients.
           </p>
-        </div>
-
-        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
           <Link
             key={project.slug}
@@ -265,32 +262,28 @@ export default function Home() {
 
       {/* ---------- Photography panorama ---------- */}
       {/*
-        A single fade-up for the whole section rather than a per-photo
-        stagger: the slides inside PanoramaSlider are already positioned
-        and faded via their own 3D-carousel transform logic, and layering
-        a second, independent reveal system onto each slide risked
-        fighting that rather than complementing it.
+        Heading and blurb cascade in like Services/Work, but the slider
+        itself is one more step in the same sequence rather than its own
+        per-photo stagger — its slides are already positioned and faded
+        via their own 3D-carousel transform logic, and layering a second,
+        independent reveal system onto each slide risked fighting that
+        rather than complementing it.
       */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
-        <ScrollGroup>
+        <ScrollGroup step={70}>
+          <h2 className="text-center font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+            Photography
+          </h2>
+          <p className="mx-auto mb-10 max-w-md text-center text-sm leading-normal text-muted sm:text-base">
+            Portrait, travel, and fine art photography I shoot on the
+            side, mostly on a Sony A7RIV.
+          </p>
           {/* transition-all here since this div has no other hover
               transition of its own to piggyback on (unlike the service
               and project cards) — see the comment on .scroll-stagger-item
               in globals.css for why ScrollGroup doesn't set one itself. */}
-          <div className="transition-all duration-700">
-            <div className="mb-10 text-center">
-              <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
-                Photography
-              </h2>
-              <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
-                Portrait, travel, and fine art photography I shoot on the
-                side, mostly on a Sony A7RIV.
-              </p>
-            </div>
-
-            <div className="relative w-screen ml-[calc(50%-50vw)]">
-              <PanoramaSlider />
-            </div>
+          <div className="relative w-screen ml-[calc(50%-50vw)] transition-all duration-700">
+            <PanoramaSlider />
           </div>
         </ScrollGroup>
       </section>
