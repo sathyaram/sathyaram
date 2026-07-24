@@ -50,10 +50,6 @@ html.intro-playing {
   --font-script: var(--font-script);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-x: hidden;
   background: var(--background);
@@ -61,12 +57,6 @@ body {
   transition:
     background-color 200ms ease,
     color 200ms ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 /*

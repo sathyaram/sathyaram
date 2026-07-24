@@ -37,6 +37,12 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
       ? false
       : window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
+  // The per-child transitionDelay below only exists to stagger the one-time
+  // reveal. Left in place afterward it also delays every later transition
+  // on that element (hover, since these cards use `transition-all`), so
+  // hovering a later card in the grid felt laggy. Clear it back out once
+  // the reveal has had time to finish.
+  const [settled, setSettled] = useState(visible);
 
   useEffect(() => {
     const el = ref.current;
@@ -54,6 +60,13 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!visible || settled) return;
+    const count = Children.count(children);
+    const timeout = setTimeout(() => setSettled(true), (count - 1) * step + 900);
+    return () => clearTimeout(timeout);
+  }, [visible, settled, children, step]);
+
   return (
     <div ref={ref} className={className}>
       {Children.map(children, (child, index) => {
@@ -61,7 +74,10 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
         const element = child as ReactElement<ClonableProps>;
         return cloneElement(element, {
           className: `scroll-stagger-item ${element.props.className ?? ""}`,
-          style: { ...element.props.style, transitionDelay: `${index * step}ms` },
+          style: {
+            ...element.props.style,
+            transitionDelay: settled ? undefined : `${index * step}ms`,
+          },
           "data-visible": visible,
         } as ClonableProps & { "data-visible": boolean });
       })}
