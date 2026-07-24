@@ -6,7 +6,10 @@
   --background: #ede7de;
   --foreground: #171412;
   --accent: #1f4d3f;
-  --muted: #6b6b6b;
+  /* #6b6b6b sat at 4.4:1 on the beige bg — just under WCAG AA (4.5:1)
+     for normal-size text (nav links, blurbs). Nudged to #616161 (~5:1)
+     to clear it with margin; the visual change is negligible. */
+  --muted: #616161;
   --border: #ddd6c9;
   /* Lighter than the logo's own deep-blue stop — reads better as body-size
      headline text on beige than the richer #0059bc did. */
