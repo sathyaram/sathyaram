@@ -61,7 +61,13 @@ export default function Reveal({
   let letterIndex = 0;
 
   return (
-    <Tag className={className} style={style} aria-label={label}>
+    <Tag className={className} style={style}>
+      {/* The animated per-letter spans below are aria-hidden, so the real,
+          readable text lives here as a visually-hidden copy. This gives
+          assistive tech (and the heading's accessible name, when Tag is an
+          h1/h2/h3) the actual words — without putting an aria-label on a
+          generic <span>, which ARIA prohibits (Lighthouse flags it). */}
+      <span className="sr-only">{label}</span>
       {words.map((word, wordIndex) => (
         <span key={wordIndex} className="inline-block whitespace-nowrap">
           {wordIndex > 0 ? " " : ""}
