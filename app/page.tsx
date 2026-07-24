@@ -96,7 +96,7 @@ export default function Home() {
   return (
     <div className="px-4 pb-24 sm:px-6">
       {/* ---------- Hero ---------- */}
-      <section className="relative mx-auto max-w-6xl pt-20 pb-24 text-center sm:pt-28 sm:pb-36">
+      <section className="relative mx-auto max-w-6xl pt-32 pb-32 text-center sm:pt-[200px] sm:pb-[200px]">
         {/* Decorative sparkles, positioned asymmetrically around the headline */}
         <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-sparkle motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />

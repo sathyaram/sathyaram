@@ -455,18 +455,8 @@ body {
   animation-play-state: var(--reveal-play);
 }
 
-/* Whole-block variant for longer copy (subheads) — one gentle rise+fade. */
-.reveal-block {
-  animation-name: letter-rise;
-  animation-duration: 700ms;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  animation-fill-mode: both;
-  animation-play-state: var(--reveal-play);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .reveal-letter,
-  .reveal-block {
+  .reveal-letter {
     animation: none;
   }
 }
