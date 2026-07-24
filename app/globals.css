@@ -153,10 +153,12 @@ body {
     color 250ms ease-out,
     text-shadow 250ms ease-out;
   /* A little magic-wand cursor over the name — the emoji rendered into an
-     SVG so it can be used as a cursor image at all. */
+     SVG so it can be used as a cursor image at all. The <g> flips it
+     horizontally (translate + scale(-1 1)) so the wand faces left; the
+     hotspot x is mirrored to match (2 -> 30). */
   cursor:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='26' font-size='28'%3E%F0%9F%AA%84%3C/text%3E%3C/svg%3E")
-      2 30,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cg transform='translate(32 0) scale(-1 1)'%3E%3Ctext y='26' font-size='28'%3E%F0%9F%AA%84%3C/text%3E%3C/g%3E%3C/svg%3E")
+      30 30,
     pointer;
 }
 

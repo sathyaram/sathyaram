@@ -300,6 +300,12 @@ export default function PanoramaSlider() {
             const z = -radius * (1 - Math.cos(radians));
             const hidden = Math.abs(fractional) > VISIBLE_RANGE;
 
+            // Reveal cascade follows visual position, not DOM order: the
+            // rightmost visible slide (largest offset, ~+2 at the visible
+            // edge) fades in first, then each slide to its left a beat
+            // later. Cleared to 0 once the one-time reveal has settled.
+            const revealDelay = revealSettled ? 0 : Math.max(0, 2 - offset) * 60;
+
             return (
               <button
                 key={photo.id}
@@ -328,8 +334,8 @@ export default function PanoramaSlider() {
                     : hidden
                       ? // Wrapping slide: reposition instantly while invisible,
                         // otherwise it visibly flies across the frame.
-                        `opacity 400ms ease ${revealSettled ? 0 : index * 60}ms`
-                      : `transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease ${revealSettled ? 0 : index * 60}ms`,
+                        `opacity 400ms ease ${revealDelay}ms`
+                      : `transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease ${revealDelay}ms`,
                   opacity: hidden ? 0 : revealed ? 1 : 0,
                   pointerEvents: hidden ? "none" : "auto",
                   zIndex: 100 - Math.round(Math.abs(fractional) * 10),

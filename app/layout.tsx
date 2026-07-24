@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     // exception — it leads with the brand + role rather than a throwaway
     // "Home", since it owns the strongest SEO slot on the site.
     template: "%s | Sathya Ram",
-    default: "Sathya Ram — Developer & Designer",
+    default: "Sathya Ram | Developer & Designer",
   },
   description: "Portfolio of Sathya Ram — websites, design, and photography.",
 };
