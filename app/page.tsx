@@ -139,7 +139,7 @@ export default function Home() {
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Services
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
+          <p className="mx-auto mt-1 max-w-xl text-balance text-lg font-light leading-relaxed text-foreground/70 transition-all duration-700 sm:text-xl">
             I build institutional websites, design brand and interface work,
             and shoot photography on the side.
           </p>
@@ -149,7 +149,7 @@ export default function Home() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-transform duration-300 ease-out hover:-translate-y-1"
+              className="group relative flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1"
             >
               {/* The card's own border — a rotated square rather than a
                   rounded rectangle, so the grid reads as a field of

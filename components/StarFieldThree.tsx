@@ -84,7 +84,20 @@ function startField(
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearAlpha(0);
-  mount.appendChild(renderer.domElement);
+  // three.js is loaded async, so the canvas would otherwise pop in with no
+  // warning. Start it transparent and ease it up once it's mounted, so the
+  // field fades in gracefully instead of appearing out of nowhere.
+  const canvas = renderer.domElement;
+  canvas.style.opacity = "0";
+  canvas.style.transition = "opacity 1200ms ease";
+  mount.appendChild(canvas);
+  // Double rAF so the opacity:0 start frame is painted before we flip to 1,
+  // which is what actually triggers the transition.
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      canvas.style.opacity = "1";
+    }),
+  );
 
   // Round dot with a tight falloff: a crisp core and only a hint of halo,
   // so the field reads as pinpoint stars rather than soft blobs.
