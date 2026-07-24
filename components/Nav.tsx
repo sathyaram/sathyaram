@@ -38,10 +38,8 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <nav
-        className={`mx-auto flex max-w-4xl items-center justify-between rounded-full border px-4 py-2 transition-colors duration-300 ${
-          solid
-            ? "border-border bg-background/80 backdrop-blur"
-            : "border-transparent bg-transparent"
+        className={`mx-auto flex max-w-4xl items-center justify-between rounded-full px-4 py-2 transition-colors duration-300 ${
+          solid ? "bg-background/80 backdrop-blur" : "bg-transparent"
         }`}
       >
         <Link href="/" aria-label="Sathya Ram — home" className="logo-link flex items-center">

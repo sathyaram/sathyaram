@@ -271,7 +271,11 @@ export default function Home() {
       */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
         <ScrollGroup>
-          <div>
+          {/* transition-all here since this div has no other hover
+              transition of its own to piggyback on (unlike the service
+              and project cards) — see the comment on .scroll-stagger-item
+              in globals.css for why ScrollGroup doesn't set one itself. */}
+          <div className="transition-all duration-700">
             <div className="mb-10 text-center">
               <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
                 Photography

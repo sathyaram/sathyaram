@@ -520,25 +520,25 @@ html.intro-playing .reveal-block {
   }
 }
 
-/* Scroll-triggered stagger (see components/ScrollGroup.tsx). */
+/*
+ * Scroll-triggered stagger (see components/ScrollGroup.tsx). Deliberately
+ * has no `transition` of its own: ScrollGroup clones this class directly
+ * onto each card, which already carries its own `transition-all` for
+ * hover. A dedicated `transition: opacity 700ms, transform 700ms` here
+ * previously fully overrode that (the `transition` shorthand replaces
+ * every sub-property, it doesn't merge across classes) — hover's other
+ * properties, like border-color, lost their transition and started
+ * snapping instantly. Letting the card's own transition-all animate both
+ * the reveal and the hover means there's only ever one `transition`
+ * declaration in play, so nothing can clobber the other.
+ */
 .scroll-stagger-item {
   opacity: 0;
   transform: translateY(28px);
-  transition:
-    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scroll-stagger-item[data-visible="true"] {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-stagger-item {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 

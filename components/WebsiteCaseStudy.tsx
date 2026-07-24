@@ -61,6 +61,17 @@ export default function WebsiteCaseStudy({
           ))}
         </div>
 
+        <div className="mt-6 flex justify-center">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/30"
+          >
+            Visit {url} ↗
+          </a>
+        </div>
+
         {/* Timeline / Role / Stack — same "stat row under the title" beat
             as the reference case studies this layout is inspired by. */}
         <div className="mt-10 grid grid-cols-3 gap-4 border-y border-border py-6">
@@ -105,18 +116,9 @@ export default function WebsiteCaseStudy({
           </ul>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 mb-4">
           <CodeBlock filename={codeFilename} lines={codeLines} />
         </div>
-
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/30"
-        >
-          Visit {url} ↗
-        </a>
       </div>
     </div>
   );
