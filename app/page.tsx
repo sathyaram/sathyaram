@@ -15,8 +15,7 @@ const services = [
   {
     emoji: "💻",
     title: "Development",
-    blurb:
-      "Institutional and nonprofit websites, built with React, Next.js, WordPress, and Drupal.",
+    blurb: "Institutional and nonprofit websites, built with React, Next, and WordPress.",
   },
   {
     emoji: "🎨",
@@ -32,7 +31,7 @@ const services = [
   {
     emoji: "🏎️",
     title: "Car Buying Help",
-    blurb: "Finding and buying a reliable used car, from research to test drive — now at CarMax.",
+    blurb: "Helping you find and buy a used car — now at CarMax.",
   },
   {
     emoji: "🎙️",
@@ -99,28 +98,31 @@ export default function Home() {
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
-        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
-          {/* Wrapped so "v8.0" can anchor to this line's own box (shrunk
-              to its text via inline-block) instead of just flowing after
-              it — the badge needs to sit at this exact corner regardless
-              of viewport, not wherever inline layout happens to break. */}
-          <span className="relative inline-block text-[clamp(2.5rem,7.4vw,5.75rem)]">
-            <Reveal
-              as="span"
-              className="block text-logo-blue"
-              segments={[
-                { text: "Hi! I'm " },
-                { text: "Sathya Ram", className: "gradient-text-name name-glow" },
-              ]}
-            />
-            {/* A little version tag, ported from the old site's hero
-                (v7.3 there — bumped for this rebuild). Sized off the same
-                clamp() as the headline (scaled down) rather than em, so it
-                isn't affected by inheriting through this wrapper. */}
-            <sup className="absolute top-[14%] -right-2 text-[clamp(0.55rem,1.6vw,1.25rem)] font-sans font-normal tracking-wide text-muted sm:-right-3">
-              v8.0
-            </sup>
-          </span>
+        <h1
+          className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.5rem,7.4vw,5.75rem)]"
+        >
+          <Reveal
+            as="span"
+            className="text-logo-blue"
+            segments={[
+              { text: "Hi! I'm " },
+              { text: "Sathya Ram", className: "gradient-text-name name-glow" },
+            ]}
+          />
+          {/* A little version tag, ported from the old site's hero (v7.3
+              there — bumped for this rebuild). Plain inline <sup>, letting
+              Tailwind's preflight reset (position: relative; top: -0.5em;
+              font-size: 75%) do the actual raising — earlier attempts at
+              manually positioning this absolutely fought that reset
+              instead of using it. The 0.28em here also needs the h1 itself
+              to carry the headline's font-size (moved up from the Reveal
+              span below it) — em on a sibling of the actually-sized
+              element resolves against the inherited ~16px default, not
+              the visible text size, which is why this rendered at 6px
+              before. */}
+          <sup className="text-[0.28em] font-sans font-normal tracking-wide text-muted">
+            v8.0
+          </sup>
           <Reveal
             as="span"
             className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]"
@@ -128,11 +130,6 @@ export default function Home() {
             delay={340}
           />
         </h1>
-
-        <p className="reveal-block mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted [animation-delay:900ms] sm:text-xl">
-          I build institutional websites, design brand and interface work, and
-          shoot photography on the side.
-        </p>
       </section>
 
       {/* ---------- Services ---------- */}
@@ -141,6 +138,10 @@ export default function Home() {
           <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Services
           </h2>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+            I build institutional websites, design brand and interface work,
+            and shoot photography on the side.
+          </p>
         </div>
 
         <ScrollGroup className="grid grid-cols-1 gap-5 sm:grid-cols-3">
@@ -178,6 +179,10 @@ export default function Home() {
           <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Work
           </h2>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+            A selection of institutional and nonprofit websites I&apos;ve
+            designed and built for real clients.
+          </p>
         </div>
 
         <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
@@ -277,6 +282,10 @@ export default function Home() {
               <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
                 Photography
               </h2>
+              <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+                Portrait, travel, and fine art photography I shoot on the
+                side, mostly on a Sony A7RIV.
+              </p>
             </div>
 
             <div className="relative w-screen ml-[calc(50%-50vw)]">
