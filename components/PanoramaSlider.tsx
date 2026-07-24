@@ -301,10 +301,10 @@ export default function PanoramaSlider() {
             const hidden = Math.abs(fractional) > VISIBLE_RANGE;
 
             // Reveal cascade follows visual position, not DOM order: the
-            // rightmost visible slide (largest offset, ~+2 at the visible
-            // edge) fades in first, then each slide to its left a beat
+            // leftmost visible slide (smallest offset, ~-2 at the visible
+            // edge) fades in first, then each slide to its right a beat
             // later. Cleared to 0 once the one-time reveal has settled.
-            const revealDelay = revealSettled ? 0 : Math.max(0, 2 - offset) * 60;
+            const revealDelay = revealSettled ? 0 : Math.max(0, 2 + offset) * 60;
 
             return (
               <button
