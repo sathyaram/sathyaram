@@ -48,6 +48,19 @@ export default function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="subject" className="text-sm font-medium">
+          Subject
+        </label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          required
+          className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-colors focus:border-accent"
+        />
+      </div>
+
+      <div>
         <label htmlFor="message" className="text-sm font-medium">
           Message
         </label>

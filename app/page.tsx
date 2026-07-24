@@ -136,7 +136,7 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <div className="mb-10 text-center">
-          <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
             Services
           </h2>
           <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
@@ -145,26 +145,40 @@ export default function Home() {
           </p>
         </div>
 
-        <ScrollGroup className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <ScrollGroup className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-3xl border border-border p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60"
+              className="group relative flex min-h-[20rem] flex-col items-center justify-center p-8 text-center transition-transform duration-300 ease-out hover:-translate-y-1"
             >
+              {/* The card's own border — a rotated square rather than a
+                  rounded rectangle, so the grid reads as a field of
+                  diamonds. Sized well under 100% (pre-rotation) since a
+                  square's axis-aligned bounding box grows by √2 once
+                  rotated 45deg; centered via inset-0 + m-auto so it stays
+                  a true square (and so a true diamond) independent of
+                  this card's own aspect ratio. */}
               <div
                 aria-hidden="true"
-                className="flex h-16 w-16 rotate-45 items-center justify-center rounded-2xl bg-accent/10 transition-transform duration-300 ease-out group-hover:rotate-[39deg] group-hover:scale-110"
-              >
-                <span className="-rotate-45 text-3xl transition-transform duration-300 ease-out group-hover:-rotate-[39deg]">
-                  {service.emoji}
-                </span>
+                className="absolute inset-0 m-auto aspect-square w-[52%] rotate-45 rounded-xl border border-border bg-background/40 transition-colors duration-300 ease-out group-hover:border-accent/60"
+              />
+
+              <div className="relative flex flex-col items-center">
+                <div
+                  aria-hidden="true"
+                  className="flex h-16 w-16 rotate-45 items-center justify-center rounded-2xl bg-accent/10 transition-transform duration-300 ease-out group-hover:rotate-[39deg] group-hover:scale-110"
+                >
+                  <span className="-rotate-45 text-3xl transition-transform duration-300 ease-out group-hover:-rotate-[39deg]">
+                    {service.emoji}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold">
+                  {service.title}
+                </h3>
+                <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted">
+                  {service.blurb}
+                </p>
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {service.blurb}
-              </p>
             </div>
           ))}
         </ScrollGroup>
@@ -179,7 +193,7 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <div className="mb-10 text-center">
-          <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
             Work
           </h2>
           <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
@@ -292,7 +306,7 @@ export default function Home() {
               in globals.css for why ScrollGroup doesn't set one itself. */}
           <div className="transition-all duration-700">
             <div className="mb-10 text-center">
-              <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
+              <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,4.5rem)] pb-1 sm:pb-2">
                 Photography
               </h2>
               <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollGroup from "./ScrollGroup";
 import {
   ResumeIcon,
   InstagramIcon,
@@ -19,31 +20,30 @@ export default function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto max-w-5xl px-6 py-8">
-        <nav
-          aria-label="Elsewhere"
-          className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3"
-        >
-          {elsewhere.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 text-sm text-foreground transition-opacity hover:opacity-80"
-            >
-              {/* Solid brand blue in light mode; the same gradient as the
-                  logo mark in dark mode, animated the same way the
-                  Services/Work/Photography kickers pan (see
-                  .icon-gradient-fill/-stroke + the gradient's own
-                  <animateTransform> in layout.tsx). Resume is a line icon
-                  so it renders a touch bigger than the filled brand marks
-                  at the same box size — sized down slightly to sit
-                  visually inline. The label doesn't gradiate — it just
-                  tracks the theme foreground colour. */}
-              <Icon className={label === "Resume" ? "h-6 w-6" : "h-7 w-7"} />
-              {label}
-            </a>
-          ))}
+        <nav aria-label="Elsewhere">
+          <ScrollGroup className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+            {elsewhere.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80"
+              >
+                {/* Solid brand blue in light mode; the same gradient as the
+                    logo mark in dark mode, animated the same way the
+                    Services/Work/Photography kickers pan (see
+                    .icon-gradient-fill/-stroke + the gradient's own
+                    <animateTransform> in layout.tsx). Resume is a line icon
+                    so it renders a touch bigger than the filled brand marks
+                    at the same box size — sized down slightly to sit
+                    visually inline. The label doesn't gradiate — it just
+                    tracks the theme foreground colour. */}
+                <Icon className={label === "Resume" ? "h-6 w-6" : "h-7 w-7"} />
+                {label}
+              </a>
+            ))}
+          </ScrollGroup>
         </nav>
       </div>
 
