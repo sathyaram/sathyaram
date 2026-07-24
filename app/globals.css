@@ -433,6 +433,16 @@ html.intro-playing .reveal-block {
   animation-play-state: paused;
 }
 
+/* .dark .reveal-letter.gradient-text-name (below) redeclares the whole
+   `animation` shorthand to add its gradient-pan sweep, which resets
+   animation-play-state back to "running" — and at 3 classes it outranks
+   the 2-classes-plus-element pause rule above, so the name text was never
+   actually pausing. Match its specificity here so intro-playing still
+   wins for it too. */
+html.intro-playing .reveal-letter.gradient-text-name {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-letter,
   .reveal-block {
