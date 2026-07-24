@@ -29,7 +29,7 @@ const services = [
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
   {
-    emoji: "✅",
+    emoji: "🔍",
     title: "Digital Quality Assurance",
     blurb: "QA testing and quality assurance for web and AI-assisted products.",
   },
@@ -41,8 +41,7 @@ const services = [
   {
     emoji: "🃏",
     title: "Magic Deck Tech",
-    blurb:
-      "Competitive Magic: The Gathering deckbuilding, sideboard plans, and deck tech breakdowns.",
+    blurb: "Commander (EDH) deckbuilding, tuning, and deck tech breakdowns — Commander only.",
   },
 ];
 
@@ -142,7 +141,7 @@ export default function Home() {
             >
               <div
                 aria-hidden="true"
-                className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/10 text-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110"
+                className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-3xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110"
                 style={{ transitionTimingFunction: SPRING }}
               >
                 {service.emoji}
@@ -223,7 +222,7 @@ export default function Home() {
             <Sparkle className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10" />
 
             <div className="relative">
-              <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60">
+              <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-500 group-hover:text-foreground/60">
                 {project.year}
               </p>
               <Reveal
@@ -235,10 +234,16 @@ export default function Home() {
                 // ones. whitespace-nowrap is the hard rule (never wrap);
                 // overflow+ellipsis is just a safety net for an edge case
                 // the clamp doesn't cover.
-                className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-display font-bold leading-[1.05] text-white [font-size:clamp(1.125rem,7.5cqw,2.5rem)]"
+                //
+                // Light mode: once the fill dissolves on hover, white text
+                // would sit straight on the beige page background with
+                // barely any contrast, so it swaps to the theme foreground
+                // colour instead (near-black in light mode, still
+                // effectively white in dark mode).
+                className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground [font-size:clamp(1.125rem,7.5cqw,2.5rem)]"
                 text={project.title}
               />
-              <p className="mt-3 max-w-sm text-sm text-white/75">
+              <p className="mt-3 max-w-sm text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
                 {project.blurb}
               </p>
             </div>

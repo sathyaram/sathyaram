@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6 py-8">
         <nav
           aria-label="Elsewhere"
-          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
+          className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3"
         >
           {elsewhere.map(({ label, href, icon: Icon }) => (
             <a
@@ -29,10 +29,16 @@ export default function Footer() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-accent"
+              aria-label={label}
+              title={label}
+              className="inline-flex items-center transition-opacity hover:opacity-80"
             >
-              <Icon className="h-6 w-6" />
-              {label}
+              {/* Solid brand blue in light mode; the same gradient as the
+                  logo mark in dark mode (see .icon-gradient-fill/-stroke
+                  in globals.css). Resume is a line icon so it renders a
+                  touch bigger than the filled brand marks at the same box
+                  size — sized down slightly to sit visually inline. */}
+              <Icon className={label === "Resume" ? "h-5 w-5" : "h-6 w-6"} />
             </a>
           ))}
         </nav>

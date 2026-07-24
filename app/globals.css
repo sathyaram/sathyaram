@@ -214,6 +214,29 @@ body {
   }
 }
 
+/*
+ * Footer icons: solid brand blue in light mode, the same gradient as the
+ * logo mark in dark mode. SVG fill/stroke can reference a gradient
+ * directly (unlike text), so this points at the shared <linearGradient>
+ * defined once in layout.tsx rather than needing the background-clip
+ * trick used for the gradient text above.
+ */
+.icon-gradient-fill {
+  fill: var(--logo-blue);
+}
+
+.dark .icon-gradient-fill {
+  fill: url(#brand-icon-gradient);
+}
+
+.icon-gradient-stroke {
+  stroke: var(--logo-blue);
+}
+
+.dark .icon-gradient-stroke {
+  stroke: url(#brand-icon-gradient);
+}
+
 /* Line-draw keyframe used by the logo hover, ported from the old site. */
 @keyframes stroke-offset {
   to {
