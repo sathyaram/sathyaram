@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import ScrollGroup from "@/components/ScrollGroup";
 
 export const metadata: Metadata = {
   title: "About",
@@ -55,6 +56,11 @@ const awards = [
   { title: "Hazl Magazine", detail: "Published Photography" },
 ];
 
+const certifications = [
+  { title: "Google Analytics", detail: "Certification" },
+  { title: "Acquia Certified Front End Specialist", detail: "Certification" },
+];
+
 export default function About() {
   return (
     <div className="px-6 py-16 sm:py-20">
@@ -66,45 +72,68 @@ export default function About() {
         />
 
         {sections.map((section) => (
-          <div key={section.heading} className="mt-12">
-            <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
-              {section.heading}
-            </h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground">
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+          <ScrollGroup key={section.heading}>
+            <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
+              <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
+                {section.heading}
+              </h2>
+              <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollGroup>
         ))}
 
-        <div className="mt-12">
-          <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
-            Awards &amp; Publications
-          </h2>
-          <ul className="mt-4 space-y-3">
-            {awards.map((award) => (
-              <li
-                key={award.title}
-                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3"
-              >
-                {award.href ? (
-                  <a
-                    href={award.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium hover:text-accent"
-                  >
-                    {award.title}
-                  </a>
-                ) : (
-                  <span className="font-medium">{award.title}</span>
-                )}
-                <span className="text-sm text-muted">{award.detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ScrollGroup>
+          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
+              Awards &amp; Publications
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {awards.map((award) => (
+                <li
+                  key={award.title}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3"
+                >
+                  {award.href ? (
+                    <a
+                      href={award.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium hover:text-accent"
+                    >
+                      {award.title}
+                    </a>
+                  ) : (
+                    <span className="font-medium">{award.title}</span>
+                  )}
+                  <span className="text-sm text-muted">{award.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ScrollGroup>
+
+        <ScrollGroup>
+          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
+              Certifications
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {certifications.map((cert) => (
+                <li
+                  key={cert.title}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3"
+                >
+                  <span className="font-medium">{cert.title}</span>
+                  <span className="text-sm text-muted">{cert.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ScrollGroup>
       </div>
     </div>
   );

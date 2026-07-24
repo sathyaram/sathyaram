@@ -55,7 +55,7 @@ export default function Footer() {
           >
             Colophon
           </Link>
-          <p>&copy; {new Date().getFullYear()} Sathya Ram</p>
+          <p>&copy; {new Date().getFullYear()} Sathya Ram.</p>
         </div>
       </div>
     </footer>

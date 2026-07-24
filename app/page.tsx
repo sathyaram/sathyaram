@@ -153,9 +153,11 @@ export default function Home() {
             >
               <div
                 aria-hidden="true"
-                className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-3xl transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110"
+                className="flex h-16 w-16 rotate-45 items-center justify-center rounded-2xl bg-accent/10 transition-transform duration-300 ease-out group-hover:rotate-[39deg] group-hover:scale-110"
               >
-                {service.emoji}
+                <span className="-rotate-45 text-3xl transition-transform duration-300 ease-out group-hover:-rotate-[39deg]">
+                  {service.emoji}
+                </span>
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">
                 {service.title}
@@ -262,7 +264,7 @@ export default function Home() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/25 px-2.5 py-1 text-xs text-white/70 transition-colors duration-500 group-hover:border-foreground/20 group-hover:text-foreground/70"
+                    className="rounded-full border border-white/25 px-2.5 py-1 text-[10px] text-white/70 transition-colors duration-500 group-hover:border-foreground/20 group-hover:text-foreground/70"
                   >
                     {tag}
                   </span>
