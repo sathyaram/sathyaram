@@ -17,17 +17,6 @@
   /* The hero's decorative sparkles, light mode only — kept distinct from
      --logo-blue so the two don't blur into each other. */
   --sparkle: #5ac8fa;
-  /* Gate for every reveal animation's play-state (see .reveal-letter /
-     .reveal-block below). Read via var() everywhere instead of the
-     `animation` shorthand, so no rule can ever reset it back to "running"
-     by redeclaring the shorthand for an unrelated reason (this bit us
-     three times when a rule needed to layer in a second animation, e.g.
-     the gradient sweep on the hero name). */
-  --reveal-play: running;
-}
-
-html.intro-playing {
-  --reveal-play: paused;
 }
 
 .dark {
@@ -199,17 +188,14 @@ body {
 }
 
 /* Letters that are both the rise-in stagger AND the gradient sweep (the
-   hero name) need both animations listed together — longhand throughout,
-   never the `animation` shorthand, so animation-play-state stays owned by
-   the single var(--reveal-play) declaration instead of being reset to
-   "running" by whichever rule happens to win specificity. */
+   hero name) need both animations listed together in one longhand set, so
+   neither clobbers the other. */
 .dark .reveal-letter.gradient-text-name {
   animation-name: letter-rise, gradient-pan;
   animation-duration: 650ms, 8s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
   animation-iteration-count: 1, infinite;
   animation-fill-mode: both, none;
-  animation-play-state: var(--reveal-play);
 }
 
 @keyframes gradient-pan {
@@ -444,10 +430,8 @@ body {
   }
 }
 
-/* While the intro loader is on screen (html.intro-playing, set above),
-   --reveal-play is "paused", holding every reveal at its start frame
-   (both-fill + paused = frozen at opacity 0) so the text streams in as the
-   loader clears rather than finishing behind it. */
+/* The per-letter reveal plays immediately on load (both-fill so each letter
+   holds its start frame until its own staggered delay elapses). */
 .reveal-letter {
   display: inline-block;
   white-space: pre;
@@ -455,133 +439,10 @@ body {
   animation-duration: 650ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-fill-mode: both;
-  animation-play-state: var(--reveal-play);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-letter {
-    animation: none;
-  }
-}
-
-/* ---------- Intro loader ---------- */
-@keyframes intro-panel-up {
-  to {
-    transform: translateY(-101%);
-  }
-}
-
-@keyframes intro-logo-out {
-  to {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-}
-
-.intro {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  pointer-events: none;
-}
-
-.intro-panel {
-  position: absolute;
-  top: 0;
-  width: 25.5%;
-  height: 100%;
-  background: #0b0f1a;
-  will-change: transform;
-  animation: intro-panel-up 750ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
-}
-
-.intro-panel:nth-child(1) {
-  left: 0;
-  animation-delay: 2100ms;
-}
-.intro-panel:nth-child(2) {
-  left: 25%;
-  animation-delay: 2220ms;
-}
-.intro-panel:nth-child(3) {
-  left: 50%;
-  animation-delay: 2340ms;
-}
-.intro-panel:nth-child(4) {
-  left: 75%;
-  animation-delay: 2460ms;
-}
-
-.intro-logo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: min(320px, 48vw);
-  transform: translate(-50%, -50%);
-  z-index: 201;
-  animation: intro-logo-out 500ms ease forwards 1900ms;
-}
-
-/* A dramatic flash the instant each line's own draw finishes — white for
-   the S, the same blue the R already draws in. Layered drop-shadows (a
-   tight near-solid core through a soft outer halo) plus brightness() read
-   as a hotter, more intense flash than a couple of wide, even layers
-   would. Each line's glow animation is listed together with its own
-   stroke-offset draw in ONE `animation` shorthand — never as a separate
-   rule — since a second rule setting `animation` on the same element
-   would replace this one instead of adding to it. */
-@keyframes logo-draw-glow-white {
-  0% {
-    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
-  }
-  35% {
-    filter: brightness(1.8) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-      drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
-      drop-shadow(0 0 12px rgba(255, 255, 255, 0.75))
-      drop-shadow(0 0 20px rgba(255, 255, 255, 0.45));
-  }
-  100% {
-    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
-  }
-}
-
-@keyframes logo-draw-glow-blue {
-  0% {
-    filter: drop-shadow(0 0 0px rgba(43, 170, 226, 0));
-  }
-  35% {
-    filter: brightness(1.8) drop-shadow(0 0 2px rgba(43, 170, 226, 1))
-      drop-shadow(0 0 6px rgba(43, 170, 226, 0.95))
-      drop-shadow(0 0 12px rgba(43, 170, 226, 0.75))
-      drop-shadow(0 0 20px rgba(43, 170, 226, 0.45));
-  }
-  100% {
-    filter: drop-shadow(0 0 0px rgba(43, 170, 226, 0));
-  }
-}
-
-/* The intro logo draws itself (independent of the hover animation). */
-.intro-logo .logo-mark .s-line {
-  fill: transparent;
-  stroke: #ffffff;
-  animation:
-    stroke-offset 1600ms ease forwards,
-    logo-draw-glow-white 900ms ease-out 1600ms forwards;
-}
-
-.intro-logo .logo-mark .r-line {
-  fill: transparent;
-  stroke: #2baae2;
-  animation:
-    stroke-offset 1200ms ease forwards 250ms,
-    logo-draw-glow-blue 900ms ease-out 1600ms forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .intro-panel,
-  .intro-logo,
-  .intro-logo .logo-mark .s-line,
-  .intro-logo .logo-mark .r-line {
     animation: none;
   }
 }
