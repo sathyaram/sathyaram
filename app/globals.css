@@ -338,8 +338,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 52px;
-  height: 52px;
+  width: 37px;
+  height: 37px;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -542,9 +542,30 @@ body {
   animation: stroke-offset 1200ms ease forwards 250ms;
 }
 
+/* A dramatic flash the instant the draw finishes — s-line is the longer of
+   the two strokes (1600ms, no delay), so that's what this delay lines up
+   with. Whole mark, not each line separately, so it reads as one flash. */
+@keyframes logo-draw-glow {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(112, 213, 255, 0));
+  }
+  35% {
+    filter: drop-shadow(0 0 20px rgba(112, 213, 255, 0.95))
+      drop-shadow(0 0 40px rgba(0, 89, 188, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(112, 213, 255, 0));
+  }
+}
+
+.intro-logo .logo-mark {
+  animation: logo-draw-glow 900ms ease-out 1600ms forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .intro-panel,
   .intro-logo,
+  .intro-logo .logo-mark,
   .intro-logo .logo-mark .s-line,
   .intro-logo .logo-mark .r-line {
     animation: none;
