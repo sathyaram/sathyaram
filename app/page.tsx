@@ -3,6 +3,7 @@ import Image from "next/image";
 import Sparkle from "@/components/Sparkle";
 import PanoramaSlider from "@/components/PanoramaSlider";
 import Reveal from "@/components/Reveal";
+import ScrollGroup from "@/components/ScrollGroup";
 
 // Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
 const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
@@ -29,9 +30,9 @@ const services = [
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
   {
-    emoji: "🔍",
-    title: "Digital Quality Assurance",
-    blurb: "QA testing and quality assurance for web and AI-assisted products.",
+    emoji: "🚗",
+    title: "Car Buying Help",
+    blurb: "Finding and buying a reliable used car, from research to test drive — now at CarMax.",
   },
   {
     emoji: "🎙️",
@@ -41,7 +42,7 @@ const services = [
   {
     emoji: "🃏",
     title: "Magic Deck Tech",
-    blurb: "Commander (EDH) deckbuilding, tuning, and deck tech breakdowns — Commander only.",
+    blurb: "Commander (EDH) deckbuilding, tuning, and deck tech breakdowns.",
   },
 ];
 
@@ -101,12 +102,20 @@ export default function Home() {
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
           <Reveal
             as="span"
-            className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-logo-blue"
+            className="text-[clamp(2.5rem,7.4vw,5.75rem)] text-logo-blue"
             segments={[
               { text: "Hi! I'm " },
               { text: "Sathya Ram", className: "gradient-text-name name-glow" },
             ]}
           />
+          {/* A little version tag, ported from the old site's hero
+              (v7.3 there — bumped for this rebuild). Sized in em off the
+              headline's own clamp() so it stays subtle at every viewport
+              instead of the old site's fixed 6px, which needed a mobile
+              special-case. */}
+          <sup className="ml-1 align-super text-[0.24em] font-sans font-normal tracking-wide text-muted">
+            v8.0
+          </sup>
           <Reveal
             as="span"
             className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]"
@@ -132,7 +141,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <ScrollGroup className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}
@@ -154,7 +163,7 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
+        </ScrollGroup>
       </section>
 
       {/* ---------- Featured work: 2×2 full-width grid ---------- */}
@@ -174,7 +183,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
+        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
           <Link
             key={project.slug}
@@ -249,23 +258,34 @@ export default function Home() {
             </div>
           </Link>
         ))}
-        </div>
+        </ScrollGroup>
       </section>
 
       {/* ---------- Photography panorama ---------- */}
+      {/*
+        A single fade-up for the whole section rather than a per-photo
+        stagger: the slides inside PanoramaSlider are already positioned
+        and faded via their own 3D-carousel transform logic, and layering
+        a second, independent reveal system onto each slide risked
+        fighting that rather than complementing it.
+      */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
-        <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
-            Photography
-          </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
-            In my free time.
-          </h2>
-        </div>
+        <ScrollGroup>
+          <div>
+            <div className="mb-10 text-center">
+              <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
+                Photography
+              </p>
+              <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
+                In my free time.
+              </h2>
+            </div>
 
-        <div className="relative w-screen ml-[calc(50%-50vw)]">
-          <PanoramaSlider />
-        </div>
+            <div className="relative w-screen ml-[calc(50%-50vw)]">
+              <PanoramaSlider />
+            </div>
+          </div>
+        </ScrollGroup>
       </section>
     </div>
   );

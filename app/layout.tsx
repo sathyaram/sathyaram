@@ -58,11 +58,21 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-full flex flex-col font-sans">
         {/* Shared gradient def for the footer icons (dark mode) — same
-            stops as the logo mark's own gradient. SVG fill/stroke can
+            stops as the logo mark's own gradient, kept in constant motion
+            (via the rotating gradientTransform below) the same way the
+            hero name and section kickers pan. SVG fill/stroke can
             reference this by id from anywhere on the page. */}
         <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
           <defs>
             <linearGradient id="brand-icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <animateTransform
+                attributeName="gradientTransform"
+                type="rotate"
+                from="0 0.5 0.5"
+                to="360 0.5 0.5"
+                dur="8s"
+                repeatCount="indefinite"
+              />
               <stop offset="0%" stopColor="#70d5ff" />
               <stop offset="35%" stopColor="#c9a9e0" />
               <stop offset="65%" stopColor="#0059bc" />

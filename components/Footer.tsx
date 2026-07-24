@@ -29,16 +29,19 @@ export default function Footer() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={label}
-              title={label}
-              className="inline-flex items-center transition-opacity hover:opacity-80"
+              className="inline-flex items-center gap-2.5 text-sm text-foreground transition-opacity hover:opacity-80"
             >
               {/* Solid brand blue in light mode; the same gradient as the
-                  logo mark in dark mode (see .icon-gradient-fill/-stroke
-                  in globals.css). Resume is a line icon so it renders a
-                  touch bigger than the filled brand marks at the same box
-                  size — sized down slightly to sit visually inline. */}
-              <Icon className={label === "Resume" ? "h-5 w-5" : "h-6 w-6"} />
+                  logo mark in dark mode, animated the same way the
+                  Services/Work/Photography kickers pan (see
+                  .icon-gradient-fill/-stroke + the gradient's own
+                  <animateTransform> in layout.tsx). Resume is a line icon
+                  so it renders a touch bigger than the filled brand marks
+                  at the same box size — sized down slightly to sit
+                  visually inline. The label doesn't gradiate — it just
+                  tracks the theme foreground colour. */}
+              <Icon className={label === "Resume" ? "h-6 w-6" : "h-7 w-7"} />
+              {label}
             </a>
           ))}
         </nav>

@@ -1,5 +1,8 @@
-import Image from "next/image";
 import Reveal from "./Reveal";
+import BrowserMockup from "./BrowserMockup";
+import CodeBlock, { type CodeLine } from "./CodeBlock";
+
+type Stat = { label: string; value: string };
 
 type WebsiteCaseStudyProps = {
   title: string;
@@ -11,6 +14,11 @@ type WebsiteCaseStudyProps = {
   link: string;
   image: string;
   description: string;
+  stats: Stat[];
+  overview: string[];
+  contributions: string[];
+  codeFilename: string;
+  codeLines: CodeLine[];
 };
 
 export default function WebsiteCaseStudy({
@@ -23,6 +31,11 @@ export default function WebsiteCaseStudy({
   link,
   image,
   description,
+  stats,
+  overview,
+  contributions,
+  codeFilename,
+  codeLines,
 }: WebsiteCaseStudyProps) {
   return (
     <div className="px-6 py-16 sm:py-20">
@@ -48,24 +61,59 @@ export default function WebsiteCaseStudy({
           ))}
         </div>
 
-        <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-3xl border border-border">
-          <Image
-            src={image}
-            alt={`${title} website preview`}
-            fill
-            className="object-cover"
-          />
+        {/* Timeline / Role / Stack — same "stat row under the title" beat
+            as the reference case studies this layout is inspired by. */}
+        <div className="mt-10 grid grid-cols-3 gap-4 border-y border-border py-6">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center sm:text-left">
+              <p className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                {stat.label}
+              </p>
+              <p className="mt-1 font-display text-sm font-semibold sm:text-base">
+                {stat.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10">
+          <BrowserMockup url={url} image={image} alt={`${title} website preview`} priority />
         </div>
 
         <p className="mt-10 max-w-2xl text-base leading-relaxed text-foreground">
           {description}
         </p>
 
+        <div className="mt-14">
+          <h2 className="font-display text-2xl font-bold tracking-tight">Overview</h2>
+          <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground">
+            {overview.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <h2 className="font-display text-2xl font-bold tracking-tight">What I built</h2>
+          <ul className="mt-4 space-y-3">
+            {contributions.map((item) => (
+              <li key={item} className="flex gap-3 text-base leading-relaxed text-foreground">
+                <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-10">
+          <CodeBlock filename={codeFilename} lines={codeLines} />
+        </div>
+
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/30"
+          className="mt-10 inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-foreground/30"
         >
           Visit {url} ↗
         </a>

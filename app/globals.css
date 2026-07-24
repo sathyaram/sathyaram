@@ -300,6 +300,79 @@ body {
 }
 
 /*
+ * A tiny planet orbiting the nav logo. The ring is just a border on a
+ * non-square box (border-radius: 50% on a rectangle is already an
+ * ellipse). The dot's motion reuses the classic CSS ellipse-orbit trick:
+ * one wrapper squashes vertically, an inner wrapper does a plain circular
+ * rotation — but a *constant* counter-scale on the dot only cancels the
+ * squash at rotate(0deg). Scale and rotate don't commute, so at any other
+ * angle the two compose into a lopsided dot (confirmed: it was rendering
+ * as a ~10×5.5px oval, not a 5×5px circle). Fixing that needs the dot to
+ * counter-rotate in exact sync with the parent's spin, not just
+ * counter-scale — same duration and timing-function so the two never
+ * drift apart.
+ */
+.logo-orbit {
+  position: absolute;
+  inset: -7px -26px;
+  pointer-events: none;
+}
+
+.logo-orbit-ellipse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgb(140 140 140 / 30%);
+}
+
+.logo-orbit-squash {
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0.55);
+}
+
+.logo-orbit-spin {
+  position: absolute;
+  inset: 0;
+  animation: orbit-spin 6s linear infinite;
+}
+
+.logo-orbit-planet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: var(--logo-blue);
+  animation: orbit-planet-counter-spin 6s linear infinite;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-planet-counter-spin {
+  from {
+    transform: scaleY(1.818) rotate(0deg);
+  }
+  to {
+    transform: scaleY(1.818) rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-orbit-spin,
+  .logo-orbit-planet {
+    animation: none;
+    transform: scaleY(1.818);
+  }
+}
+
+/*
  * Gradient outline that appears on card hover. The two-layer mask keeps only
  * the padding ring painted, so the card interior stays transparent and the
  * starfield shows through.
@@ -463,6 +536,28 @@ html.intro-playing .reveal-block {
   .intro-logo .logo-mark .s-line,
   .intro-logo .logo-mark .r-line {
     animation: none;
+  }
+}
+
+/* Scroll-triggered stagger (see components/ScrollGroup.tsx). */
+.scroll-stagger-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-stagger-item[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-stagger-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

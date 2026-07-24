@@ -17,6 +17,33 @@ export default function Sontag() {
       link="https://sontagfoundation.org"
       image="/websites/assets/sontag.png"
       description="The Sontag Foundation funds brain cancer research fellowships across the country. Working with Push10, I helped build a custom WordPress site focused on presenting grantee research and foundation initiatives clearly and accessibly."
+      stats={[
+        { label: "Timeline", value: "3 months" },
+        { label: "Role", value: "Front-End Developer" },
+        { label: "Stack", value: "WordPress · JavaScript" },
+      ]}
+      overview={[
+        "Sontag funds brain cancer research fellowships, and researchers and institutions needed to be able to find grant guidelines and past fellows' work without wading through a wall of text — a real challenge for a site built almost entirely around dense scientific and administrative content.",
+        "With Push10, I built the front end for the fellowship program: a searchable grantee directory, application guideline pages that could stay readable at any length, and page templates the foundation's team could manage without needing a developer for every update.",
+      ]}
+      contributions={[
+        "Built the grantee research directory with filtering by institution and research area",
+        "Developed WordPress page templates for the fellowship program and grantee profile pages",
+        "Implemented accessible, front-end JS-driven accordions for grant guidelines and FAQs",
+        "Coded the responsive layout system shared across research and news pages",
+      ]}
+      codeFilename="grant-guidelines.js"
+      codeLines={[
+        [{ text: "// grant-guidelines.js — accessible accordion", type: "comment" }],
+        [{ text: "document" }, { text: ".querySelectorAll(" }, { text: "\".accordion-trigger\"", type: "string" }, { text: ").forEach((btn) => {" }],
+        [{ text: "  btn.addEventListener(" }, { text: "\"click\"", type: "string" }, { text: ", () => {" }],
+        [{ text: "    const", type: "keyword" }, { text: " panel = btn.nextElementSibling;" }],
+        [{ text: "    const", type: "keyword" }, { text: " open = btn.getAttribute(" }, { text: "\"aria-expanded\"", type: "string" }, { text: ") === " }, { text: "\"true\"", type: "string" }, { text: ";" }],
+        [{ text: "    btn.setAttribute(" }, { text: "\"aria-expanded\"", type: "string" }, { text: ", String(!open));" }],
+        [{ text: "    panel.hidden = open;" }],
+        [{ text: "  });" }],
+        [{ text: "});" }],
+      ]}
     />
   );
 }

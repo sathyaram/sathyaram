@@ -44,8 +44,24 @@ export default function Nav() {
             : "border-transparent bg-transparent"
         }`}
       >
-        <Link href="/" aria-label="Sathya Ram — home" className="logo-link flex items-center">
+        <Link
+          href="/"
+          aria-label="Sathya Ram — home"
+          className="logo-link relative flex items-center"
+        >
           <Logo className="h-7 w-auto text-foreground transition-opacity hover:opacity-80" />
+          {/* A tiny planet orbiting the mark, tracing the light-grey
+              ellipse guide. Three nested layers so the counter-scale on
+              the dot only cancels the squash, not the rotation — see the
+              comment above .logo-orbit-ellipse in globals.css. */}
+          <span aria-hidden="true" className="logo-orbit">
+            <span className="logo-orbit-ellipse" />
+            <span className="logo-orbit-squash">
+              <span className="logo-orbit-spin">
+                <span className="logo-orbit-planet" />
+              </span>
+            </span>
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
