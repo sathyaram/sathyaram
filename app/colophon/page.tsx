@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Colophon",
@@ -22,26 +23,12 @@ const sections: { heading: string; items: ColophonItem[] }[] = [
       { title: "three.js", detail: "the starfield" },
       { title: "Bricolage Grotesque", detail: "display type" },
       { title: "Work Sans", detail: "body type" },
+      { title: "Californication", detail: "script type" },
     ],
   },
   {
     heading: "Built with",
     items: [{ title: "Claude Code", detail: "pair-programmed the build" }],
-  },
-  {
-    heading: "Inspiration",
-    items: [
-      {
-        title: "Seán Halpin",
-        detail: "card hover easing, light-mode gradient",
-        href: "https://seanhalpin.xyz",
-      },
-      {
-        title: "Yasin Genc",
-        detail: "per-letter text reveal",
-        href: "https://yasingenc.net",
-      },
-    ],
   },
 ];
 
@@ -49,10 +36,12 @@ export default function Colophon() {
   return (
     <div className="px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-2xl">
-        <h1 className="font-display text-4xl font-semibold sm:text-5xl">
-          Colophon
-        </h1>
-        <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+        <Reveal
+          as="h1"
+          className="block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)]"
+          text="Colophon"
+        />
+        <p className="mt-4 text-center text-muted">
           Notes on what this site is built with, and where a few ideas came
           from.
         </p>

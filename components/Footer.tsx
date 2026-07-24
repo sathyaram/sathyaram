@@ -49,13 +49,13 @@ export default function Footer() {
 
       <div className="border-t border-border px-6 py-4">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 text-center text-xs text-muted sm:flex-row sm:text-left">
-          <p>&copy; {new Date().getFullYear()} Sathya Ram. All rights reserved.</p>
           <Link
             href="/colophon"
             className="underline underline-offset-4 transition-colors hover:text-foreground"
           >
             Colophon
           </Link>
+          <p>&copy; {new Date().getFullYear()} Sathya Ram</p>
         </div>
       </div>
     </footer>
