@@ -82,20 +82,25 @@ export default function StarFieldThree() {
         positions[o + 1] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
         positions[o + 2] = -Math.random() * FIELD_DEPTH;
 
-        // Loosely the real spectral spread, but leaning a bit more colourful:
-        // roughly 40% white, the rest spread across blue, cyan, yellow,
-        // orange, red, and violet at slightly higher saturation than a strict
-        // night sky — enough colour to notice without tipping into confetti.
+        // Loosely the real spectral spread, but leaning noticeably more
+        // colourful: under 40% white/pale now, the rest a punchier spread
+        // across blue, brand-blue, cyan, yellow, orange, red, violet,
+        // magenta, and teal — higher saturation and a bit lower lightness
+        // than a strict night sky, so the colour actually reads against
+        // the dark field instead of washing out to near-white.
         const roll = Math.random();
-        if (roll < 0.09) tint.setHSL(0.6, 0.6, 0.8); // blue
-        else if (roll < 0.17) tint.setHSL(0.52, 0.55, 0.83); // ice cyan
-        else if (roll < 0.27) tint.setHSL(0.58, 0.28, 0.9); // blue-white
-        else if (roll < 0.55) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
-        else if (roll < 0.68) tint.setHSL(0.13, 0.4, 0.88); // yellow-white
-        else if (roll < 0.8) tint.setHSL(0.1, 0.65, 0.8); // yellow
-        else if (roll < 0.89) tint.setHSL(0.07, 0.7, 0.74); // orange
-        else if (roll < 0.95) tint.setHSL(0.02, 0.72, 0.7); // red
-        else tint.setHSL(0.77, 0.5, 0.8); // violet
+        if (roll < 0.06) tint.setHSL(0.6, 0.7, 0.75); // blue
+        else if (roll < 0.11) tint.setHSL(0.63, 0.85, 0.68); // brand blue
+        else if (roll < 0.17) tint.setHSL(0.52, 0.65, 0.78); // ice cyan
+        else if (roll < 0.23) tint.setHSL(0.58, 0.28, 0.9); // blue-white
+        else if (roll < 0.45) tint.setHSL(0, 0, 0.85 + Math.random() * 0.15); // white
+        else if (roll < 0.55) tint.setHSL(0.13, 0.45, 0.85); // yellow-white
+        else if (roll < 0.67) tint.setHSL(0.1, 0.75, 0.72); // yellow
+        else if (roll < 0.77) tint.setHSL(0.07, 0.8, 0.66); // orange
+        else if (roll < 0.8) tint.setHSL(0.02, 0.8, 0.65); // red
+        else if (roll < 0.88) tint.setHSL(0.77, 0.6, 0.75); // violet
+        else if (roll < 0.94) tint.setHSL(0.92, 0.7, 0.72); // magenta
+        else tint.setHSL(0.45, 0.6, 0.68); // teal
         colors[o] = tint.r;
         colors[o + 1] = tint.g;
         colors[o + 2] = tint.b;

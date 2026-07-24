@@ -11,8 +11,8 @@ import styles from "./Nav.module.scss";
 // One-pager: everything lives on the homepage, with individual routes only
 // for the website case studies (linked from the homepage cards).
 const links = [
-  { href: "/#work", label: "Work" },
   { href: "/about", label: "About" },
+  { href: "/#work", label: "Work" },
   { href: "/contact", label: "Contact" },
 ];
 

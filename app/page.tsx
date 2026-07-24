@@ -25,6 +25,20 @@ const services = [
     title: "Photography",
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
+  {
+    title: "Magic Deck Tech",
+    blurb:
+      "Competitive Magic: The Gathering deckbuilding, sideboard plans, and deck tech breakdowns.",
+  },
+  {
+    title: "Voice Narration",
+    blurb: "Voiceover and narration for video, animation, and audio projects.",
+  },
+  {
+    title: "AI Context Engineering & QA",
+    blurb:
+      "Prompt and context engineering, plus QA testing for AI-assisted products.",
+  },
 ];
 
 const featured = [
@@ -86,7 +100,7 @@ export default function Home() {
             className="block text-[clamp(2.5rem,7.4vw,5.75rem)] text-logo-blue"
             segments={[
               { text: "Hi! I'm " },
-              { text: "Sathya Ram", className: "name-glow" },
+              { text: "Sathya Ram", className: "gradient-text-name name-glow" },
               { text: "." },
             ]}
           />
@@ -106,11 +120,11 @@ export default function Home() {
 
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
-        <div className="mb-12 text-center">
-          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+        <div className="mb-10 text-center">
+          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
             Services
           </p>
-          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
             What I do.
           </h2>
         </div>
@@ -140,11 +154,11 @@ export default function Home() {
         column too narrow for the title.
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
-        <div className="mb-12 text-center">
-          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+        <div className="mb-10 text-center">
+          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
             Work
           </p>
-          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
             Selected projects.
           </h2>
         </div>
@@ -223,11 +237,11 @@ export default function Home() {
 
       {/* ---------- Photography panorama ---------- */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
-        <div className="mb-12 text-center">
-          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-muted">
+        <div className="mb-10 text-center">
+          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
             Photography
           </p>
-          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
             In my free time.
           </h2>
         </div>

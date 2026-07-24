@@ -27,10 +27,11 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
-  --color-border: var(--border);
   --color-logo-blue: var(--logo-blue);
+  --color-border: var(--border);
   --font-sans: var(--font-work-sans);
   --font-display: var(--font-bricolage);
+  --font-script: var(--font-script);
 }
 
 body {
@@ -136,6 +137,65 @@ body {
   .name-glow,
   .name-glow:hover {
     transition: none;
+  }
+}
+
+/*
+ * "Sathya Ram" — a constantly-panning gradient clipped to the text, built
+ * from the same stops as the logo mark. Dark mode only: in light mode the
+ * name just stays the same solid brand blue as the rest of the headline
+ * (set via .text-logo-blue on the whole line), which reads cleaner against
+ * the beige background than a busy gradient would.
+ *
+ * background-attachment: fixed anchors the gradient to the viewport rather
+ * than to each letter's own box, so every letter (each its own
+ * inline-block, for the reveal stagger) samples the same shared plane
+ * instead of separately stretching 0%-100% across its own tiny width —
+ * that's what keeps the pan looking like one continuous gradient instead
+ * of a flicker per letter.
+ */
+.dark .gradient-text-name {
+  background-image: linear-gradient(
+    120deg,
+    #70d5ff,
+    #c9a9e0,
+    #0059bc,
+    #8fd9c4,
+    #70d5ff
+  );
+  background-size: 300% 300%;
+  background-attachment: fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Each letter already carries .reveal-letter's own `animation` shorthand
+   (the rise-in stagger) — `animation` doesn't merge across classes, so the
+   compound selector re-declares both together rather than one silently
+   replacing the other. */
+.dark .reveal-letter.gradient-text-name {
+  animation:
+    letter-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both,
+    gradient-pan 8s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text-name,
+  .reveal-letter.gradient-text-name {
+    animation: none;
   }
 }
 
@@ -368,40 +428,3 @@ html.intro-playing .reveal-block {
   }
 }
 
-/* Footer icon links — plain currentColor icons, no pseudo-elements: a
-   background tint and a lift on hover, nothing else competing for
-   attention. Accessible name comes from the <a>'s aria-label. */
-.icon-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  transition:
-    color 200ms ease,
-    background-color 200ms ease,
-    transform 200ms ease;
-}
-
-.icon-link:hover,
-.icon-link:focus-visible {
-  color: var(--foreground);
-  transform: translateY(-2px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .icon-link {
-    transition: color 200ms ease, background-color 200ms ease;
-  }
-  .icon-link:hover,
-  .icon-link:focus-visible {
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .social-link,
-  .social-link span,
-  .social-link::after {
-    transition: none;
-  }
-}

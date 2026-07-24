@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Work_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
@@ -16,6 +17,12 @@ const bricolageGrotesque = Bricolage_Grotesque({
 const workSans = Work_Sans({
   variable: "--font-work-sans",
   subsets: ["latin"],
+});
+
+const californication = localFont({
+  src: "./fonts/Californication.ttf",
+  variable: "--font-script",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -43,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolageGrotesque.variable} ${workSans.variable} dark h-full antialiased`}
+      className={`${bricolageGrotesque.variable} ${workSans.variable} ${californication.variable} dark h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
