@@ -30,7 +30,7 @@ const services = [
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
   {
-    emoji: "🚗",
+    emoji: "🏎️",
     title: "Car Buying Help",
     blurb: "Finding and buying a reliable used car, from research to test drive — now at CarMax.",
   },
@@ -100,22 +100,27 @@ export default function Home() {
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
-          <Reveal
-            as="span"
-            className="text-[clamp(2.5rem,7.4vw,5.75rem)] text-logo-blue"
-            segments={[
-              { text: "Hi! I'm " },
-              { text: "Sathya Ram", className: "gradient-text-name name-glow" },
-            ]}
-          />
-          {/* A little version tag, ported from the old site's hero
-              (v7.3 there — bumped for this rebuild). Sized in em off the
-              headline's own clamp() so it stays subtle at every viewport
-              instead of the old site's fixed 6px, which needed a mobile
-              special-case. */}
-          <sup className="ml-0.5 align-super text-[0.22em] leading-none font-sans font-normal tracking-wide text-muted relative -top-[0.35em]">
-            v8.0
-          </sup>
+          {/* Wrapped so "v8.0" can anchor to this line's own box (shrunk
+              to its text via inline-block) instead of just flowing after
+              it — the badge needs to sit at this exact corner regardless
+              of viewport, not wherever inline layout happens to break. */}
+          <span className="relative inline-block text-[clamp(2.5rem,7.4vw,5.75rem)]">
+            <Reveal
+              as="span"
+              className="block text-logo-blue"
+              segments={[
+                { text: "Hi! I'm " },
+                { text: "Sathya Ram", className: "gradient-text-name name-glow" },
+              ]}
+            />
+            {/* A little version tag, ported from the old site's hero
+                (v7.3 there — bumped for this rebuild). Sized off the same
+                clamp() as the headline (scaled down) rather than em, so it
+                isn't affected by inheriting through this wrapper. */}
+            <sup className="absolute top-[14%] -right-2 text-[clamp(0.55rem,1.6vw,1.25rem)] font-sans font-normal tracking-wide text-muted sm:-right-3">
+              v8.0
+            </sup>
+          </span>
           <Reveal
             as="span"
             className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]"
@@ -133,7 +138,7 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <div className="mb-10 text-center">
-          <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
+          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Services
           </h2>
         </div>
@@ -170,7 +175,7 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <div className="mb-10 text-center">
-          <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
+          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Work
           </h2>
         </div>
@@ -269,7 +274,7 @@ export default function Home() {
               in globals.css for why ScrollGroup doesn't set one itself. */}
           <div className="transition-all duration-700">
             <div className="mb-10 text-center">
-              <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
+              <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
                 Photography
               </h2>
             </div>
