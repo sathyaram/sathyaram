@@ -46,22 +46,22 @@ export default function WebsiteCaseStudy({
     <div className="px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl">
         <ScrollGroup>
-          <div className="transition-all duration-700">
-            <p className="text-center text-xs font-medium uppercase tracking-widest text-muted">
-              {agency} · {year}
-            </p>
-            <Reveal
-              as="h1"
-              segments={[{ text: title, className: "gradient-text-name" }]}
-              className="mt-2 block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)]"
-              style={
-                {
-                  "--name-gradient": `linear-gradient(120deg, ${gradientFrom}, ${gradientTo})`,
-                } as React.CSSProperties
-              }
-            />
-            <p className="mt-4 text-center text-lg text-muted">{subtitle}</p>
-          </div>
+          <p className="text-center text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
+            {agency} · {year}
+          </p>
+          <Reveal
+            as="h1"
+            segments={[{ text: title, className: "gradient-text-name" }]}
+            className="mt-2 block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)] transition-all duration-700"
+            style={
+              {
+                "--name-gradient": `linear-gradient(120deg, ${gradientFrom}, ${gradientTo})`,
+              } as React.CSSProperties
+            }
+          />
+          <p className="mt-4 text-center text-lg text-muted transition-all duration-700">
+            {subtitle}
+          </p>
         </ScrollGroup>
 
         <ScrollGroup>
@@ -106,29 +106,29 @@ export default function WebsiteCaseStudy({
           </p>
         </ScrollGroup>
 
-        <ScrollGroup>
-          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
-            <h2 className="font-display text-2xl font-bold tracking-tight">Overview</h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground">
-              {overview.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
+        <ScrollGroup className="mx-auto mt-14 max-w-lg">
+          <h2 className="font-display text-2xl font-bold tracking-tight transition-all duration-700">
+            Overview
+          </h2>
+          <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground transition-all duration-700">
+            {overview.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </ScrollGroup>
 
-        <ScrollGroup>
-          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
-            <h2 className="font-display text-2xl font-bold tracking-tight">What I built</h2>
-            <ul className="mt-4 space-y-3">
-              {contributions.map((item) => (
-                <li key={item} className="flex gap-3 text-base leading-relaxed text-foreground">
-                  <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <ScrollGroup className="mx-auto mt-14 max-w-lg">
+          <h2 className="font-display text-2xl font-bold tracking-tight transition-all duration-700">
+            What I built
+          </h2>
+          <ul className="mt-4 space-y-3 transition-all duration-700">
+            {contributions.map((item) => (
+              <li key={item} className="flex gap-3 text-base leading-relaxed text-foreground">
+                <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </ScrollGroup>
 
         <ScrollGroup>

@@ -135,15 +135,15 @@ export default function Home() {
 
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
-        <div className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 sm:pb-2">
+        <ScrollGroup className="mb-10 text-center">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Services
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
             I build institutional websites, design brand and interface work,
             and shoot photography on the side.
           </p>
-        </div>
+        </ScrollGroup>
 
         <ScrollGroup className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
           {services.map((service) => (
@@ -192,15 +192,15 @@ export default function Home() {
         column too narrow for the title.
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
-        <div className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 sm:pb-2">
+        <ScrollGroup className="mb-10 text-center">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Work
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
             A selection of institutional and nonprofit websites I&apos;ve
             designed and built for real clients.
           </p>
-        </div>
+        </ScrollGroup>
 
         <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
@@ -292,34 +292,26 @@ export default function Home() {
 
       {/* ---------- Photography panorama ---------- */}
       {/*
-        A single fade-up for the whole section rather than a per-photo
-        stagger: the slides inside PanoramaSlider are already positioned
-        and faded via their own 3D-carousel transform logic, and layering
-        a second, independent reveal system onto each slide risked
-        fighting that rather than complementing it.
+        Heading/blurb get their own stagger here at the page level; the
+        filter pills, each photo, and the caption/pagination stagger
+        independently inside PanoramaSlider itself (see the comment there
+        on why the photos use a JS-driven opacity stagger rather than the
+        .scroll-stagger-item class the rest of the site uses).
       */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
-        <ScrollGroup>
-          {/* transition-all here since this div has no other hover
-              transition of its own to piggyback on (unlike the service
-              and project cards) — see the comment on .scroll-stagger-item
-              in globals.css for why ScrollGroup doesn't set one itself. */}
-          <div className="transition-all duration-700">
-            <div className="mb-10 text-center">
-              <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 sm:pb-2">
-                Photography
-              </h2>
-              <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
-                Portrait, travel, and fine art photography I shoot on the
-                side, mostly on a Sony A7RIV.
-              </p>
-            </div>
-
-            <div className="relative w-screen ml-[calc(50%-50vw)]">
-              <PanoramaSlider />
-            </div>
-          </div>
+        <ScrollGroup className="mb-10 text-center">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+            Photography
+          </h2>
+          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
+            Portrait, travel, and fine art photography I shoot on the side,
+            mostly on a Sony A7RIV.
+          </p>
         </ScrollGroup>
+
+        <div className="relative w-screen ml-[calc(50%-50vw)]">
+          <PanoramaSlider />
+        </div>
       </section>
     </div>
   );

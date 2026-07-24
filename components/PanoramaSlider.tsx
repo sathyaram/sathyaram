@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { photos, CAMERA, CATEGORIES, type Category } from "@/lib/photos";
 import { CloseIcon } from "./icons";
+import ScrollGroup from "./ScrollGroup";
 
 // Degrees between neighbouring slides on the cylinder. The reference slider
 // uses 30°, which reads as a gentle panorama rather than a carousel.
@@ -31,6 +32,19 @@ export default function PanoramaSlider() {
   const [isDragging, setIsDragging] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [closing, setClosing] = useState(false);
+  // Drives the photos' own one-time stagger-in (see the note above the
+  // slide's style prop for why this can't just be the .scroll-stagger-item
+  // class everything else uses). Lazy-initialized so reduced-motion starts
+  // already revealed, same as ScrollGroup does.
+  const [revealed, setRevealed] = useState(() =>
+    typeof window === "undefined"
+      ? false
+      : window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  // Cleared back to "no delay" once the stagger has had time to finish, so
+  // it doesn't linger and delay every later opacity change (e.g. paging
+  // through the carousel after the reveal already played).
+  const [revealSettled, setRevealSettled] = useState(revealed);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const dragStart = useRef<number | null>(null);
@@ -75,6 +89,29 @@ export default function PanoramaSlider() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Same trigger ScrollGroup uses elsewhere — fires once, when the carousel
+  // itself scrolls into view.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || revealed) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setRevealed(true);
+        observer.disconnect();
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [revealed]);
+
+  useEffect(() => {
+    if (!revealed || revealSettled) return;
+    const timeout = setTimeout(() => setRevealSettled(true), count * 60 + 900);
+    return () => clearTimeout(timeout);
+  }, [revealed, revealSettled, count]);
 
   const radius = (slideWidth + SLIDE_GAP) / (2 * Math.tan(toRadians(ANGLE) / 2));
 
@@ -177,7 +214,7 @@ export default function PanoramaSlider() {
   return (
     <div className="select-none">
       {/* Filters */}
-      <div className="mb-8 flex flex-wrap items-center justify-center gap-2 px-6">
+      <ScrollGroup className="mb-8 flex flex-wrap items-center justify-center gap-2 px-6">
         {CATEGORIES.map((category) => {
           const isOn = filter === category.id;
           return (
@@ -189,7 +226,7 @@ export default function PanoramaSlider() {
                 setActive(0);
               }}
               aria-pressed={isOn}
-              className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
+              className={`rounded-full border px-4 py-1.5 text-sm transition-all ${
                 isOn
                   ? "border-foreground bg-foreground text-background"
                   : "border-border text-muted hover:text-foreground"
@@ -199,7 +236,7 @@ export default function PanoramaSlider() {
             </button>
           );
         })}
-      </div>
+      </ScrollGroup>
 
       <div
         ref={containerRef}
@@ -278,14 +315,22 @@ export default function PanoramaSlider() {
                   // Percentage margins resolve against the container's *width*,
                   // so centring has to be done with a translate instead.
                   transform: `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${theta}deg)`,
+                  // The reveal stagger only touches opacity, given its own
+                  // delay right in this same transition value — never the
+                  // .scroll-stagger-item class, and never the transform,
+                  // both of which are already fully owned by the carousel's
+                  // own position math above (an inline style always wins
+                  // over a CSS class for the same property, and a second
+                  // Y-offset folded into this transform would fight the
+                  // x/z/theta positioning).
                   transition: isDragging
                     ? "none"
                     : hidden
                       ? // Wrapping slide: reposition instantly while invisible,
                         // otherwise it visibly flies across the frame.
-                        "opacity 400ms ease"
-                      : "transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease",
-                  opacity: hidden ? 0 : 1,
+                        `opacity 400ms ease ${revealSettled ? 0 : index * 60}ms`
+                      : `transform 500ms cubic-bezier(0.22,1,0.36,1), opacity 400ms ease ${revealSettled ? 0 : index * 60}ms`,
+                  opacity: hidden ? 0 : revealed ? 1 : 0,
                   pointerEvents: hidden ? "none" : "auto",
                   zIndex: 100 - Math.round(Math.abs(fractional) * 10),
                 }}
@@ -307,14 +352,18 @@ export default function PanoramaSlider() {
         </div>
       </div>
 
-      {/* Caption + controls */}
-      <div className="mx-auto mt-4 flex max-w-xl flex-col items-center gap-8 px-6 text-center">
-        <div>
-          <p className="font-display text-lg font-semibold">{current?.title}</p>
-          <p className="mt-1 text-xs text-muted">{CAMERA}</p>
-        </div>
+      {/* Caption + controls — title, camera line, and the control row each
+          stagger in as their own beat. No shared `gap` here (that would
+          also land between title and camera, which need to stay tight
+          together) — the old gap-8 between the caption and the controls is
+          reproduced as an explicit mt-8 on the controls row instead. */}
+      <ScrollGroup className="mx-auto mt-4 flex max-w-xl flex-col items-center px-6 text-center">
+        <p className="font-display text-lg font-semibold transition-all duration-700">
+          {current?.title}
+        </p>
+        <p className="mt-1 text-xs text-muted transition-all duration-700">{CAMERA}</p>
 
-        <div className="flex items-center gap-4">
+        <div className="mt-8 flex items-center gap-4 transition-all duration-700">
           <button
             type="button"
             onClick={() => step(-1)}
@@ -350,7 +399,7 @@ export default function PanoramaSlider() {
             <span aria-hidden="true">→</span>
           </button>
         </div>
-      </div>
+      </ScrollGroup>
 
       {/* Lightbox — portalled to <body>: an ancestor with a transform (the
           full-bleed wrapper, or the route-transition wrapper) would otherwise

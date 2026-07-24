@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import ScrollGroup from "@/components/ScrollGroup";
 
 export const metadata: Metadata = {
   title: "Colophon",
@@ -47,11 +48,11 @@ export default function Colophon() {
         </p>
 
         {sections.map((section) => (
-          <div key={section.heading} className="mt-12">
-            <h2 className="text-xs font-medium uppercase tracking-widest text-muted">
+          <ScrollGroup key={section.heading} className="mt-12">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
               {section.heading}
             </h2>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-3 transition-all duration-700">
               {section.items.map((item) => (
                 <li
                   key={item.title}
@@ -75,7 +76,7 @@ export default function Colophon() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollGroup>
         ))}
       </div>
     </div>
