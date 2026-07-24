@@ -145,11 +145,11 @@ export default function Home() {
           </p>
         </div>
 
-        <ScrollGroup className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+        <ScrollGroup className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative flex min-h-[15rem] flex-col items-center justify-center p-6 text-center transition-transform duration-300 ease-out hover:-translate-y-1"
+              className="group relative flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-transform duration-300 ease-out hover:-translate-y-1"
             >
               {/* The card's own border — a rotated square rather than a
                   rounded rectangle, so the grid reads as a field of
@@ -157,12 +157,12 @@ export default function Home() {
                   square's axis-aligned bounding box grows by √2 once
                   rotated 45deg; centered via inset-0 + m-auto so it stays
                   a true square (and so a true diamond) independent of
-                  this card's own aspect ratio. Nudged down with
-                  translate-y so its top vertex crosses the icon's center
-                  rather than sitting below it. */}
+                  this card's own aspect ratio. Small and nudged up so it
+                  frames just the icon — the title/blurb sit entirely
+                  below it, not contained inside. */}
               <div
                 aria-hidden="true"
-                className="absolute inset-0 m-auto aspect-square w-[42%] translate-y-6 rotate-45 rounded-xl border border-border bg-background/40 transition-colors duration-300 ease-out group-hover:border-accent/60"
+                className="absolute inset-0 m-auto aspect-square w-[30%] -translate-y-3 rotate-45 rounded-xl border border-border bg-background/40 transition-colors duration-300 ease-out group-hover:border-accent/60"
               />
 
               <div className="relative flex flex-col items-center">
