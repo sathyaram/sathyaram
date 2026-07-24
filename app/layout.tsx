@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Bricolage_Grotesque, Work_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import Nav from "@/components/Nav";
@@ -25,7 +26,13 @@ const californication = localFont({
   display: "swap",
 });
 
+// Google Analytics 4 — same property as the current live site
+// (sathyaram.com), loaded via next/script afterInteractive so it stays off
+// the critical render path.
+const GA_ID = "G-V2ZX65PRKW";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sathyaram.com"),
   title: {
     template: "%s | Sathya Ram",
     default: "Sathya Ram",
@@ -87,6 +94,19 @@ export default function RootLayout({
           <RouteTransition>{children}</RouteTransition>
         </main>
         <Footer />
+
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
