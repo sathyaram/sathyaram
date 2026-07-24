@@ -107,9 +107,9 @@ export default function WebsiteCaseStudy({
         </ScrollGroup>
 
         <ScrollGroup>
-          <div className="mt-14 transition-all duration-700">
+          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
             <h2 className="font-display text-2xl font-bold tracking-tight">Overview</h2>
-            <div className="mx-auto mt-4 max-w-lg space-y-4 text-base leading-relaxed text-foreground">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground">
               {overview.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -118,9 +118,9 @@ export default function WebsiteCaseStudy({
         </ScrollGroup>
 
         <ScrollGroup>
-          <div className="mt-14 transition-all duration-700">
+          <div className="mx-auto mt-14 max-w-lg transition-all duration-700">
             <h2 className="font-display text-2xl font-bold tracking-tight">What I built</h2>
-            <ul className="mx-auto mt-4 max-w-lg space-y-3">
+            <ul className="mt-4 space-y-3">
               {contributions.map((item) => (
                 <li key={item} className="flex gap-3 text-base leading-relaxed text-foreground">
                   <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
