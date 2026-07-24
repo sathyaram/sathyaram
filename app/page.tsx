@@ -102,9 +102,7 @@ export default function Home() {
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
-        <h1
-          className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.5rem,7.4vw,5.75rem)]"
-        >
+        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.5rem,7.4vw,5.75rem)]">
           <Reveal
             as="span"
             className="text-logo-blue"
@@ -117,20 +115,20 @@ export default function Home() {
               there — bumped for this rebuild). Plain inline <sup>, letting
               Tailwind's preflight reset (position: relative; top: -0.5em;
               font-size: 75%) do the actual raising. The em unit needs the
-              h1 itself to carry the headline's font-size (moved up from
-              the Reveal span below it) — em on a sibling of the
-              actually-sized element resolves against the inherited
-              ~16px default, not the visible text size. */}
+              h1 itself to carry the headline's font-size so the sup
+              resolves against the visible text size, not the inherited
+              ~16px default. */}
           <sup className="ml-1 top-[-4em] text-[0.15em] font-sans font-normal tracking-wide text-muted">
             v8.0
           </sup>
-          <Reveal
-            as="span"
-            className="mt-2 block text-[clamp(1.75rem,5.1vw,3.9rem)]"
-            text="Developer & Designer"
-            delay={340}
-          />
         </h1>
+        {/* The tagline is its own heading a step down from the name. */}
+        <Reveal
+          as="h2"
+          className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.75rem,5.1vw,3.9rem)]"
+          text="Developer & Designer"
+          delay={340}
+        />
       </section>
 
       {/* ---------- Services ---------- */}
@@ -162,7 +160,7 @@ export default function Home() {
                   {service.emoji}
                 </span>
               </span>
-              <h3 className="mt-3 font-display text-lg font-semibold">
+              <h3 className="relative z-[1] -mt-2 font-display text-lg font-semibold">
                 {service.title}
               </h3>
               <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted">
