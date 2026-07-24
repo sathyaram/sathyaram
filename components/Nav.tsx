@@ -36,7 +36,7 @@ export default function Nav() {
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4">
+    <header className="sticky top-0 z-50 px-4 pt-6">
       <nav
         className={`mx-auto flex max-w-4xl items-center justify-between rounded-full px-4 py-2 transition-colors duration-300 ${
           solid ? "bg-background/80 backdrop-blur" : "bg-transparent"

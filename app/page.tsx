@@ -93,7 +93,7 @@ export default function Home() {
   return (
     <div className="px-4 pb-24 sm:px-6">
       {/* ---------- Hero ---------- */}
-      <section className="relative mx-auto max-w-6xl pt-20 pb-32 text-center sm:pt-28 sm:pb-44">
+      <section className="relative mx-auto max-w-6xl pt-20 pb-24 text-center sm:pt-28 sm:pb-36">
         {/* Decorative sparkles, positioned asymmetrically around the headline */}
         <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-sparkle motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
@@ -113,7 +113,7 @@ export default function Home() {
               headline's own clamp() so it stays subtle at every viewport
               instead of the old site's fixed 6px, which needed a mobile
               special-case. */}
-          <sup className="ml-1 align-super text-[0.24em] font-sans font-normal tracking-wide text-muted">
+          <sup className="ml-0.5 align-super text-[0.22em] leading-none font-sans font-normal tracking-wide text-muted relative -top-[0.35em]">
             v8.0
           </sup>
           <Reveal
@@ -133,11 +133,8 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
+          <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
             Services
-          </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
-            What I do.
           </h2>
         </div>
 
@@ -145,13 +142,11 @@ export default function Home() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-3xl border border-border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
-              style={{ transitionTimingFunction: SPRING }}
+              className="group rounded-3xl border border-border p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/60"
             >
               <div
                 aria-hidden="true"
-                className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-3xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110"
-                style={{ transitionTimingFunction: SPRING }}
+                className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/10 text-3xl transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110"
               >
                 {service.emoji}
               </div>
@@ -175,11 +170,8 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
+          <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
             Work
-          </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
-            Selected projects.
           </h2>
         </div>
 
@@ -277,11 +269,8 @@ export default function Home() {
               in globals.css for why ScrollGroup doesn't set one itself. */}
           <div className="transition-all duration-700">
             <div className="mb-10 text-center">
-              <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
+              <h2 className="font-script text-6xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-7xl sm:pb-3">
                 Photography
-              </p>
-              <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
-                In my free time.
               </h2>
             </div>
 
