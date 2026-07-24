@@ -35,6 +35,23 @@ export default function Nav() {
   const isLinkActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 
+  // Same-page hash links don't get a native re-scroll on a second click,
+  // since the URL (including the hash) never changes — the browser only
+  // scrolls to a fragment when navigating to it for the first time. Scroll
+  // manually instead, every time, so repeat clicks keep working.
+  const scrollToWork = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname !== "/") return;
+    const target = document.getElementById("work");
+    if (!target) return;
+    e.preventDefault();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    if (window.location.hash !== "#work") {
+      window.history.pushState(null, "", "/#work");
+    }
+    setOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 px-4 pt-6">
       <nav
@@ -53,6 +70,7 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  onClick={link.href === "/#work" ? scrollToWork : undefined}
                   aria-current={isActive ? "page" : undefined}
                   className={`${styles.link} ${isActive ? styles.active : ""} text-base ${
                     isActive ? "text-foreground" : "text-muted"
@@ -97,7 +115,9 @@ export default function Nav() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={
+                      link.href === "/#work" ? scrollToWork : () => setOpen(false)
+                    }
                     aria-current={isActive ? "page" : undefined}
                     className={isActive ? "font-medium text-foreground" : "text-muted"}
                   >

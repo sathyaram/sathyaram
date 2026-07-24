@@ -132,7 +132,7 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <div className="mb-10 text-center">
-          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+          <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,6rem)] pb-1 sm:pb-2">
             Services
           </h2>
           <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
@@ -173,7 +173,7 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <div className="mb-10 text-center">
-          <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+          <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,6rem)] pb-1 sm:pb-2">
             Work
           </h2>
           <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
@@ -276,7 +276,7 @@ export default function Home() {
               in globals.css for why ScrollGroup doesn't set one itself. */}
           <div className="transition-all duration-700">
             <div className="mb-10 text-center">
-              <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
+              <h2 className="font-script leading-none text-logo-blue gradient-text-name text-[clamp(2.75rem,11vw,6rem)] pb-1 sm:pb-2">
                 Photography
               </h2>
               <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">

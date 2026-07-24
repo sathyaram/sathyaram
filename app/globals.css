@@ -14,6 +14,17 @@
   /* The hero's decorative sparkles, light mode only — kept distinct from
      --logo-blue so the two don't blur into each other. */
   --sparkle: #5ac8fa;
+  /* Gate for every reveal animation's play-state (see .reveal-letter /
+     .reveal-block below). Read via var() everywhere instead of the
+     `animation` shorthand, so no rule can ever reset it back to "running"
+     by redeclaring the shorthand for an unrelated reason (this bit us
+     three times when a rule needed to layer in a second animation, e.g.
+     the gradient sweep on the hero name). */
+  --reveal-play: running;
+}
+
+html.intro-playing {
+  --reveal-play: paused;
 }
 
 .dark {
@@ -39,6 +50,10 @@
   --font-script: var(--font-script);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   background: var(--background);
@@ -46,6 +61,12 @@ body {
   transition:
     background-color 200ms ease,
     color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /*
@@ -179,20 +200,24 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* Overridden below for elements that also need the letter-rise stagger
-     (animation doesn't merge across classes, so that case re-declares
-     both together rather than one clobbering the other). */
-  animation: gradient-pan 8s ease-in-out infinite;
+  animation-name: gradient-pan;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-/* Each letter already carries .reveal-letter's own `animation` shorthand
-   (the rise-in stagger) — `animation` doesn't merge across classes, so the
-   compound selector re-declares both together rather than one silently
-   replacing the other. */
+/* Letters that are both the rise-in stagger AND the gradient sweep (the
+   hero name) need both animations listed together — longhand throughout,
+   never the `animation` shorthand, so animation-play-state stays owned by
+   the single var(--reveal-play) declaration instead of being reset to
+   "running" by whichever rule happens to win specificity. */
 .dark .reveal-letter.gradient-text-name {
-  animation:
-    letter-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both,
-    gradient-pan 8s ease-in-out infinite;
+  animation-name: letter-rise, gradient-pan;
+  animation-duration: 650ms, 8s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: both, none;
+  animation-play-state: var(--reveal-play);
 }
 
 @keyframes gradient-pan {
@@ -414,33 +439,27 @@ body {
   }
 }
 
+/* While the intro loader is on screen (html.intro-playing, set above),
+   --reveal-play is "paused", holding every reveal at its start frame
+   (both-fill + paused = frozen at opacity 0) so the text streams in as the
+   loader clears rather than finishing behind it. */
 .reveal-letter {
   display: inline-block;
   white-space: pre;
-  animation: letter-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-name: letter-rise;
+  animation-duration: 650ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  animation-play-state: var(--reveal-play);
 }
 
-/* While the intro loader is on screen, hold every reveal at its start frame
-   (both-fill + paused = frozen at opacity 0) so the text streams in as the
-   loader clears rather than finishing behind it. */
 /* Whole-block variant for longer copy (subheads) — one gentle rise+fade. */
 .reveal-block {
-  animation: letter-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-html.intro-playing .reveal-letter,
-html.intro-playing .reveal-block {
-  animation-play-state: paused;
-}
-
-/* .dark .reveal-letter.gradient-text-name (below) redeclares the whole
-   `animation` shorthand to add its gradient-pan sweep, which resets
-   animation-play-state back to "running" — and at 3 classes it outranks
-   the 2-classes-plus-element pause rule above, so the name text was never
-   actually pausing. Match its specificity here so intro-playing still
-   wins for it too. */
-html.intro-playing .reveal-letter.gradient-text-name {
-  animation-play-state: paused;
+  animation-name: letter-rise;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  animation-play-state: var(--reveal-play);
 }
 
 @media (prefers-reduced-motion: reduce) {
