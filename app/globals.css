@@ -8,8 +8,12 @@
   --accent: #1f4d3f;
   --muted: #6b6b6b;
   --border: #ddd6c9;
-  /* The logo gradient's deep-blue stop — richer, so it holds up on beige. */
-  --logo-blue: #0059bc;
+  /* Lighter than the logo's own deep-blue stop — reads better as body-size
+     headline text on beige than the richer #0059bc did. */
+  --logo-blue: #2e75d6;
+  /* The hero's decorative sparkles, light mode only — kept distinct from
+     --logo-blue so the two don't blur into each other. */
+  --sparkle: #5ac8fa;
 }
 
 .dark {
@@ -28,6 +32,7 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-logo-blue: var(--logo-blue);
+  --color-sparkle: var(--sparkle);
   --color-border: var(--border);
   --font-sans: var(--font-work-sans);
   --font-display: var(--font-bricolage);
@@ -131,6 +136,12 @@ body {
   transition:
     color 250ms ease-out,
     text-shadow 250ms ease-out;
+  /* A little magic-wand cursor over the name — the emoji rendered into an
+     SVG so it can be used as a cursor image at all. */
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='26' font-size='28'%3E%F0%9F%AA%84%3C/text%3E%3C/svg%3E")
+      2 30,
+    pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -168,6 +179,10 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  /* Overridden below for elements that also need the letter-rise stagger
+     (animation doesn't merge across classes, so that case re-declares
+     both together rather than one clobbering the other). */
+  animation: gradient-pan 8s ease-in-out infinite;
 }
 
 /* Each letter already carries .reveal-letter's own `animation` shorthand
@@ -381,19 +396,19 @@ html.intro-playing .reveal-block {
 
 .intro-panel:nth-child(1) {
   left: 0;
-  animation-delay: 2200ms;
+  animation-delay: 2100ms;
 }
 .intro-panel:nth-child(2) {
   left: 25%;
-  animation-delay: 2320ms;
+  animation-delay: 2220ms;
 }
 .intro-panel:nth-child(3) {
   left: 50%;
-  animation-delay: 2440ms;
+  animation-delay: 2340ms;
 }
 .intro-panel:nth-child(4) {
   left: 75%;
-  animation-delay: 2560ms;
+  animation-delay: 2460ms;
 }
 
 .intro-logo {

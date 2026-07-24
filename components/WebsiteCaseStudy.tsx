@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 type WebsiteCaseStudyProps = {
   title: string;
@@ -26,15 +27,17 @@ export default function WebsiteCaseStudy({
   return (
     <div className="px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted">
+        <p className="text-center text-xs font-medium uppercase tracking-widest text-muted">
           {agency} · {year}
         </p>
-        <h1 className="mt-2 font-display text-4xl font-semibold sm:text-5xl">
-          {title}
-        </h1>
-        <p className="mt-4 text-lg text-muted">{subtitle}</p>
+        <Reveal
+          as="h1"
+          className="mt-2 block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)]"
+          text={title}
+        />
+        <p className="mt-4 text-center text-lg text-muted">{subtitle}</p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           {tags.map((tag) => (
             <span
               key={tag}

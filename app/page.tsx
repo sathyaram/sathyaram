@@ -12,32 +12,37 @@ const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
 // behind the artwork) so light type stays legible across the whole card.
 const services = [
   {
+    emoji: "💻",
     title: "Development",
     blurb:
       "Institutional and nonprofit websites, built with React, Next.js, WordPress, and Drupal.",
   },
   {
+    emoji: "🎨",
     title: "Design",
     blurb:
       "Brand identity, interface design, and prototyping in Figma and Illustrator.",
   },
   {
+    emoji: "📷",
     title: "Photography",
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
   {
-    title: "Magic Deck Tech",
-    blurb:
-      "Competitive Magic: The Gathering deckbuilding, sideboard plans, and deck tech breakdowns.",
+    emoji: "✅",
+    title: "Digital Quality Assurance",
+    blurb: "QA testing and quality assurance for web and AI-assisted products.",
   },
   {
+    emoji: "🎙️",
     title: "Voice Narration",
     blurb: "Voiceover and narration for video, animation, and audio projects.",
   },
   {
-    title: "AI Context Engineering & QA",
+    emoji: "🃏",
+    title: "Magic Deck Tech",
     blurb:
-      "Prompt and context engineering, plus QA testing for AI-assisted products.",
+      "Competitive Magic: The Gathering deckbuilding, sideboard plans, and deck tech breakdowns.",
   },
 ];
 
@@ -90,9 +95,9 @@ export default function Home() {
       {/* ---------- Hero ---------- */}
       <section className="relative mx-auto max-w-6xl pt-20 pb-32 text-center sm:pt-28 sm:pb-44">
         {/* Decorative sparkles, positioned asymmetrically around the headline */}
-        <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-accent motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
-        <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-accent [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
-        <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-accent/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
+        <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-sparkle motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
+        <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
+        <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
         <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em]">
           <Reveal
@@ -101,7 +106,6 @@ export default function Home() {
             segments={[
               { text: "Hi! I'm " },
               { text: "Sathya Ram", className: "gradient-text-name name-glow" },
-              { text: "." },
             ]}
           />
           <Reveal
@@ -121,7 +125,7 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
+          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
             Services
           </p>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
@@ -133,9 +137,17 @@ export default function Home() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-3xl border border-border p-7"
+              className="group rounded-3xl border border-border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
+              style={{ transitionTimingFunction: SPRING }}
             >
-              <h3 className="font-display text-lg font-semibold">
+              <div
+                aria-hidden="true"
+                className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/10 text-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110"
+                style={{ transitionTimingFunction: SPRING }}
+              >
+                {service.emoji}
+              </div>
+              <h3 className="mt-4 font-display text-lg font-semibold">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -155,7 +167,7 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
+          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
             Work
           </p>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
@@ -238,7 +250,7 @@ export default function Home() {
       {/* ---------- Photography panorama ---------- */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
         <div className="mb-10 text-center">
-          <p className="font-script text-4xl leading-none text-logo-blue sm:text-5xl">
+          <p className="font-script text-4xl leading-none text-logo-blue gradient-text-name pb-2 sm:text-5xl sm:pb-3">
             Photography
           </p>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">

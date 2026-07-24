@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Logo from "./Logo";
 import {
   ResumeIcon,
   InstagramIcon,
@@ -7,12 +6,6 @@ import {
   GithubIcon,
   CodepenIcon,
 } from "./icons";
-
-const navigate = [
-  { href: "/about", label: "About" },
-  { href: "/#work", label: "Work" },
-  { href: "/contact", label: "Contact" },
-];
 
 const elsewhere = [
   { label: "Resume", href: "/resume.pdf", icon: ResumeIcon },
@@ -25,42 +18,24 @@ const elsewhere = [
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-8 gap-y-4 px-6 py-7">
-        <Link
-          href="/"
-          aria-label="Sathya Ram — home"
-          className="logo-link flex items-center"
+      <div className="mx-auto max-w-5xl px-6 py-8">
+        <nav
+          aria-label="Elsewhere"
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
         >
-          <Logo className="h-6 w-auto text-foreground" />
-        </Link>
-
-        <nav aria-label="Footer" className="flex items-center gap-6">
-          {navigate.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm text-foreground transition-colors hover:text-accent"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-1">
           {elsewhere.map(({ label, href, icon: Icon }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={label}
-              title={label}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
+              className="inline-flex items-center gap-2 text-sm text-foreground transition-colors hover:text-accent"
             >
-              <Icon className="h-4 w-4" />
+              <Icon className="h-6 w-6" />
+              {label}
             </a>
           ))}
-        </div>
+        </nav>
       </div>
 
       <div className="border-t border-border px-6 py-4">

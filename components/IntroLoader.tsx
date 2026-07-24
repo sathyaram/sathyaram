@@ -32,8 +32,8 @@ export default function IntroLoader() {
     html.classList.add("intro-playing");
     document.body.style.overflow = "hidden";
 
-    const revealAt = reduce ? 0 : 2200;
-    const doneAt = reduce ? 0 : 3400;
+    const revealAt = reduce ? 0 : 2100;
+    const doneAt = reduce ? 0 : 3300;
 
     const releaseReveals = setTimeout(
       () => html.classList.remove("intro-playing"),
