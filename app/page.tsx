@@ -139,46 +139,35 @@ export default function Home() {
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Services
           </h2>
-          <p className="mx-auto mt-1 max-w-xl text-balance text-lg font-light leading-relaxed text-foreground/70 transition-all duration-700 sm:text-xl">
-            I build institutional websites, design brand and interface work,
-            and shoot photography on the side.
-          </p>
         </ScrollGroup>
 
         <ScrollGroup className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1"
+              className="group flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1"
             >
-              {/* The card's own border — a rotated square rather than a
-                  rounded rectangle, so the grid reads as a field of
-                  diamonds. Sized well under 100% (pre-rotation) since a
-                  square's axis-aligned bounding box grows by √2 once
-                  rotated 45deg; centered via inset-0 + m-auto so it stays
-                  a true square (and so a true diamond) independent of
-                  this card's own aspect ratio. Small and nudged up so it
-                  frames just the icon — the title/blurb sit entirely
-                  below it, not contained inside. */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 m-auto aspect-square w-[30%] -translate-y-3 rotate-45 rounded-xl border border-border bg-background/40 transition-colors duration-300 ease-out group-hover:border-accent/60"
-              />
-
-              <div className="relative flex flex-col items-center">
+              {/* A diamond outline framing the icon itself — a rotated
+                  square centered behind the emoji, so it tracks the icon
+                  instead of the whole card (which left it misaligned). */}
+              <span className="relative flex h-20 w-20 items-center justify-center">
                 <span
                   aria-hidden="true"
-                  className="text-4xl transition-transform duration-300 ease-out group-hover:scale-110"
+                  className="absolute inset-0 rotate-45 rounded-xl border border-border transition-colors duration-300 ease-out group-hover:border-accent/60"
+                />
+                <span
+                  aria-hidden="true"
+                  className="relative text-4xl transition-transform duration-300 ease-out group-hover:scale-110"
                 >
                   {service.emoji}
                 </span>
-                <h3 className="mt-2 font-display text-lg font-semibold">
-                  {service.title}
-                </h3>
-                <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted">
-                  {service.blurb}
-                </p>
-              </div>
+              </span>
+              <h3 className="mt-3 font-display text-lg font-semibold">
+                {service.title}
+              </h3>
+              <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted">
+                {service.blurb}
+              </p>
             </div>
           ))}
         </ScrollGroup>
@@ -196,10 +185,6 @@ export default function Home() {
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Work
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
-            A selection of institutional and nonprofit websites I&apos;ve
-            designed and built for real clients.
-          </p>
         </ScrollGroup>
 
         <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
@@ -292,10 +277,10 @@ export default function Home() {
 
       {/* ---------- Photography panorama ---------- */}
       {/*
-        Heading/blurb get their own stagger here at the page level; the
-        filter pills, each photo, and the caption/pagination stagger
-        independently inside PanoramaSlider itself (see the comment there
-        on why the photos use a JS-driven opacity stagger rather than the
+        The heading gets its own stagger here at the page level; the filter
+        pills, each photo, and the caption/pagination stagger independently
+        inside PanoramaSlider itself (see the comment there on why the
+        photos use a JS-driven opacity stagger rather than the
         .scroll-stagger-item class the rest of the site uses).
       */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
@@ -303,10 +288,6 @@ export default function Home() {
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Photography
           </h2>
-          <p className="mx-auto max-w-md text-sm leading-normal text-muted transition-all duration-700 sm:text-base">
-            Portrait, travel, and fine art photography I shoot on the side,
-            mostly on a Sony A7RIV.
-          </p>
         </ScrollGroup>
 
         <div className="relative w-screen ml-[calc(50%-50vw)]">

@@ -115,6 +115,19 @@ body {
   }
 }
 
+/* Nav elements ease down + fade in on first load (logo, links, theme
+   toggle), applied with a small per-item stagger in Nav.tsx. */
+@keyframes nav-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*
  * Hover glow on the hero name, ported from the old site (_midnight.scss):
  * the glow snaps on instantly and fades back out slowly over 2s.

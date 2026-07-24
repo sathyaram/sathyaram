@@ -59,11 +59,15 @@ export default function Nav() {
           solid ? "bg-background/80 backdrop-blur" : "bg-transparent"
         }`}
       >
-        <Link href="/" aria-label="Sathya Ram — home" className="logo-link flex items-center">
+        <Link
+          href="/"
+          aria-label="Sathya Ram — home"
+          className="logo-link flex items-center animate-[nav-fade-in_600ms_ease-out_both] motion-reduce:animate-none"
+        >
           <Logo className="h-7 w-auto text-foreground transition-opacity hover:opacity-80" />
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 animate-[nav-fade-in_600ms_ease-out_100ms_both] motion-reduce:animate-none md:flex">
           {links.map((link) => {
             const isActive = isLinkActive(link.href);
             return (
@@ -83,7 +87,7 @@ export default function Nav() {
           })}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 animate-[nav-fade-in_600ms_ease-out_200ms_both] motion-reduce:animate-none">
           <span className="relative flex items-center">
             <ThemeToggle />
             {/* A tiny planet orbiting the toggle on a plain circular ring. */}
