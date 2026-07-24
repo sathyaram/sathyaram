@@ -523,49 +523,70 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(260px, 42vw);
+  width: min(320px, 48vw);
   transform: translate(-50%, -50%);
   z-index: 201;
   animation: intro-logo-out 500ms ease forwards 1900ms;
+}
+
+/* A dramatic flash the instant each line's own draw finishes — white for
+   the S, the same blue the R already draws in. Layered drop-shadows (a
+   tight near-solid core through a soft outer halo) plus brightness() read
+   as a hotter, more intense flash than a couple of wide, even layers
+   would. Each line's glow animation is listed together with its own
+   stroke-offset draw in ONE `animation` shorthand — never as a separate
+   rule — since a second rule setting `animation` on the same element
+   would replace this one instead of adding to it. */
+@keyframes logo-draw-glow-white {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+  35% {
+    filter: brightness(1.8) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
+      drop-shadow(0 0 12px rgba(255, 255, 255, 0.75))
+      drop-shadow(0 0 20px rgba(255, 255, 255, 0.45));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+}
+
+@keyframes logo-draw-glow-blue {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(43, 170, 226, 0));
+  }
+  35% {
+    filter: brightness(1.8) drop-shadow(0 0 2px rgba(43, 170, 226, 1))
+      drop-shadow(0 0 6px rgba(43, 170, 226, 0.95))
+      drop-shadow(0 0 12px rgba(43, 170, 226, 0.75))
+      drop-shadow(0 0 20px rgba(43, 170, 226, 0.45));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(43, 170, 226, 0));
+  }
 }
 
 /* The intro logo draws itself (independent of the hover animation). */
 .intro-logo .logo-mark .s-line {
   fill: transparent;
   stroke: #ffffff;
-  animation: stroke-offset 1600ms ease forwards;
+  animation:
+    stroke-offset 1600ms ease forwards,
+    logo-draw-glow-white 900ms ease-out 1600ms forwards;
 }
 
 .intro-logo .logo-mark .r-line {
   fill: transparent;
   stroke: #2baae2;
-  animation: stroke-offset 1200ms ease forwards 250ms;
-}
-
-/* A dramatic flash the instant the draw finishes — s-line is the longer of
-   the two strokes (1600ms, no delay), so that's what this delay lines up
-   with. Whole mark, not each line separately, so it reads as one flash. */
-@keyframes logo-draw-glow {
-  0% {
-    filter: drop-shadow(0 0 0px rgba(112, 213, 255, 0));
-  }
-  35% {
-    filter: drop-shadow(0 0 20px rgba(112, 213, 255, 0.95))
-      drop-shadow(0 0 40px rgba(0, 89, 188, 0.7));
-  }
-  100% {
-    filter: drop-shadow(0 0 0px rgba(112, 213, 255, 0));
-  }
-}
-
-.intro-logo .logo-mark {
-  animation: logo-draw-glow 900ms ease-out 1600ms forwards;
+  animation:
+    stroke-offset 1200ms ease forwards 250ms,
+    logo-draw-glow-blue 900ms ease-out 1600ms forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-panel,
   .intro-logo,
-  .intro-logo .logo-mark,
   .intro-logo .logo-mark .s-line,
   .intro-logo .logo-mark .r-line {
     animation: none;
