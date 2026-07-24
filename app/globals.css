@@ -300,35 +300,28 @@ body {
 }
 
 /*
- * A tiny planet orbiting the nav logo. The ring is just a border on a
- * non-square box (border-radius: 50% on a rectangle is already an
- * ellipse). The dot's motion reuses the classic CSS ellipse-orbit trick:
- * one wrapper squashes vertically, an inner wrapper does a plain circular
- * rotation — but a *constant* counter-scale on the dot only cancels the
- * squash at rotate(0deg). Scale and rotate don't commute, so at any other
- * angle the two compose into a lopsided dot (confirmed: it was rendering
- * as a ~10×5.5px oval, not a 5×5px circle). Fixing that needs the dot to
- * counter-rotate in exact sync with the parent's spin, not just
- * counter-scale — same duration and timing-function so the two never
- * drift apart.
+ * A tiny planet orbiting the theme toggle on a plain circle. Sized as an
+ * explicit square, centered independent of whatever it's wrapping — using
+ * `inset` with equal px on all sides only gives a square if the element
+ * it's relative to is already one. A previous version tried to flatten a
+ * circle into an ellipse (squash + counter-scale the dot); simplified
+ * back to a true circle instead.
  */
 .logo-orbit {
   position: absolute;
-  inset: -7px -26px;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-.logo-orbit-ellipse {
+.logo-orbit-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
   border: 1px solid rgb(140 140 140 / 30%);
-}
-
-.logo-orbit-squash {
-  position: absolute;
-  inset: 0;
-  transform: scaleY(0.55);
 }
 
 .logo-orbit-spin {
@@ -346,7 +339,6 @@ body {
   margin: -2.5px 0 0 -2.5px;
   border-radius: 50%;
   background: var(--logo-blue);
-  animation: orbit-planet-counter-spin 6s linear infinite;
 }
 
 @keyframes orbit-spin {
@@ -355,20 +347,9 @@ body {
   }
 }
 
-@keyframes orbit-planet-counter-spin {
-  from {
-    transform: scaleY(1.818) rotate(0deg);
-  }
-  to {
-    transform: scaleY(1.818) rotate(-360deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .logo-orbit-spin,
-  .logo-orbit-planet {
+  .logo-orbit-spin {
     animation: none;
-    transform: scaleY(1.818);
   }
 }
 
