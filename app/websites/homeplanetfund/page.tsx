@@ -12,7 +12,8 @@ export default function HomePlanetFund() {
       subtitle="Patagonia's greenroots foundation."
       year="2024"
       agency="Teal Media"
-      tags={["WordPress", "Custom CSS", "JavaScript"]}
+      gradientFrom="#8C382C"
+      gradientTo="#F59431"
       url="homeplanetfund.org"
       link="https://homeplanetfund.org"
       image="/websites/assets/homeplanet.png"

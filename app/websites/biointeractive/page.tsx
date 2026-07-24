@@ -12,7 +12,8 @@ export default function Biointeractive() {
       subtitle="Netflixing science, for kids."
       year="2020"
       agency="ForumOne"
-      tags={["Drupal 8", "JavaScript", "Styled Components"]}
+      gradientFrom="#5C1A1A"
+      gradientTo="#F2B880"
       url="biointeractive.org"
       link="https://biointeractive.org"
       image="/websites/assets/howie.png"

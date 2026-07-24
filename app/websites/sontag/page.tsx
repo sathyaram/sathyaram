@@ -12,7 +12,8 @@ export default function Sontag() {
       subtitle="The definitive enterprise for brain cancer research."
       year="2021"
       agency="Push10"
-      tags={["WordPress", "JavaScript", "Styled Components"]}
+      gradientFrom="#042342"
+      gradientTo="#2B86E0"
       url="sontagfoundation.org"
       link="https://sontagfoundation.org"
       image="/websites/assets/sontag.png"

@@ -12,7 +12,8 @@ export default function Vilcek() {
       subtitle="A celebration of immigrants & the arts."
       year="2020"
       agency="ForumOne"
-      tags={["WordPress", "JavaScript", "Styled Components"]}
+      gradientFrom="#5C4433"
+      gradientTo="#E3D2B4"
       url="vilcek.org"
       link="https://vilcek.org"
       image="/websites/assets/vilcek.png"

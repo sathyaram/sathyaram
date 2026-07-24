@@ -1,4 +1,4 @@
-import type { ElementType } from "react";
+import type { CSSProperties, ElementType } from "react";
 
 type Segment = { text: string; className?: string };
 
@@ -11,6 +11,10 @@ type RevealProps = {
   segments?: Segment[];
   as?: ElementType;
   className?: string;
+  /** Passed straight through to the outer Tag — e.g. a per-instance
+   *  `--name-gradient` custom property for gradient-text-name callers that
+   *  aren't the fixed hero palette. */
+  style?: CSSProperties;
   /** ms before the first letter starts. */
   delay?: number;
   /** ms between successive letters. */
@@ -33,6 +37,7 @@ export default function Reveal({
   segments,
   as: Tag = "span",
   className,
+  style,
   delay = 0,
   step = 26,
 }: RevealProps) {
@@ -56,7 +61,7 @@ export default function Reveal({
   let letterIndex = 0;
 
   return (
-    <Tag className={className} aria-label={label}>
+    <Tag className={className} style={style} aria-label={label}>
       {words.map((word, wordIndex) => (
         <span key={wordIndex} className="inline-block whitespace-nowrap">
           {wordIndex > 0 ? " " : ""}

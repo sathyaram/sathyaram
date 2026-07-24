@@ -12,7 +12,8 @@ export default function Brookings() {
       subtitle="A mission-driven thinktank center."
       year="2024"
       agency="Teal Media"
-      tags={["WordPress", "JavaScript", "Custom HTML+CSS"]}
+      gradientFrom="#022A4E"
+      gradientTo="#00649F"
       url="brookings.edu"
       link="https://brookings.edu"
       image="/websites/assets/brookings.webp"

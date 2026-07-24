@@ -177,13 +177,12 @@ body {
  * of a flicker per letter.
  */
 .dark .gradient-text-name {
-  background-image: linear-gradient(
-    120deg,
-    #70d5ff,
-    #c9a9e0,
-    #0059bc,
-    #8fd9c4,
-    #70d5ff
+  /* Defaults to the hero name's palette; case-study titles override
+     --name-gradient per instance (see WebsiteCaseStudy.tsx) to use that
+     project's own brand colors instead. */
+  background-image: var(
+    --name-gradient,
+    linear-gradient(120deg, #70d5ff, #c9a9e0, #0059bc, #8fd9c4, #70d5ff)
   );
   background-size: 300% 300%;
   background-attachment: fixed;
@@ -250,6 +249,19 @@ body {
 
 .dark .icon-gradient-stroke {
   stroke: url(#brand-icon-gradient);
+}
+
+/*
+ * Case-study "Visit" link: same light-blue-to-dark-blue gradient as the
+ * logo's R-mark (components/Logo.tsx), as a border. Double background
+ * layers (padding-box for the fill, border-box for the gradient) instead
+ * of `border-image`, since border-image can't do rounded corners cleanly.
+ */
+.gradient-border-logo {
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(120deg, #70d5ff, #0059bc) border-box;
 }
 
 /* Line-draw keyframe used by the logo hover, ported from the old site. */
