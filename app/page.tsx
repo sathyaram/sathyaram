@@ -15,7 +15,7 @@ const services = [
   {
     emoji: "💻",
     title: "Development",
-    blurb: "Institutional and nonprofit websites, built with React, Next, and WordPress.",
+    blurb: "Institutional and nonprofit websites, built with React, Next.js, and WordPress.",
   },
   {
     emoji: "🎨",
@@ -112,15 +112,12 @@ export default function Home() {
           {/* A little version tag, ported from the old site's hero (v7.3
               there — bumped for this rebuild). Plain inline <sup>, letting
               Tailwind's preflight reset (position: relative; top: -0.5em;
-              font-size: 75%) do the actual raising — earlier attempts at
-              manually positioning this absolutely fought that reset
-              instead of using it. The 0.28em here also needs the h1 itself
-              to carry the headline's font-size (moved up from the Reveal
-              span below it) — em on a sibling of the actually-sized
-              element resolves against the inherited ~16px default, not
-              the visible text size, which is why this rendered at 6px
-              before. */}
-          <sup className="text-[0.28em] font-sans font-normal tracking-wide text-muted">
+              font-size: 75%) do the actual raising. The em unit needs the
+              h1 itself to carry the headline's font-size (moved up from
+              the Reveal span below it) — em on a sibling of the
+              actually-sized element resolves against the inherited
+              ~16px default, not the visible text size. */}
+          <sup className="ml-1 text-[0.15em] font-sans font-normal tracking-wide text-muted">
             v8.0
           </sup>
           <Reveal
@@ -138,7 +135,7 @@ export default function Home() {
           <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Services
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
             I build institutional websites, design brand and interface work,
             and shoot photography on the side.
           </p>
@@ -179,7 +176,7 @@ export default function Home() {
           <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
             Work
           </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+          <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
             A selection of institutional and nonprofit websites I&apos;ve
             designed and built for real clients.
           </p>
@@ -282,7 +279,7 @@ export default function Home() {
               <h2 className="font-script text-7xl leading-none text-logo-blue gradient-text-name pb-3 sm:text-8xl sm:pb-4">
                 Photography
               </h2>
-              <p className="mx-auto mt-2 max-w-md text-sm leading-normal text-muted sm:text-base">
+              <p className="mx-auto max-w-md text-sm leading-normal text-muted sm:text-base">
                 Portrait, travel, and fine art photography I shoot on the
                 side, mostly on a Sony A7RIV.
               </p>

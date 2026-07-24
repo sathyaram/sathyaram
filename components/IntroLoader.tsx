@@ -32,7 +32,13 @@ export default function IntroLoader() {
     html.classList.add("intro-playing");
     document.body.style.overflow = "hidden";
 
-    const revealAt = reduce ? 0 : 2100;
+    // Panels are 4 vertical strips with staggered start delays (2100 /
+    // 2220 / 2340 / 2460ms); the hero text sits centered, under the middle
+    // ones, and isn't actually clear of them until the *last* panel starts
+    // sliding. Unpausing reveals any earlier let the letter-rise animation
+    // run its course while still hidden, so it had already finished by the
+    // time the panel got out of the way. Match the last panel's delay.
+    const revealAt = reduce ? 0 : 2460;
     const doneAt = reduce ? 0 : 3300;
 
     const releaseReveals = setTimeout(
