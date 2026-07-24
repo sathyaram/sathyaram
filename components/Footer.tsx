@@ -1,20 +1,6 @@
 import Link from "next/link";
 import ScrollGroup from "./ScrollGroup";
-import {
-  ResumeIcon,
-  InstagramIcon,
-  DribbbleIcon,
-  GithubIcon,
-  CodepenIcon,
-} from "./icons";
-
-const elsewhere = [
-  { label: "Resume", href: "/resume.pdf", icon: ResumeIcon },
-  { label: "Instagram", href: "https://www.instagram.com/sathya.ram", icon: InstagramIcon },
-  { label: "Dribbble", href: "https://dribbble.com/sathyaram", icon: DribbbleIcon },
-  { label: "Github", href: "https://github.com/sathyaram", icon: GithubIcon },
-  { label: "Codepen", href: "https://codepen.io/sathyaram", icon: CodepenIcon },
-];
+import { socialLinks } from "@/lib/social";
 
 export default function Footer() {
   return (
@@ -22,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6 py-8">
         <nav aria-label="Elsewhere">
           <ScrollGroup className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-            {elsewhere.map(({ label, href, icon: Icon }) => (
+            {socialLinks.map(({ label, href, icon: Icon }) => (
               <a
                 key={label}
                 href={href}

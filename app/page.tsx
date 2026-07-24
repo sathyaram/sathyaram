@@ -102,7 +102,7 @@ export default function Home() {
         <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
         <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
 
-        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.5rem,7.4vw,5.75rem)]">
+        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.85rem,7.4vw,5.75rem)]">
           <Reveal
             as="span"
             className="text-logo-blue"
@@ -125,7 +125,7 @@ export default function Home() {
         {/* The tagline is its own heading a step down from the name. */}
         <Reveal
           as="h2"
-          className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.75rem,5.1vw,3.9rem)]"
+          className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.95rem,5.1vw,3.9rem)]"
           text="Developer & Designer"
           delay={340}
         />
@@ -134,7 +134,7 @@ export default function Home() {
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <ScrollGroup className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Services
           </h2>
         </ScrollGroup>
@@ -180,7 +180,7 @@ export default function Home() {
       */}
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Work
           </h2>
         </ScrollGroup>
@@ -283,7 +283,7 @@ export default function Home() {
       */}
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
         <ScrollGroup className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(2.75rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
             Photography
           </h2>
         </ScrollGroup>

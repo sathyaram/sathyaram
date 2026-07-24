@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "./Logo";
 import { MenuIcon, CloseIcon } from "./icons";
+import { socialLinks } from "@/lib/social";
 import styles from "./Nav.module.scss";
 
 // One-pager: everything lives on the homepage, with individual routes only
@@ -131,6 +132,24 @@ export default function Nav() {
               );
             })}
           </ul>
+
+          {/* Socials also live in the footer, but that's a long scroll away
+              on mobile — surface them here for quick access. */}
+          <div className="mt-4 flex items-center gap-5 border-t border-border pt-4">
+            {socialLinks.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                onClick={() => setOpen(false)}
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
+                <Icon className={label === "Resume" ? "h-5 w-5" : "h-6 w-6"} />
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </header>
