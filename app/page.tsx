@@ -220,7 +220,7 @@ export default function Home() {
             key={project.slug}
             href={`/websites/${project.slug}`}
             style={{ transitionTimingFunction: SPRING }}
-            className={`group @container relative min-h-[22rem] overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:min-h-[28rem] sm:rounded-[4rem] sm:p-12 ${project.span}`}
+            className={`group relative min-h-[22rem] overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:min-h-[28rem] sm:rounded-[4rem] sm:p-12 ${project.span}`}
           >
             {/* The brand fill lives on its own layer so hover can dissolve it,
                 leaving just the outline with the starfield showing through. */}
@@ -267,20 +267,19 @@ export default function Home() {
               </p>
               <Reveal
                 as="h3"
-                // Sized off the card's own width (cqw), not the viewport —
-                // the asymmetric grid gives some cards a much narrower
-                // column than others, so a vw-based size would either
-                // overflow the narrow ones or stay too small on the wide
-                // ones. whitespace-nowrap is the hard rule (never wrap);
-                // overflow+ellipsis is just a safety net for an edge case
-                // the clamp doesn't cover.
+                // One shared viewport-based size across every card, so the
+                // titles all read at the same scale regardless of how wide
+                // their grid column is. (An earlier cqw version sized off
+                // each card's own width, which made the narrow cards'
+                // titles noticeably smaller.) Long titles wrap onto another
+                // line rather than shrinking to fit.
                 //
                 // Light mode: once the fill dissolves on hover, white text
                 // would sit straight on the beige page background with
                 // barely any contrast, so it swaps to the theme foreground
                 // colour instead (near-black in light mode, still
                 // effectively white in dark mode).
-                className="mt-2 block overflow-hidden text-ellipsis whitespace-nowrap font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground [font-size:clamp(1.125rem,7.5cqw,2.5rem)]"
+                className="mt-2 block font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground text-[clamp(1.75rem,3vw,2.5rem)]"
                 text={project.title}
               />
               <p className="mt-3 max-w-sm text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
