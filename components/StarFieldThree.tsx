@@ -208,9 +208,21 @@ function startField(
     fog: true,
     blending: THREE.AdditiveBlending,
   });
-  scene.add(new THREE.Points(sparkGeometry, sparkMaterial));
+  const sparkPoints = new THREE.Points(sparkGeometry, sparkMaterial);
+  // Every spark starts at (0,0,0) in the buffer, so the geometry's computed
+  // bounding sphere is a zero-radius point at the origin — which sits on the
+  // camera's near plane and gets the whole cloud frustum-culled before it can
+  // draw. Positions are driven by hand each frame, so those bounds are
+  // meaningless anyway; skip culling for this object.
+  sparkPoints.frustumCulled = false;
+  scene.add(sparkPoints);
 
   const catchStar = (x: number, y: number, z: number, r: number, g: number, b: number) => {
+    // The same world-space burst covers far fewer screen pixels when it's
+    // deep in the slab, so scale it by distance to keep the pop a consistent
+    // size on screen wherever the caught star happened to be.
+    const depthScale = Math.max(0.4, Math.min(2.6, Math.abs(z) / 260));
+
     for (let i = 0; i < SPARKS_PER_CATCH; i++) {
       const s = sparkCursor;
       sparkCursor = (sparkCursor + 1) % SPARK_POOL;
@@ -224,7 +236,7 @@ function startField(
       // has some depth to it rather than reading as a clean ring.
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
-      const speed = SPARK_SPEED * (0.35 + Math.random() * 0.95);
+      const speed = SPARK_SPEED * depthScale * (0.35 + Math.random() * 0.95);
       sparkVel[o] = Math.sin(phi) * Math.cos(theta) * speed;
       sparkVel[o + 1] = Math.sin(phi) * Math.sin(theta) * speed;
       sparkVel[o + 2] = Math.cos(phi) * speed * 0.55;
@@ -342,6 +354,12 @@ function startField(
 
     // Drive any in-flight "caught star" sparks outward, fading each toward
     // black (invisible under additive blending) as its life runs out.
+    // Frame-rate independent drag — velocity decays to ~25% over a second, so
+    // the burst punches outward then eases to a stop. (A flat per-frame
+    // multiply decayed ~40x faster at 60fps, which killed the expansion
+    // almost immediately.)
+    const damp = Math.pow(0.25, dt);
+
     let sparksLive = false;
     for (let i = 0; i < SPARK_POOL; i++) {
       if (sparkLife[i] <= 0) continue;
@@ -357,10 +375,9 @@ function startField(
       sparkPos[o] += sparkVel[o] * dt;
       sparkPos[o + 1] += sparkVel[o + 1] * dt;
       sparkPos[o + 2] += sparkVel[o + 2] * dt;
-      // Drag, so the burst decelerates instead of flying off linearly.
-      sparkVel[o] *= 0.94;
-      sparkVel[o + 1] *= 0.94;
-      sparkVel[o + 2] *= 0.94;
+      sparkVel[o] *= damp;
+      sparkVel[o + 1] *= damp;
+      sparkVel[o + 2] *= damp;
 
       const fade = sparkLife[i];
       sparkCol[o] = sparkTint[o] * fade;
