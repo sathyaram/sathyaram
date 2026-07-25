@@ -197,6 +197,39 @@ body {
 }
 
 /*
+ * Section headings light up as they pass through the top strip of the
+ * viewport (the `is-lit` class is toggled by components/HeadingGlow.tsx).
+ * On an inner span so this transition doesn't clash with the h2's own
+ * scroll-reveal transition. Dark mode only — a white glow reads poorly on
+ * the light background.
+ */
+.heading-glow {
+  transition:
+    color 600ms ease,
+    -webkit-text-fill-color 600ms ease,
+    text-shadow 600ms ease;
+}
+
+/* The heading's gradient clip makes -webkit-text-fill-color: transparent
+   inherit down, so the fill has to be overridden too (not just color) for
+   the letters to actually turn white. */
+.dark .heading-glow.is-lit {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  text-shadow:
+    0 0 5px white,
+    0 0 15px white,
+    0 0 35px white,
+    0 0 5px white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heading-glow {
+    transition: none;
+  }
+}
+
+/*
  * "Sathya Ram" — a constantly-panning gradient clipped to the text, built
  * from the same stops as the logo mark. Dark mode only: in light mode the
  * name just stays the same solid brand blue as the rest of the headline

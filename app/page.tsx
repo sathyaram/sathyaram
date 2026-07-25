@@ -4,6 +4,7 @@ import Sparkle from "@/components/Sparkle";
 import PanoramaSlider from "@/components/PanoramaSlider";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
+import HeadingGlow from "@/components/HeadingGlow";
 
 // Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
 const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
@@ -95,6 +96,7 @@ const featured = [
 export default function Home() {
   return (
     <div className="px-4 pb-24 sm:px-6">
+      <HeadingGlow />
       {/* ---------- Hero ---------- */}
       <section className="relative mx-auto max-w-6xl pt-32 pb-32 text-center sm:pt-[200px] sm:pb-[200px]">
         {/* Decorative sparkles, positioned asymmetrically around the
@@ -149,7 +151,7 @@ export default function Home() {
         <Reveal
           as="h2"
           className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.95rem,5.1vw,3.9rem)]"
-          text="Developer & Designer"
+          segments={[{ text: "Developer & Designer", className: "name-glow" }]}
           delay={340}
         />
       </section>
@@ -158,7 +160,9 @@ export default function Home() {
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            Services
+            <span className="heading-glow" data-glow-heading>
+              Services
+            </span>
           </h2>
         </ScrollGroup>
 
@@ -204,7 +208,9 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            Work
+            <span className="heading-glow" data-glow-heading>
+              Work
+            </span>
           </h2>
         </ScrollGroup>
 
@@ -307,7 +313,9 @@ export default function Home() {
       <section className="mx-auto mt-28 max-w-[1600px] sm:mt-36">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            Photography
+            <span className="heading-glow" data-glow-heading>
+              Photography
+            </span>
           </h2>
         </ScrollGroup>
 
