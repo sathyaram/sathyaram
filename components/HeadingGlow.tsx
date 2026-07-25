@@ -3,11 +3,13 @@
 import { useEffect } from "react";
 
 // Section headings light up while they sit in a strip near the top of the
-// viewport (roughly the top 300px) and unlight once they scroll out of it.
+// viewport, then unlight once they scroll out of it. The band is a fraction
+// of the viewport height (not fixed px) so it scales with the screen: a
+// heading glows while its top is between ~4% and 30% down from the top.
 // This toggles the `is-lit` class on every [data-glow-heading]; the actual
 // glow lives in globals.css (.heading-glow / .dark .heading-glow.is-lit).
-const BAND_TOP = 30;
-const BAND_BOTTOM = 300;
+const BAND_TOP_RATIO = 0.04;
+const BAND_BOTTOM_RATIO = 0.3;
 
 export default function HeadingGlow() {
   useEffect(() => {
@@ -16,11 +18,14 @@ export default function HeadingGlow() {
     let raf = 0;
     const update = () => {
       raf = 0;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const bandTop = vh * BAND_TOP_RATIO;
+      const bandBottom = vh * BAND_BOTTOM_RATIO;
       document
         .querySelectorAll<HTMLElement>("[data-glow-heading]")
         .forEach((el) => {
           const { top } = el.getBoundingClientRect();
-          el.classList.toggle("is-lit", top > BAND_TOP && top < BAND_BOTTOM);
+          el.classList.toggle("is-lit", top > bandTop && top < bandBottom);
         });
     };
     const onScroll = () => {
