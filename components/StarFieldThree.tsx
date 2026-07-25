@@ -164,7 +164,19 @@ function startField(
       opacity: 0.95,
       depthWrite: false,
       fog: true,
-      blending: THREE.AdditiveBlending,
+      // Additive RGB, but alpha is left at the destination. Plain
+      // AdditiveBlending accumulates alpha too, and this canvas is
+      // transparent over the page background — so a star the fog has faded
+      // to black still writes alpha, which composites as a solid black dot
+      // *darker* than the page. Holding alpha means black adds nothing,
+      // which is what "faded out" is supposed to mean.
+      blending: THREE.CustomBlending,
+      blendEquation: THREE.AddEquation,
+      blendSrc: THREE.SrcAlphaFactor,
+      blendDst: THREE.OneFactor,
+      blendEquationAlpha: THREE.AddEquation,
+      blendSrcAlpha: THREE.ZeroFactor,
+      blendDstAlpha: THREE.OneFactor,
     });
 
     const points = new THREE.Points(geometry, material);
@@ -195,6 +207,12 @@ function startField(
   const sparkLife = new Float32Array(SPARK_POOL);
   let sparkCursor = 0;
 
+  // Park the whole pool far off-screen up front. An unused spark left at the
+  // origin still gets rasterized, and a *black* point is not free: see the
+  // blending note below.
+  const PARKED_Y = 1e6;
+  for (let i = 0; i < SPARK_POOL; i++) sparkPos[i * 3 + 1] = PARKED_Y;
+
   const sparkGeometry = new THREE.BufferGeometry();
   sparkGeometry.setAttribute("position", new THREE.BufferAttribute(sparkPos, 3));
   sparkGeometry.setAttribute("color", new THREE.BufferAttribute(sparkCol, 3));
@@ -206,7 +224,19 @@ function startField(
     transparent: true,
     depthWrite: false,
     fog: true,
-    blending: THREE.AdditiveBlending,
+    // Additive for RGB, but the alpha channel is left alone. Plain
+    // AdditiveBlending also accumulates alpha, and this canvas is transparent
+    // (alpha: true + clearAlpha 0) over the page background — so a spark that
+    // has faded to black still writes alpha, turning that pixel into opaque
+    // black *over* the page and leaving a dark speck of "dust" behind. With
+    // alpha held at the destination, black genuinely contributes nothing.
+    blending: THREE.CustomBlending,
+    blendEquation: THREE.AddEquation,
+    blendSrc: THREE.SrcAlphaFactor,
+    blendDst: THREE.OneFactor,
+    blendEquationAlpha: THREE.AddEquation,
+    blendSrcAlpha: THREE.ZeroFactor,
+    blendDstAlpha: THREE.OneFactor,
   });
   const sparkPoints = new THREE.Points(sparkGeometry, sparkMaterial);
   // Every spark starts at (0,0,0) in the buffer, so the geometry's computed
@@ -368,7 +398,13 @@ function startField(
       sparkLife[i] -= dt / SPARK_LIFE;
 
       if (sparkLife[i] <= 0) {
+        // Zero the colour *and* send it back to the parking spot, so a spent
+        // spark isn't left sitting in the field being rasterized every frame
+        // for the rest of the session.
         sparkCol[o] = sparkCol[o + 1] = sparkCol[o + 2] = 0;
+        sparkPos[o] = 0;
+        sparkPos[o + 1] = PARKED_Y;
+        sparkPos[o + 2] = 0;
         continue;
       }
 
