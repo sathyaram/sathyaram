@@ -33,6 +33,23 @@ export default function Biointeractive() {
         "Coded the responsive HTML/CSS layout for the resource library and lesson pages",
         "Implemented keyboard and screen-reader accessibility across the interactive modules",
       ]}
+      highlights={[
+        {
+          title: "Interactives that work without a mouse",
+          body:
+            "A simulation you can only operate by dragging is a simulation half a classroom can't use. Every interactive module — quizzes, guided walkthroughs, the drag-based simulations — got a full keyboard path and live-region announcements, so progress and feedback are spoken aloud rather than only shown. In a product built for schools, that isn't a nice-to-have; it's whether the resource is usable at all.",
+        },
+        {
+          title: "One module pattern, hundreds of lessons",
+          body:
+            "Rather than hand-building each interactive, I built a small set of Drupal 8 components with a shared JavaScript initialization layer. Educators configure a module's content in Drupal and the front end wires up state, validation, and feedback automatically — which is how the same handful of patterns covers hundreds of lesson pages.",
+        },
+        {
+          title: "Progressive enhancement, on purpose",
+          body:
+            "School networks are slow and sometimes hostile to JavaScript. The lesson pages render their content server-side first and layer interactivity on top, so if a script fails or is blocked, students still get the material — just without the quiz. Degrading to 'readable' beats degrading to 'blank'.",
+        },
+      ]}
       codeFilename="quiz-module.js"
       codeLines={[
         [{ text: "// quiz-module.js — cell division quiz", type: "comment" }],

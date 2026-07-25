@@ -5,6 +5,12 @@ import CodeBlock, { type CodeLine } from "./CodeBlock";
 
 type Stat = { label: string; value: string };
 
+/** A single build detail worth calling out — a punchy name plus a short
+ *  paragraph, following the pattern on seanhalpin.xyz/work/docs where each
+ *  notable piece of work gets its own named section rather than becoming
+ *  another bullet. */
+type Highlight = { title: string; body: string };
+
 type WebsiteCaseStudyProps = {
   title: string;
   subtitle: string;
@@ -21,6 +27,9 @@ type WebsiteCaseStudyProps = {
   stats: Stat[];
   overview: string[];
   contributions: string[];
+  /** Optional named build details, rendered between "What I built" and the
+   *  code sample. */
+  highlights?: Highlight[];
   codeFilename: string;
   codeLines: CodeLine[];
 };
@@ -39,6 +48,7 @@ export default function WebsiteCaseStudy({
   stats,
   overview,
   contributions,
+  highlights,
   codeFilename,
   codeLines,
 }: WebsiteCaseStudyProps) {
@@ -131,8 +141,21 @@ export default function WebsiteCaseStudy({
           </ul>
         </ScrollGroup>
 
+        {/* Named build details — each gets its own heading and paragraph
+            rather than being flattened into the bullet list above. */}
+        {highlights?.map((highlight) => (
+          <ScrollGroup key={highlight.title} className="mx-auto mt-14 max-w-lg">
+            <h2 className="font-display text-2xl font-bold tracking-tight transition-all duration-700">
+              {highlight.title}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-foreground transition-all duration-700">
+              {highlight.body}
+            </p>
+          </ScrollGroup>
+        ))}
+
         <ScrollGroup>
-          <div className="mt-10 mb-4 transition-all duration-700">
+          <div className="mt-14 mb-4 transition-all duration-700">
             <CodeBlock filename={codeFilename} lines={codeLines} />
           </div>
         </ScrollGroup>

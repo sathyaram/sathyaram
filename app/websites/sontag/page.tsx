@@ -33,6 +33,23 @@ export default function Sontag() {
         "Implemented accessible, front-end JS-driven accordions for grant guidelines and FAQs",
         "Coded the responsive layout system shared across research and news pages",
       ]}
+      highlights={[
+        {
+          title: "Accordions that don't fight screen readers",
+          body:
+            "Grant guidelines are long, procedural, and legally fussy — exactly the content people scan for one specific clause. The accordions collapse that wall of text without hiding it from assistive tech: real buttons, proper aria-expanded and aria-controls wiring, keyboard operable, and every panel still reachable and findable via in-page search. Accessible disclosure is easy to fake and easy to get subtly wrong.",
+        },
+        {
+          title: "A directory researchers can actually search",
+          body:
+            "The grantee directory is the site's real utility — researchers use it to find who's working on what, and where. Filtering by institution and research area combines rather than replaces, so you can narrow to one institution's neuro-oncology fellows in two clicks instead of scrolling a list of every fellow the foundation has ever funded.",
+        },
+        {
+          title: "Templates the foundation owns",
+          body:
+            "A small team maintains this site between grant cycles. The fellowship and grantee templates were built so that adding a new cohort, a new profile, or a new guideline section is a content task, not a development one — which is what keeps a site like this current a year after launch.",
+        },
+      ]}
       codeFilename="grant-guidelines.js"
       codeLines={[
         [{ text: "// grant-guidelines.js — accessible accordion", type: "comment" }],

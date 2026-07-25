@@ -33,6 +33,23 @@ export default function Brookings() {
         "Implemented the front-end JS behind the research library's live filtering and search",
         "Tuned typography and spacing specifically for long-form policy reading",
       ]}
+      highlights={[
+        {
+          title: "Debounced search that respects the server",
+          body:
+            "The research library filters live as you type. Firing a request per keystroke across an archive that size is a good way to melt a server, so the input is debounced and in-flight requests are cancelled when a newer one supersedes them — you get the feeling of instant filtering without the traffic that usually implies.",
+        },
+        {
+          title: "One component library, every content type",
+          body:
+            "Brookings publishes reports, op-eds, expert profiles, event recaps, and commentary — each with its own editorial rules. Instead of a bespoke template per type, I built one responsive HTML/CSS component set (cards, filters, pagination, bylines) that every template composes from. New content types get assembled from existing parts rather than designed from scratch.",
+        },
+        {
+          title: "Typography tuned for long-form policy",
+          body:
+            "Most of these pages are read, not skimmed — some run to thousands of words of dense policy analysis. Measure, line height, and the spacing between headings and body were tuned specifically for sustained reading rather than inherited from a framework default. It's the least flashy work on the project and probably the most load-bearing.",
+        },
+      ]}
       codeFilename="research-library.js"
       codeLines={[
         [{ text: "// research-library.js — debounced live search", type: "comment" }],

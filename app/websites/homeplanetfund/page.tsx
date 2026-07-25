@@ -33,6 +33,23 @@ export default function HomePlanetFund() {
         "Hand-coded CSS to match Patagonia's type and color system pixel-for-pixel",
         "Optimized image loading across the photo-heavy initiative pages",
       ]}
+      highlights={[
+        {
+          title: "The cursor as a lens",
+          body:
+            "My favorite detail on the site: hovering a feature image doesn't just tint it, it inverts it. A diamond mask follows the pointer and everything inside it flips — colors reverse, the photo reads like a negative — so the image feels like it's being examined through a lens rather than covered by an overlay. It's built with mix-blend-mode and an inverted layer clipped to the cursor's position, which means it stays GPU-composited and costs nothing at scroll time.",
+        },
+        {
+          title: "Brand fidelity without a framework",
+          body:
+            "Patagonia's system has opinions — a specific type scale, specific color relationships, specific spacing rhythm. Rather than fight a CSS framework's defaults, I wrote the theme's CSS by hand against custom properties, so every token maps directly to the brand guideline it came from. It made the pixel-matching straightforward and left the stylesheet small enough to read top to bottom.",
+        },
+        {
+          title: "Archives that don't need a developer",
+          body:
+            "Grant rounds and initiatives change constantly, so the archive templates run entirely off WordPress taxonomies. The team adds a term and the filtering, counts, and landing pages update themselves — no template edits, no deploy, no ticket to me.",
+        },
+      ]}
       codeFilename="brand.css"
       codeLines={[
         [{ text: "/* brand.css — Patagonia design tokens */", type: "comment" }],
