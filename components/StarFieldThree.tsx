@@ -81,9 +81,21 @@ function startField(
   const camera = new THREE.PerspectiveCamera(70, 1, 1, FIELD_DEPTH * 1.6);
   camera.position.z = 0;
 
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+  // The canvas paints the page background itself rather than being
+  // transparent over it. A transparent canvas can't carry additive blending
+  // cleanly here: three.js's additive mode accumulates the alpha channel too,
+  // so a point faded to black still writes alpha and composites as a black
+  // speck *darker* than the page. (Holding alpha instead isn't an option —
+  // the context is premultiplied, where RGB above alpha is invalid and gets
+  // clamped away to nothing.) Drawing onto an opaque backdrop of the same
+  // colour sidesteps the alpha channel completely: black adds nothing, which
+  // is exactly what fading out should mean.
+  const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: false });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setClearAlpha(0);
+  const pageBackground = getComputedStyle(document.documentElement)
+    .getPropertyValue("--background")
+    .trim();
+  renderer.setClearColor(new THREE.Color(pageBackground || "#0b0f1a"), 1);
   // three.js is loaded async, so the canvas would otherwise pop in with no
   // warning. Start it transparent and ease it up once it's mounted, so the
   // field fades in gracefully instead of appearing out of nowhere.
@@ -164,19 +176,9 @@ function startField(
       opacity: 0.95,
       depthWrite: false,
       fog: true,
-      // Additive RGB, but alpha is left at the destination. Plain
-      // AdditiveBlending accumulates alpha too, and this canvas is
-      // transparent over the page background — so a star the fog has faded
-      // to black still writes alpha, which composites as a solid black dot
-      // *darker* than the page. Holding alpha means black adds nothing,
-      // which is what "faded out" is supposed to mean.
-      blending: THREE.CustomBlending,
-      blendEquation: THREE.AddEquation,
-      blendSrc: THREE.SrcAlphaFactor,
-      blendDst: THREE.OneFactor,
-      blendEquationAlpha: THREE.AddEquation,
-      blendSrcAlpha: THREE.ZeroFactor,
-      blendDstAlpha: THREE.OneFactor,
+      // Safe now that the canvas is opaque (see the renderer setup) — a star
+      // the fog has faded to black simply adds nothing.
+      blending: THREE.AdditiveBlending,
     });
 
     const points = new THREE.Points(geometry, material);
@@ -224,19 +226,9 @@ function startField(
     transparent: true,
     depthWrite: false,
     fog: true,
-    // Additive for RGB, but the alpha channel is left alone. Plain
-    // AdditiveBlending also accumulates alpha, and this canvas is transparent
-    // (alpha: true + clearAlpha 0) over the page background — so a spark that
-    // has faded to black still writes alpha, turning that pixel into opaque
-    // black *over* the page and leaving a dark speck of "dust" behind. With
-    // alpha held at the destination, black genuinely contributes nothing.
-    blending: THREE.CustomBlending,
-    blendEquation: THREE.AddEquation,
-    blendSrc: THREE.SrcAlphaFactor,
-    blendDst: THREE.OneFactor,
-    blendEquationAlpha: THREE.AddEquation,
-    blendSrcAlpha: THREE.ZeroFactor,
-    blendDstAlpha: THREE.OneFactor,
+    // Safe now that the canvas is opaque (see the renderer setup) — a spent
+    // spark fades to black and simply stops contributing, no dust left over.
+    blending: THREE.AdditiveBlending,
   });
   const sparkPoints = new THREE.Points(sparkGeometry, sparkMaterial);
   // Every spark starts at (0,0,0) in the buffer, so the geometry's computed
