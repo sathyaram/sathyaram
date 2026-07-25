@@ -169,10 +169,128 @@ function startField(
 
     const points = new THREE.Points(geometry, material);
     scene.add(points);
-    return { geometry, material, count };
+    return { geometry, material, count, points };
   };
 
   const clouds = [createCloud(STAR_COUNT, roundTexture, 4.5)];
+
+  /*
+   * "Catching" a star: click one and it comes apart in your hand — a bright
+   * pop that sprays outward and fades, with the original star recycled to
+   * the back of the field so the density stays constant.
+   *
+   * The sparks live in one pre-allocated pool (no per-click allocation) and
+   * fade by scaling their vertex colour toward black, which reads as fading
+   * out under additive blending — the same trick the scene fog uses.
+   */
+  const SPARK_POOL = 320;
+  const SPARKS_PER_CATCH = 26;
+  const SPARK_LIFE = 0.85;
+  const SPARK_SPEED = 95;
+
+  const sparkPos = new Float32Array(SPARK_POOL * 3);
+  const sparkCol = new Float32Array(SPARK_POOL * 3);
+  const sparkVel = new Float32Array(SPARK_POOL * 3);
+  const sparkTint = new Float32Array(SPARK_POOL * 3);
+  const sparkLife = new Float32Array(SPARK_POOL);
+  let sparkCursor = 0;
+
+  const sparkGeometry = new THREE.BufferGeometry();
+  sparkGeometry.setAttribute("position", new THREE.BufferAttribute(sparkPos, 3));
+  sparkGeometry.setAttribute("color", new THREE.BufferAttribute(sparkCol, 3));
+  const sparkMaterial = new THREE.PointsMaterial({
+    size: 3.4,
+    map: roundTexture,
+    sizeAttenuation: true,
+    vertexColors: true,
+    transparent: true,
+    depthWrite: false,
+    fog: true,
+    blending: THREE.AdditiveBlending,
+  });
+  scene.add(new THREE.Points(sparkGeometry, sparkMaterial));
+
+  const catchStar = (x: number, y: number, z: number, r: number, g: number, b: number) => {
+    for (let i = 0; i < SPARKS_PER_CATCH; i++) {
+      const s = sparkCursor;
+      sparkCursor = (sparkCursor + 1) % SPARK_POOL;
+      const o = s * 3;
+
+      sparkPos[o] = x;
+      sparkPos[o + 1] = y;
+      sparkPos[o + 2] = z;
+
+      // Even scatter over a sphere, with a spread of speeds so the burst
+      // has some depth to it rather than reading as a clean ring.
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      const speed = SPARK_SPEED * (0.35 + Math.random() * 0.95);
+      sparkVel[o] = Math.sin(phi) * Math.cos(theta) * speed;
+      sparkVel[o + 1] = Math.sin(phi) * Math.sin(theta) * speed;
+      sparkVel[o + 2] = Math.cos(phi) * speed * 0.55;
+
+      // Overdriven from the star's own colour so the first frames read as a
+      // flash before settling into the star's hue as it fades.
+      sparkTint[o] = r * 2.2;
+      sparkTint[o + 1] = g * 2.2;
+      sparkTint[o + 2] = b * 2.2;
+      sparkLife[s] = 1;
+    }
+  };
+
+  const raycaster = new THREE.Raycaster();
+  // World units, not pixels — generous enough that catching a star feels
+  // achievable without it grabbing one from across the screen.
+  raycaster.params.Points.threshold = 13;
+  const ndc = new THREE.Vector2();
+
+  const onClick = (event: MouseEvent) => {
+    if (reduced) return;
+    // The field sits behind the whole page (pointer-events: none), so this
+    // listens on the window. Skip clicks meant for real UI, and skip the
+    // click that ends a text selection.
+    const target = event.target;
+    if (
+      target instanceof Element &&
+      target.closest('a, button, input, textarea, select, label, [role="button"], [role="dialog"]')
+    ) {
+      return;
+    }
+    if ((window.getSelection()?.toString().length ?? 0) > 0) return;
+
+    ndc.x = (event.clientX / window.innerWidth) * 2 - 1;
+    ndc.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    raycaster.setFromCamera(ndc, camera);
+
+    const cloud = clouds[0];
+    const hits = raycaster.intersectObject(cloud.points, false);
+    if (!hits.length) return;
+
+    // Nearest to the ray, not nearest to the camera — that's the star that
+    // actually looks like the one under the cursor.
+    let best = hits[0];
+    for (const hit of hits) {
+      if ((hit.distanceToRay ?? Infinity) < (best.distanceToRay ?? Infinity)) best = hit;
+    }
+    const index = best.index;
+    if (index === undefined) return;
+
+    const posAttr = cloud.geometry.attributes.position as ThreeType.BufferAttribute;
+    const colAttr = cloud.geometry.attributes.color as ThreeType.BufferAttribute;
+    const pos = posAttr.array as Float32Array;
+    const col = colAttr.array as Float32Array;
+    const o = index * 3;
+
+    catchStar(pos[o], pos[o + 1], pos[o + 2], col[o], col[o + 1], col[o + 2]);
+
+    // The caught star respawns at the back of the slab, so the field never
+    // thins out no matter how many you catch.
+    pos[o] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
+    pos[o + 1] = (Math.random() - 0.5) * FIELD_SPREAD * 2;
+    pos[o + 2] = -FIELD_DEPTH;
+    posAttr.needsUpdate = true;
+  };
+  window.addEventListener("click", onClick);
 
   const pointer = { x: 0, y: 0 };
   const handlePointerMove = (event: PointerEvent) => {
@@ -222,6 +340,38 @@ function startField(
       }
     }
 
+    // Drive any in-flight "caught star" sparks outward, fading each toward
+    // black (invisible under additive blending) as its life runs out.
+    let sparksLive = false;
+    for (let i = 0; i < SPARK_POOL; i++) {
+      if (sparkLife[i] <= 0) continue;
+      sparksLive = true;
+      const o = i * 3;
+      sparkLife[i] -= dt / SPARK_LIFE;
+
+      if (sparkLife[i] <= 0) {
+        sparkCol[o] = sparkCol[o + 1] = sparkCol[o + 2] = 0;
+        continue;
+      }
+
+      sparkPos[o] += sparkVel[o] * dt;
+      sparkPos[o + 1] += sparkVel[o + 1] * dt;
+      sparkPos[o + 2] += sparkVel[o + 2] * dt;
+      // Drag, so the burst decelerates instead of flying off linearly.
+      sparkVel[o] *= 0.94;
+      sparkVel[o + 1] *= 0.94;
+      sparkVel[o + 2] *= 0.94;
+
+      const fade = sparkLife[i];
+      sparkCol[o] = sparkTint[o] * fade;
+      sparkCol[o + 1] = sparkTint[o + 1] * fade;
+      sparkCol[o + 2] = sparkTint[o + 2] * fade;
+    }
+    if (sparksLive) {
+      sparkGeometry.attributes.position.needsUpdate = true;
+      sparkGeometry.attributes.color.needsUpdate = true;
+    }
+
     // Ease the camera toward the cursor for parallax depth.
     camera.position.x += (pointer.x * PARALLAX - camera.position.x) * EASE;
     camera.position.y += (-pointer.y * PARALLAX - camera.position.y) * EASE;
@@ -235,11 +385,14 @@ function startField(
   return () => {
     cancelAnimationFrame(frame);
     window.removeEventListener("pointermove", handlePointerMove);
+    window.removeEventListener("click", onClick);
     resizeObserver.disconnect();
     for (const cloud of clouds) {
       cloud.geometry.dispose();
       cloud.material.dispose();
     }
+    sparkGeometry.dispose();
+    sparkMaterial.dispose();
     roundTexture.dispose();
     renderer.dispose();
     if (renderer.domElement.parentNode === mount) {

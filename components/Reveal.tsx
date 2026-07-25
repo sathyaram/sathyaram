@@ -68,24 +68,31 @@ export default function Reveal({
           h1/h2/h3) the actual words — without putting an aria-label on a
           generic <span>, which ARIA prohibits (Lighthouse flags it). */}
       <span className="sr-only">{label}</span>
-      {words.map((word, wordIndex) => (
-        <span key={wordIndex} className="inline-block whitespace-nowrap">
-          {wordIndex > 0 ? " " : ""}
-          {word.map((letter, charIndex) => {
-            const index = letterIndex++;
-            return (
-              <span
-                key={charIndex}
-                aria-hidden="true"
-                className={`reveal-letter ${letter.className ?? ""}`}
-                style={{ animationDelay: `${delay + index * step}ms` }}
-              >
-                {letter.char}
-              </span>
-            );
-          })}
-        </span>
-      ))}
+      {words.flatMap((word, wordIndex) => {
+        const rendered = (
+          <span key={wordIndex} className="inline-block whitespace-nowrap">
+            {word.map((letter, charIndex) => {
+              const index = letterIndex++;
+              return (
+                <span
+                  key={charIndex}
+                  aria-hidden="true"
+                  className={`reveal-letter ${letter.className ?? ""}`}
+                  style={{ animationDelay: `${delay + index * step}ms` }}
+                >
+                  {letter.char}
+                </span>
+              );
+            })}
+          </span>
+        );
+
+        // The word separator is an ordinary space rendered BETWEEN the word
+        // wrappers. It was previously a non-breaking space inside the
+        // following wrapper — an NBSP never collapses at a line break, so a
+        // title that wrapped carried the space down and indented the line.
+        return wordIndex === 0 ? [rendered] : [" ", rendered];
+      })}
     </Tag>
   );
 }
