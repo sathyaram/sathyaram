@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 
 // Section headings light up while they sit in a strip near the top of the
-// viewport (roughly the top 200px) and unlight once they scroll out of it.
+// viewport (roughly the top 300px) and unlight once they scroll out of it.
 // This toggles the `is-lit` class on every [data-glow-heading]; the actual
 // glow lives in globals.css (.heading-glow / .dark .heading-glow.is-lit).
 const BAND_TOP = 30;
-const BAND_BOTTOM = 200;
+const BAND_BOTTOM = 300;
 
 export default function HeadingGlow() {
   useEffect(() => {
