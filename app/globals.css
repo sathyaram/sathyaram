@@ -169,7 +169,10 @@ body {
     text-shadow 2s ease-in-out;
 }
 
-.name-glow:hover {
+/* Dark mode only: a white glow reads well on the near-black background but
+   turns the text near-invisible on the light beige one, so light mode gets
+   no hover glow (and no wand cursor) at all. */
+.dark .name-glow:hover {
   color: #fff;
   text-shadow:
     0 0 5px white,
@@ -252,7 +255,6 @@ body {
     linear-gradient(120deg, #70d5ff, #c9a9e0, #0059bc, #8fd9c4, #70d5ff)
   );
   background-size: 300% 300%;
-  background-attachment: fixed;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -260,6 +262,18 @@ body {
   animation-duration: 8s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+}
+
+/* background-attachment: fixed is what keeps the pan continuous across the
+   per-letter hero name — but on mobile it forces a repaint of the clipped
+   gradient on every scroll frame, which is the main cause of the scroll
+   stutter. Limit it to fine-pointer (desktop) devices; touch devices fall
+   back to the default per-element gradient, which scrolls smoothly. Section
+   headings are single elements, so they look continuous either way. */
+@media (hover: hover) and (pointer: fine) {
+  .dark .gradient-text-name {
+    background-attachment: fixed;
+  }
 }
 
 /* Letters that are both the rise-in stagger AND the gradient sweep (the
