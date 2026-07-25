@@ -66,8 +66,11 @@ const certifications = [
 // layout from the old site's About page. Stacks on mobile.
 const sectionGrid =
   "mt-16 grid gap-2 sm:mt-24 sm:grid-cols-[minmax(0,13rem)_1fr] sm:gap-12";
+// Left-aligned in its own column. The padding-bottom is not decorative:
+// Californication is a script face with long descenders, and leading-none
+// clips them without a little room underneath.
 const scriptHeading =
-  "font-script text-3xl leading-none text-foreground gradient-text-name transition-all duration-700 dark:text-logo-blue sm:pt-1.5 sm:text-right sm:text-[2.5rem]";
+  "font-script text-3xl leading-none text-foreground gradient-text-name pb-2 transition-all duration-700 dark:text-logo-blue sm:pt-1.5 sm:text-[2.5rem]";
 
 export default function About() {
   return (
