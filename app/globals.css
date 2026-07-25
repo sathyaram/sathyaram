@@ -160,12 +160,13 @@ body {
 .name-glow {
   display: inline-block;
   text-shadow: none;
-  /* Leaving a letter: the glow drifts back out slowly. INTERIM value —
-     couldn't live-read the old site to lift the exact number (see chat);
-     2s matches this file's own note on the old-site behaviour. */
+  /* Leaving a letter: the glow drifts back out slowly. Exact value from
+     the old site (_midnight.scss: `transition: text-shadow 2s ease-in-out`),
+     extended to colour too so the white fill lingers just as long — the
+     old site's letters were already white, ours are a gradient. */
   transition:
-    color 2000ms ease-in-out,
-    text-shadow 2000ms ease-in-out;
+    color 2s ease-in-out,
+    text-shadow 2s ease-in-out;
 }
 
 .name-glow:hover {
@@ -175,10 +176,9 @@ body {
     0 0 15px white,
     0 0 35px white,
     0 0 5px white;
-  /* Entering: quick, but still eased rather than a hard snap. */
-  transition:
-    color 250ms ease-out,
-    text-shadow 250ms ease-out;
+  /* Entering: snaps on instantly, exactly like the old site
+     (_midnight.scss uses `transition: none` on hover). */
+  transition: none;
   /* A little magic-wand cursor over the name — the emoji rendered into an
      SVG so it can be used as a cursor image at all. The <g> flips it
      horizontally (translate + scale(-1 1)) so the wand faces left; the
