@@ -41,6 +41,23 @@ export const metadata: Metadata = {
     default: "Sathya Ram | Developer & Designer",
   },
   description: "Portfolio of Sathya Ram — websites, design, and photography.",
+  // The card shown when the site is shared. og:image / twitter:image come
+  // from app/opengraph-image.tsx automatically via the file convention.
+  openGraph: {
+    type: "website",
+    siteName: "Sathya Ram",
+    title: "Sathya Ram | Developer & Designer",
+    description:
+      "Portfolio of Sathya Ram — websites, design, and photography.",
+    url: "/",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sathya Ram | Developer & Designer",
+    description:
+      "Portfolio of Sathya Ram — websites, design, and photography.",
+  },
 };
 
 // Dark is the default, so <html> ships with the class and this only strips
