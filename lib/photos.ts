@@ -20,8 +20,8 @@ export const CAMERA = "Sony A7RIV · Sigma 35mm 1.2";
 
 export const photos: Photo[] = [
   {
-    id: "lily",
-    title: "Lily, in the Graveyard",
+    id: "Chelsea",
+    title: "Chelsea, in the Graveyard",
     image: "/photography/lily-one.jpg",
     url: "https://www.instagram.com/p/CVOJv9OlBSo/",
     category: "nature",

@@ -97,31 +97,54 @@ export default function Home() {
     <div className="px-4 pb-24 sm:px-6">
       {/* ---------- Hero ---------- */}
       <section className="relative mx-auto max-w-6xl pt-32 pb-32 text-center sm:pt-[200px] sm:pb-[200px]">
-        {/* Decorative sparkles, positioned asymmetrically around the headline */}
-        <Sparkle className="absolute right-[6%] top-[14%] hidden h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-sparkle motion-reduce:animate-none sm:block sm:h-14 sm:w-14 dark:text-white" />
-        <Sparkle className="absolute left-[4%] top-[52%] hidden h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:block sm:h-11 sm:w-11 dark:text-white" />
-        <Sparkle className="absolute bottom-[8%] right-[18%] hidden h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none md:block dark:text-white/70" />
+        {/* Decorative sparkles, positioned asymmetrically around the
+            headline. Each sits on a wrapper span that pops it in on load
+            (the scale entrance can't share the element with the float loop,
+            since both animate transform); the Sparkle keeps the float. */}
+        <span
+          className="sparkle-pop absolute right-[6%] top-[14%] hidden motion-reduce:animate-none sm:block"
+          style={{ animationDelay: "450ms" }}
+        >
+          <Sparkle className="h-10 w-10 animate-[sparkle-float_6s_ease-in-out_infinite] text-sparkle motion-reduce:animate-none sm:h-14 sm:w-14 dark:text-white" />
+        </span>
+        <span
+          className="sparkle-pop absolute left-[4%] top-[52%] hidden motion-reduce:animate-none sm:block"
+          style={{ animationDelay: "600ms" }}
+        >
+          <Sparkle className="h-8 w-8 animate-[sparkle-float_7s_ease-in-out_infinite] text-sparkle [animation-delay:-2s] motion-reduce:animate-none sm:h-11 sm:w-11 dark:text-white" />
+        </span>
+        <span
+          className="sparkle-pop absolute bottom-[8%] right-[18%] hidden motion-reduce:animate-none md:block"
+          style={{ animationDelay: "750ms" }}
+        >
+          <Sparkle className="h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none dark:text-white/70" />
+        </span>
 
-        <h1 className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.85rem,7.4vw,5.75rem)]">
+        {/* The whole line shares one font-size (on this div), but only
+            "Sathya Ram" is the <h1> — the greeting is a plain span so the
+            indexed heading is just the name, not "Hi! I'm ...". Both are
+            inline so they still read as one headline. */}
+        <div className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.85rem,7.4vw,5.75rem)]">
+          <Reveal as="span" className="text-logo-blue" text="Hi! I'm " />
           <Reveal
-            as="span"
-            className="text-logo-blue"
+            as="h1"
+            className="inline text-logo-blue"
             segments={[
-              { text: "Hi! I'm " },
               { text: "Sathya Ram", className: "gradient-text-name name-glow" },
             ]}
+            delay={156}
           />
           {/* A little version tag, ported from the old site's hero (v7.3
               there — bumped for this rebuild). Plain inline <sup>, letting
               Tailwind's preflight reset (position: relative; top: -0.5em;
               font-size: 75%) do the actual raising. The em unit needs the
-              h1 itself to carry the headline's font-size so the sup
+              wrapping div to carry the headline's font-size so the sup
               resolves against the visible text size, not the inherited
               ~16px default. */}
           <sup className="ml-1 top-[-4em] text-[0.15em] font-sans font-normal tracking-wide text-muted">
             v8.0
           </sup>
-        </h1>
+        </div>
         {/* The tagline is its own heading a step down from the name. */}
         <Reveal
           as="h2"
