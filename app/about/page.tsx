@@ -61,10 +61,18 @@ const certifications = [
   { title: "Acquia Certified Front End Specialist", detail: "Certification" },
 ];
 
+// Two-column section: a script heading in the left column (right-aligned
+// into the gutter) beside larger body copy on the right — the editorial
+// layout from the old site's About page. Stacks on mobile.
+const sectionGrid =
+  "mt-16 grid gap-2 sm:mt-24 sm:grid-cols-[minmax(0,13rem)_1fr] sm:gap-12";
+const scriptHeading =
+  "font-script text-3xl leading-none text-foreground gradient-text-name transition-all duration-700 dark:text-logo-blue sm:pt-1.5 sm:text-right sm:text-[2.5rem]";
+
 export default function About() {
   return (
     <div className="px-6 py-16 sm:py-20">
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-4xl">
         <Reveal
           as="h1"
           className="block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)]"
@@ -72,11 +80,9 @@ export default function About() {
         />
 
         {sections.map((section) => (
-          <ScrollGroup key={section.heading} className="mx-auto mt-14 max-w-lg">
-            <h2 className="text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
-              {section.heading}
-            </h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-foreground transition-all duration-700">
+          <ScrollGroup key={section.heading} className={sectionGrid}>
+            <h2 className={scriptHeading}>{section.heading}</h2>
+            <div className="space-y-5 text-lg leading-relaxed text-foreground transition-all duration-700 sm:text-xl">
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -84,11 +90,9 @@ export default function About() {
           </ScrollGroup>
         ))}
 
-        <ScrollGroup className="mx-auto mt-14 max-w-lg">
-          <h2 className="text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
-            Awards &amp; Publications
-          </h2>
-          <ul className="mt-4 space-y-3 transition-all duration-700">
+        <ScrollGroup className={sectionGrid}>
+          <h2 className={scriptHeading}>Awards &amp; Publications</h2>
+          <ul className="space-y-3 transition-all duration-700">
             {awards.map((award) => (
               <li
                 key={award.title}
@@ -99,12 +103,12 @@ export default function About() {
                     href={award.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium hover:text-accent"
+                    className="text-lg font-medium hover:text-accent"
                   >
                     {award.title}
                   </a>
                 ) : (
-                  <span className="font-medium">{award.title}</span>
+                  <span className="text-lg font-medium">{award.title}</span>
                 )}
                 <span className="text-sm text-muted">{award.detail}</span>
               </li>
@@ -112,17 +116,15 @@ export default function About() {
           </ul>
         </ScrollGroup>
 
-        <ScrollGroup className="mx-auto mt-14 max-w-lg">
-          <h2 className="text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
-            Certifications
-          </h2>
-          <ul className="mt-4 space-y-3 transition-all duration-700">
+        <ScrollGroup className={sectionGrid}>
+          <h2 className={scriptHeading}>Certifications</h2>
+          <ul className="space-y-3 transition-all duration-700">
             {certifications.map((cert) => (
               <li
                 key={cert.title}
                 className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3"
               >
-                <span className="font-medium">{cert.title}</span>
+                <span className="text-lg font-medium">{cert.title}</span>
                 <span className="text-sm text-muted">{cert.detail}</span>
               </li>
             ))}
