@@ -56,6 +56,17 @@ export function ResumeIcon({ className }: IconProps) {
   );
 }
 
+// Drawn to match ResumeIcon rather than lifted from an icon set, so the two
+// line icons share a weight and the set needs no third-party attribution.
+export function EmailIcon({ className }: IconProps) {
+  return (
+    <svg {...shared} className={`icon-gradient-stroke ${className ?? ""}`}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m2.5 6.5 8.4 5.6a2 2 0 0 0 2.2 0l8.4-5.6" />
+    </svg>
+  );
+}
+
 // Brand marks below are ported 1:1 from the old site's footer.js — filled
 // paths (not stroke icons), so fill is controlled via the
 // .icon-gradient-fill class (solid brand blue in light mode, the same
@@ -92,6 +103,19 @@ export function CodepenIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 512 512" className={`icon-gradient-fill ${className ?? ""}`}>
       <path d="M427 201.9c-0.6-4.2-2.9-8-6.4-10.3L264.2 87.3c-4.9-3.3-11.4-3.3-16.3 0L91.4 191.6c-4 2.7-6.5 7.4-6.5 12.2v104.3c0 4.8 2.5 9.6 6.5 12.2l156.4 104.3c4.9 3.3 11.4 3.3 16.3 0L420.6 320.4c4-2.6 6.6-7.4 6.6-12.2V203.9C427.1 203.2 427.1 202.6 427 201.9 427 201.7 427.1 202.6 427 201.9zM270.7 127.1l115.2 76.8 -51.5 34.4 -63.8-42.7V127.1zM241.3 127.1v68.6l-63.8 42.7 -51.5-34.4L241.3 127.1zM114.3 231.4l36.8 24.6 -36.8 24.6V231.4zM241.3 384.9L126.1 308.1l51.5-34.4 63.8 42.6V384.9zM256 290.8l-52-34.8 52-34.8 52 34.8L256 290.8zM270.7 384.9V316.3l63.8-42.6 51.5 34.4L270.7 384.9zM397.7 280.6l-36.8-24.6 36.8-24.6V280.6z" />
+    </svg>
+  );
+}
+
+// Mark from Simple Icons, which is CC0 — public domain, no attribution
+// needed, unlike the Font Awesome brand set. Inverted from the stock mark:
+// the enclosing rounded square is dropped so the "in" letterforms carry the
+// fill themselves, which matches the open weight of the other brand marks
+// instead of reading as one heavy solid block.
+export function LinkedInIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={`icon-gradient-fill ${className ?? ""}`}>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
     </svg>
   );
 }

@@ -8,12 +8,12 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6 py-8">
         <nav aria-label="Elsewhere">
           <ScrollGroup className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
+            {socialLinks.map(({ label, href, icon: Icon, compact }) => (
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 className="inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80"
               >
                 {/* Solid brand blue in light mode; the same gradient as the
@@ -25,7 +25,7 @@ export default function Footer() {
                     at the same box size — sized down slightly to sit
                     visually inline. The label doesn't gradiate — it just
                     tracks the theme foreground colour. */}
-                <Icon className={label === "Resume" ? "h-6 w-6" : "h-7 w-7"} />
+                <Icon className={compact ? "h-6 w-6" : "h-7 w-7"} />
                 {label}
               </a>
             ))}

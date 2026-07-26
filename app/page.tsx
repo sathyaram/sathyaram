@@ -250,7 +250,9 @@ export default function Home() {
                 cropped or stretched — these are transparent cut-outs meant
                 to float on the gradient, not photos in a window. */}
             <div
-              className="pointer-events-none absolute bottom-0 right-4 h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2 sm:right-8"
+              // Centred horizontally via inset-x-0 + mx-auto rather than a
+              // translate, so it doesn't fight the hover lift below.
+              className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2"
               style={{ transitionTimingFunction: SPRING }}
             >
               <Image
@@ -259,7 +261,11 @@ export default function Home() {
                 aria-hidden="true"
                 fill
                 sizes="(min-width: 640px) 30vw, 58vw"
-                className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
+                // Scaled up so the object reads boldly on the card. Grown
+                // from the bottom edge (origin-bottom) so it stays planted
+                // there instead of drifting off the card as it enlarges;
+                // the hover bump stays proportional to the base scale.
+                className="origin-bottom scale-[1.6] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.68]"
                 style={{ transitionTimingFunction: SPRING }}
               />
             </div>

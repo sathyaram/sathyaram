@@ -56,7 +56,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-6">
       <nav
-        className={`mx-auto flex max-w-4xl items-center justify-between rounded-full px-4 py-2 transition-colors duration-300 ${
+        className={`mx-auto flex max-w-4xl items-center justify-between rounded-full px-4 py-4 transition-colors duration-300 ${
           solid ? "bg-background/80 backdrop-blur" : "bg-transparent"
         }`}
       >
@@ -136,17 +136,17 @@ export default function Nav() {
           {/* Socials also live in the footer, but that's a long scroll away
               on mobile — surface them here for quick access. */}
           <div className="mt-4 flex items-center gap-5 border-t border-border pt-4">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
+            {socialLinks.map(({ label, href, icon: Icon, compact }) => (
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
                 onClick={() => setOpen(false)}
                 className="text-foreground transition-opacity hover:opacity-80"
               >
-                <Icon className={label === "Resume" ? "h-5 w-5" : "h-6 w-6"} />
+                <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
               </a>
             ))}
           </div>
