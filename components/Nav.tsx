@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "./Logo";
 import { MenuIcon, CloseIcon } from "./icons";
-import { socialLinks } from "@/lib/social";
+import { contactLinks, socialLinks } from "@/lib/social";
 import styles from "./Nav.module.scss";
 
 // One-pager: everything lives on the homepage, with individual routes only
@@ -133,23 +133,32 @@ export default function Nav() {
             })}
           </ul>
 
-          {/* Socials also live in the footer, but that's a long scroll away
-              on mobile — surface them here for quick access. */}
-          <div className="mt-4 flex items-center gap-5 border-t border-border pt-4">
-            {socialLinks.map(({ label, href, icon: Icon, compact }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                aria-label={label}
-                onClick={() => setOpen(false)}
-                className="text-foreground transition-opacity hover:opacity-80"
-              >
-                <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
-              </a>
-            ))}
-          </div>
+          {/* These live in the footer too, but that's a long scroll away on
+              mobile — surface them here. Contact and profiles get their own
+              rows, same split as the footer. */}
+          {[contactLinks, socialLinks].map((group, i) => (
+            <div
+              key={i}
+              className="mt-4 flex items-center gap-5 border-t border-border pt-4"
+            >
+              {group.map(({ label, href, icon: Icon, compact }) => {
+                const external = !href.startsWith("mailto:");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    aria-label={label}
+                    onClick={() => setOpen(false)}
+                    className="text-foreground transition-opacity hover:opacity-80"
+                  >
+                    <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
+                  </a>
+                );
+              })}
+            </div>
+          ))}
         </div>
       )}
     </header>

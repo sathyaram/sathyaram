@@ -12,9 +12,15 @@ import {
 // stay in sync from one source. `compact` marks the icons that optically
 // read larger than the rest at the same box size — the stroke-drawn ones,
 // plus the LinkedIn letterforms — so they get sized down wherever rendered.
-export const socialLinks = [
+/** Ways to get in touch or read the CV — not social profiles, so these sit
+ *  on their own line rather than mixed in with the platform marks. */
+export const contactLinks = [
   { label: "Resume", href: "/resume.pdf", icon: ResumeIcon, compact: true },
   { label: "Email", href: "mailto:sathyatheram@gmail.com", icon: EmailIcon, compact: true },
+];
+
+/** Actual profiles, on platforms. */
+export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sathya-ram/", icon: LinkedInIcon, compact: true },
   { label: "Instagram", href: "https://www.instagram.com/sathya.ram", icon: InstagramIcon },
   { label: "Dribbble", href: "https://dribbble.com/sathyaram", icon: DribbbleIcon },

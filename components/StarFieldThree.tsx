@@ -101,7 +101,7 @@ function startField(
   // field fades in gracefully instead of appearing out of nowhere.
   const canvas = renderer.domElement;
   canvas.style.opacity = "0";
-  canvas.style.transition = "opacity 1200ms ease";
+  canvas.style.transition = "opacity 600ms ease";
   mount.appendChild(canvas);
   // Double rAF so the opacity:0 start frame is painted before we flip to 1,
   // which is what actually triggers the transition.
