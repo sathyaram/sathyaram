@@ -253,9 +253,10 @@ export default function Home() {
               // Centred horizontally via inset-x-0 + mx-auto rather than a
               // translate, so it doesn't fight the hover lift below.
               // The source art is trimmed to its own edges (no transparent
-              // padding), so bottom-0 puts the actual bottom of the object
-              // right on the card's edge — tucked in rather than floating.
-              className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2"
+              // padding), so this offset moves the object itself rather than
+              // an empty box — it hangs past the card's bottom edge and gets
+              // clipped there, so it reads as tucked in behind it.
+              className="pointer-events-none absolute inset-x-0 -bottom-[50px] mx-auto h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2"
               style={{ transitionTimingFunction: SPRING }}
             >
               <Image
@@ -268,7 +269,7 @@ export default function Home() {
                 // from the bottom edge (origin-bottom) so it stays planted
                 // there instead of drifting off the card as it enlarges;
                 // the hover bump stays proportional to the base scale.
-                className="origin-bottom scale-[1.6] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.68]"
+                className="origin-bottom scale-[1.4] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.47]"
                 style={{ transitionTimingFunction: SPRING }}
               />
             </div>

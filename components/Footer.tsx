@@ -40,8 +40,10 @@ export default function Footer() {
   return (
     <footer className="border-t border-border">
       {/* Two rows: ways to reach me, then profiles on platforms. They're
-          different kinds of link, so they don't share a line. */}
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-6 py-8">
+          different kinds of link, so they don't share a line. The rule
+          between them sits outside the max-width wrapper so it runs the
+          full width of the page, matching the one above the copyright. */}
+      <div className="mx-auto max-w-5xl px-6 pb-6 pt-8">
         <nav aria-label="Contact">
           <ScrollGroup className={row}>
             {contactLinks.map((item) => (
@@ -49,14 +51,18 @@ export default function Footer() {
             ))}
           </ScrollGroup>
         </nav>
+      </div>
 
-        <nav aria-label="Elsewhere" className="w-full border-t border-border pt-5">
-          <ScrollGroup className={row}>
-            {socialLinks.map((item) => (
-              <FooterLink key={item.label} {...item} />
-            ))}
-          </ScrollGroup>
-        </nav>
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-5xl px-6 py-6">
+          <nav aria-label="Elsewhere">
+            <ScrollGroup className={row}>
+              {socialLinks.map((item) => (
+                <FooterLink key={item.label} {...item} />
+              ))}
+            </ScrollGroup>
+          </nav>
+        </div>
       </div>
 
       <div className="border-t border-border px-6 py-4">
