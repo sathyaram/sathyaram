@@ -22,8 +22,11 @@ type WebsiteCaseStudyProps = {
   gradientTo: string;
   url: string;
   link: string;
-  image: string;
   description: string;
+  /** Screenshot shown inside the browser chrome. Optional: the mockup is
+   *  simply skipped until a real screenshot exists for the project, so
+   *  adding one here is all it takes to bring the frame back. */
+  image?: string;
   stats: Stat[];
   overview: string[];
   contributions: string[];
@@ -43,8 +46,8 @@ export default function WebsiteCaseStudy({
   gradientTo,
   url,
   link,
-  image,
   description,
+  image,
   stats,
   overview,
   contributions,
@@ -104,11 +107,18 @@ export default function WebsiteCaseStudy({
           </div>
         </ScrollGroup>
 
-        <ScrollGroup>
-          <div className="mt-10 transition-all duration-700">
-            <BrowserMockup url={url} image={image} alt={`${title} website preview`} priority />
-          </div>
-        </ScrollGroup>
+        {image && (
+          <ScrollGroup>
+            <div className="mt-10 transition-all duration-700">
+              <BrowserMockup
+                url={url}
+                image={image}
+                alt={`${title} website preview`}
+                priority
+              />
+            </div>
+          </ScrollGroup>
+        )}
 
         <ScrollGroup>
           <p className="mx-auto mt-10 max-w-lg text-base leading-relaxed text-foreground transition-all duration-700">

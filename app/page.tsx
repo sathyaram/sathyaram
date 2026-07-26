@@ -244,17 +244,22 @@ export default function Home() {
               }
             />
 
-            {/* Artwork tucked into the bottom-left corner, peeking out. */}
+            {/* A single object standing in for each client, sitting on the
+                bottom edge of the card. object-contain (not cover) and no
+                clipping frame, so the whole thing is visible and never
+                cropped or stretched — these are transparent cut-outs meant
+                to float on the gradient, not photos in a window. */}
             <div
-              className="absolute bottom-0 right-6 h-[46%] w-[72%] overflow-hidden rounded-t-3xl transition-transform duration-500 group-hover:-translate-y-2 sm:right-10"
+              className="pointer-events-none absolute bottom-0 right-4 h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2 sm:right-8"
               style={{ transitionTimingFunction: SPRING }}
             >
               <Image
                 src={project.image}
-                alt={`${project.title} website`}
+                alt=""
+                aria-hidden="true"
                 fill
-                sizes="(min-width: 640px) 40vw, 72vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                sizes="(min-width: 640px) 30vw, 58vw"
+                className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
                 style={{ transitionTimingFunction: SPRING }}
               />
             </div>

@@ -16,7 +16,6 @@ export default function Sontag() {
       gradientTo="#2B86E0"
       url="sontagfoundation.org"
       link="https://sontagfoundation.org"
-      image="/websites/assets/sontag.png"
       description="The Sontag Foundation funds brain cancer research fellowships across the country. Working with Push10, I helped build a custom WordPress site focused on presenting grantee research and foundation initiatives clearly and accessibly."
       stats={[
         { label: "Timeline", value: "3 months" },

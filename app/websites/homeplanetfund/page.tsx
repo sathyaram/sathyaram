@@ -16,7 +16,6 @@ export default function HomePlanetFund() {
       gradientTo="#F59431"
       url="homeplanetfund.org"
       link="https://homeplanetfund.org"
-      image="/websites/assets/homeplanet.png"
       description="Home Planet Fund is Patagonia's grassroots climate action fund. Working with Teal Media, I helped build a custom WordPress site with hand-tuned CSS to match Patagonia's distinct brand system across grant and initiative pages."
       stats={[
         { label: "Timeline", value: "2 months" },
