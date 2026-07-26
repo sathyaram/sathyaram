@@ -265,7 +265,7 @@ export default function Home() {
                 // from the bottom edge (origin-bottom) so it stays planted
                 // there instead of drifting off the card as it enlarges;
                 // the hover bump stays proportional to the base scale.
-                className="origin-bottom scale-[1.6] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.68]"
+                className="origin-bottom translate-y-[40px] scale-[1.6] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.68]"
                 style={{ transitionTimingFunction: SPRING }}
               />
             </div>

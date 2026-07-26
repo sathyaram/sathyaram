@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
+import {
+  PbsNewsHourLogo,
+  SodexoLogo,
+  BankOfAmericaLogo,
+  ScLicensingBoardLogo,
+} from "@/components/TestimonialLogos";
 
 export const metadata: Metadata = {
   title: "About",
@@ -56,6 +62,42 @@ const awards = [
   { title: "Hazl Magazine", detail: "Published Photography" },
 ];
 
+// Ported from the previous site, logos and all.
+const testimonials = [
+  {
+    quote:
+      "Sathya was a pleasure to work with! Prompt, fun, engaging and professional.",
+    name: "Thaisi Da Silva",
+    role: "Director, Reporting Labs",
+    company: "PBS NewsHour",
+    logo: PbsNewsHourLogo,
+  },
+  {
+    quote:
+      "Sathya executed on our jumble of thoughts and made a beautiful branding scheme and website.",
+    name: "David Joseph",
+    role: "Executive Director",
+    company: "Sodexo",
+    logo: SodexoLogo,
+  },
+  {
+    quote:
+      "Easily one of the best people I've worked with: a genuine creative force.",
+    name: "Brian Greene",
+    role: "VP/Director, Architect",
+    company: "Groupeconnect / Bank of America",
+    logo: BankOfAmericaLogo,
+  },
+  {
+    quote:
+      "Sathya's creativity and energy was exactly what we and our website needed!",
+    name: "Emily Farr",
+    role: "Agency Director",
+    company: "South Carolina Licensing Board",
+    logo: ScLicensingBoardLogo,
+  },
+];
+
 const certifications = [
   { title: "Google Analytics", detail: "Certification" },
   { title: "Acquia Certified Front End Specialist", detail: "Certification" },
@@ -92,6 +134,33 @@ export default function About() {
             </div>
           </ScrollGroup>
         ))}
+
+        <ScrollGroup className={sectionGrid}>
+          <h2 className={scriptHeading}>Testimonials</h2>
+          <ul className="space-y-10 transition-all duration-700">
+            {testimonials.map((item) => {
+              const Logo = item.logo;
+              return (
+                <li key={item.name}>
+                  <blockquote className="text-lg leading-relaxed text-foreground">
+                    &ldquo;{item.quote}&rdquo;
+                  </blockquote>
+                  <div className="mt-4 flex items-center gap-4">
+                    {/* The marks have very different aspect ratios, so they
+                        share a height and size their own width from it. */}
+                    <Logo className="h-7 w-auto shrink-0 text-muted" />
+                    <div className="text-sm leading-snug">
+                      <p className="font-medium text-foreground">{item.name}</p>
+                      <p className="text-muted">
+                        {item.role}, {item.company}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </ScrollGroup>
 
         <ScrollGroup className={sectionGrid}>
           <h2 className={scriptHeading}>Awards &amp; Publications</h2>
