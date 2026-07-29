@@ -176,9 +176,13 @@ export default function Home() {
             divider math (row 1 vs. row 2, last column) is hardcoded to
             that shape, not derived generically. */}
         <div className="w-screen ml-[calc(50%-50vw)]">
-          <ScrollGroup>
-            <div className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
-              {services.map((service, index) => {
+          {/* ScrollGroup *is* the grid rather than wrapping one, so each cell
+              is both a direct child (and therefore gets its own staggered
+              reveal — ScrollGroup only clones onto direct children) and a
+              real grid item, which the divider classes below depend on.
+              Same arrangement the Work grid uses. */}
+          <ScrollGroup className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
+            {services.map((service, index) => {
                 const isLastMobile = index === services.length - 1;
                 const isFirstRow = index < 3;
                 const isLastColumn = (index + 1) % 3 === 0;
@@ -186,7 +190,15 @@ export default function Home() {
                   <div
                     key={service.title}
                     className={[
-                      "group flex flex-col items-center px-8 py-12 text-center transition-colors duration-300 sm:px-10 sm:py-14",
+                      // transition-all, not transition-colors: the staggered
+                      // reveal animates opacity + transform, neither of which
+                      // transition-colors covers — it would snap into place
+                      // despite the delay. duration-700 matches the site's
+                      // other reveals; the snappy hover feedback (icon scale,
+                      // badge tint) lives on the children below at 300ms, so
+                      // only the near-invisible 2% cell tint rides the
+                      // slower curve.
+                      "group flex flex-col items-center px-8 py-12 text-center transition-all duration-700 sm:px-10 sm:py-14",
                       isLastMobile ? "" : "border-b border-border",
                       isFirstRow ? "sm:border-b" : "sm:border-b-0",
                       isLastColumn ? "" : "sm:border-r sm:border-border",
@@ -221,7 +233,6 @@ export default function Home() {
                   </div>
                 );
               })}
-            </div>
           </ScrollGroup>
         </div>
       </section>
