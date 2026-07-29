@@ -184,9 +184,20 @@ export default function Home() {
                   aria-hidden="true"
                   className="absolute inset-0 rotate-45 rounded-xl border border-border transition-colors duration-300 ease-out group-hover:border-accent/60"
                 />
+                {/* The emoji sits in its own fixed square rather than just
+                    being flex-centered as inline text — different emoji
+                    glyphs carry very different built-in ascent/descent
+                    padding at the same font-size (a camera renders "taller"
+                    within its line box than a palette, say), so centering
+                    them as loose inline content left each icon sitting at a
+                    slightly different height and threw off the gap to the
+                    title below. leading-none pins every glyph to the same
+                    fixed line-box height regardless of its own metrics, and
+                    the flex square centers within that fixed box instead of
+                    the glyph's variable one. */}
                 <span
                   aria-hidden="true"
-                  className="relative text-4xl transition-transform duration-300 ease-out group-hover:scale-110"
+                  className="relative flex h-12 w-12 items-center justify-center text-4xl leading-none transition-transform duration-300 ease-out group-hover:scale-110"
                 >
                   {service.emoji}
                 </span>
