@@ -18,15 +18,6 @@ function escapeHtml(value: string) {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("RESEND_API_KEY is not set — contact form cannot send.");
-    return NextResponse.json(
-      { error: "Email sending isn't configured yet." },
-      { status: 500 },
-    );
-  }
-
   let body: unknown;
   try {
     body = await request.json();
@@ -34,7 +25,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const { name, email, subject, message } = (body ?? {}) as Record<string, unknown>;
+  const { name, email, subject, message, company } = (body ?? {}) as Record<string, unknown>;
+
+  // Honeypot first, before anything else: "company" is a field real
+  // visitors never see (see ContactForm.tsx), so anything filled in there
+  // is a bot. Dropping it up front means bot traffic never reaches the
+  // config check below and never fills the logs with its noise. Responds
+  // with a normal-looking success rather than a rejection, so the bot gets
+  // no signal to adapt against — the email just never sends.
+  if (typeof company === "string" && company.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
   if (
     typeof name !== "string" ||
     typeof email !== "string" ||
@@ -53,6 +55,15 @@ export async function POST(request: Request) {
   // that reaches the API directly.
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "That email address doesn't look right." }, { status: 400 });
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("RESEND_API_KEY is not set — contact form cannot send.");
+    return NextResponse.json(
+      { error: "Email sending isn't configured yet." },
+      { status: 500 },
+    );
   }
 
   const resend = new Resend(apiKey);

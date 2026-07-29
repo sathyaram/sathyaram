@@ -539,6 +539,39 @@ body {
 }
 
 /*
+ * Block-level "rise in on load", for content that's guaranteed above the
+ * fold and so can't rely on a scroll-triggered reveal ever firing — the
+ * 404 page, where a visitor may never scroll at all. Deliberately mirrors
+ * .scroll-stagger-item's 28px offset and 700ms feel, so an on-load reveal
+ * is visually indistinguishable from the scroll reveals used elsewhere;
+ * only the trigger differs. Stagger comes from an inline animation-delay
+ * per item, same pattern as .reveal-letter and the nav.
+ */
+@keyframes content-rise {
+  from {
+    transform: translateY(28px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.load-rise {
+  animation-name: content-rise;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .load-rise {
+    animation: none;
+  }
+}
+
+/*
  * Scroll-triggered stagger (see components/ScrollGroup.tsx). Deliberately
  * has no `transition` of its own: ScrollGroup clones this class directly
  * onto each card, which already carries its own `transition-all` for

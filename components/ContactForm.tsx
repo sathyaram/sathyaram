@@ -99,6 +99,28 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Honeypot: real visitors never see or reach this field (off-screen,
+          not display:none — some bots skip hidden inputs entirely but still
+          fill in ones that are merely positioned off-canvas), so anything
+          filling it in is a bot. relative + h-0 + overflow-hidden on this
+          wrapper keeps the absolute child from depending on some distant
+          ancestor's positioning context. tabIndex -1 and aria-hidden keep
+          it out of keyboard/screen-reader flow. Checked server-side in the
+          API route — this field is never trusted to just not exist. */}
+      <div className="relative h-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="company" className="absolute -left-[9999px]">
+          Company
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          className="absolute -left-[9999px]"
+        />
+      </div>
+
       {status === "error" && (
         <p role="alert" className="text-sm text-red-400">
           {errorMessage}

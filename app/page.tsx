@@ -166,47 +166,64 @@ export default function Home() {
           </h2>
         </ScrollGroup>
 
-        <ScrollGroup className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group flex min-h-[12rem] flex-col items-center justify-center p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1"
-            >
-              {/* A diamond outline framing the icon itself — a rotated
-                  square centered behind the emoji, so it tracks the icon
-                  instead of the whole card (which left it misaligned). */}
-              <span className="relative flex h-20 w-20 items-center justify-center">
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 rotate-45 rounded-xl border border-border transition-colors duration-300 ease-out group-hover:border-accent/60"
-                />
-                {/* The emoji sits in its own fixed square rather than just
-                    being flex-centered as inline text — different emoji
-                    glyphs carry very different built-in ascent/descent
-                    padding at the same font-size (a camera renders "taller"
-                    within its line box than a palette, say), so centering
-                    them as loose inline content left each icon sitting at a
-                    slightly different height and threw off the gap to the
-                    title below. leading-none pins every glyph to the same
-                    fixed line-box height regardless of its own metrics, and
-                    the flex square centers within that fixed box instead of
-                    the glyph's variable one. */}
-                <span
-                  aria-hidden="true"
-                  className="relative flex h-12 w-12 items-center justify-center text-4xl leading-none transition-transform duration-300 ease-out group-hover:scale-110"
-                >
-                  {service.emoji}
-                </span>
-              </span>
-              <h3 className="relative z-[1] -mt-2 font-display text-lg font-semibold">
-                {service.title}
-              </h3>
-              <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted">
-                {service.blurb}
-              </p>
+        {/* Full-bleed grid — same w-screen breakout the Photography
+            panorama uses below, so Services isn't the only section that
+            escapes the page's max-width. Thin dividers (border-border, the
+            same hairline used for the Colophon list and the Timeline/Role/
+            Stack row) form the grid lines: border-y on the grid itself for
+            the outer top/bottom edge, per-cell border-b/border-r for the
+            internal lines. Assumes exactly 6 services / 3 columns — the
+            divider math (row 1 vs. row 2, last column) is hardcoded to
+            that shape, not derived generically. */}
+        <div className="w-screen ml-[calc(50%-50vw)]">
+          <ScrollGroup>
+            <div className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
+              {services.map((service, index) => {
+                const isLastMobile = index === services.length - 1;
+                const isFirstRow = index < 3;
+                const isLastColumn = (index + 1) % 3 === 0;
+                return (
+                  <div
+                    key={service.title}
+                    className={[
+                      "group flex flex-col items-center px-8 py-12 text-center transition-colors duration-300 sm:px-10 sm:py-14",
+                      isLastMobile ? "" : "border-b border-border",
+                      isFirstRow ? "sm:border-b" : "sm:border-b-0",
+                      isLastColumn ? "" : "sm:border-r sm:border-border",
+                      "hover:bg-foreground/[0.02]",
+                    ].join(" ")}
+                  >
+                    {/* Icon in its own fixed circular badge — the emoji sits
+                        in its own inner square with leading-none rather
+                        than being centered as loose inline text, since
+                        different glyphs carry very different built-in
+                        ascent/descent padding at the same font-size (a
+                        camera renders "taller" within its line box than a
+                        palette, say). That fixed inner box, plus a fixed
+                        margin to the title and no vertical centering of the
+                        column as a whole, is what keeps every title sitting
+                        at the same height below its icon regardless of how
+                        tall a neighboring cell's blurb wraps to. */}
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10">
+                      <span
+                        aria-hidden="true"
+                        className="flex h-8 w-8 items-center justify-center text-3xl leading-none transition-transform duration-300 ease-out group-hover:scale-110"
+                      >
+                        {service.emoji}
+                      </span>
+                    </span>
+                    <h3 className="mt-5 font-display text-lg font-semibold">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 max-w-[16rem] text-sm leading-relaxed text-muted">
+                      {service.blurb}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </ScrollGroup>
+          </ScrollGroup>
+        </div>
       </section>
 
       {/* ---------- Featured work: 2×2 full-width grid ---------- */}
@@ -355,22 +372,35 @@ export default function Home() {
           before they'd otherwise just leave. Button reuses the one primary-
           button style that already exists (ContactForm's submit), rather
           than inventing a new one. */}
-      <section className="mx-auto mt-28 max-w-xl pt-8 text-center sm:mt-36 sm:pt-12">
+      <section className="mx-auto mt-28 max-w-xl text-center sm:mt-36">
+        {/* Each of the three needs its own `transition` for the staggered
+            reveal to animate at all — ScrollGroup sets an inline
+            transitionDelay per child, but .scroll-stagger-item's
+            opacity/translate change snaps instantly without a transition
+            property to delay. duration-700 matches every other ScrollGroup
+            child on the page. */}
         <ScrollGroup>
-          <h2 className="font-display text-3xl font-bold leading-tight tracking-[-0.02em] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold leading-tight tracking-[-0.02em] transition-all duration-700 sm:text-4xl">
             Have a project in mind?
           </h2>
-          <p className="mt-3 text-muted">
+          <p className="mt-3 text-muted transition-all duration-700">
             I&apos;d love to hear about it — reach out and let&apos;s talk
             through what you&apos;re building.
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-block rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
-            style={{ transitionTimingFunction: SPRING }}
-          >
-            Get in Touch
-          </Link>
+          {/* The button sits in a wrapper rather than being the stagger
+              target itself: the reveal wants duration-700 to match its
+              siblings, but the hover lift wants to stay snappy at 300ms,
+              and one element can't carry both on `transition-all`. The
+              wrapper reveals, the Link keeps its own hover timing. */}
+          <div className="mt-6 transition-all duration-700">
+            <Link
+              href="/contact"
+              className="inline-block rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+              style={{ transitionTimingFunction: SPRING }}
+            >
+              Get in Touch
+            </Link>
+          </div>
         </ScrollGroup>
       </section>
     </div>
