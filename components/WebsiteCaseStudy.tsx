@@ -92,11 +92,16 @@ export default function WebsiteCaseStudy({
               // gap-4 is what actually keeps the url text clear of the
               // pill: real flex spacing scales with however wide "https"
               // renders, unlike a padding value tuned by eye for one string.
-              className="group relative inline-flex items-center gap-4 rounded-2xl py-4 pl-3 pr-7 shadow-lg transition-transform duration-300 hover:-translate-y-1"
+              className="group relative inline-flex items-center gap-4 rounded-2xl py-4 pl-6 pr-7 shadow-lg transition-transform duration-300 hover:-translate-y-1"
             >
               {/* Base gradient layer and the hover wipe are separate
                   stacked layers (not a background swap) so the wipe can
-                  slide in from the left instead of cross-fading. */}
+                  slide in from the left instead of cross-fading. Revealed
+                  via clip-path, not a scaleX transform — scaling the box
+                  stretches its already-computed border-radius along with
+                  it, so the rounded corners visibly warp into ellipses
+                  mid-transition. clip-path just masks a static, correctly-
+                  rounded box, so the corners stay true at every frame. */}
               <span
                 aria-hidden="true"
                 className="absolute inset-0 rounded-2xl"
@@ -106,18 +111,21 @@ export default function WebsiteCaseStudy({
               />
               <span
                 aria-hidden="true"
-                className="absolute inset-0 origin-left scale-x-0 rounded-2xl bg-foreground transition-transform duration-500 ease-out group-hover:scale-x-100"
+                className="absolute inset-0 rounded-2xl bg-foreground transition-[clip-path] duration-500 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)]"
               />
 
               {/* The https chip sits in normal flex flow, not absolutely
                   positioned — a negative margin nudges it left, past the
                   button's own edge, without needing to know the button's
-                  size the way an absolute `left` value would. Same
+                  size the way an absolute `left` value would. The button's
+                  own pl-6 stays intact (unlike a margin that exactly
+                  cancelled the padding) so the pill visibly pokes out past
+                  the edge instead of sitting flush in the corner. Same
                   "browser address bar" motif as BrowserMockup's URL bar,
                   turned up for a CTA. Stays green through the hover wipe
                   rather than inverting with the rest of the button, so it
                   still reads as its own fixed badge. */}
-              <span className="relative z-10 -ml-3 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md">
+              <span className="relative z-10 -ml-10 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md">
                 https
               </span>
 
