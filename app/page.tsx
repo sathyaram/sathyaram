@@ -78,7 +78,7 @@ const featured = [
     from: "#5C4433",
     to: "#E3D2B4",
     span: "sm:col-span-3",
-    image: "/websites/assets/vilcek.png",
+    image: "/websites/assets/vilcek.webp",
   },
   {
     slug: "sontag",
