@@ -1,0 +1,47 @@
+.link {
+  position: relative;
+  padding-block: 0.25rem;
+
+  // A rule above and below the word, each drawing in from the opposite end
+  // on hover, so the label reads as bracketed rather than just underlined.
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: currentColor;
+  }
+
+  // Top rule: draws right to left.
+  &::before {
+    top: -2px;
+    right: 0;
+    left: 100%;
+    transition: left 200ms ease;
+  }
+
+  // Bottom rule: draws left to right.
+  &::after {
+    bottom: -2px;
+    left: 0;
+    right: 100%;
+    transition: right 200ms ease;
+  }
+
+  &:hover::before,
+  &.active::before {
+    left: 0;
+  }
+
+  &:hover::after,
+  &.active::after {
+    right: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before,
+    &::after {
+      transition: none;
+    }
+  }
+}
