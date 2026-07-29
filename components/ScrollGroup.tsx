@@ -54,7 +54,7 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
         setVisible(true);
         observer.disconnect();
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();

@@ -17,7 +17,14 @@ type LinkItem = {
  * theme foreground colour. Stroke-drawn icons read larger than the filled
  * brand marks at the same box size, so `compact` sizes those down.
  */
-function FooterLink({ label, href, icon: Icon, compact }: LinkItem) {
+function FooterLink({
+  label,
+  href,
+  icon: Icon,
+  compact,
+  className = "",
+  ...rest
+}: LinkItem & React.ComponentPropsWithoutRef<"a">) {
   const external = !href.startsWith("mailto:");
   return (
     <a
@@ -26,7 +33,12 @@ function FooterLink({ label, href, icon: Icon, compact }: LinkItem) {
       // client takes over, so only real URLs get target/rel.
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80"
+      // ScrollGroup clones its stagger class, inline delay and data-visible
+      // onto whatever its DIRECT children are — which is this component, not
+      // the anchor. They have to be forwarded through, or the link keeps
+      // .scroll-stagger-item's opacity:0 and never reveals.
+      className={`inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80 ${className}`}
+      {...rest}
     >
       <Icon className={compact ? "h-6 w-6" : "h-7 w-7"} />
       {label}

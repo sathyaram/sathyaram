@@ -16,6 +16,7 @@ export default function Vilcek() {
       gradientTo="#E3D2B4"
       url="vilcek.org"
       link="https://vilcek.org"
+      image="/websites/assets/vilcek-hero.webp"
       description="The Vilcek Foundation celebrates the contributions of immigrants to American arts and sciences. Working with ForumOne, I built custom WordPress components for their grant and award programs, including interactive profile layouts for honorees."
       stats={[
         { label: "Timeline", value: "4 months" },
