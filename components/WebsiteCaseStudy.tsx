@@ -79,9 +79,6 @@ export default function WebsiteCaseStudy({
 
         <ScrollGroup>
           <div className="mt-8 flex flex-col items-center gap-3 transition-all duration-700">
-            <p className="glow-label text-xs font-semibold uppercase tracking-[0.2em] text-muted dark:text-white">
-              Live Website
-            </p>
             <a
               href={link}
               target="_blank"
