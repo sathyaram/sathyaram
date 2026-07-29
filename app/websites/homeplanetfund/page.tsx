@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default function HomePlanetFund() {
   return (
     <WebsiteCaseStudy
+      slug="homeplanetfund"
       title="Home Planet Fund"
       subtitle="Patagonia's greenroots foundation."
       year="2024"

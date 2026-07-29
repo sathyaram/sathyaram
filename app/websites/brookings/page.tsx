@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default function Brookings() {
   return (
     <WebsiteCaseStudy
+      slug="brookings"
       title="The Brookings Institute"
       subtitle="A mission-driven thinktank center."
       year="2024"

@@ -2,19 +2,45 @@
 
 import { useState } from "react";
 
-export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "sending" | "sent" | "error";
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+export default function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => null);
+        throw new Error(body?.error || "Something went wrong sending that.");
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong sending that.");
+    }
   }
 
-  if (submitted) {
+  if (status === "sent") {
     return (
       <p className="mt-10 rounded-2xl border border-border p-6 text-muted">
-        Thanks for reaching out — this form isn&apos;t wired up to actually
-        send yet, but it will be soon.
+        Thanks for reaching out — your message is on its way, and I&apos;ll get
+        back to you soon.
       </p>
     );
   }
@@ -73,11 +99,18 @@ export default function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <p role="alert" className="text-sm text-red-400">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+        disabled={status === "sending"}
+        className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        Send message
+        {status === "sending" ? "Sending…" : "Send message"}
       </button>
     </form>
   );

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default function Biointeractive() {
   return (
     <WebsiteCaseStudy
+      slug="biointeractive"
       title="HHMI BioInteractive"
       subtitle="Netflixing science, for kids."
       year="2020"

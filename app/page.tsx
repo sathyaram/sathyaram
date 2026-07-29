@@ -347,6 +347,32 @@ export default function Home() {
           <PanoramaSlider />
         </div>
       </section>
+
+      {/* ---------- CTA ---------- */}
+      {/* The homepage previously had no on-page prompt to get in touch at
+          all — Contact only lived in the nav. Closing section, after
+          everything else has made the case — the last thing someone reads
+          before they'd otherwise just leave. Button reuses the one primary-
+          button style that already exists (ContactForm's submit), rather
+          than inventing a new one. */}
+      <section className="mx-auto mt-28 max-w-xl pt-8 text-center sm:mt-36 sm:pt-12">
+        <ScrollGroup>
+          <h2 className="font-display text-3xl font-bold leading-tight tracking-[-0.02em] sm:text-4xl">
+            Have a project in mind?
+          </h2>
+          <p className="mt-3 text-muted">
+            I&apos;d love to hear about it — reach out and let&apos;s talk
+            through what you&apos;re building.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-block rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+            style={{ transitionTimingFunction: SPRING }}
+          >
+            Get in Touch
+          </Link>
+        </ScrollGroup>
+      </section>
     </div>
   );
 }

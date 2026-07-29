@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import ScrollGroup from "./ScrollGroup";
 import BrowserMockup from "./BrowserMockup";
 import CodeBlock, { type CodeLine } from "./CodeBlock";
+import { getAdjacentProjects } from "@/lib/projects";
 
 type Stat = { label: string; value: string };
 
@@ -12,6 +14,9 @@ type Stat = { label: string; value: string };
 type Highlight = { title: string; body: string };
 
 type WebsiteCaseStudyProps = {
+  /** Matches the entry in lib/projects.ts — drives the Next/Previous links
+   *  at the bottom of the page. */
+  slug: string;
   title: string;
   subtitle: string;
   year: string;
@@ -38,6 +43,7 @@ type WebsiteCaseStudyProps = {
 };
 
 export default function WebsiteCaseStudy({
+  slug,
   title,
   subtitle,
   year,
@@ -55,6 +61,8 @@ export default function WebsiteCaseStudy({
   codeFilename,
   codeLines,
 }: WebsiteCaseStudyProps) {
+  const { previous, next } = getAdjacentProjects(slug);
+
   return (
     <div className="px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl">
@@ -212,6 +220,41 @@ export default function WebsiteCaseStudy({
             <CodeBlock filename={codeFilename} lines={codeLines} />
           </div>
         </ScrollGroup>
+
+        {/* Previously a dead end — landing on a case study meant either
+            hitting the browser back button or hunting for the nav. This
+            keeps people moving through the other projects instead. */}
+        {previous && next && (
+          <ScrollGroup className="mx-auto mt-14 max-w-lg">
+            <nav
+              aria-label="More projects"
+              className="grid grid-cols-2 gap-4 border-t border-border pt-8 transition-all duration-700"
+            >
+              <Link
+                href={`/websites/${previous.slug}`}
+                className="group rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
+              >
+                <p className="text-xs font-medium uppercase tracking-widest text-muted">
+                  ← Previous
+                </p>
+                <p className="mt-1 font-display font-semibold transition-colors duration-300 group-hover:text-accent">
+                  {previous.title}
+                </p>
+              </Link>
+              <Link
+                href={`/websites/${next.slug}`}
+                className="group rounded-2xl border border-border p-5 text-right transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
+              >
+                <p className="text-xs font-medium uppercase tracking-widest text-muted">
+                  Next →
+                </p>
+                <p className="mt-1 font-display font-semibold transition-colors duration-300 group-hover:text-accent">
+                  {next.title}
+                </p>
+              </Link>
+            </nav>
+          </ScrollGroup>
+        )}
       </div>
     </div>
   );

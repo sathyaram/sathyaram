@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
 import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
+import { socialLinks } from "@/lib/social";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -60,6 +61,25 @@ export const metadata: Metadata = {
   },
 };
 
+// Person schema for search engines / AI — a freelance individual, not a
+// registered business, so Person is the accurate type rather than
+// ProfessionalService. sameAs pulls straight from the same social list the
+// footer renders, so the two can't drift apart.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sathya Ram",
+  url: "https://sathyaram.com",
+  jobTitle: "Web Developer & Designer",
+  email: "mailto:sathyatheram@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "MD",
+    addressCountry: "US",
+  },
+  sameAs: socialLinks.map((link) => link.href),
+};
+
 // Dark is the default, so <html> ships with the class and this only strips
 // it back off for visitors who explicitly chose light. Runs before paint.
 const themeInitScript = `(function () {
@@ -82,6 +102,12 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body className="relative min-h-full flex flex-col font-sans">
         {/* Shared gradient def for the footer icons (dark mode) — the same

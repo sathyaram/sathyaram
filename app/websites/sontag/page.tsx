@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default function Sontag() {
   return (
     <WebsiteCaseStudy
+      slug="sontag"
       title="The Sontag Foundation"
       subtitle="The definitive enterprise for brain cancer research."
       year="2021"

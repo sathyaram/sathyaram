@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default function Vilcek() {
   return (
     <WebsiteCaseStudy
+      slug="vilcek"
       title="Vilcek Foundation"
       subtitle="A celebration of immigrants & the arts."
       year="2020"
