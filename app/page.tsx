@@ -57,6 +57,7 @@ const featured = [
     to: "#00649F",
     span: "sm:col-span-2",
     image: "/websites/assets/brookings.webp",
+    imageScale: 1.4,
   },
   {
     slug: "homeplanetfund",
@@ -68,6 +69,7 @@ const featured = [
     to: "#F59431",
     span: "sm:col-span-3",
     image: "/websites/assets/homeplanet.png",
+    imageScale: 1.4,
   },
   {
     slug: "vilcek",
@@ -79,6 +81,7 @@ const featured = [
     to: "#E3D2B4",
     span: "sm:col-span-3",
     image: "/websites/assets/vilcek.webp",
+    imageScale: 1.55,
   },
   {
     slug: "sontag",
@@ -90,6 +93,7 @@ const featured = [
     to: "#2B86E0",
     span: "sm:col-span-2",
     image: "/websites/assets/sontag.png",
+    imageScale: 1.25,
   },
 ];
 
@@ -265,12 +269,21 @@ export default function Home() {
                 aria-hidden="true"
                 fill
                 sizes="(min-width: 640px) 30vw, 58vw"
-                // Scaled up so the object reads boldly on the card. Grown
+                // Scaled per-project so each object reads at the right size
+                // on its card — a jug and a brain don't fill the same frame
+                // at the same scale. Tailwind's arbitrary-value classes have
+                // to be static strings, so the number comes in via a CSS var
+                // instead of being interpolated into the class name. Grown
                 // from the bottom edge (origin-bottom) so it stays planted
                 // there instead of drifting off the card as it enlarges;
                 // the hover bump stays proportional to the base scale.
-                className="origin-bottom scale-[1.4] object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.47]"
-                style={{ transitionTimingFunction: SPRING }}
+                className="origin-bottom scale-[var(--img-scale)] object-contain object-bottom transition-transform duration-500 group-hover:scale-[calc(var(--img-scale)*1.05)]"
+                style={
+                  {
+                    transitionTimingFunction: SPRING,
+                    "--img-scale": project.imageScale,
+                  } as React.CSSProperties
+                }
               />
             </div>
 

@@ -78,14 +78,52 @@ export default function WebsiteCaseStudy({
         </ScrollGroup>
 
         <ScrollGroup>
-          <div className="mt-6 flex justify-center transition-all duration-700">
+          <div className="mt-8 flex flex-col items-center gap-3 transition-all duration-700">
+            <p className="glow-label text-xs font-semibold uppercase tracking-[0.2em] text-muted dark:text-white">
+              Live Website
+            </p>
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-border-logo inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-medium transition-opacity hover:opacity-80"
+              // No overflow-hidden here — the pill needs to visually escape
+              // the button's left edge, so each background layer clips
+              // itself (rounded-2xl on the layer, not the parent) instead.
+              // gap-4 is what actually keeps the url text clear of the
+              // pill: real flex spacing scales with however wide "https"
+              // renders, unlike a padding value tuned by eye for one string.
+              className="group relative inline-flex items-center gap-4 rounded-2xl py-4 pl-3 pr-7 shadow-lg transition-transform duration-300 hover:-translate-y-1"
             >
-              {url} ↗
+              {/* Base gradient layer and the hover wipe are separate
+                  stacked layers (not a background swap) so the wipe can
+                  slide in from the left instead of cross-fading. */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-2xl"
+                style={{
+                  background: `linear-gradient(120deg, ${gradientFrom}, ${gradientTo})`,
+                }}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 origin-left scale-x-0 rounded-2xl bg-foreground transition-transform duration-500 ease-out group-hover:scale-x-100"
+              />
+
+              {/* The https chip sits in normal flex flow, not absolutely
+                  positioned — a negative margin nudges it left, past the
+                  button's own edge, without needing to know the button's
+                  size the way an absolute `left` value would. Same
+                  "browser address bar" motif as BrowserMockup's URL bar,
+                  turned up for a CTA. Stays green through the hover wipe
+                  rather than inverting with the rest of the button, so it
+                  still reads as its own fixed badge. */}
+              <span className="relative z-10 -ml-3 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md">
+                https
+              </span>
+
+              <span className="relative z-10 font-display text-xl font-bold text-white transition-colors duration-500 group-hover:text-background">
+                {url}
+              </span>
             </a>
           </div>
         </ScrollGroup>
@@ -96,7 +134,7 @@ export default function WebsiteCaseStudy({
           <div className="mt-10 grid grid-cols-3 gap-4 border-y border-border py-6 transition-all duration-700">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <p className="text-[11px] font-medium uppercase tracking-widest text-muted">
+                <p className="glow-label text-[11px] font-medium uppercase tracking-widest text-muted dark:text-white">
                   {stat.label}
                 </p>
                 <p className="mt-1 font-display text-sm font-semibold sm:text-base">

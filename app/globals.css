@@ -232,6 +232,21 @@ body {
   }
 }
 
+/* A steady (non-hover, non-scroll-triggered) version of the same white
+   glow, for small labels that should just always read as lit — the case
+   study's "Live Website" kicker and its Timeline/Role/Stack labels.
+   .heading-glow's blur radii (5/15/35/5px) are tuned for giant display
+   type; reused at ~11px they swamp the letterforms into a blurred haze
+   instead of a halo, so this is a scaled-down version for small caps text.
+   Same dark-mode-only reasoning as .heading-glow: a white glow disappears
+   into the light theme's beige background. */
+.dark .glow-label {
+  text-shadow:
+    0 0 1px white,
+    0 0 4px white,
+    0 0 9px white;
+}
+
 /*
  * "Sathya Ram" — a constantly-panning gradient clipped to the text, built
  * from the same stops as the logo mark. Dark mode only: in light mode the
@@ -327,19 +342,6 @@ body {
 
 .dark .icon-gradient-stroke {
   stroke: url(#brand-icon-gradient);
-}
-
-/*
- * Case-study "Visit" link: same light-blue-to-dark-blue gradient as the
- * logo's R-mark (components/Logo.tsx), as a border. Double background
- * layers (padding-box for the fill, border-box for the gradient) instead
- * of `border-image`, since border-image can't do rounded corners cleanly.
- */
-.gradient-border-logo {
-  border: 3px solid transparent;
-  background:
-    linear-gradient(var(--background), var(--background)) padding-box,
-    linear-gradient(120deg, #70d5ff, #0059bc) border-box;
 }
 
 /* Line-draw keyframe used by the logo hover, ported from the old site. */
