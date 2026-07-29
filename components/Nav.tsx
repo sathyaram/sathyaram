@@ -41,6 +41,11 @@ export default function Nav() {
   // scrolls to a fragment when navigating to it for the first time. Scroll
   // manually instead, every time, so repeat clicks keep working.
   const scrollToWork = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // The mobile menu should close on any nav click regardless of which path
+    // below runs — it used to sit at the end, after two early returns, so
+    // clicking "Work" while on a page other than "/" (a case study, About,
+    // etc.) left the menu open since neither return reached it.
+    setOpen(false);
     if (pathname !== "/") return;
     const target = document.getElementById("work");
     if (!target) return;
@@ -50,7 +55,6 @@ export default function Nav() {
     if (window.location.hash !== "#work") {
       window.history.pushState(null, "", "/#work");
     }
-    setOpen(false);
   };
 
   return (

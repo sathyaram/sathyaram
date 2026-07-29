@@ -52,19 +52,17 @@ const featured = [
     title: "The Brookings Institute",
     year: "2024",
     blurb: "A mission-driven thinktank center.",
-    tags: ["WordPress", "JavaScript", "Custom HTML+CSS"],
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
     image: "/websites/assets/brookings.webp",
-    imageScale: 1.4,
+    imageScale: 1.25,
   },
   {
     slug: "homeplanetfund",
     title: "Home Planet Fund",
     year: "2024",
     blurb: "Patagonia's greenroots foundation.",
-    tags: ["WordPress", "Custom CSS", "JavaScript"],
     from: "#8C382C",
     to: "#F59431",
     span: "sm:col-span-3",
@@ -76,7 +74,6 @@ const featured = [
     title: "Vilcek Foundation",
     year: "2020",
     blurb: "A celebration of immigrants & the arts.",
-    tags: ["WordPress", "JavaScript", "Styled Components"],
     from: "#5C4433",
     to: "#E3D2B4",
     span: "sm:col-span-3",
@@ -88,7 +85,6 @@ const featured = [
     title: "The Sontag Foundation",
     year: "2021",
     blurb: "The definitive enterprise for brain cancer research.",
-    tags: ["WordPress", "JavaScript", "Styled Components"],
     from: "#042342",
     to: "#2B86E0",
     span: "sm:col-span-2",
@@ -324,16 +320,6 @@ export default function Home() {
               <p className="mt-3 max-w-sm text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
                 {project.blurb}
               </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-white/25 px-2.5 py-1 text-[10px] text-white/70 transition-colors duration-500 group-hover:border-foreground/20 group-hover:text-foreground/70"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
           </Link>
         ))}
