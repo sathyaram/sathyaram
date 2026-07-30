@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollGroup from "./ScrollGroup";
 import { contactLinks, socialLinks } from "@/lib/social";
+import { projectOrder } from "@/lib/projects";
 
 type LinkItem = {
   label: string;
@@ -40,41 +41,89 @@ function FooterLink({
       className={`inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80 ${className}`}
       {...rest}
     >
-      <Icon className={compact ? "h-6 w-6" : "h-7 w-7"} />
+      <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
       {label}
     </a>
   );
 }
 
-const row = "flex flex-wrap items-center justify-center gap-x-7 gap-y-3";
+const columnHeading =
+  "text-[11px] font-medium uppercase tracking-widest text-muted";
+const columnLink =
+  "text-sm text-muted transition-colors duration-300 hover:text-foreground";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      {/* Two rows: ways to reach me, then profiles on platforms. They're
-          different kinds of link, so they don't share a line. The rule
-          between them sits outside the max-width wrapper so it runs the
-          full width of the page, matching the one above the copyright. */}
-      <div className="mx-auto max-w-5xl px-6 pb-6 pt-8">
-        <nav aria-label="Contact">
-          <ScrollGroup className={row}>
-            {contactLinks.map((item) => (
-              <FooterLink key={item.label} {...item} />
-            ))}
-          </ScrollGroup>
-        </nav>
-      </div>
-
-      <div className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-6 py-6">
-          <nav aria-label="Elsewhere">
-            <ScrollGroup className={row}>
-              {socialLinks.map((item) => (
-                <FooterLink key={item.label} {...item} />
+      {/*
+        Sitemap columns. Work is the load-bearing one: before this, the case
+        studies were only reachable from the homepage grid (and prev/next
+        between themselves), so nothing else on the site linked to them.
+        Both Work and Elsewhere are generated from the same lists that drive
+        the homepage grid and the social row, so the footer can't drift out
+        of sync with what actually exists.
+      */}
+      <div className="mx-auto max-w-5xl px-6 pt-12 pb-10">
+        <ScrollGroup className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+          <nav aria-label="Work">
+            <h2 className={columnHeading}>Work</h2>
+            <ul className="mt-4 space-y-2.5">
+              {projectOrder.map((project) => (
+                <li key={project.slug}>
+                  <Link href={`/websites/${project.slug}`} className={columnLink}>
+                    {project.title}
+                  </Link>
+                </li>
               ))}
-            </ScrollGroup>
+            </ul>
           </nav>
-        </div>
+
+          <nav aria-label="Site">
+            <h2 className={columnHeading}>Site</h2>
+            <ul className="mt-4 space-y-2.5">
+              <li>
+                <Link href="/about" className={columnLink}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className={columnLink}>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/colophon" className={columnLink}>
+                  Colophon
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Contact keeps its icons — these are actions (open mail, open the
+              CV), not navigation, so they read differently from the plain
+              text links either side. */}
+          <nav aria-label="Contact" className="col-span-2 sm:col-span-1">
+            <h2 className={columnHeading}>Get in touch</h2>
+            <ul className="mt-4 space-y-2.5">
+              {contactLinks.map((item) => (
+                <li key={item.label}>
+                  <FooterLink {...item} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Elsewhere" className="col-span-2 sm:col-span-1">
+            <h2 className={columnHeading}>Elsewhere</h2>
+            <ul className="mt-4 space-y-2.5">
+              {socialLinks.map((item) => (
+                <li key={item.label}>
+                  <FooterLink {...item} />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </ScrollGroup>
       </div>
 
       <div className="border-t border-border px-6 py-4">
@@ -83,14 +132,9 @@ export default function Footer() {
             third item just gets squeezed into whatever space is left,
             which isn't the same as being centered on the row. Grid columns
             give the location its own slot genuinely centered on the row,
-            independent of how wide Colophon or the copyright happen to be. */}
+            independent of how wide the other two happen to be. */}
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 text-center text-xs text-muted sm:grid sm:grid-cols-3 sm:text-left">
-          <Link
-            href="/colophon"
-            className="underline underline-offset-4 transition-colors hover:text-foreground sm:justify-self-start"
-          >
-            Colophon
-          </Link>
+          <p className="sm:justify-self-start">Developer &amp; Designer</p>
           <p className="sm:justify-self-center sm:text-center">
             Based in the DMV area (DC · MD · VA)
           </p>
