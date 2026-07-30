@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Vilcek",
+  title: "Vilcek Foundation",
 };
 
 export default function Vilcek() {

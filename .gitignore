@@ -44,3 +44,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI assistant instructions — useful locally, but dev tooling notes rather
+# than project docs, so kept out of the public repo.
+AGENTS.md
+CLAUDE.md

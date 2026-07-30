@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Sontag",
+  title: "The Sontag Foundation",
 };
 
 export default function Sontag() {

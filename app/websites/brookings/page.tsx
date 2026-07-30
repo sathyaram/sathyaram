@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Brookings",
+  title: "The Brookings Institute",
 };
 
 export default function Brookings() {
