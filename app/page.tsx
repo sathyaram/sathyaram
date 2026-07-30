@@ -144,7 +144,7 @@ export default function Home() {
               resolves against the visible text size, not the inherited
               ~16px default. */}
           <sup className="ml-1 top-[-4em] text-[0.15em] font-sans font-normal tracking-wide text-muted">
-            v8.0
+            v8.05
           </sup>
         </div>
         {/* The tagline is its own heading a step down from the name. */}
