@@ -157,6 +157,17 @@ body {
  * Hover glow on the hero name, ported from the old site (_midnight.scss):
  * the glow snaps on instantly and fades back out slowly over 2s.
  */
+/* Set for one frame while the theme flips (see setTheme in lib/theme.ts), and
+   scoped deliberately to .name-glow only — the hero name and tagline.
+   Those carry a 2s `color` transition for their hover-glow fade, so a theme
+   switch would drag the hero to its new colour seconds after the rest of the
+   page had already changed. Every other element's colour transition is wanted
+   during a theme switch and is left alone; this is not a blanket
+   transition-killer. */
+.theme-switching .name-glow {
+  transition: none !important;
+}
+
 .name-glow {
   display: inline-block;
   text-shadow: none;

@@ -116,7 +116,15 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="mx-auto mt-2 max-w-4xl rounded-2xl border border-border bg-background p-4 md:hidden">
+        // Absolutely positioned, not in normal flow: as a flow child this
+        // expanded the sticky header's height while open, pushing the whole
+        // page down. That also broke the "Work" link — scrollIntoView
+        // measured the target's position while the page was displaced, so it
+        // landed in the wrong place. Overlaying instead keeps page geometry
+        // stable whether the menu is open or closed. top-full sits it just
+        // below the header; inset-x-4 matches the header's own px-4 so it
+        // lines up with the nav pill.
+        <div className="absolute inset-x-4 top-full mx-auto mt-2 max-w-4xl rounded-2xl border border-border bg-background p-4 shadow-lg md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((link) => {
               const isActive = isLinkActive(link.href);

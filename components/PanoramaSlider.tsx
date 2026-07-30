@@ -287,7 +287,15 @@ export default function PanoramaSlider() {
             if (offset > count / 2) offset -= count;
             if (offset < -count / 2) offset += count;
 
-            const fractional = offset - dragDelta / slideWidth;
+            // + dragDelta, not -: dragDelta is (currentX - startX), so
+            // dragging right is positive and the ring has to rotate the same
+            // way for the photos to travel with the finger. Subtracting sent
+            // them the opposite direction, which read as the slider fighting
+            // the touch. The sign also has to agree with endDrag's
+            // `-dragDelta` step calculation — that maps drag-right to the
+            // previous slide, which is only coherent if the live drag is
+            // already moving things rightward.
+            const fractional = offset + dragDelta / slideWidth;
             const theta = fractional * ANGLE;
             const radians = toRadians(theta);
 

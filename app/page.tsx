@@ -181,11 +181,17 @@ export default function Home() {
               reveal — ScrollGroup only clones onto direct children) and a
               real grid item, which the divider classes below depend on.
               Same arrangement the Work grid uses. */}
-          <ScrollGroup className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
+          <ScrollGroup className="grid grid-cols-2 border-y border-border sm:grid-cols-3">
             {services.map((service, index) => {
-                const isLastMobile = index === services.length - 1;
-                const isFirstRow = index < 3;
-                const isLastColumn = (index + 1) % 3 === 0;
+                // The grid is 2-up on mobile and 3-up from sm, so every
+                // divider needs a value for both shapes and an sm: override
+                // — a cell that ends a row at 2 columns usually doesn't at 3.
+                // Colour lives on `border-border` once, on the element; these
+                // only toggle which sides have a width.
+                const mobileLastCol = index % 2 === 1;
+                const mobileLastRow = index >= services.length - 2;
+                const desktopLastCol = index % 3 === 2;
+                const desktopLastRow = index >= 3;
                 return (
                   <div
                     key={service.title}
@@ -198,10 +204,11 @@ export default function Home() {
                       // badge tint) lives on the children below at 300ms, so
                       // only the near-invisible 2% cell tint rides the
                       // slower curve.
-                      "group flex flex-col items-center px-8 py-12 text-center transition-all duration-700 sm:px-10 sm:py-14",
-                      isLastMobile ? "" : "border-b border-border",
-                      isFirstRow ? "sm:border-b" : "sm:border-b-0",
-                      isLastColumn ? "" : "sm:border-r sm:border-border",
+                      "group flex flex-col items-center border-border px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14",
+                      mobileLastRow ? "" : "border-b",
+                      mobileLastCol ? "" : "border-r",
+                      desktopLastRow ? "sm:border-b-0" : "sm:border-b",
+                      desktopLastCol ? "sm:border-r-0" : "sm:border-r",
                       "hover:bg-foreground/[0.02]",
                     ].join(" ")}
                   >
@@ -216,18 +223,18 @@ export default function Home() {
                         column as a whole, is what keeps every title sitting
                         at the same height below its icon regardless of how
                         tall a neighboring cell's blurb wraps to. */}
-                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10 sm:h-16 sm:w-16">
                       <span
                         aria-hidden="true"
-                        className="flex h-8 w-8 items-center justify-center text-3xl leading-none transition-transform duration-300 ease-out group-hover:scale-110"
+                        className="flex h-7 w-7 items-center justify-center text-2xl leading-none transition-transform duration-300 ease-out group-hover:scale-110 sm:h-8 sm:w-8 sm:text-3xl"
                       >
                         {service.emoji}
                       </span>
                     </span>
-                    <h3 className="mt-5 font-display text-lg font-semibold">
+                    <h3 className="mt-3 font-display text-base font-semibold sm:mt-5 sm:text-lg">
                       {service.title}
                     </h3>
-                    <p className="mt-2 max-w-[16rem] text-sm leading-relaxed text-muted">
+                    <p className="mt-1.5 max-w-[16rem] text-[13px] leading-relaxed text-muted sm:mt-2 sm:text-sm">
                       {service.blurb}
                     </p>
                   </div>
