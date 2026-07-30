@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# sathyaram.com
 
-## Getting Started
+My portfolio — websites, design, and photography. Live at **[sathyaram.com](https://sathyaram.com)**.
 
-First, run the development server:
+Currently **v8.0**, a full rebuild on the Next.js App Router. The version number
+is in the hero, and this repo carries the history of every version before it.
+
+## Stack
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript, React 19 |
+| Styling | Tailwind CSS v4 |
+| 3D | three.js — the interactive starfield |
+| Type | Bricolage Grotesque (display), Work Sans (body), Californication (script) |
+| Email | Resend, via a route handler |
+| Hosting | Vercel |
+
+## Running it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The contact form needs a Resend key to actually send. Copy `.env.example` to
+`.env.local` and fill it in — without it the form fails loudly rather than
+pretending to succeed:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.example .env.local
+```
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  page.tsx              Home — hero, services, work grid, photography, CTA
+  about/                Bio, testimonials, awards
+  contact/              Contact form
+  colophon/             What this site is built with
+  websites/[project]/   Case studies
+  api/contact/          Form handler (Resend)
+  not-found.tsx         404
+  opengraph-image.tsx   Social card, generated at build time
+  robots.ts             robots.txt
+  sitemap.ts            sitemap.xml
+components/             Shared UI
+lib/                    Shared data (social links, project ordering)
+public/                 Images, resume
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## A few things I enjoyed building
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**The starfield** is real three.js, not a CSS trick — a `BufferGeometry` point
+cloud you can click to "catch" a star, which bursts into sparks and respawns at
+the back of the field. It's code-split so it loads after first paint, which is
+how the site keeps a 100 Lighthouse performance score and 0ms Total Blocking
+Time while running a live WebGL render loop.
 
-## Deploy on Vercel
+**Scroll reveals** are one small component (`ScrollGroup`) that clones a stagger
+class onto its direct children rather than wrapping them — wrapping breaks CSS
+grid, since `grid-column` only applies to direct grid children.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**The case study link** wipes to a solid fill on hover using `clip-path` rather
+than a `scaleX` transform. Transforms stretch an element's border-radius along
+with the box, so the corners visibly warp mid-animation; `clip-path` masks a
+static, correctly-rounded box instead.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Old URLs still work.** v7 served case studies from the root (`/brookings`), and
+this version nests them under `/websites/`. Every old path 301s to its new home
+so nothing that's already indexed or sitting in someone's inbox breaks.
+
+## Lighthouse
+
+100 / 100 / 100 / 100 — performance, accessibility, best practices, SEO.
+
+## Roadmap
+
+- [ ] Designs section (7 case studies) — v7 pages not yet rebuilt
+- [ ] Link HHMI BioInteractive into the homepage grid
+- [ ] Photography gallery page with categories
+
+---
+
+© Sathya Ram. Code is available to read; the writing, photography, and design
+work are not licensed for reuse.
