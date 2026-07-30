@@ -46,19 +46,49 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || visible) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setVisible(true);
-        observer.disconnect();
-      },
-      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    let observer: IntersectionObserver | undefined;
+
+    // The -10% bottom inset holds the reveal back until a group is meaningfully
+    // in view rather than just barely clipping the fold. But an element near the
+    // END of the document can never clear that band: at maximum scroll its top
+    // rests at viewportH - (its own height + whatever document is left below
+    // it), and if that lands inside the bottom 10% the observer never reports an
+    // intersection and the group is stuck at opacity 0 forever. The footer's
+    // last row hit exactly this — 64px tall with 28px below it, so it only
+    // intersected on viewports under ~920px and stayed invisible on any taller
+    // desktop window. Measure whether the inset is actually reachable and drop
+    // it when it isn't, so no group can be permanently hidden by it.
+    const start = () => {
+      observer?.disconnect();
+      const rect = el.getBoundingClientRect();
+      const belowInDocument =
+        document.documentElement.scrollHeight - (rect.bottom + window.scrollY);
+      const topAtMaxScroll = window.innerHeight - (rect.height + belowInDocument);
+      const insetIsReachable = topAtMaxScroll < window.innerHeight * 0.9;
+
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          setVisible(true);
+          observer?.disconnect();
+        },
+        { threshold: 0, rootMargin: insetIsReachable ? "0px 0px -10% 0px" : "0px" },
+      );
+      observer.observe(el);
+    };
+
+    start();
+    // Reachability depends on the viewport height, so a resize (or a phone
+    // rotating) can flip a not-yet-revealed group from reachable to stuck.
+    // Re-measure rather than leaving it on the mount-time decision.
+    window.addEventListener("resize", start, { passive: true });
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("resize", start);
+    };
+  }, [visible]);
 
   useEffect(() => {
     if (!visible || settled) return;
