@@ -59,7 +59,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error("RESEND_API_KEY is not set — contact form cannot send.");
+    console.error("RESEND_API_KEY is not set, contact form cannot send.");
     return NextResponse.json(
       { error: "Email sending isn't configured yet." },
       { status: 500 },

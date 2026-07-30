@@ -39,7 +39,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <p className="mt-10 rounded-2xl border border-border p-6 text-muted">
-        Thanks for reaching out — your message is on its way, and I&apos;ll get
+        Thanks for reaching out. Your message is on its way, and I&apos;ll get
         back to you soon.
       </p>
     );

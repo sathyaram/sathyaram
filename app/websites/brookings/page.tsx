@@ -25,12 +25,12 @@ export default function Brookings() {
         { label: "Stack", value: "WordPress · HTML/CSS · JS" },
       ]}
       overview={[
-        "Brookings publishes a constant stream of research: reports, op-eds, expert commentary, event recaps. The redesign needed a front end that could hold all of that without feeling like an archive — dense, but never cluttered.",
+        "Brookings publishes a constant stream of research: reports, op-eds, expert commentary, event recaps. The redesign needed a front end that could hold all of that without feeling like an archive, dense, but never cluttered.",
         "My part of the build was the front end: turning the design system into custom WordPress templates, and making sure hundreds of research posts, expert profiles, and program pages actually behaved consistently once real content landed in them.",
       ]}
       contributions={[
         "Built custom WordPress page templates for research posts, reports, and expert profiles",
-        "Wrote the responsive HTML/CSS component library — cards, filters, pagination — reused across every content type",
+        "Wrote the responsive HTML/CSS component library (cards, filters, pagination) reused across every content type",
         "Implemented the front-end JS behind the research library's live filtering and search",
         "Tuned typography and spacing specifically for long-form policy reading",
       ]}
@@ -38,22 +38,22 @@ export default function Brookings() {
         {
           title: "Debounced search that respects the server",
           body:
-            "The research library filters live as you type. Firing a request per keystroke across an archive that size is a good way to melt a server, so the input is debounced and in-flight requests are cancelled when a newer one supersedes them — you get the feeling of instant filtering without the traffic that usually implies.",
+            "The research library filters live as you type. Firing a request per keystroke across an archive that size is a good way to melt a server, so the input is debounced and in-flight requests are cancelled when a newer one supersedes them, you get the feeling of instant filtering without the traffic that usually implies.",
         },
         {
           title: "One component library, every content type",
           body:
-            "Brookings publishes reports, op-eds, expert profiles, event recaps, and commentary — each with its own editorial rules. Instead of a bespoke template per type, I built one responsive HTML/CSS component set (cards, filters, pagination, bylines) that every template composes from. New content types get assembled from existing parts rather than designed from scratch.",
+            "Brookings publishes reports, op-eds, expert profiles, event recaps, and commentary, and each has its own editorial rules. Instead of a bespoke template per type, I built one responsive HTML/CSS component set (cards, filters, pagination, bylines) that every template composes from. New content types get assembled from existing parts rather than designed from scratch.",
         },
         {
           title: "Typography tuned for long-form policy",
           body:
-            "Most of these pages are read, not skimmed — some run to thousands of words of dense policy analysis. Measure, line height, and the spacing between headings and body were tuned specifically for sustained reading rather than inherited from a framework default. It's the least flashy work on the project and probably the most load-bearing.",
+            "Most of these pages are read, not skimmed, some run to thousands of words of dense policy analysis. Measure, line height, and the spacing between headings and body were tuned specifically for sustained reading rather than inherited from a framework default. It's the least flashy work on the project and probably the most load-bearing.",
         },
       ]}
       codeFilename="research-library.js"
       codeLines={[
-        [{ text: "// research-library.js — debounced live search", type: "comment" }],
+        [{ text: "// research-library.js: debounced live search", type: "comment" }],
         [{ text: "const", type: "keyword" }, { text: " debounce = (" }, { text: "fn" }, { text: ", " }, { text: "delay" }, { text: " = " }, { text: "200", type: "value" }, { text: ") => {" }],
         [{ text: "  let", type: "keyword" }, { text: " timer;" }],
         [{ text: "  return", type: "keyword" }, { text: " (...args) => {" }],

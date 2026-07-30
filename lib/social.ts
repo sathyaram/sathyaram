@@ -5,7 +5,6 @@ import {
   InstagramIcon,
   DribbbleIcon,
   GithubIcon,
-  CodepenIcon,
 } from "@/components/icons";
 
 // Shared by the footer and the mobile nav menu, so the two stay in sync from
@@ -38,5 +37,4 @@ export const socialLinks: SocialLink[] = [
   { label: "Instagram", href: "https://www.instagram.com/sathya.ram", icon: InstagramIcon },
   { label: "Dribbble", href: "https://dribbble.com/sathyaram", icon: DribbbleIcon },
   { label: "Github", href: "https://github.com/sathyaram", icon: GithubIcon },
-  { label: "Codepen", href: "https://codepen.io/sathyaram", icon: CodepenIcon },
 ];

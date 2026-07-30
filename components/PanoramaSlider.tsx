@@ -441,24 +441,16 @@ export default function PanoramaSlider() {
             <CloseIcon />
           </button>
 
-          <button
-            type="button"
-            aria-label="Previous photo"
-            onClick={(event) => {
-              event.stopPropagation();
-              setLightbox((i) => (i === null ? i : (i - 1 + count) % count));
-            }}
-            className="absolute left-3 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10 sm:left-8"
-          >
-            <span aria-hidden="true">←</span>
-          </button>
-
           {/* Stop clicks on the figure itself from closing the dialog. */}
           <figure
             onClick={(event) => event.stopPropagation()}
             className="flex max-h-full flex-col items-center gap-4"
           >
-            <div className="relative h-[70vh] w-[min(90vw,60rem)]">
+            {/* Shorter on mobile than on desktop: the controls below now take
+                real height in the column instead of floating over the photo,
+                so the image has to give some back to keep the whole figure
+                inside the viewport. */}
+            <div className="relative h-[58vh] w-[min(90vw,60rem)] sm:h-[70vh]">
               <Image
                 key={visible[lightbox].id}
                 src={visible[lightbox].image}
@@ -470,33 +462,78 @@ export default function PanoramaSlider() {
                 priority
               />
             </div>
-            <figcaption className="text-center">
+
+            {/* Locked to the image's own width rather than w-full: the figure is
+                a centred flex column, so its width is that of its widest child,
+                and a w-full caption with a long title could widen the figure
+                itself (up to the dialog's padding) and drag the arrows outward
+                with it. Matching the image means the figure's width is the
+                image's width, full stop, so a long title wraps inside a box
+                that never moves. */}
+            <figcaption className="w-[min(90vw,60rem)] text-center">
               <p className="font-display text-lg font-semibold text-white">
                 {visible[lightbox].title}
               </p>
               <p className="mt-1 text-xs text-white/60">{CAMERA}</p>
-              <a
-                href={visible[lightbox].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-sm text-white/80 underline underline-offset-4 hover:text-white"
-              >
-                View on Instagram ↗
-              </a>
+
+              {/* Mobile: three fixed tracks rather than a flex row, so the two
+                  arrows sit in gutters of a constant 2.75rem (their own size)
+                  hard against the caption's edges, with the Instagram link
+                  centred in the middle track and level with them. Sizing the
+                  side tracks off the buttons instead of the text is the whole
+                  point: the arrows stay put no matter how long the title or the
+                  link is, where flanking the caption in a flex row moved them
+                  inward and outward with every photo and would eventually have
+                  collided with a long title.
+
+                  From sm: both buttons go absolute against the dialog (the
+                  nearest positioned ancestor — neither this row nor the figure
+                  is relative, deliberately), which takes them out of grid flow
+                  and would leave two empty tracks behind, so the wrapper drops
+                  to block and the link re-centres on the figcaption's own
+                  text-center. The buttons stay DOM children of the figure at
+                  both sizes, so its stopPropagation still keeps a click on them
+                  from closing the lightbox. */}
+              <div className="mt-3 grid w-full grid-cols-[2.75rem_1fr_2.75rem] items-center sm:mt-3 sm:block">
+                <button
+                  type="button"
+                  aria-label="Previous photo"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLightbox((i) => (i === null ? i : (i - 1 + count) % count));
+                  }}
+                  className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10 sm:absolute sm:left-8 sm:top-1/2 sm:-translate-y-1/2"
+                >
+                  <span aria-hidden="true">←</span>
+                </button>
+
+                {/* U+2192, not the north-east arrow U+2197: that codepoint has
+                    an emoji presentation variant, and iOS picks it over the
+                    text one, so the link ended up with a blue emoji glyph
+                    mid-sentence. This arrow has no emoji form to fall into. */}
+                <a
+                  href={visible[lightbox].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 justify-self-center text-sm text-white/80 underline underline-offset-4 hover:text-white"
+                >
+                  View on Instagram →
+                </a>
+
+                <button
+                  type="button"
+                  aria-label="Next photo"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLightbox((i) => (i === null ? i : (i + 1) % count));
+                  }}
+                  className="z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10 sm:absolute sm:right-8 sm:top-1/2 sm:-translate-y-1/2"
+                >
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
             </figcaption>
           </figure>
-
-          <button
-            type="button"
-            aria-label="Next photo"
-            onClick={(event) => {
-              event.stopPropagation();
-              setLightbox((i) => (i === null ? i : (i + 1) % count));
-            }}
-            className="absolute right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10 sm:right-8"
-          >
-            <span aria-hidden="true">→</span>
-          </button>
         </div>,
           document.body,
         )}

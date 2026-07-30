@@ -25,7 +25,7 @@ export default function HomePlanetFund() {
         { label: "Stack", value: "WordPress · CSS · JS" },
       ]}
       overview={[
-        "Home Planet Fund moves grant money to grassroots climate groups, and the site's job is to make that work legible — who's funded, what they're doing, how to apply. It also had to carry Patagonia's brand system without just being a Patagonia microsite.",
+        "Home Planet Fund moves grant money to grassroots climate groups, and the site's job is to make that work legible, who's funded, what they're doing, how to apply. It also had to carry Patagonia's brand system without just being a Patagonia microsite.",
         "I worked from Teal Media's design files into a custom WordPress theme, writing the CSS by hand to hit Patagonia's exact type scale and color system, then wiring up the grant and initiative archives so new funding rounds could go live without a developer touching code.",
       ]}
       contributions={[
@@ -38,22 +38,22 @@ export default function HomePlanetFund() {
         {
           title: "The cursor as a lens",
           body:
-            "My favorite detail on the site: hovering a feature image doesn't just tint it, it inverts it. A diamond mask follows the pointer and everything inside it flips — colors reverse, the photo reads like a negative — so the image feels like it's being examined through a lens rather than covered by an overlay. It's built with mix-blend-mode and an inverted layer clipped to the cursor's position, which means it stays GPU-composited and costs nothing at scroll time.",
+            "My favorite detail on the site: hovering a feature image doesn't just tint it, it inverts it. A diamond mask follows the pointer and everything inside it flips: colors reverse, the photo reads like a negative, so the image feels like it's being examined through a lens rather than covered by an overlay. It's built with mix-blend-mode and an inverted layer clipped to the cursor's position, which means it stays GPU-composited and costs nothing at scroll time.",
         },
         {
           title: "Brand fidelity without a framework",
           body:
-            "Patagonia's system has opinions — a specific type scale, specific color relationships, specific spacing rhythm. Rather than fight a CSS framework's defaults, I wrote the theme's CSS by hand against custom properties, so every token maps directly to the brand guideline it came from. It made the pixel-matching straightforward and left the stylesheet small enough to read top to bottom.",
+            "Patagonia's system has opinions, a specific type scale, specific color relationships, specific spacing rhythm. Rather than fight a CSS framework's defaults, I wrote the theme's CSS by hand against custom properties, so every token maps directly to the brand guideline it came from. It made the pixel-matching straightforward and left the stylesheet small enough to read top to bottom.",
         },
         {
           title: "Archives that don't need a developer",
           body:
-            "Grant rounds and initiatives change constantly, so the archive templates run entirely off WordPress taxonomies. The team adds a term and the filtering, counts, and landing pages update themselves — no template edits, no deploy, no ticket to me.",
+            "Grant rounds and initiatives change constantly, so the archive templates run entirely off WordPress taxonomies. The team adds a term and the filtering, counts, and landing pages update themselves, no template edits, no deploy, no ticket to me.",
         },
       ]}
       codeFilename="brand.css"
       codeLines={[
-        [{ text: "/* brand.css — Patagonia design tokens */", type: "comment" }],
+        [{ text: "/* brand.css: Patagonia design tokens */", type: "comment" }],
         [{ text: ":root", type: "tag" }, { text: " {" }],
         [{ text: "  --hpf-forest", type: "attr" }, { text: ": " }, { text: "#1d3c2f", type: "value" }, { text: ";" }],
         [{ text: "  --hpf-sun", type: "attr" }, { text: ": " }, { text: "#f5a623", type: "value" }, { text: ";" }],

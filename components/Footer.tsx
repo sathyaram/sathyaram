@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ScrollGroup from "./ScrollGroup";
 import { contactLinks, socialLinks } from "@/lib/social";
-import { projectOrder } from "@/lib/projects";
 
 type LinkItem = {
   label: string;
@@ -41,7 +40,14 @@ function FooterLink({
       className={`inline-flex items-center gap-2.5 text-sm text-foreground transition-all duration-300 hover:opacity-80 ${className}`}
       {...rest}
     >
-      <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
+      {/* Fixed 24px slot so every row is the same height regardless of
+          `compact`. Sizing the glyph directly meant the all-compact Contact
+          column had 20px rows against Elsewhere's 24px, and with the same
+          space-y on both lists the two columns visibly drifted out of step.
+          The optical correction still happens, just inside a constant box. */}
+      <span className="flex h-6 w-6 shrink-0 items-center justify-center">
+        <Icon className={compact ? "h-5 w-5" : "h-6 w-6"} />
+      </span>
       {label}
     </a>
   );
@@ -49,81 +55,65 @@ function FooterLink({
 
 const columnHeading =
   "text-[11px] font-medium uppercase tracking-widest text-muted";
-const columnLink =
-  "text-sm text-muted transition-colors duration-300 hover:text-foreground";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border">
       {/*
-        Sitemap columns. Work is the load-bearing one: before this, the case
-        studies were only reachable from the homepage grid (and prev/next
-        between themselves), so nothing else on the site linked to them.
-        Both Work and Elsewhere are generated from the same lists that drive
-        the homepage grid and the social row, so the footer can't drift out
-        of sync with what actually exists.
+        Two columns of links: ways to reach me, and places I post work. The
+        pair is centred as a unit on desktop (a max-width block inside an
+        auto-margin wrapper) rather than spread across the full width, so the
+        two lists stay visually related instead of drifting to opposite edges.
+        Both come from the same lists the mobile nav menu uses, so they can't
+        drift out of sync.
       */}
-      <div className="mx-auto max-w-5xl px-6 pt-12 pb-10">
-        <ScrollGroup className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
-          <nav aria-label="Work">
-            <h2 className={columnHeading}>Work</h2>
-            <ul className="mt-4 space-y-2.5">
-              {projectOrder.map((project) => (
-                <li key={project.slug}>
-                  <Link href={`/websites/${project.slug}`} className={columnLink}>
-                    {project.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      {/* A ScrollGroup per column rather than one around the grid: as the
+          grid's wrapper it only had two direct children to stagger (the two
+          navs), so each column arrived as a single block. Inside each nav it
+          staggers the heading and the list separately. Not nested, since two
+          layers of ScrollGroup would both be driving opacity on the same
+          subtree. Every staggered child needs its own `transition`, or the
+          opacity/transform snap and the inline delay has nothing to delay. */}
+      <div className="mx-auto max-w-5xl px-6 pt-10 pb-8">
+        {/* From sm the grid shrinks to its content (w-fit) instead of holding a
+            fixed max-w-md. With the fixed width each 208px column carried only
+            ~100px of ink, so ~110px of dead space per column sat to the right
+            of the labels and dragged the whole visible block ~53px left of the
+            page centre — the box was centred, but the part you can actually see
+            wasn't. Sizing to content makes those two the same thing. Mobile
+            keeps the fixed-width behaviour, which already reads fine at that
+            width. */}
+        <div className="mx-auto grid max-w-md grid-cols-2 gap-x-8 gap-y-8 sm:w-fit sm:max-w-none sm:gap-x-16">
+          <nav aria-label="Contact">
+            <ScrollGroup>
+              <h2 className={`${columnHeading} transition-all duration-700`}>
+                Get in touch
+              </h2>
+              <ul className="mt-4 space-y-2.5 transition-all duration-700">
+                {contactLinks.map((item) => (
+                  <li key={item.label}>
+                    <FooterLink {...item} />
+                  </li>
+                ))}
+              </ul>
+            </ScrollGroup>
           </nav>
 
-          <nav aria-label="Site">
-            <h2 className={columnHeading}>Site</h2>
-            <ul className="mt-4 space-y-2.5">
-              <li>
-                <Link href="/about" className={columnLink}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={columnLink}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/colophon" className={columnLink}>
-                  Colophon
-                </Link>
-              </li>
-            </ul>
+          <nav aria-label="Elsewhere">
+            <ScrollGroup>
+              <h2 className={`${columnHeading} transition-all duration-700`}>
+                Elsewhere
+              </h2>
+              <ul className="mt-4 space-y-2.5 transition-all duration-700">
+                {socialLinks.map((item) => (
+                  <li key={item.label}>
+                    <FooterLink {...item} />
+                  </li>
+                ))}
+              </ul>
+            </ScrollGroup>
           </nav>
-
-          {/* Contact keeps its icons — these are actions (open mail, open the
-              CV), not navigation, so they read differently from the plain
-              text links either side. */}
-          <nav aria-label="Contact" className="col-span-2 sm:col-span-1">
-            <h2 className={columnHeading}>Get in touch</h2>
-            <ul className="mt-4 space-y-2.5">
-              {contactLinks.map((item) => (
-                <li key={item.label}>
-                  <FooterLink {...item} />
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Elsewhere" className="col-span-2 sm:col-span-1">
-            <h2 className={columnHeading}>Elsewhere</h2>
-            <ul className="mt-4 space-y-2.5">
-              {socialLinks.map((item) => (
-                <li key={item.label}>
-                  <FooterLink {...item} />
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </ScrollGroup>
+        </div>
       </div>
 
       <div className="border-t border-border px-6 py-4">
@@ -133,15 +123,20 @@ export default function Footer() {
             which isn't the same as being centered on the row. Grid columns
             give the location its own slot genuinely centered on the row,
             independent of how wide the other two happen to be. */}
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 text-center text-xs text-muted sm:grid sm:grid-cols-3 sm:text-left">
-          <p className="sm:justify-self-start">Developer &amp; Designer</p>
-          <p className="sm:justify-self-center sm:text-center">
+        <ScrollGroup className="mx-auto flex max-w-5xl flex-col items-center gap-2 text-center text-xs text-muted sm:grid sm:grid-cols-3 sm:text-left">
+          <Link
+            href="/colophon"
+            className="underline underline-offset-4 transition-all duration-700 hover:text-foreground sm:justify-self-start"
+          >
+            Colophon
+          </Link>
+          <p className="transition-all duration-700 sm:justify-self-center sm:text-center">
             Based in the DMV area (DC · MD · VA)
           </p>
-          <p className="sm:justify-self-end sm:text-right">
+          <p className="transition-all duration-700 sm:justify-self-end sm:text-right">
             &copy; {new Date().getFullYear()} Sathya Ram.
           </p>
-        </div>
+        </ScrollGroup>
       </div>
     </footer>
   );

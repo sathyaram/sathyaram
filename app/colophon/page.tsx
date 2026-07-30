@@ -27,10 +27,6 @@ const sections: { heading: string; items: ColophonItem[] }[] = [
       { title: "Californication", detail: "script type" },
     ],
   },
-  {
-    heading: "Built with",
-    items: [{ title: "Claude Code", detail: "pair-programmed the build" }],
-  },
 ];
 
 export default function Colophon() {

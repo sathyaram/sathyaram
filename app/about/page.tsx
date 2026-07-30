@@ -17,7 +17,7 @@ const sections = [
     heading: "Synopsis",
     paragraphs: [
       "Hi there! I'm Sathya Ram.",
-      "I design and develop modern websites — engaging layouts, user interfaces, and delightful web animations and interactions.",
+      "I design and develop modern websites: engaging layouts, user interfaces, and delightful web animations and interactions.",
       "I'm also an avid photographer and freelancer.",
       "Combining these skills, I bring beautiful digital experiences to life. At heart, I'm a creator: I believe in aesthetics with purpose.",
     ],
@@ -35,7 +35,7 @@ const sections = [
     heading: "Bio",
     paragraphs: [
       "I double majored in Design and Studio Art at Lehigh University. In my last year of college, I taught myself how to code and push my designs to the world wide web.",
-      "After a couple years of agency experience, it became clear that web design and development was my passion — so I learned programming fundamentals in a formal setting, at a coding bootcamp called General Assembly, where I picked up JavaScript and React.js in a rigorous environment.",
+      "After a couple years of agency experience, it became clear that web design and development was my passion, so I learned programming fundamentals in a formal setting, at a coding bootcamp called General Assembly, where I picked up JavaScript and React.js in a rigorous environment.",
       "I've since operated my own freelance website development, interface design, and photography practice, working with institutional and nonprofit clients.",
     ],
   },

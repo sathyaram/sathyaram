@@ -30,7 +30,7 @@ const services = [
   {
     emoji: "🏎️",
     title: "Car Buying Help",
-    blurb: "Helping you find and buy a used car — now at CarMax.",
+    blurb: "Helping you find and buy a used car, now at CarMax.",
   },
   {
     emoji: "🎙️",
@@ -120,11 +120,37 @@ export default function Home() {
           <Sparkle className="h-6 w-6 animate-[sparkle-float_8s_ease-in-out_infinite] text-sparkle/70 [animation-delay:-4s] motion-reduce:animate-none dark:text-white/70" />
         </span>
 
+        {/* Version tag, ported from the old site's hero (v7.3 there, bumped
+            for this rebuild). Sits on its own centered line above the
+            headline rather than as an inline <sup> inside it, where it took
+            up real space on that line and pushed the name around at narrow
+            widths. */}
+        <p className="mb-3 text-center text-[8px] font-normal text-muted sm:mb-4">
+          v8.05
+        </p>
+
         {/* The whole line shares one font-size (on this div), but only
             "Sathya Ram" is the <h1> — the greeting is a plain span so the
             indexed heading is just the name, not "Hi! I'm ...". Both are
             inline so they still read as one headline. */}
-        <div className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(2.85rem,7.4vw,5.75rem)]">
+        {/* Only the clamp FLOOR is tuned for mobile; the vw term and the cap
+            are untouched, so every viewport from ~540px up renders exactly as
+            before (above that width the 7.4vw term is the larger value and the
+            floor stops applying at all).
+
+            2.45rem is derived, not eyeballed: "Hi! I'm Sathya Ram" measures
+            8.44px of width per 1px of font-size at this weight and tracking,
+            and the narrowest target (375px, minus the page's px-4) leaves
+            343px, so anything over ~40.7px wraps to a second line. The old
+            2.85rem floor was 45.6px and needed 385px.
+
+            The min() is what covers 320-360px (SE, most Androids), where even
+            2.45rem still wraps. 11.4vw - 4px is that same 8.44 measurement
+            solved for the available width, so it tracks the widest the line can
+            be and still fit; min() takes it only while it is the smaller of the
+            two, which is below ~375px. From there up the fixed 2.45rem wins and
+            this term stops mattering, so it can't grow the name anywhere. */}
+        <div className="font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(min(2.45rem,11.4vw_-_4px),7.4vw,5.75rem)]">
           <Reveal as="span" className="text-logo-blue" text="Hi! I'm " />
           <Reveal
             as="h1"
@@ -134,21 +160,16 @@ export default function Home() {
             ]}
             delay={156}
           />
-          {/* A little version tag, ported from the old site's hero (v7.3
-              there — bumped for this rebuild). Plain inline <sup>, letting
-              Tailwind's preflight reset (position: relative; top: -0.5em;
-              font-size: 75%) do the actual raising. The em unit needs the
-              wrapping div to carry the headline's font-size so the sup
-              resolves against the visible text size, not the inherited
-              ~16px default. */}
-          <sup className="ml-1 top-[-4em] text-[0.15em] font-sans font-normal tracking-wide text-muted">
-            v8.05
-          </sup>
         </div>
-        {/* The tagline is its own heading a step down from the name. */}
+        {/* The tagline is its own heading a step down from the name. Its floor
+            drops by the same proportion as the name's, so the name-to-tagline
+            ratio stays 1.47 at every width — the same step down the cap pair
+            (5.75rem / 3.9rem) produces on desktop. Leaving this floor at
+            1.95rem would have squeezed that step to 1.26 on mobile, which is
+            the hierarchy problem rather than a fix for it. */}
         <Reveal
           as="h2"
-          className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.95rem,5.1vw,3.9rem)]"
+          className="mt-2 block font-display font-bold leading-[1.05] tracking-[-0.035em] text-[clamp(1.66rem,5.1vw,3.9rem)]"
           segments={[{ text: "Developer & Designer", className: "name-glow" }]}
           delay={340}
         />
@@ -400,7 +421,7 @@ export default function Home() {
             Have a project in mind?
           </h2>
           <p className="mt-3 text-muted transition-all duration-700">
-            I&apos;d love to hear about it — reach out and let&apos;s talk
+            I&apos;d love to hear about it. Reach out and let&apos;s talk
             through what you&apos;re building.
           </p>
           {/* The button sits in a wrapper rather than being the stagger

@@ -65,7 +65,7 @@ export default function Nav() {
       >
         <Link
           href="/"
-          aria-label="Sathya Ram — home"
+          aria-label="Sathya Ram, home"
           className="logo-link flex items-center animate-[nav-fade-in_600ms_ease-out_both] motion-reduce:animate-none"
         >
           <Logo className="h-7 w-auto text-foreground transition-opacity hover:opacity-80" />
@@ -128,7 +128,11 @@ export default function Nav() {
         // below the header; inset-x-4 matches the header's own px-4 so it
         // lines up with the nav pill.
         <div className="absolute inset-x-4 top-full mx-auto mt-2 max-w-4xl rounded-2xl border border-border bg-background p-4 shadow-lg md:hidden">
-          <ul className="flex flex-col gap-4">
+          {/* Each link is block-level and padded so the whole row is the tap
+              target, not just the few characters of the label. -mx-2 lets that
+              row bleed into the panel's own padding, so the hit area reaches
+              the full width of the menu rather than stopping short of it. */}
+          <ul className="flex flex-col">
             {links.map((link) => {
               const isActive = isLinkActive(link.href);
               return (
@@ -139,7 +143,9 @@ export default function Nav() {
                       link.href === "/#work" ? scrollToWork : () => setOpen(false)
                     }
                     aria-current={isActive ? "page" : undefined}
-                    className={isActive ? "font-medium text-foreground" : "text-muted"}
+                    className={`-mx-2 block rounded-lg px-4 py-3 transition-colors active:bg-foreground/10 ${
+                      isActive ? "font-medium text-foreground" : "text-muted"
+                    }`}
                   >
                     {link.label}
                   </Link>

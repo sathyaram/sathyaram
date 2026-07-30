@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     template: "Sathya Ram | %s",
     default: "Sathya Ram | Developer & Designer",
   },
-  description: "Portfolio of Sathya Ram — websites, design, and photography.",
+  description: "Portfolio of Sathya Ram: websites, design, and photography.",
   // The card shown when the site is shared. og:image / twitter:image come
   // from app/opengraph-image.tsx automatically via the file convention.
   openGraph: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Sathya Ram",
     title: "Sathya Ram | Developer & Designer",
     description:
-      "Portfolio of Sathya Ram — websites, design, and photography.",
+      "Portfolio of Sathya Ram: websites, design, and photography.",
     url: "/",
     locale: "en_US",
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sathya Ram | Developer & Designer",
     description:
-      "Portfolio of Sathya Ram — websites, design, and photography.",
+      "Portfolio of Sathya Ram: websites, design, and photography.",
   },
 };
 
