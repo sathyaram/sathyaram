@@ -3,6 +3,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Tells the UA which way this page is themed, so it paints the bits CSS can't
+     reach with the right colour: the canvas outside the document, iOS's
+     rubber-band overscroll area, scrollbars, and default form controls. Without
+     it the overscroll gutter keeps the light default in dark mode, which reads
+     as the background failing to update on a theme switch. Paired with .dark
+     below so it flips with the class rather than with the OS preference. */
+  color-scheme: light;
   --background: #ede7de;
   --foreground: #171412;
   --accent: #1f4d3f;
@@ -20,6 +27,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: #0b0f1a;
   --foreground: #f2f0ec;
   --accent: #8fd9c4;
@@ -42,13 +50,33 @@
   --font-script: var(--font-script);
 }
 
+/* The page background lives on <html>, not <body>, and that placement is the
+ * fix for a mobile bug rather than a style preference.
+ *
+ * With <html> transparent, CSS propagates <body>'s background to the root
+ * canvas. Once propagated it is painted as the scrolling layer's base colour by
+ * the viewport itself, not by body's own box — and mobile engines cache that
+ * base colour, re-rasterising it on the next scroll pass. So switching
+ * dark -> light recoloured the content immediately but left the page behind it
+ * stale until you scrolled and forced a new raster. Compounding it, <html> is
+ * h-full (one viewport) while body runs the full document height, and in dark
+ * mode a fixed inset-0 starfield canvas unmounts on the same frame, handing the
+ * compositor a full-viewport invalidation at the same moment.
+ *
+ * Setting it on the root element means there is no propagation step: the
+ * element whose .dark class toggles is the element whose background changes, so
+ * the canvas base colour is invalidated directly. The root's background painting
+ * area still covers the whole canvas regardless of its own h-full box, so this
+ * loses nothing. */
+html {
+  background: var(--background);
+  transition: background-color 200ms ease;
+}
+
 body {
   overflow-x: hidden;
-  background: var(--background);
   color: var(--foreground);
-  transition:
-    background-color 200ms ease,
-    color 200ms ease;
+  transition: color 200ms ease;
 }
 
 /*
