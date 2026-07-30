@@ -157,6 +157,58 @@ body {
  * Hover glow on the hero name, ported from the old site (_midnight.scss):
  * the glow snaps on instantly and fades back out slowly over 2s.
  */
+/*
+ * Desktop nav links: a rule above and below the word, each drawing in from
+ * the opposite end on hover, so the label reads as bracketed rather than
+ * just underlined. Lives here rather than in a CSS module — it was the only
+ * *.module.scss in the project, and the only reason `sass` was a dependency
+ * at all, for one component's hover state.
+ */
+.nav-link {
+  position: relative;
+  padding-block: 0.25rem;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: currentColor;
+}
+
+/* Top rule draws right to left, bottom rule left to right. */
+.nav-link::before {
+  top: -2px;
+  right: 0;
+  left: 100%;
+  transition: left 200ms ease;
+}
+
+.nav-link::after {
+  bottom: -2px;
+  left: 0;
+  right: 100%;
+  transition: right 200ms ease;
+}
+
+.nav-link:hover::before,
+.nav-link[aria-current="page"]::before {
+  left: 0;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::before,
+  .nav-link::after {
+    transition: none;
+  }
+}
+
 /* Set for one frame while the theme flips (see setTheme in lib/theme.ts), and
    scoped deliberately to .name-glow only — the hero name and tagline.
    Those carry a 2s `color` transition for their hover-glow fade, so a theme

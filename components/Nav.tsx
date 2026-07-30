@@ -7,7 +7,6 @@ import ThemeToggle from "./ThemeToggle";
 import Logo from "./Logo";
 import { MenuIcon, CloseIcon } from "./icons";
 import { contactLinks, socialLinks } from "@/lib/social";
-import styles from "./Nav.module.scss";
 
 // One-pager: everything lives on the homepage, with individual routes only
 // for the website case studies (linked from the homepage cards).
@@ -81,7 +80,11 @@ export default function Nav() {
                   href={link.href}
                   onClick={link.href === "/#work" ? scrollToWork : undefined}
                   aria-current={isActive ? "page" : undefined}
-                  className={`${styles.link} ${isActive ? styles.active : ""} text-base ${
+                  // .nav-link lives in globals.css now (was Nav.module.scss).
+                  // Its active state keys off aria-current, already set just
+                  // above, rather than a second class mirroring the same
+                  // thing.
+                  className={`nav-link text-base ${
                     isActive ? "text-foreground" : "text-muted"
                   }`}
                 >
