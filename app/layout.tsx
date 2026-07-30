@@ -34,11 +34,12 @@ const GA_ID = "G-V2ZX65PRKW";
 export const metadata: Metadata = {
   metadataBase: new URL("https://sathyaram.com"),
   title: {
-    // Sub-pages read "About | Sathya Ram" (specific first, brand last, so
-    // tabs/search snippets stay useful when truncated). The homepage is the
-    // exception — it leads with the brand + role rather than a throwaway
-    // "Home", since it owns the strongest SEO slot on the site.
-    template: "%s | Sathya Ram",
+    // Brand first, consistently: every page reads "Sathya Ram | <page>", so
+    // the tab keeps the same leading text as you navigate around instead of
+    // flipping word order between the homepage and everywhere else. It also
+    // means the brand survives a truncated tab, which the reverse order
+    // ("About | Sathya Ram") doesn't.
+    template: "Sathya Ram | %s",
     default: "Sathya Ram | Developer & Designer",
   },
   description: "Portfolio of Sathya Ram — websites, design, and photography.",
