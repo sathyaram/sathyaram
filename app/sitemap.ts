@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { projectOrder } from "@/lib/projects";
-
-const SITE = "https://sathyaram.com";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Case studies come straight from lib/projects.ts — the same list that drives
@@ -21,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const caseStudies = projectOrder.map((project) => ({
-    url: `${SITE}/websites/${project.slug}`,
+    url: `${SITE_URL}/websites/${project.slug}`,
     lastModified: now,
     changeFrequency: "yearly" as const,
     priority: 0.8,
@@ -29,26 +28,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: SITE,
+      url: SITE_URL,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 1,
     },
     ...caseStudies,
     {
-      url: `${SITE}/about`,
+      url: `${SITE_URL}/about`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${SITE}/contact`,
+      url: `${SITE_URL}/contact`,
       lastModified: now,
       changeFrequency: "yearly" as const,
       priority: 0.6,
     },
     {
-      url: `${SITE}/colophon`,
+      url: `${SITE_URL}/colophon`,
       lastModified: now,
       changeFrequency: "yearly" as const,
       priority: 0.3,

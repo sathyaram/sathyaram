@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Sparkle from "@/components/Sparkle";
-
-// Springy overshoot easing — same constant the homepage cards and CTA use.
-const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
+import { SPRING } from "@/lib/site";
 
 /**
  * Catches every unmatched URL for the whole app (the root not-found has done

@@ -5,9 +5,7 @@ import PanoramaSlider from "@/components/PanoramaSlider";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
 import HeadingGlow from "@/components/HeadingGlow";
-
-// Springy overshoot easing — the "delight" curve Seán Halpin uses on his cards.
-const SPRING = "cubic-bezier(0.175,0.885,0.32,1.275)";
+import { SPRING } from "@/lib/site";
 
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,

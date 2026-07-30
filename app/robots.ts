@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE = "https://sathyaram.com";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * The site shipped without a robots.txt, so crawlers had no explicit signal
@@ -17,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: `${SITE}/sitemap.xml`,
-    host: SITE,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

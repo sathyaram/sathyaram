@@ -8,6 +8,7 @@ import GradientBackground from "@/components/GradientBackground";
 import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
 import { socialLinks } from "@/lib/social";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -32,7 +33,7 @@ const californication = localFont({
 const GA_ID = "G-V2ZX65PRKW";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sathyaram.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     // Brand first, consistently: every page reads "Sathya Ram | <page>", so
     // the tab keeps the same leading text as you navigate around instead of
@@ -70,7 +71,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Sathya Ram",
-  url: "https://sathyaram.com",
+  url: SITE_URL,
   jobTitle: "Web Developer & Designer",
   email: "mailto:sathyatheram@gmail.com",
   address: {
