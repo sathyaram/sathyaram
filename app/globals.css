@@ -747,9 +747,14 @@ body {
  * change so the two move together.
  */
 .card-blurb {
+  /* Two layers doing different jobs: the tight one sharpens the letterforms
+     against whatever is directly behind them, the wide one darkens a soft
+     pool under the whole line so light artwork can't wash it out. Both radii
+     widened (3->6, 12->22) so the falloff is gradual enough to read as
+     depth rather than as an outline around the text. */
   text-shadow:
-    0 1px 3px rgb(0 0 0 / 0.45),
-    0 1px 12px rgb(0 0 0 / 0.25);
+    0 1px 6px rgb(0 0 0 / 0.5),
+    0 1px 22px rgb(0 0 0 / 0.35);
   transition: text-shadow 500ms ease;
 }
 
