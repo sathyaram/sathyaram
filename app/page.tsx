@@ -430,7 +430,11 @@ export default function Home() {
           before they'd otherwise just leave. Button reuses the one primary-
           button style that already exists (ContactForm's submit), rather
           than inventing a new one. */}
-      <section className="mx-auto mt-28 max-w-xl text-center sm:mt-36">
+      {/* mt-24 flat, with no sm: step: the space below this section is the page
+          wrapper's pb-24, which is 6rem at every width, so a top margin that
+          grew to 9rem on desktop left the closing section visibly hung toward
+          the footer rather than sitting evenly between the two. */}
+      <section className="mx-auto mt-24 max-w-xl text-center">
         {/* Each of the three needs its own `transition` for the staggered
             reveal to animate at all — ScrollGroup sets an inline
             transitionDelay per child, but .scroll-stagger-item's
