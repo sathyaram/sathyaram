@@ -16,7 +16,7 @@ const services = [
     emojiBack: "⚡",
     title: "Development",
     blurb:
-      "Custom React, Next.js, and WordPress builds with polished interactions and thoughtful animation.",
+      "React, Next.js, and WordPress builds with polished interactions and purposeful animation.",
   },
   {
     emoji: "🎨",
