@@ -232,7 +232,7 @@ export default function Home() {
                         column as a whole, is what keeps every title sitting
                         at the same height below its icon regardless of how
                         tall a neighboring cell's blurb wraps to. */}
-                    <span className="service-badge flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10 sm:h-16 sm:w-16">
+                    <span className="service-badge flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 sm:h-16 sm:w-16">
                       {/* Two-faced coin flip on hover. The whole thing is
                           aria-hidden and decorative, which is the point: no
                           copy is parked behind a hover state, so touch and
