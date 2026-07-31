@@ -212,18 +212,14 @@ export default function Home() {
                 return (
                   <div
                     key={service.title}
-                    className={[
-                      // transition-all, not transition-colors: the staggered
-                      // reveal animates opacity + transform, neither of which
-                      // transition-colors covers — it would snap into place
-                      // despite the delay. duration-700 matches the site's
-                      // other reveals; the snappy hover feedback (icon scale,
-                      // badge tint) lives on the children below at 300ms, so
-                      // only the near-invisible 2% cell tint rides the
-                      // slower curve.
-                      "service-cell group relative flex flex-col items-center px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14",
-                      "hover:bg-foreground/[0.02]",
-                    ].join(" ")}
+                    // transition-all, not transition-colors: the staggered
+                    // reveal animates opacity + transform, neither of which
+                    // transition-colors covers — it would snap into place
+                    // despite the delay. duration-700 matches the site's other
+                    // reveals. No hover background on the cell: the icon flip
+                    // is the whole hover story here, and a wash behind it just
+                    // competed with the flip for attention.
+                    className="service-cell group relative flex flex-col items-center px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14"
                   >
                     {/* Icon in its own fixed circular badge — the emoji sits
                         in its own inner square with leading-none rather
