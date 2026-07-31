@@ -27,21 +27,6 @@ const services = [
     title: "Photography",
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
-  {
-    emoji: "🏎️",
-    title: "Car Buying Help",
-    blurb: "Helping you find and buy a used car, now at CarMax.",
-  },
-  {
-    emoji: "🎙️",
-    title: "Voice Narration",
-    blurb: "Voiceover and narration for video, animation, and audio projects.",
-  },
-  {
-    emoji: "🃏",
-    title: "Magic Deck Tech",
-    blurb: "Commander (EDH) deckbuilding, tuning, and deck tech breakdowns.",
-  },
 ];
 
 const featured = [
@@ -50,6 +35,7 @@ const featured = [
     title: "The Brookings Institute",
     year: "2024",
     blurb: "A mission-driven think tank.",
+    contribution: "Reusable WordPress templates and a debounced research-library filter.",
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
@@ -61,6 +47,7 @@ const featured = [
     title: "Home Planet Fund",
     year: "2024",
     blurb: "Patagonia's grassroots climate fund.",
+    contribution: "Custom WordPress theme with editor-managed grant and initiative archives.",
     from: "#8C382C",
     to: "#F59431",
     span: "sm:col-span-3",
@@ -72,6 +59,7 @@ const featured = [
     title: "Vilcek Foundation",
     year: "2020",
     blurb: "A celebration of immigrants & the arts.",
+    contribution: "Flexible honoree profiles and filterable award archives.",
     from: "#5C4433",
     to: "#E3D2B4",
     span: "sm:col-span-3",
@@ -83,6 +71,7 @@ const featured = [
     title: "The Sontag Foundation",
     year: "2021",
     blurb: "The definitive enterprise for brain cancer research.",
+    contribution: "Accessible fellowship templates and grant-guideline disclosures.",
     from: "#042342",
     to: "#2B86E0",
     span: "sm:col-span-2",
@@ -173,6 +162,17 @@ export default function Home() {
           segments={[{ text: "Developer & Designer", className: "name-glow" }]}
           delay={340}
         />
+        {/* The positioning line the headline deliberately doesn't carry. It
+            sits here, at body size, so "Developer & Designer" keeps both its
+            brevity and the clamp sizing tuned to that exact string, while a
+            visitor still learns within the first screen who the work is for.
+            Plain fade-up rather than a per-letter Reveal: at this length the
+            letter stagger reads as noise, and it should settle after the
+            headline, not compete with it. */}
+        <p className="load-rise mx-auto mt-6 max-w-xl text-balance text-base text-muted motion-reduce:animate-none sm:mt-7 sm:text-lg" style={{ animationDelay: "620ms" }}>
+          I build accessible, content-rich websites for nonprofits,
+          institutions, and mission-driven teams.
+        </p>
       </section>
 
       {/* ---------- Services ---------- */}
@@ -190,27 +190,26 @@ export default function Home() {
             escapes the page's max-width. Thin dividers (border-border, the
             same hairline used for the Colophon list and the Timeline/Role/
             Stack row) form the grid lines: border-y on the grid itself for
-            the outer top/bottom edge, per-cell border-b/border-r for the
-            internal lines. Assumes exactly 6 services / 3 columns — the
-            divider math (row 1 vs. row 2, last column) is hardcoded to
-            that shape, not derived generically. */}
+            the outer top/bottom edge, per-cell borders for the internal
+            lines. One row of three, so the divider rule is just "every cell
+            but the last gets a separator" — stacked on mobile, so that
+            separator is a bottom border there and a right border from sm.
+            Mobile is one column rather than two on purpose: three cells in a
+            2-up grid leaves an orphan in the second row. */}
         <div className="w-screen ml-[calc(50%-50vw)]">
           {/* ScrollGroup *is* the grid rather than wrapping one, so each cell
               is both a direct child (and therefore gets its own staggered
               reveal — ScrollGroup only clones onto direct children) and a
               real grid item, which the divider classes below depend on.
               Same arrangement the Work grid uses. */}
-          <ScrollGroup className="grid grid-cols-2 border-y border-border sm:grid-cols-3">
+          <ScrollGroup className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
             {services.map((service, index) => {
-                // The grid is 2-up on mobile and 3-up from sm, so every
-                // divider needs a value for both shapes and an sm: override
-                // — a cell that ends a row at 2 columns usually doesn't at 3.
-                // Colour lives on `border-border` once, on the element; these
-                // only toggle which sides have a width.
-                const mobileLastCol = index % 2 === 1;
-                const mobileLastRow = index >= services.length - 2;
-                const desktopLastCol = index % 3 === 2;
-                const desktopLastRow = index >= 3;
+                // One row of three: every cell but the last carries the
+                // separator. Stacked on mobile so that's a bottom border, in a
+                // row from sm so it becomes a right border instead. Colour
+                // lives on `border-border` once, on the element; these only
+                // toggle which side has a width.
+                const isLast = index === services.length - 1;
                 return (
                   <div
                     key={service.title}
@@ -224,10 +223,7 @@ export default function Home() {
                       // only the near-invisible 2% cell tint rides the
                       // slower curve.
                       "group flex flex-col items-center border-border px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14",
-                      mobileLastRow ? "" : "border-b",
-                      mobileLastCol ? "" : "border-r",
-                      desktopLastRow ? "sm:border-b-0" : "sm:border-b",
-                      desktopLastCol ? "sm:border-r-0" : "sm:border-r",
+                      isLast ? "" : "border-b sm:border-b-0 sm:border-r",
                       "hover:bg-foreground/[0.02]",
                     ].join(" ")}
                   >
@@ -379,6 +375,15 @@ export default function Home() {
               />
               <p className="mt-3 max-w-sm text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
                 {project.blurb}
+              </p>
+              {/* What I actually built, under what the client is. The blurb
+                  alone describes the organisation, which tells a visitor
+                  nothing about my contribution until they open the case study;
+                  this lets them judge the work from the grid. Drawn from each
+                  case study's own text, so the card can't drift from the page
+                  it links to. */}
+              <p className="mt-2 max-w-sm text-sm font-medium text-white/90 transition-colors duration-500 group-hover:text-foreground">
+                {project.contribution}
               </p>
             </div>
           </Link>

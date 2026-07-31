@@ -343,6 +343,11 @@ function startField(
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
+    // Under reduced motion the render loop stops after its first frame, so
+    // nothing would repaint the resized canvas and it would sit stretched or
+    // stale until the next mount. Draw the new framing once. (Not needed in
+    // the normal case — the loop repaints it on the very next frame.)
+    if (reduced) renderer.render(scene, camera);
   };
   const resizeObserver = new ResizeObserver(handleResize);
   resizeObserver.observe(mount);
@@ -417,13 +422,27 @@ function startField(
       sparkGeometry.attributes.color.needsUpdate = true;
     }
 
-    // Ease the camera toward the cursor for parallax depth.
-    camera.position.x += (pointer.x * PARALLAX - camera.position.x) * EASE;
-    camera.position.y += (-pointer.y * PARALLAX - camera.position.y) * EASE;
+    // Ease the camera toward the cursor for parallax depth. Gated on the
+    // motion preference like the drift and the sparks already are: a sky that
+    // swings with the pointer is motion whether or not it also drifts, and
+    // pointer-driven parallax is precisely the unrequested movement WCAG 2.3.3
+    // covers. Ungated, "reduced motion" still moved the entire field every
+    // time the mouse did.
+    if (!reduced) {
+      camera.position.x += (pointer.x * PARALLAX - camera.position.x) * EASE;
+      camera.position.y += (-pointer.y * PARALLAX - camera.position.y) * EASE;
+    }
     camera.lookAt(0, 0, -FIELD_DEPTH * 0.5);
 
     renderer.render(scene, camera);
-    frame = requestAnimationFrame(render);
+
+    // With drift, sparks and parallax all off there is nothing left to change
+    // between frames, so the first frame is the finished image. Stop
+    // scheduling rather than run a 60fps loop forever re-drawing pixels that
+    // cannot differ — that costs real battery on a laptop or phone, and WebGL
+    // keeps the GPU awake for it. handleResize repaints the one frame when the
+    // framing changes.
+    if (!reduced) frame = requestAnimationFrame(render);
   };
   frame = requestAnimationFrame(render);
 
