@@ -189,13 +189,16 @@ export default function Home() {
 
         {/* Full-bleed grid — same w-screen breakout the Photography
             panorama uses below, so Services isn't the only section that
-            escapes the page's max-width. Thin dividers (border-border, the
-            same hairline used for the Colophon list and the Timeline/Role/
-            Stack row) form the grid lines: border-y on the grid itself for
-            the outer top/bottom edge, per-cell borders for the internal
-            lines. One row of three, so the divider rule is just "every cell
-            but the last gets a separator" — stacked on mobile, so that
-            separator is a bottom border there and a right border from sm.
+            escapes the page's max-width.
+
+            No outer frame: the only rules are the ones BETWEEN cells, drawn
+            by .service-cell's ::after (see globals.css) rather than by border
+            utilities. A border on the cell would run its full edge, corner to
+            corner; the pseudo-element can be inset from both ends, so each
+            rule floats clear of the section's top and bottom instead of
+            boxing the row in. It also flips axis on its own at sm, which is
+            the "separators stack on mobile" half of this.
+
             Mobile is one column rather than two on purpose: three cells in a
             2-up grid leaves an orphan in the second row. */}
         <div className="w-screen ml-[calc(50%-50vw)]">
@@ -204,14 +207,8 @@ export default function Home() {
               reveal — ScrollGroup only clones onto direct children) and a
               real grid item, which the divider classes below depend on.
               Same arrangement the Work grid uses. */}
-          <ScrollGroup className="grid grid-cols-1 border-y border-border sm:grid-cols-3">
-            {services.map((service, index) => {
-                // One row of three: every cell but the last carries the
-                // separator. Stacked on mobile so that's a bottom border, in a
-                // row from sm so it becomes a right border instead. Colour
-                // lives on `border-border` once, on the element; these only
-                // toggle which side has a width.
-                const isLast = index === services.length - 1;
+          <ScrollGroup className="grid grid-cols-1 sm:grid-cols-3">
+            {services.map((service) => {
                 return (
                   <div
                     key={service.title}
@@ -224,8 +221,7 @@ export default function Home() {
                       // badge tint) lives on the children below at 300ms, so
                       // only the near-invisible 2% cell tint rides the
                       // slower curve.
-                      "group flex flex-col items-center border-border px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14",
-                      isLast ? "" : "border-b sm:border-b-0 sm:border-r",
+                      "service-cell group relative flex flex-col items-center px-4 py-8 text-center transition-all duration-700 sm:px-10 sm:py-14",
                       "hover:bg-foreground/[0.02]",
                     ].join(" ")}
                   >

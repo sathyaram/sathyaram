@@ -767,3 +767,45 @@ body {
     transition: none;
   }
 }
+
+/*
+ * Services separators. Drawn as a pseudo-element rather than a border on the
+ * cell, because a border always runs the full length of its edge: it would
+ * reach the section's top and bottom and read as a frame around the row. This
+ * can be inset from both ends, so each rule floats as a short hairline between
+ * two cells and nothing boxes the group in.
+ *
+ * The axis flips with the layout on its own, so the markup carries no
+ * breakpoint logic: stacked on mobile, the rule sits along the bottom edge and
+ * runs horizontally; in a row from sm it moves to the right edge and runs
+ * vertically. :last-child drops it either way, so the trailing cell never
+ * draws an outer edge.
+ */
+.service-cell::after {
+  content: "";
+  position: absolute;
+  background: var(--border);
+  /* Mobile: horizontal rule under the cell, inset from both sides. */
+  left: 18%;
+  right: 18%;
+  bottom: 0;
+  height: 1px;
+}
+
+@media (min-width: 640px) {
+  .service-cell::after {
+    /* From sm the same rule becomes vertical on the right edge. The mobile
+       left/right must be unset, or the element keeps both constraints and
+       stretches across the cell instead of hugging the edge. */
+    left: auto;
+    right: 0;
+    top: 14%;
+    bottom: 14%;
+    width: 1px;
+    height: auto;
+  }
+}
+
+.service-cell:last-child::after {
+  content: none;
+}
