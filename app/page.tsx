@@ -13,17 +13,20 @@ import { SPRING } from "@/lib/site";
 const services = [
   {
     emoji: "💻",
+    emojiBack: "⚡",
     title: "Development",
     blurb: "Institutional and nonprofit websites, built with React, Next.js, and WordPress.",
   },
   {
     emoji: "🎨",
+    emojiBack: "✨",
     title: "Design",
     blurb:
       "Brand identity, interface design, and prototyping in Figma and Illustrator.",
   },
   {
     emoji: "📷",
+    emojiBack: "🌄",
     title: "Photography",
     blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
   },
@@ -34,8 +37,8 @@ const featured = [
     slug: "brookings",
     title: "The Brookings Institute",
     year: "2024",
-    blurb: "A mission-driven think tank.",
-    contribution: "Reusable WordPress templates and a debounced research-library filter.",
+    blurb: 
+      "A mission-driven think tank, built on reusable WordPress templates and a research library that filters as you type.",
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
@@ -46,8 +49,8 @@ const featured = [
     slug: "homeplanetfund",
     title: "Home Planet Fund",
     year: "2024",
-    blurb: "Patagonia's grassroots climate fund.",
-    contribution: "Custom WordPress theme with editor-managed grant and initiative archives.",
+    blurb: 
+      "Patagonia's grassroots climate fund, on a custom WordPress theme with grant and initiative archives its editors run themselves.",
     from: "#8C382C",
     to: "#F59431",
     span: "sm:col-span-3",
@@ -58,8 +61,8 @@ const featured = [
     slug: "vilcek",
     title: "Vilcek Foundation",
     year: "2020",
-    blurb: "A celebration of immigrants & the arts.",
-    contribution: "Flexible honoree profiles and filterable award archives.",
+    blurb: 
+      "A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand.",
     from: "#5C4433",
     to: "#E3D2B4",
     span: "sm:col-span-3",
@@ -70,8 +73,8 @@ const featured = [
     slug: "sontag",
     title: "The Sontag Foundation",
     year: "2021",
-    blurb: "The definitive enterprise for brain cancer research.",
-    contribution: "Accessible fellowship templates and grant-guideline disclosures.",
+    blurb: 
+      "The definitive enterprise for brain cancer research, with accessible fellowship templates and grant guidelines built to be scanned.",
     from: "#042342",
     to: "#2B86E0",
     span: "sm:col-span-2",
@@ -170,20 +173,19 @@ export default function Home() {
             letter stagger reads as noise, and it should settle after the
             headline, not compete with it. */}
         <p className="load-rise mx-auto mt-6 max-w-xl text-balance text-base text-muted motion-reduce:animate-none sm:mt-7 sm:text-lg" style={{ animationDelay: "620ms" }}>
-          I build accessible, content-rich websites for nonprofits,
-          institutions, and mission-driven teams.
+          I make stylish, accessible, interactive websites for boutique brands,
+          nonprofits, and institutions built around a mission.
         </p>
       </section>
 
       {/* ---------- Services ---------- */}
       <section className="mx-auto mb-28 max-w-5xl sm:mb-36">
-        <ScrollGroup className="mb-10 text-center">
-          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            <span className="heading-glow" data-glow-heading>
-              Services
-            </span>
-          </h2>
-        </ScrollGroup>
+        {/* The visible "Services" title is gone: with three cells that each
+            carry their own heading, the label was naming something the row
+            already says. Kept as sr-only rather than deleted outright so the
+            section still has an accessible name and the heading outline
+            doesn't jump h1 -> h3 at the service titles. */}
+        <h2 className="sr-only">Services</h2>
 
         {/* Full-bleed grid — same w-screen breakout the Photography
             panorama uses below, so Services isn't the only section that
@@ -238,12 +240,23 @@ export default function Home() {
                         column as a whole, is what keeps every title sitting
                         at the same height below its icon regardless of how
                         tall a neighboring cell's blurb wraps to. */}
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10 sm:h-16 sm:w-16">
+                    <span className="service-badge flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 transition-colors duration-300 group-hover:bg-foreground/10 sm:h-16 sm:w-16">
+                      {/* Two-faced coin flip on hover. The whole thing is
+                          aria-hidden and decorative, which is the point: no
+                          copy is parked behind a hover state, so touch and
+                          keyboard users lose nothing by never triggering it.
+                          Hiding the blurb until hover would have failed that
+                          test, and left three tall cells looking empty. */}
                       <span
                         aria-hidden="true"
-                        className="flex h-7 w-7 items-center justify-center text-2xl leading-none transition-transform duration-300 ease-out group-hover:scale-110 sm:h-8 sm:w-8 sm:text-3xl"
+                        className="service-badge-inner relative flex h-7 w-7 items-center justify-center sm:h-8 sm:w-8"
                       >
-                        {service.emoji}
+                        <span className="service-face text-2xl leading-none sm:text-3xl">
+                          {service.emoji}
+                        </span>
+                        <span className="service-face service-face-back text-2xl leading-none sm:text-3xl">
+                          {service.emojiBack}
+                        </span>
                       </span>
                     </span>
                     <h3 className="mt-3 font-display text-base font-semibold sm:mt-5 sm:text-lg">
@@ -269,14 +282,14 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            {/* "Selected work", not "Work": the cards run 2024, 2024, 2020,
+            {/* "Selected Works", not "Work": the cards run 2024, 2024, 2020,
                 2021 because the order is driven by the grid's asymmetric span
                 rhythm (2-3 / 3-2), not by date. Naming the section for a
                 curated selection makes that intentional rather than reading as
                 a broken sort, without forcing a date order that would break the
                 layout. */}
             <span className="heading-glow" data-glow-heading>
-              Selected work
+              Selected Works
             </span>
           </h2>
         </ScrollGroup>
@@ -373,17 +386,14 @@ export default function Home() {
                 className="mt-2 block font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground text-[clamp(1.75rem,3vw,2.5rem)]"
                 text={project.title}
               />
-              <p className="mt-3 max-w-sm text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
+              {/* One sentence carrying both what the client is and what I
+                  built for them: the organisation alone tells a visitor
+                  nothing about the contribution, and a second, differently
+                  weighted line read as a caption bolted underneath. Drawn from
+                  each case study's own text, so a card can't drift from the
+                  page it links to. */}
+              <p className="card-blurb mt-3 max-w-md text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
                 {project.blurb}
-              </p>
-              {/* What I actually built, under what the client is. The blurb
-                  alone describes the organisation, which tells a visitor
-                  nothing about my contribution until they open the case study;
-                  this lets them judge the work from the grid. Drawn from each
-                  case study's own text, so the card can't drift from the page
-                  it links to. */}
-              <p className="mt-2 max-w-sm text-sm font-medium text-white/90 transition-colors duration-500 group-hover:text-foreground">
-                {project.contribution}
               </p>
             </div>
           </Link>

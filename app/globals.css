@@ -684,3 +684,81 @@ body {
   transform: translateY(0);
 }
 
+
+/*
+ * Services icon: a two-faced coin flip on hover. Both faces are decorative
+ * (the wrapper is aria-hidden), so nothing readable is gated behind a hover
+ * state that touch and keyboard users can't reach — the blurb underneath
+ * stays visible at all times, which is why the flip lives on the icon rather
+ * than hiding the copy.
+ *
+ * The perspective sits on the badge, not the rotating element: on the element
+ * itself it would be applied per-face and the rotation reads flat.
+ */
+.service-badge {
+  perspective: 600px;
+}
+
+.service-badge-inner {
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .service-badge-inner {
+  transform: rotateY(180deg);
+}
+
+.service-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Without this the far face shows through the near one mid-rotation. */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.service-face-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-badge-inner {
+    transition: none;
+  }
+  /* Not just a disabled transition: without this the face still snaps over
+     instantly on hover, which is the jump the preference exists to avoid. */
+  .group:hover .service-badge-inner {
+    transform: none;
+  }
+}
+
+/*
+ * Work-card blurb: the card artwork sits behind this text at some viewports
+ * (the image is bottom-anchored and scaled up, so how much it rises behind the
+ * copy varies with column width), and white-on-artwork can drop well below a
+ * readable contrast on the lighter images. A soft dark shadow lifts the text
+ * off whatever lands underneath without reading as a visible effect.
+ *
+ * Dropped on hover: the card fill dissolves there and the text switches to the
+ * theme foreground, so a dark halo behind near-black text on the beige page
+ * would be exactly wrong. Transitioned over the same 500ms as that colour
+ * change so the two move together.
+ */
+.card-blurb {
+  text-shadow:
+    0 1px 3px rgb(0 0 0 / 0.45),
+    0 1px 12px rgb(0 0 0 / 0.25);
+  transition: text-shadow 500ms ease;
+}
+
+.group:hover .card-blurb {
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-blurb {
+    transition: none;
+  }
+}

@@ -101,7 +101,7 @@ const testimonials = [
 ];
 
 const certifications = [
-  { title: "Google Analytics", detail: "Certification" },
+  { title: "Google Data Analytics", detail: "Certification" },
   { title: "Acquia Certified Front End Specialist", detail: "Certification" },
 ];
 
