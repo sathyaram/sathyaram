@@ -15,20 +15,22 @@ const services = [
     emoji: "💻",
     emojiBack: "⚡",
     title: "Development",
-    blurb: "Institutional and nonprofit websites, built with React, Next.js, and WordPress.",
+    blurb:
+      "Custom websites built with React, Next.js, and WordPress, blending thoughtful engineering with polished interactions and delightful animation.",
   },
   {
     emoji: "🎨",
     emojiBack: "✨",
     title: "Design",
     blurb:
-      "Brand identity, interface design, and prototyping in Figma and Illustrator.",
+      "From logos and visual identities to interfaces and prototypes, I create cohesive design systems that feel intentional from the very first sketch.",
   },
   {
     emoji: "📷",
     emojiBack: "🌄",
     title: "Photography",
-    blurb: "Portrait, event, and fine art photography, shot on a Sony A7RIV.",
+    blurb:
+      "Natural light, expressive portraiture, and cinematic composition come together to create images that feel genuine, timeless, and distinctly human.",
   },
 ];
 
