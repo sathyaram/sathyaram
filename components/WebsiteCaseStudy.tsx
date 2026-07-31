@@ -91,6 +91,12 @@ export default function WebsiteCaseStudy({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
+              // The visible label is a decorative "https" pill plus the bare
+              // domain, which concatenates into an accessible name of
+              // "https brookings.edu" and gives no hint the link leaves the
+              // site. Name it explicitly instead, and mark the pill aria-hidden
+              // below so it isn't read twice.
+              aria-label={`Visit ${url} (opens in a new tab)`}
               // No overflow-hidden here — the pill needs to visually escape
               // the button's left edge, so each background layer clips
               // itself (rounded-2xl on the layer, not the parent) instead.
@@ -130,11 +136,17 @@ export default function WebsiteCaseStudy({
                   turned up for a CTA. Stays green through the hover wipe
                   rather than inverting with the rest of the button, so it
                   still reads as its own fixed badge. */}
-              <span className="relative z-10 -ml-10 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md">
+              <span
+                aria-hidden="true"
+                className="relative z-10 -ml-10 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md"
+              >
                 https
               </span>
 
-              <span className="relative z-10 font-display text-xl font-bold text-white transition-colors duration-500 group-hover:text-background">
+              <span
+                aria-hidden="true"
+                className="relative z-10 font-display text-xl font-bold text-white transition-colors duration-500 group-hover:text-background"
+              >
                 {url}
               </span>
             </a>

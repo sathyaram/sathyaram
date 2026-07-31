@@ -4,6 +4,8 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact",
+  description:
+    "Get in touch with Sathya Ram about a website build, redesign, or design project.",
 };
 
 export default function Contact() {

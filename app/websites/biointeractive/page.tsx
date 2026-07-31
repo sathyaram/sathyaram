@@ -3,6 +3,8 @@ import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
   title: "HHMI BioInteractive",
+  description:
+    "Front-end development for HHMI BioInteractive: JavaScript classroom interactives — quizzes, simulations and guided walkthroughs — built for keyboard and screen-reader use across hundreds of lesson pages.",
 };
 
 export default function Biointeractive() {

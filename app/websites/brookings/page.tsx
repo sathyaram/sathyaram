@@ -3,6 +3,8 @@ import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
   title: "The Brookings Institute",
+  description:
+    "Front-end development for the Brookings Institution with Teal Media: reusable WordPress templates and a debounced research-library filter for a high-volume public policy publisher.",
 };
 
 export default function Brookings() {
@@ -10,7 +12,7 @@ export default function Brookings() {
     <WebsiteCaseStudy
       slug="brookings"
       title="The Brookings Institute"
-      subtitle="A mission-driven thinktank center."
+      subtitle="A mission-driven think tank."
       year="2024"
       agency="Teal Media"
       gradientFrom="#022A4E"
@@ -53,13 +55,29 @@ export default function Brookings() {
       ]}
       codeFilename="research-library.js"
       codeLines={[
-        [{ text: "// research-library.js: debounced live search", type: "comment" }],
+        [{ text: "// research-library.js: debounced search, superseding requests", type: "comment" }],
         [{ text: "const", type: "keyword" }, { text: " debounce = (" }, { text: "fn" }, { text: ", " }, { text: "delay" }, { text: " = " }, { text: "200", type: "value" }, { text: ") => {" }],
         [{ text: "  let", type: "keyword" }, { text: " timer;" }],
         [{ text: "  return", type: "keyword" }, { text: " (...args) => {" }],
         [{ text: "    clearTimeout(timer);" }],
         [{ text: "    timer = setTimeout(() => fn(...args), delay);" }],
         [{ text: "  };" }],
+        [{ text: "};" }],
+        [],
+        [{ text: "let", type: "keyword" }, { text: " inFlight;" }],
+        [],
+        [{ text: "const", type: "keyword" }, { text: " filterResearch = " }, { text: "async", type: "keyword" }, { text: " (query) => {" }],
+        [{ text: "  inFlight?.abort();" }, { text: " // a newer query supersedes the last", type: "comment" }],
+        [{ text: "  inFlight = " }, { text: "new", type: "keyword" }, { text: " AbortController();" }],
+        [],
+        [{ text: "  try", type: "keyword" }, { text: " {" }],
+        [{ text: "    const", type: "keyword" }, { text: " res = " }, { text: "await", type: "keyword" }, { text: " fetch(" }, { text: "`/api/research?q=${query}`", type: "string" }, { text: ", {" }],
+        [{ text: "      signal: inFlight.signal," }],
+        [{ text: "    });" }],
+        [{ text: "    render(" }, { text: "await", type: "keyword" }, { text: " res.json());" }],
+        [{ text: "  } " }, { text: "catch", type: "keyword" }, { text: " (err) {" }],
+        [{ text: "    if", type: "keyword" }, { text: " (err.name !== " }, { text: "\"AbortError\"", type: "string" }, { text: ") " }, { text: "throw", type: "keyword" }, { text: " err;" }],
+        [{ text: "  }" }],
         [{ text: "};" }],
         [],
         [{ text: "searchInput" }, { text: ".addEventListener(" }, { text: "\"input\"", type: "string" }, { text: ", debounce((e) => {" }],

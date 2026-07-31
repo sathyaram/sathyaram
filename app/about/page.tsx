@@ -10,6 +10,8 @@ import {
 
 export const metadata: Metadata = {
   title: "About",
+  description:
+    "Sathya Ram is a web developer and designer in the DMV area, building accessible, CMS-driven websites for nonprofits and institutions. Background, testimonials, and credentials.",
 };
 
 const sections = [
@@ -18,7 +20,7 @@ const sections = [
     paragraphs: [
       "Hi there! I'm Sathya Ram.",
       "I design and develop modern websites: engaging layouts, user interfaces, and delightful web animations and interactions.",
-      "I'm also an avid photographer and freelancer.",
+      "I also work as a freelance developer and designer, and shoot portrait and event photography.",
       "Combining these skills, I bring beautiful digital experiences to life. At heart, I'm a creator: I believe in aesthetics with purpose.",
     ],
   },

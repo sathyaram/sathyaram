@@ -4,6 +4,8 @@ import ScrollGroup from "@/components/ScrollGroup";
 
 export const metadata: Metadata = {
   title: "Colophon",
+  description:
+    "The tools, type, and technology behind sathyaram.com.",
 };
 
 type ColophonItem = { title: string; detail: string; href?: string };

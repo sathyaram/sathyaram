@@ -3,6 +3,8 @@ import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
   title: "Home Planet Fund",
+  description:
+    "Front-end development for Home Planet Fund with Teal Media: a custom WordPress theme and editor-managed grant and initiative archives for Patagonia’s climate fund.",
 };
 
 export default function HomePlanetFund() {
@@ -10,7 +12,7 @@ export default function HomePlanetFund() {
     <WebsiteCaseStudy
       slug="homeplanetfund"
       title="Home Planet Fund"
-      subtitle="Patagonia's greenroots foundation."
+      subtitle="Patagonia's grassroots climate fund."
       year="2024"
       agency="Teal Media"
       gradientFrom="#8C382C"
@@ -31,14 +33,14 @@ export default function HomePlanetFund() {
       contributions={[
         "Translated Patagonia's brand guidelines into a reusable WordPress theme design system",
         "Built the grant and initiative archive templates with custom taxonomy-based filtering",
-        "Hand-coded CSS to match Patagonia's type and color system pixel-for-pixel",
+        "Hand-coded CSS to match Patagonia's type and color system closely",
         "Optimized image loading across the photo-heavy initiative pages",
       ]}
       highlights={[
         {
           title: "The cursor as a lens",
           body:
-            "My favorite detail on the site: hovering a feature image doesn't just tint it, it inverts it. A diamond mask follows the pointer and everything inside it flips: colors reverse, the photo reads like a negative, so the image feels like it's being examined through a lens rather than covered by an overlay. It's built with mix-blend-mode and an inverted layer clipped to the cursor's position, which means it stays GPU-composited and costs nothing at scroll time.",
+            "My favorite detail on the site: hovering a feature image doesn't just tint it, it inverts it. A diamond mask follows the pointer and everything inside it flips: colors reverse, the photo reads like a negative, so the image feels like it's being examined through a lens rather than covered by an overlay. It's built with mix-blend-mode and an inverted layer clipped to the cursor's position, which keeps the work on composited layers rather than scroll-bound JavaScript, so it stays light during interaction.",
         },
         {
           title: "Brand fidelity without a framework",

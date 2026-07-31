@@ -49,7 +49,7 @@ const featured = [
     slug: "brookings",
     title: "The Brookings Institute",
     year: "2024",
-    blurb: "A mission-driven thinktank center.",
+    blurb: "A mission-driven think tank.",
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
@@ -60,7 +60,7 @@ const featured = [
     slug: "homeplanetfund",
     title: "Home Planet Fund",
     year: "2024",
-    blurb: "Patagonia's greenroots foundation.",
+    blurb: "Patagonia's grassroots climate fund.",
     from: "#8C382C",
     to: "#F59431",
     span: "sm:col-span-3",
@@ -273,8 +273,14 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+            {/* "Selected work", not "Work": the cards run 2024, 2024, 2020,
+                2021 because the order is driven by the grid's asymmetric span
+                rhythm (2-3 / 3-2), not by date. Naming the section for a
+                curated selection makes that intentional rather than reading as
+                a broken sort, without forcing a date order that would break the
+                layout. */}
             <span className="heading-glow" data-glow-heading>
-              Work
+              Selected work
             </span>
           </h2>
         </ScrollGroup>

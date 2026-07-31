@@ -3,6 +3,8 @@ import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
   title: "Vilcek Foundation",
+  description:
+    "Front-end development for the Vilcek Foundation: flexible honoree profiles and filterable award archives for a foundation celebrating immigrant achievement in the arts and sciences.",
 };
 
 export default function Vilcek() {
@@ -55,14 +57,18 @@ export default function Vilcek() {
       codeLines={[
         [{ text: "// honoree-carousel.js", type: "comment" }],
         [{ text: "const", type: "keyword" }, { text: " track = document.querySelector(" }, { text: "\".honoree-track\"", type: "string" }, { text: ");" }],
+        [{ text: "const", type: "keyword" }, { text: " slides = track.querySelectorAll(" }, { text: "\".honoree-slide\"", type: "string" }, { text: ");" }],
         [{ text: "let", type: "keyword" }, { text: " index = " }, { text: "0", type: "value" }, { text: ";" }],
+        [{ text: "let", type: "keyword" }, { text: " autoplay;" }],
         [],
         [{ text: "function", type: "keyword" }, { text: " next() {" }],
         [{ text: "  index = (index + " }, { text: "1", type: "value" }, { text: ") % slides.length;" }],
         [{ text: "  track.style.transform = " }, { text: "`translateX(-${index * 100}%)`", type: "string" }, { text: ";" }],
         [{ text: "}" }],
         [],
-        [{ text: "autoplay = setInterval(next, " }, { text: "5000", type: "value" }, { text: ");" }],
+        [{ text: "// Respect a reduced-motion preference: no unattended movement.", type: "comment" }],
+        [{ text: "const", type: "keyword" }, { text: " calm = matchMedia(" }, { text: "\"(prefers-reduced-motion: reduce)\"", type: "string" }, { text: ");" }],
+        [{ text: "if", type: "keyword" }, { text: " (!calm.matches) autoplay = setInterval(next, " }, { text: "5000", type: "value" }, { text: ");" }],
       ]}
     />
   );

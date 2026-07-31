@@ -3,6 +3,8 @@ import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
   title: "The Sontag Foundation",
+  description:
+    "Front-end development for the Sontag Foundation with Push10: accessible fellowship templates and grant-guideline disclosures for a brain cancer research funder.",
 };
 
 export default function Sontag() {
