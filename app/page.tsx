@@ -16,21 +16,21 @@ const services = [
     emojiBack: "⚡",
     title: "Development",
     blurb:
-      "Custom websites built with React, Next.js, and WordPress, blending thoughtful engineering with polished interactions and delightful animation.",
+      "Custom React, Next.js, and WordPress builds with polished interactions and thoughtful animation.",
   },
   {
     emoji: "🎨",
     emojiBack: "✨",
     title: "Design",
     blurb:
-      "From logos and visual identities to interfaces and prototypes, I create cohesive design systems that feel intentional from the very first sketch.",
+      "Logos, interfaces, and design systems crafted with clarity, purpose, and attention to detail.",
   },
   {
     emoji: "📷",
     emojiBack: "🌄",
     title: "Photography",
     blurb:
-      "Natural light, expressive portraiture, and cinematic composition come together to create images that feel genuine, timeless, and distinctly human.",
+      "Expressive portraiture and cinematic imagery that feels natural, timeless, and human.",
   },
 ];
 
@@ -39,7 +39,7 @@ const featured = [
     slug: "brookings",
     title: "The Brookings Institute",
     year: "2024",
-    blurb: 
+    blurb:
       "A mission-driven think tank, built on reusable WordPress templates and a research library that filters as you type.",
     from: "#022A4E",
     to: "#00649F",
@@ -51,7 +51,7 @@ const featured = [
     slug: "homeplanetfund",
     title: "Home Planet Fund",
     year: "2024",
-    blurb: 
+    blurb:
       "Patagonia's grassroots climate fund, on a custom WordPress theme with grant and initiative archives its editors run themselves.",
     from: "#8C382C",
     to: "#F59431",
@@ -63,7 +63,7 @@ const featured = [
     slug: "vilcek",
     title: "Vilcek Foundation",
     year: "2020",
-    blurb: 
+    blurb:
       "A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand.",
     from: "#5C4433",
     to: "#E3D2B4",
@@ -75,7 +75,7 @@ const featured = [
     slug: "sontag",
     title: "The Sontag Foundation",
     year: "2021",
-    blurb: 
+    blurb:
       "The definitive enterprise for brain cancer research, with accessible fellowship templates and grant guidelines built to be scanned.",
     from: "#042342",
     to: "#2B86E0",
