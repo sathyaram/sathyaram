@@ -140,7 +140,12 @@ export default function WebsiteCaseStudy({
                 aria-hidden="true"
                 className="relative z-10 -ml-10 shrink-0 rounded-full bg-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-950 shadow-md"
               >
-                https
+                {/* With the slashes the pill and the domain beside it compose
+                    into a real URL ("https://" + "vilcek.org"); without them
+                    the two halves read as a loose label sitting next to a
+                    domain. Costs nothing to the accessible name, which is the
+                    explicit aria-label on the anchor, not this text. */}
+                https://
               </span>
 
               <span
