@@ -30,7 +30,7 @@ const services = [
     emojiBack: "🌄",
     title: "Photography",
     blurb:
-      "Expressive portraiture and cinematic imagery that feels natural, timeless, and human.",
+      "Expressive portraiture and cinematic imagery that feels natural, vibrant, and distinctly human.",
   },
 ];
 
