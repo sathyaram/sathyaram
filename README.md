@@ -2,7 +2,7 @@
 
 My portfolio: websites, design, and photography. Live at **[sathyaram.com](https://sathyaram.com)**.
 
-Currently **v8.05**, a full rebuild on the Next.js App Router. The version number
+Currently **v8.1**, a full rebuild on the Next.js App Router. The version number
 is in the hero, and this repo carries the history of every version before it.
 
 ## Stack
@@ -16,23 +16,6 @@ is in the hero, and this repo carries the history of every version before it.
 | Type | Bricolage Grotesque (display), Work Sans (body), Californication (script) |
 | Email | Resend, via a route handler |
 | Hosting | Vercel |
-
-## Running it
-
-```bash
-npm install
-npm run dev
-```
-
-Then open [localhost:3000](http://localhost:3000).
-
-The contact form needs a Resend key to actually send. Copy `.env.example` to
-`.env.local` and fill it in. Without it the form fails loudly rather than
-pretending to succeed:
-
-```bash
-cp .env.example .env.local
-```
 
 ## Layout
 
@@ -77,12 +60,6 @@ so nothing that's already indexed or sitting in someone's inbox breaks.
 ## Lighthouse
 
 100 / 100 / 100 / 100 for performance, accessibility, best practices, SEO.
-
-## Roadmap
-
-- [ ] Designs section (7 case studies), v7 pages not yet rebuilt
-- [ ] Link HHMI BioInteractive into the homepage grid
-- [ ] Photography gallery page with categories
 
 ---
 
