@@ -156,6 +156,74 @@ body {
   }
 }
 
+/*
+ * Full-screen mobile menu. The panel itself fades and settles down from a
+ * slight lift, then its contents fly up into it on a stagger (delays set
+ * per item in Nav.tsx) — so the background arrives first and the links land
+ * on top of it, rather than the whole thing appearing at once.
+ */
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Exit is a plain fade, and quicker than the entrance: dismissing should feel
+   like getting out of the way, and reversing the per-item stagger on the way
+   out just makes the tap feel unresponsive. */
+@keyframes mobile-menu-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mobile-menu-item-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu {
+  animation: mobile-menu-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-menu.is-closing {
+  animation: mobile-menu-out 200ms ease both;
+}
+
+.mobile-menu-item {
+  animation: mobile-menu-item-rise 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Collapsed to a single frame rather than `animation: none`, which would be
+     the usual move here: the panel unmounts on its own animationend, and an
+     animation that never runs never fires that event, so removing it outright
+     would leave the menu stuck open with the page behind it scroll-locked. */
+  .mobile-menu,
+  .mobile-menu.is-closing,
+  .mobile-menu-item {
+    animation-duration: 1ms;
+    /* !important because the per-item stagger is an inline style, which a
+       stylesheet declaration can't otherwise outrank — without it the items
+       would still pop in one at a time over ~450ms. */
+    animation-delay: 0ms !important;
+  }
+}
+
 /* Decorative hero sparkles pop into view on first load. Lives on a wrapper
    span so the scale entrance doesn't fight the float loop (both animate
    transform); the back-eased curve gives it a little overshoot. Per-sparkle
@@ -686,19 +754,56 @@ body {
 
 
 /*
- * Services icon: a two-faced coin flip on hover. Both faces are decorative
- * (the wrapper is aria-hidden), so nothing readable is gated behind a hover
- * state that touch and keyboard users can't reach — the blurb underneath
- * stays visible at all times, which is why the flip lives on the icon rather
- * than hiding the copy.
+ * Services icon: a two-faced coin that flips on its own, and also on hover.
+ * Both faces are decorative (the wrapper is aria-hidden), so nothing readable
+ * is gated behind a hover state that touch and keyboard users can't reach —
+ * the blurb underneath stays visible at all times, which is why the flip lives
+ * on the icon rather than hiding the copy. It also means the idle loop below is
+ * free to park on either face indefinitely: neither one carries information.
  *
- * The perspective sits on the badge, not the rotating element: on the element
- * itself it would be applied per-face and the rotation reads flat.
+ * The perspective sits on the badge, not on a rotating element: on the rotating
+ * element it would be applied per-face and the rotation reads flat.
  */
 .service-badge {
   perspective: 600px;
 }
 
+/*
+ * Idle loop, outer layer. Mostly dwell, briefly motion: each face is held for
+ * roughly a third of the cycle and the two flips take ~10% each, so the row
+ * reads as three icons that occasionally turn over rather than three things
+ * spinning constantly. It always advances in the same direction (0 -> 180 ->
+ * 360) instead of rotating back, so the motion never looks like it's undoing
+ * itself.
+ *
+ * Duration and delay come from app/page.tsx, per service — the point is that
+ * the three are never mid-flip together.
+ */
+@keyframes service-idle-flip {
+  0%,
+  30% {
+    transform: rotateY(0deg);
+  }
+  40%,
+  70% {
+    transform: rotateY(180deg);
+  }
+  80%,
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.service-badge-spin {
+  transform-style: preserve-3d;
+  animation: service-idle-flip var(--flip-duration, 12s) ease-in-out
+    var(--flip-delay, 0s) infinite;
+}
+
+/* Hover flip, inner layer — see the markup comment in app/page.tsx for why
+   this can't share an element with the loop above. Composed on top of
+   whatever the loop is currently showing, so a hover always turns the coin
+   over from the visitor's point of view. */
 .service-badge-inner {
   transform-style: preserve-3d;
   transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -724,6 +829,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* The idle loop is unprompted motion in the middle of the page, which is
+     squarely what this preference is asking to be spared. Killed outright,
+     not paused, so it can't be left resting mid-rotation. */
+  .service-badge-spin {
+    animation: none;
+  }
   .service-badge-inner {
     transition: none;
   }

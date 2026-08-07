@@ -10,6 +10,10 @@ import { SPRING } from "@/lib/site";
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,
 // behind the artwork) so light type stays legible across the whole card.
+// flipDuration / flipDelay drive the idle flip loop (see .service-badge-spin
+// in globals.css). The three durations are deliberately coprime — 11s, 13s,
+// 15s only realign every 2145s — so the row never settles into a shared beat
+// the way three equal durations would, no matter how the delays are staggered.
 const services = [
   {
     emoji: "💻",
@@ -17,6 +21,8 @@ const services = [
     title: "Development",
     blurb:
       "React, Next.js, and WordPress builds with polished interactions and purposeful animation.",
+    flipDuration: "11s",
+    flipDelay: "0.8s",
   },
   {
     emoji: "🎨",
@@ -24,6 +30,8 @@ const services = [
     title: "Design",
     blurb:
       "Logos, interfaces, and design systems crafted with clarity, purpose, and attention to detail.",
+    flipDuration: "13s",
+    flipDelay: "4.2s",
   },
   {
     emoji: "📷",
@@ -31,16 +39,23 @@ const services = [
     title: "Photography",
     blurb:
       "Expressive portraiture and cinematic imagery that feels natural, vibrant, and distinctly human.",
+    flipDuration: "15s",
+    flipDelay: "2.4s",
   },
 ];
 
+// Each blurb is the same one-liner its case study leads with, so a card and
+// the page it opens introduce the client in exactly the same words. The longer
+// "...and here's what I built" sentence these used to carry now lives on the
+// case study itself, under the title (see each page's `subtitle`) — at four
+// cards on one screen that second clause was reading as visual noise, whereas
+// on the case study it has a whole page to sit in.
 const featured = [
   {
     slug: "brookings",
     title: "The Brookings Institute",
     year: "2024",
-    blurb:
-      "A mission-driven think tank, built on reusable WordPress templates and a research library that filters as you type.",
+    blurb: "A mission-driven think tank.",
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
@@ -51,8 +66,7 @@ const featured = [
     slug: "homeplanetfund",
     title: "Home Planet Fund",
     year: "2024",
-    blurb:
-      "Patagonia's grassroots climate fund, on a custom WordPress theme with grant and initiative archives its editors run themselves.",
+    blurb: "Patagonia's grassroots climate fund.",
     from: "#8C382C",
     to: "#F59431",
     span: "sm:col-span-3",
@@ -63,8 +77,7 @@ const featured = [
     slug: "vilcek",
     title: "Vilcek Foundation",
     year: "2020",
-    blurb:
-      "A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand.",
+    blurb: "A celebration of immigrants & the arts.",
     from: "#5C4433",
     to: "#E3D2B4",
     span: "sm:col-span-3",
@@ -75,8 +88,7 @@ const featured = [
     slug: "sontag",
     title: "The Sontag Foundation",
     year: "2021",
-    blurb:
-      "The definitive enterprise for brain cancer research, with accessible fellowship templates and grant guidelines built to be scanned.",
+    blurb: "The definitive enterprise for brain cancer research.",
     from: "#042342",
     to: "#2B86E0",
     span: "sm:col-span-2",
@@ -120,7 +132,7 @@ export default function Home() {
             up real space on that line and pushed the name around at narrow
             widths. */}
         <p className="mb-3 text-center text-[8px] font-normal text-muted sm:mb-4">
-          v8.1
+          v8.15
         </p>
 
         {/* The whole line shares one font-size (on this div), but only
@@ -235,21 +247,39 @@ export default function Home() {
                         at the same height below its icon regardless of how
                         tall a neighboring cell's blurb wraps to. */}
                     <span className="service-badge flex h-12 w-12 items-center justify-center rounded-full bg-foreground/5 sm:h-16 sm:w-16">
-                      {/* Two-faced coin flip on hover. The whole thing is
-                          aria-hidden and decorative, which is the point: no
-                          copy is parked behind a hover state, so touch and
-                          keyboard users lose nothing by never triggering it.
-                          Hiding the blurb until hover would have failed that
-                          test, and left three tall cells looking empty. */}
+                      {/* Two-faced coin flip. The whole thing is aria-hidden
+                          and decorative, which is the point: no copy is parked
+                          behind a hover state, so touch and keyboard users lose
+                          nothing by never triggering it. Hiding the blurb until
+                          hover would have failed that test, and left three tall
+                          cells looking empty.
+
+                          Two nested rotators rather than one, because the idle
+                          loop and the hover flip both want the same rotateY and
+                          a keyframe animation always beats a transition on the
+                          same property — one element could run the loop or
+                          answer the hover, not both. Split across a layer each,
+                          the two rotations compose (preserve-3d passes the
+                          faces' 3D positions down), so hover reliably reads as
+                          "flip from whatever face is showing" whether the idle
+                          animation happens to be resting at 0deg or 180deg. */}
                       <span
                         aria-hidden="true"
-                        className="service-badge-inner relative flex h-7 w-7 items-center justify-center sm:h-8 sm:w-8"
+                        className="service-badge-spin relative block h-7 w-7 sm:h-8 sm:w-8"
+                        style={
+                          {
+                            "--flip-duration": service.flipDuration,
+                            "--flip-delay": service.flipDelay,
+                          } as React.CSSProperties
+                        }
                       >
-                        <span className="service-face text-2xl leading-none sm:text-3xl">
-                          {service.emoji}
-                        </span>
-                        <span className="service-face service-face-back text-2xl leading-none sm:text-3xl">
-                          {service.emojiBack}
+                        <span className="service-badge-inner absolute inset-0">
+                          <span className="service-face text-2xl leading-none sm:text-3xl">
+                            {service.emoji}
+                          </span>
+                          <span className="service-face service-face-back text-2xl leading-none sm:text-3xl">
+                            {service.emojiBack}
+                          </span>
                         </span>
                       </span>
                     </span>
@@ -276,14 +306,14 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            {/* "Selected Works", not "Work": the cards run 2024, 2024, 2020,
+            {/* "Featured Work", not "Work": the cards run 2024, 2024, 2020,
                 2021 because the order is driven by the grid's asymmetric span
                 rhythm (2-3 / 3-2), not by date. Naming the section for a
                 curated selection makes that intentional rather than reading as
                 a broken sort, without forcing a date order that would break the
                 layout. */}
             <span className="heading-glow" data-glow-heading>
-              Selected Works
+              Featured Work
             </span>
           </h2>
         </ScrollGroup>
@@ -380,12 +410,12 @@ export default function Home() {
                 className="mt-2 block font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground text-[clamp(1.75rem,3vw,2.5rem)]"
                 text={project.title}
               />
-              {/* One sentence carrying both what the client is and what I
-                  built for them: the organisation alone tells a visitor
-                  nothing about the contribution, and a second, differently
-                  weighted line read as a caption bolted underneath. Drawn from
-                  each case study's own text, so a card can't drift from the
-                  page it links to. */}
+              {/* Deliberately one line: enough for a visitor to know what the
+                  client is before clicking, short enough that four cards on a
+                  screen still read as four objects rather than four paragraphs.
+                  The build detail is on the case study, under its title. Same
+                  string as that page's own opening line, so a card can't drift
+                  from the page it links to. */}
               <p className="card-blurb mt-3 max-w-md text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
                 {project.blurb}
               </p>

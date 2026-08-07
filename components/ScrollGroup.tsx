@@ -8,6 +8,15 @@ type ScrollGroupProps = {
   className?: string;
   /** ms between each child's reveal. */
   step?: number;
+  /** ms before the FIRST child reveals. For a group that should follow
+   *  something already on screen — the footer's link lists trailing their
+   *  column heading, which is its own group and so starts its own clock at 0. */
+  offset?: number;
+  /** Since the stagger classes are cloned onto the children rather than onto
+   *  wrappers (see below), the children have to be legal children of this
+   *  element: `ul` is here so a list can stagger its own `li`s without a `div`
+   *  illegally sitting between them. */
+  as?: "div" | "ul";
 };
 
 type ClonableProps = { className?: string; style?: CSSProperties };
@@ -28,7 +37,13 @@ type ClonableProps = { className?: string; style?: CSSProperties };
  * works when each child is a single real element (true for every current
  * use — plain divs and one Link).
  */
-export default function ScrollGroup({ children, className, step = 90 }: ScrollGroupProps) {
+export default function ScrollGroup({
+  children,
+  className,
+  step = 90,
+  offset = 0,
+  as = "div",
+}: ScrollGroupProps) {
   const ref = useRef<HTMLDivElement>(null);
   // Lazy-initialized so the reduced-motion case starts already "visible"
   // instead of flipping true via a synchronous setState inside the effect.
@@ -93,12 +108,20 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
   useEffect(() => {
     if (!visible || settled) return;
     const count = Children.count(children);
-    const timeout = setTimeout(() => setSettled(true), (count - 1) * step + 900);
+    const timeout = setTimeout(
+      () => setSettled(true),
+      offset + (count - 1) * step + 900,
+    );
     return () => clearTimeout(timeout);
-  }, [visible, settled, children, step]);
+  }, [visible, settled, children, step, offset]);
+
+  // Both options are plain block-level elements taking the same props, so
+  // narrowing the tag to one of them keeps the ref and prop types concrete —
+  // a `"div" | "ul"` union leaves JSX unable to resolve either.
+  const Tag = as as "div";
 
   return (
-    <div ref={ref} className={className}>
+    <Tag ref={ref} className={className}>
       {Children.map(children, (child, index) => {
         if (!isValidElement(child)) return child;
         const element = child as ReactElement<ClonableProps>;
@@ -106,11 +129,11 @@ export default function ScrollGroup({ children, className, step = 90 }: ScrollGr
           className: `scroll-stagger-item ${element.props.className ?? ""}`,
           style: {
             ...element.props.style,
-            transitionDelay: settled ? undefined : `${index * step}ms`,
+            transitionDelay: settled ? undefined : `${offset + index * step}ms`,
           },
           "data-visible": visible,
         } as ClonableProps & { "data-visible": boolean });
       })}
-    </div>
+    </Tag>
   );
 }

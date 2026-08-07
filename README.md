@@ -2,7 +2,7 @@
 
 My portfolio: websites, design, and photography. Live at **[sathyaram.com](https://sathyaram.com)**.
 
-Currently **v8.1**, a full rebuild on the Next.js App Router. The version number
+Currently **v8.15**, a full rebuild on the Next.js App Router. The version number
 is in the hero, and this repo carries the history of every version before it.
 
 ## Stack

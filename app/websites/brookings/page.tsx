@@ -12,7 +12,7 @@ export default function Brookings() {
     <WebsiteCaseStudy
       slug="brookings"
       title="The Brookings Institute"
-      subtitle="A mission-driven think tank."
+      subtitle="A mission-driven think tank, built on reusable WordPress templates and a research library that filters as you type."
       year="2024"
       agency="Teal Media"
       gradientFrom="#022A4E"

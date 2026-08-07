@@ -12,7 +12,7 @@ export default function Sontag() {
     <WebsiteCaseStudy
       slug="sontag"
       title="The Sontag Foundation"
-      subtitle="The definitive enterprise for brain cancer research."
+      subtitle="The definitive enterprise for brain cancer research, with accessible fellowship templates and grant guidelines built to be scanned."
       year="2021"
       agency="Push10"
       gradientFrom="#042342"

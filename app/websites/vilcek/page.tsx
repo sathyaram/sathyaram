@@ -12,7 +12,7 @@ export default function Vilcek() {
     <WebsiteCaseStudy
       slug="vilcek"
       title="Vilcek Foundation"
-      subtitle="A celebration of immigrants & the arts."
+      subtitle="A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand."
       year="2020"
       agency="ForumOne"
       gradientFrom="#5C4433"

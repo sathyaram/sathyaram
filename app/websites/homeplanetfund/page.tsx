@@ -12,7 +12,7 @@ export default function HomePlanetFund() {
     <WebsiteCaseStudy
       slug="homeplanetfund"
       title="Home Planet Fund"
-      subtitle="Patagonia's grassroots climate fund."
+      subtitle="Patagonia's grassroots climate fund, on a custom WordPress theme with grant and initiative archives its editors run themselves."
       year="2024"
       agency="Teal Media"
       gradientFrom="#8C382C"

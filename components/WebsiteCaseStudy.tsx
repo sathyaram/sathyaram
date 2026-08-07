@@ -18,6 +18,10 @@ type WebsiteCaseStudyProps = {
    *  at the bottom of the page. */
   slug: string;
   title: string;
+  /** The opening line under the title: who the client is, plus what the build
+   *  actually was. Its first clause is the same one-liner the project's
+   *  homepage card carries, so arriving here reads as a continuation of the
+   *  card rather than a restatement of it. */
   subtitle: string;
   year: string;
   agency: string;
@@ -80,7 +84,13 @@ export default function WebsiteCaseStudy({
               } as React.CSSProperties
             }
           />
-          <p className="mt-4 text-center text-lg text-muted transition-all duration-700">
+          {/* max-w-xl, not the wrapper's own max-w-3xl: this is a full
+              sentence now rather than the four-word label it used to be, and at
+              text-lg across 48rem it ran to a ~110-character measure — roughly
+              double what's comfortable to read, and wide enough that a centered
+              line has no discernible shape. text-balance keeps the two
+              resulting lines close to even instead of leaving a stub. */}
+          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-lg text-muted transition-all duration-700">
             {subtitle}
           </p>
         </ScrollGroup>
