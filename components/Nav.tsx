@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "./Logo";
+import SocialLinkRow from "./SocialLinkRow";
 import { MenuIcon, CloseIcon } from "./icons";
 import { contactLinks, socialLinks } from "@/lib/social";
 
@@ -212,7 +213,12 @@ export default function Nav() {
         // animation that ended.
         <div
           id="mobile-menu"
-          className={`mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center gap-12 bg-background/95 px-6 py-24 backdrop-blur-xl md:hidden ${
+          // overflow-y-auto and a py that shrinks on short viewports: the
+          // labelled social rows are much taller than the icon strip they
+          // replaced, and on a 667px phone the stack plus a fixed py-24 came to
+          // more than the viewport. justify-center still centres it whenever
+          // there IS room; the scroll only engages when there isn't.
+          className={`mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 overflow-y-auto bg-background/95 px-6 py-20 backdrop-blur-xl md:hidden ${
             closing ? "is-closing" : ""
           }`}
           onAnimationEnd={(e) => {
@@ -238,7 +244,13 @@ export default function Nav() {
                         link.href === "/#work" ? scrollToWork : closeMenu
                       }
                       aria-current={isActive ? "page" : undefined}
-                      className={`block px-4 py-2 font-display text-[2.5rem] font-bold leading-tight tracking-[-0.03em] transition-colors active:opacity-70 ${
+                      // .mobile-nav-link carries the same sweep-through rule
+                      // the desktop links use, scaled up and reduced to a
+                      // single underline — two hairlines bracketing 40px type
+                      // reads as a box. :active is in the selector alongside
+                      // :hover so a tap shows it too, since a touch device
+                      // never fires the hover half.
+                      className={`mobile-nav-link block px-4 py-2 font-display text-[2.5rem] font-bold leading-tight tracking-[-0.03em] transition-colors hover:text-foreground ${
                         isActive ? "text-foreground" : "text-muted"
                       }`}
                     >
@@ -251,32 +263,36 @@ export default function Nav() {
           </nav>
 
           {/* These live in the footer too, but that's a long scroll away on
-              mobile — surface them here. Contact and profiles keep their own
-              rows, same split as the footer. Each row carries on the same
-              stagger the links started, picking up where they left off. */}
-          <div className="flex flex-col items-center gap-6">
-            {[contactLinks, socialLinks].map((group, i) => (
-              <div
-                key={i}
-                className="mobile-menu-item flex items-center gap-7"
-                style={{ animationDelay: `${100 + (links.length + i) * 70}ms` }}
-              >
-                {group.map(({ label, href, icon: Icon, compact }) => {
-                  const external = !href.startsWith("mailto:");
-                  return (
-                    <a
-                      key={label}
-                      href={href}
-                      target={external ? "_blank" : undefined}
-                      rel={external ? "noopener noreferrer" : undefined}
-                      aria-label={label}
-                      onClick={closeMenu}
-                      className="text-foreground transition-opacity hover:opacity-80"
-                    >
-                      <Icon className={compact ? "h-6 w-6" : "h-7 w-7"} />
-                    </a>
-                  );
-                })}
+              mobile — surface them here, as the same labelled rows rather than
+              a strip of bare glyphs: an icon alone asks you to recognise a
+              brand mark, and "Resume" has no mark to recognise. Contact and
+              profiles keep their own groups, same split as the footer.
+
+              One column, left-aligned inside a block that's centred as a
+              whole (w-fit + mx-auto), so the icons line up in a column and the
+              labels share a left edge — centring each row independently would
+              leave both ragged. Every row continues the same stagger the nav
+              links started, picking up where they left off. */}
+          <div className="mx-auto flex w-fit flex-col gap-5">
+            {[contactLinks, socialLinks].map((group, groupIndex) => (
+              <div key={groupIndex} className="flex flex-col gap-3">
+                {group.map((item, i) => (
+                  <SocialLinkRow
+                    key={item.label}
+                    {...item}
+                    onClick={closeMenu}
+                    className="mobile-menu-item"
+                    style={{
+                      animationDelay: `${
+                        100 +
+                        (links.length +
+                          groupIndex * contactLinks.length +
+                          i) *
+                          70
+                      }ms`,
+                    }}
+                  />
+                ))}
               </div>
             ))}
           </div>

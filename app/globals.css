@@ -208,6 +208,49 @@ body {
   animation: mobile-menu-item-rise 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/*
+ * Menu links get the same sweep-through underline as the desktop nav (see
+ * .nav-link for how the flipped transform-origin makes the line exit the far
+ * end instead of reversing out). Just the one rule here rather than the
+ * bracketing pair: at 40px the two hairlines sat far enough apart to read as a
+ * box around the word.
+ *
+ * Inset to match the link's own px-4 so the rule spans the text rather than
+ * the padding, and 2px tall so it holds its weight under display type.
+ */
+.mobile-nav-link {
+  position: relative;
+}
+
+.mobile-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 250ms ease;
+}
+
+/* :active as well as :hover — a touch device never fires the hover half, so
+   without it the effect simply wouldn't exist on the one layout that is
+   touch-only. */
+.mobile-nav-link:hover::after,
+.mobile-nav-link:active::after,
+.mobile-nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-link::after {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* Collapsed to a single frame rather than `animation: none`, which would be
      the usual move here: the panel unmounts on its own animationend, and an
@@ -265,37 +308,55 @@ body {
   padding-block: 0.25rem;
 }
 
+/*
+ * Each rule sweeps THROUGH rather than retracting: it enters from one end on
+ * hover and, on leave, keeps travelling the same way and exits out the far
+ * end. That's the whole reason these animate scaleX against a flipped
+ * transform-origin instead of animating an inset the way they used to —
+ * animating `left`/`right` can only ever run the entrance backwards, so the
+ * line reversed out the side it came in.
+ *
+ * The trick is that the origin belongs to the state, not the element. Growing
+ * from one origin and shrinking toward the OTHER means the moving edge carries
+ * on in the same direction across both halves of the interaction.
+ *
+ * The two rules mirror each other, so the pair reads as the word being
+ * bracketed: the top one runs right-to-left, the bottom one left-to-right.
+ */
 .nav-link::before,
 .nav-link::after {
   content: "";
   position: absolute;
+  left: 0;
+  right: 0;
   height: 1px;
   background-color: currentColor;
+  transform: scaleX(0);
+  transition: transform 200ms ease;
 }
 
-/* Top rule draws right to left, bottom rule left to right. */
+/* Resting origins — the end each rule collapses toward on the way out. */
 .nav-link::before {
   top: -2px;
-  right: 0;
-  left: 100%;
-  transition: left 200ms ease;
+  transform-origin: left center;
 }
 
 .nav-link::after {
   bottom: -2px;
-  left: 0;
-  right: 100%;
-  transition: right 200ms ease;
+  transform-origin: right center;
 }
 
+/* ...and the opposite end on the way in. */
 .nav-link:hover::before,
 .nav-link[aria-current="page"]::before {
-  left: 0;
+  transform: scaleX(1);
+  transform-origin: right center;
 }
 
 .nav-link:hover::after,
 .nav-link[aria-current="page"]::after {
-  right: 0;
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -420,7 +481,16 @@ body {
  * that's what keeps the pan looking like one continuous gradient instead
  * of a flicker per letter.
  */
-.dark .gradient-text-name {
+/*
+ * .gradient-text-brand is the same effect, minus the dark-mode gate. The gate
+ * exists for the HERO name, whose palette is fixed and light enough that it
+ * disappears into the beige background; a case-study title runs on that
+ * project's own brand colours, which were picked to hold up on its card, so it
+ * keeps the gradient in both themes. Case-study titles carry both classes —
+ * the declarations are identical, so the overlap in dark mode is a no-op.
+ */
+.dark .gradient-text-name,
+.gradient-text-brand {
   /* Defaults to the hero name's palette; case-study titles override
      --name-gradient per instance (see WebsiteCaseStudy.tsx) to use that
      project's own brand colors instead. */
@@ -445,7 +515,8 @@ body {
    back to the default per-element gradient, which scrolls smoothly. Section
    headings are single elements, so they look continuous either way. */
 @media (hover: hover) and (pointer: fine) {
-  .dark .gradient-text-name {
+  .dark .gradient-text-name,
+  .gradient-text-brand {
     background-attachment: fixed;
   }
 }
@@ -453,7 +524,8 @@ body {
 /* Letters that are both the rise-in stagger AND the gradient sweep (the
    hero name) need both animations listed together in one longhand set, so
    neither clobbers the other. */
-.dark .reveal-letter.gradient-text-name {
+.dark .reveal-letter.gradient-text-name,
+.reveal-letter.gradient-text-brand {
   animation-name: letter-rise, gradient-pan;
   animation-duration: 650ms, 8s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
@@ -475,7 +547,9 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .gradient-text-name,
-  .reveal-letter.gradient-text-name {
+  .gradient-text-brand,
+  .reveal-letter.gradient-text-name,
+  .reveal-letter.gradient-text-brand {
     animation: none;
   }
 }

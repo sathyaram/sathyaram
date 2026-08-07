@@ -76,7 +76,12 @@ export default function WebsiteCaseStudy({
           </p>
           <Reveal
             as="h1"
-            segments={[{ text: title, className: "gradient-text-name" }]}
+            // gradient-text-brand is what keeps the gradient in light mode —
+            // see the pair of rules in globals.css for why the hero name
+            // doesn't get the same treatment.
+            segments={[
+              { text: title, className: "gradient-text-name gradient-text-brand" },
+            ]}
             className="mt-2 block text-center font-display font-bold leading-[1.05] tracking-[-0.035em] text-logo-blue text-[clamp(2.5rem,7.4vw,5.75rem)] transition-all duration-700"
             style={
               {
@@ -84,13 +89,15 @@ export default function WebsiteCaseStudy({
               } as React.CSSProperties
             }
           />
-          {/* max-w-xl, not the wrapper's own max-w-3xl: this is a full
-              sentence now rather than the four-word label it used to be, and at
-              text-lg across 48rem it ran to a ~110-character measure — roughly
-              double what's comfortable to read, and wide enough that a centered
-              line has no discernible shape. text-balance keeps the two
-              resulting lines close to even instead of leaving a stub. */}
-          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-lg text-muted transition-all duration-700">
+          {/* max-w-2xl, not the wrapper's own max-w-3xl: this is a full
+              sentence rather than the four-word label it used to be, and at
+              text-lg across 48rem it ran to a ~110-character measure — well
+              past what's comfortable to read, and wide enough that a centered
+              line has no discernible shape. 42rem lands around 75 characters,
+              the top of the usual range, which is what stops these from
+              spilling onto a third line. text-balance keeps the lines close to
+              even instead of leaving a stub. */}
+          <p className="mx-auto mt-4 max-w-2xl text-balance text-center text-lg text-muted transition-all duration-700">
             {subtitle}
           </p>
         </ScrollGroup>
@@ -113,7 +120,10 @@ export default function WebsiteCaseStudy({
               // gap-4 is what actually keeps the url text clear of the
               // pill: real flex spacing scales with however wide "https"
               // renders, unlike a padding value tuned by eye for one string.
-              className="group relative inline-flex items-center gap-4 rounded-2xl py-4 pl-6 pr-7 shadow-lg transition-transform duration-300 hover:-translate-y-1"
+              // No hover lift: the left-to-right wipe below is the hover
+              // response, and a simultaneous jump up competed with it for the
+              // same moment rather than adding to it.
+              className="group relative inline-flex items-center gap-4 rounded-2xl py-4 pl-6 pr-7 shadow-lg"
             >
               {/* Base gradient layer and the hover wipe are separate
                   stacked layers (not a background swap) so the wipe can

@@ -475,16 +475,34 @@ export default function Home() {
           </p>
           {/* The button sits in a wrapper rather than being the stagger
               target itself: the reveal wants duration-700 to match its
-              siblings, but the hover lift wants to stay snappy at 300ms,
-              and one element can't carry both on `transition-all`. The
-              wrapper reveals, the Link keeps its own hover timing. */}
+              siblings, but the hover wipe runs on its own clock, and one
+              element can't carry both on `transition-all`. The wrapper
+              reveals, the Link keeps its own hover timing. */}
           <div className="mt-6 transition-all duration-700">
+            {/* Same left-to-right wipe as the case studies' "visit the site"
+                buttons: two stacked layers rather than a background swap, so
+                the fill slides in from one edge instead of cross-fading.
+                Revealed with clip-path, not a scaleX transform — scaling the
+                box stretches its already-computed border-radius along with it
+                and the pill's ends warp into ellipses mid-transition, whereas
+                clip-path just masks a static, correctly-rounded box.
+
+                Accent is what wipes in because it's the one colour that works
+                against `text-background` in BOTH themes: near-black text on
+                mint in dark mode, beige text on deep green in light. */}
             <Link
               href="/contact"
-              className="inline-block rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
-              style={{ transitionTimingFunction: SPRING }}
+              className="group relative inline-block rounded-full px-8 py-3.5 text-sm font-medium text-background"
             >
-              Get in Touch
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full bg-foreground"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full bg-accent transition-[clip-path] duration-500 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)]"
+              />
+              <span className="relative">Get in Touch</span>
             </Link>
           </div>
         </ScrollGroup>
