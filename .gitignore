@@ -46,6 +46,9 @@ yarn-error.log*
 next-env.d.ts
 
 # AI assistant instructions — useful locally, but dev tooling notes rather
-# than project docs, so kept out of the public repo.
+# than project docs, so kept out of the public repo. .claude/ is the same
+# category: a personal permission allowlist plus the local dev-server config
+# used to preview the site, neither of which the site itself needs to build.
 AGENTS.md
 CLAUDE.md
+.claude/
