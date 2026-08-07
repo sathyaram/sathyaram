@@ -12,7 +12,16 @@
   color-scheme: light;
   --background: #ede7de;
   --foreground: #171412;
-  --accent: #1f4d3f;
+  /* The brand blue, not a second hue: the accent used to be a deep green
+     carried over from the reference site this build borrowed its motion ideas
+     from, which made it the only colour on the page not drawn from the logo.
+     Deliberately a darker blue than --logo-blue (#2e75d6) rather than the same
+     value — accent lands on small text (link hovers, the prev/next titles, the
+     CTA label) where 4.5:1 applies, and #2e75d6 only reaches 3.69:1 on this
+     background. #0059bc is already the logo gradient's deep stop and clears it
+     at 5.42:1. --logo-blue stays as it is; it only ever sizes up to display
+     type, where 3:1 is the bar. */
+  --accent: #0059bc;
   /* #6b6b6b sat at 4.4:1 on the beige bg — just under WCAG AA (4.5:1)
      for normal-size text (nav links, blurbs). Nudged to #616161 (~5:1)
      to clear it with margin; the visual change is negligible. */
@@ -30,7 +39,10 @@
   color-scheme: dark;
   --background: #0b0f1a;
   --foreground: #f2f0ec;
-  --accent: #8fd9c4;
+  /* Same value as this theme's --logo-blue: against the near-black background
+     the light cyan clears everything comfortably (11.5:1), so unlike light
+     mode there's no reason for the accent to diverge from the brand blue. */
+  --accent: #70d5ff;
   --muted: #9a9a9a;
   --border: #23283a;
   /* The logo gradient's light-cyan stop — pops against the near-black bg. */

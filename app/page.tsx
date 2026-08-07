@@ -489,7 +489,7 @@ export default function Home() {
 
                 Accent is what wipes in because it's the one colour that works
                 against `text-background` in BOTH themes: near-black text on
-                mint in dark mode, beige text on deep green in light. */}
+                light cyan in dark mode, beige text on deep blue in light. */}
             <Link
               href="/contact"
               className="group relative inline-block rounded-full px-8 py-3.5 text-sm font-medium text-background"
