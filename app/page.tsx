@@ -53,9 +53,9 @@ const services = [
 const featured = [
   {
     slug: "brookings",
-    title: "The Brookings Institute",
+    title: "The Brookings Institution",
     year: "2024",
-    blurb: "A mission-driven think tank.",
+    blurb: "Nonpartisan research for decisionmakers.",
     from: "#022A4E",
     to: "#00649F",
     span: "sm:col-span-2",
@@ -75,7 +75,7 @@ const featured = [
   },
   {
     slug: "vilcek",
-    title: "Vilcek Foundation",
+    title: "The Vilcek Foundation",
     year: "2020",
     blurb: "A celebration of immigrants & the arts.",
     from: "#5C4433",

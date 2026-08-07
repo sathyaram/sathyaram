@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Vilcek Foundation",
+  title: "The Vilcek Foundation",
   description:
     "Front-end development for the Vilcek Foundation: flexible honoree profiles and filterable award archives for a foundation celebrating immigrant achievement in the arts and sciences.",
 };
@@ -11,7 +11,7 @@ export default function Vilcek() {
   return (
     <WebsiteCaseStudy
       slug="vilcek"
-      title="Vilcek Foundation"
+      title="The Vilcek Foundation"
       subtitle="A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand."
       year="2020"
       agency="ForumOne"

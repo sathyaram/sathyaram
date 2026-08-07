@@ -4,9 +4,9 @@
 // finished case study), so it shouldn't surface via prev/next cycling when
 // nothing else on the site links to it.
 export const projectOrder = [
-  { slug: "brookings", title: "The Brookings Institute" },
+  { slug: "brookings", title: "The Brookings Institution" },
   { slug: "homeplanetfund", title: "Home Planet Fund" },
-  { slug: "vilcek", title: "Vilcek Foundation" },
+  { slug: "vilcek", title: "The Vilcek Foundation" },
   { slug: "sontag", title: "The Sontag Foundation" },
 ];
 

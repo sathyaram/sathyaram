@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
 
 export const metadata: Metadata = {
-  title: "The Brookings Institute",
+  title: "The Brookings Institution",
   description:
     "Front-end development for the Brookings Institution with Teal Media: reusable WordPress templates and a debounced research-library filter for a high-volume public policy publisher.",
 };
@@ -11,8 +11,8 @@ export default function Brookings() {
   return (
     <WebsiteCaseStudy
       slug="brookings"
-      title="The Brookings Institute"
-      subtitle="A mission-driven think tank, built on reusable WordPress templates and a research library that filters as you type."
+      title="The Brookings Institution"
+      subtitle="Nonpartisan research for decisionmakers, built on reusable WordPress templates and an archive that filters as you type."
       year="2024"
       agency="Teal Media"
       gradientFrom="#022A4E"
