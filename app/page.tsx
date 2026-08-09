@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 import Sparkle from "@/components/Sparkle";
 import PanoramaSlider from "@/components/PanoramaSlider";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
 import HeadingGlow from "@/components/HeadingGlow";
-import { SPRING } from "@/lib/site";
+import WorkCard from "@/components/WorkCard";
+import { projectOrder } from "@/lib/projects";
 
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,
@@ -320,107 +320,48 @@ export default function Home() {
 
         <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
         {featured.map((project) => (
-          <Link
+          <WorkCard
             key={project.slug}
             href={`/websites/${project.slug}`}
-            style={{ transitionTimingFunction: SPRING }}
-            className={`group relative min-h-[22rem] overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:min-h-[28rem] sm:rounded-[4rem] sm:p-12 ${project.span}`}
-          >
-            {/* The brand fill lives on its own layer so hover can dissolve it,
-                leaving just the outline with the starfield showing through. */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-              style={{
-                background: `linear-gradient(135deg, ${project.from} 0%, ${project.to} 100%)`,
-              }}
-            />
+            {...project}
+          />
+        ))}
+        </ScrollGroup>
+      </section>
 
-            {/* ...and the same gradient takes over as the outline. */}
-            <div
-              aria-hidden="true"
-              className="gradient-ring pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={
-                {
-                  "--ring-from": project.from,
-                  "--ring-to": project.to,
-                } as React.CSSProperties
-              }
-            />
+      {/* ---------- Projects: the same grid, self-initiated work ---------- */}
+      {/*
+        Deliberately identical to Featured Work rather than differentiated —
+        same card, same span rhythm, same sizes. The distinction between the
+        two sections is what's IN them (client briefs vs things nobody asked
+        for), and the headings already say that; giving Projects its own card
+        treatment would have implied a difference in status rather than in
+        origin.
 
-            {/* A single object standing in for each client, sitting on the
-                bottom edge of the card. object-contain (not cover) and no
-                clipping frame, so the whole thing is visible and never
-                cropped or stretched — these are transparent cut-outs meant
-                to float on the gradient, not photos in a window. */}
-            <div
-              // Centred horizontally via inset-x-0 + mx-auto rather than a
-              // translate, so it doesn't fight the hover lift below.
-              // The source art is trimmed to its own edges (no transparent
-              // padding), so this offset moves the object itself rather than
-              // an empty box — it hangs past the card's bottom edge and gets
-              // clipped there, so it reads as tucked in behind it.
-              className="pointer-events-none absolute inset-x-0 -bottom-[50px] mx-auto h-[58%] w-[58%] transition-transform duration-500 group-hover:-translate-y-2"
-              style={{ transitionTimingFunction: SPRING }}
-            >
-              <Image
-                src={project.image}
-                alt=""
-                aria-hidden="true"
-                fill
-                sizes="(min-width: 640px) 30vw, 58vw"
-                // Scaled per-project so each object reads at the right size
-                // on its card — a jug and a brain don't fill the same frame
-                // at the same scale. Tailwind's arbitrary-value classes have
-                // to be static strings, so the number comes in via a CSS var
-                // instead of being interpolated into the class name. Grown
-                // from the bottom edge (origin-bottom) so it stays planted
-                // there instead of drifting off the card as it enlarges;
-                // the hover bump stays proportional to the base scale.
-                className="origin-bottom scale-[var(--img-scale)] object-contain object-bottom transition-transform duration-500 group-hover:scale-[calc(var(--img-scale)*1.05)]"
-                style={
-                  {
-                    transitionTimingFunction: SPRING,
-                    "--img-scale": project.imageScale,
-                  } as React.CSSProperties
-                }
-              />
-            </div>
+        Data comes from lib/projects.ts rather than a local array like
+        `featured` above, because the prev/next links and the sitemap read the
+        same list — see the note there.
+      */}
+      <section id="projects" className="mx-auto mt-28 max-w-[1600px] scroll-mt-28 sm:mt-36">
+        <ScrollGroup className="mb-10 text-center">
+          <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
+            <span className="heading-glow" data-glow-heading>
+              Projects
+            </span>
+          </h2>
+        </ScrollGroup>
 
-            <Sparkle className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10" />
-
-            <div className="relative">
-              <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-500 group-hover:text-foreground/60">
-                {project.year}
-              </p>
-              <Reveal
-                as="h3"
-                // One shared viewport-based size across every card, so the
-                // titles all read at the same scale regardless of how wide
-                // their grid column is. (An earlier cqw version sized off
-                // each card's own width, which made the narrow cards'
-                // titles noticeably smaller.) Long titles wrap onto another
-                // line rather than shrinking to fit.
-                //
-                // Light mode: once the fill dissolves on hover, white text
-                // would sit straight on the beige page background with
-                // barely any contrast, so it swaps to the theme foreground
-                // colour instead (near-black in light mode, still
-                // effectively white in dark mode).
-                className="mt-2 block font-display font-bold leading-[1.05] text-white transition-colors duration-500 group-hover:text-foreground text-[clamp(1.75rem,3vw,2.5rem)]"
-                text={project.title}
-              />
-              {/* Deliberately one line: enough for a visitor to know what the
-                  client is before clicking, short enough that four cards on a
-                  screen still read as four objects rather than four paragraphs.
-                  The build detail is on the case study, under its title. Same
-                  string as that page's own opening line, so a card can't drift
-                  from the page it links to. */}
-              <p className="card-blurb mt-3 max-w-md text-sm text-white/75 transition-colors duration-500 group-hover:text-foreground/75">
-                {project.blurb}
-              </p>
-            </div>
-          </Link>
+        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
+        {projectOrder.map((project) => (
+          <WorkCard
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            // Shorter than the website cards, which are tall to leave room for
+            // the cut-out artwork in their lower two-thirds. These have no
+            // artwork, so that space was just void under the blurb.
+            heightClass="min-h-[13rem] sm:min-h-[16rem]"
+            {...project}
+          />
         ))}
         </ScrollGroup>
       </section>

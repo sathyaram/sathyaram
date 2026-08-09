@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "HHMI BioInteractive",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function Biointeractive() {
   return (
-    <WebsiteCaseStudy
+    <CaseStudy
+      section="websites"
       slug="biointeractive"
       title="HHMI BioInteractive"
       subtitle="Netflixing science, for kids."

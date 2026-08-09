@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "The Vilcek Foundation",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function Vilcek() {
   return (
-    <WebsiteCaseStudy
+    <CaseStudy
+      section="websites"
       slug="vilcek"
       title="The Vilcek Foundation"
       subtitle="A celebration of immigrants & the arts, with flexible honoree profiles and award archives that filter on demand."

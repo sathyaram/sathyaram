@@ -4,6 +4,7 @@ import ScrollGroup from "./ScrollGroup";
 import BrowserMockup from "./BrowserMockup";
 import CodeBlock, { type CodeLine } from "./CodeBlock";
 import { getAdjacentProjects } from "@/lib/projects";
+import { getAdjacentWebsites } from "@/lib/websites";
 
 type Stat = { label: string; value: string };
 
@@ -13,9 +14,12 @@ type Stat = { label: string; value: string };
  *  another bullet. */
 type Highlight = { title: string; body: string };
 
-type WebsiteCaseStudyProps = {
-  /** Matches the entry in lib/projects.ts — drives the Next/Previous links
-   *  at the bottom of the page. */
+type CaseStudyProps = {
+  /** Which collection this belongs to — picks the list the Next/Previous
+   *  links cycle through, and the route they point at. */
+  section: "websites" | "projects";
+  /** Matches the entry in that section's lib/ list — drives the
+   *  Next/Previous links at the bottom of the page. */
   slug: string;
   title: string;
   /** The opening line under the title: who the client is, plus what the build
@@ -24,13 +28,18 @@ type WebsiteCaseStudyProps = {
    *  card rather than a restatement of it. */
   subtitle: string;
   year: string;
-  agency: string;
+  /** Who the work was for. Omitted on self-initiated projects, where the
+   *  kicker falls back to the year alone rather than inventing a client. */
+  agency?: string;
   /** The project's two-stop brand gradient, matching its homepage card
    *  (see `featured` in app/page.tsx) — used behind the title text. */
   gradientFrom: string;
   gradientTo: string;
-  url: string;
-  link: string;
+  /** The live site, as a bare domain plus its full URL. Both optional
+   *  together: the projects aren't deployed anywhere yet, and a button
+   *  pointing at nothing is worse than no button. */
+  url?: string;
+  link?: string;
   description: string;
   /** Screenshot shown inside the browser chrome. Optional: the mockup is
    *  simply skipped until a real screenshot exists for the project, so
@@ -42,11 +51,14 @@ type WebsiteCaseStudyProps = {
   /** Optional named build details, rendered between "What I built" and the
    *  code sample. */
   highlights?: Highlight[];
-  codeFilename: string;
-  codeLines: CodeLine[];
+  /** Optional together — a project without a code sample worth showing just
+   *  ends after its highlights rather than padding one out. */
+  codeFilename?: string;
+  codeLines?: CodeLine[];
 };
 
-export default function WebsiteCaseStudy({
+export default function CaseStudy({
+  section,
   slug,
   title,
   subtitle,
@@ -64,15 +76,16 @@ export default function WebsiteCaseStudy({
   highlights,
   codeFilename,
   codeLines,
-}: WebsiteCaseStudyProps) {
-  const { previous, next } = getAdjacentProjects(slug);
+}: CaseStudyProps) {
+  const { previous, next } =
+    section === "projects" ? getAdjacentProjects(slug) : getAdjacentWebsites(slug);
 
   return (
     <div className="px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl">
         <ScrollGroup>
           <p className="text-center text-xs font-medium uppercase tracking-widest text-muted transition-all duration-700">
-            {agency} · {year}
+            {agency ? `${agency} · ${year}` : year}
           </p>
           <Reveal
             as="h1"
@@ -102,6 +115,7 @@ export default function WebsiteCaseStudy({
           </p>
         </ScrollGroup>
 
+        {url && link && (
         <ScrollGroup>
           <div className="mt-8 flex flex-col items-center gap-3 transition-all duration-700">
             <a
@@ -177,9 +191,13 @@ export default function WebsiteCaseStudy({
             </a>
           </div>
         </ScrollGroup>
+        )}
 
-        {/* Timeline / Role / Stack — same "stat row under the title" beat
-            as the reference case studies this layout is inspired by. */}
+        {/* Three stats under the title — Timeline / Role / Stack on client
+            work, Stack / Type / Year on the self-initiated projects, where a
+            timeline and a role would both be fiction. The row is driven
+            entirely by the `stats` array, so it needed no change to serve
+            both. */}
         <ScrollGroup>
           <div className="mt-10 grid grid-cols-3 gap-4 border-y border-border py-6 transition-all duration-700">
             {stats.map((stat) => (
@@ -195,7 +213,12 @@ export default function WebsiteCaseStudy({
           </div>
         </ScrollGroup>
 
-        {image && (
+        {/* The mockup is a browser frame, so it needs an address to put in the
+            bar — hence both, not just the screenshot. A project with a
+            screenshot but nowhere to point it at would render a browser
+            showing a blank URL, which reads as a bug rather than as a
+            deliberate omission. */}
+        {image && url && (
           <ScrollGroup>
             <div className="mt-10 transition-all duration-700">
               <BrowserMockup
@@ -252,11 +275,13 @@ export default function WebsiteCaseStudy({
           </ScrollGroup>
         ))}
 
-        <ScrollGroup>
-          <div className="mt-14 mb-4 transition-all duration-700">
-            <CodeBlock filename={codeFilename} lines={codeLines} />
-          </div>
-        </ScrollGroup>
+        {codeFilename && codeLines && (
+          <ScrollGroup>
+            <div className="mt-14 mb-4 transition-all duration-700">
+              <CodeBlock filename={codeFilename} lines={codeLines} />
+            </div>
+          </ScrollGroup>
+        )}
 
         {/* Previously a dead end — landing on a case study meant either
             hitting the browser back button or hunting for the nav. This
@@ -268,7 +293,7 @@ export default function WebsiteCaseStudy({
               className="grid grid-cols-2 gap-4 border-t border-border pt-8 transition-all duration-700"
             >
               <Link
-                href={`/websites/${previous.slug}`}
+                href={`/${section}/${previous.slug}`}
                 className="group rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
               >
                 <p className="text-xs font-medium uppercase tracking-widest text-muted">
@@ -279,7 +304,7 @@ export default function WebsiteCaseStudy({
                 </p>
               </Link>
               <Link
-                href={`/websites/${next.slug}`}
+                href={`/${section}/${next.slug}`}
                 className="group rounded-2xl border border-border p-5 text-right transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
               >
                 <p className="text-xs font-medium uppercase tracking-widest text-muted">

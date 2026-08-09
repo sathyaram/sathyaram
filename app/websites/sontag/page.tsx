@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "The Sontag Foundation",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function Sontag() {
   return (
-    <WebsiteCaseStudy
+    <CaseStudy
+      section="websites"
       slug="sontag"
       title="The Sontag Foundation"
       subtitle="The definitive enterprise for brain cancer research, with accessible fellowship templates and grant guidelines built to be scanned."

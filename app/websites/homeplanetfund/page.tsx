@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "Home Planet Fund",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function HomePlanetFund() {
   return (
-    <WebsiteCaseStudy
+    <CaseStudy
+      section="websites"
       slug="homeplanetfund"
       title="Home Planet Fund"
       subtitle="Patagonia's grassroots climate fund, on a custom WordPress theme with grant and initiative archives its editors run themselves."

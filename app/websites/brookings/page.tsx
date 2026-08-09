@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WebsiteCaseStudy from "@/components/WebsiteCaseStudy";
+import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
   title: "The Brookings Institution",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function Brookings() {
   return (
-    <WebsiteCaseStudy
+    <CaseStudy
+      section="websites"
       slug="brookings"
       title="The Brookings Institution"
       subtitle="Nonpartisan research for decisionmakers, built on reusable WordPress templates and an archive that filters as you type."
