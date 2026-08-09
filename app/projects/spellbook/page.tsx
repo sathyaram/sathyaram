@@ -4,7 +4,7 @@ import CaseStudy from "@/components/CaseStudy";
 export const metadata: Metadata = {
   title: "Harry Potter Spellbook",
   description:
-    "A fan-made grimoire: ninety-two spells with incantations, plus wand-gesture practice, spell effects and an ambient score. Built with Next.js and Tailwind.",
+    "A fan-made grimoire: eighty-eight spells with incantations, plus wand-gesture practice, spell effects and an ambient score. Built with Next.js and Tailwind.",
 };
 
 export default function Spellbook() {
@@ -13,22 +13,27 @@ export default function Spellbook() {
       section="projects"
       slug="spellbook"
       title="Harry Potter Spellbook"
-      subtitle="A fan-made grimoire of ninety-two spells, with a wand you can actually practise the gestures on."
+      subtitle="A fan-made grimoire of eighty-eight spells, with a wand you can actually practise the gestures on."
       year="2026"
       gradientFrom="#05060c"
       gradientTo="#c39a2e"
-      description="A reference for ninety-two spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practise, scored against the movement it expects."
+      // Hosted here rather than on its own domain. The live route uses the
+      // app's full name rather than this page's shorter slug — see the note on
+      // EMBEDDED_APPS in next.config.ts.
+      url="sathyaram.com/harrypotterspellbook"
+      link="/harrypotterspellbook"
+      description="A reference for eighty-eight spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practise, scored against the movement it expects."
       stats={[
         { label: "Stack", value: "Next.js · Canvas · Tailwind" },
-        { label: "Spells", value: "92" },
+        { label: "Spells", value: "88" },
         { label: "Year", value: "2026" },
       ]}
       overview={[
-        "It began as a straightforward reference — ninety-two spells, their incantations, and what each one does. That part is a data problem, and it was finished quickly.",
+        "It began as a straightforward reference — eighty-eight spells, their incantations, and what each one does. That part is a data problem, and it was finished quickly.",
         "The interesting half is the practice mode. Every spell carries a wand gesture, and the app scores how closely you trace it, which turns a lookup table into something you interact with. The night sky, the ambient score, and the spell effects exist to make that feel like the right setting for it rather than a form with a canvas in it.",
       ]}
       contributions={[
-        "Modelled ninety-two spells as structured data — incantation, effect, and the gesture each one expects",
+        "Modelled eighty-eight spells as structured data — incantation, effect, and the gesture each one expects",
         "Built the gesture practice overlay, scoring a traced wand movement against the target path",
         "Wrote the per-spell effect layer so casting resolves into something visible",
         "Added the ambient score and animated night sky that set the scene without stealing from it",

@@ -60,7 +60,7 @@ export const projectOrder: Project[] = [
     title: "Harry Potter Spellbook",
     year: "2026",
     tech: "Next.js",
-    blurb: "Ninety-two spells, and a wand to practise them.",
+    blurb: "Eighty-eight spells, and a wand to practise them.",
     // Deliberately stops at the deep gold rather than running on to the
     // parchment tones further up its palette: those measure ~1.2:1 on the
     // light-mode background, the same trap the Vilcek card's light stop falls

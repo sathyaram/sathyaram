@@ -35,7 +35,11 @@ const DESIGN_PAGES = [
 // Listed here rather than inferred from the directory because next.config runs
 // before the filesystem is a safe thing to read at build time on Vercel, and
 // because an explicit list is what makes it obvious why /springtuner works.
-const EMBEDDED_APPS = ["springtuner"];
+// Note these are the APPS' own names, which don't all match the slug of the
+// case study describing them — the spellbook is written up at
+// /projects/spellbook but lives at /harrypotterspellbook, because the route is
+// the thing being linked around and the longer name is the recognisable one.
+const EMBEDDED_APPS = ["springtuner", "harrypotterspellbook"];
 
 const nextConfig: NextConfig = {
   async rewrites() {
