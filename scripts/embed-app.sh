@@ -54,4 +54,38 @@ rm -rf "$DEST"
 mkdir -p "$DEST"
 rsync -a "$SRC/out/" "$DEST/"
 
-echo "==> done: $(du -sh "$DEST" | cut -f1) at /$SLUG"
+# Record which commit this copy was built from. The app repos live outside this
+# one, so nothing here would otherwise know that a copy has fallen behind its
+# source — the site would just quietly keep serving an old build. This is what
+# scripts/check-embeds.sh compares against.
+COMMIT="$(git -C "$SRC" rev-parse HEAD 2>/dev/null || echo unknown)"
+SUBJECT="$(git -C "$SRC" log -1 --format=%s 2>/dev/null || echo unknown)"
+DIRTY="$(test -n "$(git -C "$SRC" status --porcelain 2>/dev/null)" && echo true || echo false)"
+
+node -e '
+  const fs = require("fs");
+  const [slug, src, commit, subject, dirty, size] = process.argv.slice(1);
+  const path = "embedded.json";
+  const manifest = fs.existsSync(path) ? JSON.parse(fs.readFileSync(path, "utf8")) : {};
+  manifest[slug] = {
+    source: src,
+    commit,
+    subject,
+    // True when the build included edits that were not committed in the source
+    // repo — the recorded commit alone does not then describe what is serving.
+    builtFromDirtyTree: dirty === "true",
+    embeddedAt: new Date().toISOString(),
+    size,
+  };
+  // Rebuild in key order rather than passing a sorted key array as the
+  // replacer — an array replacer is a property WHITELIST, which silently
+  // filters out every nested field and writes `{}` per app.
+  const sorted = Object.fromEntries(Object.keys(manifest).sort().map((k) => [k, manifest[k]]));
+  fs.writeFileSync(path, JSON.stringify(sorted, null, 2) + "\n");
+' "$SLUG" "$SRC" "$COMMIT" "$SUBJECT" "$DIRTY" "$(du -sh "$DEST" | cut -f1 | tr -d ' ')"
+
+echo "==> done: $(du -sh "$DEST" | cut -f1) at /$SLUG (from ${COMMIT:0:7})"
+if [ "$DIRTY" = "true" ]; then
+  echo "    note: $SRC had uncommitted changes, so this build includes work that" >&2
+  echo "          isn't in ${COMMIT:0:7}. Commit there for the record to be accurate." >&2
+fi

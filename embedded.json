@@ -1,0 +1,18 @@
+{
+  "harrypotterspellbook": {
+    "source": "../harrypotterspellbook",
+    "commit": "e40bb2de61a55841d06a4ed3997c47ba941ab60e",
+    "subject": "Support embedding: static export with an env-driven base path",
+    "builtFromDirtyTree": false,
+    "embeddedAt": "2026-08-09T23:39:54.937Z",
+    "size": "2.8M"
+  },
+  "springtuner": {
+    "source": "../springtuner",
+    "commit": "09da7d7ce08daa62b822c0ab112ddceec9df3236",
+    "subject": "Support embedding: static export with an env-driven base path",
+    "builtFromDirtyTree": true,
+    "embeddedAt": "2026-08-09T23:39:54.867Z",
+    "size": "824K"
+  }
+}

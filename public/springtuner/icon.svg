@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!--
+    The curve is a real spring: the same closed-form damped-oscillator solution
+    the app uses, at damping ratio 0.38, simplified to 20 points. The overshoot
+    above the dashed resting line is the whole idea of the tool, and it is the
+    one feature still legible at 16px.
+  -->
+  <rect width="64" height="64" rx="14" fill="#0b0e14" />
+  <line x1="9" y1="19.8" x2="55" y2="19.8" stroke="#31465c" stroke-width="2.5"
+        stroke-linecap="round" stroke-dasharray="4 5" />
+  <path
+    d="M7 52 L7.8 50.9 L8.3 49.5 L9.1 45.8 L9.9 40.9 L12.4 25.1 L13.7 18.6 L14.9 14.1 L15.8 12.2 L16.6 11.2 L17.4 11 L18.7 11.8 L23.7 19.9 L24.9 21.2 L26.6 22.1 L28.7 22.1 L34.1 19.8 L37 19.2 L46.6 20 L57 19.8"
+    fill="none" stroke="#7dd3fc" stroke-width="7"
+    stroke-linecap="round" stroke-linejoin="round" />
+</svg>

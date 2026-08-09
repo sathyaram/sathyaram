@@ -1,2 +1,2 @@
 :HL["/springtuner/_next/static/chunks/06_ne1_c-gkh7.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"wOe4r92jHv4zuI2kenGuA"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"-_fBLELmKTnm-_2dTas1u"}
