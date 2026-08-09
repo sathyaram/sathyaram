@@ -26,7 +26,24 @@ const DESIGN_PAGES = [
   "logos",
 ];
 
+// Apps that live in their own adjacent repo, exported to static files and
+// dropped into public/<slug>/ (see scripts/embed-app.sh). Next serves anything
+// in public/ verbatim, so their assets already resolve — but a bare /<slug>
+// with no extension isn't a file, and static serving does no directory-index
+// resolution, so each one needs an explicit rewrite to its index.html.
+//
+// Listed here rather than inferred from the directory because next.config runs
+// before the filesystem is a safe thing to read at build time on Vercel, and
+// because an explicit list is what makes it obvious why /springtuner works.
+const EMBEDDED_APPS = ["springtuner"];
+
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return EMBEDDED_APPS.flatMap((slug) => [
+      { source: `/${slug}`, destination: `/${slug}/index.html` },
+      { source: `/${slug}/`, destination: `/${slug}/index.html` },
+    ]);
+  },
   images: {
     // Next 16 defaults images.qualities to [75] and coerces anything else
     // to the nearest allowed value; the panorama + lightbox photos ask for
