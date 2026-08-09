@@ -17,6 +17,12 @@ export default function SpringTuner() {
       year="2026"
       gradientFrom="#123047"
       gradientTo="#f0abfc"
+      // Hosted here rather than on its own domain, so the "visit it" button
+      // points at a path on this site. Same treatment as the client work's
+      // live-site button — it's still leaving the case study for the real
+      // thing, which is the only distinction that button is drawing.
+      url="sathyaram.com/springtuner"
+      link="/springtuner"
       description="A spring easing generator that you tune by watching rather than by reading numbers. Two sliders drive six real UI components, and the output is plain CSS — no animation library at the other end."
       stats={[
         { label: "Stack", value: "Next.js · CSS linear()" },

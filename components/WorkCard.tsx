@@ -128,10 +128,19 @@ export default function WorkCard({
       <Sparkle className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10" />
 
       <div className="relative">
-        {/* Same "·" separator the case studies use for their own kicker
-            (agency · year) and the stat row uses between stack items. */}
-        <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-500 group-hover:text-foreground/60">
-          {tech ? `${year} · ${tech}` : year}
+        {/* Year and tech pushed to opposite ends rather than sat either side
+            of a separator. At this tracking the two run together as one string
+            when they're adjacent, and the "·" ends up doing the work of
+            telling them apart; spreading them across the card's width makes
+            them read as two distinct pieces of metadata without needing a
+            glyph to divide them.
+
+            items-baseline, not items-center: both are the same size here, but
+            aligning on the baseline is what keeps them level if either ever
+            changes size. */}
+        <p className="flex items-baseline justify-between gap-4 text-[13px] font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-500 group-hover:text-foreground/60">
+          <span>{year}</span>
+          {tech && <span>{tech}</span>}
         </p>
         <Reveal
           as="h3"
