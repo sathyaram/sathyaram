@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!--
+    An original mark: a wand at rest with a lit tip. Deliberately not derived
+    from any Harry Potter logo or lettering — those are Warner Bros. trade
+    marks, and imitating them is what turns a fan project into a legal problem.
+    A wand and a spark are generic to the genre and ours to draw.
+
+    Built to survive 16px: one thick diagonal, one bright dot, high contrast
+    against the dark tile. Fine detail would only turn to mud at favicon size.
+  -->
+  <defs>
+    <linearGradient id="wood" x1="14" y1="50" x2="46" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a1c12" />
+      <stop offset="0.55" stop-color="#6b5124" />
+      <stop offset="1" stop-color="#c0983c" />
+    </linearGradient>
+    <radialGradient id="spark" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fffbe8" />
+      <stop offset="0.35" stop-color="#e7d29a" stop-opacity="0.75" />
+      <stop offset="1" stop-color="#c0983c" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#05060c" />
+
+  <!-- The glow the tip throws onto the tile. -->
+  <circle cx="45" cy="19" r="17" fill="url(#spark)" />
+
+  <!-- Shaft, thickening toward the handle. -->
+  <path d="M15 49 L44 20" stroke="url(#wood)" stroke-width="5.5" stroke-linecap="round" fill="none" />
+
+  <!-- The lit tip. -->
+  <circle cx="45" cy="19" r="5.5" fill="#fff6d8" />
+  <circle cx="45" cy="19" r="2.6" fill="#ffffff" />
+</svg>

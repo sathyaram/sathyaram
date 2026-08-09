@@ -1,11 +1,11 @@
 {
   "harrypotterspellbook": {
     "source": "../harrypotterspellbook",
-    "commit": "e40bb2de61a55841d06a4ed3997c47ba941ab60e",
-    "subject": "Support embedding: static export with an env-driven base path",
+    "commit": "184132cfcc0b31a1caeba14adad5826e9e76dbc9",
+    "subject": "Add an original mark, a social card, and site metadata",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-09T23:39:54.937Z",
-    "size": "2.8M"
+    "embeddedAt": "2026-08-09T23:55:29.886Z",
+    "size": "2.9M"
   },
   "springtuner": {
     "source": "../springtuner",
