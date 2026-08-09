@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The adjacent apps' static exports, dropped in by scripts/embed-app.sh.
+    // Someone else's minified bundles — linting them turns up thousands of
+    // warnings about mangled variable names and tells us nothing.
+    "public/*/_next/**",
   ]),
 ]);
 

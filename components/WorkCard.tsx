@@ -8,6 +8,11 @@ export type WorkCardProps = {
   href: string;
   title: string;
   year: string;
+  /** What it was built with, shown next to the year. Kept short — this line
+   *  is uppercase at 0.2em tracking, which eats horizontal space fast, and a
+   *  full role title ("Front-End Developer") wrapped the kicker on narrow
+   *  cards and left a dangling separator behind. */
+  tech?: string;
   blurb: string;
   /** Hover-outline colours. Also builds the fill unless `gradient` overrides it. */
   from: string;
@@ -38,6 +43,7 @@ export default function WorkCard({
   href,
   title,
   year,
+  tech,
   blurb,
   from,
   to,
@@ -122,8 +128,10 @@ export default function WorkCard({
       <Sparkle className="absolute right-8 top-8 h-7 w-7 translate-y-2 text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:right-10 sm:top-10" />
 
       <div className="relative">
+        {/* Same "·" separator the case studies use for their own kicker
+            (agency · year) and the stat row uses between stack items. */}
         <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-500 group-hover:text-foreground/60">
-          {year}
+          {tech ? `${year} · ${tech}` : year}
         </p>
         <Reveal
           as="h3"

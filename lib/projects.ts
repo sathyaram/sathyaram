@@ -12,6 +12,8 @@ export type Project = {
   slug: string;
   title: string;
   year: string;
+  /** Shown next to the year on the card. */
+  tech: string;
   /** One line, same register as the website cards: what it is, not how it works. */
   blurb: string;
   /** Two-stop fallback, and the hover outline's colours in every case — see
@@ -33,6 +35,7 @@ export const projectOrder: Project[] = [
     slug: "exhaust-notes",
     title: "Exhaust Notes",
     year: "2026",
+    tech: "Next.js",
     blurb: "Real exhaust recordings, played side by side.",
     from: "#a51a26",
     to: "#f42737",
@@ -42,6 +45,7 @@ export const projectOrder: Project[] = [
     slug: "springtuner",
     title: "Spring Tuner",
     year: "2026",
+    tech: "Next.js",
     blurb: "Spring easing for CSS, tuned by feel.",
     // Its own sky blue and fuchsia, over a deepened blue — the darks in its
     // stylesheet are UI greys rather than brand colours, so the deep end is
@@ -55,6 +59,7 @@ export const projectOrder: Project[] = [
     slug: "spellbook",
     title: "Harry Potter Spellbook",
     year: "2026",
+    tech: "Next.js",
     blurb: "Ninety-two spells, and a wand to practise them.",
     // Deliberately stops at the deep gold rather than running on to the
     // parchment tones further up its palette: those measure ~1.2:1 on the
@@ -68,6 +73,7 @@ export const projectOrder: Project[] = [
     slug: "unslop",
     title: "Unslop",
     year: "2026",
+    tech: "Next.js",
     blurb: "Strips the tells out of AI-written text.",
     // The app itself is deliberately monochrome, which gives a card nothing to
     // sample. CMYK stands in — literally all four inks, and process colour is
