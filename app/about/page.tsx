@@ -74,6 +74,7 @@ const testimonials = [
     name: "Thaisi Da Silva",
     role: "Director, Reporting Labs",
     company: "PBS NewsHour",
+    year: "2016",
     logo: PbsNewsHourLogo,
   },
   {
@@ -82,6 +83,7 @@ const testimonials = [
     name: "David Joseph",
     role: "Executive Director",
     company: "Sodexo",
+    year: "2018",
     logo: SodexoLogo,
   },
   {
@@ -90,6 +92,7 @@ const testimonials = [
     name: "Brian Greene",
     role: "VP/Director, Architect",
     company: "Groupeconnect / Bank of America",
+    year: "2022",
     logo: BankOfAmericaLogo,
   },
   {
@@ -98,6 +101,7 @@ const testimonials = [
     name: "Emily Farr",
     role: "Agency Director",
     company: "South Carolina Licensing Board",
+    year: "2019",
     logo: ScLicensingBoardLogo,
   },
 ];
@@ -156,7 +160,7 @@ export default function About() {
                     <div className="text-sm leading-snug">
                       <p className="font-medium text-foreground">{item.name}</p>
                       <p className="text-muted">
-                        {item.role}, {item.company}
+                        {item.role}, {item.company} &middot; {item.year}
                       </p>
                     </div>
                   </div>
