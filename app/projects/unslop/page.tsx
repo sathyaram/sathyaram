@@ -4,7 +4,7 @@ import CaseStudy from "@/components/CaseStudy";
 export const metadata: Metadata = {
   title: "Unslop",
   description:
-    "Strips the typographic tells out of AI-written text — smart quotes, real ellipses, em dashes, zero-width spaces — with a reveal view showing exactly what was found. Runs entirely in the browser.",
+    "Strips the typographic tells out of AI-written text (smart quotes, real ellipses, em dashes, zero-width spaces) with a reveal view showing exactly what was found. Runs entirely in the browser.",
 };
 
 export default function Unslop() {
@@ -28,7 +28,7 @@ export default function Unslop() {
         { label: "Year", value: "2026" },
       ]}
       overview={[
-        "Some of what it catches is cosmetic — curly quotes, a real ellipsis character, em dashes used with abandon. Some of it is not: zero-width spaces and narrow no-break spaces survive a copy-paste invisibly and then break JSON.parse, a CSV import, or a form validator, with nothing on screen to explain why.",
+        "Some of what it catches is cosmetic: curly quotes, a real ellipsis character, em dashes used with abandon. Some of it is not: zero-width spaces and narrow no-break spaces survive a copy-paste invisibly and then break JSON.parse, a CSV import, or a form validator, with nothing on screen to explain why.",
         "The reveal view is the actual product. Anything can strip characters; the useful part is being shown exactly what was in there and where, so the decision to remove it is yours. Every rule is a toggle, and the set you choose persists.",
       ]}
       contributions={[
@@ -46,12 +46,12 @@ export default function Unslop() {
         {
           title: "Nothing leaves the browser",
           body:
-            "It's a rules engine, not a model call, so there's no API, no key, and no request. That's a design decision rather than a shortcut — people paste unpublished drafts and client work into a tool like this, and the only credible way to promise it stays private is to have nowhere to send it.",
+            "It's a rules engine, not a model call, so there's no API, no key, and no request. That's a design decision rather than a shortcut. People paste unpublished drafts and client work into a tool like this, and the only credible way to promise it stays private is to have nowhere to send it.",
         },
         {
           title: "Preferences without a hydration flash",
           body:
-            "The enabled rule set lives in localStorage, which the server can't see. Rather than an effect that reads storage after mount and re-renders — the usual source of a visible flicker — the toggles are read through useSyncExternalStore, so the server renders the defaults, hydration matches, and the stored set swaps in cleanly.",
+            "The enabled rule set lives in localStorage, which the server can't see. Rather than an effect that reads storage after mount and re-renders, the usual source of a visible flicker, the toggles are read through useSyncExternalStore, so the server renders the defaults, hydration matches, and the stored set swaps in cleanly.",
         },
       ]}
     />

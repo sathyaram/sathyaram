@@ -23,14 +23,14 @@ export default function SpringTuner() {
       // thing, which is the only distinction that button is drawing.
       url="sathyaram.com/springtuner"
       link="/springtuner"
-      description="A spring easing generator that you tune by watching rather than by reading numbers. Two sliders drive six real UI components, and the output is plain CSS — no animation library at the other end."
+      description="A spring easing generator that you tune by watching rather than by reading numbers. Two sliders drive six real UI components, and the output is plain CSS, with no animation library at the other end."
       stats={[
         { label: "Stack", value: "Next.js · CSS linear()" },
         { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[
-        "CSS transition timing historically couldn't overshoot. cubic-bezier is confined to a monotonic ease, so anything with real spring physics — the small bounce past the target and back — meant reaching for a JavaScript animation library.",
+        "CSS transition timing historically couldn't overshoot. cubic-bezier is confined to a monotonic ease, so anything with real spring physics, the small bounce past the target and back, meant reaching for a JavaScript animation library.",
         "The linear() timing function changed that. It accepts a list of sampled points, so a spring curve can be solved ahead of time and handed to CSS as data. Spring Tuner is the tool for producing that list: tune the motion until it feels right, then take the CSS.",
       ]}
       contributions={[
@@ -43,17 +43,17 @@ export default function SpringTuner() {
         {
           title: "Feel first, numbers second",
           body:
-            "Stiffness and damping are the wrong handles for most people, because neither maps cleanly onto what you're trying to achieve — you want to know whether it feels snappy or loose, not what its damping ratio is. The sliders are arranged around the felt qualities, and the graph and numeric output are there afterward for anyone who does want them.",
+            "Stiffness and damping are the wrong handles for most people, because neither maps cleanly onto what you're trying to achieve. You want to know whether it feels snappy or loose, not what its damping ratio is. The sliders are arranged around the felt qualities, and the graph and numeric output are there afterward for anyone who does want them.",
         },
         {
           title: "Six previews, because one lies",
           body:
-            "A curve that looks great on a bouncing ball can feel wrong on a modal, a toggle, or a list item, because the distance travelled and the element's size change how the same overshoot reads. Showing six different components moving on one curve at once is the fastest way to catch a setting that only works in isolation.",
+            "A curve that looks great on a bouncing ball can feel wrong on a modal, a toggle, or a list item, because the distance traveled and the element's size change how the same overshoot reads. Showing six different components moving on one curve at once is the fastest way to catch a setting that only works in isolation.",
         },
         {
           title: "The output is just CSS",
           body:
-            "The whole point is leaving with nothing attached. What you copy is a transition-timing-function that runs anywhere CSS runs, with no runtime, no dependency, and no bundle cost — which is the argument for linear() over shipping a spring library in the first place.",
+            "The whole point is leaving with nothing attached. What you copy is a transition-timing-function that runs anywhere CSS runs, with no runtime, no dependency, and no bundle cost, which is the argument for linear() over shipping a spring library in the first place.",
         },
       ]}
     />

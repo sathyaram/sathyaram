@@ -27,10 +27,12 @@ const sections = [
   {
     heading: "At a Glance",
     paragraphs: [
-      "I build websites with WordPress, Drupal, Next.js, and Webflow.",
-      "I write HTML, CSS, Sass, front-end JavaScript, React, PHP, and Twig.",
-      "I design and prototype in Figma and Adobe Illustrator.",
-      "I capture photos with a Sony A7RIV.",
+      "I build websites with Next.js, WordPress, Drupal, Webflow, and Shopify.",
+      "I write HTML, CSS, Tailwind, front-end JavaScript, React, PHP, and Twig.",
+      "I work with AI tooling daily: Claude Code, Cursor, Codex, and Copilot.",
+      "I design and prototype in Figma, Illustrator, Photoshop, and InDesign.",
+      "I build to WCAG accessibility standards, with SEO considered from the start.",
+      "I shoot on a Sony A7RIV, and edit and color grade in Premiere and After Effects.",
     ],
   },
   {

@@ -1,10 +1,10 @@
 {
   "exhaustnotes": {
     "source": "../exhaustnotes",
-    "commit": "d37792efa2a860042ce15e4e25f13f98aaf83bae",
-    "subject": "Make the favicon and OG image survive the sub-path",
+    "commit": "5b6300753e2bad35b4a92c491455e28091393b62",
+    "subject": "Drop em dashes from user-facing metadata",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T19:18:17.262Z",
+    "embeddedAt": "2026-08-10T19:25:28.647Z",
     "size": "26M"
   },
   "harrypotterspellbook": {
@@ -17,18 +17,18 @@
   },
   "springtuner": {
     "source": "../springtuner",
-    "commit": "8bff96f5958a3dd715e3373fd20c4bbba6320a0f",
-    "subject": "Point metadataBase at production, not localhost",
+    "commit": "f68d7d90874a50b27d1f0ec78065869e7ec8bf99",
+    "subject": "Drop em dashes from user-facing metadata",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T19:18:11.059Z",
+    "embeddedAt": "2026-08-10T19:25:22.412Z",
     "size": "916K"
   },
   "unslop": {
     "source": "../unslop",
-    "commit": "15cf43688e8c06090a7ef9bab5577c4dc794894b",
-    "subject": "Add a real mark, an OG card, and the metadata to go with them",
+    "commit": "98a58c54d1887f76664b5b24fe97156435217537",
+    "subject": "Drop em dashes from user-facing metadata",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T19:18:14.113Z",
+    "embeddedAt": "2026-08-10T19:25:25.477Z",
     "size": "952K"
   }
 }

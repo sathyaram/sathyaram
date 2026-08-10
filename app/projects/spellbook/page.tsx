@@ -13,7 +13,7 @@ export default function Spellbook() {
       section="projects"
       slug="spellbook"
       title="Harry Potter Spellbook"
-      subtitle="A fan-made grimoire of ninety-two spells, with a wand you can actually practise the gestures on."
+      subtitle="A fan-made grimoire of ninety-two spells, with a wand you can actually practice the gestures on."
       year="2026"
       gradientFrom="#2e1650"
       gradientTo="#c9a227"
@@ -22,18 +22,18 @@ export default function Spellbook() {
       // EMBEDDED_APPS in next.config.ts.
       url="sathyaram.com/harrypotterspellbook"
       link="/harrypotterspellbook"
-      description="A reference for ninety-two spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practise, scored against the movement it expects."
+      description="A reference for ninety-two spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practice, scored against the movement it expects."
       stats={[
         { label: "Stack", value: "Next.js · Canvas · Tailwind" },
         { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[
-        "It began as a straightforward reference — ninety-two spells, their incantations, and what each one does. That part is a data problem, and it was finished quickly.",
+        "It began as a straightforward reference: ninety-two spells, their incantations, and what each one does. That part is a data problem, and it was finished quickly.",
         "The interesting half is the practice mode. Every spell carries a wand gesture, and the app scores how closely you trace it, which turns a lookup table into something you interact with. The night sky, the ambient score, and the spell effects exist to make that feel like the right setting for it rather than a form with a canvas in it.",
       ]}
       contributions={[
-        "Modelled ninety-two spells as structured data — incantation, effect, and the gesture each one expects",
+        "Modelled ninety-two spells as structured data: incantation, effect, and the gesture each one expects",
         "Built the gesture practice overlay, scoring a traced wand movement against the target path",
         "Wrote the per-spell effect layer so casting resolves into something visible",
         "Added the ambient score and animated night sky that set the scene without stealing from it",
@@ -42,12 +42,12 @@ export default function Spellbook() {
         {
           title: "Scoring a gesture is a fuzzy problem",
           body:
-            "Nobody traces the same path twice, so comparing a drawn stroke to a target can't be a coordinate-by-coordinate diff — that fails everyone. The scoring has to tolerate scale, position and speed while still catching a genuinely wrong shape, which is the whole difficulty of the feature and the reason it's the part worth talking about.",
+            "Nobody traces the same path twice, so comparing a drawn stroke to a target can't be a coordinate-by-coordinate diff, which fails everyone. The scoring has to tolerate scale, position and speed while still catching a genuinely wrong shape, which is the whole difficulty of the feature and the reason it's the part worth talking about.",
         },
         {
           title: "Atmosphere on a budget",
           body:
-            "A night sky and an ambient score are easy to do expensively. Both are built to sit underneath the actual content without competing for frames — the sky is generated rather than a video, and the score is opt-in, because unprompted audio is a good way to get a tab closed.",
+            "A night sky and an ambient score are easy to do expensively. Both are built to sit underneath the actual content without competing for frames: the sky is generated rather than a video, and the score is opt-in, because unprompted audio is a good way to get a tab closed.",
         },
         {
           title: "Clearly fan-made",

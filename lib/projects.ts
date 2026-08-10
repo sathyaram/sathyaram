@@ -76,7 +76,7 @@ export const projectOrder: Project[] = [
     title: "Harry Potter Spellbook",
     year: "2026",
     tech: "Next.js",
-    blurb: "Ninety-two spells, and a wand to practise them.",
+    blurb: "Ninety-two spells, and a wand to practice them.",
     // Deep purple through rich purple, with the gold arriving only in the last
     // stretch. A straight two-stop purple-to-gold split the card evenly and the
     // gold ended up co-leading; holding purple to ~68% keeps the card reading
