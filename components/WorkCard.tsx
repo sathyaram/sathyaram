@@ -27,6 +27,13 @@ export type WorkCardProps = {
    *  read as finished without one rather than leaving a gap where it would go. */
   image?: string;
   imageScale?: number;
+  /** A screenshot of the thing itself, for cards with no cut-out artwork.
+   *  Treated completely differently from `image`: that one floats a
+   *  transparent object on the gradient, this one sits in the corner as a
+   *  framed window into the app, bleeding off the card's edge. */
+  screenshot?: string;
+  /** Address shown in the screenshot's browser bar. */
+  screenshotUrl?: string;
   /** Card height, as Tailwind classes rather than a value — arbitrary-value
    *  utilities have to be static strings, so this can't be interpolated.
    *  Defaults to the website cards' height, which is sized around the artwork
@@ -53,13 +60,15 @@ export default function WorkCard({
   span = "",
   image,
   imageScale = 1,
+  screenshot,
+  screenshotUrl,
   heightClass = "min-h-[22rem] sm:min-h-[28rem]",
 }: WorkCardProps) {
   return (
     <Link
       href={href}
       style={{ transitionTimingFunction: SPRING }}
-      className={`group relative overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:rounded-[4rem] sm:p-12 ${heightClass} ${span}`}
+      className={`group relative flex flex-col overflow-hidden rounded-[2.5rem] p-9 transition-all duration-500 hover:-translate-y-2 sm:rounded-[4rem] sm:p-12 ${heightClass} ${span}`}
     >
       {/* The brand fill lives on its own layer so hover can dissolve it,
           leaving just the outline with the starfield showing through. */}
@@ -163,6 +172,60 @@ export default function WorkCard({
           {blurb}
         </p>
       </div>
+
+      {/* A framed window into the app, running past the card's bottom-right so
+          it reads as a screen continuing beyond the frame rather than a picture
+          placed inside one. Only the top-left corner is rounded — the other
+          three sit outside the card, where rounding is either invisible or
+          reads as a seam against the card's own curve.
+
+          In normal flow after the text, NOT absolutely positioned, and that is
+          the point. Pinned to the card's bottom, its distance from the blurb
+          was whatever the card height minus the text height happened to leave —
+          so it drifted with every title length and breakpoint, and the two
+          cards in a row disagreed because one title wraps and the other
+          doesn't. Placed after the text it simply sits `mt-7` below it, the
+          same on every card at every width, and flex-1 lets it absorb the
+          leftover height instead of that surplus becoming a gap. Overlap stops
+          being something to calculate and becomes impossible.
+
+          The negative margins do the bleeding: they first cancel the card's own
+          padding, then carry it past the edge. */}
+      {screenshot && (
+        <div
+          className="pointer-events-none relative -mb-16 -mr-12 ml-auto mt-7 flex min-h-0 w-[82%] flex-1 flex-col overflow-hidden rounded-tl-2xl shadow-2xl ring-1 ring-white/10 transition-transform duration-500 group-hover:-translate-y-2 sm:-mb-20 sm:-mr-16 sm:mt-8"
+          style={{ transitionTimingFunction: SPRING }}
+        >
+          {/* Same browser-chrome motif as BrowserMockup on the case studies,
+              scaled down — but with fixed dark colours rather than that
+              component's theme tokens. Those resolve against the page
+              background; here the frame sits on a bright brand gradient, so in
+              light mode a themed chrome would come out pale and read as part
+              of the card rather than as a window onto something else. */}
+          <div className="flex shrink-0 items-center gap-2 bg-[#1b1c20] px-3 py-2">
+            <div className="flex gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-red-400/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-yellow-400/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-green-400/70" />
+            </div>
+            {screenshotUrl && (
+              <div className="flex-1 truncate rounded bg-white/5 px-2 py-0.5 text-center text-[9px] text-white/45">
+                {screenshotUrl}
+              </div>
+            )}
+          </div>
+          <div className="relative flex-1">
+            <Image
+              src={screenshot}
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="(min-width: 1024px) 45vw, 75vw"
+              className="object-cover object-top"
+            />
+          </div>
+        </div>
+      )}
     </Link>
   );
 }

@@ -366,10 +366,16 @@ export default function Home() {
           <WorkCard
             key={project.slug}
             href={`/projects/${project.slug}`}
-            // Shorter than the website cards, which are tall to leave room for
-            // the cut-out artwork in their lower two-thirds. These have no
-            // artwork, so that space was just void under the blurb.
-            heightClass="min-h-[13rem] sm:min-h-[16rem]"
+            // Taller again now the screenshot is in the corner — the height
+            // was cut back when these cards were text-only and the lower half
+            // was just void. Still short of the website cards, whose cut-outs
+            // need the full depth to sit in.
+            // 24rem at the bottom end is what the stacked card needs: the
+            // title wraps to two lines there, pushing the text ~37px further
+            // down than it sits once the card is wide enough to hold it on
+            // one. Solved against measured text positions so the gap below
+            // the blurb lands at ~30px from 375px through 1920px.
+            heightClass="min-h-[24rem] lg:min-h-[28rem]"
             {...project}
           />
         ))}

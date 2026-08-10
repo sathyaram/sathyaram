@@ -1,18 +1,18 @@
 {
   "harrypotterspellbook": {
     "source": "../harrypotterspellbook",
-    "commit": "9aa578dc94ff4fc00ecf94400d1304c921f45c68",
-    "subject": "Remove em dashes from all user-facing copy",
+    "commit": "2762f0501b08f48dabbac2ff8f15d6ecf6522e7f",
+    "subject": "Stop the shield effect blowing out the screen",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T00:50:53.347Z",
+    "embeddedAt": "2026-08-10T17:16:06.610Z",
     "size": "2.9M"
   },
   "springtuner": {
     "source": "../springtuner",
-    "commit": "902245088fbde925019f7c2f782f60552c0f63e3",
-    "subject": "Add favicon, social card and apple touch icon",
+    "commit": "85e6bbaeebdefbad4ad910934ae0a5b82580745f",
+    "subject": "Reposition metadata around \"generator\"",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T00:08:25.384Z",
-    "size": "900K"
+    "embeddedAt": "2026-08-10T17:16:02.441Z",
+    "size": "916K"
   }
 }

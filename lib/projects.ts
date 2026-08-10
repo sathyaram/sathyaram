@@ -23,6 +23,10 @@ export type Project = {
   /** Full gradient string, for the cards whose palette doesn't reduce to two
    *  stops. Overrides from/to on the card fill only. */
   gradient?: string;
+  /** Screenshot of the running app, shown in the card corner. */
+  screenshot?: string;
+  /** Address shown in the screenshot browser bar. */
+  screenshotUrl?: string;
   /** Whether it appears on the homepage. Its case study stays live and
    *  linkable either way — this only governs whether anything on the site
    *  points at it. */
@@ -46,6 +50,8 @@ export const projectOrder: Project[] = [
   },
   {
     slug: "springtuner",
+    screenshot: "/projects/springtuner.jpg",
+    screenshotUrl: "sathyaram.com/springtuner",
     title: "Spring Tuner",
     year: "2026",
     tech: "Next.js",
@@ -60,6 +66,8 @@ export const projectOrder: Project[] = [
   },
   {
     slug: "spellbook",
+    screenshot: "/projects/harrypotterspellbook.jpg",
+    screenshotUrl: "sathyaram.com/harrypotterspellbook",
     title: "Harry Potter Spellbook",
     year: "2026",
     tech: "Next.js",
