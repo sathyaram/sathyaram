@@ -1,10 +1,10 @@
 {
   "harrypotterspellbook": {
     "source": "../harrypotterspellbook",
-    "commit": "184132cfcc0b31a1caeba14adad5826e9e76dbc9",
-    "subject": "Add an original mark, a social card, and site metadata",
+    "commit": "9aa578dc94ff4fc00ecf94400d1304c921f45c68",
+    "subject": "Remove em dashes from all user-facing copy",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-09T23:55:29.886Z",
+    "embeddedAt": "2026-08-10T00:50:53.347Z",
     "size": "2.9M"
   },
   "springtuner": {

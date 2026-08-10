@@ -136,7 +136,7 @@ export default function Home() {
             up real space on that line and pushed the name around at narrow
             widths. */}
         <p className="mb-3 text-center text-[8px] font-normal text-muted sm:mb-4">
-          v8.15
+          v8.2
         </p>
 
         {/* The whole line shares one font-size (on this div), but only

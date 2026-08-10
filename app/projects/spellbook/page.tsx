@@ -15,8 +15,8 @@ export default function Spellbook() {
       title="Harry Potter Spellbook"
       subtitle="A fan-made grimoire of ninety-two spells, with a wand you can actually practise the gestures on."
       year="2026"
-      gradientFrom="#05060c"
-      gradientTo="#c39a2e"
+      gradientFrom="#5b2f8c"
+      gradientTo="#c9a227"
       // Hosted here rather than on its own domain. The live route uses the
       // app's full name rather than this page's shorter slug — see the note on
       // EMBEDDED_APPS in next.config.ts.
@@ -25,7 +25,7 @@ export default function Spellbook() {
       description="A reference for ninety-two spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practise, scored against the movement it expects."
       stats={[
         { label: "Stack", value: "Next.js · Canvas · Tailwind" },
-        { label: "Spells", value: "92" },
+        { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[

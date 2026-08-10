@@ -20,7 +20,7 @@ export default function ExhaustNotes() {
       description="A curated collection of real exhaust recordings — not synthesised engine tones — built around a single interaction: pick two cars, play them together, and hear the difference directly rather than by switching between tabs."
       stats={[
         { label: "Stack", value: "Next.js · Web Audio API" },
-        { label: "Type", value: "Self-initiated" },
+        { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[

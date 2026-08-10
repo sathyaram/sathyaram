@@ -20,7 +20,7 @@ export default function Unslop() {
       description="Language models leave fingerprints in punctuation: smart quotes, real ellipsis characters, em dashes everywhere, and invisible spacing that breaks things quietly. Unslop finds them, shows them to you, and cleans only the categories you agree to."
       stats={[
         { label: "Stack", value: "Next.js · Rules engine" },
-        { label: "Data", value: "Never leaves the browser" },
+        { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[

@@ -15,8 +15,8 @@ export default function SpringTuner() {
       title="Spring Tuner"
       subtitle="Spring easing for CSS, tuned by feel: drag two sliders, watch real components move, copy pure CSS."
       year="2026"
-      gradientFrom="#123047"
-      gradientTo="#f0abfc"
+      gradientFrom="#12305f"
+      gradientTo="#7dd3fc"
       // Hosted here rather than on its own domain, so the "visit it" button
       // points at a path on this site. Same treatment as the client work's
       // live-site button — it's still leaving the case study for the real
@@ -26,7 +26,7 @@ export default function SpringTuner() {
       description="A spring easing generator that you tune by watching rather than by reading numbers. Two sliders drive six real UI components, and the output is plain CSS — no animation library at the other end."
       stats={[
         { label: "Stack", value: "Next.js · CSS linear()" },
-        { label: "Type", value: "Self-initiated" },
+        { label: "Type", value: "Personal Project" },
         { label: "Year", value: "2026" },
       ]}
       overview={[

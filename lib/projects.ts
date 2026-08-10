@@ -50,12 +50,12 @@ export const projectOrder: Project[] = [
     year: "2026",
     tech: "Next.js",
     blurb: "Spring easing for CSS, tuned by feel.",
-    // Its own sky blue and fuchsia, over a deepened blue — the darks in its
-    // stylesheet are UI greys rather than brand colours, so the deep end is
-    // derived from the sky stop instead of borrowed from the chrome.
-    from: "#123047",
-    to: "#f0abfc",
-    gradient: "linear-gradient(135deg, #123047 0%, #7dd3fc 55%, #f0abfc 100%)",
+    // The app's own sky blue, run against a navy. Ordered navy-first because
+    // the card's title and blurb sit over the top-left corner: white on
+    // #7dd3fc measures 1.67:1, where the same pair the other way round is
+    // 15.5:1. Same two colours, only the end they start from differs.
+    from: "#12305f",
+    to: "#7dd3fc",
     onHomepage: true,
   },
   {
@@ -64,12 +64,12 @@ export const projectOrder: Project[] = [
     year: "2026",
     tech: "Next.js",
     blurb: "Ninety-two spells, and a wand to practise them.",
-    // Deliberately stops at the deep gold rather than running on to the
-    // parchment tones further up its palette: those measure ~1.2:1 on the
-    // light-mode background, the same trap the Vilcek card's light stop falls
-    // into.
-    from: "#05060c",
-    to: "#c39a2e",
+    // Rich purple into a muted gold. The purple replaces a near-black that
+    // was fine behind the card's white text but left the case-study title's
+    // opening letters at 1.06:1 against the dark page — this reads as a colour
+    // rather than as an absence, and still carries white type at 9.4:1.
+    from: "#5b2f8c",
+    to: "#c9a227",
     onHomepage: true,
   },
   {
