@@ -9,10 +9,10 @@
   },
   "harrypotterspellbook": {
     "source": "../harrypotterspellbook",
-    "commit": "2762f0501b08f48dabbac2ff8f15d6ecf6522e7f",
-    "subject": "Stop the shield effect blowing out the screen",
+    "commit": "51d8ccbb015f031edcb8105684653c7e3767493e",
+    "subject": "Remove the constant left dead by the collapse rewrite",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T17:16:06.610Z",
+    "embeddedAt": "2026-08-10T20:11:11.089Z",
     "size": "2.9M"
   },
   "springtuner": {

@@ -1,8 +1,8 @@
-:HL["/harrypotterspellbook/_next/static/chunks/1qq3xln9zw-_5.css","style"]
+:HL["/harrypotterspellbook/_next/static/chunks/03j6mmxodi317.css","style"]
 :HL["/harrypotterspellbook/_next/static/media/01e4147cff8141ee-s.p.3huc2loe0ie8a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/harrypotterspellbook/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/harrypotterspellbook/_next/static/media/47f4120fa04b1a17-s.p.44aylvc57ggi6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/harrypotterspellbook/_next/static/media/70e3db2de7f94926-s.p.39pl-v7c3qrze.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/harrypotterspellbook/_next/static/media/8bd76523131fa0fc-s.p.1pvupmngxrt5z.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/harrypotterspellbook/_next/static/media/b89b762ca15e5cab-s.p.0s59japw84yl-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"FkBHAK_taEvG7gYo5J5V-"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"YxTIB4CqVkM3jlzYMXwl9"}

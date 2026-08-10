@@ -1,2 +1,2 @@
-:HL["/harrypotterspellbook/_next/static/chunks/1qq3xln9zw-_5.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"FkBHAK_taEvG7gYo5J5V-"}
+:HL["/harrypotterspellbook/_next/static/chunks/03j6mmxodi317.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"YxTIB4CqVkM3jlzYMXwl9"}
