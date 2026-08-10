@@ -17,6 +17,11 @@ export default function ExhaustNotes() {
       year="2026"
       gradientFrom="#6e1119"
       gradientTo="#f42737"
+      // Hosted here rather than on its own domain. The live route drops the
+      // hyphen this page’s slug carries — the route is the thing being linked
+      // around, and it is the app’s own name.
+      url="sathyaram.com/exhaustnotes"
+      link="/exhaustnotes"
       description="A curated collection of real exhaust recordings — not synthesised engine tones — built around a single interaction: pick two cars, play them together, and hear the difference directly rather than by switching between tabs."
       stats={[
         { label: "Stack", value: "Next.js · Web Audio API" },

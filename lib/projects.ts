@@ -41,6 +41,7 @@ export const projectOrder: Project[] = [
   {
     slug: "exhaust-notes",
     screenshot: "/projects/exhaust-notes.jpg",
+    screenshotUrl: "sathyaram.com/exhaustnotes",
     title: "Exhaust Notes",
     year: "2026",
     tech: "Next.js",
