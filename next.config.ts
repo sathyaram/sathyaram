@@ -39,7 +39,7 @@ const DESIGN_PAGES = [
 // case study describing them — the spellbook is written up at
 // /projects/spellbook but lives at /harrypotterspellbook, because the route is
 // the thing being linked around and the longer name is the recognisable one.
-const EMBEDDED_APPS = ["springtuner", "harrypotterspellbook"];
+const EMBEDDED_APPS = ["springtuner", "harrypotterspellbook", "unslop"];
 
 const nextConfig: NextConfig = {
   async rewrites() {

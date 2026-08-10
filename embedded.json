@@ -14,5 +14,13 @@
     "builtFromDirtyTree": false,
     "embeddedAt": "2026-08-10T17:16:02.441Z",
     "size": "916K"
+  },
+  "unslop": {
+    "source": "../unslop",
+    "commit": "c3d49729ecc38871de10ab4a0b4f3a4cd8632f11",
+    "subject": "Drop unused create-next-app scaffold SVGs",
+    "builtFromDirtyTree": false,
+    "embeddedAt": "2026-08-10T18:09:18.231Z",
+    "size": "928K"
   }
 }
