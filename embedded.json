@@ -25,10 +25,10 @@
   },
   "unslop": {
     "source": "../unslop",
-    "commit": "98a58c54d1887f76664b5b24fe97156435217537",
-    "subject": "Drop em dashes from user-facing metadata",
+    "commit": "c51e1ae6bd6e3ad9340d88bdfc376a05f8d72fb1",
+    "subject": "Dress the interface in the mark's process colours",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T19:25:25.477Z",
+    "embeddedAt": "2026-08-10T19:38:16.506Z",
     "size": "952K"
   }
 }
