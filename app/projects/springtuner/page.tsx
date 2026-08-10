@@ -25,9 +25,9 @@ export default function SpringTuner() {
       link="/springtuner"
       description="A spring easing generator that you tune by watching rather than by reading numbers. Two sliders drive six real UI components, and the output is plain CSS, with no animation library at the other end."
       stats={[
-        { label: "Stack", value: "Next.js · CSS linear()" },
         { label: "Type", value: "Personal Project" },
-        { label: "Year", value: "2026" },
+        { label: "Role", value: "Designer & Developer" },
+        { label: "Stack", value: "Next.js · CSS linear()" },
       ]}
       overview={[
         "CSS transition timing historically couldn't overshoot. cubic-bezier is confined to a monotonic ease, so anything with real spring physics, the small bounce past the target and back, meant reaching for a JavaScript animation library.",

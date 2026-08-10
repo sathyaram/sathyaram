@@ -193,11 +193,20 @@ export default function CaseStudy({
         </ScrollGroup>
         )}
 
-        {/* Three stats under the title — Timeline / Role / Stack on client
-            work, Stack / Type / Year on the self-initiated projects, where a
-            timeline and a role would both be fiction. The row is driven
-            entirely by the `stats` array, so it needed no change to serve
-            both. */}
+        {/* Three stats under the title: Timeline / Role / Stack on client
+            work, Type / Role / Stack on the self-initiated projects. The last
+            two columns are deliberately the same label in the same position on
+            both, so the row reads as one component across the site rather than
+            two that happen to look alike.
+
+            Only the first column differs, and it has to: a project has no
+            client timeline, and inventing one would be the only fabricated
+            thing on the page. "Personal Project" is the honest fact that
+            belongs in that slot. The year isn't repeated there because the
+            kicker above already carries it.
+
+            The row itself is driven entirely by the `stats` array, so none of
+            this needed a component change. */}
         <ScrollGroup>
           <div className="mt-10 grid grid-cols-3 gap-4 border-y border-border py-6 transition-all duration-700">
             {stats.map((stat) => (

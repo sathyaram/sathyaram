@@ -23,10 +23,14 @@ export default function LLR() {
       url="llr.sc.gov"
       link="https://llr.sc.gov"
       description="South Carolina's Department of Labor, Licensing and Regulation is the agency behind almost every licensed profession in the state, plus workplace safety, fire, and elevator and amusement-ride inspection. Its site has to serve a barber renewing a license and a contractor filing a complaint equally well."
+      // Sector sits where the other client work carries a timeline, because I
+      // don't have one for this engagement and a guessed duration would be the
+      // only invented thing on the page. Role and Stack stay in columns two
+      // and three, which is what keeps the row consistent site-wide.
       stats={[
+        { label: "Sector", value: "State government" },
         { label: "Role", value: "Front-End Developer" },
         { label: "Stack", value: "Grav CMS · HTML/CSS · JS" },
-        { label: "Sector", value: "State government" },
       ]}
       overview={[
         "LLR is not one service, it is dozens: apply for a license, check an application, renew, verify someone else's license, print a card, file a complaint, look up a board's calendar. Each belongs to a different division, and most visitors arrive knowing what they want to do rather than which division owns it.",

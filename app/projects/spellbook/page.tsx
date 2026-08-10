@@ -24,9 +24,9 @@ export default function Spellbook() {
       link="/harrypotterspellbook"
       description="A reference for ninety-two spells that didn't want to stay a reference. Alongside the incantations and effects, each spell has a wand gesture you can practice, scored against the movement it expects."
       stats={[
-        { label: "Stack", value: "Next.js · Canvas · Tailwind" },
         { label: "Type", value: "Personal Project" },
-        { label: "Year", value: "2026" },
+        { label: "Role", value: "Designer & Developer" },
+        { label: "Stack", value: "Next.js · Canvas · Tailwind" },
       ]}
       overview={[
         "It began as a straightforward reference: ninety-two spells, their incantations, and what each one does. That part is a data problem, and it was finished quickly.",

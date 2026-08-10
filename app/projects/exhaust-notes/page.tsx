@@ -24,9 +24,9 @@ export default function ExhaustNotes() {
       link="/exhaustnotes"
       description="A curated collection of real exhaust recordings, not synthesised engine tones, built around a single interaction: pick two cars, play them together, and hear the difference directly rather than by switching between tabs."
       stats={[
-        { label: "Stack", value: "Next.js · Web Audio API" },
         { label: "Type", value: "Personal Project" },
-        { label: "Year", value: "2026" },
+        { label: "Role", value: "Designer & Developer" },
+        { label: "Stack", value: "Next.js · Web Audio API" },
       ]}
       overview={[
         "The original ran in 2019 on React, Express and MongoDB. This is a rebuild on the Next.js App Router with Tailwind v4, keeping the premise and replacing everything underneath it.",

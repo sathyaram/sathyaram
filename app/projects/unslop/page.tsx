@@ -23,9 +23,9 @@ export default function Unslop() {
       link="/unslop"
       description="Language models leave fingerprints in punctuation: smart quotes, real ellipsis characters, em dashes everywhere, and invisible spacing that breaks things quietly. Unslop finds them, shows them to you, and cleans only the categories you agree to."
       stats={[
-        { label: "Stack", value: "Next.js · Rules engine" },
         { label: "Type", value: "Personal Project" },
-        { label: "Year", value: "2026" },
+        { label: "Role", value: "Designer & Developer" },
+        { label: "Stack", value: "Next.js · Rules engine" },
       ]}
       overview={[
         "Some of what it catches is cosmetic: curly quotes, a real ellipsis character, em dashes used with abandon. Some of it is not: zero-width spaces and narrow no-break spaces survive a copy-paste invisibly and then break JSON.parse, a CSV import, or a form validator, with nothing on screen to explain why.",
