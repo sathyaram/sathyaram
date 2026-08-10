@@ -66,7 +66,9 @@ const awards = [
   { title: "Hazl Magazine", detail: "Published Photography" },
 ];
 
-// Ported from the previous site, logos and all.
+// Ported from the previous site, logos and all. Oldest first — the years are
+// on the page now, so any other order reads as a sort that broke rather than
+// as a deliberate arrangement. New entries go at the end.
 const testimonials = [
   {
     quote:
@@ -88,21 +90,21 @@ const testimonials = [
   },
   {
     quote:
-      "Easily one of the best people I've worked with: a genuine creative force.",
-    name: "Brian Greene",
-    role: "VP/Director, Architect",
-    company: "Groupeconnect / Bank of America",
-    year: "2022",
-    logo: BankOfAmericaLogo,
-  },
-  {
-    quote:
       "Sathya's creativity and energy was exactly what we and our website needed!",
     name: "Emily Farr",
     role: "Agency Director",
     company: "South Carolina Licensing Board",
     year: "2019",
     logo: ScLicensingBoardLogo,
+  },
+  {
+    quote:
+      "Easily one of the best people I've worked with: a genuine creative force.",
+    name: "Brian Greene",
+    role: "VP/Director, Architect",
+    company: "Groupeconnect / Bank of America",
+    year: "2022",
+    logo: BankOfAmericaLogo,
   },
 ];
 
