@@ -9,10 +9,10 @@
   },
   "springtuner": {
     "source": "../springtuner",
-    "commit": "09da7d7ce08daa62b822c0ab112ddceec9df3236",
-    "subject": "Support embedding: static export with an env-driven base path",
-    "builtFromDirtyTree": true,
-    "embeddedAt": "2026-08-09T23:39:54.867Z",
-    "size": "824K"
+    "commit": "902245088fbde925019f7c2f782f60552c0f63e3",
+    "subject": "Add favicon, social card and apple touch icon",
+    "builtFromDirtyTree": false,
+    "embeddedAt": "2026-08-10T00:08:25.384Z",
+    "size": "900K"
   }
 }
