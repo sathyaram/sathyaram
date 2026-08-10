@@ -41,7 +41,7 @@ export default function Brookings() {
         {
           title: "Debounced search that respects the server",
           body:
-            "The research library filters live as you type. Firing a request per keystroke across an archive that size is a good way to melt a server, so the input is debounced and in-flight requests are cancelled when a newer one supersedes them, you get the feeling of instant filtering without the traffic that usually implies.",
+            "The research library filters live as you type. Firing a request per keystroke across an archive that size is a good way to melt a server, so the input is debounced and in-flight requests are canceled when a newer one supersedes them, you get the feeling of instant filtering without the traffic that usually implies.",
         },
         {
           title: "One component library, every content type",
