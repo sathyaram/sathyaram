@@ -14,7 +14,7 @@ export default function Biointeractive() {
       slug="biointeractive"
       title="Howard Hughes' BioInteractive"
       subtitle="Netflixing science, for kids, on Drupal 8 interactives built to work without a mouse."
-      year="2021"
+      year="2019"
       agency="ForumOne"
       gradientFrom="#04646f"
       gradientTo="#8ac341"

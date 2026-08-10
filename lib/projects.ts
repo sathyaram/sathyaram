@@ -45,7 +45,10 @@ export const projectOrder: Project[] = [
     year: "2026",
     tech: "Next.js",
     blurb: "Real exhaust recordings, played side by side.",
-    from: "#a51a26",
+    // Deep ruby into the brighter red, rather than the shallower pair it had.
+    // Ordered ruby-first for the usual reason — the title sits over that
+    // corner, where the bright red alone is 4.04:1 against white.
+    from: "#6e1119",
     to: "#f42737",
     onHomepage: true,
   },
@@ -73,12 +76,16 @@ export const projectOrder: Project[] = [
     year: "2026",
     tech: "Next.js",
     blurb: "Ninety-two spells, and a wand to practise them.",
-    // Rich purple into a muted gold. The purple replaces a near-black that
-    // was fine behind the card's white text but left the case-study title's
-    // opening letters at 1.06:1 against the dark page — this reads as a colour
-    // rather than as an absence, and still carries white type at 9.4:1.
-    from: "#5b2f8c",
+    // Deep purple through rich purple, with the gold arriving only in the last
+    // stretch. A straight two-stop purple-to-gold split the card evenly and the
+    // gold ended up co-leading; holding purple to ~68% keeps the card reading
+    // as purple with gold as the accent. The deep end also replaces a
+    // near-black that was fine behind white card text but left the case-study
+    // title's opening letters at 1.06:1 against the dark page.
+    from: "#2e1650",
     to: "#c9a227",
+    gradient:
+      "linear-gradient(135deg, #2e1650 0%, #5b2f8c 42%, #7c47b5 68%, #c9a227 100%)",
     onHomepage: true,
   },
   {
@@ -89,14 +96,15 @@ export const projectOrder: Project[] = [
     tech: "Next.js",
     blurb: "Strips the tells out of AI-written text.",
     // The app itself is deliberately monochrome, which gives a card nothing to
-    // sample. CMYK stands in — literally all four inks, and process colour is
-    // at least on-topic for a tool about cleaning up copy. K leads because the
-    // title sits over that corner; C/M/Y on their own are far too light to
-    // carry white text.
-    from: "#00aeef",
+    // sample, so process colour stands in — on-topic for a tool about cleaning
+    // up copy. Cyan is gone: it made the fill drift blue, and worse, the
+    // from/to pair also drives the hover ring, so cyan-to-yellow interpolated
+    // straight through green and the outline came out a colour that appears
+    // nowhere on the card. K still leads, since magenta alone is 4.25:1
+    // against white and the title sits over that corner.
+    from: "#ec008c",
     to: "#fff200",
-    gradient:
-      "linear-gradient(135deg, #1c1c1c 0%, #00aeef 38%, #ec008c 70%, #fff200 100%)",
+    gradient: "linear-gradient(135deg, #1c1c1c 0%, #ec008c 58%, #fff200 100%)",
     onHomepage: true,
   },
 ];

@@ -14,10 +14,10 @@ export default function LLR() {
       slug="llr"
       title="South Carolina LLR"
       subtitle="Licensing and workplace safety for a whole state, on a Grav CMS build that keeps hundreds of boards, permits and services findable."
-      year="2021"
+      year="2019"
       agency="ForumOne"
-      // The three colours from the agency's own shield mark — ruby, green and
-      // sapphire — with the ruby leading because the title sits over it.
+      // Ruby into sapphire, both from the agency's shield mark, matching the
+      // homepage card. Ruby leads because the title sits over it.
       gradientFrom="#b11e3a"
       gradientTo="#3f8ba2"
       url="llr.sc.gov"

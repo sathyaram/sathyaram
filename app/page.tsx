@@ -102,7 +102,7 @@ const featured = [
   {
     slug: "biointeractive",
     title: "Howard Hughes' BioInteractive",
-    year: "2021",
+    year: "2019",
     tech: "Drupal 8",
     blurb: "Netflixing science, for kids.",
     // Their own teal and lime, but starting a step deeper than the brand teal:
@@ -119,17 +119,15 @@ const featured = [
   {
     slug: "llr",
     title: "South Carolina LLR",
-    year: "2021",
+    year: "2019",
     tech: "Grav CMS",
     blurb: "Licensing and workplace safety for a whole state.",
-    // All three colours from their shield mark rather than two: ruby, green
-    // and sapphire are equally the brand, and picking any pair would have
-    // looked like a mistake. Ruby leads because the title sits over it and it
-    // carries white at 6.74:1.
+    // Ruby straight into sapphire, both from their shield mark. The mark also
+    // carries a green, but running all three put a band of it across the
+    // middle of the card and the gradient stopped reading as one move. Ruby
+    // leads because the title sits over it and it holds white at 6.74:1.
     from: "#b11e3a",
     to: "#3f8ba2",
-    gradient:
-      "linear-gradient(135deg, #b11e3a 0%, #7db956 55%, #3f8ba2 100%)",
     span: "sm:col-span-3",
     image: "/websites/assets/llr-badge.svg",
     imageScale: 1.05,

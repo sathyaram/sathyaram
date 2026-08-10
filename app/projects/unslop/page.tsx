@@ -15,7 +15,7 @@ export default function Unslop() {
       title="Unslop"
       subtitle="Strips the tells out of AI-written text, and shows you every one it found before it touches them."
       year="2026"
-      gradientFrom="#00aeef"
+      gradientFrom="#ec008c"
       gradientTo="#fff200"
       description="Language models leave fingerprints in punctuation: smart quotes, real ellipsis characters, em dashes everywhere, and invisible spacing that breaks things quietly. Unslop finds them, shows them to you, and cleans only the categories you agree to."
       stats={[

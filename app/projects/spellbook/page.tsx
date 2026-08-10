@@ -15,7 +15,7 @@ export default function Spellbook() {
       title="Harry Potter Spellbook"
       subtitle="A fan-made grimoire of ninety-two spells, with a wand you can actually practise the gestures on."
       year="2026"
-      gradientFrom="#5b2f8c"
+      gradientFrom="#2e1650"
       gradientTo="#c9a227"
       // Hosted here rather than on its own domain. The live route uses the
       // app's full name rather than this page's shorter slug — see the note on

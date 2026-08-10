@@ -15,7 +15,7 @@ export default function ExhaustNotes() {
       title="Exhaust Notes"
       subtitle="Real exhaust recordings, played side by side, so you can hear exactly why two cars sound different."
       year="2026"
-      gradientFrom="#a51a26"
+      gradientFrom="#6e1119"
       gradientTo="#f42737"
       description="A curated collection of real exhaust recordings — not synthesised engine tones — built around a single interaction: pick two cars, play them together, and hear the difference directly rather than by switching between tabs."
       stats={[
