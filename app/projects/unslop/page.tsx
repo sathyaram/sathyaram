@@ -17,6 +17,10 @@ export default function Unslop() {
       year="2026"
       gradientFrom="#ec008c"
       gradientTo="#fff200"
+      // Hosted here rather than on its own domain, so the "visit it" button
+      // points at a path on this site — same treatment as the client work.
+      url="sathyaram.com/unslop"
+      link="/unslop"
       description="Language models leave fingerprints in punctuation: smart quotes, real ellipsis characters, em dashes everywhere, and invisible spacing that breaks things quietly. Unslop finds them, shows them to you, and cleans only the categories you agree to."
       stats={[
         { label: "Stack", value: "Next.js · Rules engine" },
