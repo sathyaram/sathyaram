@@ -1,4 +1,12 @@
 {
+  "exhaustnotes": {
+    "source": "../exhaustnotes",
+    "commit": "3085cad0850ca4f5d7e4444333ef20970656c3c3",
+    "subject": "Bundle the noise texture instead of serving it from public/",
+    "builtFromDirtyTree": false,
+    "embeddedAt": "2026-08-10T18:16:43.511Z",
+    "size": "26M"
+  },
   "harrypotterspellbook": {
     "source": "../harrypotterspellbook",
     "commit": "2762f0501b08f48dabbac2ff8f15d6ecf6522e7f",

@@ -39,13 +39,27 @@ const DESIGN_PAGES = [
 // case study describing them — the spellbook is written up at
 // /projects/spellbook but lives at /harrypotterspellbook, because the route is
 // the thing being linked around and the longer name is the recognisable one.
-const EMBEDDED_APPS = ["springtuner", "harrypotterspellbook", "unslop"];
+//
+// The value is any route the app has BEYOND its index, which needs its own
+// rewrite for exactly the same reason the index does — /exhaustnotes/compare
+// isn't a file either; the export writes it as compare.html. Most of these
+// apps are a single page and so have none.
+const EMBEDDED_APPS: Record<string, string[]> = {
+  springtuner: [],
+  harrypotterspellbook: [],
+  unslop: [],
+  exhaustnotes: ["compare"],
+};
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return EMBEDDED_APPS.flatMap((slug) => [
+    return Object.entries(EMBEDDED_APPS).flatMap(([slug, routes]) => [
       { source: `/${slug}`, destination: `/${slug}/index.html` },
       { source: `/${slug}/`, destination: `/${slug}/index.html` },
+      ...routes.flatMap((route) => [
+        { source: `/${slug}/${route}`, destination: `/${slug}/${route}.html` },
+        { source: `/${slug}/${route}/`, destination: `/${slug}/${route}.html` },
+      ]),
     ]);
   },
   images: {
