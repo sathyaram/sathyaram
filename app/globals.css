@@ -500,6 +500,8 @@ body {
  * project's own brand colours, which were picked to hold up on its card, so it
  * keeps the gradient in both themes. Case-study titles carry both classes —
  * the declarations are identical, so the overlap in dark mode is a no-op.
+ *
+ * Light mode darkens them, though: see .gradient-text-brand's filter below.
  */
 .dark .gradient-text-name,
 .gradient-text-brand {
@@ -518,6 +520,30 @@ body {
   animation-duration: 8s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+}
+
+/*
+ * Light mode only: darken the whole clipped gradient.
+ *
+ * These palettes were chosen to sit on a dark card, where the bright end of
+ * each is the point. Reused as text on the beige page that same end all but
+ * vanishes: measured against #ede7de, Vilcek's tan came out at 1.21:1 and
+ * Unslop's yellow at 1.05:1, where large text wants 3:1. The deep end of every
+ * gradient was fine; it is only ever the far stop that fails.
+ *
+ * A filter is the right tool because the gradient arrives as an opaque string
+ * in --name-gradient, so there is nothing here to recolour stop by stop. 0.55
+ * is the value at which every failing stop clears 3:1 — Vilcek reaches 3.75,
+ * Unslop 3.12, and the rest considerably more. Darkening on a light background
+ * is what you would do by hand anyway; this just does it once, for every case
+ * study, instead of asking each brand palette to work in two places at once.
+ */
+.gradient-text-brand {
+  filter: brightness(0.55);
+}
+
+.dark .gradient-text-brand {
+  filter: none;
 }
 
 /* background-attachment: fixed is what keeps the pan continuous across the
