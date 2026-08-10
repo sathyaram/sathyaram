@@ -40,13 +40,14 @@ export type Project = {
 export const projectOrder: Project[] = [
   {
     slug: "exhaust-notes",
+    screenshot: "/projects/exhaust-notes.jpg",
     title: "Exhaust Notes",
     year: "2026",
     tech: "Next.js",
     blurb: "Real exhaust recordings, played side by side.",
     from: "#a51a26",
     to: "#f42737",
-    onHomepage: false,
+    onHomepage: true,
   },
   {
     slug: "springtuner",
@@ -82,6 +83,7 @@ export const projectOrder: Project[] = [
   },
   {
     slug: "unslop",
+    screenshot: "/projects/unslop.jpg",
     title: "Unslop",
     year: "2026",
     tech: "Next.js",
@@ -95,7 +97,7 @@ export const projectOrder: Project[] = [
     to: "#fff200",
     gradient:
       "linear-gradient(135deg, #1c1c1c 0%, #00aeef 38%, #ec008c 70%, #fff200 100%)",
-    onHomepage: false,
+    onHomepage: true,
   },
 ];
 

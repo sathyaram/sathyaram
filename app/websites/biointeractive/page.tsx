@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CaseStudy from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
-  title: "HHMI BioInteractive",
+  title: "Howard Hughes' BioInteractive",
   description:
     "Front-end development for HHMI BioInteractive: JavaScript classroom interactives — quizzes, simulations and guided walkthroughs — built for keyboard and screen-reader use across hundreds of lesson pages.",
 };
@@ -12,12 +12,12 @@ export default function Biointeractive() {
     <CaseStudy
       section="websites"
       slug="biointeractive"
-      title="HHMI BioInteractive"
-      subtitle="Netflixing science, for kids."
-      year="2020"
+      title="Howard Hughes' BioInteractive"
+      subtitle="Netflixing science, for kids, on Drupal 8 interactives built to work without a mouse."
+      year="2021"
       agency="ForumOne"
-      gradientFrom="#5C1A1A"
-      gradientTo="#F2B880"
+      gradientFrom="#04646f"
+      gradientTo="#8ac341"
       url="biointeractive.org"
       link="https://biointeractive.org"
       description="HHMI's BioInteractive brings free science education resources to classrooms. Working with ForumOne, I helped build custom Drupal 8 components and JavaScript-driven interactives designed to make complex science genuinely engaging for students."

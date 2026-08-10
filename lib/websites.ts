@@ -1,8 +1,11 @@
 // Canonical order for the Next/Previous links on each website case study —
-// same order the homepage grid uses. biointeractive is deliberately left
-// out: it isn't on the homepage grid either (still an open question, not a
-// finished case study), so it shouldn't surface via prev/next cycling when
-// nothing else on the site links to it.
+// same order the homepage grid uses, and the same list the sitemap reads.
+// biointeractive used to sit outside this list because nothing linked to it;
+// it joined the grid in v8.2 and so joined this on the same day, which is the
+// rule the sitemap comment describes.
+//
+// The order follows the grid's span rhythm (2-3 / 3-2 / 2-3) rather than
+// date — see the note on `featured` in app/page.tsx.
 //
 // Named for websites rather than "projects" since v8.2: /projects is now its
 // own section of self-initiated work (see lib/projects.ts), and a
@@ -12,6 +15,8 @@ export const websiteOrder = [
   { slug: "homeplanetfund", title: "Home Planet Fund" },
   { slug: "vilcek", title: "The Vilcek Foundation" },
   { slug: "sontag", title: "The Sontag Foundation" },
+  { slug: "biointeractive", title: "Howard Hughes' BioInteractive" },
+  { slug: "llr", title: "South Carolina LLR" },
 ];
 
 export function getAdjacentWebsites(slug: string) {

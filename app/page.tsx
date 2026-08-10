@@ -99,6 +99,41 @@ const featured = [
     image: "/websites/assets/sontag.png",
     imageScale: 1.25,
   },
+  {
+    slug: "biointeractive",
+    title: "Howard Hughes' BioInteractive",
+    year: "2021",
+    tech: "Drupal 8",
+    blurb: "Netflixing science, for kids.",
+    // Their own teal and lime, but starting a step deeper than the brand teal:
+    // #058d96 puts white title text at 3.99:1, under the 4.5 needed, where
+    // #04646f reads 6.87:1 and is still recognisably the same colour.
+    from: "#04646f",
+    to: "#8ac341",
+    span: "sm:col-span-2",
+    // The gecko from the BioInteractive logo, lifted out of the wordmark as
+    // its own vector so it scales cleanly at card size.
+    image: "/websites/assets/biointeractive-gecko.svg",
+    imageScale: 1.15,
+  },
+  {
+    slug: "llr",
+    title: "South Carolina LLR",
+    year: "2021",
+    tech: "Grav CMS",
+    blurb: "Licensing and workplace safety for a whole state.",
+    // All three colours from their shield mark rather than two: ruby, green
+    // and sapphire are equally the brand, and picking any pair would have
+    // looked like a mistake. Ruby leads because the title sits over it and it
+    // carries white at 6.74:1.
+    from: "#b11e3a",
+    to: "#3f8ba2",
+    gradient:
+      "linear-gradient(135deg, #b11e3a 0%, #7db956 55%, #3f8ba2 100%)",
+    span: "sm:col-span-3",
+    image: "/websites/assets/llr-badge.svg",
+    imageScale: 1.05,
+  },
 ];
 
 export default function Home() {
