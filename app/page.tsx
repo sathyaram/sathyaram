@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
 import HeadingGlow from "@/components/HeadingGlow";
 import WorkCard from "@/components/WorkCard";
-import { projectOrder } from "@/lib/projects";
+import { homepageProjects } from "@/lib/projects";
 
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,
@@ -310,14 +310,15 @@ export default function Home() {
       <section id="work" className="mx-auto max-w-[1600px] scroll-mt-28">
         <ScrollGroup className="mb-10 text-center">
           <h2 className="font-script leading-none text-foreground dark:text-logo-blue gradient-text-name text-[clamp(3rem,7.4vw,4.5rem)] pb-1 transition-all duration-700 sm:pb-2">
-            {/* "Featured Work", not "Work": the cards run 2024, 2024, 2020,
-                2021 because the order is driven by the grid's asymmetric span
-                rhythm (2-3 / 3-2), not by date. Naming the section for a
-                curated selection makes that intentional rather than reading as
-                a broken sort, without forcing a date order that would break the
-                layout. */}
+            {/* "Websites", plainly — it says what these are, and it pairs
+                against Projects below as client work vs self-initiated, which
+                is the distinction that actually matters now that both exist.
+                The cards run 2024, 2024, 2020, 2021 because the order follows
+                the grid's asymmetric span rhythm (2-3 / 3-2) rather than date;
+                a section named for what it contains, rather than for being a
+                selection, carries that just as well. */}
             <span className="heading-glow" data-glow-heading>
-              Featured Work
+              Websites
             </span>
           </h2>
         </ScrollGroup>
@@ -345,6 +346,11 @@ export default function Home() {
         Data comes from lib/projects.ts rather than a local array like
         `featured` above, because the prev/next links and the sitemap read the
         same list — see the note there.
+
+        An even two-up rather than the websites' asymmetric 2-3 / 3-2 rhythm:
+        that rhythm needs four cards to resolve, and with two it would just
+        read as one card being arbitrarily wider than the other. The cards
+        themselves carry no span here — the grid gives them equal width.
       */}
       <section id="projects" className="mx-auto mt-28 max-w-[1600px] scroll-mt-28 sm:mt-36">
         <ScrollGroup className="mb-10 text-center">
@@ -355,8 +361,8 @@ export default function Home() {
           </h2>
         </ScrollGroup>
 
-        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
-        {projectOrder.map((project) => (
+        <ScrollGroup className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-8">
+        {homepageProjects.map((project) => (
           <WorkCard
             key={project.slug}
             href={`/projects/${project.slug}`}

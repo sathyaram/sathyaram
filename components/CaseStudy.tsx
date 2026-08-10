@@ -285,8 +285,34 @@ export default function CaseStudy({
 
         {/* Previously a dead end — landing on a case study meant either
             hitting the browser back button or hunting for the nav. This
-            keeps people moving through the other projects instead. */}
-        {previous && next && (
+            keeps people moving through the other projects instead.
+
+            With only two entries in a section, the cycle wraps such that
+            previous and next are the same page: two buttons, two different
+            labels, one destination, which reads as a bug rather than as a
+            small set. Collapse to a single link in that case. */}
+        {previous && next && previous.slug === next.slug && (
+          <ScrollGroup className="mx-auto mt-14 max-w-lg">
+            <nav
+              aria-label="More projects"
+              className="border-t border-border pt-8 transition-all duration-700"
+            >
+              <Link
+                href={`/${section}/${next.slug}`}
+                className="group block rounded-2xl border border-border p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/60"
+              >
+                <p className="text-xs font-medium uppercase tracking-widest text-muted">
+                  Next →
+                </p>
+                <p className="mt-1 font-display font-semibold transition-colors duration-300 group-hover:text-accent">
+                  {next.title}
+                </p>
+              </Link>
+            </nav>
+          </ScrollGroup>
+        )}
+
+        {previous && next && previous.slug !== next.slug && (
           <ScrollGroup className="mx-auto mt-14 max-w-lg">
             <nav
               aria-label="More projects"

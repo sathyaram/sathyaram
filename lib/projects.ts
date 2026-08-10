@@ -23,7 +23,10 @@ export type Project = {
   /** Full gradient string, for the cards whose palette doesn't reduce to two
    *  stops. Overrides from/to on the card fill only. */
   gradient?: string;
-  span: string;
+  /** Whether it appears on the homepage. Its case study stays live and
+   *  linkable either way — this only governs whether anything on the site
+   *  points at it. */
+  onHomepage: boolean;
 };
 
 // Colours sampled from each app's own globals.css, the same way the website
@@ -39,7 +42,7 @@ export const projectOrder: Project[] = [
     blurb: "Real exhaust recordings, played side by side.",
     from: "#a51a26",
     to: "#f42737",
-    span: "sm:col-span-2",
+    onHomepage: false,
   },
   {
     slug: "springtuner",
@@ -53,21 +56,21 @@ export const projectOrder: Project[] = [
     from: "#123047",
     to: "#f0abfc",
     gradient: "linear-gradient(135deg, #123047 0%, #7dd3fc 55%, #f0abfc 100%)",
-    span: "sm:col-span-3",
+    onHomepage: true,
   },
   {
     slug: "spellbook",
     title: "Harry Potter Spellbook",
     year: "2026",
     tech: "Next.js",
-    blurb: "Eighty-eight spells, and a wand to practise them.",
+    blurb: "Ninety-two spells, and a wand to practise them.",
     // Deliberately stops at the deep gold rather than running on to the
     // parchment tones further up its palette: those measure ~1.2:1 on the
     // light-mode background, the same trap the Vilcek card's light stop falls
     // into.
     from: "#05060c",
     to: "#c39a2e",
-    span: "sm:col-span-3",
+    onHomepage: true,
   },
   {
     slug: "unslop",
@@ -84,15 +87,32 @@ export const projectOrder: Project[] = [
     to: "#fff200",
     gradient:
       "linear-gradient(135deg, #1c1c1c 0%, #00aeef 38%, #ec008c 70%, #fff200 100%)",
-    span: "sm:col-span-2",
+    onHomepage: false,
   },
 ];
 
+/**
+ * The ones the site actually points at. Everything downstream reads this
+ * rather than projectOrder — the grid, the sitemap, and the prev/next cycle
+ * below — so hiding a project removes it from all three at once and can't
+ * leave it half-listed.
+ *
+ * Same convention the websites use for biointeractive: a case study that
+ * nothing links to stays reachable by URL but isn't advertised, and it goes
+ * into the sitemap the day it goes onto the grid.
+ */
+export const homepageProjects = projectOrder.filter((p) => p.onHomepage);
+
 export function getAdjacentProjects(slug: string) {
-  const index = projectOrder.findIndex((p) => p.slug === slug);
+  // Cycles the visible set only. Paging out of a listed project and into an
+  // unlisted one would surface exactly what hiding it was meant to avoid, and
+  // an unlisted project gets no prev/next at all (findIndex returns -1, and
+  // the case study renders the nav only when both ends exist).
+  const index = homepageProjects.findIndex((p) => p.slug === slug);
   if (index === -1) return { previous: null, next: null };
-  const previous = projectOrder[(index - 1 + projectOrder.length) % projectOrder.length];
-  const next = projectOrder[(index + 1) % projectOrder.length];
+  const count = homepageProjects.length;
+  const previous = homepageProjects[(index - 1 + count) % count];
+  const next = homepageProjects[(index + 1) % count];
   return { previous, next };
 }
 

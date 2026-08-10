@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { projectOrder } from "@/lib/projects";
+import { homepageProjects } from "@/lib/projects";
 import { websiteOrder } from "@/lib/websites";
 import { SITE_URL } from "@/lib/site";
 
@@ -27,7 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const projects = projectOrder.map((project) => ({
+  // Only the listed ones, same rule the websites follow: a case study nothing
+  // links to stays reachable by URL but isn't advertised, and joins the
+  // sitemap the day it joins the grid.
+  const projects = homepageProjects.map((project) => ({
     url: `${SITE_URL}/projects/${project.slug}`,
     lastModified: now,
     changeFrequency: "yearly" as const,

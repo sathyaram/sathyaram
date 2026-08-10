@@ -19,7 +19,9 @@ export type WorkCardProps = {
   to: string;
   /** Full gradient string, for palettes that don't reduce to two stops. */
   gradient?: string;
-  span: string;
+  /** Grid-column span, for the asymmetric website grid. Omitted where the grid
+   *  itself already gives every card the same width. */
+  span?: string;
   /** Optional: the website cards each carry a cut-out standing in for the
    *  client. Projects have no equivalent artwork yet, and the card is built to
    *  read as finished without one rather than leaving a gap where it would go. */
@@ -48,7 +50,7 @@ export default function WorkCard({
   from,
   to,
   gradient,
-  span,
+  span = "",
   image,
   imageScale = 1,
   heightClass = "min-h-[22rem] sm:min-h-[28rem]",
