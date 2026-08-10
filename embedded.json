@@ -1,10 +1,10 @@
 {
   "exhaustnotes": {
     "source": "../exhaustnotes",
-    "commit": "3085cad0850ca4f5d7e4444333ef20970656c3c3",
-    "subject": "Bundle the noise texture instead of serving it from public/",
+    "commit": "d37792efa2a860042ce15e4e25f13f98aaf83bae",
+    "subject": "Make the favicon and OG image survive the sub-path",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T18:16:43.511Z",
+    "embeddedAt": "2026-08-10T19:18:17.262Z",
     "size": "26M"
   },
   "harrypotterspellbook": {
@@ -17,18 +17,18 @@
   },
   "springtuner": {
     "source": "../springtuner",
-    "commit": "85e6bbaeebdefbad4ad910934ae0a5b82580745f",
-    "subject": "Reposition metadata around \"generator\"",
+    "commit": "8bff96f5958a3dd715e3373fd20c4bbba6320a0f",
+    "subject": "Point metadataBase at production, not localhost",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T17:16:02.441Z",
+    "embeddedAt": "2026-08-10T19:18:11.059Z",
     "size": "916K"
   },
   "unslop": {
     "source": "../unslop",
-    "commit": "c3d49729ecc38871de10ab4a0b4f3a4cd8632f11",
-    "subject": "Drop unused create-next-app scaffold SVGs",
+    "commit": "15cf43688e8c06090a7ef9bab5577c4dc794894b",
+    "subject": "Add a real mark, an OG card, and the metadata to go with them",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T18:09:18.231Z",
-    "size": "928K"
+    "embeddedAt": "2026-08-10T19:18:14.113Z",
+    "size": "952K"
   }
 }

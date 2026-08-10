@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Unslop">
+  <!--
+    The thing Unslop is about is a smart quote you didn't ask for, so the mark
+    is a smart quote with a line through it. Two shapes only: at 16px anything
+    more detailed turns to mush, and the slash is what carries the meaning once
+    the quote is too small to read as a quote.
+
+    The slash is deliberately thinner than it wants to be and inset from the
+    corners — at full weight it covered the left quote entirely and the mark
+    stopped being a struck-through anything.
+
+    Colours are the card's: near-black ground, magenta glyph, yellow strike.
+  -->
+  <rect width="64" height="64" rx="14" fill="#1c1c1c"/>
+  <g fill="#ec008c">
+    <path d="M20 21c-4.4 0-7.6 3.2-7.6 7.4 0 4 2.8 6.8 6.6 6.8.6 0 1.2-.1 1.7-.2-.8 3.3-3.1 5.9-6.3 7l2.1 4.4c5.9-2.2 9.9-7.6 9.9-14.4C26.4 25.2 23.8 21 20 21Z"/>
+    <path d="M43 21c-4.4 0-7.6 3.2-7.6 7.4 0 4 2.8 6.8 6.6 6.8.6 0 1.2-.1 1.7-.2-.8 3.3-3.1 5.9-6.3 7l2.1 4.4c5.9-2.2 9.9-7.6 9.9-14.4C49.4 25.2 46.8 21 43 21Z"/>
+  </g>
+  <path d="M14 47 50 17" stroke="#fff200" stroke-width="4.5" stroke-linecap="round"/>
+</svg>
