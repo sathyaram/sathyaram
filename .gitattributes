@@ -1,0 +1,7 @@
+# Static exports of the standalone sites, served from public/ as-is.
+# Their build output is what GitHub Linguist was counting, so the repo read as
+# HTML rather than TypeScript. Exclude it from language stats.
+public/harrypotterspellbook/** linguist-vendored
+public/exhaustnotes/** linguist-vendored
+public/springtuner/** linguist-vendored
+public/unslop/** linguist-vendored
