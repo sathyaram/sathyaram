@@ -25,10 +25,10 @@
   },
   "unslop": {
     "source": "../unslop",
-    "commit": "c51e1ae6bd6e3ad9340d88bdfc376a05f8d72fb1",
-    "subject": "Dress the interface in the mark's process colours",
+    "commit": "fb106195943931b29b9f998b383fdfc2a78f462c",
+    "subject": "Take our own medicine: no em dashes in our own copy",
     "builtFromDirtyTree": false,
-    "embeddedAt": "2026-08-10T19:38:16.506Z",
+    "embeddedAt": "2026-08-11T01:49:32.219Z",
     "size": "952K"
   }
 }
