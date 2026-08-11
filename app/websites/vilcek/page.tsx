@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The Vilcek Foundation",
   description:
     "Front-end development for the Vilcek Foundation: flexible honoree profiles and filterable award archives for a foundation celebrating immigrant achievement in the arts and sciences.",
-};
+  path: "/websites/vilcek",
+  hasOwnCard: true,
+});
 
 export default function Vilcek() {
   return (

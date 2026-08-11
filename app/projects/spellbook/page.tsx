@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Harry Potter Spellbook",
   description:
     "A fan-made grimoire: ninety-two spells with incantations, plus wand-gesture practice, spell effects and an ambient score. Built with Next.js and Tailwind.",
-};
+  path: "/projects/spellbook",
+  hasOwnCard: true,
+});
 
 export default function Spellbook() {
   return (

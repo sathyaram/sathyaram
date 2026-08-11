@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
 import {
@@ -8,11 +9,12 @@ import {
   ScLicensingBoardLogo,
 } from "@/components/TestimonialLogos";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
     "Sathya Ram is a web developer and designer in the DMV area, building accessible, CMS-driven websites for nonprofits and institutions. Background, testimonials, and credentials.",
-};
+  path: "/about",
+});
 
 const sections = [
   {

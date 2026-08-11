@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Howard Hughes' BioInteractive",
   description:
     "Front-end development for HHMI BioInteractive: JavaScript classroom interactives (quizzes, simulations and guided walkthroughs) built for keyboard and screen-reader use across hundreds of lesson pages.",
-};
+  path: "/websites/biointeractive",
+  hasOwnCard: true,
+});
 
 export default function Biointeractive() {
   return (

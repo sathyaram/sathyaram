@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Reveal from "@/components/Reveal";
 import ScrollGroup from "@/components/ScrollGroup";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Colophon",
   description:
     "The tools, type, and technology behind sathyaram.com.",
-};
+  path: "/colophon",
+});
 
 type ColophonItem = { title: string; detail: string; href?: string };
 

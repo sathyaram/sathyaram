@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The Sontag Foundation",
   description:
     "Front-end development for the Sontag Foundation with Push10: accessible fellowship templates and grant-guideline disclosures for a brain cancer research funder.",
-};
+  path: "/websites/sontag",
+  hasOwnCard: true,
+});
 
 export default function Sontag() {
   return (

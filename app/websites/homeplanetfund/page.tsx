@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Home Planet Fund",
   description:
     "Front-end development for Home Planet Fund with Teal Media: a custom WordPress theme and editor-managed grant and initiative archives for Patagonia’s climate fund.",
-};
+  path: "/websites/homeplanetfund",
+  hasOwnCard: true,
+});
 
 export default function HomePlanetFund() {
   return (

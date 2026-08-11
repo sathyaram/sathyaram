@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The Brookings Institution",
   description:
     "Front-end development for the Brookings Institution with Teal Media: reusable WordPress templates and a debounced research-library filter for a high-volume public policy publisher.",
-};
+  path: "/websites/brookings",
+  hasOwnCard: true,
+});
 
 export default function Brookings() {
   return (

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "South Carolina LLR",
   description:
     "Front-end development for the South Carolina Department of Labor, Licensing and Regulation with ForumOne: a Grav CMS build spanning professional licensing, OSHA, the state fire marshal, and elevator and amusement-ride inspection.",
-};
+  path: "/websites/llr",
+  hasOwnCard: true,
+});
 
 export default function LLR() {
   return (

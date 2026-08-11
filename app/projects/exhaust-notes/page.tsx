@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Exhaust Notes",
   description:
     "A curated library of real exhaust recordings, built so any two cars can be played side by side. Next.js App Router, the Web Audio API, and a rebuild of a 2019 original.",
-};
+  path: "/projects/exhaust-notes",
+  hasOwnCard: true,
+});
 
 export default function ExhaustNotes() {
   return (

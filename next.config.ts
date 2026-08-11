@@ -84,11 +84,27 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: false,
       })),
-      // The resume was served under its versioned filename and is the link
-      // most likely to be sitting in someone's inbox or a job application,
-      // so it's worth keeping alive even though the file was renamed.
+      // Every URL the resume has ever been served from, all pointing at the
+      // current file. These are the links most likely to be sitting in
+      // someone's inbox or attached to a job application, so they're worth
+      // keeping alive even though the file has been renamed twice.
+      //
+      // The 2025 filename matters for a second reason: Google indexed it, and
+      // it was still being surfaced next to the current one. The file itself
+      // is long gone from the repo, so nothing outdated was being *served* —
+      // but a bare 404 leaves the stale entry to age out on its own schedule,
+      // while a 301 consolidates it onto /resume.pdf and gets anyone who
+      // clicks the old search result the current document instead of a dead
+      // end. Same reasoning for anything else that gets renamed later: add
+      // the old name here rather than letting it 404.
+      ...["/SathyaRam_Resume2025.pdf", "/SathyaRam_Resume2026.pdf"].map(
+        (source) => ({ source, destination: "/resume.pdf", permanent: true }),
+      ),
+      // A stable, version-free URL to hand out, so the next rename doesn't
+      // strand another batch of links. /resume is the thing to put on an
+      // application; /resume.pdf stays the file it resolves to.
       {
-        source: "/SathyaRam_Resume2026.pdf",
+        source: "/resume",
         destination: "/resume.pdf",
         permanent: true,
       },

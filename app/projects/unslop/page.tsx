@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Unslop",
   description:
     "Strips the typographic tells out of AI-written text (smart quotes, real ellipses, em dashes, zero-width spaces) with a reveal view showing exactly what was found. Runs entirely in the browser.",
-};
+  path: "/projects/unslop",
+  hasOwnCard: true,
+});
 
 export default function Unslop() {
   return (

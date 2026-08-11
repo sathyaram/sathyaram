@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CaseStudy from "@/components/CaseStudy";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Spring Tuner",
   description:
     "A feel-first spring easing generator for CSS. Drag two sliders, watch six real components move, copy pure CSS built on the linear() timing function.",
-};
+  path: "/projects/springtuner",
+  hasOwnCard: true,
+});
 
 export default function SpringTuner() {
   return (

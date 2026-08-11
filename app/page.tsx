@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Sparkle from "@/components/Sparkle";
 import PanoramaSlider from "@/components/PanoramaSlider";
@@ -7,6 +8,15 @@ import HeadingGlow from "@/components/HeadingGlow";
 import WorkCard from "@/components/WorkCard";
 import { homepageProjects } from "@/lib/projects";
 import { websiteCards } from "@/lib/websites";
+
+// The homepage is the one route whose title, description and social card are
+// already right in the root layout, so it doesn't go through pageMetadata() —
+// it only needs the canonical. That still can't move up into the layout: the
+// shallow merge would hand the same "/" canonical to every page that doesn't
+// override it. See lib/seo.ts.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 // Colours sampled from each client's live site. Each gradient runs from a
 // deep shade (top-left, behind the text) to the brand colour (bottom-right,

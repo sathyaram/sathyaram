@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
     "Get in touch with Sathya Ram about a website build, redesign, or design project.",
-};
+  path: "/contact",
+});
 
 export default function Contact() {
   return (
