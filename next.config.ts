@@ -74,6 +74,32 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Vercel gives every project a <name>.vercel.app domain and, unlike the
+      // custom domains you add yourself, it can't be removed once a real one
+      // is attached — so sathyaram.vercel.app serves this entire site a second
+      // time, crawlably and identically. Two hosts serving the same pages is
+      // duplicate content, and it lets a search engine pick its own preferred
+      // one and hold a different snapshot of each.
+      //
+      // The canonical tags added in lib/seo.ts are the advisory half of the
+      // fix; this is the half with teeth. A redirect beats the X-Robots-Tag
+      // noindex header Vercel's own guidance suggests, because the duplicate
+      // host stops serving the pages at all rather than serving them and
+      // asking not to be indexed.
+      //
+      // Matching the production alias exactly is what keeps preview
+      // deployments working: those are sathyaram-git-<branch>-*.vercel.app and
+      // sathyaram-<hash>-*.vercel.app, neither of which contains this string.
+      // Broadening it to all of .vercel.app would redirect every preview
+      // straight to production and make branch deploys impossible to review.
+      // It has to stay first in this list, so a request on the wrong host is
+      // sent home before any path-level rule rewrites it there.
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "sathyaram.vercel.app" }],
+        destination: "https://sathyaram.com/:path*",
+        permanent: true,
+      },
       ...Object.entries(CASE_STUDY_MOVES).map(([from, to]) => ({
         source: `/${from}`,
         destination: `/websites/${to}`,
