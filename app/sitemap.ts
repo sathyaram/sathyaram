@@ -8,10 +8,13 @@ import { SITE_URL } from "@/lib/site";
  * ones that drive the homepage grids and the prev/next links — so the sitemap
  * can't drift out of sync with what the site actually presents.
  *
- * That deliberately means four, not five. The biointeractive page exists but
- * nothing links to it yet (it's slated for v8.1), and pointing crawlers at an
- * orphan page nobody can navigate to isn't doing it any favours. It gets
- * added here the same day it's linked from the grid.
+ * Which also means this file doesn't decide what's listed. A case study that
+ * nothing links to stays reachable by URL but isn't advertised — pointing
+ * crawlers at an orphan page nobody can navigate to isn't doing it any
+ * favours — and it joins the sitemap the day it joins the grid, by being added
+ * to the list rather than to anything here. Nothing is held back at the
+ * moment: all six websites and all four projects are on the homepage, so all
+ * ten are below.
  *
  * Priorities are relative, not absolute — the homepage leads, the work
  * itself comes next, then supporting pages. Deliberately omits /api/* and
@@ -27,9 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Only the listed ones, same rule the websites follow: a case study nothing
-  // links to stays reachable by URL but isn't advertised, and joins the
-  // sitemap the day it joins the grid.
+  // homepageProjects, not projectOrder — that filter is where the rule above
+  // actually lives for projects; the websites' equivalent is which cards are
+  // in websiteCards.
   const projects = homepageProjects.map((project) => ({
     url: `${SITE_URL}/projects/${project.slug}`,
     lastModified: now,
