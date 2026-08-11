@@ -87,16 +87,34 @@ const nextConfig: NextConfig = {
       // host stops serving the pages at all rather than serving them and
       // asking not to be indexed.
       //
-      // Matching the production alias exactly is what keeps preview
-      // deployments working: those are sathyaram-git-<branch>-*.vercel.app and
-      // sathyaram-<hash>-*.vercel.app, neither of which contains this string.
-      // Broadening it to all of .vercel.app would redirect every preview
-      // straight to production and make branch deploys impossible to review.
-      // It has to stay first in this list, so a request on the wrong host is
-      // sent home before any path-level rule rewrites it there.
+      // There are three of these, not one. Every production deployment is
+      // aliased to sathyaram.vercel.app, sathyaram-sathya-rams-projects
+      // .vercel.app AND sathyaram-git-master-sathya-rams-projects.vercel.app
+      // (the branch alias for the production branch) — all three serve the
+      // site, all three answer 200, and `vercel inspect` on any production
+      // deployment lists them together. Catching only the first left two
+      // duplicates crawlable.
+      //
+      // The pattern deliberately stops there. Per-deployment previews are
+      // sathyaram-<hash>-sathya-rams-projects.vercel.app and branch aliases
+      // for anything other than master are sathyaram-git-<branch>-*, neither
+      // of which this matches — so previews stay reviewable. Matching all of
+      // .vercel.app would redirect them to production and make branch deploys
+      // impossible to look at.
+      //
+      // Next wraps the value as ^…$, so the alternation needs its own
+      // non-capturing group or the anchors would bind to one branch each.
+      // This rule has to stay first in the list, so a request on the wrong
+      // host is sent home before any path-level rule rewrites it there.
       {
         source: "/:path*",
-        has: [{ type: "host" as const, value: "sathyaram.vercel.app" }],
+        has: [
+          {
+            type: "host" as const,
+            value:
+              "sathyaram(?:-git-master)?(?:-sathya-rams-projects)?\\.vercel\\.app",
+          },
+        ],
         destination: "https://sathyaram.com/:path*",
         permanent: true,
       },
