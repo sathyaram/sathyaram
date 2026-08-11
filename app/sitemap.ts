@@ -64,5 +64,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
+    // The resume is a file rather than a page, but it is indexed like one, and
+    // for a while the only version Google held was a filename that no longer
+    // exists (both old names now 301 here — see next.config.ts). Listing the
+    // current URL is the one lever this repo has on that: it advertises the
+    // URL worth crawling instead of waiting for the stale entries to age out.
+    // Deliberately below the pages — it should never outrank the site itself.
+    {
+      url: `${SITE_URL}/resume.pdf`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    },
   ];
 }

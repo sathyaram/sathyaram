@@ -559,16 +559,50 @@ body {
   }
 }
 
-/* Letters that are both the rise-in stagger AND the gradient sweep (the
-   hero name) need both animations listed together in one longhand set, so
-   neither clobbers the other. */
+/* Letters that are both the rise-in stagger AND the gradient sweep (the hero
+   name) split those two animations across two boxes: the span rises, and its
+   ::before — which is where the glyph and therefore the clipped gradient now
+   live — pans. Without this reset the .dark .gradient-text-name rule above
+   would win on specificity and replace letter-rise with gradient-pan on the
+   span, dropping the stagger. */
 .dark .reveal-letter.gradient-text-name,
 .reveal-letter.gradient-text-brand {
-  animation-name: letter-rise, gradient-pan;
-  animation-duration: 650ms, 8s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), ease-in-out;
-  animation-iteration-count: 1, infinite;
-  animation-fill-mode: both, none;
+  animation-name: letter-rise;
+  animation-duration: 650ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+/* background-clip: text clips to the text the box itself draws, and these
+   spans no longer draw any — so the whole clipped-gradient treatment has to
+   follow the glyph into ::before. The background longhands inherit rather
+   than being restated, which keeps --name-gradient (and the per-case-study
+   overrides, and the desktop-only background-attachment: fixed) defined in
+   exactly one place.
+
+   `color` is deliberately NOT set here: the pseudo-element inherits the
+   span's transparent, which is what lets the gradient show through the glyph
+   — and inherits #fff on .name-glow:hover, so the white hover glow still
+   fades in over the span's 2s colour transition instead of being pinned
+   transparent. text-shadow inherits for the same reason.
+
+   gradient-pan runs here rather than being inherited as an animating
+   background-position, so the pan is driven by a real animation on the box
+   being painted. animation-delay: inherit keeps each letter's pan at the same
+   phase offset it had when both animations shared the span's inline delay. */
+.dark .reveal-letter.gradient-text-name::before,
+.reveal-letter.gradient-text-brand::before {
+  background-image: inherit;
+  background-size: inherit;
+  background-attachment: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation-name: gradient-pan;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: inherit;
 }
 
 @keyframes gradient-pan {
@@ -587,7 +621,11 @@ body {
   .gradient-text-name,
   .gradient-text-brand,
   .reveal-letter.gradient-text-name,
-  .reveal-letter.gradient-text-brand {
+  .reveal-letter.gradient-text-brand,
+  /* The pan moved to ::before, so stopping it on the span is no longer
+     enough to stop it. */
+  .dark .reveal-letter.gradient-text-name::before,
+  .reveal-letter.gradient-text-brand::before {
     animation: none;
   }
 }
@@ -801,6 +839,15 @@ body {
   animation-duration: 650ms;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-fill-mode: both;
+}
+
+/* The glyph itself. Reveal.tsx renders these spans EMPTY and passes the
+   character in --reveal-char, so the only copy of the words in the DOM is the
+   .sr-only one; generated content is not text and is not indexed. The span
+   still has a line box (::before is inline), so it keeps sitting on the
+   baseline exactly as it did when it held a text node. */
+.reveal-letter::before {
+  content: var(--reveal-char, "");
 }
 
 @media (prefers-reduced-motion: reduce) {

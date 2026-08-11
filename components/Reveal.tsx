@@ -4,6 +4,18 @@ type Segment = { text: string; className?: string };
 
 type Letter = { char: string; className?: string };
 
+/**
+ * Wraps a character as a CSS <string> for `content: var(--reveal-char)`.
+ * A bare character would be an invalid content value; the quotes are what
+ * make it one. Backslashes and double quotes are escaped because either one
+ * unescaped would terminate or corrupt the string — none of the current
+ * headings contain them, but a caller's text is not this component's to
+ * assume about, and the failure mode is a letter silently not rendering.
+ */
+function cssString(char: string) {
+  return `"${char.replace(/[\\"]/g, "\\$&")}"`;
+}
+
 type RevealProps = {
   /** Plain string, or segments so parts can carry their own class (e.g. the
    *  glowing part of the hero name) while sharing one continuous stagger. */
@@ -31,6 +43,10 @@ type RevealProps = {
  * letters are grouped into per-word wrappers (`white-space: nowrap`) here:
  * a line can still break between words, exactly like normal text, but never
  * inside one.
+ *
+ * The letters carry no text node. Each character is handed to CSS as a custom
+ * property and drawn by .reveal-letter::before, because generated content is
+ * not part of the DOM's text — see the note on the visually-hidden copy below.
  */
 export default function Reveal({
   text,
@@ -66,7 +82,16 @@ export default function Reveal({
           readable text lives here as a visually-hidden copy. This gives
           assistive tech (and the heading's accessible name, when Tag is an
           h1/h2/h3) the actual words — without putting an aria-label on a
-          generic <span>, which ARIA prohibits (Lighthouse flags it). */}
+          generic <span>, which ARIA prohibits (Lighthouse flags it).
+
+          aria-hidden settles it for screen readers, but not for anything that
+          reads text rather than the accessibility tree: a plain text-node walk
+          (and Google indexes from rendered text, which does not honour
+          aria-hidden) saw this copy AND the letters, and reported the hero as
+          "Hi! I'm H i! I'm". So the letters below hold no text at all — their
+          glyphs come from ::before generated content, which never lands in the
+          DOM, in innerText, or in an index. This span is now the only copy of
+          the words that exists, for every consumer. */}
       <span className="sr-only">{label}</span>
       {words.flatMap((word, wordIndex) => {
         const rendered = (
@@ -78,10 +103,13 @@ export default function Reveal({
                   key={charIndex}
                   aria-hidden="true"
                   className={`reveal-letter ${letter.className ?? ""}`}
-                  style={{ animationDelay: `${delay + index * step}ms` }}
-                >
-                  {letter.char}
-                </span>
+                  style={
+                    {
+                      "--reveal-char": cssString(letter.char),
+                      animationDelay: `${delay + index * step}ms`,
+                    } as CSSProperties
+                  }
+                />
               );
             })}
           </span>
