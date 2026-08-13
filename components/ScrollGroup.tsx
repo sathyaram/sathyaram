@@ -29,7 +29,7 @@ type ClonableProps = { className?: string; style?: CSSProperties };
  * Clones the stagger class/style/data-attribute directly onto each child
  * rather than wrapping it in a new div. An earlier version wrapped —
  * which broke the featured-work grid, because its asymmetric layout sets
- * `sm:col-span-2`/`sm:col-span-3` on the card itself, and CSS grid-column
+ * `lg:col-span-2`/`lg:col-span-3` on the card itself, and CSS grid-column
  * only has an effect on a *direct* grid child. With a wrapper div in
  * between, the wrapper (unstyled, so `auto`) became the real grid item
  * and the span classes went inert, collapsing every card to one column.

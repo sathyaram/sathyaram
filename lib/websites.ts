@@ -39,7 +39,7 @@ export const websiteCards: Website[] = [
     blurb: "Nonpartisan research for decisionmakers.",
     from: "#022A4E",
     to: "#00649F",
-    span: "sm:col-span-2",
+    span: "lg:col-span-2",
     image: "/websites/assets/brookings.webp",
     imageScale: 1.25,
   },
@@ -51,7 +51,7 @@ export const websiteCards: Website[] = [
     blurb: "Patagonia's grassroots climate fund.",
     from: "#8C382C",
     to: "#F59431",
-    span: "sm:col-span-3",
+    span: "lg:col-span-3",
     image: "/websites/assets/homeplanet.png",
     imageScale: 1.4,
   },
@@ -63,7 +63,7 @@ export const websiteCards: Website[] = [
     blurb: "A celebration of immigrants & the arts.",
     from: "#5C4433",
     to: "#E3D2B4",
-    span: "sm:col-span-3",
+    span: "lg:col-span-3",
     image: "/websites/assets/vilcek.webp",
     imageScale: 1.55,
   },
@@ -75,7 +75,7 @@ export const websiteCards: Website[] = [
     blurb: "The definitive enterprise for brain cancer research.",
     from: "#042342",
     to: "#2B86E0",
-    span: "sm:col-span-2",
+    span: "lg:col-span-2",
     image: "/websites/assets/sontag.png",
     imageScale: 1.25,
   },
@@ -90,7 +90,7 @@ export const websiteCards: Website[] = [
     // #04646f reads 6.87:1 and is still recognisably the same colour.
     from: "#04646f",
     to: "#8ac341",
-    span: "sm:col-span-2",
+    span: "lg:col-span-2",
     // The gecko from the BioInteractive logo, lifted out of the wordmark as
     // its own vector so it scales cleanly at card size.
     image: "/websites/assets/biointeractive-gecko.svg",
@@ -108,7 +108,7 @@ export const websiteCards: Website[] = [
     // leads because the title sits over it and it holds white at 6.74:1.
     from: "#b11e3a",
     to: "#3f8ba2",
-    span: "sm:col-span-3",
+    span: "lg:col-span-3",
     image: "/websites/assets/llr-badge.svg",
     imageScale: 1.05,
   },

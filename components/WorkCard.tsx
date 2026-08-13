@@ -19,8 +19,10 @@ export type WorkCardProps = {
   to: string;
   /** Full gradient string, for palettes that don't reduce to two stops. */
   gradient?: string;
-  /** Grid-column span, for the asymmetric website grid. Omitted where the grid
-   *  itself already gives every card the same width. */
+  /** Grid-column span, for the asymmetric website grid. Must be prefixed with
+   *  the same breakpoint the grid gains its columns at (`lg:`) — a span that
+   *  starts earlier than the columns do lands in a one-column grid, where it
+   *  spills into implicit zero-width tracks and stops filling the row. */
   span?: string;
   /** Optional: the website cards each carry a cut-out standing in for the
    *  client. Projects have no equivalent artwork yet, and the card is built to
