@@ -25,6 +25,7 @@ export default function LLR() {
       gradientTo="#3f8ba2"
       url="llr.sc.gov"
       link="https://llr.sc.gov"
+      image="/websites/assets/llr-hero.webp"
       description="South Carolina's Department of Labor, Licensing and Regulation licenses most of the regulated professions in the state. It also runs the state's OSHA program, the fire marshal's office, and the inspection of every elevator and amusement ride in South Carolina. One site, and the audience is essentially everyone who works."
       // Sector sits where the other client work carries a timeline, because I
       // don't have one for this engagement and a guessed duration would be the

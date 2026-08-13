@@ -23,6 +23,7 @@ export default function Biointeractive() {
       gradientTo="#8ac341"
       url="biointeractive.org"
       link="https://biointeractive.org"
+      image="/websites/assets/biointeractive-hero.webp"
       description="HHMI's BioInteractive brings free science education resources to classrooms. Working with ForumOne, I helped build custom Drupal 8 components and JavaScript-driven interactives designed to make complex science genuinely engaging for students."
       stats={[
         { label: "Timeline", value: "5 months" },
