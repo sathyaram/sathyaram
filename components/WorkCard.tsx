@@ -216,6 +216,13 @@ export default function WorkCard({
               </div>
             )}
           </div>
+          {/* object-left-top, not object-top: these are ~1600x1060 desktop
+              captures in a frame that goes nearly square on a phone, so cover
+              has to discard a lot of width. Centred, it took that off both
+              edges at once and ate into the left of the UI where each app's
+              title and controls sit — the Spring Tuner frame read as "Tuner".
+              Anchoring left puts the whole crop on the right instead, which is
+              the side already bleeding off the card. */}
           <div className="relative flex-1">
             <Image
               src={screenshot}
@@ -223,7 +230,7 @@ export default function WorkCard({
               aria-hidden="true"
               fill
               sizes="(min-width: 1024px) 45vw, 75vw"
-              className="object-cover object-top"
+              className="object-cover object-left-top"
             />
           </div>
         </div>
