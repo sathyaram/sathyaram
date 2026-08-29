@@ -8,6 +8,7 @@ import GradientBackground from "@/components/GradientBackground";
 import StarFieldThree from "@/components/StarFieldThree";
 import RouteTransition from "@/components/RouteTransition";
 import { socialLinks } from "@/lib/social";
+import { services } from "@/lib/services";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     template: "Sathya Ram | %s",
     default: "Sathya Ram | Developer & Designer",
   },
-  description: "Portfolio of Sathya Ram: websites, design, and photography.",
+  description: "Web developer and designer in the DC, Maryland and Virginia area, building accessible, animated websites in React, Next.js and WordPress for nonprofits, institutions and brands.",
   // The card shown when the site is shared. og:image / twitter:image come
   // from app/opengraph-image.tsx automatically via the file convention.
   openGraph: {
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Sathya Ram",
     title: "Sathya Ram | Developer & Designer",
     description:
-      "Portfolio of Sathya Ram: websites, design, and photography.",
+      "Web developer and designer in the DC, Maryland and Virginia area, building accessible, animated websites in React, Next.js and WordPress for nonprofits, institutions and brands.",
     url: "/",
     locale: "en_US",
   },
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sathya Ram | Developer & Designer",
     description:
-      "Portfolio of Sathya Ram: websites, design, and photography.",
+      "Web developer and designer in the DC, Maryland and Virginia area, building accessible, animated websites in React, Next.js and WordPress for nonprofits, institutions and brands.",
   },
 };
 
@@ -70,6 +71,7 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}/#person`,
   name: "Sathya Ram",
   url: SITE_URL,
   jobTitle: "Web Developer & Designer",
@@ -80,6 +82,45 @@ const personJsonLd = {
     addressCountry: "US",
   },
   sameAs: socialLinks.map((link) => link.href),
+  description:
+    "Freelance web developer and designer working with nonprofits, institutions and brands on accessible, carefully animated websites.",
+  // What I'd want a search engine or an assistant to be able to answer
+  // "what does he do" with, in its own vocabulary rather than by parsing
+  // the page copy.
+  knowsAbout: [
+    "Web Development",
+    "React",
+    "Next.js",
+    "WordPress",
+    "UI/UX Design",
+    "Design Systems",
+    "Web Accessibility",
+    "Photography",
+  ],
+  // Straight from the homepage's own service cards, so what Google is told
+  // and what a visitor reads are the same three sentences.
+  makesOffer: services.map((service) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: service.title,
+      description: service.blurb,
+    },
+  })),
+};
+
+// Names the site itself, which is what Google reads to decide the site name
+// shown above the URL in a result — without it that line is guessed from the
+// domain or the <title>. Points back at the Person above by @id rather than
+// repeating it, so there's one canonical description of who publishes this.
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "Sathya Ram",
+  url: SITE_URL,
+  inLanguage: "en-US",
+  publisher: { "@id": `${SITE_URL}/#person` },
 };
 
 // Dark is the default, so <html> ships with the class and this only strips
@@ -107,7 +148,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [personJsonLd, websiteJsonLd],
+            }).replace(/</g, "\\u003c"),
           }}
         />
       </head>

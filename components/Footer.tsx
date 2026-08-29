@@ -75,12 +75,25 @@ export default function Footer() {
             give the location its own slot genuinely centered on the row,
             independent of how wide the other two happen to be. */}
         <ScrollGroup className="mx-auto flex max-w-5xl flex-col items-center gap-2 text-center text-xs text-muted sm:grid sm:grid-cols-3 sm:text-left">
-          <Link
-            href="/colophon"
-            className="underline underline-offset-4 transition-all duration-700 hover:text-foreground sm:justify-self-start"
-          >
-            Colophon
-          </Link>
+          {/* Both site-level pages share the grid's first slot rather than
+              taking a column each — the middle column is the centred
+              location line, and giving Privacy its own column would push it
+              off-centre. */}
+          <span className="flex items-center gap-3 transition-all duration-700 sm:justify-self-start">
+            <Link
+              href="/colophon"
+              className="underline underline-offset-4 hover:text-foreground"
+            >
+              Colophon
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              href="/privacy"
+              className="underline underline-offset-4 hover:text-foreground"
+            >
+              Privacy
+            </Link>
+          </span>
           <p className="transition-all duration-700 sm:justify-self-center sm:text-center">
             Based in the DMV area (DC · MD · VA)
           </p>

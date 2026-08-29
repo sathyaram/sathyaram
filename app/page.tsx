@@ -7,6 +7,7 @@ import ScrollGroup from "@/components/ScrollGroup";
 import HeadingGlow from "@/components/HeadingGlow";
 import WorkCard from "@/components/WorkCard";
 import { homepageProjects } from "@/lib/projects";
+import { services } from "@/lib/services";
 import { websiteCards } from "@/lib/websites";
 
 // The homepage is the one route whose title, description and social card are
@@ -25,35 +26,6 @@ export const metadata: Metadata = {
 // in globals.css). The three durations are deliberately coprime — 11s, 13s,
 // 15s only realign every 2145s — so the row never settles into a shared beat
 // the way three equal durations would, no matter how the delays are staggered.
-const services = [
-  {
-    emoji: "💻",
-    emojiBack: "⚡",
-    title: "Development",
-    blurb:
-      "React, Next.js, and WordPress builds with polished interactions and purposeful animation.",
-    flipDuration: "11s",
-    flipDelay: "0.8s",
-  },
-  {
-    emoji: "🎨",
-    emojiBack: "✨",
-    title: "Design",
-    blurb:
-      "Logos, interfaces, and design systems crafted with clarity, purpose, and attention to detail.",
-    flipDuration: "13s",
-    flipDelay: "4.2s",
-  },
-  {
-    emoji: "📷",
-    emojiBack: "🌄",
-    title: "Photography",
-    blurb:
-      "Expressive portraiture and cinematic imagery that feels natural, vibrant, and distinctly human.",
-    flipDuration: "15s",
-    flipDelay: "2.4s",
-  },
-];
 
 
 export default function Home() {
